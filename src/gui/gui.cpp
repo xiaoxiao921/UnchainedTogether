@@ -17,6 +17,11 @@
 
 namespace big
 {
+	static SDK::ABP_Character_C* g_pawn = nullptr;
+	static std::optional<SDK::FVector> g_latest_saved_position{};
+	static hotkey g_chained_together_save_current_position("chained_together_save_current_position", VK_F5);
+	static hotkey g_chained_together_tp_to_latest_saved_position("chained_together_tp_to_latest_saved_position", VK_F6);
+
 	gui::gui()
 	{
 		init_pref();
@@ -196,6 +201,29 @@ namespace big
 			}
 		}
 
+		SDK::UWorld* World = SDK::UWorld::GetWorld();
+		if (World)
+		{
+			SDK::ULevel* Level = World->PersistentLevel;
+			if (Level)
+			{
+				SDK::TArray<SDK::AActor*>& volatile Actors = Level->Actors;
+
+				for (SDK::AActor* Actor : Actors)
+				{
+					/* The 2nd and 3rd checks are equal, prefer using EClassCastFlags if available for your class. */
+					if (!Actor || !Actor->IsA(SDK::EClassCastFlags::Pawn) || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
+					{
+						continue;
+					}
+
+					SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
+					g_pawn                     = Pawn;
+					break;
+				}
+			}
+		}
+
 		if (m_is_open)
 		{
 			if (ImGui::BeginMainMenuBar())
@@ -323,7 +351,7 @@ namespace big
 								            current_pos.Y,
 								            current_pos.Z);
 
-								// Variables for manual position setting
+								ImGui::SeparatorText("Custom Position");
 								static SDK::FVector3f new_set_position{current_pos.X, current_pos.Y, current_pos.Z};
 								ImGui::InputFloat("X", &new_set_position.X);
 								ImGui::InputFloat("Y", &new_set_position.Y);
@@ -331,52 +359,19 @@ namespace big
 
 								static nlohmann::json json;
 								static std::vector<std::string> positionNames;
-								// Variable to hold the user input for the position name
-								static char positionName[128] = "";
 
-								// Input text for position name
-								ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
-
-								// Save position to JSON file
-								if (ImGui::Button("Save Current Position"))
-								{
-									if (strlen(positionName) > 0)
-									{
-										json["positions"][positionName] = {{"X", current_pos.X},
-										                                   {"Y", current_pos.Y},
-										                                   {"Z", current_pos.Z}};
-
-										std::ofstream file(positions_file_path);
-										if (file.is_open())
-										{
-											file << json.dump(4);
-
-											positionNames.push_back(positionName);
-											std::sort(positionNames.begin(), positionNames.end());
-										}
-									}
-									else
-									{
-										// Handle the case where the position name is empty
-										ImGui::Text("Please enter a valid position name.");
-									}
-								}
-
-								ImGui::SameLine();
-
-								// Set position
-								if (ImGui::Button("Set Position"))
+								if (ImGui::Button("Teleport To Custom Position"))
 								{
 									SetPlayerPosition(Pawn, new_set_position);
 								}
 
-								ImGui::Separator();
+								ImGui::SeparatorText("JSON File");
 
 								// Load JSON file and display named positions
 								static std::string selectedPosition;
 
 								static bool load_once = true;
-								if (ImGui::Button("Load Positions From JSON File") || load_once)
+								if (ImGui::Button("Refresh Positions From JSON File") || load_once)
 								{
 									load_once = false;
 									std::ifstream file(positions_file_path);
@@ -396,7 +391,12 @@ namespace big
 								if (positionNames.size())
 								{
 									static int currentIndex = 0;
-									selectedPosition        = positionNames[0];
+									static bool once        = true;
+									if (once)
+									{
+										once = false;
+										selectedPosition = positionNames[0];
+									}
 
 									if (ImGui::Combo(
 									        "Selected Position",
@@ -425,6 +425,45 @@ namespace big
 										current_pos.Z = json["positions"][selectedPosition]["Z"];
 										SetPlayerPosition(Pawn, current_pos);
 									}
+
+									static char positionName[128] = "";
+									ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
+									if (strlen(positionName) > 0)
+									{
+										if (ImGui::Button("Save Current Position To JSON File"))
+										{
+											json["positions"][positionName] = {{"X", current_pos.X},
+											                                   {"Y", current_pos.Y},
+											                                   {"Z", current_pos.Z}};
+
+											std::ofstream file(positions_file_path);
+											if (file.is_open())
+											{
+												file << json.dump(4);
+
+												positionNames.push_back(positionName);
+												std::sort(positionNames.begin(), positionNames.end());
+											}
+										}
+									}
+									else
+									{
+										ImGui::Text("Please enter a valid position name for saving to JSON File");
+									}
+
+									ImGui::SeparatorText("Keybinds");
+								}
+								else
+								{
+									ImGui::SeparatorText("Keybinds");
+								}
+
+								if (ImGui::Hotkey("Save Current Position (In Memory)", g_chained_together_save_current_position))
+								{
+								}
+
+								if (ImGui::Hotkey("Teleport To Latest Saved Position (In Memory)", g_chained_together_tp_to_latest_saved_position))
+								{
 								}
 							}
 						}
@@ -499,6 +538,16 @@ namespace big
 			}
 
 			LOG(DEBUG) << "Toggled Modding GUI to: " << (m_is_open ? "visible" : "hidden");
+		}
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_save_current_position.get_vk_value() && g_pawn)
+		{
+			g_latest_saved_position = g_pawn->GetTransform().Translation;
+		}
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_tp_to_latest_saved_position.get_vk_value() && g_pawn && g_latest_saved_position)
+		{
+			SetPlayerPosition(g_pawn, *g_latest_saved_position);
 		}
 	}
 

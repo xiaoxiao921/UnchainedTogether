@@ -1,0 +1,1 @@
+clear && msvc-x64-cmake --build ./build --config Debug --target  -- && cp ~/code/UnchainedTogether/build/d3d12_.dll ~/.local/share/Steam/steamapps/common/UnchainedTogether/UnchainedTogether/Binaries/Win64/d3d12.dll && steam steam://rungameid/2567870

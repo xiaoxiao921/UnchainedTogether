@@ -1,0 +1,192 @@
+name: Nightly Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_nightly:
+    runs-on: windows-latest
+    name: Build Nightly
+    outputs:
+      full_sha: ${{ steps.var.outputs.full_sha }}
+      short_sha: ${{ steps.var.outputs.short_sha }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup MSVC environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64
+          
+      - name: Generate CMake project
+        run: cmake -D CMAKE_BUILD_TYPE=RelWithDebInfo -D FINAL=YES -S. -Bbuild -G Ninja
+
+      - name: Prepare 64bit release DLL
+        shell: bash
+        run: |
+          set -x
+
+          namespace="Hell2Modding"
+          mod_name="Hell2Modding"
+
+          # Get latest version number from thunderstore
+          version_number=$(curl --compressed -s "https://thunderstore.io/c/hades-ii/api/v1/package/" | jq --arg package_name "$namespace-$mod_name" '.[]? | select(.full_name|startswith($package_name)) | .versions[0]?.version_number' || true)
+
+          # If version_number is empty, set it to "1.0.0"
+          if [ -z "$version_number" ]; then
+            version_number="1.0.0"
+          fi
+
+          # Remove quotes from output
+          version_number=$(echo "$version_number" | tr -d '"')
+
+          # Increment the patch version number
+          version_number=$(echo $version_number | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
+
+          # For the FILEVERSION we want a , format
+          version_number_comma=$(echo $version_number | tr . ,)
+
+          cd src
+          sed -i 's/FILEVERSION .*/FILEVERSION '"$version_number_comma"'/' resources.rc
+          sed -i 's/"ProductVersion", *"[^"]*"/"ProductVersion", "'"$version_number"'"/g' resources.rc
+          cd ..
+
+      - name: Build 64bit release DLL
+        shell: bash
+        run: |
+          cmake --build ./build --config RelWithDebInfo --target Hell2Modding --
+          mv ./build/d3d12_.dll ./build/d3d12.dll
+          mv ./build/d3d12_.pdb ./build/d3d12.pdb
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: binary
+          path: |
+            build/d3d12.dll
+            build/d3d12.pdb
+          
+      - name: Generate Build Info
+        id: var
+        run: |
+          echo "full_sha=$(git rev-parse HEAD)" >> $env:GITHUB_OUTPUT
+          echo "short_sha=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
+
+  create_release:
+    runs-on: ubuntu-latest
+    name: Create Release
+    needs: build_nightly
+    steps:
+      - uses: actions/checkout@v3
+  
+      - name: Delete Existing Release
+        id: delete_release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const tag = "nightly";
+      
+            // List all releases and find the release by tag
+            const releases = await github.rest.repos.listReleases({
+              owner: owner,
+              repo: repo,
+            });
+      
+            const release = releases.data.find(release => release.tag_name === tag);
+      
+            // Check if the release exists and delete it
+            if (release) {
+              await github.rest.repos.deleteRelease({
+                owner: owner,
+                repo: repo,
+                release_id: release.id,
+              });
+              console.log(`Deleted release with ID ${release.id}`);
+            } else {
+              console.log("No existing release to delete");
+            }
+      
+            // Delete the tag
+            try {
+              await github.rest.git.deleteRef({
+                owner: owner,
+                repo: repo,
+                ref: `tags/${tag}`,
+              });
+              console.log(`Deleted tag ${tag}`);
+            } catch (error) {
+              console.error(`Error deleting tag: ${error.message}`);
+            }
+  
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: binary
+
+      - name: Echo build sha256
+        id: build_sha
+        run: |
+          sha256sum d3d12.dll > sha256.checksum
+          echo "build_sha=$(cat sha256.checksum)" >> $GITHUB_OUTPUT
+          cat sha256.checksum
+
+      - name: Nightly Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Nightly [${{ needs.build_nightly.outputs.short_sha }}]
+          tag_name: nightly
+          body: |
+            **This release has been built by Github Actions**
+            [Link to build](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            Build SHA256:
+            ```
+            ${{ steps.build_sha.outputs.build_sha }}
+            ```
+            To verify the build SHA256 during the action, click the build link, go-to "Create Release", open the Echo build sha256 step and read the sha256.
+
+            You can download the build artifacts, generate a SHA256 checksum and compare it with the below binary.
+            Build artifacts ARE NOT automatically the same as release assets since release assets can be modified afterwards.
+
+            Full Commit Hash:
+            ```
+            ${{ needs.build_nightly.outputs.full_sha }}
+            ```
+          files: |
+            d3d12.dll
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Setup TCLI
+        run: dotnet tool install --global tcli
+
+      - name: Thunderstore Release
+        run: |
+          set -x
+
+          namespace="Hell2Modding"
+          mod_name="Hell2Modding"
+
+          # Get latest version number from thunderstore
+          version_number=$(curl --compressed -s "https://thunderstore.io/c/hades-ii/api/v1/package/" | jq --arg package_name "$namespace-$mod_name" '.[]? | select(.full_name|startswith($package_name)) | .versions[0]?.version_number' || true)
+
+          # If version_number is empty, set it to "1.0.0"
+          if [ -z "$version_number" ]; then
+            version_number="1.0.0"
+          fi
+
+          # Remove quotes from output
+          version_number=$(echo "$version_number" | tr -d '"')
+
+          # Increment the patch version number
+          version_number=$(echo $version_number | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
+
+          cd thunderstore
+          sed -i 's/versionNumber = ".*"/versionNumber = "'"$version_number"'"/' thunderstore.toml
+          
+          tcli publish --token ${{ secrets.TCLI_AUTH_TOKEN }}

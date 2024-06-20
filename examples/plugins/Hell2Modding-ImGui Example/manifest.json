@@ -1,0 +1,9 @@
+﻿{
+  "name": "ImGui Example",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/SGG-Modding/UnchainedTogether",
+  "description": "ImGui Example for Hades II",
+  "dependencies": [
+    "UnchainedTogether-UnchainedTogether-1.0.0"
+  ]
+}

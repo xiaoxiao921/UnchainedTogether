@@ -377,6 +377,8 @@ namespace big
 									std::ifstream file(positions_file_path);
 									if (file.is_open())
 									{
+										try
+										{
 										file >> json;
 										positionNames.clear();
 										for (auto& el : json["positions"].items())
@@ -385,16 +387,18 @@ namespace big
 										}
 										std::sort(positionNames.begin(), positionNames.end());
 									}
+										catch (const std::exception& e)
+										{
+											LOG(ERROR) << e.what();
+										}
+									}
 								}
 
-								// Show combo box with named positions
-								if (positionNames.size())
-								{
 									static int currentIndex = 0;
 									static bool once        = true;
-									if (once)
+								if (once && positionNames.size())
 									{
-										once = false;
+									once             = false;
 										selectedPosition = positionNames[0];
 									}
 
@@ -420,9 +424,17 @@ namespace big
 									ImGui::Text("Selected: %s", selectedPosition.size() ? selectedPosition.c_str() : "None");
 									if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
 									{
+									try
+									{
 										current_pos.X = json["positions"][selectedPosition]["X"];
 										current_pos.Y = json["positions"][selectedPosition]["Y"];
 										current_pos.Z = json["positions"][selectedPosition]["Z"];
+									}
+									catch (const std::exception& e)
+									{
+										LOG(ERROR) << e.what();
+									}
+
 										SetPlayerPosition(Pawn, current_pos);
 									}
 
@@ -431,6 +443,8 @@ namespace big
 									if (strlen(positionName) > 0)
 									{
 										if (ImGui::Button("Save Current Position To JSON File"))
+										{
+										try
 										{
 											json["positions"][positionName] = {{"X", current_pos.X},
 											                                   {"Y", current_pos.Y},
@@ -445,6 +459,11 @@ namespace big
 												std::sort(positionNames.begin(), positionNames.end());
 											}
 										}
+										catch (const std::exception& e)
+										{
+											LOG(ERROR) << e.what();
+										}
+									}
 									}
 									else
 									{
@@ -452,11 +471,6 @@ namespace big
 									}
 
 									ImGui::SeparatorText("Keybinds");
-								}
-								else
-								{
-									ImGui::SeparatorText("Keybinds");
-								}
 
 								if (ImGui::Hotkey("Save Current Position (In Memory)", g_chained_together_save_current_position))
 								{

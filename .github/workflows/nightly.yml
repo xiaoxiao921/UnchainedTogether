@@ -26,22 +26,13 @@ jobs:
         run: |
           set -x
 
-          namespace="Hell2Modding"
-          mod_name="Hell2Modding"
+          namespace="UnchainedTogether"
+          mod_name="UnchainedTogether"
 
-          # Get latest version number from thunderstore
-          version_number=$(curl --compressed -s "https://thunderstore.io/c/hades-ii/api/v1/package/" | jq --arg package_name "$namespace-$mod_name" '.[]? | select(.full_name|startswith($package_name)) | .versions[0]?.version_number' || true)
-
-          # If version_number is empty, set it to "1.0.0"
-          if [ -z "$version_number" ]; then
-            version_number="1.0.0"
-          fi
+          version_number="1.0.0"
 
           # Remove quotes from output
           version_number=$(echo "$version_number" | tr -d '"')
-
-          # Increment the patch version number
-          version_number=$(echo $version_number | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
 
           # For the FILEVERSION we want a , format
           version_number_comma=$(echo $version_number | tr . ,)
@@ -54,7 +45,7 @@ jobs:
       - name: Build 64bit release DLL
         shell: bash
         run: |
-          cmake --build ./build --config RelWithDebInfo --target Hell2Modding --
+          cmake --build ./build --config RelWithDebInfo --target UnchainedTogether --
           mv ./build/d3d12_.dll ./build/d3d12.dll
           mv ./build/d3d12_.pdb ./build/d3d12.pdb
 
@@ -156,37 +147,3 @@ jobs:
             ```
           files: |
             d3d12.dll
-
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 7.0.x
-
-      - name: Setup TCLI
-        run: dotnet tool install --global tcli
-
-      - name: Thunderstore Release
-        run: |
-          set -x
-
-          namespace="Hell2Modding"
-          mod_name="Hell2Modding"
-
-          # Get latest version number from thunderstore
-          version_number=$(curl --compressed -s "https://thunderstore.io/c/hades-ii/api/v1/package/" | jq --arg package_name "$namespace-$mod_name" '.[]? | select(.full_name|startswith($package_name)) | .versions[0]?.version_number' || true)
-
-          # If version_number is empty, set it to "1.0.0"
-          if [ -z "$version_number" ]; then
-            version_number="1.0.0"
-          fi
-
-          # Remove quotes from output
-          version_number=$(echo "$version_number" | tr -d '"')
-
-          # Increment the patch version number
-          version_number=$(echo $version_number | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
-
-          cd thunderstore
-          sed -i 's/versionNumber = ".*"/versionNumber = "'"$version_number"'"/' thunderstore.toml
-          
-          tcli publish --token ${{ secrets.TCLI_AUTH_TOKEN }}

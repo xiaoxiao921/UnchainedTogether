@@ -16,6 +16,20 @@
 
 //#include "debug/debug.hpp"
 
+LONG __fastcall hook_global_cpp_try_catch(EXCEPTION_POINTERS* ExceptionInfo)
+{
+	const auto res = big::vectored_exception_handler(ExceptionInfo);
+
+	static bool once = true;
+	if (once)
+	{
+		MessageBoxA(0, "The game has encountered a fatal error, the error stack trace is in the log file and in the console.", "UnchainedTogether", MB_ICONERROR | MB_OK);
+		once = false;
+	}
+
+	return res;
+}
+
 BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 {
 	using namespace big;
@@ -36,17 +50,17 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 		// Purposely leak it, we are not unloading this module in any case.
 		auto exception_handling = new exception_handler();
 
-		/*{
-			static auto fsAppendPathComponent_ptr = gmAddress::scan("C6 44 24 30 5C", "fsAppendPathComponent");
-			if (fsAppendPathComponent_ptr)
+		{
+			static auto global_unreal_engine_try_catch_ptr = gmAddress::scan("E8 ? ? ? ? 90 33 C0 48 83 C4 28", "global_unreal_engine_try_catch_ptr");
+			if (global_unreal_engine_try_catch_ptr)
 			{
-				static auto fsAppendPathComponent = fsAppendPathComponent_ptr.offset(-0x97).as_func<void(const char *, const char *, char *)>();
+				static auto global_unreal_engine_try_catch = global_unreal_engine_try_catch_ptr.get_call();
 
-				//static auto hook_once = big::hooking::detour_hook_helper::add<hook_fsAppendPathComponent_packages>(
-				//  "hook_fsAppendPathComponent for packages and models",
-				//fsAppendPathComponent);
+				static auto hook_once = big::hooking::detour_hook_helper::add<hook_global_cpp_try_catch>(
+				    "hook global unreal engine cpp try catch",
+				    global_unreal_engine_try_catch);
 			}
-		}*/
+			}
 
 		DisableThreadLibraryCalls(hmod);
 		g_hmodule     = hmod;

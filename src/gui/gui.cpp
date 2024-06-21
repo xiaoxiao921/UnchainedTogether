@@ -21,6 +21,8 @@ namespace big
 	static std::optional<SDK::FVector> g_latest_saved_position{};
 	static hotkey g_chained_together_save_current_position("chained_together_save_current_position", VK_F5);
 	static hotkey g_chained_together_tp_to_latest_saved_position("chained_together_tp_to_latest_saved_position", VK_F6);
+	static bool g_chained_together_fly_mode_state = false;
+	static hotkey g_chained_together_fly_mode("chained_together_fly_mode", VK_F7);
 
 	gui::gui()
 	{
@@ -337,10 +339,9 @@ namespace big
 
 								static auto positions_file_path = g_file_manager.get_project_file("./positions.json").get_path();
 
-								static bool fly_mode = false;
-								if (ImGui::Checkbox("Fly Mode", &fly_mode))
+								if (ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state))
 								{
-									Pawn->SetFlyMode(fly_mode);
+									Pawn->SetFlyMode(g_chained_together_fly_mode_state);
 								}
 
 								ImGui::Separator();
@@ -479,6 +480,10 @@ namespace big
 								if (ImGui::Hotkey("Teleport To Latest Saved Position (In Memory)", g_chained_together_tp_to_latest_saved_position))
 								{
 								}
+
+								if (ImGui::Hotkey("Fly Mode", g_chained_together_fly_mode))
+								{
+								}
 							}
 						}
 					}
@@ -562,6 +567,12 @@ namespace big
 		if (msg == WM_KEYUP && wparam == g_chained_together_tp_to_latest_saved_position.get_vk_value() && g_pawn && g_latest_saved_position)
 		{
 			SetPlayerPosition(g_pawn, *g_latest_saved_position);
+		}
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_fly_mode.get_vk_value() && g_pawn)
+		{
+			g_chained_together_fly_mode_state = !g_chained_together_fly_mode_state;
+			g_pawn->SetFlyMode(g_chained_together_fly_mode_state);
 		}
 	}
 

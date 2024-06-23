@@ -211,17 +211,23 @@ namespace big
 			{
 				SDK::TArray<SDK::AActor*>& volatile Actors = Level->Actors;
 
-				for (SDK::AActor* Actor : Actors)
+				try
 				{
-					/* The 2nd and 3rd checks are equal, prefer using EClassCastFlags if available for your class. */
-					if (!Actor || !Actor->IsA(SDK::EClassCastFlags::Pawn) || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
+					for (SDK::AActor* Actor : Actors)
 					{
-						continue;
-					}
+						/* The 2nd and 3rd checks are equal, prefer using EClassCastFlags if available for your class. */
+						if (!Actor || !Actor->IsA(SDK::EClassCastFlags::Pawn) || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
+						{
+							continue;
+						}
 
-					SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
-					g_pawn                     = Pawn;
-					break;
+						SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
+						g_pawn                     = Pawn;
+						break;
+					}
+				}
+				catch (const std::exception&)
+				{
 				}
 			}
 		}
@@ -324,166 +330,177 @@ namespace big
 						{
 							SDK::TArray<SDK::AActor*>& volatile Actors = Level->Actors;
 
-							for (SDK::AActor* Actor : Actors)
+							try
 							{
-								/* The 2nd and 3rd checks are equal, prefer using EClassCastFlags if available for your class. */
-								if (!Actor || !Actor->IsA(SDK::EClassCastFlags::Pawn) || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
+								for (SDK::AActor* Actor : Actors)
 								{
-									continue;
-								}
-
-								SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
-
-								auto current_transform = Pawn->GetTransform();
-								auto& current_pos      = current_transform.Translation;
-
-								static auto positions_file_path = g_file_manager.get_project_file("./positions.json").get_path();
-
-								if (ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state))
-								{
-									Pawn->SetFlyMode(g_chained_together_fly_mode_state);
-								}
-
-								ImGui::Separator();
-
-								// Show the player's current position
-								ImGui::Text("Player Position: X: %.2f | Y: %.2f | Z: %.2f",
-								            current_pos.X,
-								            current_pos.Y,
-								            current_pos.Z);
-
-								ImGui::SeparatorText("Custom Position");
-								static SDK::FVector3f new_set_position{current_pos.X, current_pos.Y, current_pos.Z};
-								ImGui::InputFloat("X", &new_set_position.X);
-								ImGui::InputFloat("Y", &new_set_position.Y);
-								ImGui::InputFloat("Z", &new_set_position.Z);
-
-								static nlohmann::json json;
-								static std::vector<std::string> positionNames;
-
-								if (ImGui::Button("Teleport To Custom Position"))
-								{
-									SetPlayerPosition(Pawn, new_set_position);
-								}
-
-								ImGui::SeparatorText("JSON File");
-
-								// Load JSON file and display named positions
-								static std::string selectedPosition;
-
-								static bool load_once = true;
-								if (ImGui::Button("Refresh Positions From JSON File") || load_once)
-								{
-									load_once = false;
-									std::ifstream file(positions_file_path);
-									if (file.is_open())
+									/* The 2nd and 3rd checks are equal, prefer using EClassCastFlags if available for your class. */
+									if (!Actor || !Actor->IsA(SDK::EClassCastFlags::Pawn) || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
 									{
-										try
+										continue;
+									}
+
+									ImGui::PushID(Actor);
+
+									SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
+
+									auto current_transform = Pawn->GetTransform();
+									auto& current_pos      = current_transform.Translation;
+
+									static auto positions_file_path =
+									    g_file_manager.get_project_file("./positions.json").get_path();
+
+									if (ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state))
+									{
+										Pawn->SetFlyMode(g_chained_together_fly_mode_state);
+									}
+
+									ImGui::Separator();
+
+									// Show the player's current position
+									ImGui::Text("Player Position: X: %.2f | Y: %.2f | Z: %.2f",
+									            current_pos.X,
+									            current_pos.Y,
+									            current_pos.Z);
+
+									ImGui::SeparatorText("Custom Position");
+									static SDK::FVector3f new_set_position{current_pos.X, current_pos.Y, current_pos.Z};
+									ImGui::InputFloat("X", &new_set_position.X);
+									ImGui::InputFloat("Y", &new_set_position.Y);
+									ImGui::InputFloat("Z", &new_set_position.Z);
+
+									static nlohmann::json json;
+									static std::vector<std::string> positionNames;
+
+									if (ImGui::Button("Teleport To Custom Position"))
+									{
+										SetPlayerPosition(Pawn, new_set_position);
+									}
+
+									ImGui::SeparatorText("JSON File");
+
+									// Load JSON file and display named positions
+									static std::string selectedPosition;
+
+									static bool load_once = true;
+									if (ImGui::Button("Refresh Positions From JSON File") || load_once)
+									{
+										load_once = false;
+										std::ifstream file(positions_file_path);
+										if (file.is_open())
 										{
-											file >> json;
-											positionNames.clear();
-											for (auto& el : json["positions"].items())
+											try
 											{
-												positionNames.push_back(el.key());
-											}
-											std::sort(positionNames.begin(), positionNames.end());
-										}
-										catch (const std::exception& e)
-										{
-											LOG(ERROR) << e.what();
-										}
-									}
-								}
-
-								static int currentIndex = 0;
-								static bool once        = true;
-								if (once && positionNames.size())
-								{
-									once             = false;
-									selectedPosition = positionNames[0];
-								}
-
-								if (ImGui::Combo(
-								        "Selected Position",
-								        &currentIndex,
-								        [](void* vec, int idx, const char** out_text)
-								        {
-									        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
-									        if (idx < 0 || idx >= vector->size())
-									        {
-										        return false;
-									        }
-									        *out_text = vector->at(idx).c_str();
-									        return true;
-								        },
-								        reinterpret_cast<void*>(&positionNames),
-								        positionNames.size()))
-								{
-									selectedPosition = positionNames[currentIndex];
-								}
-
-								ImGui::Text("Selected: %s", selectedPosition.size() ? selectedPosition.c_str() : "None");
-								if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
-								{
-									try
-									{
-										current_pos.X = json["positions"][selectedPosition]["X"];
-										current_pos.Y = json["positions"][selectedPosition]["Y"];
-										current_pos.Z = json["positions"][selectedPosition]["Z"];
-									}
-									catch (const std::exception& e)
-									{
-										LOG(ERROR) << e.what();
-									}
-
-									SetPlayerPosition(Pawn, current_pos);
-								}
-
-								static char positionName[128] = "";
-								ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
-								if (strlen(positionName) > 0)
-								{
-									if (ImGui::Button("Save Current Position To JSON File"))
-									{
-										try
-										{
-											json["positions"][positionName] = {{"X", current_pos.X},
-											                                   {"Y", current_pos.Y},
-											                                   {"Z", current_pos.Z}};
-
-											std::ofstream file(positions_file_path);
-											if (file.is_open())
-											{
-												file << json.dump(4);
-
-												positionNames.push_back(positionName);
+												file >> json;
+												positionNames.clear();
+												for (auto& el : json["positions"].items())
+												{
+													positionNames.push_back(el.key());
+												}
 												std::sort(positionNames.begin(), positionNames.end());
 											}
+											catch (const std::exception& e)
+											{
+												LOG(ERROR) << e.what();
+											}
+										}
+									}
+
+									static int currentIndex = 0;
+									static bool once        = true;
+									if (once && positionNames.size())
+									{
+										once             = false;
+										selectedPosition = positionNames[0];
+									}
+
+									if (ImGui::Combo(
+									        "Selected Position",
+									        &currentIndex,
+									        [](void* vec, int idx, const char** out_text)
+									        {
+										        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
+										        if (idx < 0 || idx >= vector->size())
+										        {
+											        return false;
+										        }
+										        *out_text = vector->at(idx).c_str();
+										        return true;
+									        },
+									        reinterpret_cast<void*>(&positionNames),
+									        positionNames.size()))
+									{
+										selectedPosition = positionNames[currentIndex];
+									}
+
+									ImGui::Text("Selected: %s", selectedPosition.size() ? selectedPosition.c_str() : "None");
+									if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
+									{
+										try
+										{
+											current_pos.X = json["positions"][selectedPosition]["X"];
+											current_pos.Y = json["positions"][selectedPosition]["Y"];
+											current_pos.Z = json["positions"][selectedPosition]["Z"];
 										}
 										catch (const std::exception& e)
 										{
 											LOG(ERROR) << e.what();
 										}
+
+										SetPlayerPosition(Pawn, current_pos);
 									}
-								}
-								else
-								{
-									ImGui::Text("Please enter a valid position name for saving to JSON File");
-								}
 
-								ImGui::SeparatorText("Keybinds");
+									static char positionName[128] = "";
+									ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
+									if (strlen(positionName) > 0)
+									{
+										if (ImGui::Button("Save Current Position To JSON File"))
+										{
+											try
+											{
+												json["positions"][positionName] = {{"X", current_pos.X},
+												                                   {"Y", current_pos.Y},
+												                                   {"Z", current_pos.Z}};
 
-								if (ImGui::Hotkey("Save Current Position (In Memory)", g_chained_together_save_current_position))
-								{
-								}
+												std::ofstream file(positions_file_path);
+												if (file.is_open())
+												{
+													file << json.dump(4);
 
-								if (ImGui::Hotkey("Teleport To Latest Saved Position (In Memory)", g_chained_together_tp_to_latest_saved_position))
-								{
-								}
+													positionNames.push_back(positionName);
+													std::sort(positionNames.begin(), positionNames.end());
+												}
+											}
+											catch (const std::exception& e)
+											{
+												LOG(ERROR) << e.what();
+											}
+										}
+									}
+									else
+									{
+										ImGui::Text("Please enter a valid position name for saving to JSON File");
+									}
 
-								if (ImGui::Hotkey("Fly Mode##2", g_chained_together_fly_mode))
-								{
+									ImGui::SeparatorText("Keybinds");
+
+									if (ImGui::Hotkey("Save Current Position (In Memory)", g_chained_together_save_current_position))
+									{
+									}
+
+									if (ImGui::Hotkey("Teleport To Latest Saved Position (In Memory)", g_chained_together_tp_to_latest_saved_position))
+									{
+									}
+
+									if (ImGui::Hotkey("Fly Mode##2", g_chained_together_fly_mode))
+									{
+									}
+
+									ImGui::PopID();
 								}
+							}
+							catch (const std::exception& e)
+							{
 							}
 						}
 					}

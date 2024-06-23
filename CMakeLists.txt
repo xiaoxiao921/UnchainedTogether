@@ -10,6 +10,7 @@ set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 message("\nFetching modules")
 include(cmake_scripts/git.cmake)
 include(cmake_scripts/rom.cmake)
+include(cmake_scripts/utfcpp.cmake)
 
 message(STATUS "UnchainedTogether")
 file(GLOB_RECURSE SRC_MAIN
@@ -40,6 +41,7 @@ source_group(TREE ${SRC_DIR} PREFIX "src" FILES ${SRC_MAIN})
 
 target_include_directories(UnchainedTogether PRIVATE
     "${SRC_DIR}"
+    "${utfcpp_SOURCE_DIR}/source"
 )
 
 target_precompile_headers(UnchainedTogether PRIVATE "${SRC_DIR}/common.hpp")

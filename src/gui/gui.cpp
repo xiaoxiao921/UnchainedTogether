@@ -380,14 +380,14 @@ namespace big
 									{
 										try
 										{
-										file >> json;
-										positionNames.clear();
-										for (auto& el : json["positions"].items())
-										{
-											positionNames.push_back(el.key());
+											file >> json;
+											positionNames.clear();
+											for (auto& el : json["positions"].items())
+											{
+												positionNames.push_back(el.key());
+											}
+											std::sort(positionNames.begin(), positionNames.end());
 										}
-										std::sort(positionNames.begin(), positionNames.end());
-									}
 										catch (const std::exception& e)
 										{
 											LOG(ERROR) << e.what();
@@ -395,36 +395,36 @@ namespace big
 									}
 								}
 
-									static int currentIndex = 0;
-									static bool once        = true;
+								static int currentIndex = 0;
+								static bool once        = true;
 								if (once && positionNames.size())
-									{
+								{
 									once             = false;
-										selectedPosition = positionNames[0];
-									}
+									selectedPosition = positionNames[0];
+								}
 
-									if (ImGui::Combo(
-									        "Selected Position",
-									        &currentIndex,
-									        [](void* vec, int idx, const char** out_text)
+								if (ImGui::Combo(
+								        "Selected Position",
+								        &currentIndex,
+								        [](void* vec, int idx, const char** out_text)
+								        {
+									        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
+									        if (idx < 0 || idx >= vector->size())
 									        {
-										        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
-										        if (idx < 0 || idx >= vector->size())
-										        {
-											        return false;
-										        }
-										        *out_text = vector->at(idx).c_str();
-										        return true;
-									        },
-									        reinterpret_cast<void*>(&positionNames),
-									        positionNames.size()))
-									{
-										selectedPosition = positionNames[currentIndex];
-									}
+										        return false;
+									        }
+									        *out_text = vector->at(idx).c_str();
+									        return true;
+								        },
+								        reinterpret_cast<void*>(&positionNames),
+								        positionNames.size()))
+								{
+									selectedPosition = positionNames[currentIndex];
+								}
 
-									ImGui::Text("Selected: %s", selectedPosition.size() ? selectedPosition.c_str() : "None");
-									if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
-									{
+								ImGui::Text("Selected: %s", selectedPosition.size() ? selectedPosition.c_str() : "None");
+								if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
+								{
 									try
 									{
 										current_pos.X = json["positions"][selectedPosition]["X"];
@@ -436,15 +436,15 @@ namespace big
 										LOG(ERROR) << e.what();
 									}
 
-										SetPlayerPosition(Pawn, current_pos);
-									}
+									SetPlayerPosition(Pawn, current_pos);
+								}
 
-									static char positionName[128] = "";
-									ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
-									if (strlen(positionName) > 0)
+								static char positionName[128] = "";
+								ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
+								if (strlen(positionName) > 0)
+								{
+									if (ImGui::Button("Save Current Position To JSON File"))
 									{
-										if (ImGui::Button("Save Current Position To JSON File"))
-										{
 										try
 										{
 											json["positions"][positionName] = {{"X", current_pos.X},
@@ -465,13 +465,13 @@ namespace big
 											LOG(ERROR) << e.what();
 										}
 									}
-									}
-									else
-									{
-										ImGui::Text("Please enter a valid position name for saving to JSON File");
-									}
+								}
+								else
+								{
+									ImGui::Text("Please enter a valid position name for saving to JSON File");
+								}
 
-									ImGui::SeparatorText("Keybinds");
+								ImGui::SeparatorText("Keybinds");
 
 								if (ImGui::Hotkey("Save Current Position (In Memory)", g_chained_together_save_current_position))
 								{
@@ -481,7 +481,7 @@ namespace big
 								{
 								}
 
-								if (ImGui::Hotkey("Fly Mode", g_chained_together_fly_mode))
+								if (ImGui::Hotkey("Fly Mode##2", g_chained_together_fly_mode))
 								{
 								}
 							}

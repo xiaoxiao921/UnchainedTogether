@@ -46,7 +46,7 @@ target_include_directories(UnchainedTogether PRIVATE
 
 target_precompile_headers(UnchainedTogether PRIVATE "${SRC_DIR}/common.hpp")
 
-target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase)
+target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase comctl32)
 
 # Warnings as errors
 #set_property(TARGET UnchainedTogether PROPERTY COMPILE_WARNING_AS_ERROR ON)

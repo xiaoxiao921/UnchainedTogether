@@ -12,18 +12,156 @@
 #include "threads/util.hpp"
 #include "version.hpp"
 
+#include <commctrl.h>
+#include <logger/stack_trace.hpp>
 #include <memory/gm_address.hpp>
+#include <utf8.h>
 
 //#include "debug/debug.hpp"
 
+static bool g_has_last_stack_trace;
+static std::stringstream g_last_stack_trace;
+
+static std::wstring ToWide(std::string_view narrow)
+{
+	std::vector<uint8_t> cleanVec;
+	cleanVec.reserve(narrow.size());
+
+	std::wstring outVec;
+	outVec.reserve(cleanVec.size());
+
+	try
+	{
+		utf8::replace_invalid(narrow.begin(), narrow.end(), std::back_inserter(cleanVec));
+
+		utf8::utf8to16(cleanVec.begin(), cleanVec.end(), std::back_inserter(outVec));
+	}
+	catch (utf8::exception& e)
+	{
+	}
+
+	return std::move(outVec);
+}
+
+void ShowGoodMessageBox(std::wstring_view windowTitle, std::wstring_view content)
+{
+	TASKDIALOGCONFIG taskDialogConfig = {0};
+	TASKDIALOG_BUTTON buttons[1];
+	std::wstring mainInstruction = L"UnchainedTogether has stopped working";
+	std::wstring tempSignature   = L"You can press Ctrl-C to copy the error message and paste it elsewhere.";
+	taskDialogConfig.cbSize      = sizeof(taskDialogConfig);
+	taskDialogConfig.hInstance   = GetModuleHandle(nullptr);
+	taskDialogConfig.dwFlags = TDF_ENABLE_HYPERLINKS | TDF_EXPAND_FOOTER_AREA | /*TDF_SHOW_PROGRESS_BAR |*/ TDF_CALLBACK_TIMER | TDF_USE_COMMAND_LINKS | TDF_EXPANDED_BY_DEFAULT;
+	taskDialogConfig.dwCommonButtons = TDCBF_CLOSE_BUTTON;
+	//taskDialogConfig.cButtons               = 1;
+	//taskDialogConfig.pButtons               = buttons;
+	taskDialogConfig.pszWindowTitle         = windowTitle.data();
+	taskDialogConfig.pszMainIcon            = MAKEINTRESOURCEW(-7); // shield bar w/ error color
+	taskDialogConfig.pszMainInstruction     = mainInstruction.c_str();
+	taskDialogConfig.pszContent             = content.data();
+	taskDialogConfig.pszExpandedInformation = tempSignature.c_str();
+	taskDialogConfig.pfCallback             = [](HWND hWnd, UINT type, WPARAM wParam, LPARAM lParam, LONG_PTR data)
+	{
+		if (type == TDN_HYPERLINK_CLICKED)
+		{
+			ShellExecuteW(nullptr, L"open", (LPCWSTR)lParam, nullptr, nullptr, SW_NORMAL);
+		}
+		else if (type == TDN_BUTTON_CLICKED)
+		{
+			if (wParam == 42)
+			{
+				SendMessageW(hWnd, TDM_ENABLE_BUTTON, 42, 0);
+			}
+			else
+			{
+				return S_OK;
+			}
+		}
+		else if (type == TDN_CREATED)
+		{
+			SendMessage(hWnd, TDM_ENABLE_BUTTON, IDCLOSE, 0);
+			//SendMessage(hWnd, TDM_SET_MARQUEE_PROGRESS_BAR, 1, 0);
+			//SendMessage(hWnd, TDM_SET_PROGRESS_BAR_MARQUEE, 1, 15);
+			SendMessage(hWnd, TDM_UPDATE_ICON, TDIE_ICON_MAIN, (LPARAM)TD_ERROR_ICON);
+		}
+		else if (type == TDN_TIMER)
+		{
+			SendMessage(hWnd, TDM_SET_ELEMENT_TEXT, TDE_EXPANDED_INFORMATION, (WPARAM)L"You can press Ctrl-C to copy the error message and paste it elsewhere.");
+
+			SendMessage(hWnd, TDM_ENABLE_BUTTON, IDCLOSE, 1);
+			//SendMessage(hWnd, TDM_SET_MARQUEE_PROGRESS_BAR, 0, 0);
+			//SendMessage(hWnd, TDM_SET_PROGRESS_BAR_POS, 100, 0);
+			//SendMessage(hWnd, TDM_SET_PROGRESS_BAR_STATE, PBST_NORMAL, 0);
+
+			//if (crashId->empty())
+			{
+				//SendMessage(hWnd, TDM_SET_PROGRESS_BAR_STATE, PBST_ERROR, 0);
+			}
+		}
+
+		return S_FALSE;
+	};
+
+	// make the disconnect message less confusing
+	{
+		taskDialogConfig.dwFlags     &= ~(TDF_USE_COMMAND_LINKS | TDF_EXPANDED_BY_DEFAULT);
+		taskDialogConfig.pszMainIcon  = TD_WARNING_ICON;
+
+		//std::wstring saveStr     = L"Save information";
+		//buttons[0].pszButtonText = saveStr.c_str();
+
+		//taskDialogConfig.dwFlags |= TDF_EXPANDED_BY_DEFAULT;
+	}
+
+	auto task_dialog_thread = std::thread(
+	    [taskDialogConfig, buttons]()
+	    {
+		    TaskDialogIndirect(&taskDialogConfig, nullptr, nullptr, nullptr);
+	    });
+	task_dialog_thread.join();
+}
+
+static LONG custom_exception_handler(EXCEPTION_POINTERS* exception_info)
+{
+	g_has_last_stack_trace = false;
+
+	const auto exception_code = exception_info->ExceptionRecord->ExceptionCode;
+	if (exception_code == EXCEPTION_BREAKPOINT || exception_code == DBG_PRINTEXCEPTION_C || exception_code == DBG_PRINTEXCEPTION_WIDE_C)
+	{
+		return EXCEPTION_CONTINUE_SEARCH;
+	}
+
+	if (IsDebuggerPresent())
+	{
+		return EXCEPTION_CONTINUE_SEARCH;
+	}
+
+	big::stack_trace trace_;
+	trace_.new_stack_trace(exception_info);
+	// Do it twice so it doesnt print the module list to the user.
+	big::stack_trace trace;
+	trace.new_stack_trace(exception_info);
+
+	LOG(ERROR) << trace;
+	Logger::FlushQueue();
+
+	g_last_stack_trace.clear();
+	g_last_stack_trace << trace;
+	g_has_last_stack_trace = true;
+
+	return EXCEPTION_CONTINUE_SEARCH;
+}
+
 LONG __fastcall hook_global_cpp_try_catch(EXCEPTION_POINTERS* ExceptionInfo)
 {
-	const auto res = big::vectored_exception_handler(ExceptionInfo);
+	const auto res = custom_exception_handler(ExceptionInfo);
 
 	static bool once = true;
-	if (once)
+	if (once && g_has_last_stack_trace)
 	{
-		MessageBoxA(0, "The game has encountered a fatal error, the error stack trace is in the log file and in the console.", "UnchainedTogether", MB_ICONERROR | MB_OK);
+		const auto msg      = std::format("The game has encountered a fatal error\n{}", g_last_stack_trace.str());
+		const auto msg_wide = ToWide(msg);
+		ShowGoodMessageBox(L"UnchainedTogether", msg_wide);
 		once = false;
 	}
 
@@ -60,7 +198,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 				    "hook global unreal engine cpp try catch",
 				    global_unreal_engine_try_catch);
 			}
-			}
+		}
 
 		DisableThreadLibraryCalls(hmod);
 		g_hmodule     = hmod;

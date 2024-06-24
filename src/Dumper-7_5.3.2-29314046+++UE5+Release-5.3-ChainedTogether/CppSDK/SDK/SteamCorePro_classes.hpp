@@ -119,7 +119,7 @@ static_assert(sizeof(USteamCoreInterface) == 0x000028, "Wrong size on USteamCore
 class USteamCoreProSubsystem final : public UObject
 {
 public:
-	uint8                                         Pad_1739[0x20];                                    // 0x0028(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1873[0x20];                                    // 0x0028(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -144,19 +144,19 @@ public:
 	bool                                          bVACEnabled;                                       // 0x003A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAllowP2PPacketRelay;                              // 0x003B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCopySteamDlls;                                    // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_173A[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1874[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         P2PConnectionTimeout;                              // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SteamAppId;                                        // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SteamDevAppId;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Port;                                              // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GameServerQueryPort;                               // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_173B[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1875[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 GameVersion;                                       // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOverrideMinHandshakeVersion;                      // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_173C[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1876[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinHandshakeVersion;                               // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOverrideCurrentHandshakeVersion;                  // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_173D[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1877[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CurrentHandshakeVersion;                           // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -208,7 +208,7 @@ public:
 	FMulticastInlineDelegateProperty_             ClanOfficerListResponse;                           // 0x00F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             DownloadClanActivityCountsResult;                  // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EquippedProfileItemsChanged;                       // 0x0118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_173E[0x200];                                   // 0x0128(0x0200)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1878[0x200];                                   // 0x0128(0x0200)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void ActivateGameOverlay(const class FString& Dialog);
@@ -512,7 +512,7 @@ class USteamCoreProFriendsAsyncActionRequestUserInformation final : public UStea
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_177D[0x30];                                    // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18B7[0x30];                                    // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProFriendsAsyncActionRequestUserInformation* RequestUserInformationAsync(class UObject* WorldContextObject, const struct FSteamID& SteamIDUser, bool bRequireNameOnly, float Timeout);
@@ -539,7 +539,7 @@ class USteamProGameServerStats final : public USteamCoreInterface
 {
 public:
 	FMulticastInlineDelegateProperty_             GSStatsUnloaded;                                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_177F[0x20];                                    // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18B9[0x20];                                    // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameServerStats* GetSteamGameServerStats();
@@ -641,7 +641,7 @@ public:
 	FMulticastInlineDelegateProperty_             SteamInventoryStartPurchaseResult;                 // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamInventoryRequestPricesResultDelegate;         // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamInventoryEligiblePromoItemDefIDs;             // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_179E[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18D8[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool AddPromoItem(struct FSteamInventoryResult* Result, const struct FSteamItemDef& ItemDef);
@@ -793,7 +793,7 @@ public:
 	FMulticastInlineDelegateProperty_             LobbyGameCreated;                                  // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             LobbyInvite;                                       // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             LobbyKicked;                                       // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17CC[0x120];                                   // 0x00B8(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1906[0x120];                                   // 0x00B8(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static int32 AddFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Param_Flags, int32 TimeLastPlayedOnServer);
@@ -944,7 +944,7 @@ class USteamCoreProCreateSession final : public USteamCoreProAsyncAction
 public:
 	FMulticastInlineDelegateProperty_             OnSuccess;                                         // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnFailure;                                         // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F2[0x100];                                   // 0x0050(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_192C[0x100];                                   // 0x0050(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProCreateSession* CreateSteamCoreProSession(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSetting>& SessionSettings, const class FString& SessionName, int32 MaxPlayers, bool bUseLAN, bool bAllowInvites, bool bUsesPresence, bool bAllowJoinViaPresence, bool bAllowJoinViaPresenceFriendsOnly, bool bAntiCheatProtected, bool bUsesStats, bool bShouldAdvertise, bool bUseLobbiesVoiceChatIfAvailable, float Timeout);
@@ -970,7 +970,7 @@ class USteamCoreProFindSession final : public USteamCoreProAsyncAction
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F5[0x98];                                    // 0x0040(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_192F[0x98];                                    // 0x0040(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProFindSession* FindSteamCoreProSessions(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSearchSetting>& SearchSettings, int32 MaxResults, bool bUseLAN, ESteamSessionFindType ServerType, ESteamLobbyDistanceFilter DistanceFilter, bool bEmptyServersOnly, bool bSecureServersOnly, float Timeout);
@@ -998,7 +998,7 @@ class USteamCoreProDestroySession final : public USteamCoreProAsyncAction
 public:
 	FMulticastInlineDelegateProperty_             OnSuccess;                                         // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnFailure;                                         // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F7[0x20];                                    // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1931[0x20];                                    // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProDestroySession* DestroySteamCoreProSession(class UObject* WorldContextObject, float Timeout);
@@ -1026,7 +1026,7 @@ class USteamCoreProUpdateSession final : public USteamCoreProAsyncAction
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17FA[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1934[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProUpdateSession* UpdateSteamCoreProSession(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSearchSetting>& Settings, const class FString& SessionName, int32 MaxPlayers);
@@ -1170,7 +1170,7 @@ static_assert(offsetof(USteamCoreProMatchmakingServersAsyncActionServerRules, On
 class UServerFilter final : public UObject
 {
 public:
-	uint8                                         Pad_180D[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1947[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddFilterAnd(const class FString& Value);
@@ -1218,7 +1218,7 @@ class USteamProMusic final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             PlaybackStatusHasChanged;                          // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             VolumeHasChanged;                                  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180E[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1948[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProMusic* GetSteamMusic();
@@ -1255,7 +1255,7 @@ class USteamProNetworking final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             OnP2PSessionRequestDelegate;                       // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnP2PSessionConnectFailDelegate;                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180F[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1949[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProNetworking* GetSteamNetworking();
@@ -1424,7 +1424,7 @@ class USteamProAppList final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             SteamAppInstalled;                                 // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamAppUninstalled;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1824[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_195E[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProAppList* GetSteamAppList();
@@ -1457,7 +1457,7 @@ class USteamProApps final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             DLCInstalled;                                      // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             FileDetailsResultDelegate;                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1829[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1963[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable, class FString* Param_Name);
@@ -1517,7 +1517,7 @@ public:
 	FMulticastInlineDelegateProperty_             RequestPlayersForGameFinalResultDelegate;          // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SubmitPlayerResultResultDelegate;                  // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EndGameResultDelegate;                             // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1836[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1970[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameSearch* GetSteamGameSearch();
@@ -1567,7 +1567,7 @@ public:
 	FMulticastInlineDelegateProperty_             GSValidateAuthTicketResponse;                      // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GSClientApprove;                                   // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GSClientDeny;                                      // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1841[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_197B[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameServer* GetSteamGameServer();
@@ -1641,7 +1641,7 @@ public:
 	FMulticastInlineDelegateProperty_             ChangeNumOpenSlotsDelegate;                        // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AvailableBeaconLocationsDelegate;                  // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ActiveBeaconsDelegate;                             // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1847[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1981[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void CancelReservation(const struct FPartyBeaconID& BeaconID, const struct FSteamID& SteamIDUser);
@@ -1685,7 +1685,7 @@ class USteamProRemotePlay final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             SteamRemotePlaySessionConnected;                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamRemotePlaySessionDisconnected;                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1851[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198B[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProRemotePlay* GetSteamRemotePlay();
@@ -1723,7 +1723,7 @@ public:
 	FMulticastInlineDelegateProperty_             RemoteStorageSubscribePublishedFileResult;         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             RemoteStoragePublishedFileUnsubscribed;            // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             RemoteStoragePublishedFileSubscribed;              // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1857[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1991[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool BeginFileWriteBatch();
@@ -1787,7 +1787,7 @@ class USteamProScreenshots final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             ScreenshotReady;                                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ScreenshotRequested;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_186E[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19A8[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static struct FScreenshotHandle AddScreenshotToLibrary(const class FString& Filename, const class FString& ThumbnailFilename, int32 Width, int32 Height);
@@ -1825,7 +1825,7 @@ public:
 	FMulticastInlineDelegateProperty_             DownloadItemResult;                                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserSubscribedItemsListChanged;                    // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             WorkshopEULAStatus;                                // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1879[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19B3[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool AddContentDescriptor(const struct FUGCUpdateHandle& Handle, ESteamUGCContentDescriptorID DescId);
@@ -2442,7 +2442,7 @@ public:
 	FMulticastInlineDelegateProperty_             ValidateAuthTicketResponse;                        // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EncryptedAppTicketResponse;                        // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GetTicketForWebApiResponse;                        // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18E4[0x180];                                   // 0x00E8(0x0180)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A1E[0x180];                                   // 0x00E8(0x0180)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void AdvertiseGame(const struct FSteamID& SteamIDGameServer, const class FString& ServerIP, int32 ServerPort);
@@ -2561,7 +2561,7 @@ public:
 	FMulticastInlineDelegateProperty_             UserStatsReceived;                                 // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserStatsStored;                                   // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserStatsUnloaded;                                 // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F3[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A2D[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool ClearAchievement(const class FString& Param_Name);
@@ -2844,7 +2844,7 @@ class USteamCoreProUserStatsAsyncActionRequestCurrentStats final : public USteam
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192C[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A66[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProUserStatsAsyncActionRequestCurrentStats* RequestCurrentStatsAsync(class UObject* WorldContextObject, float Timeout);
@@ -3075,7 +3075,7 @@ public:
 	FMulticastInlineDelegateProperty_             SteamShutdown;                                     // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AppResumingFromSuspend;                            // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             FloatingGamepadTextInputDismissed;                 // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1961[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A9B[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool BOverlayNeedsPresent();
@@ -3139,7 +3139,7 @@ class USteamProVideo final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             GetOPFSettingsResult;                              // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GetVideoURLResult;                                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_196B[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AA5[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void GetOPFSettings(int32 VideoAppID);

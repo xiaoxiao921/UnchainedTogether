@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_CreateSession.W_CreateSession_C
-// 0x00A0 (0x0360 - 0x02C0)
+// 0x00C0 (0x0380 - 0x02C0)
 class UW_CreateSession_C final : public UUserWidget
 {
 public:
@@ -27,30 +27,36 @@ public:
 	class UWidgetAnimation*                       NewAnimation;                                      // 0x02C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UButton*                                Button_82;                                         // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UButton*                                Button_84;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             CreatingSessionText;                               // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             ErrorText;                                         // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UEditableTextBox*                       PasswordTextBox;                                   // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             ServerName;                                        // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             Sessioncreatedtext;                                // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox_1;                                      // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    W_MenuButtonText;                                  // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    W_MenuButtonText_101;                              // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          MapSelected;                                       // 0x0328(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A5[0x7];                                     // 0x0329(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   SelectedLevel;                                     // 0x0330(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          CanLeave;                                          // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A6[0x7];                                     // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Mode;                                              // 0x0350(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class UButton*                                Button_ChooseSave;                                 // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_NotUseSave;                                 // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             ClickSaveText;                                     // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             CreatingSessionText;                               // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             ErrorText;                                         // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UEditableTextBox*                       PasswordTextBox;                                   // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             ServerName;                                        // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             Sessioncreatedtext;                                // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox_1;                                      // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    W_MenuButtonText;                                  // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    W_MenuButtonText_101;                              // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_SaveText_C*                          W_SaveText;                                        // 0x0340(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          MapSelected;                                       // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3356[0x7];                                     // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   SelectedLevel;                                     // 0x0350(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          CanLeave;                                          // 0x0368(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3357[0x7];                                     // 0x0369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Mode;                                              // 0x0370(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ActivateMapButtons(bool CanClick);
+	void BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_82_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_82_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_82_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_84_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_84_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_Button_84_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature();
+	void BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_CreateSession_W_ComboBox_1_K2Node_ComponentBoundEvent_1_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType);
 	void BndEvt__W_CreateSession_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType);
 	void Construct();
@@ -59,6 +65,7 @@ public:
 	struct FSteamSessionSetting GetPassword();
 	void OnFailure_23C877CD4E6BA51E7050278F8ADF8DA3();
 	void OnSuccess_23C877CD4E6BA51E7050278F8ADF8DA3();
+	void RefreshSave(const struct FS_BiomeSave& Save);
 	void ResetCreateSession();
 	void SetServerName();
 
@@ -73,24 +80,28 @@ public:
 	}
 };
 static_assert(alignof(UW_CreateSession_C) == 0x000008, "Wrong alignment on UW_CreateSession_C");
-static_assert(sizeof(UW_CreateSession_C) == 0x000360, "Wrong size on UW_CreateSession_C");
+static_assert(sizeof(UW_CreateSession_C) == 0x000380, "Wrong size on UW_CreateSession_C");
 static_assert(offsetof(UW_CreateSession_C, UberGraphFrame) == 0x0002C0, "Member 'UW_CreateSession_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UW_CreateSession_C, NewAnimation) == 0x0002C8, "Member 'UW_CreateSession_C::NewAnimation' has a wrong offset!");
 static_assert(offsetof(UW_CreateSession_C, Button_82) == 0x0002D0, "Member 'UW_CreateSession_C::Button_82' has a wrong offset!");
 static_assert(offsetof(UW_CreateSession_C, Button_84) == 0x0002D8, "Member 'UW_CreateSession_C::Button_84' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, CreatingSessionText) == 0x0002E0, "Member 'UW_CreateSession_C::CreatingSessionText' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, ErrorText) == 0x0002E8, "Member 'UW_CreateSession_C::ErrorText' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, PasswordTextBox) == 0x0002F0, "Member 'UW_CreateSession_C::PasswordTextBox' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, ServerName) == 0x0002F8, "Member 'UW_CreateSession_C::ServerName' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, Sessioncreatedtext) == 0x000300, "Member 'UW_CreateSession_C::Sessioncreatedtext' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, W_ComboBox) == 0x000308, "Member 'UW_CreateSession_C::W_ComboBox' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, W_ComboBox_1) == 0x000310, "Member 'UW_CreateSession_C::W_ComboBox_1' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, W_MenuButtonText) == 0x000318, "Member 'UW_CreateSession_C::W_MenuButtonText' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, W_MenuButtonText_101) == 0x000320, "Member 'UW_CreateSession_C::W_MenuButtonText_101' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, MapSelected) == 0x000328, "Member 'UW_CreateSession_C::MapSelected' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, SelectedLevel) == 0x000330, "Member 'UW_CreateSession_C::SelectedLevel' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, CanLeave) == 0x000348, "Member 'UW_CreateSession_C::CanLeave' has a wrong offset!");
-static_assert(offsetof(UW_CreateSession_C, Mode) == 0x000350, "Member 'UW_CreateSession_C::Mode' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, Button_ChooseSave) == 0x0002E0, "Member 'UW_CreateSession_C::Button_ChooseSave' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, Button_NotUseSave) == 0x0002E8, "Member 'UW_CreateSession_C::Button_NotUseSave' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, ClickSaveText) == 0x0002F0, "Member 'UW_CreateSession_C::ClickSaveText' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, CreatingSessionText) == 0x0002F8, "Member 'UW_CreateSession_C::CreatingSessionText' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, ErrorText) == 0x000300, "Member 'UW_CreateSession_C::ErrorText' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, PasswordTextBox) == 0x000308, "Member 'UW_CreateSession_C::PasswordTextBox' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, ServerName) == 0x000310, "Member 'UW_CreateSession_C::ServerName' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, Sessioncreatedtext) == 0x000318, "Member 'UW_CreateSession_C::Sessioncreatedtext' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, W_ComboBox) == 0x000320, "Member 'UW_CreateSession_C::W_ComboBox' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, W_ComboBox_1) == 0x000328, "Member 'UW_CreateSession_C::W_ComboBox_1' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, W_MenuButtonText) == 0x000330, "Member 'UW_CreateSession_C::W_MenuButtonText' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, W_MenuButtonText_101) == 0x000338, "Member 'UW_CreateSession_C::W_MenuButtonText_101' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, W_SaveText) == 0x000340, "Member 'UW_CreateSession_C::W_SaveText' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, MapSelected) == 0x000348, "Member 'UW_CreateSession_C::MapSelected' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, SelectedLevel) == 0x000350, "Member 'UW_CreateSession_C::SelectedLevel' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, CanLeave) == 0x000368, "Member 'UW_CreateSession_C::CanLeave' has a wrong offset!");
+static_assert(offsetof(UW_CreateSession_C, Mode) == 0x000370, "Member 'UW_CreateSession_C::Mode' has a wrong offset!");
 
 }
 

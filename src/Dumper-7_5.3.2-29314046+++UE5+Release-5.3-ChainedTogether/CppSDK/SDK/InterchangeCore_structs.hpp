@@ -140,7 +140,7 @@ struct FInterchangeUserDefinedAttributeInfo final
 {
 public:
 	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26E2[0x20];                                    // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2862[0x20];                                    // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInterchangeUserDefinedAttributeInfo) == 0x000008, "Wrong alignment on FInterchangeUserDefinedAttributeInfo");
 static_assert(sizeof(FInterchangeUserDefinedAttributeInfo) == 0x000030, "Wrong size on FInterchangeUserDefinedAttributeInfo");

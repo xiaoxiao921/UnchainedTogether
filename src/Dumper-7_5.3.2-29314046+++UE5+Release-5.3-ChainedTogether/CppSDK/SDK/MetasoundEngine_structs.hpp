@@ -66,7 +66,7 @@ static_assert(offsetof(FDefaultMetaSoundAssetAutoUpdateSettings, Metasound) == 0
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
 {
 public:
-	uint8                                         Pad_29CD[0x8];                                     // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B80[0x8];                                     // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMetaSoundOutput) == 0x000008, "Wrong alignment on FMetaSoundOutput");
 static_assert(sizeof(FMetaSoundOutput) == 0x000010, "Wrong size on FMetaSoundOutput");
@@ -87,9 +87,9 @@ static_assert(offsetof(FMetaSoundAssetDirectory, Directory) == 0x000000, "Member
 struct FMetaSoundAsyncAssetDependencies final
 {
 public:
-	uint8                                         Pad_29CE[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B81[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Metasound;                                         // 0x0008(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29CF[0x20];                                    // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B82[0x20];                                    // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMetaSoundAsyncAssetDependencies) == 0x000008, "Wrong alignment on FMetaSoundAsyncAssetDependencies");
 static_assert(sizeof(FMetaSoundAsyncAssetDependencies) == 0x000030, "Wrong size on FMetaSoundAsyncAssetDependencies");
@@ -130,7 +130,7 @@ public:
 	class FName                                   Name;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUniqueClassName;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAddToRegistry;                                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29D0[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B83[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IMetaSoundDocumentInterface> ExistingMetaSound;                                 // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMetaSoundBuilderOptions) == 0x000008, "Wrong alignment on FMetaSoundBuilderOptions");

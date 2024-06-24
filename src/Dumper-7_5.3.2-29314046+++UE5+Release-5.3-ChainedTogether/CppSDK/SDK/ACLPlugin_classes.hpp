@@ -25,9 +25,9 @@ class UAnimationCompressionLibraryDatabase final : public UObject
 public:
 	TArray<uint8>                                 CookedCompressedBytes;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<uint64>                                CookedAnimSequenceMappings;                        // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E69[0x118];                                   // 0x0048(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FE0[0x118];                                   // 0x0048(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        MaxStreamRequestSizeKB;                            // 0x0160(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E6A[0x4];                                     // 0x0164(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FE1[0x4];                                     // 0x0164(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static EACLVisualFidelity GetVisualFidelity(class UAnimationCompressionLibraryDatabase* DatabaseAsset);

@@ -189,6 +189,34 @@ void ULocalMultiplayer_W_C::BndEvt__PlayMenu_W_Back_Button_K2Node_ComponentBound
 }
 
 
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void ULocalMultiplayer_W_C::BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void ULocalMultiplayer_W_C::BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function LocalMultiplayer_W.LocalMultiplayer_W_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -218,6 +246,26 @@ void ULocalMultiplayer_W_C::ExecuteUbergraph_LocalMultiplayer_W(int32 EntryPoint
 	Params::LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.RefreshSave
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     Save                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ULocalMultiplayer_W_C::RefreshSave(const struct FS_BiomeSave& Save)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "RefreshSave");
+
+	Params::LocalMultiplayer_W_C_RefreshSave Parms{};
+
+	Parms.Save = std::move(Save);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

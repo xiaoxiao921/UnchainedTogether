@@ -19,22 +19,26 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass LocalMultiplayer_W.LocalMultiplayer_W_C
-// 0x0060 (0x0320 - 0x02C0)
+// 0x0080 (0x0340 - 0x02C0)
 class ULocalMultiplayer_W_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UWidgetAnimation*                       NewAnimation;                                      // 0x02C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 	class UButton*                                Back_Button;                                       // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Play_Button;                                       // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    Quit_1;                                            // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TextBlock_2;                                       // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    TextBlock_81;                                      // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TextBlock_124;                                     // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox_1;                                      // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox_2;                                      // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox_3;                                      // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_ChooseSave;                                 // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_NotUseSave;                                 // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             ClickSaveText;                                     // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Play_Button;                                       // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    Quit_1;                                            // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TextBlock_2;                                       // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    TextBlock_81;                                      // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TextBlock_124;                                     // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox_1;                                      // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox_2;                                      // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox_3;                                      // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_SaveText_C*                          W_SaveText;                                        // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__LocalMultiplayer_W_Play_Button_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
@@ -47,8 +51,11 @@ public:
 	void BndEvt__PlayMenu_W_Back_Button_K2Node_ComponentBoundEvent_10_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__PlayMenu_W_Back_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__PlayMenu_W_Back_Button_K2Node_ComponentBoundEvent_9_OnButtonHoverEvent__DelegateSignature();
+	void BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void ExecuteUbergraph_LocalMultiplayer_W(int32 EntryPoint);
+	void RefreshSave(const struct FS_BiomeSave& Save);
 
 public:
 	static class UClass* StaticClass()
@@ -61,19 +68,23 @@ public:
 	}
 };
 static_assert(alignof(ULocalMultiplayer_W_C) == 0x000008, "Wrong alignment on ULocalMultiplayer_W_C");
-static_assert(sizeof(ULocalMultiplayer_W_C) == 0x000320, "Wrong size on ULocalMultiplayer_W_C");
+static_assert(sizeof(ULocalMultiplayer_W_C) == 0x000340, "Wrong size on ULocalMultiplayer_W_C");
 static_assert(offsetof(ULocalMultiplayer_W_C, UberGraphFrame) == 0x0002C0, "Member 'ULocalMultiplayer_W_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ULocalMultiplayer_W_C, NewAnimation) == 0x0002C8, "Member 'ULocalMultiplayer_W_C::NewAnimation' has a wrong offset!");
 static_assert(offsetof(ULocalMultiplayer_W_C, Back_Button) == 0x0002D0, "Member 'ULocalMultiplayer_W_C::Back_Button' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, Play_Button) == 0x0002D8, "Member 'ULocalMultiplayer_W_C::Play_Button' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, Quit_1) == 0x0002E0, "Member 'ULocalMultiplayer_W_C::Quit_1' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_2) == 0x0002E8, "Member 'ULocalMultiplayer_W_C::TextBlock_2' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_81) == 0x0002F0, "Member 'ULocalMultiplayer_W_C::TextBlock_81' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_124) == 0x0002F8, "Member 'ULocalMultiplayer_W_C::TextBlock_124' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox) == 0x000300, "Member 'ULocalMultiplayer_W_C::W_ComboBox' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_1) == 0x000308, "Member 'ULocalMultiplayer_W_C::W_ComboBox_1' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_2) == 0x000310, "Member 'ULocalMultiplayer_W_C::W_ComboBox_2' has a wrong offset!");
-static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_3) == 0x000318, "Member 'ULocalMultiplayer_W_C::W_ComboBox_3' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, Button_ChooseSave) == 0x0002D8, "Member 'ULocalMultiplayer_W_C::Button_ChooseSave' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, Button_NotUseSave) == 0x0002E0, "Member 'ULocalMultiplayer_W_C::Button_NotUseSave' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, ClickSaveText) == 0x0002E8, "Member 'ULocalMultiplayer_W_C::ClickSaveText' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, Play_Button) == 0x0002F0, "Member 'ULocalMultiplayer_W_C::Play_Button' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, Quit_1) == 0x0002F8, "Member 'ULocalMultiplayer_W_C::Quit_1' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_2) == 0x000300, "Member 'ULocalMultiplayer_W_C::TextBlock_2' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_81) == 0x000308, "Member 'ULocalMultiplayer_W_C::TextBlock_81' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, TextBlock_124) == 0x000310, "Member 'ULocalMultiplayer_W_C::TextBlock_124' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox) == 0x000318, "Member 'ULocalMultiplayer_W_C::W_ComboBox' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_1) == 0x000320, "Member 'ULocalMultiplayer_W_C::W_ComboBox_1' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_2) == 0x000328, "Member 'ULocalMultiplayer_W_C::W_ComboBox_2' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, W_ComboBox_3) == 0x000330, "Member 'ULocalMultiplayer_W_C::W_ComboBox_3' has a wrong offset!");
+static_assert(offsetof(ULocalMultiplayer_W_C, W_SaveText) == 0x000338, "Member 'ULocalMultiplayer_W_C::W_SaveText' has a wrong offset!");
 
 }
 

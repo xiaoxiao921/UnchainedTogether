@@ -28,7 +28,7 @@ public:
 	TDelegate<void()>                             MeterChannelInfoDelegate;                          // 0x0190(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAudioMeterStyle                       WidgetStyle;                                       // 0x01A0(0x04D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	EOrientation                                  Orientation;                                       // 0x0670(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A58[0x3];                                     // 0x0671(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0B[0x3];                                     // 0x0671(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           BackgroundColor;                                   // 0x0674(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           MeterBackgroundColor;                              // 0x0684(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           MeterValueColor;                                   // 0x0694(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -36,7 +36,7 @@ public:
 	struct FLinearColor                           MeterClippingColor;                                // 0x06B4(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           MeterScaleColor;                                   // 0x06C4(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           MeterScaleLabelColor;                              // 0x06D4(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A59[0x1C];                                    // 0x06E4(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0C[0x1C];                                    // 0x06E4(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	TArray<struct FMeterChannelInfo> GetMeterChannelInfo__DelegateSignature();
@@ -83,7 +83,7 @@ public:
 	float                                         Value;                                             // 0x0180(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             ValueDelegate;                                     // 0x0184(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EAudioRadialSliderLayout                      WidgetLayout;                                      // 0x0194(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5A[0x3];                                     // 0x0195(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0D[0x3];                                     // 0x0195(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CenterBackgroundColor;                             // 0x0198(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           SliderProgressColor;                               // 0x01A8(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           SliderBarColor;                                    // 0x01B8(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -97,7 +97,7 @@ public:
 	float                                         SliderThickness;                                   // 0x0204(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              OutputRange;                                       // 0x0208(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnValueChanged;                                    // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5B[0x178];                                   // 0x0228(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0E[0x178];                                   // 0x0228(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetOutputValue(const float InSliderValue);
@@ -185,7 +185,7 @@ class alignas(0x10) UAudioSliderBase : public UWidget
 {
 public:
 	float                                         Value;                                             // 0x0180(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5C[0x4];                                     // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0F[0x4];                                     // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   UnitsText;                                         // 0x0188(0x0018)(Edit, NativeAccessSpecifierPublic)
 	struct FLinearColor                           TextLabelBackgroundColor;                          // 0x01A0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             TextLabelBackgroundColorDelegate;                  // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -203,9 +203,9 @@ public:
 	struct FLinearColor                           WidgetBackgroundColor;                             // 0x0234(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             WidgetBackgroundColorDelegate;                     // 0x0244(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EOrientation                                  Orientation;                                       // 0x0254(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5D[0x3];                                     // 0x0255(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C10[0x3];                                     // 0x0255(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnValueChanged;                                    // 0x0258(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A5E[0x768];                                   // 0x0268(0x0768)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C11[0x768];                                   // 0x0268(0x0768)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetLinValue(const float OutputValue);

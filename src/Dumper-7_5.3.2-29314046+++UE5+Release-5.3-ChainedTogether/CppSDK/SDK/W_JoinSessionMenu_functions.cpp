@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.AddOtherSessions
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_JoinSessionMenu_C::AddOtherSessions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "AddOtherSessions");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_JoinSessionMenu.W_JoinSessionMenu_C.BndEvt__W_JoinSessionMenu_BackButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature
 // (BlueprintEvent)
 
@@ -149,6 +163,111 @@ void UW_JoinSessionMenu_C::FilterResults(TArray<struct FSteamSessionResult>& Arr
 }
 
 
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.FriendSession
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_JoinSessionMenu_C::FriendSession()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "FriendSession");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.GetFriendSearchFilters
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           FriendName                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    SearchFriend                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TMap<class FString, struct FSteamSessionSearchSetting>ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TMap<class FString, struct FSteamSessionSearchSetting> UW_JoinSessionMenu_C::GetFriendSearchFilters(const class FString& FriendName, bool SearchFriend)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "GetFriendSearchFilters");
+
+	Params::W_JoinSessionMenu_C_GetFriendSearchFilters Parms{};
+
+	Parms.FriendName = std::move(FriendName);
+	Parms.SearchFriend = SearchFriend;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.GetSearchFilters
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           Chainedsessionname                                     (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// TMap<class FString, struct FSteamSessionSearchSetting>ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TMap<class FString, struct FSteamSessionSearchSetting> UW_JoinSessionMenu_C::GetSearchFilters(const class FString& Chainedsessionname)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "GetSearchFilters");
+
+	Params::W_JoinSessionMenu_C_GetSearchFilters Parms{};
+
+	Parms.Chainedsessionname = std::move(Chainedsessionname);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.IsFilled
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UEditableTextBox*                 Self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UW_JoinSessionMenu_C::IsFilled(class UEditableTextBox* Self2)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "IsFilled");
+
+	Params::W_JoinSessionMenu_C_IsFilled Parms{};
+
+	Parms.Self2 = Self2;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.OnCallback_B5D226D24CB75FB809C5A3A5AA545D81
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FSteamSessionResult>      Results                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UW_JoinSessionMenu_C::OnCallback_B5D226D24CB75FB809C5A3A5AA545D81(const TArray<struct FSteamSessionResult>& Results)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "OnCallback_B5D226D24CB75FB809C5A3A5AA545D81");
+
+	Params::W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81 Parms{};
+
+	Parms.Results = std::move(Results);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_JoinSessionMenu.W_JoinSessionMenu_C.OnCallback_D727BDAF4FAB43F507DD30A14A3E42D7
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -166,6 +285,20 @@ void UW_JoinSessionMenu_C::OnCallback_D727BDAF4FAB43F507DD30A14A3E42D7(const TAr
 	Parms.Results = std::move(Results);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.RelaunchFriendSessionSearch
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_JoinSessionMenu_C::RelaunchFriendSessionSearch()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "RelaunchFriendSessionSearch");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -200,6 +333,30 @@ void UW_JoinSessionMenu_C::ShowJoiningText(bool Show)
 	Parms.Show = Show;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.SomethingWrittenInTextField
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UEditableTextBox*                 Self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                                    SomethingWritten                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_JoinSessionMenu_C::SomethingWrittenInTextField(class UEditableTextBox* Self2, bool* SomethingWritten)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_JoinSessionMenu_C", "SomethingWrittenInTextField");
+
+	Params::W_JoinSessionMenu_C_SomethingWrittenInTextField Parms{};
+
+	Parms.Self2 = Self2;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (SomethingWritten != nullptr)
+		*SomethingWritten = Parms.SomethingWritten;
 }
 
 }

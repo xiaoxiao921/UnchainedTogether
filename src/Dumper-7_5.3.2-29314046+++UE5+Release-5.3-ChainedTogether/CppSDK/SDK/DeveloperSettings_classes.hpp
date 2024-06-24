@@ -22,7 +22,7 @@ namespace SDK
 class UDeveloperSettings : public UObject
 {
 public:
-	uint8                                         Pad_CA[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D3[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -59,7 +59,7 @@ static_assert(sizeof(UDeveloperSettingsBackedByCVars) == 0x000038, "Wrong size o
 class UPlatformSettings : public UObject
 {
 public:
-	uint8                                         Pad_CB[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D4[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -80,7 +80,7 @@ class UPlatformSettingsManager final : public UObject
 {
 public:
 	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;                                       // 0x0028(0x0050)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_CC[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D5[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

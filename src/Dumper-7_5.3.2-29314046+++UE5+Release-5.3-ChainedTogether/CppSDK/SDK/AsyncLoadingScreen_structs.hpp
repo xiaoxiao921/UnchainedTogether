@@ -69,12 +69,12 @@ struct FTextAppearance final
 {
 public:
 	struct FSlateColor                            ColorAndOpacity;                                   // 0x0000(0x0014)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1971[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AAB[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateFontInfo                         Font;                                              // 0x0018(0x0058)(Edit, BlueprintVisible, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ShadowOffset;                                      // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ShadowColorAndOpacity;                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextJustify                                  Justification;                                     // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1972[0x7];                                     // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AAC[0x7];                                     // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTextAppearance) == 0x000008, "Wrong alignment on FTextAppearance");
 static_assert(sizeof(FTextAppearance) == 0x000098, "Wrong size on FTextAppearance");
@@ -93,7 +93,7 @@ public:
 	bool                                          bAnimateHorizontally;                              // 0x0004(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAnimateVertically;                                // 0x0005(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAnimateOpacity;                                   // 0x0006(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1973[0x9];                                     // 0x0007(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AAD[0x9];                                     // 0x0007(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            Image;                                             // 0x0010(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FThrobberSettings) == 0x000010, "Wrong alignment on FThrobberSettings");
@@ -112,7 +112,7 @@ public:
 	int32                                         NumberOfPieces;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Period;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Radius;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1974[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AAE[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            Image;                                             // 0x0010(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCircularThrobberSettings) == 0x000010, "Wrong alignment on FCircularThrobberSettings");
@@ -131,7 +131,7 @@ public:
 	struct FVector2D                              Scale;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Interval;                                          // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPlayReverse;                                      // 0x0024(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1975[0x3];                                     // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AAF[0x3];                                     // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FImageSequenceSettings) == 0x000008, "Wrong alignment on FImageSequenceSettings");
 static_assert(sizeof(FImageSequenceSettings) == 0x000028, "Wrong size on FImageSequenceSettings");
@@ -147,11 +147,11 @@ struct FBackgroundSettings final
 public:
 	TArray<struct FSoftObjectPath>                Images;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	EStretch                                      ImageStretch;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1976[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB0[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                Padding;                                           // 0x0014(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FLinearColor                           BackgroundColor;                                   // 0x0024(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetDisplayBackgroundManually;                     // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1977[0x3];                                     // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB1[0x3];                                     // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBackgroundSettings) == 0x000008, "Wrong alignment on FBackgroundSettings");
 static_assert(sizeof(FBackgroundSettings) == 0x000038, "Wrong size on FBackgroundSettings");
@@ -168,14 +168,14 @@ struct FLoadingWidgetSettings final
 public:
 	ELoadingIconType                              LoadingIconType;                                   // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELoadingWidgetType                            LoadingWidgetType;                                 // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1978[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB2[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              TransformTranslation;                              // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              TransformScale;                                    // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              TransformPivot;                                    // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                   LoadingText;                                       // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bLoadingTextRightPosition;                         // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLoadingTextTopPosition;                           // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1979[0x6];                                     // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB3[0x6];                                     // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTextAppearance                        Appearance;                                        // 0x0058(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FThrobberSettings                      ThrobberSettings;                                  // 0x00F0(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FCircularThrobberSettings              CircularThrobberSettings;                          // 0x01D0(0x00E0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -184,7 +184,7 @@ public:
 	struct FWidgetAlignment                       LoadingIconAlignment;                              // 0x02DA(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         Space;                                             // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHideLoadingWidgetWhenCompletes;                   // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197A[0xF];                                     // 0x02E1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB4[0xF];                                     // 0x02E1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLoadingWidgetSettings) == 0x000010, "Wrong alignment on FLoadingWidgetSettings");
 static_assert(sizeof(FLoadingWidgetSettings) == 0x0002F0, "Wrong size on FLoadingWidgetSettings");
@@ -214,7 +214,7 @@ public:
 	struct FTextAppearance                        Appearance;                                        // 0x0010(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                         TipWrapAt;                                         // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetDisplayTipTextManually;                        // 0x00AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197B[0x3];                                     // 0x00AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB5[0x3];                                     // 0x00AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTipSettings) == 0x000008, "Wrong alignment on FTipSettings");
 static_assert(sizeof(FTipSettings) == 0x0000B0, "Wrong size on FTipSettings");
@@ -231,12 +231,12 @@ public:
 	class FText                                   LoadingCompleteText;                               // 0x0000(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FTextAppearance                        Appearance;                                        // 0x0018(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FWidgetAlignment                       Alignment;                                         // 0x00B0(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197C[0x2];                                     // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB6[0x2];                                     // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                Padding;                                           // 0x00B4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bFadeInOutAnim;                                    // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197D[0x3];                                     // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB7[0x3];                                     // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AnimationSpeed;                                    // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197E[0x4];                                     // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB8[0x4];                                     // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLoadingCompleteTextSettings) == 0x000008, "Wrong alignment on FLoadingCompleteTextSettings");
 static_assert(sizeof(FLoadingCompleteTextSettings) == 0x0000D0, "Wrong size on FLoadingCompleteTextSettings");
@@ -259,19 +259,19 @@ public:
 	bool                                          bAllowInEarlyStartup;                              // 0x0007(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAllowEngineTick;                                  // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMoviePlaybackType                            PlaybackType;                                      // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197F[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB9[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         MoviePaths;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bShuffle;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetDisplayMovieIndexManually;                     // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShowWidgetOverlay;                                // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShowLoadingCompleteText;                          // 0x0023(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1980[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABA[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLoadingCompleteTextSettings           LoadingCompleteTextSettings;                       // 0x0028(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FBackgroundSettings                    Background;                                        // 0x00F8(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FTipSettings                           TipWidget;                                         // 0x0130(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FLoadingWidgetSettings                 LoadingWidget;                                     // 0x01E0(0x02F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	EAsyncLoadingScreenLayout                     Layout;                                            // 0x04D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1981[0xF];                                     // 0x04D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABB[0xF];                                     // 0x04D1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FALoadingScreenSettings) == 0x000010, "Wrong alignment on FALoadingScreenSettings");
 static_assert(sizeof(FALoadingScreenSettings) == 0x0004E0, "Wrong size on FALoadingScreenSettings");
@@ -300,13 +300,13 @@ struct FClassicLayoutSettings final
 public:
 	bool                                          bIsWidgetAtBottom;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsLoadingWidgetAtLeft;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1982[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABC[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Space;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FWidgetAlignment                       TipAlignment;                                      // 0x0008(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	EHorizontalAlignment                          BorderHorizontalAlignment;                         // 0x000A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1983[0x1];                                     // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABD[0x1];                                     // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                BorderPadding;                                     // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1984[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABE[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            BorderBackground;                                  // 0x0020(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FClassicLayoutSettings) == 0x000010, "Wrong alignment on FClassicLayoutSettings");
@@ -329,7 +329,7 @@ public:
 	EHorizontalAlignment                          BorderHorizontalAlignment;                         // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BorderVerticalOffset;                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                                BorderPadding;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1985[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABF[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            BorderBackground;                                  // 0x0020(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCenterLayoutSettings) == 0x000010, "Wrong alignment on FCenterLayoutSettings");
@@ -351,10 +351,10 @@ public:
 	struct FWidgetAlignment                       LoadingWidgetAlignment;                            // 0x0003(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	EHorizontalAlignment                          TopBorderHorizontalAlignment;                      // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EHorizontalAlignment                          BottomBorderHorizontalAlignment;                   // 0x0006(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1986[0x1];                                     // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC0[0x1];                                     // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                TopBorderPadding;                                  // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMargin                                BottomBorderPadding;                               // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1987[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC1[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            TopBorderBackground;                               // 0x0030(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            BottomBorderBackground;                            // 0x0100(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -377,16 +377,16 @@ struct FSidebarLayoutSettings final
 public:
 	bool                                          bIsWidgetAtRight;                                  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsLoadingWidgetAtTop;                             // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1988[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC2[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Space;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVerticalAlignment                            VerticalAlignment;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FWidgetAlignment                       LoadingWidgetAlignment;                            // 0x0009(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FWidgetAlignment                       TipAlignment;                                      // 0x000B(0x0002)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	EVerticalAlignment                            BorderVerticalAlignment;                           // 0x000D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1989[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC3[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BorderHorizontalOffset;                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                                BorderPadding;                                     // 0x0014(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198A[0xC];                                     // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC4[0xC];                                     // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            BorderBackground;                                  // 0x0030(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSidebarLayoutSettings) == 0x000010, "Wrong alignment on FSidebarLayoutSettings");
@@ -412,10 +412,10 @@ public:
 	EVerticalAlignment                            RightVerticalAlignment;                            // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVerticalAlignment                            LeftBorderVerticalAlignment;                       // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVerticalAlignment                            RightBorderVerticalAlignment;                      // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198B[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC5[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                LeftBorderPadding;                                 // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMargin                                RightBorderPadding;                                // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198C[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC6[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            LeftBorderBackground;                              // 0x0030(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            RightBorderBackground;                             // 0x0100(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };

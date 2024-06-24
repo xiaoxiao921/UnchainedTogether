@@ -31,7 +31,7 @@ public:
 	E_SettingCategory                             Category_14_4C0A07B24A8E68E517B9B8B8B27FF69D;      // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_SettingSubCategory                          SubCategory_15_7639FD1448043439E796FDB55EC0459D;   // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_SettingType                                 Type_11_23B5C0F9450B9194759CCBACFAA36A23;          // 0x002A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3398[0x5];                                     // 0x002B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2EDB[0x5];                                     // 0x002B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_ComboBoxContent                     ComboBoxSettings_18_F5149DA34AE0D4620BA0D39CD0C6D970; // 0x0030(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FS_SliderParams                        SliderSettings_21_93EEEEE5415608D13D0CC4856D75DA8C; // 0x0050(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FS_BindParams                          BindSettings_27_BBD24F1741AD1FA5FE22F58EA04529E9;  // 0x0060(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)

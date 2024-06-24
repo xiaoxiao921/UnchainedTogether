@@ -28,7 +28,7 @@ public:
 	struct FLinearColor                           BoxPinTypeColor;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           SpherePinTypeColor;                                // 0x0068(0x0010)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FNodeColors>         NodeColorsMap;                                     // 0x0078(0x0050)(Edit, Config, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11A[0x18];                                     // 0x00C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14B[0x18];                                     // 0x00C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_WaterVolume.BP_WaterVolume_C
 // 0x0028 (0x02C0 - 0x0298)
-class ABP_WaterVolume_C final : public AActor
+class ABP_WaterVolume_C : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

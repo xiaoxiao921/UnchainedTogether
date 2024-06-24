@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "E_ChoosenChar_structs.hpp"
 #include "UMG_structs.hpp"
+#include "E_ChoosenChar_structs.hpp"
 #include "PC_WithSettings_classes.hpp"
 
 
@@ -34,23 +34,23 @@ public:
 	TArray<class FString>                         CaptureDevices;                                    // 0x08A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<uint8>                                 Voice_Data;                                        // 0x08B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          PTT;                                               // 0x08C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30EE[0x7];                                     // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3249[0x7];                                     // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                PreviousInteractionObject;                         // 0x08D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                InteractionObject;                                 // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         ActiveTestControl;                                 // 0x08E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30EF[0x4];                                     // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_324A[0x4];                                     // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          ActiveTestActor;                                   // 0x08E8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	class FString                                 CurrentLevel;                                      // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class UUserWidget*                            PullWidget_LocalMP;                                // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 LocalMpChosenChar;                                 // 0x0910(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30F0[0x7];                                     // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_324B[0x7];                                     // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ClassToRespawn;                                    // 0x0918(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UW_LocalMP_Use_C*                       UseLocalMP;                                        // 0x0920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsPressingJump;                                    // 0x0928(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30F1[0x7];                                     // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_324C[0x7];                                     // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          Not_Pullable_Chars;                                // 0x0930(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	bool                                          OnEndScreen;                                       // 0x0940(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30F2[0x7];                                     // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_324D[0x7];                                     // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDateTime                              PingStart;                                         // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         Ping;                                              // 0x0950(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FlyModeActivated;                                  // 0x0954(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -102,6 +102,7 @@ public:
 	void PlayAudioComponent(class UAudioComponent* AudioComponent);
 	void PlaySound(class USoundWave* Sound);
 	void PullOtherCharacterSRV(class AActor* Param_ControlledActor, bool BeginPull, class AActor* Param_CharacterToPull);
+	void ReceiveBeginPlay();
 	void ReceivePossess(class APawn* PossessedPawn);
 	void ReceiveTick(float DeltaSeconds);
 	void RefreshTestControlChar();
@@ -136,7 +137,6 @@ public:
 	void UpdateTestActor();
 	void Use();
 	void UseServer(class UObject* Object, class AActor* Param_ControlledActor);
-	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

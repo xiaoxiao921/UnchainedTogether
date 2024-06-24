@@ -61,7 +61,7 @@ class USteamCoreNetConnection final : public UIpConnection
 {
 public:
 	bool                                          M_bIsPassthrough;                                  // 0x1E88(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_169E[0x7];                                     // 0x1E89(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17D8[0x7];                                     // 0x1E89(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -82,7 +82,7 @@ static_assert(offsetof(USteamCoreNetConnection, M_bIsPassthrough) == 0x001E88, "
 class USteamCoreNetDriver final : public UIpNetDriver
 {
 public:
-	uint8                                         Pad_169F[0x8];                                     // 0x08A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17D9[0x8];                                     // 0x08A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

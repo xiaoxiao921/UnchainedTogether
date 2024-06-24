@@ -53,16 +53,16 @@ static_assert(sizeof(UKismetProceduralMeshLibrary) == 0x000028, "Wrong size on U
 class UProceduralMeshComponent final : public UMeshComponent
 {
 public:
-	uint8                                         Pad_24ED[0x8];                                     // 0x05A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_266D[0x8];                                     // 0x05A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bUseComplexAsSimpleCollision;                      // 0x05B0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseAsyncCooking;                                  // 0x05B1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24EE[0x6];                                     // 0x05B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_266E[0x6];                                     // 0x05B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBodySetup*                             ProcMeshBodySetup;                                 // 0x05B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FProcMeshSection>               ProcMeshSections;                                  // 0x05C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FKConvexElem>                   CollisionConvexElems;                              // 0x05D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FBoxSphereBounds                       LocalBounds;                                       // 0x05E0(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	TArray<class UBodySetup*>                     AsyncBodySetupQueue;                               // 0x0618(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24EF[0x8];                                     // 0x0628(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_266F[0x8];                                     // 0x0628(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddCollisionConvexMesh(const TArray<struct FVector>& ConvexVerts);

@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
+#include "S_PhysxChainLocation_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "S_SteamIDAndSkin_structs.hpp"
 #include "E_Gamemodes_structs.hpp"
-#include "S_PhysxChainLocation_structs.hpp"
 #include "S_TchatElement_structs.hpp"
 #include "E_ChoosenChar_structs.hpp"
-#include "S_SteamIDAndSkin_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Game.GS_Game_C
-// 0x0148 (0x0438 - 0x02F0)
+// 0x0150 (0x0440 - 0x02F0)
 class AGS_Game_C final : public AGameStateBase
 {
 public:
@@ -34,25 +34,25 @@ public:
 	TArray<struct FS_TchatElement>                Tchat;                                             // 0x0310(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         Timer;                                             // 0x0320(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          GameBegun;                                         // 0x0324(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3203[0x3];                                     // 0x0325(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E0[0x3];                                     // 0x0325(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SpawnedCharacterIndex;                             // 0x0328(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          EveryoneFall;                                      // 0x032C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3204[0x3];                                     // 0x032D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E1[0x3];                                     // 0x032D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FS_PhysxChainLocation>          ChainLocations;                                    // 0x0330(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
 	TArray<class AActor*>                         LobbyChars;                                        // 0x0340(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	int32                                         PreviousPlayerNum;                                 // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CharactersAreAttached;                             // 0x0354(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3205[0x3];                                     // 0x0355(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E2[0x3];                                     // 0x0355(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PlayersNumerAtEnd;                                 // 0x0358(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3206[0x4];                                     // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E3[0x4];                                     // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ABP_RescuePoint_C*>              PassedRescuePoints;                                // 0x0360(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	int32                                         PlayerStartPosition;                               // 0x0370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3207[0x4];                                     // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E4[0x4];                                     // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APlayerController*>              PlayerControllers;                                 // 0x0378(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	TArray<E_ChoosenChar>                         LocalMpChosenChars;                                // 0x0388(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class ABP_RescuePoint_C*                      Rescue_Point;                                      // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          CountSpawnedCharacter;                             // 0x03A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3208[0x7];                                     // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E5[0x7];                                     // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         HellHorizonActors;                                 // 0x03A8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	TArray<class AActor*>                         CityHorizonActors;                                 // 0x03B8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	TArray<class AActor*>                         HeavenHorizonActors;                               // 0x03C8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
@@ -60,17 +60,19 @@ public:
 	bool                                          bHasPassedEndCinematic;                            // 0x03D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          LavaMode;                                          // 0x03DA(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 	bool                                          LavaDead;                                          // 0x03DB(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3209[0x4];                                     // 0x03DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E6[0x4];                                     // 0x03DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          PawnsArray;                                        // 0x03E0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	struct FMargin                                Padding;                                           // 0x03F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          EndCinematicAlreadyLaunched;                       // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_Gamemodes                                   Selected_Game_Mode;                                // 0x0401(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_320A[0x6];                                     // 0x0402(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E7[0x6];                                     // 0x0402(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UPrimitiveComponent*>            AllDepenatredComps;                                // 0x0408(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	TArray<struct FS_SteamIDAndSkin>              IdAndSkins;                                        // 0x0418(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
 	bool                                          FlyModeActivated;                                  // 0x0428(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_320B[0x7];                                     // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33E8[0x7];                                     // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AAntiSaveBox_C*                         AntiSaveBox;                                       // 0x0430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          SaveHasBeenUsed;                                   // 0x0438(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanSaveBiome;                                      // 0x0439(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ActorToHideInLobby(bool bNewHidden);
@@ -91,14 +93,15 @@ public:
 	void CheckSpawnPlayersAfterLoading();
 	void CountCustomPS(int32* Count);
 	int32 CountSpawnedCharacters();
-	void CustomEvent(class UWM_Device* Device);
 	void CustomEvent_0();
 	bool EndCinematicPassed();
 	void EveryoneFall_(bool* Fall);
 	void EveryoneIsFalling(bool* Falling);
 	void ExecuteUbergraph_GS_Game(int32 EntryPoint);
 	bool FindPlayerStart(struct FTransform* Transform);
+	void FlushSaveBiome();
 	bool Get_Nearest_Rescue_Point_Server_(bool Lava, class ABP_RescuePoint_C** Out);
+	void GetBiomeByName(const class FString& InString, bool* Found, class ABiomeText_BP_C** Biome);
 	void GetChainMiddleLocation(const class FString& Attached01, const class FString& Attached02, struct FVector* RepLocation);
 	void GetGameBegun(bool* HasBegun);
 	void GetHighestRescuePoint(class ABP_RescuePoint_C** Return, bool* Found);
@@ -164,7 +167,7 @@ public:
 	}
 };
 static_assert(alignof(AGS_Game_C) == 0x000008, "Wrong alignment on AGS_Game_C");
-static_assert(sizeof(AGS_Game_C) == 0x000438, "Wrong size on AGS_Game_C");
+static_assert(sizeof(AGS_Game_C) == 0x000440, "Wrong size on AGS_Game_C");
 static_assert(offsetof(AGS_Game_C, UberGraphFrame) == 0x0002F0, "Member 'AGS_Game_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(AGS_Game_C, DefaultSceneRoot) == 0x0002F8, "Member 'AGS_Game_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(AGS_Game_C, Characters) == 0x000300, "Member 'AGS_Game_C::Characters' has a wrong offset!");
@@ -199,6 +202,8 @@ static_assert(offsetof(AGS_Game_C, AllDepenatredComps) == 0x000408, "Member 'AGS
 static_assert(offsetof(AGS_Game_C, IdAndSkins) == 0x000418, "Member 'AGS_Game_C::IdAndSkins' has a wrong offset!");
 static_assert(offsetof(AGS_Game_C, FlyModeActivated) == 0x000428, "Member 'AGS_Game_C::FlyModeActivated' has a wrong offset!");
 static_assert(offsetof(AGS_Game_C, AntiSaveBox) == 0x000430, "Member 'AGS_Game_C::AntiSaveBox' has a wrong offset!");
+static_assert(offsetof(AGS_Game_C, SaveHasBeenUsed) == 0x000438, "Member 'AGS_Game_C::SaveHasBeenUsed' has a wrong offset!");
+static_assert(offsetof(AGS_Game_C, CanSaveBiome) == 0x000439, "Member 'AGS_Game_C::CanSaveBiome' has a wrong offset!");
 
 }
 

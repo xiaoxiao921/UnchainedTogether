@@ -45,87 +45,171 @@ static_assert(offsetof(W_JoinSessionMenu_C_BndEvt__W_JoinSessionMenu_PublicCombo
 static_assert(offsetof(W_JoinSessionMenu_C_BndEvt__W_JoinSessionMenu_PublicComboBox_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature, SelectType) == 0x000010, "Member 'W_JoinSessionMenu_C_BndEvt__W_JoinSessionMenu_PublicComboBox_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature::SelectType' has a wrong offset!");
 
 // Function W_JoinSessionMenu.W_JoinSessionMenu_C.ExecuteUbergraph_W_JoinSessionMenu
-// 0x0288 (0x0288 - 0x0000)
+// 0x0530 (0x0530 - 0x0000)
 struct W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3193[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue;             // 0x0008(0x0020)()
-	TArray<struct FSteamSessionResult>            K2Node_CustomEvent_Results;                        // 0x0028(0x0010)(ConstParm, ReferenceParm)
-	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map;                                // 0x0038(0x0050)()
-	TArray<struct FSteamSessionResult>            Temp_struct_Variable;                              // 0x0088(0x0010)(ReferenceParm)
-	class USteamCoreProFindSession*               CallFunc_FindSteamCoreProSessions_ReturnValue;     // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3194[0x7];                                     // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSteamSessionResult>            CallFunc_FilterResults_OutResults;                 // 0x00A8(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UW_SessionButton_C*                     CallFunc_Create_ReturnValue;                       // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3195[0x7];                                     // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue_1;                     // 0x00D0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              Temp_byte_Variable;                                // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              Temp_byte_Variable_1;                              // 0x00DA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3196[0x1];                                     // 0x00DB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSteamSessionResult                    CallFunc_Array_Get_Item;                           // 0x00E0(0x0130)()
-	TDelegate<void(TArray<struct FSteamSessionResult>& Results)> K2Node_CreateDelegate_OutputDelegate;              // 0x0210(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVerticalBoxSlot*                       CallFunc_AddChildToVerticalBox_ReturnValue;        // 0x0220(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsInViewport_ReturnValue;                 // 0x0228(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3197[0x7];                                     // 0x0229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0230(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_Show;                           // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3198[0x7];                                     // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0240(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              K2Node_Select_Default;                             // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3199[0x7];                                     // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection_1;         // 0x0250(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_1;           // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319A[0x7];                                     // 0x0261(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection;           // 0x0268(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType;             // 0x0278(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319B[0x3];                                     // 0x0279(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x027C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319C[0x3];                                     // 0x0281(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0284(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_SessionButton_C*                     CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332F[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamSessionResult>            Temp_struct_Variable;                              // 0x0018(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSteamSessionResult>            Temp_struct_Variable_1;                            // 0x0030(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamSessionResult                    CallFunc_Array_Get_Item;                           // 0x0050(0x0130)()
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0184(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3330[0x3];                                     // 0x0189(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x018C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3331[0x3];                                     // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3332[0x4];                                     // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamSessionResult>            K2Node_CustomEvent_Results;                        // 0x01A0(0x0010)(ConstParm, ReferenceParm)
+	struct FSteamSessionResult                    CallFunc_Array_Get_Item_1;                         // 0x01B0(0x0130)()
+	TArray<struct FSteamSessionResult>            K2Node_CustomEvent_Results_1;                      // 0x02E0(0x0010)(ConstParm, ReferenceParm)
+	TDelegate<void(TArray<struct FSteamSessionResult>& Results)> K2Node_CreateDelegate_OutputDelegate;              // 0x02F0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(TArray<struct FSteamSessionResult>& Results)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0300(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsInViewport_ReturnValue;                 // 0x0310(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3333[0x7];                                     // 0x0311(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0318(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Show;                           // 0x0320(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3334[0x7];                                     // 0x0321(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0328(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection_1;         // 0x0330(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_1;           // 0x0340(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3335[0x7];                                     // 0x0341(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection;           // 0x0348(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType;             // 0x0358(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0359(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3336[0x6];                                     // 0x035A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<ESteamFriendFlags>                     K2Node_MakeArray_Array;                            // 0x0360(0x0010)(ReferenceParm)
+	int32                                         CallFunc_GetFriendCount_ReturnValue;               // 0x0370(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3337[0x4];                                     // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<ESteamFriendFlags>                     K2Node_MakeArray_Array_1;                          // 0x0378(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x0388(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SomethingWrittenInTextField_SomethingWritten; // 0x0398(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3338[0x7];                                     // 0x0399(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x03A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Variable;                                 // 0x03B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x03B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x03B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x03BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3339[0x3];                                     // 0x03BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x03C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333A[0x4];                                     // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               CallFunc_GetFriendByIndex_ReturnValue;             // 0x03C8(0x0008)(NoDestructor)
+	struct FSteamGameID                           CallFunc_GetFriendGamePlayed_GameID;               // 0x03D0(0x0008)(NoDestructor)
+	class FString                                 CallFunc_GetFriendGamePlayed_GameIP;               // 0x03D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetFriendGamePlayed_ConnectionPort;       // 0x03E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetFriendGamePlayed_QueryPort;            // 0x03EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               CallFunc_GetFriendGamePlayed_SteamIDLobby;         // 0x03F0(0x0008)(NoDestructor)
+	bool                                          CallFunc_GetFriendGamePlayed_ReturnValue;          // 0x03F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333B[0x7];                                     // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetFriendPersonaName_ReturnValue;         // 0x0400(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable;                                // 0x0410(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_1;                              // 0x0411(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0412(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333C[0x1];                                     // 0x0413(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Variable_1;                               // 0x0414(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              K2Node_Select_Default;                             // 0x0418(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333D[0x7];                                     // 0x0419(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FSteamSessionSearchSetting> CallFunc_GetFriendSearchFilters_ReturnValue;       // 0x0420(0x0050)()
+	class USteamCoreProFindSession*               CallFunc_FindSteamCoreProSessions_ReturnValue;     // 0x0470(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0478(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333E[0x7];                                     // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_2;           // 0x0480(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0490(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x04A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_333F[0x7];                                     // 0x04A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue_1;                     // 0x04A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, struct FSteamSessionSearchSetting> CallFunc_GetFriendSearchFilters_ReturnValue_1;     // 0x04B0(0x0050)()
+	class USteamCoreProFindSession*               CallFunc_FindSteamCoreProSessions_ReturnValue_1;   // 0x0500(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0508(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsInViewport_ReturnValue_1;               // 0x0509(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3340[0x6];                                     // 0x050A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_SessionButton_C*                     CallFunc_Create_ReturnValue_2;                     // 0x0510(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UVerticalBoxSlot*                       CallFunc_AddChildToVerticalBox_ReturnValue;        // 0x0518(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0520(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3341[0x4];                                     // 0x0524(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UVerticalBoxSlot*                       CallFunc_AddChildToVerticalBox_ReturnValue_1;      // 0x0528(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu");
-static_assert(sizeof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu) == 0x000288, "Wrong size on W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu");
+static_assert(sizeof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu) == 0x000530, "Wrong size on W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu");
 static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, EntryPoint) == 0x000000, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::EntryPoint' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_MakeSearchString_ReturnValue) == 0x000008, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_MakeSearchString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CustomEvent_Results) == 0x000028, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CustomEvent_Results' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_MakeMap_Map) == 0x000038, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_MakeMap_Map' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_struct_Variable) == 0x000088, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_struct_Variable' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_FindSteamCoreProSessions_ReturnValue) == 0x000098, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_FindSteamCoreProSessions_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsValid_ReturnValue) == 0x0000A0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_FilterResults_OutResults) == 0x0000A8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_FilterResults_OutResults' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue) == 0x0000B8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue_1) == 0x0000BC, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Create_ReturnValue) == 0x0000C0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x0000C8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Create_ReturnValue_1) == 0x0000D0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Create_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_bool_Variable) == 0x0000D8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_byte_Variable) == 0x0000D9, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_byte_Variable' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_byte_Variable_1) == 0x0000DA, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_byte_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Array_Index_Variable) == 0x0000DC, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Get_Item) == 0x0000E0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CreateDelegate_OutputDelegate) == 0x000210, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_AddChildToVerticalBox_ReturnValue) == 0x000220, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_AddChildToVerticalBox_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsInViewport_ReturnValue) == 0x000228, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsInViewport_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetPlayerController_ReturnValue) == 0x000230, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CustomEvent_Show) == 0x000238, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CustomEvent_Show' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_PlayAnimation_ReturnValue) == 0x000240, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_Select_Default) == 0x000248, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_NewSelection_1) == 0x000250, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_NewSelection_1' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_SelectType_1) == 0x000260, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_SelectType_1' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_NewSelection) == 0x000268, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_NewSelection' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_SelectType) == 0x000278, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_SelectType' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Loop_Counter_Variable) == 0x00027C, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Less_IntInt_ReturnValue) == 0x000280, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Add_IntInt_ReturnValue) == 0x000284, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Create_ReturnValue) == 0x000008, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Array_Index_Variable) == 0x000010, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_struct_Variable) == 0x000018, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_struct_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue_1) == 0x00002C, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_struct_Variable_1) == 0x000030, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_struct_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Conv_IntToString_ReturnValue) == 0x000040, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Get_Item) == 0x000050, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue_2) == 0x000180, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Length_ReturnValue_3) == 0x000184, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000188, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Loop_Counter_Variable) == 0x00018C, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Less_IntInt_ReturnValue) == 0x000190, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Add_IntInt_ReturnValue) == 0x000194, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Array_Index_Variable_1) == 0x000198, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CustomEvent_Results) == 0x0001A0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CustomEvent_Results' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Array_Get_Item_1) == 0x0001B0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CustomEvent_Results_1) == 0x0002E0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CustomEvent_Results_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CreateDelegate_OutputDelegate) == 0x0002F0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CreateDelegate_OutputDelegate_1) == 0x000300, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsInViewport_ReturnValue) == 0x000310, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsInViewport_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetPlayerController_ReturnValue) == 0x000318, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_CustomEvent_Show) == 0x000320, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_CustomEvent_Show' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_PlayAnimation_ReturnValue) == 0x000328, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_NewSelection_1) == 0x000330, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_NewSelection_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_SelectType_1) == 0x000340, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_SelectType_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_NewSelection) == 0x000348, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_NewSelection' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_ComponentBoundEvent_SelectType) == 0x000358, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_ComponentBoundEvent_SelectType' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_SwitchString_CmpSuccess) == 0x000359, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_MakeArray_Array) == 0x000360, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendCount_ReturnValue) == 0x000370, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendCount_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_MakeArray_Array_1) == 0x000378, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_MakeArray_Array_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Conv_IntToString_ReturnValue_1) == 0x000388, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Conv_IntToString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_SomethingWrittenInTextField_SomethingWritten) == 0x000398, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_SomethingWrittenInTextField_SomethingWritten' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Concat_StrStr_ReturnValue) == 0x0003A0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Variable) == 0x0003B0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Add_IntInt_ReturnValue_1) == 0x0003B4, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Loop_Counter_Variable_1) == 0x0003B8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Less_IntInt_ReturnValue_1) == 0x0003BC, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Add_IntInt_ReturnValue_2) == 0x0003C0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendByIndex_ReturnValue) == 0x0003C8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendByIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_GameID) == 0x0003D0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_GameID' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_GameIP) == 0x0003D8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_GameIP' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_ConnectionPort) == 0x0003E8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_ConnectionPort' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_QueryPort) == 0x0003EC, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_QueryPort' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_SteamIDLobby) == 0x0003F0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendGamePlayed_ReturnValue) == 0x0003F8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendGamePlayed_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendPersonaName_ReturnValue) == 0x000400, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendPersonaName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_byte_Variable) == 0x000410, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_byte_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_byte_Variable_1) == 0x000411, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_byte_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_bool_Variable) == 0x000412, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, Temp_int_Variable_1) == 0x000414, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::Temp_int_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, K2Node_Select_Default) == 0x000418, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendSearchFilters_ReturnValue) == 0x000420, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendSearchFilters_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_FindSteamCoreProSessions_ReturnValue) == 0x000470, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_FindSteamCoreProSessions_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Less_IntInt_ReturnValue_2) == 0x000478, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Conv_IntToString_ReturnValue_2) == 0x000480, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Conv_IntToString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000490, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsValid_ReturnValue) == 0x0004A0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Create_ReturnValue_1) == 0x0004A8, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_GetFriendSearchFilters_ReturnValue_1) == 0x0004B0, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_GetFriendSearchFilters_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_FindSteamCoreProSessions_ReturnValue_1) == 0x000500, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_FindSteamCoreProSessions_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsValid_ReturnValue_1) == 0x000508, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_IsInViewport_ReturnValue_1) == 0x000509, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_IsInViewport_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Create_ReturnValue_2) == 0x000510, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Create_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_AddChildToVerticalBox_ReturnValue) == 0x000518, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_AddChildToVerticalBox_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_Add_IntInt_ReturnValue_3) == 0x000520, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu, CallFunc_AddChildToVerticalBox_ReturnValue_1) == 0x000528, "Member 'W_JoinSessionMenu_C_ExecuteUbergraph_W_JoinSessionMenu::CallFunc_AddChildToVerticalBox_ReturnValue_1' has a wrong offset!");
 
 // Function W_JoinSessionMenu.W_JoinSessionMenu_C.FilterResults
 // 0x0478 (0x0478 - 0x0000)
@@ -138,37 +222,37 @@ public:
 	struct FSteamSessionResult                    SessionResult;                                     // 0x0030(0x0130)(Edit, BlueprintVisible)
 	class FString                                 CallFunc_No_Password_Code_ReturnValue;             // 0x0160(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319D[0x4];                                     // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3342[0x4];                                     // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_No_Password_Code_ReturnValue_1;           // 0x0178(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319E[0x7];                                     // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3343[0x7];                                     // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x0190(0x0018)()
 	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x01A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue;         // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x01B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319F[0x2];                                     // 0x01BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3344[0x2];                                     // 0x01BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A0[0x3];                                     // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3345[0x3];                                     // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x01C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A1[0x4];                                     // 0x01CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3346[0x4];                                     // 0x01CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamSessionResult                    CallFunc_Array_Get_Item;                           // 0x01D0(0x0130)()
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue_1;       // 0x0300(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue_2;       // 0x0301(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0302(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_3;          // 0x0303(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_4;          // 0x0304(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A2[0x3];                                     // 0x0305(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3347[0x3];                                     // 0x0305(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0308(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue_3;       // 0x030C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue_4;       // 0x030D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A3[0x2];                                     // 0x030E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3348[0x2];                                     // 0x030E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_GetText_ReturnValue_1;                    // 0x0310(0x0018)()
 	class FString                                 CallFunc_GetServerName_ReturnValue;                // 0x0328(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_TextIsEmpty_ReturnValue;                  // 0x0338(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Contains_ReturnValue;                     // 0x0339(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A4[0x6];                                     // 0x033A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3349[0x6];                                     // 0x033A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamSessionResult                    Temp_struct_Variable;                              // 0x0340(0x0130)(ConstParm)
 	bool                                          CallFunc_VerifySessionSetting_ReturnValue_5;       // 0x0470(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -206,6 +290,179 @@ static_assert(offsetof(W_JoinSessionMenu_C_FilterResults, CallFunc_Contains_Retu
 static_assert(offsetof(W_JoinSessionMenu_C_FilterResults, Temp_struct_Variable) == 0x000340, "Member 'W_JoinSessionMenu_C_FilterResults::Temp_struct_Variable' has a wrong offset!");
 static_assert(offsetof(W_JoinSessionMenu_C_FilterResults, CallFunc_VerifySessionSetting_ReturnValue_5) == 0x000470, "Member 'W_JoinSessionMenu_C_FilterResults::CallFunc_VerifySessionSetting_ReturnValue_5' has a wrong offset!");
 
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.GetFriendSearchFilters
+// 0x0230 (0x0230 - 0x0000)
+struct W_JoinSessionMenu_C_GetFriendSearchFilters final
+{
+public:
+	class FString                                 FriendName;                                        // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          SearchFriend;                                      // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334A[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FSteamSessionSearchSetting> ReturnValue;                                       // 0x0018(0x0050)(Parm, OutParm, ReturnParm)
+	TMap<class FString, struct FSteamSessionSearchSetting> SearchMap;                                         // 0x0068(0x0050)(Edit, BlueprintVisible)
+	class FString                                 Temp_string_Variable;                              // 0x00B8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_1;                            // 0x00C8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_2;                            // 0x00D8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_3;                            // 0x00E8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_4;                            // 0x00F8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_5;                            // 0x0108(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334B[0x7];                                     // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue;             // 0x0130(0x0020)()
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334C[0x7];                                     // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_1;           // 0x0158(0x0020)()
+	bool                                          CallFunc_IsFilled_returnValue;                     // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334D[0x7];                                     // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_2;           // 0x0180(0x0020)()
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334E[0x7];                                     // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_3;           // 0x01A8(0x0020)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_4;           // 0x01C8(0x0020)()
+	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x01E8(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0200(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_5;           // 0x0210(0x0020)()
+};
+static_assert(alignof(W_JoinSessionMenu_C_GetFriendSearchFilters) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_GetFriendSearchFilters");
+static_assert(sizeof(W_JoinSessionMenu_C_GetFriendSearchFilters) == 0x000230, "Wrong size on W_JoinSessionMenu_C_GetFriendSearchFilters");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, FriendName) == 0x000000, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::FriendName' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, SearchFriend) == 0x000010, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::SearchFriend' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, ReturnValue) == 0x000018, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, SearchMap) == 0x000068, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::SearchMap' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable) == 0x0000B8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable_1) == 0x0000C8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable_2) == 0x0000D8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable_3) == 0x0000E8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable_4) == 0x0000F8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable_4' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, Temp_string_Variable_5) == 0x000108, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::Temp_string_Variable_5' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000118, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_SelectString_ReturnValue) == 0x000120, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_SelectString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue) == 0x000130, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000150, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue_1) == 0x000158, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_IsFilled_returnValue) == 0x000178, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_IsFilled_returnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue_2) == 0x000180, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue_2) == 0x0001A0, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue_3) == 0x0001A8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue_4) == 0x0001C8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_GetText_ReturnValue) == 0x0001E8, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_GetText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_Conv_TextToString_ReturnValue) == 0x000200, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetFriendSearchFilters, CallFunc_MakeSearchString_ReturnValue_5) == 0x000210, "Member 'W_JoinSessionMenu_C_GetFriendSearchFilters::CallFunc_MakeSearchString_ReturnValue_5' has a wrong offset!");
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.GetSearchFilters
+// 0x04E0 (0x04E0 - 0x0000)
+struct W_JoinSessionMenu_C_GetSearchFilters final
+{
+public:
+	class FString                                 Chainedsessionname;                                // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TMap<class FString, struct FSteamSessionSearchSetting> ReturnValue;                                       // 0x0010(0x0050)(Parm, OutParm, ReturnParm)
+	bool                                          Temp_bool_Variable;                                // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334F[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue;             // 0x0068(0x0020)()
+	bool                                          Temp_bool_Variable_1;                              // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_2;                              // 0x0089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_3;                              // 0x008A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_4;                              // 0x008B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3350[0x4];                                     // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_1;           // 0x0090(0x0020)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_2;           // 0x00B0(0x0020)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_3;           // 0x00D0(0x0020)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map;                                // 0x00F0(0x0050)()
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0141(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3351[0x6];                                     // 0x0142(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_4;           // 0x0148(0x0020)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_5;           // 0x0168(0x0020)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map_1;                              // 0x0188(0x0050)()
+	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x01D8(0x0018)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_6;           // 0x01F0(0x0020)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0210(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_7;           // 0x0220(0x0020)()
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0241(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3352[0x6];                                     // 0x0242(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_8;           // 0x0248(0x0020)()
+	struct FSteamSessionSearchSetting             K2Node_Select_Default;                             // 0x0268(0x0020)()
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_3;          // 0x0288(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3353[0x7];                                     // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map_2;                              // 0x0290(0x0050)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map_3;                              // 0x02E0(0x0050)()
+	struct FSteamSessionSearchSetting             CallFunc_MakeSearchString_ReturnValue_9;           // 0x0330(0x0020)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_Select_Default_1;                           // 0x0350(0x0050)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_MakeMap_Map_4;                              // 0x03A0(0x0050)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_Select_Default_2;                           // 0x03F0(0x0050)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_Select_Default_3;                           // 0x0440(0x0050)()
+	TMap<class FString, struct FSteamSessionSearchSetting> K2Node_Select_Default_4;                           // 0x0490(0x0050)()
+};
+static_assert(alignof(W_JoinSessionMenu_C_GetSearchFilters) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_GetSearchFilters");
+static_assert(sizeof(W_JoinSessionMenu_C_GetSearchFilters) == 0x0004E0, "Wrong size on W_JoinSessionMenu_C_GetSearchFilters");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Chainedsessionname) == 0x000000, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Chainedsessionname' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, ReturnValue) == 0x000010, "Member 'W_JoinSessionMenu_C_GetSearchFilters::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Temp_bool_Variable) == 0x000060, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue) == 0x000068, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Temp_bool_Variable_1) == 0x000088, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Temp_bool_Variable_2) == 0x000089, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Temp_bool_Variable_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Temp_bool_Variable_3) == 0x00008A, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Temp_bool_Variable_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, Temp_bool_Variable_4) == 0x00008B, "Member 'W_JoinSessionMenu_C_GetSearchFilters::Temp_bool_Variable_4' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_1) == 0x000090, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_2) == 0x0000B0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_3) == 0x0000D0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_MakeMap_Map) == 0x0000F0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_MakeMap_Map' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000140, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000141, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_4) == 0x000148, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_5) == 0x000168, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_MakeMap_Map_1) == 0x000188, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_MakeMap_Map_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_GetText_ReturnValue) == 0x0001D8, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_GetText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_6) == 0x0001F0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_Conv_TextToString_ReturnValue) == 0x000210, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_7) == 0x000220, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_NotEqual_StrStr_ReturnValue) == 0x000240, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_NotEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue_2) == 0x000241, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_8) == 0x000248, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_Select_Default) == 0x000268, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_EqualEqual_StrStr_ReturnValue_3) == 0x000288, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_EqualEqual_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_MakeMap_Map_2) == 0x000290, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_MakeMap_Map_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_MakeMap_Map_3) == 0x0002E0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_MakeMap_Map_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, CallFunc_MakeSearchString_ReturnValue_9) == 0x000330, "Member 'W_JoinSessionMenu_C_GetSearchFilters::CallFunc_MakeSearchString_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_Select_Default_1) == 0x000350, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_Select_Default_1' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_MakeMap_Map_4) == 0x0003A0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_MakeMap_Map_4' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_Select_Default_2) == 0x0003F0, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_Select_Default_2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_Select_Default_3) == 0x000440, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_Select_Default_3' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_GetSearchFilters, K2Node_Select_Default_4) == 0x000490, "Member 'W_JoinSessionMenu_C_GetSearchFilters::K2Node_Select_Default_4' has a wrong offset!");
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.IsFilled
+// 0x0040 (0x0040 - 0x0000)
+struct W_JoinSessionMenu_C_IsFilled final
+{
+public:
+	class UEditableTextBox*                       Self2;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3354[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x0010(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_JoinSessionMenu_C_IsFilled) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_IsFilled");
+static_assert(sizeof(W_JoinSessionMenu_C_IsFilled) == 0x000040, "Wrong size on W_JoinSessionMenu_C_IsFilled");
+static_assert(offsetof(W_JoinSessionMenu_C_IsFilled, Self2) == 0x000000, "Member 'W_JoinSessionMenu_C_IsFilled::Self2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_IsFilled, ReturnValue) == 0x000008, "Member 'W_JoinSessionMenu_C_IsFilled::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_IsFilled, CallFunc_GetText_ReturnValue) == 0x000010, "Member 'W_JoinSessionMenu_C_IsFilled::CallFunc_GetText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_IsFilled, CallFunc_Conv_TextToString_ReturnValue) == 0x000028, "Member 'W_JoinSessionMenu_C_IsFilled::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_IsFilled, CallFunc_NotEqual_StrStr_ReturnValue) == 0x000038, "Member 'W_JoinSessionMenu_C_IsFilled::CallFunc_NotEqual_StrStr_ReturnValue' has a wrong offset!");
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.OnCallback_B5D226D24CB75FB809C5A3A5AA545D81
+// 0x0010 (0x0010 - 0x0000)
+struct W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81 final
+{
+public:
+	TArray<struct FSteamSessionResult>            Results;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81");
+static_assert(sizeof(W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81) == 0x000010, "Wrong size on W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81");
+static_assert(offsetof(W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81, Results) == 0x000000, "Member 'W_JoinSessionMenu_C_OnCallback_B5D226D24CB75FB809C5A3A5AA545D81::Results' has a wrong offset!");
+
 // Function W_JoinSessionMenu.W_JoinSessionMenu_C.OnCallback_D727BDAF4FAB43F507DD30A14A3E42D7
 // 0x0010 (0x0010 - 0x0000)
 struct W_JoinSessionMenu_C_OnCallback_D727BDAF4FAB43F507DD30A14A3E42D7 final
@@ -227,6 +484,26 @@ public:
 static_assert(alignof(W_JoinSessionMenu_C_ShowJoiningText) == 0x000001, "Wrong alignment on W_JoinSessionMenu_C_ShowJoiningText");
 static_assert(sizeof(W_JoinSessionMenu_C_ShowJoiningText) == 0x000001, "Wrong size on W_JoinSessionMenu_C_ShowJoiningText");
 static_assert(offsetof(W_JoinSessionMenu_C_ShowJoiningText, Show) == 0x000000, "Member 'W_JoinSessionMenu_C_ShowJoiningText::Show' has a wrong offset!");
+
+// Function W_JoinSessionMenu.W_JoinSessionMenu_C.SomethingWrittenInTextField
+// 0x0040 (0x0040 - 0x0000)
+struct W_JoinSessionMenu_C_SomethingWrittenInTextField final
+{
+public:
+	class UEditableTextBox*                       Self2;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          SomethingWritten;                                  // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3355[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x0010(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_JoinSessionMenu_C_SomethingWrittenInTextField) == 0x000008, "Wrong alignment on W_JoinSessionMenu_C_SomethingWrittenInTextField");
+static_assert(sizeof(W_JoinSessionMenu_C_SomethingWrittenInTextField) == 0x000040, "Wrong size on W_JoinSessionMenu_C_SomethingWrittenInTextField");
+static_assert(offsetof(W_JoinSessionMenu_C_SomethingWrittenInTextField, Self2) == 0x000000, "Member 'W_JoinSessionMenu_C_SomethingWrittenInTextField::Self2' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_SomethingWrittenInTextField, SomethingWritten) == 0x000008, "Member 'W_JoinSessionMenu_C_SomethingWrittenInTextField::SomethingWritten' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_SomethingWrittenInTextField, CallFunc_GetText_ReturnValue) == 0x000010, "Member 'W_JoinSessionMenu_C_SomethingWrittenInTextField::CallFunc_GetText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_SomethingWrittenInTextField, CallFunc_Conv_TextToString_ReturnValue) == 0x000028, "Member 'W_JoinSessionMenu_C_SomethingWrittenInTextField::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_JoinSessionMenu_C_SomethingWrittenInTextField, CallFunc_NotEqual_StrStr_ReturnValue) == 0x000038, "Member 'W_JoinSessionMenu_C_SomethingWrittenInTextField::CallFunc_NotEqual_StrStr_ReturnValue' has a wrong offset!");
 
 }
 

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_ConfirmQuit.W_ConfirmQuit_C
-// 0x0030 (0x02F0 - 0x02C0)
+// 0x0040 (0x0300 - 0x02C0)
 class UW_ConfirmQuit_C final : public UUserWidget
 {
 public:
@@ -28,12 +28,16 @@ public:
 	class UTextBlock*                             TextBlock;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             TextBlock_52;                                      // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          Quit;                                              // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_33C3[0x7];                                     // 0x02E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_Height0_C*                          Height0;                                           // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanCancel;                                         // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_ConfirmQuit_Button_103_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_ConfirmQuit_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void ExecuteUbergraph_W_ConfirmQuit(int32 EntryPoint);
+	void ManualSaveFinished_Event(bool Success);
 
 public:
 	static class UClass* StaticClass()
@@ -46,13 +50,15 @@ public:
 	}
 };
 static_assert(alignof(UW_ConfirmQuit_C) == 0x000008, "Wrong alignment on UW_ConfirmQuit_C");
-static_assert(sizeof(UW_ConfirmQuit_C) == 0x0002F0, "Wrong size on UW_ConfirmQuit_C");
+static_assert(sizeof(UW_ConfirmQuit_C) == 0x000300, "Wrong size on UW_ConfirmQuit_C");
 static_assert(offsetof(UW_ConfirmQuit_C, UberGraphFrame) == 0x0002C0, "Member 'UW_ConfirmQuit_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UW_ConfirmQuit_C, Button) == 0x0002C8, "Member 'UW_ConfirmQuit_C::Button' has a wrong offset!");
 static_assert(offsetof(UW_ConfirmQuit_C, Button_103) == 0x0002D0, "Member 'UW_ConfirmQuit_C::Button_103' has a wrong offset!");
 static_assert(offsetof(UW_ConfirmQuit_C, TextBlock) == 0x0002D8, "Member 'UW_ConfirmQuit_C::TextBlock' has a wrong offset!");
 static_assert(offsetof(UW_ConfirmQuit_C, TextBlock_52) == 0x0002E0, "Member 'UW_ConfirmQuit_C::TextBlock_52' has a wrong offset!");
 static_assert(offsetof(UW_ConfirmQuit_C, Quit) == 0x0002E8, "Member 'UW_ConfirmQuit_C::Quit' has a wrong offset!");
+static_assert(offsetof(UW_ConfirmQuit_C, Height0) == 0x0002F0, "Member 'UW_ConfirmQuit_C::Height0' has a wrong offset!");
+static_assert(offsetof(UW_ConfirmQuit_C, CanCancel) == 0x0002F8, "Member 'UW_ConfirmQuit_C::CanCancel' has a wrong offset!");
 
 }
 

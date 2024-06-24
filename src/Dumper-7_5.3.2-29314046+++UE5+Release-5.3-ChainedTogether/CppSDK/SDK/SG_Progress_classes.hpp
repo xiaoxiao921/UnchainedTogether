@@ -10,26 +10,34 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
 #include "S_ProgressSave_structs.hpp"
+#include "S_BiomeSave_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass SG_Progress.SG_Progress_C
-// 0x0060 (0x0088 - 0x0028)
+// 0x0078 (0x00A0 - 0x0028)
 class USG_Progress_C final : public USaveGame
 {
 public:
-	struct FVector                                Location;                                          // 0x0028(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Time;                                              // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33D2[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FS_ProgressSave>                ProgressesNormal;                                  // 0x0048(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FS_ProgressSave>                ProgressesNormalBackup;                            // 0x0058(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FS_ProgressSave>                ProgressesBeginner;                                // 0x0068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FS_ProgressSave>                ProgressesBeginnerBackup;                          // 0x0078(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                Location;                                          // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Time;                                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_35B4[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FS_ProgressSave>                ProgressesNormal;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FS_ProgressSave>                ProgressesNormalBackup;                            // 0x0060(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FS_ProgressSave>                ProgressesBeginner;                                // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FS_ProgressSave>                ProgressesBeginnerBackup;                          // 0x0080(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FS_BiomeSave>                   NewSaves;                                          // 0x0090(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+
+public:
+	void AddNewSave(const struct FS_BiomeSave& NewItem);
+	void ExecuteUbergraph_SG_Progress(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -42,13 +50,15 @@ public:
 	}
 };
 static_assert(alignof(USG_Progress_C) == 0x000008, "Wrong alignment on USG_Progress_C");
-static_assert(sizeof(USG_Progress_C) == 0x000088, "Wrong size on USG_Progress_C");
-static_assert(offsetof(USG_Progress_C, Location) == 0x000028, "Member 'USG_Progress_C::Location' has a wrong offset!");
-static_assert(offsetof(USG_Progress_C, Time) == 0x000040, "Member 'USG_Progress_C::Time' has a wrong offset!");
-static_assert(offsetof(USG_Progress_C, ProgressesNormal) == 0x000048, "Member 'USG_Progress_C::ProgressesNormal' has a wrong offset!");
-static_assert(offsetof(USG_Progress_C, ProgressesNormalBackup) == 0x000058, "Member 'USG_Progress_C::ProgressesNormalBackup' has a wrong offset!");
-static_assert(offsetof(USG_Progress_C, ProgressesBeginner) == 0x000068, "Member 'USG_Progress_C::ProgressesBeginner' has a wrong offset!");
-static_assert(offsetof(USG_Progress_C, ProgressesBeginnerBackup) == 0x000078, "Member 'USG_Progress_C::ProgressesBeginnerBackup' has a wrong offset!");
+static_assert(sizeof(USG_Progress_C) == 0x0000A0, "Wrong size on USG_Progress_C");
+static_assert(offsetof(USG_Progress_C, UberGraphFrame) == 0x000028, "Member 'USG_Progress_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, Location) == 0x000030, "Member 'USG_Progress_C::Location' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, Time) == 0x000048, "Member 'USG_Progress_C::Time' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, ProgressesNormal) == 0x000050, "Member 'USG_Progress_C::ProgressesNormal' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, ProgressesNormalBackup) == 0x000060, "Member 'USG_Progress_C::ProgressesNormalBackup' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, ProgressesBeginner) == 0x000070, "Member 'USG_Progress_C::ProgressesBeginner' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, ProgressesBeginnerBackup) == 0x000080, "Member 'USG_Progress_C::ProgressesBeginnerBackup' has a wrong offset!");
+static_assert(offsetof(USG_Progress_C, NewSaves) == 0x000090, "Member 'USG_Progress_C::NewSaves' has a wrong offset!");
 
 }
 

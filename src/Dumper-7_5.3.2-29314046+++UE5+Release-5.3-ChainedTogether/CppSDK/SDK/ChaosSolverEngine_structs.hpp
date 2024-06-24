@@ -35,7 +35,7 @@ enum class EClusterConnectionTypeEnum : uint8
 struct alignas(0x10) FBreakEventCallbackWrapper final
 {
 public:
-	uint8                                         Pad_11D3[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12FA[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBreakEventCallbackWrapper) == 0x000010, "Wrong alignment on FBreakEventCallbackWrapper");
 static_assert(sizeof(FBreakEventCallbackWrapper) == 0x000040, "Wrong size on FBreakEventCallbackWrapper");
@@ -76,7 +76,7 @@ static_assert(offsetof(FChaosPhysicsCollisionInfo, OtherMass) == 0x0000BC, "Memb
 struct alignas(0x10) FRemovalEventCallbackWrapper final
 {
 public:
-	uint8                                         Pad_11D4[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12FB[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemovalEventCallbackWrapper) == 0x000010, "Wrong alignment on FRemovalEventCallbackWrapper");
 static_assert(sizeof(FRemovalEventCallbackWrapper) == 0x000040, "Wrong size on FRemovalEventCallbackWrapper");
@@ -86,7 +86,7 @@ static_assert(sizeof(FRemovalEventCallbackWrapper) == 0x000040, "Wrong size on F
 struct alignas(0x10) FCrumblingEventCallbackWrapper final
 {
 public:
-	uint8                                         Pad_11D5[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12FC[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCrumblingEventCallbackWrapper) == 0x000010, "Wrong alignment on FCrumblingEventCallbackWrapper");
 static_assert(sizeof(FCrumblingEventCallbackWrapper) == 0x000040, "Wrong size on FCrumblingEventCallbackWrapper");
@@ -96,7 +96,7 @@ static_assert(sizeof(FCrumblingEventCallbackWrapper) == 0x000040, "Wrong size on
 struct FChaosHandlerSet final
 {
 public:
-	uint8                                         Pad_11D6[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12FD[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(UObjectWrapper, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FChaosHandlerSet) == 0x000008, "Wrong alignment on FChaosHandlerSet");

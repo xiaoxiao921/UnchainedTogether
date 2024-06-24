@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass MainMenu_W.MainMenu_W_C
-// 0x0078 (0x0338 - 0x02C0)
+// 0x0088 (0x0348 - 0x02C0)
 class UMainMenu_W_C final : public UUserWidget
 {
 public:
@@ -35,11 +35,14 @@ public:
 	class UW_MenuButtonText_C*                    Settings;                                          // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UButton*                                Settings_Button;                                   // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             TextBlock_356;                                     // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    W_MenuButtonText_C_4;                              // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          FadeIn;                                            // 0x0330(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UTextBlock*                             Troubleshooting;                                   // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Troubleshooting_Button;                            // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    W_MenuButtonText_C_4;                              // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          FadeIn;                                            // 0x0340(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__MainMenu_W_Button_0_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__MainMenu_W_Button_1_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__MainMenu_W_Play_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__MainMenu_W_Play_Button_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
 	void BndEvt__MainMenu_W_Play_Button_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature();
@@ -65,7 +68,7 @@ public:
 	}
 };
 static_assert(alignof(UMainMenu_W_C) == 0x000008, "Wrong alignment on UMainMenu_W_C");
-static_assert(sizeof(UMainMenu_W_C) == 0x000338, "Wrong size on UMainMenu_W_C");
+static_assert(sizeof(UMainMenu_W_C) == 0x000348, "Wrong size on UMainMenu_W_C");
 static_assert(offsetof(UMainMenu_W_C, UberGraphFrame) == 0x0002C0, "Member 'UMainMenu_W_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UMainMenu_W_C, Spawn) == 0x0002C8, "Member 'UMainMenu_W_C::Spawn' has a wrong offset!");
 static_assert(offsetof(UMainMenu_W_C, Fade) == 0x0002D0, "Member 'UMainMenu_W_C::Fade' has a wrong offset!");
@@ -79,8 +82,10 @@ static_assert(offsetof(UMainMenu_W_C, Quit_Button) == 0x000308, "Member 'UMainMe
 static_assert(offsetof(UMainMenu_W_C, Settings) == 0x000310, "Member 'UMainMenu_W_C::Settings' has a wrong offset!");
 static_assert(offsetof(UMainMenu_W_C, Settings_Button) == 0x000318, "Member 'UMainMenu_W_C::Settings_Button' has a wrong offset!");
 static_assert(offsetof(UMainMenu_W_C, TextBlock_356) == 0x000320, "Member 'UMainMenu_W_C::TextBlock_356' has a wrong offset!");
-static_assert(offsetof(UMainMenu_W_C, W_MenuButtonText_C_4) == 0x000328, "Member 'UMainMenu_W_C::W_MenuButtonText_C_4' has a wrong offset!");
-static_assert(offsetof(UMainMenu_W_C, FadeIn) == 0x000330, "Member 'UMainMenu_W_C::FadeIn' has a wrong offset!");
+static_assert(offsetof(UMainMenu_W_C, Troubleshooting) == 0x000328, "Member 'UMainMenu_W_C::Troubleshooting' has a wrong offset!");
+static_assert(offsetof(UMainMenu_W_C, Troubleshooting_Button) == 0x000330, "Member 'UMainMenu_W_C::Troubleshooting_Button' has a wrong offset!");
+static_assert(offsetof(UMainMenu_W_C, W_MenuButtonText_C_4) == 0x000338, "Member 'UMainMenu_W_C::W_MenuButtonText_C_4' has a wrong offset!");
+static_assert(offsetof(UMainMenu_W_C, FadeIn) == 0x000340, "Member 'UMainMenu_W_C::FadeIn' has a wrong offset!");
 
 }
 

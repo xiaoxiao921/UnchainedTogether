@@ -31,6 +31,20 @@ void UMainMenu_W_C::BndEvt__MainMenu_W_Button_0_K2Node_ComponentBoundEvent_9_OnB
 }
 
 
+// Function MainMenu_W.MainMenu_W_C.BndEvt__MainMenu_W_Button_1_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMainMenu_W_C::BndEvt__MainMenu_W_Button_1_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "BndEvt__MainMenu_W_Button_1_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function MainMenu_W.MainMenu_W_C.BndEvt__MainMenu_W_Play_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 

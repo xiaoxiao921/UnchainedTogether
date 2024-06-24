@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ALS_MovementState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BP_MovingObject_classes.hpp"
-#include "ALS_MovementState_structs.hpp"
 
 
 namespace SDK
@@ -20,7 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_Tyrolienne.BP_Tyrolienne_C
 // 0x0020 (0x0470 - 0x0450)
-class ABP_Tyrolienne_C final : public ABP_MovingObject_C
+class ABP_Tyrolienne_C : public ABP_MovingObject_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Tyrolienne_C;                    // 0x0450(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

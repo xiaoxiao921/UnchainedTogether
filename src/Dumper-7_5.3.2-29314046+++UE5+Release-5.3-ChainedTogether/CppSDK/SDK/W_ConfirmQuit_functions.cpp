@@ -78,5 +78,25 @@ void UW_ConfirmQuit_C::ExecuteUbergraph_W_ConfirmQuit(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function W_ConfirmQuit.W_ConfirmQuit_C.ManualSaveFinished_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ConfirmQuit_C::ManualSaveFinished_Event(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConfirmQuit_C", "ManualSaveFinished_Event");
+
+	Params::W_ConfirmQuit_C_ManualSaveFinished_Event Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

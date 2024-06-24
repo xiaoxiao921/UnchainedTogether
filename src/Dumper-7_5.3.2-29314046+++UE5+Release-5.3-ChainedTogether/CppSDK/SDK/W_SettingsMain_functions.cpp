@@ -225,20 +225,6 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_LoadCheckpointButton_K2Node_Compo
 }
 
 
-// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_LoadGame_Button_K2Node_ComponentBoundEvent_31_OnClicked__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SettingsMain_C::BndEvt__W_SettingsMain_LoadGame_Button_K2Node_ComponentBoundEvent_31_OnClicked__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_LoadGame_Button_K2Node_ComponentBoundEvent_31_OnClicked__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_MasterVolume_K2Node_ComponentBoundEvent_4_OnValueChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:

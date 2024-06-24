@@ -342,26 +342,6 @@ int32 AGS_Game_C::CountSpawnedCharacters()
 }
 
 
-// Function GS_Game.GS_Game_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWM_Device*                       Device                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void AGS_Game_C::CustomEvent(class UWM_Device* Device)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GS_Game_C", "CustomEvent");
-
-	Params::GS_Game_C_CustomEvent Parms{};
-
-	Parms.Device = Device;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function GS_Game.GS_Game_C.CustomEvent_0
 // (BlueprintCallable, BlueprintEvent)
 
@@ -482,6 +462,20 @@ bool AGS_Game_C::FindPlayerStart(struct FTransform* Transform)
 }
 
 
+// Function GS_Game.GS_Game_C.FlushSaveBiome
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::FlushSaveBiome()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "FlushSaveBiome");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.Get Nearest Rescue Point(Server)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -506,6 +500,34 @@ bool AGS_Game_C::Get_Nearest_Rescue_Point_Server_(bool Lava, class ABP_RescuePoi
 		*Out = Parms.Out;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function GS_Game.GS_Game_C.GetBiomeByName
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           InString                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    Found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABiomeText_BP_C*                  Biome                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AGS_Game_C::GetBiomeByName(const class FString& InString, bool* Found, class ABiomeText_BP_C** Biome)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "GetBiomeByName");
+
+	Params::GS_Game_C_GetBiomeByName Parms{};
+
+	Parms.InString = std::move(InString);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Found != nullptr)
+		*Found = Parms.Found;
+
+	if (Biome != nullptr)
+		*Biome = Parms.Biome;
 }
 
 

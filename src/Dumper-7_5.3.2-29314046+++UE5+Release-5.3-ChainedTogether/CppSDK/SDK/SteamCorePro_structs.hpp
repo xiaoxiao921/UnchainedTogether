@@ -1690,7 +1690,7 @@ enum class ESteamBroadcastUploadResult : uint8
 struct alignas(0x08) FSteamLeaderboard final
 {
 public:
-	uint8                                         Pad_16A0[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DA[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamLeaderboard) == 0x000008, "Wrong alignment on FSteamLeaderboard");
 static_assert(sizeof(FSteamLeaderboard) == 0x000008, "Wrong size on FSteamLeaderboard");
@@ -1700,7 +1700,7 @@ static_assert(sizeof(FSteamLeaderboard) == 0x000008, "Wrong size on FSteamLeader
 struct alignas(0x08) FSteamLeaderboardEntries final
 {
 public:
-	uint8                                         Pad_16A1[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DB[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamLeaderboardEntries) == 0x000008, "Wrong alignment on FSteamLeaderboardEntries");
 static_assert(sizeof(FSteamLeaderboardEntries) == 0x000008, "Wrong size on FSteamLeaderboardEntries");
@@ -1713,7 +1713,7 @@ public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamLeaderboardEntries               SteamLeaderboardEntries;                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         EntryCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A2[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DC[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardScoresDownloadedForUsers) == 0x000008, "Wrong alignment on FLeaderboardScoresDownloadedForUsers");
 static_assert(sizeof(FLeaderboardScoresDownloadedForUsers) == 0x000018, "Wrong size on FLeaderboardScoresDownloadedForUsers");
@@ -1726,7 +1726,7 @@ static_assert(offsetof(FLeaderboardScoresDownloadedForUsers, EntryCount) == 0x00
 struct alignas(0x08) FPublishedFileID final
 {
 public:
-	uint8                                         Pad_16A3[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DD[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPublishedFileID) == 0x000008, "Wrong alignment on FPublishedFileID");
 static_assert(sizeof(FPublishedFileID) == 0x000008, "Wrong size on FPublishedFileID");
@@ -1737,7 +1737,7 @@ struct FGetAppDependenciesResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 AppIDs;                                            // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumAppDependencies;                                // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1757,10 +1757,10 @@ struct FDownloadItemResult final
 {
 public:
 	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17DF[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A6[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E0[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDownloadItemResult) == 0x000008, "Wrong alignment on FDownloadItemResult");
 static_assert(sizeof(FDownloadItemResult) == 0x000018, "Wrong size on FDownloadItemResult");
@@ -1774,7 +1774,7 @@ struct FEndGameResultCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A7[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E1[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 UniqueGameID;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FEndGameResultCallback) == 0x000008, "Wrong alignment on FEndGameResultCallback");
@@ -1787,7 +1787,7 @@ static_assert(offsetof(FEndGameResultCallback, UniqueGameID) == 0x000008, "Membe
 struct alignas(0x08) FSteamID final
 {
 public:
-	uint8                                         Pad_16A8[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E2[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamID) == 0x000008, "Wrong alignment on FSteamID");
 static_assert(sizeof(FSteamID) == 0x000008, "Wrong size on FSteamID");
@@ -1798,7 +1798,7 @@ struct FFriendsEnumerateFollowingList final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16A9[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSteamID>                       SteamIDs;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	int32                                         Results;                                           // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TotalResult;                                       // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1818,7 +1818,7 @@ public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bWasAddRequest;                                    // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16AA[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E4[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUserFavoriteItemsListChanged) == 0x000008, "Wrong alignment on FUserFavoriteItemsListChanged");
 static_assert(sizeof(FUserFavoriteItemsListChanged) == 0x000010, "Wrong size on FUserFavoriteItemsListChanged");
@@ -1831,7 +1831,7 @@ static_assert(offsetof(FUserFavoriteItemsListChanged, bWasAddRequest) == 0x00000
 struct alignas(0x04) FSteamTicketHandle final
 {
 public:
-	uint8                                         Pad_16AB[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E5[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamTicketHandle) == 0x000004, "Wrong alignment on FSteamTicketHandle");
 static_assert(sizeof(FSteamTicketHandle) == 0x000004, "Wrong size on FSteamTicketHandle");
@@ -1843,7 +1843,7 @@ struct FGetAuthSessionTicketResponse final
 public:
 	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16AC[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E6[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetAuthSessionTicketResponse) == 0x000004, "Wrong alignment on FGetAuthSessionTicketResponse");
 static_assert(sizeof(FGetAuthSessionTicketResponse) == 0x000008, "Wrong size on FGetAuthSessionTicketResponse");
@@ -1855,7 +1855,7 @@ static_assert(offsetof(FGetAuthSessionTicketResponse, Result) == 0x000004, "Memb
 struct alignas(0x08) FSteamSessionSetting final
 {
 public:
-	uint8                                         Pad_16AD[0x28];                                    // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E7[0x28];                                    // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamSessionSetting) == 0x000008, "Wrong alignment on FSteamSessionSetting");
 static_assert(sizeof(FSteamSessionSetting) == 0x000028, "Wrong size on FSteamSessionSetting");
@@ -1878,7 +1878,7 @@ static_assert(offsetof(FSteamSessionResult, SessionSettings) == 0x000120, "Membe
 struct alignas(0x08) FUGCQueryHandle final
 {
 public:
-	uint8                                         Pad_16AE[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E8[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUGCQueryHandle) == 0x000008, "Wrong alignment on FUGCQueryHandle");
 static_assert(sizeof(FUGCQueryHandle) == 0x000008, "Wrong size on FUGCQueryHandle");
@@ -1891,7 +1891,7 @@ public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamLeaderboardEntries               SteamLeaderboardEntries;                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         EntryCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16AF[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E9[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardScoresDownloaded) == 0x000008, "Wrong alignment on FLeaderboardScoresDownloaded");
 static_assert(sizeof(FLeaderboardScoresDownloaded) == 0x000018, "Wrong size on FLeaderboardScoresDownloaded");
@@ -1905,17 +1905,17 @@ struct FRequestPlayersForGameResultCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B0[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17EA[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDPlayerFound;                                // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDLobby;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamPlayerAcceptState                       PlayerAcceptState;                                 // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B1[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17EB[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PlayerIndex;                                       // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TotalPlayersFound;                                 // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TotalPlayersAcceptedGame;                          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SuggestedTeamIndex;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B2[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17EC[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 UniqueGameID;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRequestPlayersForGameResultCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameResultCallback");
@@ -1937,10 +1937,10 @@ struct FAddAppDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17ED[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B4[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17EE[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAddAppDependencyResult) == 0x000008, "Wrong alignment on FAddAppDependencyResult");
 static_assert(sizeof(FAddAppDependencyResult) == 0x000018, "Wrong size on FAddAppDependencyResult");
@@ -1955,7 +1955,7 @@ struct FGetTicketForWebApiResponse final
 public:
 	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B5[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17EF[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<uint8>                                 Ticket;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGetTicketForWebApiResponse) == 0x000008, "Wrong alignment on FGetTicketForWebApiResponse");
@@ -1981,7 +1981,7 @@ struct FAddUGCDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B6[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F0[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPublishedFileID                       ChildPublishedFileId;                              // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -2007,7 +2007,7 @@ static_assert(offsetof(FFavoritesListAccountsUpdated, Result) == 0x000000, "Memb
 struct FAppResumingFromSuspend final
 {
 public:
-	uint8                                         Pad_16B7[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F1[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAppResumingFromSuspend) == 0x000001, "Wrong alignment on FAppResumingFromSuspend");
 static_assert(sizeof(FAppResumingFromSuspend) == 0x000001, "Wrong size on FAppResumingFromSuspend");
@@ -2018,7 +2018,7 @@ struct FGetVideoURLResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B8[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F2[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 URL;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -2037,10 +2037,10 @@ public:
 	int32                                         QueryPort;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ConnectionPort;                                    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16B9[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F3[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<ESteamFavoriteFlags>                   Flags;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	bool                                          bAdd;                                              // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BA[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F4[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0038(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FFavoritesListChanged) == 0x000008, "Wrong alignment on FFavoritesListChanged");
@@ -2070,13 +2070,13 @@ struct FWorkshopEULAStatus final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BB[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F5[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AppID;                                             // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Version;                                           // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Action;                                            // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAccepted;                                         // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bNeedsAction;                                      // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BC[0x2];                                     // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F6[0x2];                                     // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWorkshopEULAStatus) == 0x000004, "Wrong alignment on FWorkshopEULAStatus");
 static_assert(sizeof(FWorkshopEULAStatus) == 0x000014, "Wrong size on FWorkshopEULAStatus");
@@ -2094,7 +2094,7 @@ struct FAttachLeaderboardUGCData final
 public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BD[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F7[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAttachLeaderboardUGCData) == 0x000008, "Wrong alignment on FAttachLeaderboardUGCData");
 static_assert(sizeof(FAttachLeaderboardUGCData) == 0x000010, "Wrong size on FAttachLeaderboardUGCData");
@@ -2107,10 +2107,10 @@ struct FRemoveAppDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F8[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16BF[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17F9[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoveAppDependencyResult) == 0x000008, "Wrong alignment on FRemoveAppDependencyResult");
 static_assert(sizeof(FRemoveAppDependencyResult) == 0x000018, "Wrong size on FRemoveAppDependencyResult");
@@ -2124,7 +2124,7 @@ struct FFileDetailsResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C0[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FA[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         FileSize;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SHA;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 Flags;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
@@ -2142,10 +2142,10 @@ struct alignas(0x08) FRemoteStorageFileReadAsyncComplete final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C1[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FB[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Offset;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Read;                                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C2[0xC];                                     // 0x000C(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FC[0xC];                                     // 0x000C(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoteStorageFileReadAsyncComplete) == 0x000008, "Wrong alignment on FRemoteStorageFileReadAsyncComplete");
 static_assert(sizeof(FRemoteStorageFileReadAsyncComplete) == 0x000018, "Wrong size on FRemoteStorageFileReadAsyncComplete");
@@ -2160,7 +2160,7 @@ struct FAvatarImageLoaded final
 public:
 	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class UTexture2D*                             Image;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C3[0x10];                                    // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FD[0x10];                                    // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAvatarImageLoaded) == 0x000008, "Wrong alignment on FAvatarImageLoaded");
 static_assert(sizeof(FAvatarImageLoaded) == 0x000020, "Wrong size on FAvatarImageLoaded");
@@ -2173,7 +2173,7 @@ struct FRequestPlayersForGameFinalResultCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 UniqueGameID;                                      // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -2188,7 +2188,7 @@ static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, UniqueGameID) 
 struct alignas(0x08) FSteamUGCHandle final
 {
 public:
-	uint8                                         Pad_16C5[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17FF[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamUGCHandle) == 0x000008, "Wrong alignment on FSteamUGCHandle");
 static_assert(sizeof(FSteamUGCHandle) == 0x000008, "Wrong size on FSteamUGCHandle");
@@ -2211,7 +2211,7 @@ struct FLeaderboardFindResult final
 public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bLeaderboardFound;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C6[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1800[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardFindResult) == 0x000008, "Wrong alignment on FLeaderboardFindResult");
 static_assert(sizeof(FLeaderboardFindResult) == 0x000010, "Wrong size on FLeaderboardFindResult");
@@ -2236,7 +2236,7 @@ struct FFindOrCreateLeaderboardData final
 public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bLeaderboardFound;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C7[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1801[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFindOrCreateLeaderboardData) == 0x000008, "Wrong alignment on FFindOrCreateLeaderboardData");
 static_assert(sizeof(FFindOrCreateLeaderboardData) == 0x000010, "Wrong size on FFindOrCreateLeaderboardData");
@@ -2251,7 +2251,7 @@ public:
 	struct FSteamID                               SteamIDClan;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         Officers;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSuccess;                                          // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C8[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1802[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FClanOfficerListResponse) == 0x000008, "Wrong alignment on FClanOfficerListResponse");
 static_assert(sizeof(FClanOfficerListResponse) == 0x000010, "Wrong size on FClanOfficerListResponse");
@@ -2265,12 +2265,12 @@ struct FClientGameServerDeny final
 {
 public:
 	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1803[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 GameServerIP;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GameServerPort;                                    // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          BSecure;                                           // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamDenyReason                              Reason;                                            // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16CA[0x2];                                     // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1804[0x2];                                     // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FClientGameServerDeny) == 0x000008, "Wrong alignment on FClientGameServerDeny");
 static_assert(sizeof(FClientGameServerDeny) == 0x000020, "Wrong size on FClientGameServerDeny");
@@ -2286,7 +2286,7 @@ struct FComputeNewPlayerCompatibilityResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16CB[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1805[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PlayersThatDontLikeCandidate;                      // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PlayersThatCandidateDoesntLike;                    // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ClanPlayersThatDontLikeCandidate;                  // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2305,7 +2305,7 @@ static_assert(offsetof(FComputeNewPlayerCompatibilityResult, SteamIDCandidate) =
 struct alignas(0x08) FSteamGameID final
 {
 public:
-	uint8                                         Pad_16CC[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1806[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamGameID) == 0x000008, "Wrong alignment on FSteamGameID");
 static_assert(sizeof(FSteamGameID) == 0x000008, "Wrong size on FSteamGameID");
@@ -2343,7 +2343,7 @@ static_assert(offsetof(FGameConnectedChatJoin, SteamIDUser) == 0x000008, "Member
 struct alignas(0x08) FPartyBeaconID final
 {
 public:
-	uint8                                         Pad_16CD[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1807[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPartyBeaconID) == 0x000008, "Wrong alignment on FPartyBeaconID");
 static_assert(sizeof(FPartyBeaconID) == 0x000008, "Wrong size on FPartyBeaconID");
@@ -2354,7 +2354,7 @@ struct FCreateBeaconData final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16CE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1808[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCreateBeaconData) == 0x000008, "Wrong alignment on FCreateBeaconData");
@@ -2368,10 +2368,10 @@ struct FCreateItemResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16CF[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1809[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D0[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180A[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCreateItemResult) == 0x000008, "Wrong alignment on FCreateItemResult");
 static_assert(sizeof(FCreateItemResult) == 0x000018, "Wrong size on FCreateItemResult");
@@ -2398,7 +2398,7 @@ struct FCreateLobbyData final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D1[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180B[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDLobby;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCreateLobbyData) == 0x000008, "Wrong alignment on FCreateLobbyData");
@@ -2412,7 +2412,7 @@ struct FUGCDeleteItemResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D2[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FUGCDeleteItemResult) == 0x000008, "Wrong alignment on FUGCDeleteItemResult");
@@ -2461,11 +2461,11 @@ struct FSteamInventoryEligiblePromoItemDefIDs final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         NumEligiblePromoItemDefs;                          // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D4[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180E[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000008, "Wrong alignment on FSteamInventoryEligiblePromoItemDefIDs");
 static_assert(sizeof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000018, "Wrong size on FSteamInventoryEligiblePromoItemDefIDs");
@@ -2491,7 +2491,7 @@ struct FRemoteStorageDownloadUGCResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D5[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamUGCHandle                        FileHandle;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SizeInBytes;                                       // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2550,7 +2550,7 @@ struct FRemoteStorageFileShareResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D6[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1810[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamUGCHandle                        File;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 Filename;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -2576,7 +2576,7 @@ static_assert(offsetof(FRemoteStorageFileWriteAsyncComplete, Result) == 0x000000
 struct FFloatingGamepadTextInputDismissed final
 {
 public:
-	uint8                                         Pad_16D7[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1811[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong alignment on FFloatingGamepadTextInputDismissed");
 static_assert(sizeof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong size on FFloatingGamepadTextInputDismissed");
@@ -2588,7 +2588,7 @@ struct FFriendRichPresenceUpdate final
 public:
 	struct FSteamID                               SteamIDFriend;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D8[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1812[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFriendRichPresenceUpdate) == 0x000008, "Wrong alignment on FFriendRichPresenceUpdate");
 static_assert(sizeof(FFriendRichPresenceUpdate) == 0x000010, "Wrong size on FFriendRichPresenceUpdate");
@@ -2604,7 +2604,7 @@ public:
 	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bKicked;                                           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDropped;                                          // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16D9[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1813[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameConnectedChatLeave) == 0x000008, "Wrong alignment on FGameConnectedChatLeave");
 static_assert(sizeof(FGameConnectedChatLeave) == 0x000018, "Wrong size on FGameConnectedChatLeave");
@@ -2618,7 +2618,7 @@ static_assert(offsetof(FGameConnectedChatLeave, bDropped) == 0x000011, "Member '
 struct FScePadTriggerEffectOffParam final
 {
 public:
-	uint8                                         Pad_16DA[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1814[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong alignment on FScePadTriggerEffectOffParam");
 static_assert(sizeof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong size on FScePadTriggerEffectOffParam");
@@ -2700,7 +2700,7 @@ struct FScePadTriggerEffectMultiplePositionVibrationParam final
 {
 public:
 	int32                                         Frequency;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16DB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1815[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 Amplitude;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FScePadTriggerEffectMultiplePositionVibrationParam) == 0x000008, "Wrong alignment on FScePadTriggerEffectMultiplePositionVibrationParam");
@@ -2714,11 +2714,11 @@ struct FScePadTriggerEffectCommandData final
 {
 public:
 	struct FScePadTriggerEffectOffParam           OffParam;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16DC[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1816[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FScePadTriggerEffectFeedbackParam      FeedbackParam;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectWeaponParam        WeaponParam;                                       // 0x000C(0x000C)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectVibrationParam     VibrationParam;                                    // 0x0018(0x000C)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16DD[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1817[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FScePadTriggerEffectMultiplePositionFeedbackParam MultiplePositionFeedbackParam;                     // 0x0028(0x0010)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectSlopeFeedbackParam SlopeFeedbackParam;                                // 0x0038(0x0010)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectMultiplePositionVibrationParam MultiplePositionVibrationParam;                    // 0x0048(0x0018)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
@@ -2754,7 +2754,7 @@ public:
 	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDClanChat;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         MessageID;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16DE[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1818[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameConnectedClanChatMsg) == 0x000008, "Wrong alignment on FGameConnectedClanChatMsg");
 static_assert(sizeof(FGameConnectedClanChatMsg) == 0x000018, "Wrong size on FGameConnectedClanChatMsg");
@@ -2769,7 +2769,7 @@ struct FGameConnectedFriendChatMsg final
 public:
 	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         MessageID;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16DF[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1819[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameConnectedFriendChatMsg) == 0x000008, "Wrong alignment on FGameConnectedFriendChatMsg");
 static_assert(sizeof(FGameConnectedFriendChatMsg) == 0x000010, "Wrong size on FGameConnectedFriendChatMsg");
@@ -2783,7 +2783,7 @@ struct FGameOverlayActivated final
 public:
 	bool                                          bActive;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUserInitiated;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E0[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181A[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGameOverlayActivated) == 0x000004, "Wrong alignment on FGameOverlayActivated");
@@ -2798,7 +2798,7 @@ struct FGamepadTextInputDismissed final
 {
 public:
 	bool                                          bSubmitted;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E1[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181B[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SubmittedText;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGamepadTextInputDismissed) == 0x000004, "Wrong alignment on FGamepadTextInputDismissed");
@@ -2815,7 +2815,7 @@ public:
 	int32                                         GlobalRank;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Score;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Details;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E2[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181C[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamUGCHandle                        UGCHandle;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSteamLeaderboardEntry) == 0x000008, "Wrong alignment on FSteamLeaderboardEntry");
@@ -2843,10 +2843,10 @@ struct FFriendsGetFollowerCount final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         Count;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E4[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181E[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFriendsGetFollowerCount) == 0x000008, "Wrong alignment on FFriendsGetFollowerCount");
 static_assert(sizeof(FFriendsGetFollowerCount) == 0x000018, "Wrong size on FFriendsGetFollowerCount");
@@ -2860,7 +2860,7 @@ struct FNumberOfCurrentPlayers final
 {
 public:
 	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E5[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181F[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Players;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FNumberOfCurrentPlayers) == 0x000004, "Wrong alignment on FNumberOfCurrentPlayers");
@@ -2885,7 +2885,7 @@ struct FGetOPFSettingsResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E6[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1820[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGetOPFSettingsResult) == 0x000004, "Wrong alignment on FGetOPFSettingsResult");
@@ -2900,7 +2900,7 @@ struct FUserStatsReceived final
 public:
 	struct FSteamID                               GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E7[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1821[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FUserStatsReceived) == 0x000008, "Wrong alignment on FUserStatsReceived");
@@ -2919,7 +2919,7 @@ public:
 	bool                                          bVotedUp;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVotedDown;                                        // 0x000A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVoteSkipped;                                      // 0x000B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E8[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1822[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetUserItemVoteResult) == 0x000008, "Wrong alignment on FGetUserItemVoteResult");
 static_assert(sizeof(FGetUserItemVoteResult) == 0x000010, "Wrong size on FGetUserItemVoteResult");
@@ -2949,7 +2949,7 @@ struct FGSClientDeny final
 public:
 	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamDenyReason                              DenyReason;                                        // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16E9[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1823[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OptionalText;                                      // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGSClientDeny) == 0x000008, "Wrong alignment on FGSClientDeny");
@@ -2967,7 +2967,7 @@ public:
 	struct FSteamID                               SteamIDGroup;                                      // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bMember;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOfficer;                                          // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16EA[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1824[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGSClientGroupStatus) == 0x000008, "Wrong alignment on FGSClientGroupStatus");
 static_assert(sizeof(FGSClientGroupStatus) == 0x000018, "Wrong size on FGSClientGroupStatus");
@@ -3005,7 +3005,7 @@ struct FValidateAuthTicketResponse final
 public:
 	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamAuthSessionResponse                     AuthSessionResponse;                               // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16EB[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1825[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               OwnerSteamID;                                      // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FValidateAuthTicketResponse) == 0x000008, "Wrong alignment on FValidateAuthTicketResponse");
@@ -3030,7 +3030,7 @@ static_assert(offsetof(FIPCFailure, FailureType) == 0x000000, "Member 'FIPCFailu
 struct FIPCountry final
 {
 public:
-	uint8                                         Pad_16EC[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1826[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FIPCountry) == 0x000001, "Wrong alignment on FIPCountry");
 static_assert(sizeof(FIPCountry) == 0x000001, "Wrong size on FIPCountry");
@@ -3042,7 +3042,7 @@ struct FUserAchievementStored final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bGroupAchievement;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16ED[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1827[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AchievementName;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CurrentProgress;                                   // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaxProgress;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3061,10 +3061,10 @@ struct FFriendsIsFollowing final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16EE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1828[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bIsFollowing;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16EF[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1829[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFriendsIsFollowing) == 0x000008, "Wrong alignment on FFriendsIsFollowing");
 static_assert(sizeof(FFriendsIsFollowing) == 0x000018, "Wrong size on FFriendsIsFollowing");
@@ -3078,7 +3078,7 @@ struct FItemInstalled final
 {
 public:
 	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F0[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182A[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FItemInstalled) == 0x000008, "Wrong alignment on FItemInstalled");
@@ -3093,7 +3093,7 @@ struct FJoinClanChatRoomCompletionResult final
 public:
 	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F1[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182B[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FJoinClanChatRoomCompletionResult) == 0x000008, "Wrong alignment on FJoinClanChatRoomCompletionResult");
 static_assert(sizeof(FJoinClanChatRoomCompletionResult) == 0x000010, "Wrong size on FJoinClanChatRoomCompletionResult");
@@ -3108,7 +3108,7 @@ public:
 	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F2[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182C[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FJoinLobbyData) == 0x000008, "Wrong alignment on FJoinLobbyData");
 static_assert(sizeof(FJoinLobbyData) == 0x000010, "Wrong size on FJoinLobbyData");
@@ -3122,7 +3122,7 @@ struct FJoinPartyData final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDBeaconOwner;                                // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 ConnectString;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3139,7 +3139,7 @@ static_assert(offsetof(FJoinPartyData, ConnectString) == 0x000018, "Member 'FJoi
 struct FLicensesUpdated final
 {
 public:
-	uint8                                         Pad_16F4[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182E[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLicensesUpdated) == 0x000001, "Wrong alignment on FLicensesUpdated");
 static_assert(sizeof(FLicensesUpdated) == 0x000001, "Wrong size on FLicensesUpdated");
@@ -3152,7 +3152,7 @@ public:
 	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamChatEntryType                           ChatEntryType;                                     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F5[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_182F[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ChatID;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FLobbyChatMsg) == 0x000008, "Wrong alignment on FLobbyChatMsg");
@@ -3187,7 +3187,7 @@ public:
 	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDMember;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bSuccess;                                          // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F6[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1830[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLobbyDataUpdate) == 0x000008, "Wrong alignment on FLobbyDataUpdate");
 static_assert(sizeof(FLobbyDataUpdate) == 0x000018, "Wrong size on FLobbyDataUpdate");
@@ -3203,7 +3203,7 @@ public:
 	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F7[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1831[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLobbyEnterData) == 0x000008, "Wrong alignment on FLobbyEnterData");
 static_assert(sizeof(FLobbyEnterData) == 0x000010, "Wrong size on FLobbyEnterData");
@@ -3220,7 +3220,7 @@ public:
 	struct FSteamID                               SteamIDGameServer;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 IP;                                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Port;                                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F8[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1832[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLobbyGameCreated) == 0x000008, "Wrong alignment on FLobbyGameCreated");
 static_assert(sizeof(FLobbyGameCreated) == 0x000028, "Wrong size on FLobbyGameCreated");
@@ -3237,7 +3237,7 @@ public:
 	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDAdmin;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bKickedDueToDisconnect;                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16F9[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1833[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLobbyKickedData) == 0x000008, "Wrong alignment on FLobbyKickedData");
 static_assert(sizeof(FLobbyKickedData) == 0x000018, "Wrong size on FLobbyKickedData");
@@ -3262,10 +3262,10 @@ struct FMicroTxnAuthorizationResponse final
 {
 public:
 	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16FA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1834[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OrderID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAuthorized;                                       // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16FB[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1835[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMicroTxnAuthorizationResponse) == 0x000008, "Wrong alignment on FMicroTxnAuthorizationResponse");
 static_assert(sizeof(FMicroTxnAuthorizationResponse) == 0x000020, "Wrong size on FMicroTxnAuthorizationResponse");
@@ -3280,7 +3280,7 @@ struct FP2PSessionConnectFail final
 public:
 	struct FSteamID                               SteamIDRemote;                                     // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamP2PSessionError                         P2PSessionError;                                   // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16FC[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1836[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FP2PSessionConnectFail) == 0x000008, "Wrong alignment on FP2PSessionConnectFail");
 static_assert(sizeof(FP2PSessionConnectFail) == 0x000010, "Wrong size on FP2PSessionConnectFail");
@@ -3347,7 +3347,7 @@ public:
 	int32                                         ServerVersion;                                     // 0x0088(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPassword;                                         // 0x008C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          BSecure;                                           // 0x008D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16FD[0x22];                                    // 0x008E(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1837[0x22];                                    // 0x008E(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameServerItem) == 0x000008, "Wrong alignment on FGameServerItem");
 static_assert(sizeof(FGameServerItem) == 0x0000B0, "Wrong size on FGameServerItem");
@@ -3369,7 +3369,7 @@ static_assert(offsetof(FGameServerItem, BSecure) == 0x00008D, "Member 'FGameServ
 struct FPlaybackStatusHasChanged final
 {
 public:
-	uint8                                         Pad_16FE[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1838[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPlaybackStatusHasChanged) == 0x000001, "Wrong alignment on FPlaybackStatusHasChanged");
 static_assert(sizeof(FPlaybackStatusHasChanged) == 0x000001, "Wrong size on FPlaybackStatusHasChanged");
@@ -3381,7 +3381,7 @@ struct FRemoteStoragePublishedFileSubscribed final
 public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16FF[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1839[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoteStoragePublishedFileSubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileSubscribed");
 static_assert(sizeof(FRemoteStoragePublishedFileSubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileSubscribed");
@@ -3395,7 +3395,7 @@ struct FRemoteStoragePublishedFileUnsubscribed final
 public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1700[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183A[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoteStoragePublishedFileUnsubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileUnsubscribed");
 static_assert(sizeof(FRemoteStoragePublishedFileUnsubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileUnsubscribed");
@@ -3408,7 +3408,7 @@ struct FRemoteStorageSubscribePublishedFileResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1701[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183B[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRemoteStorageSubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageSubscribePublishedFileResult");
@@ -3422,7 +3422,7 @@ struct FRemoteStorageUnsubscribePublishedFileResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1702[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRemoteStorageUnsubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageUnsubscribePublishedFileResult");
@@ -3436,7 +3436,7 @@ struct FRemoveUGCDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1703[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPublishedFileID                       ChildPublishedFileId;                              // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -3453,7 +3453,7 @@ struct FRequestCurrentStatsData final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1704[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183E[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRequestCurrentStatsData) == 0x000008, "Wrong alignment on FRequestCurrentStatsData");
@@ -3479,14 +3479,14 @@ struct FEquippedProfileItems final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1705[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_183F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bHasAnimatedAvatar;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasAvatarFrame;                                   // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasProfileModifier;                               // 0x0012(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasProfileBackground;                             // 0x0013(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasMiniProfileBackground;                         // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1706[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1840[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEquippedProfileItems) == 0x000008, "Wrong alignment on FEquippedProfileItems");
 static_assert(sizeof(FEquippedProfileItems) == 0x000018, "Wrong size on FEquippedProfileItems");
@@ -3505,7 +3505,7 @@ struct FGlobalAchievementPercentagesReady final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1707[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1841[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGlobalAchievementPercentagesReady) == 0x000008, "Wrong alignment on FGlobalAchievementPercentagesReady");
 static_assert(sizeof(FGlobalAchievementPercentagesReady) == 0x000010, "Wrong size on FGlobalAchievementPercentagesReady");
@@ -3519,7 +3519,7 @@ struct FGlobalStatsReceived final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1708[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1842[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGlobalStatsReceived) == 0x000008, "Wrong alignment on FGlobalStatsReceived");
 static_assert(sizeof(FGlobalStatsReceived) == 0x000010, "Wrong size on FGlobalStatsReceived");
@@ -3531,7 +3531,7 @@ static_assert(offsetof(FGlobalStatsReceived, Result) == 0x000008, "Member 'FGlob
 struct alignas(0x08) FSteamSessionSearchSetting final
 {
 public:
-	uint8                                         Pad_1709[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1843[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamSessionSearchSetting) == 0x000008, "Wrong alignment on FSteamSessionSearchSetting");
 static_assert(sizeof(FSteamSessionSearchSetting) == 0x000020, "Wrong size on FSteamSessionSearchSetting");
@@ -3554,7 +3554,7 @@ struct FRequestUserStatsData final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_170A[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1844[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRequestUserStatsData) == 0x000008, "Wrong alignment on FRequestUserStatsData");
@@ -3581,7 +3581,7 @@ static_assert(offsetof(FReservationNotificationData, SteamIDJoiner) == 0x000008,
 struct alignas(0x04) FScreenshotHandle final
 {
 public:
-	uint8                                         Pad_170B[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1845[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FScreenshotHandle) == 0x000004, "Wrong alignment on FScreenshotHandle");
 static_assert(sizeof(FScreenshotHandle) == 0x000004, "Wrong size on FScreenshotHandle");
@@ -3593,7 +3593,7 @@ struct FScreenshotReady final
 public:
 	struct FScreenshotHandle                      Handle;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_170C[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1846[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FScreenshotReady) == 0x000004, "Wrong alignment on FScreenshotReady");
 static_assert(sizeof(FScreenshotReady) == 0x000008, "Wrong size on FScreenshotReady");
@@ -3605,7 +3605,7 @@ static_assert(offsetof(FScreenshotReady, Result) == 0x000004, "Member 'FScreensh
 struct FScreenshotRequested final
 {
 public:
-	uint8                                         Pad_170D[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1847[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FScreenshotRequested) == 0x000001, "Wrong alignment on FScreenshotRequested");
 static_assert(sizeof(FScreenshotRequested) == 0x000001, "Wrong size on FScreenshotRequested");
@@ -3617,11 +3617,11 @@ struct FSteamUGCQueryCompleted final
 public:
 	struct FUGCQueryHandle                        Handle;                                            // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_170E[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1848[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         NumResultsReturned;                                // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TotalMatchingResults;                              // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_170F[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1849[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamUGCQueryCompleted) == 0x000008, "Wrong alignment on FSteamUGCQueryCompleted");
 static_assert(sizeof(FSteamUGCQueryCompleted) == 0x000018, "Wrong size on FSteamUGCQueryCompleted");
@@ -3637,7 +3637,7 @@ struct FGSStatsReceived final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1710[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGSStatsReceived) == 0x000008, "Wrong alignment on FGSStatsReceived");
@@ -3651,7 +3651,7 @@ struct FGSStatsStored final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1711[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184B[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGSStatsStored) == 0x000008, "Wrong alignment on FGSStatsStored");
@@ -3682,7 +3682,7 @@ public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVoteUp;                                           // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1712[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184C[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSetUserItemVoteResult) == 0x000008, "Wrong alignment on FSetUserItemVoteResult");
 static_assert(sizeof(FSetUserItemVoteResult) == 0x000010, "Wrong size on FSetUserItemVoteResult");
@@ -3740,7 +3740,7 @@ struct FSteamInventoryRequestPricesResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1713[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Currency;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSteamInventoryRequestPricesResult) == 0x000008, "Wrong alignment on FSteamInventoryRequestPricesResult");
@@ -3755,7 +3755,7 @@ struct FSteamInventoryResultReady final
 public:
 	struct FSteamInventoryResult                  Handle;                                            // 0x0000(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0004(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1714[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184E[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamInventoryResultReady) == 0x000004, "Wrong alignment on FSteamInventoryResultReady");
 static_assert(sizeof(FSteamInventoryResultReady) == 0x000008, "Wrong size on FSteamInventoryResultReady");
@@ -3768,7 +3768,7 @@ struct FSteamInventoryStartPurchaseResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1715[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_184F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OrderID;                                           // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 TransactionId;                                     // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3805,7 +3805,7 @@ static_assert(offsetof(FSteamRemotePlaySessionDisconnected, SessionID) == 0x0000
 struct FSteamServersConnected final
 {
 public:
-	uint8                                         Pad_1716[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1850[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamServersConnected) == 0x000001, "Wrong alignment on FSteamServersConnected");
 static_assert(sizeof(FSteamServersConnected) == 0x000001, "Wrong size on FSteamServersConnected");
@@ -3826,7 +3826,7 @@ static_assert(offsetof(FSteamServersDisconnected, Result) == 0x000000, "Member '
 struct FSteamShutdown final
 {
 public:
-	uint8                                         Pad_1717[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1851[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamShutdown) == 0x000001, "Wrong alignment on FSteamShutdown");
 static_assert(sizeof(FSteamShutdown) == 0x000001, "Wrong size on FSteamShutdown");
@@ -3860,7 +3860,7 @@ struct FSubmitItemUpdateResult final
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1718[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1852[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSubmitItemUpdateResult) == 0x000008, "Wrong alignment on FSubmitItemUpdateResult");
@@ -3875,11 +3875,11 @@ struct FLeaderboardScoreUploaded final
 {
 public:
 	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1719[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1853[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         Score;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bScoreChanged;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171A[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1854[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         GlobalRankNew;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GlobalRankPrevious;                                // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3900,9 +3900,9 @@ public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 AchievementName;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAchieved;                                         // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171B[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1855[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Icon;                                              // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171C[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1856[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUserAchievementIconFetched) == 0x000008, "Wrong alignment on FUserAchievementIconFetched");
 static_assert(sizeof(FUserAchievementIconFetched) == 0x000030, "Wrong size on FUserAchievementIconFetched");
@@ -3918,7 +3918,7 @@ struct FUserStatsStored final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171D[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1857[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUserStatsStored) == 0x000008, "Wrong alignment on FUserStatsStored");
 static_assert(sizeof(FUserStatsStored) == 0x000010, "Wrong size on FUserStatsStored");
@@ -3953,7 +3953,7 @@ struct FRequestPlayersForGameProgressCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171E[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1858[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRequestPlayersForGameProgressCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameProgressCallback");
@@ -3968,7 +3968,7 @@ struct FSearchForGameProgressCallback final
 public:
 	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_171F[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1859[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               LobbyID;                                           // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDEndedSearch;                                // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         SecondsRemainingEstimate;                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3990,13 +3990,13 @@ struct FSearchForGameResultCallback final
 public:
 	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1720[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185A[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CountPlayersInGame;                                // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CountAcceptedGame;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1721[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185B[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamIDHost;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bFinalCallback;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1722[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185C[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSearchForGameResultCallback) == 0x000008, "Wrong alignment on FSearchForGameResultCallback");
 static_assert(sizeof(FSearchForGameResultCallback) == 0x000030, "Wrong size on FSearchForGameResultCallback");
@@ -4013,7 +4013,7 @@ struct FSubmitPlayerResultResultCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1723[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 UniqueGameID;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDPlayer;                                     // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -4028,7 +4028,7 @@ static_assert(offsetof(FSubmitPlayerResultResultCallback, SteamIDPlayer) == 0x00
 struct alignas(0x02) FSteamFriendsGroupID final
 {
 public:
-	uint8                                         Pad_1724[0x2];                                     // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185E[0x2];                                     // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamFriendsGroupID) == 0x000002, "Wrong alignment on FSteamFriendsGroupID");
 static_assert(sizeof(FSteamFriendsGroupID) == 0x000002, "Wrong size on FSteamFriendsGroupID");
@@ -4039,7 +4039,7 @@ struct FScePadTriggerEffectCommand final
 {
 public:
 	EScePadTriggerEffectMode                      Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1725[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_185F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FScePadTriggerEffectCommandData        CommandData;                                       // 0x0008(0x0060)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FScePadTriggerEffectCommand) == 0x000008, "Wrong alignment on FScePadTriggerEffectCommand");
@@ -4053,11 +4053,11 @@ struct FInputAnalogActionData final
 {
 public:
 	ESteamCoreProInputSourceMode                  Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1726[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1860[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         X;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Y;                                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bActive;                                           // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1727[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1861[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputAnalogActionData) == 0x000004, "Wrong alignment on FInputAnalogActionData");
 static_assert(sizeof(FInputAnalogActionData) == 0x000010, "Wrong size on FInputAnalogActionData");
@@ -4113,7 +4113,7 @@ static_assert(offsetof(FInputMotionData, RotVelZ) == 0x000024, "Member 'FInputMo
 struct alignas(0x08) FInputHandle final
 {
 public:
-	uint8                                         Pad_1728[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1862[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputHandle) == 0x000008, "Wrong alignment on FInputHandle");
 static_assert(sizeof(FInputHandle) == 0x000008, "Wrong size on FInputHandle");
@@ -4123,7 +4123,7 @@ static_assert(sizeof(FInputHandle) == 0x000008, "Wrong size on FInputHandle");
 struct alignas(0x08) FInputActionSetHandle final
 {
 public:
-	uint8                                         Pad_1729[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1863[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputActionSetHandle) == 0x000008, "Wrong alignment on FInputActionSetHandle");
 static_assert(sizeof(FInputActionSetHandle) == 0x000008, "Wrong size on FInputActionSetHandle");
@@ -4133,7 +4133,7 @@ static_assert(sizeof(FInputActionSetHandle) == 0x000008, "Wrong size on FInputAc
 struct alignas(0x08) FInputDigitalActionHandle final
 {
 public:
-	uint8                                         Pad_172A[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1864[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputDigitalActionHandle) == 0x000008, "Wrong alignment on FInputDigitalActionHandle");
 static_assert(sizeof(FInputDigitalActionHandle) == 0x000008, "Wrong size on FInputDigitalActionHandle");
@@ -4143,7 +4143,7 @@ static_assert(sizeof(FInputDigitalActionHandle) == 0x000008, "Wrong size on FInp
 struct alignas(0x08) FInputAnalogActionHandle final
 {
 public:
-	uint8                                         Pad_172B[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1865[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputAnalogActionHandle) == 0x000008, "Wrong alignment on FInputAnalogActionHandle");
 static_assert(sizeof(FInputAnalogActionHandle) == 0x000008, "Wrong size on FInputAnalogActionHandle");
@@ -4153,7 +4153,7 @@ static_assert(sizeof(FInputAnalogActionHandle) == 0x000008, "Wrong size on FInpu
 struct alignas(0x08) FSteamItemInstanceID final
 {
 public:
-	uint8                                         Pad_172C[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1866[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamItemInstanceID) == 0x000008, "Wrong alignment on FSteamItemInstanceID");
 static_assert(sizeof(FSteamItemInstanceID) == 0x000008, "Wrong size on FSteamItemInstanceID");
@@ -4186,10 +4186,10 @@ public:
 	bool                                          bUsingRelay;                                       // 0x0003(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         BytesQueuedForSend;                                // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         PacketsQueuedForSend;                              // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_172D[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1867[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 RemoteIP;                                          // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         RemotePort;                                        // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_172E[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1868[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamP2PSessionState) == 0x000008, "Wrong alignment on FSteamP2PSessionState");
 static_assert(sizeof(FSteamP2PSessionState) == 0x000028, "Wrong size on FSteamP2PSessionState");
@@ -4218,7 +4218,7 @@ static_assert(offsetof(FSteamNetworkPingLocation, Location) == 0x000000, "Member
 struct FSteamParentalSettingsChanged final
 {
 public:
-	uint8                                         Pad_172F[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1869[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamParentalSettingsChanged) == 0x000001, "Wrong alignment on FSteamParentalSettingsChanged");
 static_assert(sizeof(FSteamParentalSettingsChanged) == 0x000001, "Wrong size on FSteamParentalSettingsChanged");
@@ -4229,7 +4229,7 @@ struct FSteamPartyBeaconLocation final
 {
 public:
 	ESteamPartiesBeaconLocationType               Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1730[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 LocationId;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSteamPartyBeaconLocation) == 0x000008, "Wrong alignment on FSteamPartyBeaconLocation");
@@ -4242,7 +4242,7 @@ static_assert(offsetof(FSteamPartyBeaconLocation, LocationId) == 0x000008, "Memb
 struct alignas(0x08) FUGCFileWriteStreamHandle final
 {
 public:
-	uint8                                         Pad_1731[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186B[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong alignment on FUGCFileWriteStreamHandle");
 static_assert(sizeof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong size on FUGCFileWriteStreamHandle");
@@ -4252,7 +4252,7 @@ static_assert(sizeof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong size on FUGC
 struct alignas(0x08) FSteamInventoryUpdateHandle final
 {
 public:
-	uint8                                         Pad_1732[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186C[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong alignment on FSteamInventoryUpdateHandle");
 static_assert(sizeof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong size on FSteamInventoryUpdateHandle");
@@ -4262,7 +4262,7 @@ static_assert(sizeof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong size on FS
 struct FSteamNetworkingIdentity final
 {
 public:
-	uint8                                         Pad_1733[0x88];                                    // 0x0000(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186D[0x88];                                    // 0x0000(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamNetworkingIdentity) == 0x000001, "Wrong alignment on FSteamNetworkingIdentity");
 static_assert(sizeof(FSteamNetworkingIdentity) == 0x000088, "Wrong size on FSteamNetworkingIdentity");
@@ -4275,10 +4275,10 @@ public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESteamWorkshopFileType                        FileType;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1734[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186E[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CreatorAppID;                                      // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ConsumerAppID;                                     // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1735[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_186F[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Description;                                       // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSteamID                               SteamIDOwner;                                      // 0x0038(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
@@ -4335,7 +4335,7 @@ static_assert(offsetof(FSteamUGCDetails, NumChildren) == 0x0000A4, "Member 'FSte
 struct alignas(0x08) FUGCUpdateHandle final
 {
 public:
-	uint8                                         Pad_1736[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1870[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUGCUpdateHandle) == 0x000008, "Wrong alignment on FUGCUpdateHandle");
 static_assert(sizeof(FUGCUpdateHandle) == 0x000008, "Wrong size on FUGCUpdateHandle");

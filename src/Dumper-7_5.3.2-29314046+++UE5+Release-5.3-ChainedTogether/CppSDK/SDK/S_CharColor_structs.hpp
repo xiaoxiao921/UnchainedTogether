@@ -23,7 +23,7 @@ struct FS_CharColor final
 {
 public:
 	E_ChoosenChar                                 Character_2_4F4CB8444FD97EF690E8B89F833EFA15;      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BFA[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E4F[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           Color_5_EFF019574227754EBC11B18608C1CA43;          // 0x0004(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FS_CharColor) == 0x000004, "Wrong alignment on FS_CharColor");

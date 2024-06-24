@@ -37,6 +37,20 @@ void UW_CreateSession_C::ActivateMapButtons(bool CanClick)
 }
 
 
+// Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_CreateSession_C::BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "BndEvt__W_CreateSession_Button_147_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_Button_82_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
@@ -116,6 +130,20 @@ void UW_CreateSession_C::BndEvt__W_CreateSession_Button_84_K2Node_ComponentBound
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_CreateSession_C", "BndEvt__W_CreateSession_Button_84_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_CreateSession_C::BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -264,6 +292,26 @@ void UW_CreateSession_C::OnSuccess_23C877CD4E6BA51E7050278F8ADF8DA3()
 		Func = Class->GetFunction("W_CreateSession_C", "OnSuccess_23C877CD4E6BA51E7050278F8ADF8DA3");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.RefreshSave
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     Save                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::RefreshSave(const struct FS_BiomeSave& Save)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "RefreshSave");
+
+	Params::W_CreateSession_C_RefreshSave Parms{};
+
+	Parms.Save = std::move(Save);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

@@ -39,6 +39,50 @@ void UCustomGI_C::Assign_Controllers_to_Players(int32 ControllersNumber, int32 P
 }
 
 
+// Function CustomGI.CustomGI_C.Completed_A8F4B56E4EA2901B0727DEACDC3ECE67
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USaveGame*                        Param_SaveGame                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::Completed_A8F4B56E4EA2901B0727DEACDC3ECE67(class USaveGame* Param_SaveGame, bool bSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "Completed_A8F4B56E4EA2901B0727DEACDC3ECE67");
+
+	Params::CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67 Parms{};
+
+	Parms.Param_SaveGame = Param_SaveGame;
+	Parms.bSuccess = bSuccess;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CustomGI.CustomGI_C.Completed_F68F81F54A55E596F9A7118687AB01E9
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USaveGame*                        Param_SaveGame                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::Completed_F68F81F54A55E596F9A7118687AB01E9(class USaveGame* Param_SaveGame, bool bSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "Completed_F68F81F54A55E596F9A7118687AB01E9");
+
+	Params::CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9 Parms{};
+
+	Parms.Param_SaveGame = Param_SaveGame;
+	Parms.bSuccess = bSuccess;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function CustomGI.CustomGI_C.CustomEvent
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -327,6 +371,46 @@ void UCustomGI_C::InitProgressSave()
 }
 
 
+// Function CustomGI.CustomGI_C.ManualSave
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     NewItem                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+
+void UCustomGI_C::ManualSave(const struct FS_BiomeSave& NewItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "ManualSave");
+
+	Params::CustomGI_C_ManualSave Parms{};
+
+	Parms.NewItem = std::move(NewItem);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CustomGI.CustomGI_C.ManualSaveFinished__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::ManualSaveFinished__DelegateSignature(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "ManualSaveFinished__DelegateSignature");
+
+	Params::CustomGI_C_ManualSaveFinished__DelegateSignature Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function CustomGI.CustomGI_C.OnFailure_B405B95A431214C35278028DA23BF73A
 // (BlueprintCallable, BlueprintEvent)
 
@@ -338,6 +422,46 @@ void UCustomGI_C::OnFailure_B405B95A431214C35278028DA23BF73A()
 		Func = Class->GetFunction("CustomGI_C", "OnFailure_B405B95A431214C35278028DA23BF73A");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CustomGI.CustomGI_C.OnManualSave
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     NewItem                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+
+void UCustomGI_C::OnManualSave(const struct FS_BiomeSave& NewItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "OnManualSave");
+
+	Params::CustomGI_C_OnManualSave Parms{};
+
+	Parms.NewItem = std::move(NewItem);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CustomGI.CustomGI_C.OnSaveBiome
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     NewItem                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+
+void UCustomGI_C::OnSaveBiome(const struct FS_BiomeSave& NewItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "OnSaveBiome");
+
+	Params::CustomGI_C_OnSaveBiome Parms{};
+
+	Parms.NewItem = std::move(NewItem);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -366,6 +490,26 @@ void UCustomGI_C::ReceiveInit()
 		Func = Class->GetFunction("CustomGI_C", "ReceiveInit");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CustomGI.CustomGI_C.SaveBiomeProgress
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FS_BiomeSave                     NewItem                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+
+void UCustomGI_C::SaveBiomeProgress(const struct FS_BiomeSave& NewItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "SaveBiomeProgress");
+
+	Params::CustomGI_C_SaveBiomeProgress Parms{};
+
+	Parms.NewItem = std::move(NewItem);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

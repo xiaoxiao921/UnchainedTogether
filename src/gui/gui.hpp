@@ -5,6 +5,7 @@
 namespace big
 {
 	static inline hotkey g_gui_toggle("gui_toggle", VK_INSERT);
+	static inline bool g_editing_gui_keybind = false;
 
 	class gui
 	{

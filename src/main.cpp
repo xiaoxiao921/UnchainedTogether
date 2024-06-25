@@ -125,13 +125,15 @@ static LONG custom_exception_handler(EXCEPTION_POINTERS* exception_info)
 {
 	g_has_last_stack_trace = false;
 
-	const auto exception_code = exception_info->ExceptionRecord->ExceptionCode;
-	if (exception_code == EXCEPTION_BREAKPOINT || exception_code == DBG_PRINTEXCEPTION_C || exception_code == DBG_PRINTEXCEPTION_WIDE_C)
+	if (IsDebuggerPresent())
 	{
+		__debugbreak();
+
 		return EXCEPTION_CONTINUE_SEARCH;
 	}
 
-	if (IsDebuggerPresent())
+	const auto exception_code = exception_info->ExceptionRecord->ExceptionCode;
+	if (exception_code == EXCEPTION_BREAKPOINT || exception_code == DBG_PRINTEXCEPTION_C || exception_code == DBG_PRINTEXCEPTION_WIDE_C)
 	{
 		return EXCEPTION_CONTINUE_SEARCH;
 	}
@@ -154,6 +156,7 @@ static LONG custom_exception_handler(EXCEPTION_POINTERS* exception_info)
 
 LONG __fastcall hook_global_cpp_try_catch(EXCEPTION_POINTERS* ExceptionInfo)
 {
+	big::vectored_exception_handler(ExceptionInfo);
 	const auto res = custom_exception_handler(ExceptionInfo);
 
 	static bool once = true;
@@ -207,7 +210,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 		    0,
 		    [](PVOID) -> DWORD
 		    {
-			    Sleep(5000);
+			    //Sleep(5000);
 
 			    // https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/setlocale-wsetlocale?view=msvc-170#utf-8-support
 			    setlocale(LC_ALL, ".utf8");

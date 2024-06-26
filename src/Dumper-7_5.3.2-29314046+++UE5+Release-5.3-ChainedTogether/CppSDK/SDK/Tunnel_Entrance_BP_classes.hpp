@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ConnectorsNum_structs.hpp"
+#include "Tunnel_Entrance_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Tunnel_Entrance_structs.hpp"
+#include "ConnectorsNum_structs.hpp"
 
 
 namespace SDK
@@ -40,9 +40,9 @@ public:
 	bool                                          Connect_Road_At_Con_Location;                      // 0x02E3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETunnel_Entrance                              Select_Tunnel_Entrance;                            // 0x02E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EConnectorsNum                                Choose_Connector;                                  // 0x02E5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D6[0x2];                                       // 0x02E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30C2[0x2];                                     // 0x02E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Splines_Index_To_Connect;                          // 0x02E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D7[0x4];                                       // 0x02EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30C3[0x4];                                     // 0x02EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Trace_Radius;                                      // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Con_1_Location;                                    // 0x02F8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Can_2_Location;                                    // 0x0310(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -50,7 +50,7 @@ public:
 	struct FRotator                               Con_1_Rot;                                         // 0x0330(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Can_Override_Material_;                            // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Can_Override_Sidewalk_Material;                    // 0x0349(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D8[0x6];                                       // 0x034A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30C4[0x6];                                     // 0x034A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     Material_0;                                        // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     Material_1;                                        // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               Con_2_Rot;                                         // 0x0360(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -58,12 +58,12 @@ public:
 	class ALandscapeProxy*                        Landscape;                                         // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
 	bool                                          Raise_Terrain;                                     // 0x0388(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Lower_Terrain;                                     // 0x0389(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D9[0x6];                                       // 0x038A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30C5[0x6];                                     // 0x038A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Side_Falloff;                                      // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Num_Of_Iteration;                                  // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Number_of_Subdivisions_to_be_added;                // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Layer_To_Apply;                                    // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DA[0x4];                                       // 0x03A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30C6[0x4];                                     // 0x03A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Con_Location_3;                                    // 0x03A8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               Con_3_Rot;                                         // 0x03C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	class UMaterialInterface*                     Material_2;                                        // 0x03D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)

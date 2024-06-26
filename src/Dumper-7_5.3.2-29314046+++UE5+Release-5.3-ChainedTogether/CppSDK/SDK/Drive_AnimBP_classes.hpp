@@ -24,7 +24,7 @@ namespace SDK
 class UDrive_AnimBP_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_2EBC[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2EA7[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0358(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0360(0x0008)()
@@ -36,7 +36,7 @@ public:
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace_1;             // 0x0520(0x0020)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0540(0x0048)()
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0588(0x0020)()
-	uint8                                         Pad_2EBD[0x8];                                     // 0x05A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2EA8[0x8];                                     // 0x05A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_TwoBoneIK                    AnimGraphNode_TwoBoneIK_1;                         // 0x05B0(0x0280)()
 	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0830(0x0020)()
 	struct FAnimNode_TwoBoneIK                    AnimGraphNode_TwoBoneIK;                           // 0x0850(0x0280)()

@@ -25,10 +25,10 @@ namespace SDK
 class UThirdPerson_AnimBP_Torch_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3707[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368C[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct ThirdPerson_AnimBP_Torch::FAnimBlueprintGeneratedMutableData __AnimBlueprintMutables;                           // 0x0358(0x000C)(HasGetValueTypeHash)
-	uint8                                         Pad_3708[0x4];                                     // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368D[0x4];                                     // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0368(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0370(0x0008)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0378(0x0020)()
@@ -57,7 +57,7 @@ public:
 	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend;                    // 0x0A30(0x00F0)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0B20(0x0048)()
 	bool                                          IsInAir_;                                          // 0x0B68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3709[0x7];                                     // 0x0B69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368E[0x7];                                     // 0x0B69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Speed;                                             // 0x0B70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsCrouching;                                       // 0x0B78(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsHoldingLight;                                    // 0x0B79(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

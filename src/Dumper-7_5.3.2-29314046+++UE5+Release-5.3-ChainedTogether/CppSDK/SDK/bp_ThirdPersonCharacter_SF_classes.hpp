@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "InputCore_structs.hpp"
 #include "CrouchState_structs.hpp"
+#include "InputCore_structs.hpp"
 
 
 namespace SDK
@@ -25,7 +25,7 @@ namespace SDK
 class alignas(0x10) Abp_ThirdPersonCharacter_SF_C : public ACharacter
 {
 public:
-	uint8                                         Pad_1E50[0x8];                                     // 0x0678(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3659[0x8];                                     // 0x0678(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USpotLightComponent*                    TPPFlashlight;                                     // 0x0688(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        FPP_Flashlight_Socket;                             // 0x0690(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -46,16 +46,16 @@ public:
 	float                                         FOV_Zoom_Mouse_movement_scale_5C18371A41FDF36C6341CCB67AC7178E; // 0x0708(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FOV_Zoom_Field_of_view_5C18371A41FDF36C6341CCB67AC7178E; // 0x070C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            FOV_Zoom__Direction_5C18371A41FDF36C6341CCB67AC7178E; // 0x0710(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E51[0x7];                                     // 0x0711(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_365A[0x7];                                     // 0x0711(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     FOV_Zoom;                                          // 0x0718(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        BaseTurnRate;                                      // 0x0720(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        BaseLookUpRate;                                    // 0x0728(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FPP_ON;                                            // 0x0730(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E52[0x7];                                     // 0x0731(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_365B[0x7];                                     // 0x0731(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Fade;                                              // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        MouseSensitivityScale;                             // 0x0740(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECrouchState                                  CrouchState;                                       // 0x0748(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E53[0x7];                                     // 0x0749(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_365C[0x7];                                     // 0x0749(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UThirdPerson_AnimBP_C*                  AnimationInstance;                                 // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             ZoomInSound;                                       // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             ZoomOutSound;                                      // 0x0760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)

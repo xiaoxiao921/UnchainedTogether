@@ -21,7 +21,7 @@ struct ChaosCacheManager_EnablePlayback final
 public:
 	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnable;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2643[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2520[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ChaosCacheManager_EnablePlayback) == 0x000004, "Wrong alignment on ChaosCacheManager_EnablePlayback");
 static_assert(sizeof(ChaosCacheManager_EnablePlayback) == 0x000008, "Wrong size on ChaosCacheManager_EnablePlayback");
@@ -35,7 +35,7 @@ struct ChaosCacheManager_EnablePlaybackByCache final
 public:
 	class FName                                   InCacheName;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2644[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2521[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ChaosCacheManager_EnablePlaybackByCache) == 0x000004, "Wrong alignment on ChaosCacheManager_EnablePlaybackByCache");
 static_assert(sizeof(ChaosCacheManager_EnablePlaybackByCache) == 0x00000C, "Wrong size on ChaosCacheManager_EnablePlaybackByCache");

@@ -171,6 +171,28 @@ void UW_CreateSession_C::BndEvt__W_CreateSession_W_ComboBox_1_K2Node_ComponentBo
 }
 
 
+// Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_W_ComboBox_2_K2Node_ComponentBoundEvent_10_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::BndEvt__W_CreateSession_W_ComboBox_2_K2Node_ComponentBoundEvent_10_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "BndEvt__W_CreateSession_W_ComboBox_2_K2Node_ComponentBoundEvent_10_OnComboSettingChange__DelegateSignature");
+
+	Params::W_CreateSession_C_BndEvt__W_CreateSession_W_ComboBox_2_K2Node_ComponentBoundEvent_10_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature
 // (BlueprintEvent)
 // Parameters:

@@ -24,7 +24,7 @@ class ABPC_OrderButton_C final : public ACircleButton_BP_C
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BPC_OrderButton_C;                  // 0x0310(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	int32                                         Order;                                             // 0x0318(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_3C63[0x4];                                     // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1239[0x4];                                     // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_LaserLauncher_C*                    LaserLauncher;                                     // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	class ABP_ButtonOrderManager_C*               Manager;                                           // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 

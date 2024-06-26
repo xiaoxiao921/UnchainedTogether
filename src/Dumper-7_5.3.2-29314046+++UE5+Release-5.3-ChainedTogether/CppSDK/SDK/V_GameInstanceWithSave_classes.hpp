@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "S_SavedSetting_structs.hpp"
 #include "E_SettingCategory_structs.hpp"
+#include "S_SavedSetting_structs.hpp"
 #include "E_ApplySettingType_structs.hpp"
 
 
@@ -28,13 +28,13 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UV_SaveGame_C*                          SaveGameObject;                                    // 0x01C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShowSaveIcon;                                      // 0x01D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_358F[0x7];                                     // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_356A[0x7];                                     // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UW_SaveNotif_C*                         SaveNotifWidget;                                   // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FS_SavedSetting>                BackupSettings;                                    // 0x01E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FS_SavedSetting>                DefaultSettings;                                   // 0x01F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          InvertX;                                           // 0x0200(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          InvertY;                                           // 0x0201(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3590[0x6];                                     // 0x0202(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_356B[0x6];                                     // 0x0202(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        X_Sensitivity;                                     // 0x0208(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Y_Sensitivity;                                     // 0x0210(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 PushToTalk;                                        // 0x0218(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
@@ -52,14 +52,19 @@ public:
 	void ApplyCameraSensitivity();
 	void ApplyEffectsQuality();
 	void ApplyGamma();
+	void ApplyLanguage();
 	void ApplyMaxFPS();
 	void ApplyMicrophone(const class FString& ID);
 	void ApplyMotionBlur();
+	void ApplyParticlesQuality();
+	void ApplyPP_Quality();
 	void ApplyResolutionScale(double Resolutionscale);
 	void ApplyShadowQuality();
 	void ApplySharpen();
+	void ApplySSR();
 	void ApplyTextureQuality();
 	void ApplyVideoSettings();
+	void ApplyViewDistance();
 	void ApplyVSync();
 	void BackupSaveGameObject();
 	void Cancel_Settings();
@@ -71,7 +76,7 @@ public:
 	void EraseCheckpoint();
 	void ExecuteUbergraph_V_GameInstanceWithSave(int32 EntryPoint);
 	void GetCameraSettings(bool* Param_InvertX, bool* Param_InvertY, double* Param_X_Sensitivity, double* Param_Y_Sensitivity);
-	void GetCheckpoints(TArray<struct FS_Checkpoint>* CheckpointS);
+	void GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints);
 	void GetPushToTalk(bool* PTT);
 	void GetSaveGameObject(class UV_SaveGame_C** SaveGame);
 	void GetShowDebug(bool* Debug);
@@ -89,7 +94,7 @@ public:
 	void ResetSettings();
 	void ResetSettingsByCategory(E_SettingCategory Category);
 	void SaveAfterRetrigerableDelay(double Delay);
-	void SaveCheckpoint(const struct FS_Checkpoint& CheckpointS);
+	void SaveCheckpoint(const struct FS_Checkpoint& Checkpoints);
 	void SaveGame();
 	void SetCameraInvertX(bool Param_InvertX);
 	void SetCameraInvertY(bool Param_InvertY);

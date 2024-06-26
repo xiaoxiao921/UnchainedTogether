@@ -183,6 +183,20 @@ void UV_GameInstanceWithSave_C::ApplyGamma()
 }
 
 
+// Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyLanguage
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UV_GameInstanceWithSave_C::ApplyLanguage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyLanguage");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyMaxFPS
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -226,6 +240,34 @@ void UV_GameInstanceWithSave_C::ApplyMotionBlur()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyMotionBlur");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyParticlesQuality
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UV_GameInstanceWithSave_C::ApplyParticlesQuality()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyParticlesQuality");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyPP_Quality
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UV_GameInstanceWithSave_C::ApplyPP_Quality()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyPP_Quality");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -279,6 +321,20 @@ void UV_GameInstanceWithSave_C::ApplySharpen()
 }
 
 
+// Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplySSR
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UV_GameInstanceWithSave_C::ApplySSR()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplySSR");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyTextureQuality
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -302,6 +358,20 @@ void UV_GameInstanceWithSave_C::ApplyVideoSettings()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyVideoSettings");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.ApplyViewDistance
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UV_GameInstanceWithSave_C::ApplyViewDistance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_GameInstanceWithSave_C", "ApplyViewDistance");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -503,9 +573,9 @@ void UV_GameInstanceWithSave_C::GetCameraSettings(bool* Param_InvertX, bool* Par
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.GetCheckpoints
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FS_Checkpoint>            CheckpointS                                            (Parm, OutParm)
+// TArray<struct FS_Checkpoint>            Checkpoints                                            (Parm, OutParm)
 
-void UV_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* CheckpointS)
+void UV_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints)
 {
 	static class UFunction* Func = nullptr;
 
@@ -516,8 +586,8 @@ void UV_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* Che
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (CheckpointS != nullptr)
-		*CheckpointS = std::move(Parms.CheckpointS);
+	if (Checkpoints != nullptr)
+		*Checkpoints = std::move(Parms.Checkpoints);
 }
 
 
@@ -839,9 +909,9 @@ void UV_GameInstanceWithSave_C::SaveAfterRetrigerableDelay(double Delay)
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.SaveCheckpoint
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FS_Checkpoint                    CheckpointS                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FS_Checkpoint                    Checkpoints                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UV_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& CheckpointS)
+void UV_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& Checkpoints)
 {
 	static class UFunction* Func = nullptr;
 
@@ -850,7 +920,7 @@ void UV_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& Check
 
 	Params::V_GameInstanceWithSave_C_SaveCheckpoint Parms{};
 
-	Parms.CheckpointS = std::move(CheckpointS);
+	Parms.Checkpoints = std::move(Checkpoints);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

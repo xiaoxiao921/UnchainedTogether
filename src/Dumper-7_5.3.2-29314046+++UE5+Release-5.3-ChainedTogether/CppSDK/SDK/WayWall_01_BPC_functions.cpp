@@ -93,20 +93,6 @@ void AWayWall_01_BPC_C::ExecuteUbergraph_WayWall_01_BPC(int32 EntryPoint)
 }
 
 
-// Function WayWall_01_BPC.WayWall_01_BPC_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AWayWall_01_BPC_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WayWall_01_BPC_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WayWall_01_BPC.WayWall_01_BPC_C.Timeline_0__FinishedFunc
 // (BlueprintEvent)
 
@@ -130,6 +116,20 @@ void AWayWall_01_BPC_C::Timeline_0__UpdateFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WayWall_01_BPC_C", "Timeline_0__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WayWall_01_BPC.WayWall_01_BPC_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AWayWall_01_BPC_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WayWall_01_BPC_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

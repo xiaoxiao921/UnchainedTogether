@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_LeaderboardSwitcher.W_LeaderboardSwitcher_C
-// 0x0088 (0x0348 - 0x02C0)
+// 0x00A0 (0x0360 - 0x02C0)
 class UW_LeaderboardSwitcher_C final : public UUserWidget
 {
 public:
@@ -33,12 +33,15 @@ public:
 	class UBorder*                                Border_1;                                          // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBorder*                                Border_2;                                          // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBorder*                                Border_3;                                          // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                Border_144;                                        // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Leaderboard_C*                       W_Leaderboard;                                     // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Leaderboard_C*                       W_Leaderboard_1;                                   // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Leaderboard_C*                       W_Leaderboard_2;                                   // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Leaderboard_C*                       W_Leaderboard_3;                                   // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        WidgetSwitcher_0;                                  // 0x0340(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_4;                                          // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_144;                                        // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Speedrun_Button;                                   // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Leaderboard_C*                       W_Leaderboard;                                     // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Leaderboard_C*                       W_Leaderboard_1;                                   // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Leaderboard_C*                       W_Leaderboard_2;                                   // 0x0340(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Leaderboard_C*                       W_Leaderboard_3;                                   // 0x0348(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_SpeedrunCom_C*                       W_SpeedrunCom;                                     // 0x0350(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWidgetSwitcher*                        WidgetSwitcher_0;                                  // 0x0358(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_LeaderboardSwitcher_1PlayerButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
@@ -46,6 +49,7 @@ public:
 	void BndEvt__W_LeaderboardSwitcher_3PlayersButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_LeaderboardSwitcher_4PlayersButton_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__W_LeaderboardSwitcher_BackButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__W_LeaderboardSwitcher_Speedrun_Button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void DeselectAllTabs();
 	void ExecuteUbergraph_W_LeaderboardSwitcher(int32 EntryPoint);
@@ -62,7 +66,7 @@ public:
 	}
 };
 static_assert(alignof(UW_LeaderboardSwitcher_C) == 0x000008, "Wrong alignment on UW_LeaderboardSwitcher_C");
-static_assert(sizeof(UW_LeaderboardSwitcher_C) == 0x000348, "Wrong size on UW_LeaderboardSwitcher_C");
+static_assert(sizeof(UW_LeaderboardSwitcher_C) == 0x000360, "Wrong size on UW_LeaderboardSwitcher_C");
 static_assert(offsetof(UW_LeaderboardSwitcher_C, UberGraphFrame) == 0x0002C0, "Member 'UW_LeaderboardSwitcher_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UW_LeaderboardSwitcher_C, NewAnimation) == 0x0002C8, "Member 'UW_LeaderboardSwitcher_C::NewAnimation' has a wrong offset!");
 static_assert(offsetof(UW_LeaderboardSwitcher_C, OnePlayerButton) == 0x0002D0, "Member 'UW_LeaderboardSwitcher_C::OnePlayerButton' has a wrong offset!");
@@ -74,12 +78,15 @@ static_assert(offsetof(UW_LeaderboardSwitcher_C, Border) == 0x0002F8, "Member 'U
 static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_1) == 0x000300, "Member 'UW_LeaderboardSwitcher_C::Border_1' has a wrong offset!");
 static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_2) == 0x000308, "Member 'UW_LeaderboardSwitcher_C::Border_2' has a wrong offset!");
 static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_3) == 0x000310, "Member 'UW_LeaderboardSwitcher_C::Border_3' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_144) == 0x000318, "Member 'UW_LeaderboardSwitcher_C::Border_144' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard) == 0x000320, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_1) == 0x000328, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_1' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_2) == 0x000330, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_2' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_3) == 0x000338, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_3' has a wrong offset!");
-static_assert(offsetof(UW_LeaderboardSwitcher_C, WidgetSwitcher_0) == 0x000340, "Member 'UW_LeaderboardSwitcher_C::WidgetSwitcher_0' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_4) == 0x000318, "Member 'UW_LeaderboardSwitcher_C::Border_4' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, Border_144) == 0x000320, "Member 'UW_LeaderboardSwitcher_C::Border_144' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, Speedrun_Button) == 0x000328, "Member 'UW_LeaderboardSwitcher_C::Speedrun_Button' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard) == 0x000330, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_1) == 0x000338, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_1' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_2) == 0x000340, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_2' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, W_Leaderboard_3) == 0x000348, "Member 'UW_LeaderboardSwitcher_C::W_Leaderboard_3' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, W_SpeedrunCom) == 0x000350, "Member 'UW_LeaderboardSwitcher_C::W_SpeedrunCom' has a wrong offset!");
+static_assert(offsetof(UW_LeaderboardSwitcher_C, WidgetSwitcher_0) == 0x000358, "Member 'UW_LeaderboardSwitcher_C::WidgetSwitcher_0' has a wrong offset!");
 
 }
 

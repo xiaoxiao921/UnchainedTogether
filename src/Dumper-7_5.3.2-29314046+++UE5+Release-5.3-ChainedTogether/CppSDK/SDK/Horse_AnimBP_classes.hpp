@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Horse_AnimBP_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Horse_AnimBP_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 
 
@@ -24,10 +24,10 @@ namespace SDK
 class UHorse_AnimBP_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3652[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3618[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct Horse_AnimBP::FAnimBlueprintGeneratedMutableData __AnimBlueprintMutables;                           // 0x0358(0x000C)(HasGetValueTypeHash)
-	uint8                                         Pad_3653[0x4];                                     // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3619[0x4];                                     // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0368(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0370(0x0008)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0378(0x0020)()

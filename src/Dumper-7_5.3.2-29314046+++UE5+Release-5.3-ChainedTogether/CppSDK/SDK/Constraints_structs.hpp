@@ -35,16 +35,6 @@ struct FMovieSceneConstraintChannel final : public FMovieSceneBoolChannel
 static_assert(alignof(FMovieSceneConstraintChannel) == 0x000008, "Wrong alignment on FMovieSceneConstraintChannel");
 static_assert(sizeof(FMovieSceneConstraintChannel) == 0x000100, "Wrong size on FMovieSceneConstraintChannel");
 
-// ScriptStruct Constraints.ConstraintTickFunction
-// 0x0018 (0x0040 - 0x0028)
-struct FConstraintTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_146D[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FConstraintTickFunction) == 0x000008, "Wrong alignment on FConstraintTickFunction");
-static_assert(sizeof(FConstraintTickFunction) == 0x000040, "Wrong size on FConstraintTickFunction");
-
 // ScriptStruct Constraints.ConstraintAndActiveChannel
 // 0x0130 (0x0130 - 0x0000)
 struct FConstraintAndActiveChannel final
@@ -59,6 +49,16 @@ static_assert(sizeof(FConstraintAndActiveChannel) == 0x000130, "Wrong size on FC
 static_assert(offsetof(FConstraintAndActiveChannel, Constraint) == 0x000000, "Member 'FConstraintAndActiveChannel::Constraint' has a wrong offset!");
 static_assert(offsetof(FConstraintAndActiveChannel, ActiveChannel) == 0x000028, "Member 'FConstraintAndActiveChannel::ActiveChannel' has a wrong offset!");
 static_assert(offsetof(FConstraintAndActiveChannel, ConstraintCopyToSpawn) == 0x000128, "Member 'FConstraintAndActiveChannel::ConstraintCopyToSpawn' has a wrong offset!");
+
+// ScriptStruct Constraints.ConstraintTickFunction
+// 0x0018 (0x0040 - 0x0028)
+struct FConstraintTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_1360[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FConstraintTickFunction) == 0x000008, "Wrong alignment on FConstraintTickFunction");
+static_assert(sizeof(FConstraintTickFunction) == 0x000040, "Wrong size on FConstraintTickFunction");
 
 }
 

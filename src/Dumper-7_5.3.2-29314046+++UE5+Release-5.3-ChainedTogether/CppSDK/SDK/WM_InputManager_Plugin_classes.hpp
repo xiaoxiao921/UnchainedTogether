@@ -46,25 +46,25 @@ static_assert(sizeof(UWM_ControllerFunctionLib) == 0x000028, "Wrong size on UWM_
 class UWM_Device : public UObject
 {
 public:
-	uint8                                         Pad_1D96[0x10];                                    // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C7C[0x10];                                    // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWM_BasicDeviceInfo                    BasicDeviceInfo;                                   // 0x0038(0x0068)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnRawDataInitialized;                              // 0x00A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                          Enabled;                                           // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          RawDataWasInitialized;                             // 0x00B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D97[0x6];                                     // 0x00B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C7D[0x6];                                     // 0x00B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SAVESTRING;                                        // 0x00B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_DeviceType                                DeviceType;                                        // 0x00C8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D98[0x3];                                     // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C7E[0x3];                                     // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         DeviceSlot;                                        // 0x00CC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         UniqueDeviceSlot;                                  // 0x00D0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ControllerAssigment;                               // 0x00D4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ControllerAssigment_pending;                       // 0x00D8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DeviceActivityDetected;                            // 0x00DC(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsSelected;                                        // 0x00DD(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D99[0x2A];                                    // 0x00DE(0x002A)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C7F[0x2A];                                    // 0x00DE(0x002A)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 UniqueHandleString;                                // 0x0108(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PacketNum;                                         // 0x0118(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9A[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C80[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AssignDeviceToPlayerIndex(int32 Param_Index);
@@ -107,12 +107,12 @@ public:
 	bool                                          Is_XInput;                                         // 0x01C0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Is_XInputInitialized;                              // 0x01C1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Is_XInputSlotGuess;                                // 0x01C2(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9B[0x1];                                     // 0x01C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C81[0x1];                                     // 0x01C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         X_I_D;                                             // 0x01C4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Is_Steam;                                          // 0x01C8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9C[0x5D7];                                   // 0x01C9(0x05D7)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C82[0x5D7];                                   // 0x01C9(0x05D7)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         FirstPressedRawKey;                                // 0x07A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9D[0x4];                                     // 0x07A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C83[0x4];                                     // 0x07A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	TArray<int32> GetRaw_Available_Axes();
@@ -185,15 +185,15 @@ static_assert(sizeof(UWM_Device_Mouse) == 0x000120, "Wrong size on UWM_Device_Mo
 class UWM_HID_Joystick final : public UWM_Device_HID
 {
 public:
-	uint8                                         Pad_1DA3[0x18];                                    // 0x07A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C89[0x18];                                    // 0x07A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ConfigMode;                                        // 0x07C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA4[0x4];                                     // 0x07C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8A[0x4];                                     // 0x07C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnModeSwitched;                                    // 0x07C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnConfigChanged;                                   // 0x07D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                          bIsListeningForInput;                              // 0x07E8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA5[0x7];                                     // 0x07E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8B[0x7];                                     // 0x07E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKey                                   ListeningKey;                                      // 0x07F0(0x0018)(BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA6[0x8];                                     // 0x0808(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8C[0x8];                                     // 0x0808(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AutodetectAxisConfig(int32 Axis);
@@ -235,12 +235,12 @@ static_assert(offsetof(UWM_HID_Joystick, ListeningKey) == 0x0007F0, "Member 'UWM
 class UWM_HID_Joystick_SAV final : public USaveGame
 {
 public:
-	uint8                                         Pad_1DA9[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8F[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          WasInitialized;                                    // 0x0030(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAA[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C90[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SaveSlot;                                          // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CurrentMode;                                       // 0x0048(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAB[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C91[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, struct FHID_Joystick_CONFIG>      HID_JoystickConfig;                                // 0x0050(0x0050)(NativeAccessSpecifierPublic)
 
 public:
@@ -265,29 +265,29 @@ static_assert(offsetof(UWM_HID_Joystick_SAV, HID_JoystickConfig) == 0x000050, "M
 class UWM_InputManagerBase : public UObject
 {
 public:
-	uint8                                         Pad_1DAC[0x10];                                    // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C92[0x10];                                    // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FEnhancedInputMapping_WM>       EnhancedMappings;                                  // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	class FString                                 Version;                                           // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAD[0x20];                                    // 0x0058(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C93[0x20];                                    // 0x0058(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bEnableErrorLogs;                                  // 0x0078(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableSucessLogs;                                 // 0x0079(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnable_LOG_DEBUG_HIDP_PARSING;                    // 0x007A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCollectRuntimeLogs;                               // 0x007B(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAE[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C94[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         Runtime_PluginErrors;                              // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                         Runtime_PluginSucess;                              // 0x0090(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bDevicesRegistered;                                // 0x00A0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAF[0x3];                                     // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C95[0x3];                                     // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         NumMessageAttempts;                                // 0x00A4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumFoundJoysticks_Debug;                           // 0x00A8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumPoolingDevices;                                 // 0x00AC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumWindows;                                        // 0x00B0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB0[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C96[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             Debug;                                             // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB1[0x10];                                    // 0x00C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C97[0x10];                                    // 0x00C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	EWM_InputManagerMode                          ManagerModeEnum;                                   // 0x00D8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          HasSViewport;                                      // 0x00D9(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB2[0x6];                                     // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C98[0x6];                                     // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnDeviceConnected;                                 // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnDeviceDisconnected;                              // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnJoystickButtonTrigger;                           // 0x0100(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -304,7 +304,7 @@ public:
 	FMulticastInlineDelegateProperty_             OnDeviceAssigmentChange;                           // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class FString                                 ManagerMode;                                       // 0x01C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumberOfPlayers;                                   // 0x01D0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB3[0x1C];                                    // 0x01D4(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C99[0x1C];                                    // 0x01D4(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UWM_Device*>                     All_DevicesList;                                   // 0x01F0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TMap<int32, class UWM_Device_HID*>            HID_DeviceList;                                    // 0x0200(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<int32, class UWM_HID_Joystick*>          Joystick_DeviceList;                               // 0x0250(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
@@ -312,7 +312,7 @@ public:
 	TMap<int32, class UWM_Device*>                Mouse_DeviceList;                                  // 0x02F0(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<int32, class UWM_HID_Joystick*>          Joystick_UniqueDeviceTypeList;                     // 0x0340(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<int32, class UWM_Device_HID*>            XInputDevices;                                     // 0x0390(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB4[0x50];                                    // 0x03E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9A[0x50];                                    // 0x03E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GetActionInputs(TArray<class FName>* ButtonInputs);
@@ -385,22 +385,22 @@ static_assert(offsetof(UWM_InputManagerBase, XInputDevices) == 0x000390, "Member
 class UWM_InputManager final : public UWM_InputManagerBase
 {
 public:
-	uint8                                         Pad_1DB6[0xF8];                                    // 0x0430(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9C[0xF8];                                    // 0x0430(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FKey, EWM_GamepadKeyType>         HIDJoystick_KeysByType;                            // 0x0528(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<struct FKey, class FString>              HIDJoystick_Axes;                                  // 0x0578(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<struct FKey, class FString>              HIDJoystick_Buttons;                               // 0x05C8(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<class FString, struct FDPADCollection>   HIDJoystick_DPADs;                                 // 0x0618(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB7[0xA0];                                    // 0x0668(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9D[0xA0];                                    // 0x0668(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          EnableHIDInternalButtonEvents;                     // 0x0708(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_InputManagerStatus                        Status;                                            // 0x0709(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB8[0x2];                                     // 0x070A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9E[0x2];                                     // 0x070A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         NumGamepads;                                       // 0x070C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumKeyboards;                                      // 0x0710(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumMouses;                                         // 0x0714(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AutoAssignDevicesByDeviceSlot;                     // 0x0718(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB9[0x14];                                    // 0x071C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9F[0x14];                                    // 0x071C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          ShowOnlyUsedInputs;                                // 0x0730(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBA[0x17];                                    // 0x0731(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CA0[0x17];                                    // 0x0731(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BeginUMG();
@@ -441,7 +441,7 @@ static_assert(offsetof(UWM_InputManager, ShowOnlyUsedInputs) == 0x000730, "Membe
 class UWM_Settings final : public UDeveloperSettings
 {
 public:
-	uint8                                         Pad_1DBC[0x20];                                    // 0x0038(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CA2[0x20];                                    // 0x0038(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         DefaultPlayerIndex_DeviceAssigment;                // 0x0058(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultSensitivity;                                // 0x005C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultDeadzone;                                   // 0x0060(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -449,7 +449,7 @@ public:
 	bool                                          LogConnectDisconnect;                              // 0x0065(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InitAPI_Manually;                                  // 0x0066(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          OpenSupportWebsite;                                // 0x0067(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBD[0x50];                                    // 0x0068(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CA3[0x50];                                    // 0x0068(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

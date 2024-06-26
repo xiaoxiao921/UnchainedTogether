@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "StructUtils_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "StructUtils_structs.hpp"
 
 
 namespace SDK
@@ -40,7 +40,7 @@ class UPropertyBag final : public UScriptStruct
 {
 public:
 	TArray<struct FPropertyBagPropertyDesc>       PropertyDescs;                                     // 0x00C0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2681[0x8];                                     // 0x00D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_255B[0x8];                                     // 0x00D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

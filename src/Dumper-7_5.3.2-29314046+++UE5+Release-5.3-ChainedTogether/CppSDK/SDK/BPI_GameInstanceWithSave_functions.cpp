@@ -95,9 +95,9 @@ void IBPI_GameInstanceWithSave_C::GetCameraSettings(bool* InvertX, bool* InvertY
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.GetCheckpoints
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FS_Checkpoint>            CheckpointS                                            (Parm, OutParm)
+// TArray<struct FS_Checkpoint>            Checkpoints                                            (Parm, OutParm)
 
-void IBPI_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* CheckpointS)
+void IBPI_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,8 +108,8 @@ void IBPI_GameInstanceWithSave_C::GetCheckpoints(TArray<struct FS_Checkpoint>* C
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (CheckpointS != nullptr)
-		*CheckpointS = std::move(Parms.CheckpointS);
+	if (Checkpoints != nullptr)
+		*Checkpoints = std::move(Parms.Checkpoints);
 }
 
 
@@ -269,9 +269,9 @@ void IBPI_GameInstanceWithSave_C::SaveAfterRetrigerableDelay(double Delay)
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.SaveCheckpoint
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FS_Checkpoint                    CheckpointS                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FS_Checkpoint                    Checkpoints                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void IBPI_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& CheckpointS)
+void IBPI_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& Checkpoints)
 {
 	static class UFunction* Func = nullptr;
 
@@ -280,7 +280,7 @@ void IBPI_GameInstanceWithSave_C::SaveCheckpoint(const struct FS_Checkpoint& Che
 
 	Params::BPI_GameInstanceWithSave_C_SaveCheckpoint Parms{};
 
-	Parms.CheckpointS = std::move(CheckpointS);
+	Parms.Checkpoints = std::move(Checkpoints);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

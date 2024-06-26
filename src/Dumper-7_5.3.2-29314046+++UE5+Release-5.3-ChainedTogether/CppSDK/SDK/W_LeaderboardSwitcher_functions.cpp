@@ -87,6 +87,20 @@ void UW_LeaderboardSwitcher_C::BndEvt__W_LeaderboardSwitcher_BackButton_K2Node_C
 }
 
 
+// Function W_LeaderboardSwitcher.W_LeaderboardSwitcher_C.BndEvt__W_LeaderboardSwitcher_Speedrun_Button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_LeaderboardSwitcher_C::BndEvt__W_LeaderboardSwitcher_Speedrun_Button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_LeaderboardSwitcher_C", "BndEvt__W_LeaderboardSwitcher_Speedrun_Button_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_LeaderboardSwitcher.W_LeaderboardSwitcher_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

@@ -462,6 +462,20 @@ bool AGS_Game_C::FindPlayerStart(struct FTransform* Transform)
 }
 
 
+// Function GS_Game.GS_Game_C.FlushCheckLavaDeath
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::FlushCheckLavaDeath()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "FlushCheckLavaDeath");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.FlushSaveBiome
 // (BlueprintCallable, BlueprintEvent)
 

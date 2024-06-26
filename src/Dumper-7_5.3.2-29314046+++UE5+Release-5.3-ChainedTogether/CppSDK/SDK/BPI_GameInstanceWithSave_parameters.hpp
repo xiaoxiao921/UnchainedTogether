@@ -24,7 +24,7 @@ struct BPI_GameInstanceWithSave_C_GetCameraSettings final
 public:
 	bool                                          InvertX;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          InvertY;                                           // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_356B[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10C0[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        X_Sensitivity;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Y_Sensitivity;                                     // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -40,11 +40,11 @@ static_assert(offsetof(BPI_GameInstanceWithSave_C_GetCameraSettings, Y_Sensitivi
 struct BPI_GameInstanceWithSave_C_GetCheckpoints final
 {
 public:
-	TArray<struct FS_Checkpoint>                  CheckpointS;                                       // 0x0000(0x0010)(Parm, OutParm)
+	TArray<struct FS_Checkpoint>                  Checkpoints;                                       // 0x0000(0x0010)(Parm, OutParm)
 };
 static_assert(alignof(BPI_GameInstanceWithSave_C_GetCheckpoints) == 0x000008, "Wrong alignment on BPI_GameInstanceWithSave_C_GetCheckpoints");
 static_assert(sizeof(BPI_GameInstanceWithSave_C_GetCheckpoints) == 0x000010, "Wrong size on BPI_GameInstanceWithSave_C_GetCheckpoints");
-static_assert(offsetof(BPI_GameInstanceWithSave_C_GetCheckpoints, CheckpointS) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_GetCheckpoints::CheckpointS' has a wrong offset!");
+static_assert(offsetof(BPI_GameInstanceWithSave_C_GetCheckpoints, Checkpoints) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_GetCheckpoints::Checkpoints' has a wrong offset!");
 
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.GetPushToTalk
 // 0x0001 (0x0001 - 0x0000)
@@ -117,11 +117,11 @@ static_assert(offsetof(BPI_GameInstanceWithSave_C_SaveAfterRetrigerableDelay, De
 struct BPI_GameInstanceWithSave_C_SaveCheckpoint final
 {
 public:
-	struct FS_Checkpoint                          CheckpointS;                                       // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FS_Checkpoint                          Checkpoints;                                       // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_GameInstanceWithSave_C_SaveCheckpoint) == 0x000008, "Wrong alignment on BPI_GameInstanceWithSave_C_SaveCheckpoint");
 static_assert(sizeof(BPI_GameInstanceWithSave_C_SaveCheckpoint) == 0x000018, "Wrong size on BPI_GameInstanceWithSave_C_SaveCheckpoint");
-static_assert(offsetof(BPI_GameInstanceWithSave_C_SaveCheckpoint, CheckpointS) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_SaveCheckpoint::CheckpointS' has a wrong offset!");
+static_assert(offsetof(BPI_GameInstanceWithSave_C_SaveCheckpoint, Checkpoints) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_SaveCheckpoint::Checkpoints' has a wrong offset!");
 
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.SetCameraInvertX
 // 0x0001 (0x0001 - 0x0000)

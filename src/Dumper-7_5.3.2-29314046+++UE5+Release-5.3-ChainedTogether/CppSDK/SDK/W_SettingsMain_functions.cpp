@@ -109,6 +109,28 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_DialogsVolume_K2Node_ComponentBou
 }
 
 
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_Effects_K2Node_ComponentBoundEvent_33_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_Effects_K2Node_ComponentBoundEvent_33_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_Effects_K2Node_ComponentBoundEvent_33_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_Effects_K2Node_ComponentBoundEvent_33_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_EffectsVolume_K2Node_ComponentBoundEvent_24_OnValueChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -208,6 +230,42 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_InvertY_K2Node_ComponentBoundEven
 	Parms.SelectType = SelectType;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_LanguageBox_K2Node_ComponentBoundEvent_37_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_LanguageBox_K2Node_ComponentBoundEvent_37_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_LanguageBox_K2Node_ComponentBoundEvent_37_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_LanguageBox_K2Node_ComponentBoundEvent_37_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_LanguageTab_K2Node_ComponentBoundEvent_35_OnClicked__DelegateSignature
+// (BlueprintEvent)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_LanguageTab_K2Node_ComponentBoundEvent_35_OnClicked__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_LanguageTab_K2Node_ComponentBoundEvent_35_OnClicked__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -313,6 +371,28 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_MusicVolume_K2Node_ComponentBound
 }
 
 
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_PP_Quality_K2Node_ComponentBoundEvent_34_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_PP_Quality_K2Node_ComponentBoundEvent_34_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_PP_Quality_K2Node_ComponentBoundEvent_34_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_PP_Quality_K2Node_ComponentBoundEvent_34_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_QuitButton_1_K2Node_ComponentBoundEvent_19_OnClicked__DelegateSignature
 // (BlueprintEvent)
 
@@ -399,6 +479,28 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_ResolutionScale_K2Node_ComponentB
 }
 
 
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_ShadowQuality_1_K2Node_ComponentBoundEvent_16_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_ShadowQuality_1_K2Node_ComponentBoundEvent_16_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_ShadowQuality_1_K2Node_ComponentBoundEvent_16_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_ShadowQuality_1_K2Node_ComponentBoundEvent_16_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_ShadowQuality_K2Node_ComponentBoundEvent_14_OnComboSettingChange__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -443,6 +545,28 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_Sharpen_K2Node_ComponentBoundEven
 }
 
 
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_SSR_K2Node_ComponentBoundEvent_32_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_SSR_K2Node_ComponentBoundEvent_32_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_SSR_K2Node_ComponentBoundEvent_32_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_SSR_K2Node_ComponentBoundEvent_32_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_TeleportButton_K2Node_ComponentBoundEvent_12_OnClicked__DelegateSignature
 // (BlueprintEvent)
 
@@ -454,6 +578,50 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_TeleportButton_K2Node_ComponentBo
 		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_TeleportButton_K2Node_ComponentBoundEvent_12_OnClicked__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_TextureQuality_K2Node_ComponentBoundEvent_36_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_TextureQuality_K2Node_ComponentBoundEvent_36_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_TextureQuality_K2Node_ComponentBoundEvent_36_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_TextureQuality_K2Node_ComponentBoundEvent_36_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_ViewDistance_K2Node_ComponentBoundEvent_31_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_ViewDistance_K2Node_ComponentBoundEvent_31_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_ViewDistance_K2Node_ComponentBoundEvent_31_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SettingsMain_C_BndEvt__W_SettingsMain_ViewDistance_K2Node_ComponentBoundEvent_31_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

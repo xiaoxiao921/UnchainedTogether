@@ -71,20 +71,6 @@ void ABP_Lava_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_Lava.BP_Lava_C.Reset
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Lava_C::Reset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Lava_C", "Reset");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Lava.BP_Lava_C.ResetAll
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -102,6 +88,20 @@ void ABP_Lava_C::ResetAll(const struct FVector& NewLocation)
 	Parms.NewLocation = std::move(NewLocation);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Lava.BP_Lava_C.ResetSrv
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Lava_C::ResetSrv()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Lava_C", "ResetSrv");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -26,7 +26,7 @@ public:
 	void CancelSettings();
 	void EraseCheckpoint();
 	void GetCameraSettings(bool* InvertX, bool* InvertY, double* X_Sensitivity, double* Y_Sensitivity);
-	void GetCheckpoints(TArray<struct FS_Checkpoint>* CheckpointS);
+	void GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints);
 	void GetPushToTalk(bool* PTT);
 	void GetSaveGameObject(class UV_SaveGame_C** Param_SaveGame);
 	void GetShowDebug(bool* Debug);
@@ -35,7 +35,7 @@ public:
 	void ResetResolution();
 	void ResetSettings();
 	void SaveAfterRetrigerableDelay(double Delay);
-	void SaveCheckpoint(const struct FS_Checkpoint& CheckpointS);
+	void SaveCheckpoint(const struct FS_Checkpoint& Checkpoints);
 	void SaveGame();
 	void SetCameraInvertX(bool InvertX);
 	void SetCameraInvertY(bool InvertY);

@@ -91,7 +91,7 @@ public:
 	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ButtonValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_KeyTriggerState                           KeyTriggerState;                                   // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9E[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C84[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_Device_HID_GetRaw_ButtonValue) == 0x000004, "Wrong alignment on WM_Device_HID_GetRaw_ButtonValue");
 static_assert(sizeof(WM_Device_HID_GetRaw_ButtonValue) == 0x000008, "Wrong size on WM_Device_HID_GetRaw_ButtonValue");
@@ -107,7 +107,7 @@ public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AxisValue;                                         // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsValid_WM_Key;                                    // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9F[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C85[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_Device_HID_GetAxisKeyValue) == 0x000008, "Wrong alignment on WM_Device_HID_GetAxisKeyValue");
 static_assert(sizeof(WM_Device_HID_GetAxisKeyValue) == 0x000020, "Wrong size on WM_Device_HID_GetAxisKeyValue");
@@ -123,7 +123,7 @@ public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ButtonValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsValid_WM_Key;                                    // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA0[0x6];                                     // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C86[0x6];                                     // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_Device_HID_GetButtonKeyValue) == 0x000008, "Wrong alignment on WM_Device_HID_GetButtonKeyValue");
 static_assert(sizeof(WM_Device_HID_GetButtonKeyValue) == 0x000020, "Wrong size on WM_Device_HID_GetButtonKeyValue");
@@ -137,7 +137,7 @@ struct WM_Device_HID_GetRaw_AxisData final
 {
 public:
 	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C87[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWM_HID_AxisData                       ReturnValue;                                       // 0x0008(0x00A8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(WM_Device_HID_GetRaw_AxisData) == 0x000008, "Wrong alignment on WM_Device_HID_GetRaw_AxisData");
@@ -169,7 +169,7 @@ public:
 	bool                                          Left;                                              // 0x0006(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Right;                                             // 0x0007(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_AxisCodeTable                             AxisEnum;                                          // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA2[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C88[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AxisBindingCode;                                   // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AxisHEX;                                           // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Instance;                                          // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -269,7 +269,7 @@ struct WM_HID_Joystick_ListenForKeyInput final
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Sucess;                                            // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA7[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8D[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_HID_Joystick_ListenForKeyInput) == 0x000008, "Wrong alignment on WM_HID_Joystick_ListenForKeyInput");
 static_assert(sizeof(WM_HID_Joystick_ListenForKeyInput) == 0x000020, "Wrong size on WM_HID_Joystick_ListenForKeyInput");
@@ -294,7 +294,7 @@ struct WM_HID_Joystick_RebindKeyInput final
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Sucess;                                            // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA8[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8E[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_HID_Joystick_RebindKeyInput) == 0x000008, "Wrong alignment on WM_HID_Joystick_RebindKeyInput");
 static_assert(sizeof(WM_HID_Joystick_RebindKeyInput) == 0x000020, "Wrong size on WM_HID_Joystick_RebindKeyInput");
@@ -429,7 +429,7 @@ public:
 	struct FKey                                   WM_Key;                                            // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWM_Device*                             Device;                                            // 0x0018(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_KeyTriggerState                           TriggerState;                                      // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB5[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C9B[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_InputManagerBase_OnDeviceButtonKeyEvent) == 0x000008, "Wrong alignment on WM_InputManagerBase_OnDeviceButtonKeyEvent");
 static_assert(sizeof(WM_InputManagerBase_OnDeviceButtonKeyEvent) == 0x000028, "Wrong size on WM_InputManagerBase_OnDeviceButtonKeyEvent");
@@ -488,7 +488,7 @@ struct WM_InputManager_Get_HidJoystickKeyType final
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_GamepadKeyType                            ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBB[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CA1[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WM_InputManager_Get_HidJoystickKeyType) == 0x000008, "Wrong alignment on WM_InputManager_Get_HidJoystickKeyType");
 static_assert(sizeof(WM_InputManager_Get_HidJoystickKeyType) == 0x000020, "Wrong size on WM_InputManager_Get_HidJoystickKeyType");

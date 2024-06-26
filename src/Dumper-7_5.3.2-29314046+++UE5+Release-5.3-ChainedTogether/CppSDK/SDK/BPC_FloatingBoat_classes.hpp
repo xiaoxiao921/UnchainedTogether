@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "BP_FloatingPlatform_classes.hpp"
 
 
@@ -17,9 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BPC_FloatingBoat.BPC_FloatingBoat_C
-// 0x0000 (0x0350 - 0x0350)
+// 0x0010 (0x03B0 - 0x03A0)
 class ABPC_FloatingBoat_C final : public ABP_FloatingPlatform_C
 {
+public:
+	struct FPointerToUberGraphFrame               UberGraphFrame_BPC_FloatingBoat_C;                 // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+
+public:
+	void BndEvt__BPC_FloatingBoat_Cylinder_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void BndEvt__BPC_FloatingBoat_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
+	void ExecuteUbergraph_BPC_FloatingBoat(int32 EntryPoint);
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -31,7 +40,8 @@ public:
 	}
 };
 static_assert(alignof(ABPC_FloatingBoat_C) == 0x000010, "Wrong alignment on ABPC_FloatingBoat_C");
-static_assert(sizeof(ABPC_FloatingBoat_C) == 0x000350, "Wrong size on ABPC_FloatingBoat_C");
+static_assert(sizeof(ABPC_FloatingBoat_C) == 0x0003B0, "Wrong size on ABPC_FloatingBoat_C");
+static_assert(offsetof(ABPC_FloatingBoat_C, UberGraphFrame_BPC_FloatingBoat_C) == 0x0003A0, "Member 'ABPC_FloatingBoat_C::UberGraphFrame_BPC_FloatingBoat_C' has a wrong offset!");
 
 }
 

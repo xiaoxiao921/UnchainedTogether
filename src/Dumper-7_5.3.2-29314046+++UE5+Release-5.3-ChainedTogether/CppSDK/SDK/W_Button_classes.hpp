@@ -32,7 +32,7 @@ public:
 	struct FLinearColor                           UnhoveredBorderColor;                              // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FSlateColor                            UnhoveredTextColor;                                // 0x0308(0x0014)(Edit, BlueprintVisible, ExposeOnSpawn)
 	bool                                          RoundBorders;                                      // 0x031C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_350F[0x3];                                     // 0x031D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3480[0x3];                                     // 0x031D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           HoveredBorderColor;                                // 0x0320(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	int32                                         FontSize;                                          // 0x0330(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FSlateColor                            HoveredTextColor;                                  // 0x0334(0x0014)(Edit, BlueprintVisible, ExposeOnSpawn)

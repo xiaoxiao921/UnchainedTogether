@@ -15,31 +15,32 @@ namespace SDK::Params
 {
 
 // Function W_PasswordSession.W_PasswordSession_C.ExecuteUbergraph_W_PasswordSession
-// 0x0098 (0x0098 - 0x0000)
+// 0x00A8 (0x00A8 - 0x0000)
 struct W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_330C[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3056[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UW_JoiningSession_C*                    CallFunc_Create_ReturnValue;                       // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_330D[0x6];                                     // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3057[0x6];                                     // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSessionSetting_ReturnValue;            // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_330E[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3058[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSessionSetting_Value;                  // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_GetText_ReturnValue;                      // 0x0048(0x0018)()
 	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0070(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UJoinSessionCallbackProxy*              CallFunc_JoinSession_ReturnValue;                  // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_EncryptString_ReturnValue;                // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0080(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UJoinSessionCallbackProxy*              CallFunc_JoinSession_ReturnValue;                  // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x00A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession) == 0x000008, "Wrong alignment on W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession");
-static_assert(sizeof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession) == 0x000098, "Wrong size on W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession");
+static_assert(sizeof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession) == 0x0000A8, "Wrong size on W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession");
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, EntryPoint) == 0x000000, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::EntryPoint' has a wrong offset!");
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_Create_ReturnValue) == 0x000018, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_Create_ReturnValue' has a wrong offset!");
@@ -50,11 +51,12 @@ static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, C
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_GetSessionSetting_Value) == 0x000038, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_GetSessionSetting_Value' has a wrong offset!");
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_GetText_ReturnValue) == 0x000048, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_GetText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_Conv_TextToString_ReturnValue) == 0x000060, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, K2Node_CreateDelegate_OutputDelegate_1) == 0x000070, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_GetPlayerController_ReturnValue) == 0x000080, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_JoinSession_ReturnValue) == 0x000088, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_JoinSession_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_IsValid_ReturnValue) == 0x000090, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000091, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_EncryptString_ReturnValue) == 0x000070, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_EncryptString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, K2Node_CreateDelegate_OutputDelegate_1) == 0x000080, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_GetPlayerController_ReturnValue) == 0x000090, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_JoinSession_ReturnValue) == 0x000098, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_JoinSession_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_IsValid_ReturnValue) == 0x0000A0, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x0000A1, "Member 'W_PasswordSession_C_ExecuteUbergraph_W_PasswordSession::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
 
 }
 

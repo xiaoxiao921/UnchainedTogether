@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 
@@ -18,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Generic_BP.Generic_BP_C
-// 0x0058 (0x02F0 - 0x0298)
+// 0x0060 (0x02F8 - 0x0298)
 class AGeneric_BP_C final : public AActor
 {
 public:
@@ -28,6 +29,7 @@ public:
 	struct FVector                                Spacing;                                           // 0x02B8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	double                                        WorldSize;                                         // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FRotator                               Rotation;                                          // 0x02D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
+	EHorizTextAligment                            Alignement;                                        // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
@@ -43,13 +45,14 @@ public:
 	}
 };
 static_assert(alignof(AGeneric_BP_C) == 0x000008, "Wrong alignment on AGeneric_BP_C");
-static_assert(sizeof(AGeneric_BP_C) == 0x0002F0, "Wrong size on AGeneric_BP_C");
+static_assert(sizeof(AGeneric_BP_C) == 0x0002F8, "Wrong size on AGeneric_BP_C");
 static_assert(offsetof(AGeneric_BP_C, TextRender) == 0x000298, "Member 'AGeneric_BP_C::TextRender' has a wrong offset!");
 static_assert(offsetof(AGeneric_BP_C, DefaultSceneRoot) == 0x0002A0, "Member 'AGeneric_BP_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(AGeneric_BP_C, Textes) == 0x0002A8, "Member 'AGeneric_BP_C::Textes' has a wrong offset!");
 static_assert(offsetof(AGeneric_BP_C, Spacing) == 0x0002B8, "Member 'AGeneric_BP_C::Spacing' has a wrong offset!");
 static_assert(offsetof(AGeneric_BP_C, WorldSize) == 0x0002D0, "Member 'AGeneric_BP_C::WorldSize' has a wrong offset!");
 static_assert(offsetof(AGeneric_BP_C, Rotation) == 0x0002D8, "Member 'AGeneric_BP_C::Rotation' has a wrong offset!");
+static_assert(offsetof(AGeneric_BP_C, Alignement) == 0x0002F0, "Member 'AGeneric_BP_C::Alignement' has a wrong offset!");
 
 }
 

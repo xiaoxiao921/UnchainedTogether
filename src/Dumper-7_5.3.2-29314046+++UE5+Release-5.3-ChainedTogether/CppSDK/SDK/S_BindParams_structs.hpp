@@ -24,7 +24,7 @@ public:
 	class FName                                   InputName_27_95CED02E48AB83BDF22664B0D2284C7A;     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsAxis_23_94FE73BE40A8011AED71699CD80489A9;        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsPositive_38_97AE28314C08D25543F790A33194E196;    // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A0[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D55[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FInputChord                            DefaultInput_44_00F752044B10BF1A1196968076155F42;  // 0x0010(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FS_BindParams) == 0x000008, "Wrong alignment on FS_BindParams");

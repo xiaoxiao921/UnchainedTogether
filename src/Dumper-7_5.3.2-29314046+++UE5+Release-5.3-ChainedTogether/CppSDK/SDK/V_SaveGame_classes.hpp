@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "S_Checkpoint_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "S_SavedSetting_structs.hpp"
+#include "S_Checkpoint_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass V_SaveGame.V_SaveGame_C
-// 0x0128 (0x0150 - 0x0028)
+// 0x01A8 (0x01D0 - 0x0028)
 class UV_SaveGame_C final : public USaveGame
 {
 public:
@@ -28,20 +28,20 @@ public:
 	TArray<struct FS_SavedSetting>                SavedSettings;                                     // 0x0030(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class UObject*>                        OwnedSpellComponents;                              // 0x0040(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	uint8                                         ActiveQuest;                                       // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3581[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D64[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Money;                                             // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UObject*>                        OwnedClothes;                                      // 0x0058(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FS_Checkpoint>                  ValidateCheckpoints;                               // 0x0068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          InstructionsShown;                                 // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3582[0x7];                                     // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D65[0x7];                                     // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 CollectedWings;                                    // 0x0080(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class FString                                 Resolution;                                        // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class FString                                 Windowedmode;                                      // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	int32                                         Resolutionscale;                                   // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3583[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D66[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Vsync;                                             // 0x00B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	int32                                         Maxfps;                                            // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3584[0x4];                                     // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D67[0x4];                                     // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ShadowQuality;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	double                                        Gamma;                                             // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Sharpen;                                           // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -54,6 +54,14 @@ public:
 	double                                        XSensitivity;                                      // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        YSensitivity;                                      // 0x0138(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 MotionBlur;                                        // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Antialiasing;                                      // 0x0150(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Viewdistance;                                      // 0x0160(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Ssr;                                               // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Effectsquality;                                    // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 LODs;                                              // 0x0190(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Texturesquality;                                   // 0x01A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 PP_Quality;                                        // 0x01B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Language;                                          // 0x01C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void AddRemoveMoney(int32 Delta);
@@ -77,7 +85,7 @@ public:
 	}
 };
 static_assert(alignof(UV_SaveGame_C) == 0x000008, "Wrong alignment on UV_SaveGame_C");
-static_assert(sizeof(UV_SaveGame_C) == 0x000150, "Wrong size on UV_SaveGame_C");
+static_assert(sizeof(UV_SaveGame_C) == 0x0001D0, "Wrong size on UV_SaveGame_C");
 static_assert(offsetof(UV_SaveGame_C, UberGraphFrame) == 0x000028, "Member 'UV_SaveGame_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UV_SaveGame_C, SavedSettings) == 0x000030, "Member 'UV_SaveGame_C::SavedSettings' has a wrong offset!");
 static_assert(offsetof(UV_SaveGame_C, OwnedSpellComponents) == 0x000040, "Member 'UV_SaveGame_C::OwnedSpellComponents' has a wrong offset!");
@@ -104,6 +112,14 @@ static_assert(offsetof(UV_SaveGame_C, InvertY) == 0x000120, "Member 'UV_SaveGame
 static_assert(offsetof(UV_SaveGame_C, XSensitivity) == 0x000130, "Member 'UV_SaveGame_C::XSensitivity' has a wrong offset!");
 static_assert(offsetof(UV_SaveGame_C, YSensitivity) == 0x000138, "Member 'UV_SaveGame_C::YSensitivity' has a wrong offset!");
 static_assert(offsetof(UV_SaveGame_C, MotionBlur) == 0x000140, "Member 'UV_SaveGame_C::MotionBlur' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Antialiasing) == 0x000150, "Member 'UV_SaveGame_C::Antialiasing' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Viewdistance) == 0x000160, "Member 'UV_SaveGame_C::Viewdistance' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Ssr) == 0x000170, "Member 'UV_SaveGame_C::Ssr' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Effectsquality) == 0x000180, "Member 'UV_SaveGame_C::Effectsquality' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, LODs) == 0x000190, "Member 'UV_SaveGame_C::LODs' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Texturesquality) == 0x0001A0, "Member 'UV_SaveGame_C::Texturesquality' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, PP_Quality) == 0x0001B0, "Member 'UV_SaveGame_C::PP_Quality' has a wrong offset!");
+static_assert(offsetof(UV_SaveGame_C, Language) == 0x0001C0, "Member 'UV_SaveGame_C::Language' has a wrong offset!");
 
 }
 

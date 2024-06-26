@@ -47,7 +47,7 @@ class UInterchangeSourceData final : public UObject
 {
 public:
 	class FString                                 Filename;                                          // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2863[0x18];                                    // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2750[0x18];                                    // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool SetFilename(const class FString& InFilename);
@@ -90,10 +90,10 @@ static_assert(sizeof(UInterchangeWriterBase) == 0x000028, "Wrong size on UInterc
 class UInterchangePipelineBase : public UObject
 {
 public:
-	uint8                                         Pad_2865[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2752[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UInterchangeResultsContainer*           Results;                                           // 0x0030(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TMap<class FName, struct FInterchangePipelinePropertyStates> PropertiesStates;                                  // 0x0038(0x0050)(Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2866[0x60];                                    // 0x0088(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2753[0x60];                                    // 0x0088(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FInterchangePipelinePropertyStates FindOrAddPropertyStates(const class FName PropertyPath);
@@ -285,7 +285,7 @@ static_assert(offsetof(UInterchangeResultDisplay_Generic, Text) == 0x000060, "Me
 class UInterchangeResultsContainer final : public UObject
 {
 public:
-	uint8                                         Pad_286C[0x28];                                    // 0x0028(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2759[0x28];                                    // 0x0028(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UInterchangeResult*>             Results;                                           // 0x0050(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
@@ -330,7 +330,7 @@ static_assert(offsetof(UInterchangeTranslatorBase, SourceData) == 0x000030, "Mem
 class UInterchangeBaseNode : public UObject
 {
 public:
-	uint8                                         Pad_286D[0x38];                                    // 0x0028(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_275A[0x38];                                    // 0x0028(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool AddBooleanAttribute(const class FString& NodeAttributeKey, const bool& Value);
@@ -386,7 +386,7 @@ class UInterchangeBaseNodeContainer final : public UObject
 {
 public:
 	TMap<class FString, class UInterchangeBaseNode*> Nodes;                                             // 0x0028(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2885[0x50];                                    // 0x0078(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2772[0x50];                                    // 0x0078(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class FString AddNode(class UInterchangeBaseNode* Node);
@@ -425,7 +425,7 @@ static_assert(offsetof(UInterchangeBaseNodeContainer, Nodes) == 0x000028, "Membe
 class UInterchangeFactoryBaseNode : public UInterchangeBaseNode
 {
 public:
-	uint8                                         Pad_288A[0xE0];                                    // 0x0060(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2777[0xE0];                                    // 0x0060(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool AddFactoryDependencyUid(const class FString& DependencyUid);
@@ -465,7 +465,7 @@ static_assert(sizeof(UInterchangeFactoryBaseNode) == 0x000140, "Wrong size on UI
 class UInterchangeSourceNode final : public UInterchangeBaseNode
 {
 public:
-	uint8                                         Pad_2892[0x70];                                    // 0x0060(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_277F[0x70];                                    // 0x0060(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InitializeSourceNode(const class FString& UniqueID, const class FString& DisplayLabel);

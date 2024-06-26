@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ALS_MovementState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "E_ChoosenChar_structs.hpp"
+#include "ALS_MovementState_structs.hpp"
 
 
 namespace SDK

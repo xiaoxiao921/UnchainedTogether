@@ -19,11 +19,18 @@
 
 namespace big
 {
-	static SDK::ABP_Character_C* g_pawn       = nullptr;
-	static SDK::UCustomGI_C* g_customgi       = nullptr;
-	static SDK::AHUD* g_ahud                  = nullptr;
+	static SDK::ABP_Character_C* g_pawn = nullptr;
+	static SDK::UCustomGI_C* g_customgi = nullptr;
+	static SDK::AHUD* g_ahud            = nullptr;
+
 	static bool g_draw_g_pawn_hitbox          = false;
 	static bool g_draw_hitbox_proximity_based = false;
+
+	static float g_draw_g_pawn_sphere_radius_hitbox   = 200;
+	static int32_t g_draw_g_pawn_sphere_segment_count = 64;
+	static ImVec4 g_draw_pawn_sphere_hitbox_color_edit{1, 1, 1, 1};
+	static ImU32 g_draw_pawn_sphere_hitbox_color_final             = IM_COL32(255, 255, 255, 255);
+	static std::optional<SDK::FVector> g_draw_pawn_sphere_position = {};
 
 	static std::optional<SDK::FVector> g_latest_saved_position{};
 	static hotkey g_chained_together_save_current_position("chained_together_save_current_position", VK_F5);
@@ -182,6 +189,38 @@ namespace big
 	constexpr float DegreesToRadians(float degrees)
 	{
 		return degrees * (M_PI / 180.0f);
+	}
+
+	void draw_sphere(SDK::APlayerController* playerController, SDK::FVector world_coords, int32_t segment_count, float radius, ImU32 color)
+	{
+		auto draw_list = ImGui::GetBackgroundDrawList();
+
+		// Calculate the step size for both theta and phi
+		float theta_step = 2.0f * M_PI / segment_count;
+		float phi_step   = M_PI / segment_count;
+
+		for (int i = 0; i < segment_count; ++i)
+		{
+			for (int j = 0; j < segment_count; ++j)
+			{
+				// Calculate theta and phi values
+				float theta = i * theta_step;
+				float phi   = j * phi_step;
+
+				// Compute the world coordinates for the current point
+				SDK::FVector world_point(world_coords.X + radius * sinf(phi) * cosf(theta),
+				                         world_coords.Y + radius * sinf(phi) * sinf(theta),
+				                         world_coords.Z + radius * cosf(phi));
+
+				// Project the world coordinates to screen space
+				SDK::FVector2D screen_point;
+				if (playerController->ProjectWorldLocationToScreen(world_point, &screen_point, true))
+				{
+					// Draw a point at the projected screen coordinates
+					draw_list->AddCircleFilled(ImVec2((float)screen_point.X, (float)screen_point.Y), 1.0f, color);
+				}
+			}
+		}
 	}
 
 	void DrawBoundingRect(SDK::APlayerController* playerController, SDK::AActor* actor)
@@ -437,7 +476,12 @@ namespace big
 
 				if (g_pawn && g_draw_g_pawn_hitbox)
 				{
-					DrawBoundingRect(playerController, g_pawn);
+					//DrawBoundingRect(playerController, g_pawn);
+					draw_sphere(playerController,
+					            g_draw_pawn_sphere_position ? *g_draw_pawn_sphere_position : g_pawn->GetTransform().Translation,
+					            g_draw_g_pawn_sphere_segment_count,
+					            g_draw_g_pawn_sphere_radius_hitbox,
+					            g_draw_pawn_sphere_hitbox_color_final);
 				}
 			}
 		}
@@ -795,6 +839,23 @@ namespace big
 									{
 										ImGui::Checkbox("Proximity Based", &g_draw_hitbox_proximity_based);
 										ImGui::Checkbox("Draw Self Hitbox", &g_draw_g_pawn_hitbox);
+										ImGui::SliderFloat("Draw Self - Sphere Radius", &g_draw_g_pawn_sphere_radius_hitbox, 1, 5000);
+										ImGui::InputFloat("Draw Self - Sphere Radius##2", &g_draw_g_pawn_sphere_radius_hitbox);
+										ImGui::SliderInt("Draw Self - Sphere Segment Count", &g_draw_g_pawn_sphere_segment_count, 1, 100);
+										ImGui::InputInt("Draw Self - Sphere Segment Count##2", &g_draw_g_pawn_sphere_segment_count);
+										if (ImGui::ColorEdit4("Draw Self - Sphere Color",
+										                      &g_draw_pawn_sphere_hitbox_color_edit.x))
+										{
+											g_draw_pawn_sphere_hitbox_color_final = ImGui::ColorConvertFloat4ToU32(g_draw_pawn_sphere_hitbox_color_edit);
+										}
+										if (ImGui::Button("Draw Self - Sphere Place at current position"))
+										{
+											g_draw_pawn_sphere_position = g_pawn->GetTransform().Translation;
+										}
+										if (ImGui::Button("Draw Self - Sphere Place at current position DELETE"))
+										{
+											g_draw_pawn_sphere_position = {};
+										}
 
 										auto my_pawn_location = g_pawn->K2_GetActorLocation();
 										size_t i              = 0;

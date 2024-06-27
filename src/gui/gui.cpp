@@ -27,7 +27,7 @@ namespace big
 	static bool g_draw_hitbox_proximity_based = false;
 
 	static float g_draw_g_pawn_sphere_radius_hitbox   = 200;
-	static int32_t g_draw_g_pawn_sphere_segment_count = 64;
+	static int32_t g_draw_g_pawn_sphere_segment_count = 32;
 	static ImVec4 g_draw_pawn_sphere_hitbox_color_edit{1, 1, 1, 1};
 	static ImU32 g_draw_pawn_sphere_hitbox_color_final             = IM_COL32(255, 255, 255, 255);
 	static std::optional<SDK::FVector> g_draw_pawn_sphere_position = {};
@@ -191,6 +191,19 @@ namespace big
 		return degrees * (M_PI / 180.0f);
 	}
 
+	bool is_player_inside_sphere(const SDK::FVector& center, const SDK::FVector& player, double radius)
+	{
+		// Calculate the squared distance between the center and the player
+		double distanceSquared =
+		    std::pow(player.X - center.X, 2) + std::pow(player.Y - center.Y, 2) + std::pow(player.Z - center.Z, 2);
+
+		// Calculate the squared radius
+		double radiusSquared = std::pow(radius, 2);
+
+		// Check if the squared distance is less than or equal to the squared radius
+		return distanceSquared <= radiusSquared;
+	}
+
 	void draw_sphere(SDK::APlayerController* playerController, SDK::FVector world_coords, int32_t segment_count, float radius, ImU32 color)
 	{
 		auto draw_list = ImGui::GetBackgroundDrawList();
@@ -198,6 +211,20 @@ namespace big
 		// Calculate the step size for both theta and phi
 		float theta_step = 2.0f * M_PI / segment_count;
 		float phi_step   = M_PI / segment_count;
+
+		SDK::FVector camera_location;
+		SDK::FRotator camera_rotation;
+		playerController->GetPlayerViewPoint(&camera_location, &camera_rotation);
+		auto world = SDK::UWorld::GetWorld();
+
+		if (is_player_inside_sphere(world_coords, g_pawn->GetTransform().Translation, radius))
+		{
+			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(0, 255, 0, 255), "Is Inside Sphere");
+		}
+		else
+		{
+			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(255, 0, 0, 255), "Is Outside Sphere");
+		}
 
 		for (int i = 0; i < segment_count; ++i)
 		{
@@ -212,12 +239,22 @@ namespace big
 				                         world_coords.Y + radius * sinf(phi) * sinf(theta),
 				                         world_coords.Z + radius * cosf(phi));
 
+				SDK::FHitResult raycast_result;
+				// clang-format off
+				if (SDK::UKismetSystemLibrary::LineTraceSingle(world,
+					camera_location, world_point,
+					SDK::ETraceTypeQuery::TraceTypeQuery_MAX, true, {}, SDK::EDrawDebugTrace::None, &raycast_result, false, {}, {}, 0))
+				{
+					continue;
+				}
+				// clang-format on
+
 				// Project the world coordinates to screen space
 				SDK::FVector2D screen_point;
 				if (playerController->ProjectWorldLocationToScreen(world_point, &screen_point, true))
 				{
 					// Draw a point at the projected screen coordinates
-					draw_list->AddCircleFilled(ImVec2((float)screen_point.X, (float)screen_point.Y), 1.0f, color);
+					draw_list->AddCircleFilled(ImVec2((float)screen_point.X, (float)screen_point.Y), 3.5f, color);
 				}
 			}
 		}

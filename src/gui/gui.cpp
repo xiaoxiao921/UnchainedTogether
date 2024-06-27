@@ -571,9 +571,30 @@ namespace big
 
 										if (ImGui::Button("Unlock Wings"))
 										{
-											for (size_t i = 0; i < 10; i++)
+											try
 											{
-												g_customgi->SetCollectedWing(i);
+												for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
+												{
+													SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
+
+													if (!Obj)
+													{
+														continue;
+													}
+
+													if (Obj->IsA(SDK::UCustomGI_C::StaticClass()))
+													{
+														SDK::UCustomGI_C* customgi = (decltype(customgi))Obj;
+
+														for (size_t j = 0; j < 10; j++)
+														{
+															customgi->SetCollectedWing(j);
+														}
+													}
+												}
+											}
+											catch (const std::exception&)
+											{
 											}
 										}
 									}

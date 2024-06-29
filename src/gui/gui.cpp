@@ -23,6 +23,7 @@ namespace big
 	static SDK::UCustomGI_C* g_customgi = nullptr;
 	static SDK::AHUD* g_ahud            = nullptr;
 
+	static bool g_draw_g_pawn_foot_pos        = false;
 	static bool g_draw_g_pawn_hitbox          = false;
 	static bool g_draw_hitbox_proximity_based = false;
 
@@ -520,6 +521,18 @@ namespace big
 					            g_draw_g_pawn_sphere_radius_hitbox,
 					            g_draw_pawn_sphere_hitbox_color_final);
 				}
+
+				if (g_pawn && g_draw_g_pawn_foot_pos)
+				{
+					SDK::FVector2D player_pos_screen;
+					if (playerController->ProjectWorldLocationToScreen(g_pawn->GetTransform().Translation, &player_pos_screen, true))
+					{
+						ImGui::GetBackgroundDrawList()->AddCircleFilled(
+						    ImVec2((float)player_pos_screen.X, (float)player_pos_screen.Y),
+						    3.5f,
+						    IM_COL32(255, 255, 255, 255));
+					}
+				}
 			}
 		}
 
@@ -677,6 +690,28 @@ namespace big
 											catch (const std::exception&)
 											{
 											}
+										}
+
+										try
+										{
+											size_t i = 0;
+											for (SDK::AActor* Actor : Actors)
+											{
+												i++;
+												if (!Actor)
+												{
+													continue;
+												}
+
+												if (Actor->IsA(SDK::AGS_Game_C::StaticClass()))
+												{
+													auto gs_game_c = (SDK::AGS_Game_C*)Actor;
+													ImGui::Text("In-Game Timer: %d", gs_game_c->Timer);
+												}
+											}
+										}
+										catch (const std::exception&)
+										{
 										}
 									}
 
@@ -875,21 +910,41 @@ namespace big
 									if (ImGui::CollapsingHeader("Hitbox Debug"))
 									{
 										ImGui::Checkbox("Proximity Based", &g_draw_hitbox_proximity_based);
-										ImGui::Checkbox("Draw Self Hitbox", &g_draw_g_pawn_hitbox);
-										ImGui::SliderFloat("Draw Self - Sphere Radius", &g_draw_g_pawn_sphere_radius_hitbox, 1, 5000);
-										ImGui::InputFloat("Draw Self - Sphere Radius##2", &g_draw_g_pawn_sphere_radius_hitbox);
-										ImGui::SliderInt("Draw Self - Sphere Segment Count", &g_draw_g_pawn_sphere_segment_count, 1, 100);
-										ImGui::InputInt("Draw Self - Sphere Segment Count##2", &g_draw_g_pawn_sphere_segment_count);
-										if (ImGui::ColorEdit4("Draw Self - Sphere Color",
+										ImGui::Checkbox("Draw Player Foot Position", &g_draw_g_pawn_foot_pos);
+										ImGui::Checkbox("Draw Debug Sphere", &g_draw_g_pawn_hitbox);
+										ImGui::SliderFloat("Debug Sphere Sphere Radius", &g_draw_g_pawn_sphere_radius_hitbox, 1, 5000);
+										ImGui::InputFloat("Debug Sphere Sphere Radius##2", &g_draw_g_pawn_sphere_radius_hitbox);
+										ImGui::SliderInt("Debug Sphere Sphere Segment Count", &g_draw_g_pawn_sphere_segment_count, 1, 100);
+										ImGui::InputInt("Debug Sphere Sphere Segment Count##2", &g_draw_g_pawn_sphere_segment_count);
+										if (ImGui::ColorEdit4("Debug Sphere Sphere Color",
 										                      &g_draw_pawn_sphere_hitbox_color_edit.x))
 										{
 											g_draw_pawn_sphere_hitbox_color_final = ImGui::ColorConvertFloat4ToU32(g_draw_pawn_sphere_hitbox_color_edit);
 										}
-										if (ImGui::Button("Draw Self - Sphere Place at current position"))
+										static float debug_sphere_x = 0;
+										static float debug_sphere_y = 0;
+										static float debug_sphere_z = 0;
+										if (ImGui::InputFloat("Sphere X", &debug_sphere_x))
+										{
+											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+										}
+										if (ImGui::InputFloat("Sphere Y", &debug_sphere_y))
+										{
+											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+										}
+										if (ImGui::InputFloat("Sphere Z", &debug_sphere_z))
+										{
+											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+										}
+										if (ImGui::Button("Debug Sphere - Place At Custom Position"))
+										{
+											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+										}
+										if (ImGui::Button("Debug Sphere - Place At Current Position"))
 										{
 											g_draw_pawn_sphere_position = g_pawn->GetTransform().Translation;
 										}
-										if (ImGui::Button("Draw Self - Sphere Place at current position DELETE"))
+										if (ImGui::Button("Debug Sphere - Attach To Player"))
 										{
 											g_draw_pawn_sphere_position = {};
 										}

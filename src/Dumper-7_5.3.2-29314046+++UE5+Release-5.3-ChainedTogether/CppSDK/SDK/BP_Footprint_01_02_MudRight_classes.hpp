@@ -26,8 +26,8 @@ public:
 	class UParticleSystem*                        Particle;                                          // 0x02A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Footprint_01_02_MudRight(int32 EntryPoint);
 	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_Footprint_01_02_MudRight(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

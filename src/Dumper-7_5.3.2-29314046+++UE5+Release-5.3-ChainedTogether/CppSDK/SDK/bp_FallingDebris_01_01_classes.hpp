@@ -33,9 +33,9 @@ public:
 	double                                        DurationMax;                                       // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_bp_FallingDebris_01_01(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void UserConstructionScript();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_bp_FallingDebris_01_01(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

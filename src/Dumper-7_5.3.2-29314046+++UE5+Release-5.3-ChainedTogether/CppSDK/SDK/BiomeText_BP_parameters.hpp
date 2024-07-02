@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "SteamCorePro_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "S_BiomeSave_structs.hpp"
@@ -28,7 +29,7 @@ public:
 	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bFromSweep;                                        // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ADD[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_333F[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FHitResult                             SweepResult;                                       // 0x0020(0x00E8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 static_assert(alignof(BiomeText_BP_C_BndEvt__BiomeText_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BiomeText_BP_C_BndEvt__BiomeText_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
@@ -41,97 +42,149 @@ static_assert(offsetof(BiomeText_BP_C_BndEvt__BiomeText_BP_Box_K2Node_ComponentB
 static_assert(offsetof(BiomeText_BP_C_BndEvt__BiomeText_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature, SweepResult) == 0x000020, "Member 'BiomeText_BP_C_BndEvt__BiomeText_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature::SweepResult' has a wrong offset!");
 
 // Function BiomeText_BP.BiomeText_BP_C.ExecuteUbergraph_BiomeText_BP
-// 0x0268 (0x0268 - 0x0000)
+// 0x02E8 (0x02E8 - 0x0000)
 struct BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ADE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3340[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ADF[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X;                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y;                            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z;                            // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE0[0x6];                                     // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent;    // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor;             // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp;              // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex;         // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ComponentBoundEvent_bFromSweep;             // 0x0074(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE1[0x3];                                     // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult;            // 0x0078(0x00E8)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	class UBiome_W_C*                             CallFunc_Create_ReturnValue;                       // 0x0160(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetAchievement_ReturnValue;               // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x0169(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE2[0x6];                                     // 0x016A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0170(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue_1;               // 0x0178(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0180(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE3[0x7];                                     // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game_1;                    // 0x0190(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE4[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDateTime                              CallFunc_Now_ReturnValue;                          // 0x01A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x01A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x01C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X_1;                          // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y_1;                          // 0x01D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z_1;                          // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABP_Height0_C*>                  CallFunc_GetAllActorsOfClass_OutActors;            // 0x01E8(0x0010)(ReferenceParm)
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_Height0_C*                          CallFunc_Array_Get_Item;                           // 0x0200(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Round_ReturnValue;                        // 0x0210(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE5[0x4];                                     // 0x0214(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x0218(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave;                     // 0x0230(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3341[0x6];                                     // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRequestCurrentStatsData               Temp_struct_Variable;                              // 0x0020(0x0018)(NoDestructor)
+	class USteamCoreProUserStatsAsyncActionRequestCurrentStats* CallFunc_RequestCurrentStatsAsync_ReturnValue;     // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UBiome_W_C*                             CallFunc_Create_ReturnValue;                       // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3342[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_FirstRun;                         // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3343[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_Data;                             // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_ScratchBool;                      // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3344[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_ScratchIndex;                     // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X;                            // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y;                            // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z;                            // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3345[0x6];                                     // 0x0092(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRequestCurrentStatsData               K2Node_CustomEvent_Data;                           // 0x0098(0x0018)(ConstParm, NoDestructor)
+	bool                                          K2Node_CustomEvent_bWasSuccessful;                 // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_1_FirstRun;                       // 0x00B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3346[0x2];                                     // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_1_Data;                           // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(struct FRequestCurrentStatsData& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate;              // 0x00B8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable;                              // 0x00C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetAchievement_ReturnValue;               // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_2_FirstRun;                       // 0x00DA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3347[0x1];                                     // 0x00DB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_2_Data;                           // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsPackagedForDistribution_ReturnValue;    // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3348[0x7];                                     // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent;    // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor;             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp;              // 0x00F8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex;         // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ComponentBoundEvent_bFromSweep;             // 0x0104(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3349[0x3];                                     // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult;            // 0x0108(0x00E8)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x01F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue_1;               // 0x01F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0200(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334A[0x7];                                     // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game_1;                    // 0x0210(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334B[0x7];                                     // 0x0219(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              CallFunc_Now_ReturnValue;                          // 0x0220(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0228(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0240(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X_1;                          // 0x0250(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y_1;                          // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z_1;                          // 0x0260(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class ABP_Height0_C*>                  CallFunc_GetAllActorsOfClass_OutActors;            // 0x0268(0x0010)(ReferenceParm)
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_Height0_C*                          CallFunc_Array_Get_Item;                           // 0x0280(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Round_ReturnValue;                        // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_334C[0x4];                                     // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x0298(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave;                     // 0x02B0(0x0038)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP) == 0x000008, "Wrong alignment on BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP");
-static_assert(sizeof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP) == 0x000268, "Wrong size on BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP");
+static_assert(sizeof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP) == 0x0002E8, "Wrong size on BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP");
 static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, EntryPoint) == 0x000000, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetGameState_ReturnValue) == 0x000008, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_AsGS_Game) == 0x000010, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
 static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000020, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_X) == 0x000038, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_X' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Y) == 0x000040, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Y' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Z) == 0x000048, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Z' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_bool_Has_Been_Initd_Variable) == 0x000050, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_bool_IsClosed_Variable) == 0x000051, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OverlappedComponent) == 0x000058, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OverlappedComponent' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherActor) == 0x000060, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherActor' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherComp) == 0x000068, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherComp' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherBodyIndex) == 0x000070, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherBodyIndex' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_bFromSweep) == 0x000074, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_bFromSweep' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_SweepResult) == 0x000078, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_SweepResult' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Create_ReturnValue) == 0x000160, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_SetAchievement_ReturnValue) == 0x000168, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_SetAchievement_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_StoreStats_ReturnValue) == 0x000169, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetGameInstance_ReturnValue) == 0x000170, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetGameState_ReturnValue_1) == 0x000178, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetGameState_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_AsCustom_GI) == 0x000180, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_bSuccess_1) == 0x000188, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_AsGS_Game_1) == 0x000190, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_AsGS_Game_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_bSuccess_2) == 0x000198, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Now_ReturnValue) == 0x0001A0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Now_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x0001A8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Conv_TextToString_ReturnValue) == 0x0001C0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_X_1) == 0x0001D0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_X_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Y_1) == 0x0001D8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Y_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Z_1) == 0x0001E0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Z_1' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetAllActorsOfClass_OutActors) == 0x0001E8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x0001F8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Array_Get_Item) == 0x000200, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000208, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Round_ReturnValue) == 0x000210, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Round_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x000218, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MakeStruct_S_BiomeSave) == 0x000230, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MakeStruct_S_BiomeSave' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_bool_Variable) == 0x000019, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_struct_Variable) == 0x000020, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_struct_Variable' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_RequestCurrentStatsAsync_ReturnValue) == 0x000038, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_RequestCurrentStatsAsync_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Create_ReturnValue) == 0x000040, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_IsValid_ReturnValue) == 0x000048, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000050, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_FirstRun) == 0x000068, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_FirstRun' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_Data) == 0x00006C, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_Data' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_ScratchBool) == 0x000070, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_ScratchBool' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_ScratchIndex) == 0x000074, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_ScratchIndex' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_X) == 0x000078, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_X' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Y) == 0x000080, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Y' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Z) == 0x000088, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Z' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_bool_IsClosed_Variable) == 0x000090, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_bool_Has_Been_Initd_Variable) == 0x000091, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_CustomEvent_Data) == 0x000098, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_CustomEvent_Data' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_CustomEvent_bWasSuccessful) == 0x0000B0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_CustomEvent_bWasSuccessful' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_1_FirstRun) == 0x0000B1, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_1_FirstRun' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_1_Data) == 0x0000B4, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_1_Data' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_CreateDelegate_OutputDelegate) == 0x0000B8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, Temp_string_Variable) == 0x0000C8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::Temp_string_Variable' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_SetAchievement_ReturnValue) == 0x0000D8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_SetAchievement_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_StoreStats_ReturnValue) == 0x0000D9, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_2_FirstRun) == 0x0000DA, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_2_FirstRun' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MultiGate_2_Data) == 0x0000DC, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MultiGate_2_Data' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_IsPackagedForDistribution_ReturnValue) == 0x0000E0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_IsPackagedForDistribution_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OverlappedComponent) == 0x0000E8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OverlappedComponent' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherActor) == 0x0000F0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherActor' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherComp) == 0x0000F8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherComp' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_OtherBodyIndex) == 0x000100, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_OtherBodyIndex' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_bFromSweep) == 0x000104, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_bFromSweep' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_ComponentBoundEvent_SweepResult) == 0x000108, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_ComponentBoundEvent_SweepResult' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetGameInstance_ReturnValue) == 0x0001F0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetGameState_ReturnValue_1) == 0x0001F8, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetGameState_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_AsCustom_GI) == 0x000200, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_bSuccess_1) == 0x000208, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_AsGS_Game_1) == 0x000210, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_AsGS_Game_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_DynamicCast_bSuccess_2) == 0x000218, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Now_ReturnValue) == 0x000220, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Now_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000228, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Conv_TextToString_ReturnValue) == 0x000240, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_X_1) == 0x000250, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_X_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Y_1) == 0x000258, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Y_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_BreakVector_Z_1) == 0x000260, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_BreakVector_Z_1' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_GetAllActorsOfClass_OutActors) == 0x000268, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x000278, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Array_Get_Item) == 0x000280, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000288, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_Round_ReturnValue) == 0x000290, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_Round_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x000298, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP, K2Node_MakeStruct_S_BiomeSave) == 0x0002B0, "Member 'BiomeText_BP_C_ExecuteUbergraph_BiomeText_BP::K2Node_MakeStruct_S_BiomeSave' has a wrong offset!");
+
+// Function BiomeText_BP.BiomeText_BP_C.OnCallback_D5E80CEA418652AD060EBBB50AB0797B
+// 0x0020 (0x0020 - 0x0000)
+struct BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B final
+{
+public:
+	struct FRequestCurrentStatsData               Data;                                              // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	bool                                          bWasSuccessful;                                    // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B) == 0x000008, "Wrong alignment on BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B");
+static_assert(sizeof(BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B) == 0x000020, "Wrong size on BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B");
+static_assert(offsetof(BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B, Data) == 0x000000, "Member 'BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B::Data' has a wrong offset!");
+static_assert(offsetof(BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B, bWasSuccessful) == 0x000018, "Member 'BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B::bWasSuccessful' has a wrong offset!");
 
 }
 

@@ -31,9 +31,9 @@ public:
 	double                                        DelayMax;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_bp_WindHorizontal_01_01(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void UserConstructionScript();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_bp_WindHorizontal_01_01(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

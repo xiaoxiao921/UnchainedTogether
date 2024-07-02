@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function BP_Footprint_01_02_MudRight.BP_Footprint_01_02_MudRight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Footprint_01_02_MudRight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Footprint_01_02_MudRight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Footprint_01_02_MudRight.BP_Footprint_01_02_MudRight_C.ExecuteUbergraph_BP_Footprint_01_02_MudRight
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,20 +48,6 @@ void ABP_Footprint_01_02_MudRight_C::ExecuteUbergraph_BP_Footprint_01_02_MudRigh
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Footprint_01_02_MudRight.BP_Footprint_01_02_MudRight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Footprint_01_02_MudRight_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Footprint_01_02_MudRight_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

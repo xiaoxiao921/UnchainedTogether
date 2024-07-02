@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "S_BiomeSave_structs.hpp"
 #include "E_Gamemodes_structs.hpp"
+#include "S_BiomeSave_structs.hpp"
 #include "V_GameInstanceWithSave_classes.hpp"
 
 
@@ -27,28 +27,28 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_CustomGI_C;                         // 0x0230(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	bool                                          EnableTestControl;                                 // 0x0238(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          GameAlreadyLaunched;                               // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35B9[0x2];                                     // 0x023A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35FD[0x2];                                     // 0x023A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PlayersInSession;                                  // 0x023C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                VoipManager;                                       // 0x0240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          EnableLevelStreaming;                              // 0x0248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35BA[0x3];                                     // 0x0249(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35FE[0x3];                                     // 0x0249(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TestPlayersToSpawn;                                // 0x024C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          DevMode;                                           // 0x0250(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          MakeTrueChainVisible;                              // 0x0251(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          SpawnWithoutLobby;                                 // 0x0252(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          LocalMultiplayerMode;                              // 0x0253(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35BB[0x4];                                     // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35FF[0x4];                                     // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Version;                                           // 0x0258(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          ShowTraces;                                        // 0x0268(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FirstPlayerOnKeyboard;                             // 0x0269(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          LavaMode;                                          // 0x026A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35BC[0x5];                                     // 0x026B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3600[0x5];                                     // 0x026B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CurrentServername;                                 // 0x0270(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          HostingOnlineSession;                              // 0x0280(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          WingsSelected;                                     // 0x0281(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_Gamemodes                                   SelectedGameMode;                                  // 0x0282(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          OpenedChain;                                       // 0x0283(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35BD[0x4];                                     // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3601[0x4];                                     // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USG_Progress_C*                         ProgressSave;                                      // 0x0288(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             ManualSaveFinished;                                // 0x0290(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	struct FS_BiomeSave                           SaveToLoad;                                        // 0x02A0(0x0038)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
@@ -74,6 +74,7 @@ public:
 	void InitProgressSave();
 	void ManualSave(const struct FS_BiomeSave& NewItem);
 	void ManualSaveFinished__DelegateSignature(bool Success);
+	void OnCallback_D5E80CEA418652AD060EBBB5684EDCE8(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful);
 	void OnFailure_B405B95A431214C35278028DA23BF73A();
 	void OnManualSave(const struct FS_BiomeSave& NewItem);
 	void OnSaveBiome(const struct FS_BiomeSave& NewItem);

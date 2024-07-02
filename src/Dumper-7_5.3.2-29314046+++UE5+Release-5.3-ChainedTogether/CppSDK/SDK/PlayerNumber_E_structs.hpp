@@ -6,7 +6,7 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: Tunnel_Entrance
+// Package: PlayerNumber_E
 
 #include "Basic.hpp"
 
@@ -14,18 +14,15 @@
 namespace SDK
 {
 
-// UserDefinedEnum Tunnel_Entrance.Tunnel_Entrance
-// NumValues: 0x0008
-enum class ETunnel_Entrance : uint8
+// UserDefinedEnum PlayerNumber_E.PlayerNumber_E
+// NumValues: 0x0005
+enum class EPlayerNumber_E : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
 	NewEnumerator3                           = 3,
-	NewEnumerator4                           = 4,
-	NewEnumerator5                           = 5,
-	NewEnumerator6                           = 6,
-	Tunnel_MAX                               = 7,
+	PlayerNumber_MAX                         = 4,
 };
 
 }

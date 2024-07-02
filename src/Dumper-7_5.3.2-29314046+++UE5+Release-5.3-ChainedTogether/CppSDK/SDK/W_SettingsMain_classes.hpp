@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "Engine_structs.hpp"
-#include "E_SettingCategory_structs.hpp"
-#include "S_Checkpoint_structs.hpp"
-#include "UMG_classes.hpp"
 #include "E_SettingSubCategory_structs.hpp"
+#include "Engine_structs.hpp"
+#include "UMG_classes.hpp"
+#include "S_Checkpoint_structs.hpp"
+#include "E_SettingCategory_structs.hpp"
 
 
 namespace SDK
@@ -87,7 +87,7 @@ public:
 	class UW_Slider_C*                            YSensitivity;                                      // 0x0490(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	E_SettingCategory                             CurrentSettingCategory;                            // 0x0498(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsInMainMenu;                                      // 0x0499(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_3482[0x6];                                     // 0x049A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3541[0x6];                                     // 0x049A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_Checkpoint                          Checkpoint_Save_Infos;                             // 0x04A0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class FString                                 SelectedCheckpoint;                                // 0x04B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class UEnhancedInputUserSettings*             UserInputSettings;                                 // 0x04C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)

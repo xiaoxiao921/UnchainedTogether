@@ -33,6 +33,7 @@ public:
 public:
 	void BndEvt__BiomeText_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void ExecuteUbergraph_BiomeText_BP(int32 EntryPoint);
+	void OnCallback_D5E80CEA418652AD060EBBB50AB0797B(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful);
 
 public:
 	static class UClass* StaticClass()

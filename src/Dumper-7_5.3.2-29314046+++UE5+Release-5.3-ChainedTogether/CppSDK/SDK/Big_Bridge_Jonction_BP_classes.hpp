@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "BridgeType_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ConnectorsNum_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "BridgeType_structs.hpp"
-#include "ConnectorsNum_structs.hpp"
 
 
 namespace SDK
@@ -31,15 +31,15 @@ public:
 	class UTextRenderComponent*                   Con_1;                                             // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   StaticMesh;                                        // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 Road_to_Connect;                                   // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Road_To_Connect;                                   // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
 	EBridgeType                                   Select_Bridge_Type;                                // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EConnectorsNum                                Choose_Connector;                                  // 0x02D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Con_Text_Visibility;                               // 0x02D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Connect_Road_At_Con_Location;                      // 0x02D3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Move_Road_At_Con_Location;                         // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3B6D[0x3];                                     // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C70[0x3];                                     // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Splines_Index_To_Connect;                          // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3B6E[0x4];                                     // 0x02DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C71[0x4];                                     // 0x02DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Trace_Radius;                                      // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Con_1_Location;                                    // 0x02E8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Can_2_Location;                                    // 0x0300(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -52,7 +52,7 @@ public:
 	int32                                         Number_of_Subdivisions_to_be_added;                // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Raise_Terrain;                                     // 0x036C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Lower_Terrain;                                     // 0x036D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3B6F[0x2];                                     // 0x036E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C72[0x2];                                     // 0x036E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Layer_To_Apply;                                    // 0x0370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Perform_Landscape_Adjustation;                     // 0x0374(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -85,7 +85,7 @@ static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Con_2) == 0x0002A8, "Member 'A
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Con_1) == 0x0002B0, "Member 'ABig_Bridge_Jonction_BP_C::Con_1' has a wrong offset!");
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, StaticMesh) == 0x0002B8, "Member 'ABig_Bridge_Jonction_BP_C::StaticMesh' has a wrong offset!");
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, DefaultSceneRoot) == 0x0002C0, "Member 'ABig_Bridge_Jonction_BP_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Road_to_Connect) == 0x0002C8, "Member 'ABig_Bridge_Jonction_BP_C::Road_to_Connect' has a wrong offset!");
+static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Road_To_Connect) == 0x0002C8, "Member 'ABig_Bridge_Jonction_BP_C::Road_To_Connect' has a wrong offset!");
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Select_Bridge_Type) == 0x0002D0, "Member 'ABig_Bridge_Jonction_BP_C::Select_Bridge_Type' has a wrong offset!");
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Choose_Connector) == 0x0002D1, "Member 'ABig_Bridge_Jonction_BP_C::Choose_Connector' has a wrong offset!");
 static_assert(offsetof(ABig_Bridge_Jonction_BP_C, Con_Text_Visibility) == 0x0002D2, "Member 'ABig_Bridge_Jonction_BP_C::Con_Text_Visibility' has a wrong offset!");

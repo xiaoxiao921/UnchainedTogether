@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ExecuteUbergraph_bp_InteractivePlayer_01_01_Force
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void Abp_InteractivePlayer_01_01_Force_C::ExecuteUbergraph_bp_InteractivePlayer_01_01_Force(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("bp_InteractivePlayer_01_01_Force_C", "ExecuteUbergraph_bp_InteractivePlayer_01_01_Force");
-
-	Params::bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void Abp_InteractivePlayer_01_01_Force_C::ReceiveTick(float DeltaSeconds)
 	Params::bp_InteractivePlayer_01_01_Force_C_ReceiveTick Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ExecuteUbergraph_bp_InteractivePlayer_01_01_Force
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void Abp_InteractivePlayer_01_01_Force_C::ExecuteUbergraph_bp_InteractivePlayer_01_01_Force(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("bp_InteractivePlayer_01_01_Force_C", "ExecuteUbergraph_bp_InteractivePlayer_01_01_Force");
+
+	Params::bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

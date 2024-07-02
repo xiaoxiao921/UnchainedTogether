@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "bp_ThirdPersonCharacter_SF_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK

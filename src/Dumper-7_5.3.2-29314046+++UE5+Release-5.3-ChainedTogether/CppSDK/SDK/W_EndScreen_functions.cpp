@@ -137,6 +137,50 @@ void UW_EndScreen_C::OnCallback_D4619B5E464DD7DF58786BBF440CCADD(const struct FL
 }
 
 
+// Function W_EndScreen.W_EndScreen_C.OnCallback_D5E80CEA418652AD060EBBB524E09932
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FRequestCurrentStatsData         Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_EndScreen_C::OnCallback_D5E80CEA418652AD060EBBB524E09932(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_EndScreen_C", "OnCallback_D5E80CEA418652AD060EBBB524E09932");
+
+	Params::W_EndScreen_C_OnCallback_D5E80CEA418652AD060EBBB524E09932 Parms{};
+
+	Parms.Data = std::move(Data);
+	Parms.bWasSuccessful = bWasSuccessful;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_EndScreen.W_EndScreen_C.OnCallback_D5E80CEA418652AD060EBBB55455A8C4
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FRequestCurrentStatsData         Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_EndScreen_C::OnCallback_D5E80CEA418652AD060EBBB55455A8C4(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_EndScreen_C", "OnCallback_D5E80CEA418652AD060EBBB55455A8C4");
+
+	Params::W_EndScreen_C_OnCallback_D5E80CEA418652AD060EBBB55455A8C4 Parms{};
+
+	Parms.Data = std::move(Data);
+	Parms.bWasSuccessful = bWasSuccessful;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_EndScreen.W_EndScreen_C.RefreshTime
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 

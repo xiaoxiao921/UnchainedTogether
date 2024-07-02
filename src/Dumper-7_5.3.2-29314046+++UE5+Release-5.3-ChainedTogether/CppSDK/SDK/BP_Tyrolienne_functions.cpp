@@ -117,26 +117,6 @@ bool ABP_Tyrolienne_C::IsSomeoneAlreadyInTyro()
 }
 
 
-// Function BP_Tyrolienne.BP_Tyrolienne_C.SwitchCharacterToTyrolienne
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Char                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Tyrolienne_C::SwitchCharacterToTyrolienne(class UObject* Char)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Tyrolienne_C", "SwitchCharacterToTyrolienne");
-
-	Params::BP_Tyrolienne_C_SwitchCharacterToTyrolienne Parms{};
-
-	Parms.Char = Char;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Tyrolienne.BP_Tyrolienne_C.OnBoxDetection
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -185,6 +165,26 @@ void ABP_Tyrolienne_C::ResetDetectionOnEndMoving()
 		Func = Class->GetFunction("BP_Tyrolienne_C", "ResetDetectionOnEndMoving");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Tyrolienne.BP_Tyrolienne_C.SwitchCharacterToTyrolienne
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Char                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Tyrolienne_C::SwitchCharacterToTyrolienne(class UObject* Char)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Tyrolienne_C", "SwitchCharacterToTyrolienne");
+
+	Params::BP_Tyrolienne_C_SwitchCharacterToTyrolienne Parms{};
+
+	Parms.Char = Char;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

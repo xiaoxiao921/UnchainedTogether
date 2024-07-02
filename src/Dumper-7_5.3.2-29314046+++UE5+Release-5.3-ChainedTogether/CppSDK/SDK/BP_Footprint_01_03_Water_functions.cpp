@@ -17,29 +17,15 @@
 namespace SDK
 {
 
-// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.DecalSize__FinishedFunc
-// (BlueprintEvent)
+// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Footprint_01_03_Water_C::DecalSize__FinishedFunc()
+void ABP_Footprint_01_03_Water_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "DecalSize__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.DecalSize__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Footprint_01_03_Water_C::DecalSize__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "DecalSize__UpdateFunc");
+		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,15 +51,29 @@ void ABP_Footprint_01_03_Water_C::ExecuteUbergraph_BP_Footprint_01_03_Water(int3
 }
 
 
-// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.DecalSize__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_Footprint_01_03_Water_C::ReceiveBeginPlay()
+void ABP_Footprint_01_03_Water_C::DecalSize__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "DecalSize__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Footprint_01_03_Water.BP_Footprint_01_03_Water_C.DecalSize__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Footprint_01_03_Water_C::DecalSize__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Footprint_01_03_Water_C", "DecalSize__FinishedFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

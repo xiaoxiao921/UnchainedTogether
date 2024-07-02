@@ -10,9 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Categories_S_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Categories_S_structs.hpp"
 #include "Runs_S_structs.hpp"
+#include "PlayerNumber_E_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -20,27 +21,50 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_SpeedrunCom.W_SpeedrunCom_C
-// 0x00A8 (0x0368 - 0x02C0)
+// 0x0130 (0x03F0 - 0x02C0)
 class UW_SpeedrunCom_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCircularThrobber*                      CircularThrobber_127;                              // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UHorizontalBox*                         HorizontalBox_69;                                  // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UScrollBox*                             ScrollBox_0;                                       // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UVerticalBox*                           VerticalBox_40;                                    // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UVerticalBox*                           VerticalBox_118;                                   // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_LeaderBoardSlot_C*                   W_LeaderBoardSlot;                                 // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TArray<struct FCategories_S>                  Categories;                                        // 0x02F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FRuns_S>                        Runs;                                              // 0x0308(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FRuns_S                                RunsTemp;                                          // 0x0318(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	class UButton*                                OnePlayer_Button;                                  // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                TwoPlayer_Button;                                  // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                ThreePlayer_Button;                                // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                FourPlayer_Button;                                 // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border;                                            // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_1;                                          // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_2;                                          // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_3;                                          // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCircularThrobber*                      CircularThrobber_127;                              // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         HorizontalBox;                                     // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         HorizontalBox_69;                                  // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UScrollBox*                             ScrollBox_0;                                       // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TextBlock_70;                                      // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UVerticalBox*                           VerticalBox_40;                                    // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UVerticalBox*                           VerticalBox_118;                                   // 0x0338(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TArray<struct FCategories_S>                  Categories;                                        // 0x0340(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FRuns_S>                        Runs;                                              // 0x0350(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FRuns_S                                RunsTemp;                                          // 0x0360(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<class FString>                         PlayerName_Temp;                                   // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         CategoryIndex;                                     // 0x03D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_331D[0x4];                                     // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         PlayersID_temp;                                    // 0x03D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	EPlayerNumber_E                               PlayerNumber;                                      // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_331E[0x3];                                     // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Classement;                                        // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AddPlayerSlot(TArray<class FString>& PlayersID, int32 Param_Classement, int32 PlayerTime, const class FString& DateSpeedrun);
+	void BndEvt__W_SpeedrunCom_1Player_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__W_SpeedrunCom_2Player_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__W_SpeedrunCom_3Player_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__W_SpeedrunCom_4Player_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
+	void ChangeCategoryByPlayer(int32 Param_PlayerNumber);
+	void CheckDoublon(const struct FCategories_S& Categories_S, bool* NewParam);
+	void ClearPlayers();
 	void Construct();
+	void DeselectPlayersNumber();
 	void ExecuteUbergraph_W_SpeedrunCom(int32 EntryPoint);
-	void GetAllPlayers();
 	void GetCategories();
-	void OnCategorieCallback(class UVaRestRequestJSON* Request);
 	void OnCategoriesCallback(class UVaRestRequestJSON* Request);
 
 public:
@@ -54,17 +78,31 @@ public:
 	}
 };
 static_assert(alignof(UW_SpeedrunCom_C) == 0x000008, "Wrong alignment on UW_SpeedrunCom_C");
-static_assert(sizeof(UW_SpeedrunCom_C) == 0x000368, "Wrong size on UW_SpeedrunCom_C");
+static_assert(sizeof(UW_SpeedrunCom_C) == 0x0003F0, "Wrong size on UW_SpeedrunCom_C");
 static_assert(offsetof(UW_SpeedrunCom_C, UberGraphFrame) == 0x0002C0, "Member 'UW_SpeedrunCom_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, CircularThrobber_127) == 0x0002C8, "Member 'UW_SpeedrunCom_C::CircularThrobber_127' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, HorizontalBox_69) == 0x0002D0, "Member 'UW_SpeedrunCom_C::HorizontalBox_69' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, ScrollBox_0) == 0x0002D8, "Member 'UW_SpeedrunCom_C::ScrollBox_0' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, VerticalBox_40) == 0x0002E0, "Member 'UW_SpeedrunCom_C::VerticalBox_40' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, VerticalBox_118) == 0x0002E8, "Member 'UW_SpeedrunCom_C::VerticalBox_118' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, W_LeaderBoardSlot) == 0x0002F0, "Member 'UW_SpeedrunCom_C::W_LeaderBoardSlot' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, Categories) == 0x0002F8, "Member 'UW_SpeedrunCom_C::Categories' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, Runs) == 0x000308, "Member 'UW_SpeedrunCom_C::Runs' has a wrong offset!");
-static_assert(offsetof(UW_SpeedrunCom_C, RunsTemp) == 0x000318, "Member 'UW_SpeedrunCom_C::RunsTemp' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, OnePlayer_Button) == 0x0002C8, "Member 'UW_SpeedrunCom_C::OnePlayer_Button' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, TwoPlayer_Button) == 0x0002D0, "Member 'UW_SpeedrunCom_C::TwoPlayer_Button' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, ThreePlayer_Button) == 0x0002D8, "Member 'UW_SpeedrunCom_C::ThreePlayer_Button' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, FourPlayer_Button) == 0x0002E0, "Member 'UW_SpeedrunCom_C::FourPlayer_Button' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Border) == 0x0002E8, "Member 'UW_SpeedrunCom_C::Border' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Border_1) == 0x0002F0, "Member 'UW_SpeedrunCom_C::Border_1' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Border_2) == 0x0002F8, "Member 'UW_SpeedrunCom_C::Border_2' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Border_3) == 0x000300, "Member 'UW_SpeedrunCom_C::Border_3' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, CircularThrobber_127) == 0x000308, "Member 'UW_SpeedrunCom_C::CircularThrobber_127' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, HorizontalBox) == 0x000310, "Member 'UW_SpeedrunCom_C::HorizontalBox' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, HorizontalBox_69) == 0x000318, "Member 'UW_SpeedrunCom_C::HorizontalBox_69' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, ScrollBox_0) == 0x000320, "Member 'UW_SpeedrunCom_C::ScrollBox_0' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, TextBlock_70) == 0x000328, "Member 'UW_SpeedrunCom_C::TextBlock_70' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, VerticalBox_40) == 0x000330, "Member 'UW_SpeedrunCom_C::VerticalBox_40' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, VerticalBox_118) == 0x000338, "Member 'UW_SpeedrunCom_C::VerticalBox_118' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Categories) == 0x000340, "Member 'UW_SpeedrunCom_C::Categories' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Runs) == 0x000350, "Member 'UW_SpeedrunCom_C::Runs' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, RunsTemp) == 0x000360, "Member 'UW_SpeedrunCom_C::RunsTemp' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, PlayerName_Temp) == 0x0003C0, "Member 'UW_SpeedrunCom_C::PlayerName_Temp' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, CategoryIndex) == 0x0003D0, "Member 'UW_SpeedrunCom_C::CategoryIndex' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, PlayersID_temp) == 0x0003D8, "Member 'UW_SpeedrunCom_C::PlayersID_temp' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, PlayerNumber) == 0x0003E8, "Member 'UW_SpeedrunCom_C::PlayerNumber' has a wrong offset!");
+static_assert(offsetof(UW_SpeedrunCom_C, Classement) == 0x0003EC, "Member 'UW_SpeedrunCom_C::Classement' has a wrong offset!");
 
 }
 

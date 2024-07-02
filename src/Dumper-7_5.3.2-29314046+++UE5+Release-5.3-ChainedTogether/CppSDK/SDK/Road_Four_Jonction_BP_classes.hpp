@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "ConnectorsNum_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ConnectorsNum_structs.hpp"
 #include "Road_Four_JonctionType_structs.hpp"
 
 
@@ -39,14 +39,14 @@ public:
 	class UTextRenderComponent*                   Con_1;                                             // 0x02F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   Central_Mesh;                                      // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 Road_to_Connect;                                   // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Road_To_Connect;                                   // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
 	bool                                          Add_Side_Walk;                                     // 0x0310(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Con_Text_Visibility;                               // 0x0311(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Connect_Road_At_This_Index_;                       // 0x0312(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Move_Road_At_This_Index;                           // 0x0313(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ERoad_Four_JonctionType                       Select_Jonction_Type;                              // 0x0314(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EConnectorsNum                                Choose_Connector;                                  // 0x0315(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3BA9[0x2];                                     // 0x0316(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25A0[0x2];                                     // 0x0316(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Con_1_Location;                                    // 0x0318(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Can_2_Location;                                    // 0x0330(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Can_3_Location;                                    // 0x0348(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -55,10 +55,10 @@ public:
 	struct FRotator                               Con_3_Rot;                                         // 0x0380(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	struct FRotator                               Con_1_Rot;                                         // 0x0398(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Can_Override_Material;                             // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3BAA[0x7];                                     // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25A1[0x7];                                     // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     Road_Material_0;                                   // 0x03B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Splines_Index_To_Connect;                          // 0x03C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3BAB[0x4];                                     // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25A2[0x4];                                     // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               Con_4_Rot;                                         // 0x03C8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	struct FRotator                               Con_2_Rot;                                         // 0x03E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	double                                        Trace_Radius;                                      // 0x03F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -67,7 +67,7 @@ public:
 	double                                        Side_Falloff;                                      // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Raise_Terrain;                                     // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Lower_Terrain;                                     // 0x0419(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3BAC[0x2];                                     // 0x041A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25A3[0x2];                                     // 0x041A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Number_of_Subdivisions_to_be_added;                // 0x041C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Layer_To_Apply;                                    // 0x0420(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Add_Traffic_Light_Meshes;                          // 0x0424(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -94,7 +94,7 @@ public:
 	bool                                          Cast_Shadow_;                                      // 0x04B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Cast_Shadow__Sidewalk_;                            // 0x04B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Cast_Shadow__Traffic_Lights_;                      // 0x04BA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3BAD[0x5];                                     // 0x04BB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25A4[0x5];                                     // 0x04BB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Culling_Distance__Traffic_Lights_;                 // 0x04C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Culling_Distance_;                                 // 0x04C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Num_Of_Iteration;                                  // 0x04D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -140,7 +140,7 @@ static_assert(offsetof(ARoad_Four_Jonction_BP_C, Con_2) == 0x0002E8, "Member 'AR
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, Con_1) == 0x0002F0, "Member 'ARoad_Four_Jonction_BP_C::Con_1' has a wrong offset!");
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, Central_Mesh) == 0x0002F8, "Member 'ARoad_Four_Jonction_BP_C::Central_Mesh' has a wrong offset!");
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, DefaultSceneRoot) == 0x000300, "Member 'ARoad_Four_Jonction_BP_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ARoad_Four_Jonction_BP_C, Road_to_Connect) == 0x000308, "Member 'ARoad_Four_Jonction_BP_C::Road_to_Connect' has a wrong offset!");
+static_assert(offsetof(ARoad_Four_Jonction_BP_C, Road_To_Connect) == 0x000308, "Member 'ARoad_Four_Jonction_BP_C::Road_To_Connect' has a wrong offset!");
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, Add_Side_Walk) == 0x000310, "Member 'ARoad_Four_Jonction_BP_C::Add_Side_Walk' has a wrong offset!");
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, Con_Text_Visibility) == 0x000311, "Member 'ARoad_Four_Jonction_BP_C::Con_Text_Visibility' has a wrong offset!");
 static_assert(offsetof(ARoad_Four_Jonction_BP_C, Connect_Road_At_This_Index_) == 0x000312, "Member 'ARoad_Four_Jonction_BP_C::Connect_Road_At_This_Index_' has a wrong offset!");

@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function bp_WindHorizontal_01_01.bp_WindHorizontal_01_01_C.ExecuteUbergraph_bp_WindHorizontal_01_01
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function bp_WindHorizontal_01_01.bp_WindHorizontal_01_01_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void Abp_WindHorizontal_01_01_C::ExecuteUbergraph_bp_WindHorizontal_01_01(int32 EntryPoint)
+void Abp_WindHorizontal_01_01_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("bp_WindHorizontal_01_01_C", "ExecuteUbergraph_bp_WindHorizontal_01_01");
+		Func = Class->GetFunction("bp_WindHorizontal_01_01_C", "UserConstructionScript");
 
-	Params::bp_WindHorizontal_01_01_C_ExecuteUbergraph_bp_WindHorizontal_01_01 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -51,17 +45,23 @@ void Abp_WindHorizontal_01_01_C::ReceiveBeginPlay()
 }
 
 
-// Function bp_WindHorizontal_01_01.bp_WindHorizontal_01_01_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function bp_WindHorizontal_01_01.bp_WindHorizontal_01_01_C.ExecuteUbergraph_bp_WindHorizontal_01_01
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Abp_WindHorizontal_01_01_C::UserConstructionScript()
+void Abp_WindHorizontal_01_01_C::ExecuteUbergraph_bp_WindHorizontal_01_01(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("bp_WindHorizontal_01_01_C", "UserConstructionScript");
+		Func = Class->GetFunction("bp_WindHorizontal_01_01_C", "ExecuteUbergraph_bp_WindHorizontal_01_01");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::bp_WindHorizontal_01_01_C_ExecuteUbergraph_bp_WindHorizontal_01_01 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

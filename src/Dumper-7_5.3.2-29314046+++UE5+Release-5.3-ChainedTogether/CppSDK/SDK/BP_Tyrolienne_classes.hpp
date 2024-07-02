@@ -33,10 +33,10 @@ public:
 	void BndEvt__BP_Tyrolienne_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void ExecuteUbergraph_BP_Tyrolienne(int32 EntryPoint);
 	bool IsSomeoneAlreadyInTyro();
-	void SwitchCharacterToTyrolienne(class UObject* Char);
 	bool OnBoxDetection(class UObject* Object);
 	void Reset();
 	void ResetDetectionOnEndMoving();
+	void SwitchCharacterToTyrolienne(class UObject* Char);
 
 public:
 	static class UClass* StaticClass()

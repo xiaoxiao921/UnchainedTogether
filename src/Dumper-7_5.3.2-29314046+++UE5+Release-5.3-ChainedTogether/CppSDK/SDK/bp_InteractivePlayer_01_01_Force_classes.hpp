@@ -28,8 +28,8 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_bp_InteractivePlayer_01_01_Force(int32 EntryPoint);
 	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_bp_InteractivePlayer_01_01_Force(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -29,7 +29,7 @@ public:
 	class USceneComponent*                        SharedRoot;                                        // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	TArray<class UMaterialInterface*>             Rose_colour_array;                                 // 0x02C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         Rose_colour_picker;                                // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_36B5[0x4];                                     // 0x02D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3854[0x4];                                     // 0x02D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UStaticMesh*>                    Mesh_array;                                        // 0x02D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FRandomStream                          Stream;                                            // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor)
 

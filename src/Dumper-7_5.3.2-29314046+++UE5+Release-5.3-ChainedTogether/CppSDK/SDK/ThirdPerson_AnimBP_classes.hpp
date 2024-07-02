@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ThirdPerson_AnimBP_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ThirdPerson_AnimBP_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 
@@ -25,10 +25,10 @@ namespace SDK
 class UThirdPerson_AnimBP_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3634[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3650[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct ThirdPerson_AnimBP::FAnimBlueprintGeneratedMutableData __AnimBlueprintMutables;                           // 0x0358(0x0014)(HasGetValueTypeHash)
-	uint8                                         Pad_3635[0x4];                                     // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3651[0x4];                                     // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0370(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0378(0x0008)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0380(0x0020)()
@@ -59,20 +59,20 @@ public:
 	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0AC8(0x0048)()
 	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend;                    // 0x0B10(0x00F0)()
 	bool                                          IsInAir_;                                          // 0x0C00(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3636[0x7];                                     // 0x0C01(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3652[0x7];                                     // 0x0C01(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Speed;                                             // 0x0C08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsCrouching;                                       // 0x0C10(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsHoldingLight;                                    // 0x0C11(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void AnimNotify_LeftFootprint();
-	void AnimNotify_RightFootprint();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_LayeredBoneBlend_2E63F6624AD3CF2429BD9B96863C3D68();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_175FFF54400CA0EC412B7083B0989D7E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_F867B5374C7EFB9ED9010FA7431019DF();
 	void ExecuteUbergraph_ThirdPerson_AnimBP(int32 EntryPoint);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_F867B5374C7EFB9ED9010FA7431019DF();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_175FFF54400CA0EC412B7083B0989D7E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_LayeredBoneBlend_2E63F6624AD3CF2429BD9B96863C3D68();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void AnimNotify_RightFootprint();
+	void AnimNotify_LeftFootprint();
+	void AnimGraph(struct FPoseLink* Param_AnimGraph);
 
 public:
 	static class UClass* StaticClass()

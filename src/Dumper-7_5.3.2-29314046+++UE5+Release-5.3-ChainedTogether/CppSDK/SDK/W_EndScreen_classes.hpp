@@ -38,6 +38,8 @@ public:
 	void ExecuteUbergraph_W_EndScreen(int32 EntryPoint);
 	void OnCallback_C40E329846C5390DF3526BB1AC51162A(const struct FLeaderboardFindResult& Data, bool bWasSuccessful);
 	void OnCallback_D4619B5E464DD7DF58786BBF440CCADD(const struct FLeaderboardScoreUploaded& Data, bool bWasSuccessful);
+	void OnCallback_D5E80CEA418652AD060EBBB524E09932(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful);
+	void OnCallback_D5E80CEA418652AD060EBBB55455A8C4(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful);
 	void RefreshTime();
 
 public:

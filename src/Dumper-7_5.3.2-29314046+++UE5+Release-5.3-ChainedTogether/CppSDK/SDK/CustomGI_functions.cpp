@@ -411,6 +411,28 @@ void UCustomGI_C::ManualSaveFinished__DelegateSignature(bool Success)
 }
 
 
+// Function CustomGI.CustomGI_C.OnCallback_D5E80CEA418652AD060EBBB5684EDCE8
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FRequestCurrentStatsData         Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::OnCallback_D5E80CEA418652AD060EBBB5684EDCE8(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "OnCallback_D5E80CEA418652AD060EBBB5684EDCE8");
+
+	Params::CustomGI_C_OnCallback_D5E80CEA418652AD060EBBB5684EDCE8 Parms{};
+
+	Parms.Data = std::move(Data);
+	Parms.bWasSuccessful = bWasSuccessful;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function CustomGI.CustomGI_C.OnFailure_B405B95A431214C35278028DA23BF73A
 // (BlueprintCallable, BlueprintEvent)
 

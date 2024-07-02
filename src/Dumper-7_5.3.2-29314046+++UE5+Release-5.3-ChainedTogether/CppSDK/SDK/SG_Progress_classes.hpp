@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "S_BiomeSave_structs.hpp"
 #include "S_ProgressSave_structs.hpp"
+#include "S_BiomeSave_structs.hpp"
 
 
 namespace SDK
@@ -28,7 +28,7 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FVector                                Location;                                          // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Time;                                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_115F[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35CC[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FS_ProgressSave>                ProgressesNormal;                                  // 0x0050(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FS_ProgressSave>                ProgressesNormalBackup;                            // 0x0060(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FS_ProgressSave>                ProgressesBeginner;                                // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)

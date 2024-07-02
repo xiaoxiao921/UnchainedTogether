@@ -66,5 +66,27 @@ void ABiomeText_BP_C::ExecuteUbergraph_BiomeText_BP(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function BiomeText_BP.BiomeText_BP_C.OnCallback_D5E80CEA418652AD060EBBB50AB0797B
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FRequestCurrentStatsData         Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABiomeText_BP_C::OnCallback_D5E80CEA418652AD060EBBB50AB0797B(const struct FRequestCurrentStatsData& Data, bool bWasSuccessful)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BiomeText_BP_C", "OnCallback_D5E80CEA418652AD060EBBB50AB0797B");
+
+	Params::BiomeText_BP_C_OnCallback_D5E80CEA418652AD060EBBB50AB0797B Parms{};
+
+	Parms.Data = std::move(Data);
+	Parms.bWasSuccessful = bWasSuccessful;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

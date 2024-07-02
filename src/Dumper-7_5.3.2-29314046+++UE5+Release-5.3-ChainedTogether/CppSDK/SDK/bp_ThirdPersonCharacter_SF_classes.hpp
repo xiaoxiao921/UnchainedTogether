@@ -25,7 +25,7 @@ namespace SDK
 class alignas(0x10) Abp_ThirdPersonCharacter_SF_C : public ACharacter
 {
 public:
-	uint8                                         Pad_3659[0x8];                                     // 0x0678(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_361C[0x8];                                     // 0x0678(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USpotLightComponent*                    TPPFlashlight;                                     // 0x0688(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        FPP_Flashlight_Socket;                             // 0x0690(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -46,16 +46,16 @@ public:
 	float                                         FOV_Zoom_Mouse_movement_scale_5C18371A41FDF36C6341CCB67AC7178E; // 0x0708(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FOV_Zoom_Field_of_view_5C18371A41FDF36C6341CCB67AC7178E; // 0x070C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            FOV_Zoom__Direction_5C18371A41FDF36C6341CCB67AC7178E; // 0x0710(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_365A[0x7];                                     // 0x0711(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_361D[0x7];                                     // 0x0711(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     FOV_Zoom;                                          // 0x0718(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        BaseTurnRate;                                      // 0x0720(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        BaseLookUpRate;                                    // 0x0728(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FPP_ON;                                            // 0x0730(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_365B[0x7];                                     // 0x0731(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_361E[0x7];                                     // 0x0731(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Fade;                                              // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        MouseSensitivityScale;                             // 0x0740(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECrouchState                                  CrouchState;                                       // 0x0748(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_365C[0x7];                                     // 0x0749(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_361F[0x7];                                     // 0x0749(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UThirdPerson_AnimBP_C*                  AnimationInstance;                                 // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             ZoomInSound;                                       // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             ZoomOutSound;                                      // 0x0760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
@@ -65,56 +65,56 @@ public:
 	double                                        Max_Distance_Offset;                               // 0x0780(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void DrawLightsDebug();
-	void ExecuteUbergraph_bp_ThirdPersonCharacter_SF(int32 EntryPoint);
-	void FOV_Zoom__FinishedFunc();
-	void FOV_Zoom__UpdateFunc();
-	void GenerateSwayLocation(double Theta, double Phi, double Distance, struct FVector* Location);
-	void GrabFlashlight();
-	void InpActEvt_C_K2Node_InputKeyEvent_3(const struct FKey& Key);
-	void InpActEvt_F_K2Node_InputKeyEvent_2(const struct FKey& Key);
-	void InpActEvt_LeftShift_K2Node_InputKeyEvent_5(const struct FKey& Key);
-	void InpActEvt_LeftShift_K2Node_InputKeyEvent_6(const struct FKey& Key);
-	void InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0(const struct FKey& Key);
-	void InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1(const struct FKey& Key);
-	void InpActEvt_Q_K2Node_InputKeyEvent_4(const struct FKey& Key);
-	void InpTchEvt_Pressed(ETouchIndex FingerIndex, const struct FVector& Location);
-	void InpTchEvt_Released(ETouchIndex FingerIndex, const struct FVector& Location);
-	void LeftFootPrint();
-	void OnBlendOut_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
-	void OnBlendOut_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
-	void OnCompleted_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
-	void OnCompleted_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
-	void OnInterrupted_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
-	void OnInterrupted_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
-	void OnNotifyBegin_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
-	void OnNotifyBegin_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
-	void OnNotifyEnd_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
-	void OnNotifyEnd_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
-	void OnStartZoom(ETimelineDirection ZoomDirection);
-	void OnStopZoom(ETimelineDirection Zoom_Direction);
-	void PlayZoomSound(class USoundBase* Param_ZoomSound);
-	void PutAwayFlashlight();
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void RightFootPrint();
-	void SetLightVisible(bool TurnedOn);
-	void SetMeshVisible(bool IsVisible);
-	void SpawnFootDecal(const struct FVector& FootLocation, const struct FRotator& FootRotation, bool RightFoot);
-	void StartBreathing();
-	void StartCrouching();
-	void StartedMoving();
-	void StartIdleShake();
-	void StartToStandUp();
-	void StopBreathing();
-	void StopIdleShake(bool Immediate);
-	void StoppedMoving();
-	void ToggleFlashlight();
-	void UpdateBreathingSound();
-	void UpdateCameraType();
-	void UpdateCrouch(double DeltaTime);
-	void UpdateFlashlight(bool IsOn);
 	void UpdateHandSway(double DeltaTime, double AzimuthSpeed, double InclinationSpeed, double DistanceSpeed, double Max_Distance);
+	void UpdateFlashlight(bool IsOn);
+	void UpdateCrouch(double DeltaTime);
+	void UpdateCameraType();
+	void UpdateBreathingSound();
+	void ToggleFlashlight();
+	void StoppedMoving();
+	void StopIdleShake(bool Immediate);
+	void StopBreathing();
+	void StartToStandUp();
+	void StartIdleShake();
+	void StartedMoving();
+	void StartCrouching();
+	void StartBreathing();
+	void SpawnFootDecal(const struct FVector& FootLocation, const struct FRotator& FootRotation, bool RightFoot);
+	void SetMeshVisible(bool IsVisible);
+	void SetLightVisible(bool TurnedOn);
+	void RightFootPrint();
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void PutAwayFlashlight();
+	void PlayZoomSound(class USoundBase* Param_ZoomSound);
+	void OnStopZoom(ETimelineDirection Zoom_Direction);
+	void OnStartZoom(ETimelineDirection ZoomDirection);
+	void OnNotifyEnd_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
+	void OnNotifyEnd_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
+	void OnNotifyBegin_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
+	void OnNotifyBegin_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
+	void OnInterrupted_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
+	void OnInterrupted_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
+	void OnCompleted_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
+	void OnCompleted_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
+	void OnBlendOut_D240DADE4E59F3A5F567059F1C522A3B(class FName NotifyName);
+	void OnBlendOut_3500E0704DACECB9A9622098B2061724(class FName NotifyName);
+	void LeftFootPrint();
+	void InpTchEvt_Released(ETouchIndex FingerIndex, const struct FVector& Location);
+	void InpTchEvt_Pressed(ETouchIndex FingerIndex, const struct FVector& Location);
+	void InpActEvt_Q_K2Node_InputKeyEvent_4(const struct FKey& Key);
+	void InpActEvt_MouseScrollUp_K2Node_InputKeyEvent_1(const struct FKey& Key);
+	void InpActEvt_MouseScrollDown_K2Node_InputKeyEvent_0(const struct FKey& Key);
+	void InpActEvt_LeftShift_K2Node_InputKeyEvent_6(const struct FKey& Key);
+	void InpActEvt_LeftShift_K2Node_InputKeyEvent_5(const struct FKey& Key);
+	void InpActEvt_F_K2Node_InputKeyEvent_2(const struct FKey& Key);
+	void InpActEvt_C_K2Node_InputKeyEvent_3(const struct FKey& Key);
+	void GrabFlashlight();
+	void GenerateSwayLocation(double Theta, double Phi, double Distance, struct FVector* Location);
+	void FOV_Zoom__UpdateFunc();
+	void FOV_Zoom__FinishedFunc();
+	void ExecuteUbergraph_bp_ThirdPersonCharacter_SF(int32 EntryPoint);
+	void DrawLightsDebug();
 
 public:
 	static class UClass* StaticClass()

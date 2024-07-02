@@ -20,7 +20,7 @@ struct W_SettingCategory_C_ExecuteUbergraph_W_SettingCategory final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33BA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33CB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   K2Node_CustomEvent_InText;                         // 0x0008(0x0018)()
 };
 static_assert(alignof(W_SettingCategory_C_ExecuteUbergraph_W_SettingCategory) == 0x000008, "Wrong alignment on W_SettingCategory_C_ExecuteUbergraph_W_SettingCategory");

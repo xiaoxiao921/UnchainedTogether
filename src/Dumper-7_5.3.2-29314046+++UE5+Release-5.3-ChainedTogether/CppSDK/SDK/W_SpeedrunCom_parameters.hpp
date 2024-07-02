@@ -16,167 +16,196 @@
 namespace SDK::Params
 {
 
+// Function W_SpeedrunCom.W_SpeedrunCom_C.AddPlayerSlot
+// 0x0028 (0x0028 - 0x0000)
+struct W_SpeedrunCom_C_AddPlayerSlot final
+{
+public:
+	TArray<class FString>                         PlayersID;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	int32                                         Param_Classement;                                  // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PlayerTime;                                        // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 DateSpeedrun;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SpeedrunCom_C_AddPlayerSlot) == 0x000008, "Wrong alignment on W_SpeedrunCom_C_AddPlayerSlot");
+static_assert(sizeof(W_SpeedrunCom_C_AddPlayerSlot) == 0x000028, "Wrong size on W_SpeedrunCom_C_AddPlayerSlot");
+static_assert(offsetof(W_SpeedrunCom_C_AddPlayerSlot, PlayersID) == 0x000000, "Member 'W_SpeedrunCom_C_AddPlayerSlot::PlayersID' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_AddPlayerSlot, Param_Classement) == 0x000010, "Member 'W_SpeedrunCom_C_AddPlayerSlot::Param_Classement' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_AddPlayerSlot, PlayerTime) == 0x000014, "Member 'W_SpeedrunCom_C_AddPlayerSlot::PlayerTime' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_AddPlayerSlot, DateSpeedrun) == 0x000018, "Member 'W_SpeedrunCom_C_AddPlayerSlot::DateSpeedrun' has a wrong offset!");
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.ChangeCategoryByPlayer
+// 0x0004 (0x0004 - 0x0000)
+struct W_SpeedrunCom_C_ChangeCategoryByPlayer final
+{
+public:
+	int32                                         Param_PlayerNumber;                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SpeedrunCom_C_ChangeCategoryByPlayer) == 0x000004, "Wrong alignment on W_SpeedrunCom_C_ChangeCategoryByPlayer");
+static_assert(sizeof(W_SpeedrunCom_C_ChangeCategoryByPlayer) == 0x000004, "Wrong size on W_SpeedrunCom_C_ChangeCategoryByPlayer");
+static_assert(offsetof(W_SpeedrunCom_C_ChangeCategoryByPlayer, Param_PlayerNumber) == 0x000000, "Member 'W_SpeedrunCom_C_ChangeCategoryByPlayer::Param_PlayerNumber' has a wrong offset!");
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.CheckDoublon
+// 0x0080 (0x0080 - 0x0000)
+struct W_SpeedrunCom_C_CheckDoublon final
+{
+public:
+	struct FCategories_S                          Categories_S;                                      // 0x0000(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+	bool                                          NewParam;                                          // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_331F[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3320[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCategories_S                          CallFunc_Array_Get_Item;                           // 0x0048(0x0030)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SpeedrunCom_C_CheckDoublon) == 0x000008, "Wrong alignment on W_SpeedrunCom_C_CheckDoublon");
+static_assert(sizeof(W_SpeedrunCom_C_CheckDoublon) == 0x000080, "Wrong size on W_SpeedrunCom_C_CheckDoublon");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, Categories_S) == 0x000000, "Member 'W_SpeedrunCom_C_CheckDoublon::Categories_S' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, NewParam) == 0x000030, "Member 'W_SpeedrunCom_C_CheckDoublon::NewParam' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, Temp_int_Array_Index_Variable) == 0x000034, "Member 'W_SpeedrunCom_C_CheckDoublon::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, Temp_int_Loop_Counter_Variable) == 0x000038, "Member 'W_SpeedrunCom_C_CheckDoublon::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, CallFunc_Add_IntInt_ReturnValue) == 0x00003C, "Member 'W_SpeedrunCom_C_CheckDoublon::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, CallFunc_Array_Length_ReturnValue) == 0x000040, "Member 'W_SpeedrunCom_C_CheckDoublon::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, CallFunc_Array_Get_Item) == 0x000048, "Member 'W_SpeedrunCom_C_CheckDoublon::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, CallFunc_Less_IntInt_ReturnValue) == 0x000078, "Member 'W_SpeedrunCom_C_CheckDoublon::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_CheckDoublon, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000079, "Member 'W_SpeedrunCom_C_CheckDoublon::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+
 // Function W_SpeedrunCom.W_SpeedrunCom_C.ExecuteUbergraph_W_SpeedrunCom
-// 0x0268 (0x0268 - 0x0000)
+// 0x0208 (0x0208 - 0x0000)
 struct W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3038[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3321[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestSubsystem*                       CallFunc_GetEngineSubsystem_ReturnValue;           // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3039[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonObject*                      CallFunc_ConstructVaRestJsonObject_ReturnValue;    // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303A[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303B[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UVaRestRequestJSON*                     K2Node_CustomEvent_Request_1;                      // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3322[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3323[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UVaRestRequestJSON* Request)> K2Node_CreateDelegate_OutputDelegate;              // 0x0028(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3324[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UVaRestSubsystem*                       CallFunc_GetEngineSubsystem_ReturnValue_1;         // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UVaRestJsonObject*                      CallFunc_ConstructVaRestJsonObject_ReturnValue;    // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3325[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_SpeedrunCom_RunSlot_C*               CallFunc_Create_ReturnValue;                       // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UVaRestRequestJSON*                     K2Node_CustomEvent_Request;                        // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UVaRestJsonObject*                      CallFunc_GetResponseObject_ReturnValue;            // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UVaRestRequestJSON* Request)> K2Node_CreateDelegate_OutputDelegate;              // 0x0078(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<class UVaRestJsonValue*>               CallFunc_GetArrayField_ReturnValue;                // 0x0088(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x009C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303C[0x3];                                     // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestSubsystem*                       CallFunc_GetEngineSubsystem_ReturnValue_1;         // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestRequestJSON*                     K2Node_CustomEvent_Request;                        // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestJsonObject*                      CallFunc_GetResponseObject_ReturnValue_1;          // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FCategories_S                          CallFunc_Array_Get_Item;                           // 0x00B8(0x0030)(ZeroConstructor, HasGetValueTypeHash)
-	class UVaRestJsonValue*                       CallFunc_GetField_ReturnValue;                     // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue;                     // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<class UVaRestJsonValue*>               CallFunc_GetArrayField_ReturnValue_1;              // 0x0108(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303D[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonValue*                       CallFunc_Array_Get_Item_1;                         // 0x0120(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303E[0x7];                                     // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue_1;                   // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestJsonValue*                       CallFunc_GetField_ReturnValue_1;                   // 0x0138(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetStringField_ReturnValue;               // 0x0140(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue_2;                   // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<class UVaRestJsonValue*>               CallFunc_GetArrayField_ReturnValue_2;              // 0x0158(0x0010)(ReferenceParm)
-	int32                                         CallFunc_GetIntegerField_ReturnValue;              // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_303F[0x4];                                     // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonValue*                       CallFunc_Array_Get_Item_2;                         // 0x0170(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0178(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3040[0x4];                                     // 0x017C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue_3;                   // 0x0180(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3041[0x7];                                     // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         CallFunc_GetStringArrayField_ReturnValue;          // 0x0190(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetIntegerField_ReturnValue_1;            // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetStringField_ReturnValue_1;             // 0x01A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3042[0x7];                                     // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestJsonValue*                       CallFunc_Array_Get_Item_3;                         // 0x01C8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue_4;                   // 0x01D0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetStringField_ReturnValue_2;             // 0x01D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetStringField_ReturnValue_3;             // 0x01E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetStringField_ReturnValue_4;             // 0x01F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FCategories_S                          K2Node_MakeStruct_Categories_S;                    // 0x0208(0x0030)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0238(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3043[0x4];                                     // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UVaRestSubsystem*                       CallFunc_GetEngineSubsystem_ReturnValue_2;         // 0x0240(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestSubsystem*                       CallFunc_GetEngineSubsystem_ReturnValue_3;         // 0x0248(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UVaRestJsonObject*                      CallFunc_ConstructVaRestJsonObject_ReturnValue_1;  // 0x0250(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UVaRestRequestJSON* Request)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0258(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3326[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UVaRestJsonValue*>               CallFunc_GetArrayField_ReturnValue;                // 0x0080(0x0010)(ReferenceParm)
+	class UVaRestJsonValue*                       CallFunc_Array_Get_Item;                           // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3327[0x4];                                     // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UVaRestJsonObject*                      CallFunc_AsObject_ReturnValue;                     // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3328[0x7];                                     // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetStringField_ReturnValue;               // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetStringField_ReturnValue_1;             // 0x00C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetStringField_ReturnValue_2;             // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3329[0x4];                                     // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCategories_S                          K2Node_MakeStruct_Categories_S;                    // 0x00E8(0x0030)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CheckDoublon_NewParam;                    // 0x011C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332A[0x3];                                     // 0x011D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCategories_S                          CallFunc_Array_Get_Item_1;                         // 0x0120(0x0030)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0154(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332B[0x3];                                     // 0x0155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue;               // 0x0158(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Array_Get_Item_2;                         // 0x0168(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332C[0x7];                                     // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         K2Node_CustomEvent_PlayersID;                      // 0x0180(0x0010)(ReferenceParm)
+	int32                                         K2Node_CustomEvent_Classement;                     // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_CustomEvent_PlayerTime;                     // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_DateSpeedrun;                   // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Variable;                                 // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_CustomEvent_PlayerNumber;                   // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332D[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class USpeedRun_Category_W_C*>         CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x01C0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class USpeedRun_Category_W_C*                 CallFunc_Array_Get_Item_3;                         // 0x01D0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x01DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332E[0x3];                                     // 0x01DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWidget*>                        CallFunc_GetAllChildren_ReturnValue;               // 0x01E0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class USpeedRun_Category_W_C*                 CallFunc_Create_ReturnValue_1;                     // 0x01F0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x01F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x01FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_332F[0x3];                                     // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_1;                   // 0x0200(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom) == 0x000008, "Wrong alignment on W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom");
-static_assert(sizeof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom) == 0x000268, "Wrong size on W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom");
+static_assert(sizeof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom) == 0x000208, "Wrong size on W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom");
 static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, EntryPoint) == 0x000000, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::EntryPoint' has a wrong offset!");
 static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable) == 0x000004, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue) == 0x000008, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_bool_IsClosed_Variable) == 0x000008, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_bool_Has_Been_Initd_Variable) == 0x000009, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
 static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetEngineSubsystem_ReturnValue) == 0x000010, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetEngineSubsystem_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_1) == 0x000018, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_ConstructVaRestJsonObject_ReturnValue) == 0x000020, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_ConstructVaRestJsonObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable) == 0x000028, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue) == 0x00002C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_2) == 0x000030, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_1) == 0x000034, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_1) == 0x000038, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_2) == 0x00003C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_3) == 0x000040, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue) == 0x000044, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_2) == 0x000048, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_3) == 0x00004C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_3) == 0x000050, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_4) == 0x000054, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_4) == 0x000058, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AddChild_ReturnValue) == 0x000060, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AddChild_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_Request_1) == 0x000068, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_Request_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_bool_IsClosed_Variable_1) == 0x000018, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_1) == 0x00001C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_bool_Has_Been_Initd_Variable_1) == 0x000020, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable) == 0x000024, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CreateDelegate_OutputDelegate) == 0x000028, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue) == 0x000038, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetEngineSubsystem_ReturnValue_1) == 0x000040, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetEngineSubsystem_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_ConstructVaRestJsonObject_ReturnValue) == 0x000048, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_ConstructVaRestJsonObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_1) == 0x000050, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_1) == 0x000054, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_2) == 0x000058, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Create_ReturnValue) == 0x000060, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_Request) == 0x000068, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_Request' has a wrong offset!");
 static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetResponseObject_ReturnValue) == 0x000070, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetResponseObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CreateDelegate_OutputDelegate) == 0x000078, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetArrayField_ReturnValue) == 0x000088, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetArrayField_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_1) == 0x000098, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_1) == 0x00009C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetEngineSubsystem_ReturnValue_1) == 0x0000A0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetEngineSubsystem_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_Request) == 0x0000A8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_Request' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetResponseObject_ReturnValue_1) == 0x0000B0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetResponseObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item) == 0x0000B8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetField_ReturnValue) == 0x0000E8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetField_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue) == 0x0000F0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Concat_StrStr_ReturnValue) == 0x0000F8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetArrayField_ReturnValue_1) == 0x000108, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetArrayField_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_2) == 0x000118, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Loop_Counter_Variable_2) == 0x000078, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetArrayField_ReturnValue) == 0x000080, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetArrayField_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item) == 0x000090, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue) == 0x000098, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue) == 0x0000A0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue) == 0x0000A8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue) == 0x0000B0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_1) == 0x0000C0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_2) == 0x0000D0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_2) == 0x0000E0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_MakeStruct_Categories_S) == 0x0000E8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_MakeStruct_Categories_S' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Add_ReturnValue) == 0x000118, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_CheckDoublon_NewParam) == 0x00011C, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_CheckDoublon_NewParam' has a wrong offset!");
 static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item_1) == 0x000120, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_2) == 0x000128, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue_1) == 0x000130, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetField_ReturnValue_1) == 0x000138, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetField_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue) == 0x000140, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue_2) == 0x000150, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetArrayField_ReturnValue_2) == 0x000158, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetArrayField_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetIntegerField_ReturnValue) == 0x000168, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetIntegerField_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item_2) == 0x000170, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_3) == 0x000178, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue_3) == 0x000180, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_3) == 0x000188, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringArrayField_ReturnValue) == 0x000190, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringArrayField_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_4) == 0x0001A0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetIntegerField_ReturnValue_1) == 0x0001A4, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetIntegerField_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_1) == 0x0001A8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_5) == 0x0001B8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Array_Index_Variable_4) == 0x0001BC, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Array_Index_Variable_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_4) == 0x0001C0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item_3) == 0x0001C8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AsObject_ReturnValue_4) == 0x0001D0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AsObject_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_2) == 0x0001D8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_3) == 0x0001E8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetStringField_ReturnValue_4) == 0x0001F8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetStringField_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_MakeStruct_Categories_S) == 0x000208, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_MakeStruct_Categories_S' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Add_ReturnValue) == 0x000238, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetEngineSubsystem_ReturnValue_2) == 0x000240, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetEngineSubsystem_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetEngineSubsystem_ReturnValue_3) == 0x000248, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetEngineSubsystem_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_ConstructVaRestJsonObject_ReturnValue_1) == 0x000250, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_ConstructVaRestJsonObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CreateDelegate_OutputDelegate_1) == 0x000258, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.OnCategorieCallback
-// 0x0008 (0x0008 - 0x0000)
-struct W_SpeedrunCom_C_OnCategorieCallback final
-{
-public:
-	class UVaRestRequestJSON*                     Request;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(W_SpeedrunCom_C_OnCategorieCallback) == 0x000008, "Wrong alignment on W_SpeedrunCom_C_OnCategorieCallback");
-static_assert(sizeof(W_SpeedrunCom_C_OnCategorieCallback) == 0x000008, "Wrong size on W_SpeedrunCom_C_OnCategorieCallback");
-static_assert(offsetof(W_SpeedrunCom_C_OnCategorieCallback, Request) == 0x000000, "Member 'W_SpeedrunCom_C_OnCategorieCallback::Request' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_1) == 0x000150, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_1) == 0x000154, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_ParseIntoArray_ReturnValue) == 0x000158, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_ParseIntoArray_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item_2) == 0x000168, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000178, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_PlayersID) == 0x000180, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_PlayersID' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_Classement) == 0x000190, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_Classement' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_PlayerTime) == 0x000194, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_PlayerTime' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_DateSpeedrun) == 0x000198, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_DateSpeedrun' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AddChild_ReturnValue) == 0x0001A8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AddChild_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, Temp_int_Variable) == 0x0001B0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::Temp_int_Variable' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Add_IntInt_ReturnValue_3) == 0x0001B4, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, K2Node_CustomEvent_PlayerNumber) == 0x0001B8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::K2Node_CustomEvent_PlayerNumber' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x0001C0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Get_Item_3) == 0x0001D0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_2) == 0x0001D8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Less_IntInt_ReturnValue_2) == 0x0001DC, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_GetAllChildren_ReturnValue) == 0x0001E0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_GetAllChildren_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Create_ReturnValue_1) == 0x0001F0, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_Array_Length_ReturnValue_3) == 0x0001F8, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x0001FC, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom, CallFunc_AddChild_ReturnValue_1) == 0x000200, "Member 'W_SpeedrunCom_C_ExecuteUbergraph_W_SpeedrunCom::CallFunc_AddChild_ReturnValue_1' has a wrong offset!");
 
 // Function W_SpeedrunCom.W_SpeedrunCom_C.OnCategoriesCallback
 // 0x0008 (0x0008 - 0x0000)

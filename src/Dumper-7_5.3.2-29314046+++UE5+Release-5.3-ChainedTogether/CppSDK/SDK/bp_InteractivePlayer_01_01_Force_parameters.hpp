@@ -17,6 +17,17 @@
 namespace SDK::Params
 {
 
+// Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct bp_InteractivePlayer_01_01_Force_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick) == 0x000004, "Wrong alignment on bp_InteractivePlayer_01_01_Force_C_ReceiveTick");
+static_assert(sizeof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick) == 0x000004, "Wrong size on bp_InteractivePlayer_01_01_Force_C_ReceiveTick");
+static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'bp_InteractivePlayer_01_01_Force_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
 // Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ExecuteUbergraph_bp_InteractivePlayer_01_01_Force
 // 0x0150 (0x0150 - 0x0000)
 struct bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force final
@@ -29,10 +40,10 @@ public:
 	float                                         CallFunc_BreakRotator_Roll;                        // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakRotator_Pitch;                       // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakRotator_Yaw;                         // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3657[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3647[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Add_DoubleDouble_ReturnValue;             // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3658[0x8];                                     // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3648[0x8];                                     // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FParticleSysParam                      K2Node_MakeStruct_ParticleSysParam;                // 0x0050(0x00E0)(IsPlainOldData, NoDestructor)
 	TArray<struct FParticleSysParam>              K2Node_MakeArray_Array;                            // 0x0130(0x0010)(ReferenceParm)
 	double                                        CallFunc_Add_DoubleDouble_A_ImplicitCast;          // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -53,17 +64,6 @@ static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_In
 static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force, K2Node_MakeArray_Array) == 0x000130, "Member 'bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force::K2Node_MakeArray_Array' has a wrong offset!");
 static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force, CallFunc_Add_DoubleDouble_A_ImplicitCast) == 0x000140, "Member 'bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force::CallFunc_Add_DoubleDouble_A_ImplicitCast' has a wrong offset!");
 static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force, K2Node_MakeStruct_Scalar_ImplicitCast) == 0x000148, "Member 'bp_InteractivePlayer_01_01_Force_C_ExecuteUbergraph_bp_InteractivePlayer_01_01_Force::K2Node_MakeStruct_Scalar_ImplicitCast' has a wrong offset!");
-
-// Function bp_InteractivePlayer_01_01_Force.bp_InteractivePlayer_01_01_Force_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct bp_InteractivePlayer_01_01_Force_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick) == 0x000004, "Wrong alignment on bp_InteractivePlayer_01_01_Force_C_ReceiveTick");
-static_assert(sizeof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick) == 0x000004, "Wrong size on bp_InteractivePlayer_01_01_Force_C_ReceiveTick");
-static_assert(offsetof(bp_InteractivePlayer_01_01_Force_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'bp_InteractivePlayer_01_01_Force_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
 
 }
 

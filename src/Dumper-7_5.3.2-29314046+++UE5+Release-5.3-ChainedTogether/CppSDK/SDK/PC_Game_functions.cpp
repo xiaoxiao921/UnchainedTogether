@@ -995,20 +995,6 @@ void APC_Game_C::PullOtherCharacterSRV(class AActor* Param_ControlledActor, bool
 }
 
 
-// Function PC_Game.PC_Game_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void APC_Game_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function PC_Game.PC_Game_C.ReceivePossess
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -1637,6 +1623,20 @@ void APC_Game_C::UseServer(class UObject* Object, class AActor* Param_Controlled
 	Parms.Param_ControlledActor = Param_ControlledActor;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_Game.PC_Game_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void APC_Game_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

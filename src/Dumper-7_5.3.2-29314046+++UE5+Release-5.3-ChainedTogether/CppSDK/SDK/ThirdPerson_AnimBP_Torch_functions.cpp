@@ -17,50 +17,63 @@
 namespace SDK
 {
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.ExecuteUbergraph_ThirdPerson_AnimBP_Torch
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UThirdPerson_AnimBP_Torch_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
+void UThirdPerson_AnimBP_Torch_C::ExecuteUbergraph_ThirdPerson_AnimBP_Torch(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimGraph");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "ExecuteUbergraph_ThirdPerson_AnimBP_Torch");
 
-	Params::ThirdPerson_AnimBP_Torch_C_AnimGraph Parms{};
+	Params::ThirdPerson_AnimBP_Torch_C_ExecuteUbergraph_ThirdPerson_AnimBP_Torch Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
 }
 
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimNotify_LeftFootprint
-// (BlueprintCallable, BlueprintEvent)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3
+// (BlueprintEvent)
 
-void UThirdPerson_AnimBP_Torch_C::AnimNotify_LeftFootprint()
+void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimNotify_LeftFootprint");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimNotify_RightFootprint
-// (BlueprintCallable, BlueprintEvent)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C
+// (BlueprintEvent)
 
-void UThirdPerson_AnimBP_Torch_C::AnimNotify_RightFootprint()
+void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimNotify_RightFootprint");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537
+// (BlueprintEvent)
+
+void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -86,65 +99,52 @@ void UThirdPerson_AnimBP_Torch_C::BlueprintUpdateAnimation(float DeltaTimeX)
 }
 
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537
-// (BlueprintEvent)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimNotify_RightFootprint
+// (BlueprintCallable, BlueprintEvent)
 
-void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537()
+void UThirdPerson_AnimBP_Torch_C::AnimNotify_RightFootprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_LayeredBoneBlend_9159507947E5E87D8CD8B6B2FD249537");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimNotify_RightFootprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C
-// (BlueprintEvent)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimNotify_LeftFootprint
+// (BlueprintCallable, BlueprintEvent)
 
-void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C()
+void UThirdPerson_AnimBP_Torch_C::AnimNotify_LeftFootprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_7E67500448A46227E1DA10A9F811640C");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimNotify_LeftFootprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3
-// (BlueprintEvent)
-
-void UThirdPerson_AnimBP_Torch_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_Torch_AnimGraphNode_TransitionResult_9F10329141D35A3710902AA5DE6145A3");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.ExecuteUbergraph_ThirdPerson_AnimBP_Torch
-// (Final, UbergraphFunction, HasDefaults)
+// Function ThirdPerson_AnimBP_Torch.ThirdPerson_AnimBP_Torch_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
 
-void UThirdPerson_AnimBP_Torch_C::ExecuteUbergraph_ThirdPerson_AnimBP_Torch(int32 EntryPoint)
+void UThirdPerson_AnimBP_Torch_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "ExecuteUbergraph_ThirdPerson_AnimBP_Torch");
+		Func = Class->GetFunction("ThirdPerson_AnimBP_Torch_C", "AnimGraph");
 
-	Params::ThirdPerson_AnimBP_Torch_C_ExecuteUbergraph_ThirdPerson_AnimBP_Torch Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ThirdPerson_AnimBP_Torch_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (Param_AnimGraph != nullptr)
+		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
 }
 
 }

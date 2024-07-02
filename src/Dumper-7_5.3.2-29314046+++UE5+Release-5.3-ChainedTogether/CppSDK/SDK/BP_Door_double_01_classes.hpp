@@ -6,65 +6,64 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: BP_Door_Double_01
+// Package: BP_Door_double_01
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
-// BlueprintGeneratedClass BP_Door_Double_01.BP_Door_Double_01_C
-// 0x0050 (0x02E8 - 0x0298)
-class BP_Door_Double_01::ABP_Door_Double_01_C final : public AActor
+// BlueprintGeneratedClass BP_Door_double_01.BP_Door_Double_01_C
+// 0x0078 (0x0310 - 0x0298)
+class BP_Door_double_01::ABP_Door_Double_01_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          Trigger_Volume;                                    // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_MainDoor1;                                      // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_MainDoor;                                       // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_MainDoorArch;                                   // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_NewTrack_0_71BDA612461E5B8D2366D5AA0DBD2784; // 0x02C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline__Direction_71BDA612461E5B8D2366D5AA0DBD2784; // 0x02CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3620[0x3];                                     // 0x02CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline;                                          // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        Rotation_Angle_2;                                  // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Door_Rotation_Speed;                               // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-public:
-	void BndEvt__BP_Door_Double_01_Trigger_Volume_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
-	void BndEvt__BP_Door_Double_01_Trigger_Volume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	void ExecuteUbergraph_BP_Door_Double_01(int32 EntryPoint);
-	void Timeline__FinishedFunc();
-	void Timeline__UpdateFunc();
+	class UStaticMeshComponent*                   SM_ext_doorplate_01;                               // 0x0298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_window_edgedirt_051;                            // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_window_edgedirt_05;                             // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal6;                                            // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal5;                                            // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal4;                                            // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal3;                                            // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Wall_doorway_150_01;                               // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal2;                                            // 0x02D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal1;                                            // 0x02E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Wall_doorway_door_02;                              // 0x02E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Wall_doorway_door_01;                              // 0x02F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal;                                             // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UDecalComponent*                        Decal_01;                                          // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0308(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass BP_Door_Double_01.BP_Door_Double_01_C", true, "BP_Door_Double_01_C">();
+		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass BP_Door_double_01.BP_Door_Double_01_C", true, "BP_Door_Double_01_C">();
 	}
-	static class BP_Door_Double_01::ABP_Door_Double_01_C* GetDefaultObj()
+	static class BP_Door_double_01::ABP_Door_Double_01_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<BP_Door_Double_01::ABP_Door_Double_01_C>();
+		return GetDefaultObjImpl<BP_Door_double_01::ABP_Door_Double_01_C>();
 	}
 };
-static_assert(alignof(BP_Door_Double_01::ABP_Door_Double_01_C) == 0x000008, "Wrong alignment on BP_Door_Double_01::ABP_Door_Double_01_C");
-static_assert(sizeof(BP_Door_Double_01::ABP_Door_Double_01_C) == 0x0002E8, "Wrong size on BP_Door_Double_01::ABP_Door_Double_01_C");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, UberGraphFrame) == 0x000298, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Trigger_Volume) == 0x0002A0, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Trigger_Volume' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, SM_MainDoor1) == 0x0002A8, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::SM_MainDoor1' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, SM_MainDoor) == 0x0002B0, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::SM_MainDoor' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, SM_MainDoorArch) == 0x0002B8, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::SM_MainDoorArch' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, DefaultSceneRoot) == 0x0002C0, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Timeline_NewTrack_0_71BDA612461E5B8D2366D5AA0DBD2784) == 0x0002C8, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Timeline_NewTrack_0_71BDA612461E5B8D2366D5AA0DBD2784' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Timeline__Direction_71BDA612461E5B8D2366D5AA0DBD2784) == 0x0002CC, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Timeline__Direction_71BDA612461E5B8D2366D5AA0DBD2784' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Timeline) == 0x0002D0, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Timeline' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Rotation_Angle_2) == 0x0002D8, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Rotation_Angle_2' has a wrong offset!");
-static_assert(offsetof(BP_Door_Double_01::ABP_Door_Double_01_C, Door_Rotation_Speed) == 0x0002E0, "Member 'BP_Door_Double_01::ABP_Door_Double_01_C::Door_Rotation_Speed' has a wrong offset!");
+static_assert(alignof(BP_Door_double_01::ABP_Door_Double_01_C) == 0x000008, "Wrong alignment on BP_Door_double_01::ABP_Door_Double_01_C");
+static_assert(sizeof(BP_Door_double_01::ABP_Door_Double_01_C) == 0x000310, "Wrong size on BP_Door_double_01::ABP_Door_Double_01_C");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, SM_ext_doorplate_01) == 0x000298, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::SM_ext_doorplate_01' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, SM_window_edgedirt_051) == 0x0002A0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::SM_window_edgedirt_051' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, SM_window_edgedirt_05) == 0x0002A8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::SM_window_edgedirt_05' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal6) == 0x0002B0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal6' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal5) == 0x0002B8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal5' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal4) == 0x0002C0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal4' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal3) == 0x0002C8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal3' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Wall_doorway_150_01) == 0x0002D0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Wall_doorway_150_01' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal2) == 0x0002D8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal2' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal1) == 0x0002E0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal1' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Wall_doorway_door_02) == 0x0002E8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Wall_doorway_door_02' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Wall_doorway_door_01) == 0x0002F0, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Wall_doorway_door_01' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal) == 0x0002F8, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, Decal_01) == 0x000300, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::Decal_01' has a wrong offset!");
+static_assert(offsetof(BP_Door_double_01::ABP_Door_Double_01_C, DefaultSceneRoot) == 0x000308, "Member 'BP_Door_double_01::ABP_Door_Double_01_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

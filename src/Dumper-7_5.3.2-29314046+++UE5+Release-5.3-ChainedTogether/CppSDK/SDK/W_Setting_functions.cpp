@@ -119,6 +119,20 @@ void UW_Setting_C::ExecuteUbergraph_W_Setting(int32 EntryPoint)
 }
 
 
+// Function W_Setting.W_Setting_C.FindSecondaryInput
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UW_Setting_C::FindSecondaryInput()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Setting_C", "FindSecondaryInput");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Setting.W_Setting_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:

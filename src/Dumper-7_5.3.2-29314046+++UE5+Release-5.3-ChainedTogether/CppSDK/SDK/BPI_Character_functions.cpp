@@ -359,6 +359,26 @@ void IBPI_Character_C::Character_Bounce(double Force)
 }
 
 
+// Function BPI_Character.BPI_Character_C.Enable Disable Camera Smooting SRV
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_Character_C::Enable_Disable_Camera_Smooting_SRV(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_Character_C", "Enable Disable Camera Smooting SRV");
+
+	Params::BPI_Character_C_Enable_Disable_Camera_Smooting_SRV Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BPI_Character.BPI_Character_C.EnableMovements
 // (Public, BlueprintCallable, BlueprintEvent)
 

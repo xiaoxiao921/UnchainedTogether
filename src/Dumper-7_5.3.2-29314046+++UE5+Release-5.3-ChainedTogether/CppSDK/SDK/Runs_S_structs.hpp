@@ -26,7 +26,7 @@ public:
 	int32                                         Time_21_993A7DC7423CFD72EB53B09F568BE870;          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Date_24_4C961F9742D6EA0325739CAE7752E860;          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Place_33_5946A60B48AE8E2F9BDFD7876618865E;         // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_285B[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3072[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Location_38_A7B0AC84488E0BBC81DEC79889A59428;      // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FRuns_S) == 0x000008, "Wrong alignment on FRuns_S");

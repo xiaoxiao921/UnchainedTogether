@@ -23,7 +23,7 @@ class UAudioCurveSourceComponent final : public UAudioComponent
 public:
 	class FName                                   CurveSourceBindingName;                            // 0x0C80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CurveSyncOffset;                                   // 0x0C88(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25CF[0x34];                                    // 0x0C8C(0x0034)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25D7[0x34];                                    // 0x0C8C(0x0034)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

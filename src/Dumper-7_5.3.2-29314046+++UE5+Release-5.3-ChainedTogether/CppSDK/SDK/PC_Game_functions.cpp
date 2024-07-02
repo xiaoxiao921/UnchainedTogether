@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function PC_Game.PC_Game_C.50fps
+// (BlueprintCallable, BlueprintEvent)
+
+void APC_Game_C::Five0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "50fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PC_Game.PC_Game_C.BeginPull
 // (BlueprintCallable, BlueprintEvent)
 
@@ -384,6 +398,26 @@ void APC_Game_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_11(const struct 
 }
 
 
+// Function PC_Game.PC_Game_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0
+// (BlueprintEvent)
+// Parameters:
+// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void APC_Game_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0");
+
+	Params::PC_Game_C_InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function PC_Game.PC_Game_C.InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17
 // (BlueprintEvent)
 // Parameters:
@@ -719,6 +753,34 @@ void APC_Game_C::InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4(cons
 	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_Game.PC_Game_C.KickClient
+// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
+
+void APC_Game_C::KickClient()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "KickClient");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PC_Game.PC_Game_C.KickServer
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+
+void APC_Game_C::KickServer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "KickServer");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

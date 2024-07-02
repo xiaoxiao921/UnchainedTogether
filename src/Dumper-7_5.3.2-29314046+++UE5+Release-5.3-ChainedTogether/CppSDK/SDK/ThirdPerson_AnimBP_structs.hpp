@@ -22,10 +22,10 @@ namespace SDK
 struct ThirdPerson_AnimBP::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
 {
 public:
-	uint8                                         Pad_3649[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368D[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         __FloatProperty;                                   // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __BoolProperty_0;                                  // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364A[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368E[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         __FloatProperty_1;                                 // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __BoolProperty_2;                                  // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -41,7 +41,7 @@ static_assert(offsetof(ThirdPerson_AnimBP::FAnimBlueprintGeneratedMutableData, _
 struct ThirdPerson_AnimBP::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
 {
 public:
-	uint8                                         Pad_364B[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368F[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   __NameProperty_166;                                // 0x0004(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   __NameProperty_167;                                // 0x000C(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         __IntProperty_168;                                 // 0x0014(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -56,19 +56,19 @@ public:
 	class UCurveFloat*                            __CurveFloat_177;                                  // 0x0048(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	EAlphaBlendOption                             __EnumProperty_178;                                // 0x0050(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBlendListTransitionType                      __EnumProperty_179;                                // 0x0051(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364C[0x6];                                     // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3690[0x6];                                     // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 __ArrayProperty_180;                               // 0x0058(0x0010)(BlueprintVisible, EditFixedSize)
 	bool                                          __BoolProperty_181;                                // 0x0068(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364D[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3691[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         __FloatProperty_182;                               // 0x006C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FInputScaleBiasClampConstants          __StructProperty_183;                              // 0x0070(0x002C)(BlueprintVisible, NoDestructor)
 	float                                         __FloatProperty_184;                               // 0x009C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __BoolProperty_185;                                // 0x00A0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EAnimSyncMethod                               __EnumProperty_186;                                // 0x00A1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EAnimGroupRole                                __ByteProperty_187;                                // 0x00A2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364E[0x1];                                     // 0x00A3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3692[0x1];                                     // 0x00A3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   __NameProperty_188;                                // 0x00A4(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364F[0x4];                                     // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3693[0x4];                                     // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNodeFunctionRef                   __StructProperty_189;                              // 0x00B0(0x0020)(BlueprintVisible, NoDestructor)
 	struct FAnimSubsystem_PropertyAccess          AnimBlueprintExtension_PropertyAccess;             // 0x00D0(0x0080)()
 	struct FAnimSubsystem_Base                    AnimBlueprintExtension_Base;                       // 0x0150(0x0018)()

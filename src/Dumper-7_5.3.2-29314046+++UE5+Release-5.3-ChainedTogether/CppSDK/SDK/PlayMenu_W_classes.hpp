@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass PlayMenu_W.PlayMenu_W_C
-// 0x0078 (0x0338 - 0x02C0)
+// 0x0070 (0x0330 - 0x02C0)
 class UPlayMenu_W_C final : public UUserWidget
 {
 public:
@@ -34,10 +34,9 @@ public:
 	class UW_MenuButtonText_C*                    Quit_1;                                            // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_MenuButtonText_C*                    Settings;                                          // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UButton*                                Solo_Button;                                       // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USpacer*                                Spacer_183;                                        // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                SplitScreenMP;                                     // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_MenuButtonText_C*                    TextBlock_81;                                      // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UHorizontalBox*                         WingsBox;                                          // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                SplitScreenMP;                                     // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_MenuButtonText_C*                    TextBlock_81;                                      // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         WingsBox;                                          // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__MainMenu_W_Quit_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
@@ -71,7 +70,7 @@ public:
 	}
 };
 static_assert(alignof(UPlayMenu_W_C) == 0x000008, "Wrong alignment on UPlayMenu_W_C");
-static_assert(sizeof(UPlayMenu_W_C) == 0x000338, "Wrong size on UPlayMenu_W_C");
+static_assert(sizeof(UPlayMenu_W_C) == 0x000330, "Wrong size on UPlayMenu_W_C");
 static_assert(offsetof(UPlayMenu_W_C, UberGraphFrame) == 0x0002C0, "Member 'UPlayMenu_W_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UPlayMenu_W_C, NewAnimation) == 0x0002C8, "Member 'UPlayMenu_W_C::NewAnimation' has a wrong offset!");
 static_assert(offsetof(UPlayMenu_W_C, Back_Button) == 0x0002D0, "Member 'UPlayMenu_W_C::Back_Button' has a wrong offset!");
@@ -83,10 +82,9 @@ static_assert(offsetof(UPlayMenu_W_C, Quit) == 0x0002F8, "Member 'UPlayMenu_W_C:
 static_assert(offsetof(UPlayMenu_W_C, Quit_1) == 0x000300, "Member 'UPlayMenu_W_C::Quit_1' has a wrong offset!");
 static_assert(offsetof(UPlayMenu_W_C, Settings) == 0x000308, "Member 'UPlayMenu_W_C::Settings' has a wrong offset!");
 static_assert(offsetof(UPlayMenu_W_C, Solo_Button) == 0x000310, "Member 'UPlayMenu_W_C::Solo_Button' has a wrong offset!");
-static_assert(offsetof(UPlayMenu_W_C, Spacer_183) == 0x000318, "Member 'UPlayMenu_W_C::Spacer_183' has a wrong offset!");
-static_assert(offsetof(UPlayMenu_W_C, SplitScreenMP) == 0x000320, "Member 'UPlayMenu_W_C::SplitScreenMP' has a wrong offset!");
-static_assert(offsetof(UPlayMenu_W_C, TextBlock_81) == 0x000328, "Member 'UPlayMenu_W_C::TextBlock_81' has a wrong offset!");
-static_assert(offsetof(UPlayMenu_W_C, WingsBox) == 0x000330, "Member 'UPlayMenu_W_C::WingsBox' has a wrong offset!");
+static_assert(offsetof(UPlayMenu_W_C, SplitScreenMP) == 0x000318, "Member 'UPlayMenu_W_C::SplitScreenMP' has a wrong offset!");
+static_assert(offsetof(UPlayMenu_W_C, TextBlock_81) == 0x000320, "Member 'UPlayMenu_W_C::TextBlock_81' has a wrong offset!");
+static_assert(offsetof(UPlayMenu_W_C, WingsBox) == 0x000328, "Member 'UPlayMenu_W_C::WingsBox' has a wrong offset!");
 
 }
 

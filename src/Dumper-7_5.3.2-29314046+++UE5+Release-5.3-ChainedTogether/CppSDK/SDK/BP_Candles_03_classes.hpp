@@ -33,7 +33,7 @@ public:
 	struct FVector                                New_Location;                                      // 0x02D0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Default_Location;                                  // 0x02E8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Light_On;                                          // 0x0300(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3776[0x7];                                     // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37E6[0x7];                                     // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           MPCTOD;                                            // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class FName                                   Parameter_Name;                                    // 0x0310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

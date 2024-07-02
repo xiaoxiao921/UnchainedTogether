@@ -32,7 +32,7 @@ public:
 	class UStaticMeshComponent*                   SM_beam;                                           // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	float                                         Timeline_0_NewTrack_0_F08F70B74B9BAD69FF98918CDD07B6B5; // 0x0330(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            Timeline_0__Direction_F08F70B74B9BAD69FF98918CDD07B6B5; // 0x0334(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3C24[0x3];                                     // 0x0335(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C88[0x3];                                     // 0x0335(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     Timeline_0;                                        // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:

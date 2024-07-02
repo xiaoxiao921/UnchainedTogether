@@ -29,11 +29,11 @@ public:
 	class UStaticMeshComponent*                   MonteCharge;                                       // 0x0730(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	float                                         Timeline_0_NewTrack_0_3789C2A04DD8C386E03634A000408145; // 0x0738(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            Timeline_0__Direction_3789C2A04DD8C386E03634A000408145; // 0x073C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_191[0x3];                                      // 0x073D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_387C[0x3];                                     // 0x073D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     Timeline_0;                                        // 0x0740(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                MonteChargeInitLoc;                                // 0x0748(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Lift;                                              // 0x0760(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_192[0x7];                                      // 0x0761(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_387D[0x7];                                     // 0x0761(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_CimentPile_C*                       Ciment_Pile;                                       // 0x0768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        Sound;                                             // 0x0770(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 

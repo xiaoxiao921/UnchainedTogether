@@ -37,11 +37,11 @@ public:
 	struct FLinearColor                           UnhoveredBorderColor;                              // 0x0318(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FSlateColor                            TextColor;                                         // 0x0328(0x0014)(Edit, BlueprintVisible, ExposeOnSpawn)
 	bool                                          RoundBorders;                                      // 0x033C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_33E0[0x3];                                     // 0x033D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35B9[0x3];                                     // 0x033D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           HoveredBorderColor;                                // 0x0340(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             OnClicked;                                         // 0x0350(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          Selected;                                          // 0x0360(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33E1[0x7];                                     // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35BA[0x7];                                     // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Category;                                          // 0x0368(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
 	class UUserWidget*                            ParentWidget;                                      // 0x0378(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 

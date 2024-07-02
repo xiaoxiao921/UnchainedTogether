@@ -40,6 +40,8 @@ public:
 	void OpenSettings();
 	void ReceiveBeginPlay();
 	void ShowControls();
+	void SmoothCameraClient(bool Enable);
+	void SmoothCameraServer(bool Enable);
 	void ToggleSettings();
 
 public:

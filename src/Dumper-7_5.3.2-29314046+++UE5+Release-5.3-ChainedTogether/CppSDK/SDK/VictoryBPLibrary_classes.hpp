@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "VictoryBPLibrary_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "UMG_classes.hpp"
-#include "VictoryBPLibrary_structs.hpp"
 
 
 namespace SDK
@@ -28,7 +28,7 @@ class URamaColorPicker final : public UWidget
 public:
 	struct FLinearColor                           JoyColor;                                          // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnColorChanged;                                    // 0x0190(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BE7[0x10];                                    // 0x01A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1BFF[0x10];                                    // 0x01A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetJoyColor(const struct FLinearColor& NewColor, bool SkipAnimation);
@@ -53,7 +53,7 @@ static_assert(offsetof(URamaColorPicker, OnColorChanged) == 0x000190, "Member 'U
 class URamaVictoryPluginCreateProcessPipe final : public UObject
 {
 public:
-	uint8                                         Pad_1BE9[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C01[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClosePipe();

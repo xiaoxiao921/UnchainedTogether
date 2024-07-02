@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
-#include "SequencerScripting_structs.hpp"
 #include "MovieScene_structs.hpp"
+#include "SequencerScripting_structs.hpp"
 
 
 namespace SDK
@@ -25,7 +25,7 @@ namespace SDK
 class UMovieSceneScriptingKey : public UObject
 {
 public:
-	uint8                                         Pad_2489[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24B2[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -45,7 +45,7 @@ static_assert(sizeof(UMovieSceneScriptingKey) == 0x000040, "Wrong size on UMovie
 class UMovieSceneScriptingActorReferenceKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_248A[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24B3[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -93,7 +93,7 @@ static_assert(offsetof(UMovieSceneScriptingChannel, ChannelName) == 0x000028, "M
 class UMovieSceneScriptingActorReferenceChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_248D[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24B6[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingActorReferenceKey* AddKey(const struct FFrameNumber& InTime, const struct FMovieSceneObjectBindingID& NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -123,7 +123,7 @@ static_assert(sizeof(UMovieSceneScriptingActorReferenceChannel) == 0x000060, "Wr
 class UMovieSceneScriptingBoolKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_248F[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24B8[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -150,7 +150,7 @@ static_assert(sizeof(UMovieSceneScriptingBoolKey) == 0x000060, "Wrong size on UM
 class UMovieSceneScriptingBoolChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_2492[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24BB[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingBoolKey* AddKey(const struct FFrameNumber& InTime, bool NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -183,7 +183,7 @@ static_assert(sizeof(UMovieSceneScriptingBoolChannel) == 0x000060, "Wrong size o
 class UMovieSceneScriptingByteKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_2496[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24BF[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -210,7 +210,7 @@ static_assert(sizeof(UMovieSceneScriptingByteKey) == 0x000060, "Wrong size on UM
 class UMovieSceneScriptingByteChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_2499[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24C2[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingByteKey* AddKey(const struct FFrameNumber& InTime, uint8 NewValue, float SubFrame, ESequenceTimeUnit TimeUnit, EMovieSceneKeyInterpolation InInterpolation);
@@ -240,7 +240,7 @@ static_assert(sizeof(UMovieSceneScriptingByteChannel) == 0x000060, "Wrong size o
 class UMovieSceneScriptingDoubleKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_249C[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24C5[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetArriveTangent(float InNewValue);
@@ -281,7 +281,7 @@ static_assert(sizeof(UMovieSceneScriptingDoubleKey) == 0x000060, "Wrong size on 
 class UMovieSceneScriptingDoubleChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_249F[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24C8[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingDoubleKey* AddKey(const struct FFrameNumber& InTime, double NewValue, float SubFrame, ESequenceTimeUnit TimeUnit, EMovieSceneKeyInterpolation InInterpolation);
@@ -318,7 +318,7 @@ static_assert(sizeof(UMovieSceneScriptingDoubleChannel) == 0x000060, "Wrong size
 class UMovieSceneScriptingEventKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_24A3[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24CC[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -345,7 +345,7 @@ static_assert(sizeof(UMovieSceneScriptingEventKey) == 0x000060, "Wrong size on U
 class UMovieSceneScriptingEventChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_24A6[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24CF[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingEventKey* AddKey(const struct FFrameNumber& InTime, const struct FMovieSceneEvent& NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -409,7 +409,7 @@ static_assert(sizeof(UMovieSceneScriptingFloatKey) == 0x000040, "Wrong size on U
 class UMovieSceneScriptingActualFloatKey final : public UMovieSceneScriptingFloatKey
 {
 public:
-	uint8                                         Pad_24AB[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24D4[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -429,7 +429,7 @@ static_assert(sizeof(UMovieSceneScriptingActualFloatKey) == 0x000060, "Wrong siz
 class UMovieSceneScriptingDoubleAsFloatKey final : public UMovieSceneScriptingFloatKey
 {
 public:
-	uint8                                         Pad_24AC[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24D5[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -449,7 +449,7 @@ static_assert(sizeof(UMovieSceneScriptingDoubleAsFloatKey) == 0x000060, "Wrong s
 class UMovieSceneScriptingFloatChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_24AD[0x50];                                    // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24D6[0x50];                                    // 0x0030(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingFloatKey* AddKey(const struct FFrameNumber& InTime, float NewValue, float SubFrame, ESequenceTimeUnit TimeUnit, EMovieSceneKeyInterpolation InInterpolation);
@@ -486,7 +486,7 @@ static_assert(sizeof(UMovieSceneScriptingFloatChannel) == 0x000080, "Wrong size 
 class UMovieSceneScriptingIntegerKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_24B0[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24D9[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -513,7 +513,7 @@ static_assert(sizeof(UMovieSceneScriptingIntegerKey) == 0x000060, "Wrong size on
 class UMovieSceneScriptingIntegerChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_24B3[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24DC[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingIntegerKey* AddKey(const struct FFrameNumber& InTime, int32 NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -543,7 +543,7 @@ static_assert(sizeof(UMovieSceneScriptingIntegerChannel) == 0x000060, "Wrong siz
 class UMovieSceneScriptingObjectPathKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_24B5[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24DE[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -570,7 +570,7 @@ static_assert(sizeof(UMovieSceneScriptingObjectPathKey) == 0x000060, "Wrong size
 class UMovieSceneScriptingObjectPathChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_24B8[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24E1[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingObjectPathKey* AddKey(const struct FFrameNumber& InTime, class UObject* NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -600,7 +600,7 @@ static_assert(sizeof(UMovieSceneScriptingObjectPathChannel) == 0x000060, "Wrong 
 class UMovieSceneScriptingStringKey final : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                         Pad_24BB[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24E4[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTime(const struct FFrameNumber& NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit);
@@ -627,7 +627,7 @@ static_assert(sizeof(UMovieSceneScriptingStringKey) == 0x000060, "Wrong size on 
 class UMovieSceneScriptingStringChannel final : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                         Pad_24BE[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24E7[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMovieSceneScriptingStringKey* AddKey(const struct FFrameNumber& InTime, const class FString& NewValue, float SubFrame, ESequenceTimeUnit TimeUnit);

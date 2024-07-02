@@ -40,6 +40,7 @@ public:
 	void BeginPullOtherCharacter(bool BeginPull, class AActor* OtherCharacter);
 	void ChangeCurrentVehicle(class AActor* Vehicle);
 	void Character_Bounce(double Force);
+	void Enable_Disable_Camera_Smooting_SRV(bool Enable);
 	void EnableMovements();
 	void EndCinematic();
 	void Get_Belt_Fall_Cam_Loc_Rot(struct FVector* Loc, struct FRotator* Rot);

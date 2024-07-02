@@ -32,7 +32,7 @@ public:
 	TArray<class UW_ComboChoice_C*>               Choices;                                           // 0x0300(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	FMulticastInlineDelegateProperty_             OnComboSettingChange;                              // 0x0310(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          AddChoicesOnConstruct;                             // 0x0320(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_33E6[0x7];                                     // 0x0321(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30A5[0x7];                                     // 0x0321(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFont*                                  Font;                                              // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:

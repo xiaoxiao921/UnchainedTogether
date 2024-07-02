@@ -49,7 +49,7 @@ public:
 	class UStaticMeshComponent*                   Flower_bed_long_StaticMeshComponent0;              // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        SharedRoot;                                        // 0x0368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	bool                                          NewVar_0;                                          // 0x0370(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3858[0x7];                                     // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38C4[0x7];                                     // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInterface*>             Rose_colours;                                      // 0x0378(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         Rose_colour_picker;                                // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

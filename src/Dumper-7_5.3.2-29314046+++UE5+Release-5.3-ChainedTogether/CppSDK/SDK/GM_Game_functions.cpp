@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GM_Game.GM_Game_C.ExecuteUbergraph_GM_Game
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

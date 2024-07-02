@@ -29,137 +29,147 @@ static_assert(sizeof(PC_WithSettings_C_Close_Settings) == 0x000008, "Wrong size 
 static_assert(offsetof(PC_WithSettings_C_Close_Settings, CallFunc_GetPlayerController_ReturnValue) == 0x000000, "Member 'PC_WithSettings_C_Close_Settings::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
 
 // Function PC_WithSettings.PC_WithSettings_C.ExecuteUbergraph_PC_WithSettings
-// 0x01A8 (0x01A8 - 0x0000)
+// 0x01C0 (0x01C0 - 0x0000)
 struct PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DAE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FInputActionValue                      K2Node_EnhancedInputActionEvent_ActionValue;       // 0x0008(0x0020)(NoDestructor)
-	float                                         K2Node_EnhancedInputActionEvent_ElapsedTime;       // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_EnhancedInputActionEvent_TriggeredTime;     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class UInputAction*                     K2Node_EnhancedInputActionEvent_SourceAction;      // 0x0030(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UInputAction*                           Temp_object_Variable;                              // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Conv_InputActionValueToBool_ReturnValue;  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DAF[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable;                                // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_1;                              // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_0;                              // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_1_0;                            // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB0[0x7];                                     // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable_2;                              // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB1[0x7];                                     // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInputAction*                           Temp_object_Variable_1;                            // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FInputActionValue                      K2Node_EnhancedInputActionEvent_ActionValue_1;     // 0x0088(0x0020)(NoDestructor)
-	float                                         K2Node_EnhancedInputActionEvent_ElapsedTime_1;     // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_EnhancedInputActionEvent_TriggeredTime_1;   // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class UInputAction*                     K2Node_EnhancedInputActionEvent_SourceAction_1;    // 0x00B0(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB2[0x7];                                     // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable_2_0;                            // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Conv_InputActionValueToBool_ReturnValue_1; // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x00C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x00CA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x00CB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x00CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB3[0x3];                                     // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_1;        // 0x00E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB4[0x6];                                     // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB5[0x7];                                     // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_GetUserSettings_self_CastInput;           // 0x0108(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UEnhancedInputUserSettings*             CallFunc_GetUserSettings_ReturnValue;              // 0x0118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_RegisterInputMappingContext_ReturnValue;  // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsMappingContextRegistered_ReturnValue;   // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable_1;                              // 0x0122(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_3;               // 0x0123(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FModifyContextOptions                  Temp_struct_Variable;                              // 0x0124(0x0001)(ConstParm, NoDestructor)
-	uint8                                         Pad_2DB6[0x3];                                     // 0x0125(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_AddMappingContext_self_CastInput;         // 0x0128(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB7[0x7];                                     // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0148(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB8[0x7];                                     // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable_3;                              // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetPlayerControllerID_ReturnValue;        // 0x0160(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB9[0x4];                                     // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable_3_0;                            // 0x0168(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3474[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   K2Node_InputKeyEvent_Key;                          // 0x0008(0x0018)(HasGetValueTypeHash)
+	bool                                          CallFunc_IsMouseKeyboard_ReturnValue;              // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3475[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputActionValue                      K2Node_EnhancedInputActionEvent_ActionValue;       // 0x0028(0x0020)(NoDestructor)
+	float                                         K2Node_EnhancedInputActionEvent_ElapsedTime;       // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_EnhancedInputActionEvent_TriggeredTime;     // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UInputAction*                     K2Node_EnhancedInputActionEvent_SourceAction;      // 0x0050(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Conv_InputActionValueToBool_ReturnValue;  // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3476[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInputAction*                           Temp_object_Variable;                              // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable;                                // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_0;                              // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_1;                              // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3477[0x7];                                     // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Temp_real_Variable_1_0;                            // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_2;                              // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3478[0x7];                                     // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Temp_real_Variable_3;                              // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UInputAction*                           Temp_object_Variable_1;                            // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FInputActionValue                      K2Node_EnhancedInputActionEvent_ActionValue_1;     // 0x00B0(0x0020)(NoDestructor)
+	float                                         K2Node_EnhancedInputActionEvent_ElapsedTime_1;     // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_EnhancedInputActionEvent_TriggeredTime_1;   // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UInputAction*                     K2Node_EnhancedInputActionEvent_SourceAction_1;    // 0x00D8(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3479[0x7];                                     // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Temp_real_Variable_3_0;                            // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_2_0;                            // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Conv_InputActionValueToBool_ReturnValue_1; // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x00FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x00FB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_347A[0x3];                                     // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_1;        // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_3;               // 0x0122(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_347B[0x5];                                     // 0x0123(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0128(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_347C[0x7];                                     // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_GetUserSettings_self_CastInput;           // 0x0138(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UEnhancedInputUserSettings*             CallFunc_GetUserSettings_ReturnValue;              // 0x0148(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_RegisterInputMappingContext_ReturnValue;  // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsMappingContextRegistered_ReturnValue;   // 0x0151(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0152(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_347D[0x5];                                     // 0x0153(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0158(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0160(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x0169(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_347E[0x2];                                     // 0x016A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetPlayerControllerID_ReturnValue;        // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsLocalPlayerController_ReturnValue;      // 0x0171(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DBA[0x6];                                     // 0x0172(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_347F[0x6];                                     // 0x0172(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue;                   // 0x0178(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsPackagedForDistribution_ReturnValue;    // 0x0181(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_3;                     // 0x0182(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DBB[0x5];                                     // 0x0183(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputKeyEvent_Key;                          // 0x0188(0x0018)(HasGetValueTypeHash)
-	bool                                          CallFunc_IsMouseKeyboard_ReturnValue;              // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FModifyContextOptions                  Temp_struct_Variable;                              // 0x0181(0x0001)(ConstParm, NoDestructor)
+	bool                                          CallFunc_IsPackagedForDistribution_ReturnValue;    // 0x0182(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3480[0x5];                                     // 0x0183(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_AddMappingContext_self_CastInput;         // 0x0188(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_3;                     // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Enable_1;                       // 0x0199(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Enable;                         // 0x019A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3481[0x5];                                     // 0x019B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue_1;                 // 0x01A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IBPI_Character_C>      K2Node_DynamicCast_AsBPI_Character;                // 0x01A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings) == 0x000008, "Wrong alignment on PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings");
-static_assert(sizeof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings) == 0x0001A8, "Wrong size on PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings");
+static_assert(sizeof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings) == 0x0001C0, "Wrong size on PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings");
 static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, EntryPoint) == 0x000000, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::EntryPoint' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ActionValue) == 0x000008, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ActionValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ElapsedTime) == 0x000028, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ElapsedTime' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_TriggeredTime) == 0x00002C, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_TriggeredTime' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_SourceAction) == 0x000030, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_SourceAction' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_object_Variable) == 0x000038, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_object_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_Conv_InputActionValueToBool_ReturnValue) == 0x000040, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_Conv_InputActionValueToBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable) == 0x000048, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_1) == 0x000050, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_0) == 0x000058, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_0' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_1_0) == 0x000060, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_1_0' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Variable) == 0x000068, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_2) == 0x000070, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_2' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable) == 0x000078, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_object_Variable_1) == 0x000080, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_object_Variable_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ActionValue_1) == 0x000088, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ActionValue_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ElapsedTime_1) == 0x0000A8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ElapsedTime_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_TriggeredTime_1) == 0x0000AC, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_TriggeredTime_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_SourceAction_1) == 0x0000B0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_SourceAction_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable) == 0x0000B8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_2_0) == 0x0000C0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_2_0' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_Conv_InputActionValueToBool_ReturnValue_1) == 0x0000C8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_Conv_InputActionValueToBool_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_1) == 0x0000C9, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_1) == 0x0000CA, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_2) == 0x0000CB, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_2' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_2) == 0x0000CC, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_2' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetCurrentLevelName_ReturnValue) == 0x0000D0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetCurrentLevelName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetCurrentLevelName_ReturnValue_1) == 0x0000E0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetCurrentLevelName_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x0000F0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x0000F1, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetLocalPlayerSubsystem_ReturnValue) == 0x0000F8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetLocalPlayerSubsystem_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsValid_ReturnValue) == 0x000100, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetUserSettings_self_CastInput) == 0x000108, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetUserSettings_self_CastInput' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetUserSettings_ReturnValue) == 0x000118, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetUserSettings_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_RegisterInputMappingContext_ReturnValue) == 0x000120, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_RegisterInputMappingContext_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsMappingContextRegistered_ReturnValue) == 0x000121, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsMappingContextRegistered_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Variable_1) == 0x000122, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Variable_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_3) == 0x000123, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_3' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_struct_Variable) == 0x000124, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_struct_Variable' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_AddMappingContext_self_CastInput) == 0x000128, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_AddMappingContext_self_CastInput' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetLocalMultiplayer_ReturnValue) == 0x000138, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetLocalMultiplayer_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetGameInstance_ReturnValue) == 0x000140, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_AsCustom_GI) == 0x000148, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_bSuccess) == 0x000150, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_3) == 0x000158, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_3' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetPlayerControllerID_ReturnValue) == 0x000160, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetPlayerControllerID_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_3_0) == 0x000168, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_3_0' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_InputKeyEvent_Key) == 0x000008, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_InputKeyEvent_Key' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsMouseKeyboard_ReturnValue) == 0x000020, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsMouseKeyboard_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ActionValue) == 0x000028, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ActionValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ElapsedTime) == 0x000048, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ElapsedTime' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_TriggeredTime) == 0x00004C, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_TriggeredTime' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_SourceAction) == 0x000050, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_SourceAction' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_Conv_InputActionValueToBool_ReturnValue) == 0x000058, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_Conv_InputActionValueToBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_object_Variable) == 0x000060, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_object_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable) == 0x000068, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_0) == 0x000070, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_0' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_1) == 0x000078, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Variable) == 0x000080, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_1_0) == 0x000088, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_1_0' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_2) == 0x000090, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_2' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable) == 0x000098, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_3) == 0x0000A0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_3' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_object_Variable_1) == 0x0000A8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_object_Variable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ActionValue_1) == 0x0000B0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ActionValue_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_ElapsedTime_1) == 0x0000D0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_ElapsedTime_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_TriggeredTime_1) == 0x0000D4, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_TriggeredTime_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_EnhancedInputActionEvent_SourceAction_1) == 0x0000D8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_EnhancedInputActionEvent_SourceAction_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable) == 0x0000E0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_3_0) == 0x0000E8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_3_0' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_real_Variable_2_0) == 0x0000F0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_real_Variable_2_0' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_Conv_InputActionValueToBool_ReturnValue_1) == 0x0000F8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_Conv_InputActionValueToBool_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_1) == 0x0000F9, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_1) == 0x0000FA, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_2) == 0x0000FB, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_2' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_2) == 0x0000FC, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_2' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetCurrentLevelName_ReturnValue) == 0x000100, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetCurrentLevelName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetCurrentLevelName_ReturnValue_1) == 0x000110, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetCurrentLevelName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000120, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000121, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Has_Been_Initd_Variable_3) == 0x000122, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Has_Been_Initd_Variable_3' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetLocalPlayerSubsystem_ReturnValue) == 0x000128, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetLocalPlayerSubsystem_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsValid_ReturnValue) == 0x000130, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetUserSettings_self_CastInput) == 0x000138, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetUserSettings_self_CastInput' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetUserSettings_ReturnValue) == 0x000148, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetUserSettings_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_RegisterInputMappingContext_ReturnValue) == 0x000150, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_RegisterInputMappingContext_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsMappingContextRegistered_ReturnValue) == 0x000151, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsMappingContextRegistered_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetLocalMultiplayer_ReturnValue) == 0x000152, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetLocalMultiplayer_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetGameInstance_ReturnValue) == 0x000158, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_AsCustom_GI) == 0x000160, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_bSuccess) == 0x000168, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_Variable_1) == 0x000169, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_GetPlayerControllerID_ReturnValue) == 0x00016C, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_GetPlayerControllerID_ReturnValue' has a wrong offset!");
 static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000170, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsLocalPlayerController_ReturnValue) == 0x000171, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsLocalPlayerController_ReturnValue' has a wrong offset!");
 static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_K2_GetPawn_ReturnValue) == 0x000178, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_K2_GetPawn_ReturnValue' has a wrong offset!");
 static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsValid_ReturnValue_1) == 0x000180, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsPackagedForDistribution_ReturnValue) == 0x000181, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsPackagedForDistribution_ReturnValue' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_3) == 0x000182, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_3' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_InputKeyEvent_Key) == 0x000188, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_InputKeyEvent_Key' has a wrong offset!");
-static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsMouseKeyboard_ReturnValue) == 0x0001A0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsMouseKeyboard_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_struct_Variable) == 0x000181, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_struct_Variable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_IsPackagedForDistribution_ReturnValue) == 0x000182, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_IsPackagedForDistribution_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_AddMappingContext_self_CastInput) == 0x000188, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_AddMappingContext_self_CastInput' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, Temp_bool_IsClosed_Variable_3) == 0x000198, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::Temp_bool_IsClosed_Variable_3' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_CustomEvent_Enable_1) == 0x000199, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_CustomEvent_Enable_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_CustomEvent_Enable) == 0x00019A, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_CustomEvent_Enable' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, CallFunc_K2_GetPawn_ReturnValue_1) == 0x0001A0, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::CallFunc_K2_GetPawn_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_AsBPI_Character) == 0x0001A8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_AsBPI_Character' has a wrong offset!");
+static_assert(offsetof(PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings, K2Node_DynamicCast_bSuccess_1) == 0x0001B8, "Member 'PC_WithSettings_C_ExecuteUbergraph_PC_WithSettings::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
 
 // Function PC_WithSettings.PC_WithSettings_C.InpActEvt_AnyKey_K2Node_InputKeyEvent_0
 // 0x0018 (0x0018 - 0x0000)
@@ -259,6 +269,28 @@ static_assert(alignof(PC_WithSettings_C_ShowControls) == 0x000008, "Wrong alignm
 static_assert(sizeof(PC_WithSettings_C_ShowControls) == 0x000010, "Wrong size on PC_WithSettings_C_ShowControls");
 static_assert(offsetof(PC_WithSettings_C_ShowControls, CallFunc_Create_ReturnValue) == 0x000000, "Member 'PC_WithSettings_C_ShowControls::CallFunc_Create_ReturnValue' has a wrong offset!");
 static_assert(offsetof(PC_WithSettings_C_ShowControls, CallFunc_AddToPlayerScreen_ReturnValue) == 0x000008, "Member 'PC_WithSettings_C_ShowControls::CallFunc_AddToPlayerScreen_ReturnValue' has a wrong offset!");
+
+// Function PC_WithSettings.PC_WithSettings_C.SmoothCameraClient
+// 0x0001 (0x0001 - 0x0000)
+struct PC_WithSettings_C_SmoothCameraClient final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(PC_WithSettings_C_SmoothCameraClient) == 0x000001, "Wrong alignment on PC_WithSettings_C_SmoothCameraClient");
+static_assert(sizeof(PC_WithSettings_C_SmoothCameraClient) == 0x000001, "Wrong size on PC_WithSettings_C_SmoothCameraClient");
+static_assert(offsetof(PC_WithSettings_C_SmoothCameraClient, Enable) == 0x000000, "Member 'PC_WithSettings_C_SmoothCameraClient::Enable' has a wrong offset!");
+
+// Function PC_WithSettings.PC_WithSettings_C.SmoothCameraServer
+// 0x0001 (0x0001 - 0x0000)
+struct PC_WithSettings_C_SmoothCameraServer final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(PC_WithSettings_C_SmoothCameraServer) == 0x000001, "Wrong alignment on PC_WithSettings_C_SmoothCameraServer");
+static_assert(sizeof(PC_WithSettings_C_SmoothCameraServer) == 0x000001, "Wrong size on PC_WithSettings_C_SmoothCameraServer");
+static_assert(offsetof(PC_WithSettings_C_SmoothCameraServer, Enable) == 0x000000, "Member 'PC_WithSettings_C_SmoothCameraServer::Enable' has a wrong offset!");
 
 // Function PC_WithSettings.PC_WithSettings_C.ToggleSettings
 // 0x0002 (0x0002 - 0x0000)

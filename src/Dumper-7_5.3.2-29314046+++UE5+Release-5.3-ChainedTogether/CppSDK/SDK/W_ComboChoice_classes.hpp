@@ -33,7 +33,7 @@ public:
 	FMulticastInlineDelegateProperty_             Press;                                             // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          Selected;                                          // 0x0310(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ToolTip;                                           // 0x0311(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_33DA[0x6];                                     // 0x0312(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C46[0x6];                                     // 0x0312(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ToolTipClass;                                      // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:

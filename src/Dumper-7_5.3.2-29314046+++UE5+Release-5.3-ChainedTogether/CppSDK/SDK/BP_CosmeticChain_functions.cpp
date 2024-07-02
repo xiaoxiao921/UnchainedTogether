@@ -17,6 +17,34 @@
 namespace SDK
 {
 
+// Function BP_CosmeticChain.BP_CosmeticChain_C.30fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_CosmeticChain_C::Three0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CosmeticChain_C", "30fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_CosmeticChain.BP_CosmeticChain_C.50fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_CosmeticChain_C::Five0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CosmeticChain_C", "50fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_CosmeticChain.BP_CosmeticChain_C.AddConstraint
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -24,7 +24,7 @@ struct HandKeypointConversion_Conv_HandKeypointToInt32 final
 {
 public:
 	EHandKeypoint                                 Input;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1121[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10F8[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(HandKeypointConversion_Conv_HandKeypointToInt32) == 0x000004, "Wrong alignment on HandKeypointConversion_Conv_HandKeypointToInt32");
@@ -39,7 +39,7 @@ struct MotionControllerComponent_GetHandJointPosition final
 public:
 	int32                                         JointIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bValueFound;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1126[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10FD[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MotionControllerComponent_GetHandJointPosition) == 0x000008, "Wrong alignment on MotionControllerComponent_GetHandJointPosition");
@@ -55,7 +55,7 @@ struct MotionControllerComponent_GetParameterValue final
 public:
 	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bValueFound;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1127[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10FE[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MotionControllerComponent_GetParameterValue) == 0x000004, "Wrong alignment on MotionControllerComponent_GetParameterValue");
@@ -137,7 +137,7 @@ struct MotionControllerComponent_GetAngularVelocity final
 public:
 	struct FRotator                               OutAngularVelocity;                                // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1128[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10FF[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MotionControllerComponent_GetAngularVelocity) == 0x000008, "Wrong alignment on MotionControllerComponent_GetAngularVelocity");
 static_assert(sizeof(MotionControllerComponent_GetAngularVelocity) == 0x000020, "Wrong size on MotionControllerComponent_GetAngularVelocity");
@@ -151,7 +151,7 @@ struct MotionControllerComponent_GetLinearAcceleration final
 public:
 	struct FVector                                OutLinearAcceleration;                             // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1129[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1100[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MotionControllerComponent_GetLinearAcceleration) == 0x000008, "Wrong alignment on MotionControllerComponent_GetLinearAcceleration");
 static_assert(sizeof(MotionControllerComponent_GetLinearAcceleration) == 0x000020, "Wrong size on MotionControllerComponent_GetLinearAcceleration");
@@ -165,7 +165,7 @@ struct MotionControllerComponent_GetLinearVelocity final
 public:
 	struct FVector                                OutLinearVelocity;                                 // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112A[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1101[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MotionControllerComponent_GetLinearVelocity) == 0x000008, "Wrong alignment on MotionControllerComponent_GetLinearVelocity");
 static_assert(sizeof(MotionControllerComponent_GetLinearVelocity) == 0x000020, "Wrong size on MotionControllerComponent_GetLinearVelocity");

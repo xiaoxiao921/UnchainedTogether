@@ -42,10 +42,10 @@ public:
 	class UW_MenuButtonText_C*                    W_MenuButtonText_101;                              // 0x0340(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_SaveText_C*                          W_SaveText;                                        // 0x0348(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          MapSelected;                                       // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3399[0x7];                                     // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3568[0x7];                                     // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   SelectedLevel;                                     // 0x0358(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          CanLeave;                                          // 0x0370(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339A[0x7];                                     // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3569[0x7];                                     // 0x0371(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Mode;                                              // 0x0378(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	int32                                         MaxPlayers;                                        // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

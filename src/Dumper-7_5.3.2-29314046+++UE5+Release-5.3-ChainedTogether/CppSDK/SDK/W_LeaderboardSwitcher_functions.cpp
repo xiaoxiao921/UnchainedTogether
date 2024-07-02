@@ -130,7 +130,7 @@ void UW_LeaderboardSwitcher_C::DeselectAllTabs()
 
 
 // Function W_LeaderboardSwitcher.W_LeaderboardSwitcher_C.ExecuteUbergraph_W_LeaderboardSwitcher
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -22,14 +22,14 @@ namespace SDK
 class alignas(0x10) USmoothSync final : public UActorComponent
 {
 public:
-	uint8                                         Pad_1A98[0x58];                                    // 0x00A0(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1ABF[0x58];                                    // 0x00A0(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         InterpolationBackTime;                             // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ExtrapolationMode                             ExtrapolationMode;                                 // 0x00FC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseExtrapolationTimeLimit;                         // 0x00FD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A99[0x2];                                     // 0x00FE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC0[0x2];                                     // 0x00FE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ExtrapolationTimeLimit;                            // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseExtrapolationDistanceLimit;                     // 0x0104(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9A[0x3];                                     // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC1[0x3];                                     // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ExtrapolationDistanceLimit;                        // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SendPositionThreshold;                             // 0x010C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SendRotationThreshold;                             // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -56,19 +56,19 @@ public:
 	bool                                          IsScaleCompressed;                                 // 0x014C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsVelocityCompressed;                              // 0x014D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsAngularVelocityCompressed;                       // 0x014E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9B[0x1];                                     // 0x014F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC2[0x1];                                     // 0x014F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SendRate;                                          // 0x0150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUsingOriginRebasing;                             // 0x0154(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AlwaysSendOrigin;                                  // 0x0155(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SyncOwnershipChange;                               // 0x0156(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9C[0x91];                                    // 0x0157(0x0091)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC3[0x91];                                    // 0x0157(0x0091)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        RealComponentToSync;                               // 0x01E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9D[0x18];                                    // 0x01F0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC4[0x18];                                    // 0x01F0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         InterpolationTime;                                 // 0x0208(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9E[0x134];                                   // 0x020C(0x0134)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC5[0x134];                                   // 0x020C(0x0134)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AtRestPositionThreshold;                           // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AtRestRotationThreshold;                           // 0x0344(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A9F[0x18];                                    // 0x0348(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC6[0x18];                                    // 0x0348(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClearBuffer();

@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PC_Game.PC_Game_C
-// 0x00E8 (0x0958 - 0x0870)
+// 0x00F8 (0x0968 - 0x0870)
 class APC_Game_C final : public APC_WithSettings_C
 {
 public:
@@ -34,28 +34,31 @@ public:
 	TArray<class FString>                         CaptureDevices;                                    // 0x08A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<uint8>                                 Voice_Data;                                        // 0x08B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          PTT;                                               // 0x08C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_325D[0x7];                                     // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3485[0x7];                                     // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                PreviousInteractionObject;                         // 0x08D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                InteractionObject;                                 // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         ActiveTestControl;                                 // 0x08E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_325E[0x4];                                     // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3486[0x4];                                     // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          ActiveTestActor;                                   // 0x08E8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	class FString                                 CurrentLevel;                                      // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class UUserWidget*                            PullWidget_LocalMP;                                // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 LocalMpChosenChar;                                 // 0x0910(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_325F[0x7];                                     // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3487[0x7];                                     // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ClassToRespawn;                                    // 0x0918(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UW_LocalMP_Use_C*                       UseLocalMP;                                        // 0x0920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsPressingJump;                                    // 0x0928(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3260[0x7];                                     // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3488[0x7];                                     // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          Not_Pullable_Chars;                                // 0x0930(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	bool                                          OnEndScreen;                                       // 0x0940(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3261[0x7];                                     // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3489[0x7];                                     // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDateTime                              PingStart;                                         // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         Ping;                                              // 0x0950(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FlyModeActivated;                                  // 0x0954(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_348A[0x3];                                     // 0x0955(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MainMenuAction;                                    // 0x0958(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
+	void Five0fps();
 	void BeginPull();
 	void CustomEvent();
 	void DetectInteraction();
@@ -74,6 +77,7 @@ public:
 	void InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_11(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0(const struct FKey& Key);
 	void InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
@@ -87,6 +91,8 @@ public:
 	void InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Use_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void KickClient();
+	void KickServer();
 	void LeaveCarSRV(class AActor* Car);
 	void LookRight(double Axis);
 	void LookUp(double Axis);
@@ -149,7 +155,7 @@ public:
 	}
 };
 static_assert(alignof(APC_Game_C) == 0x000008, "Wrong alignment on APC_Game_C");
-static_assert(sizeof(APC_Game_C) == 0x000958, "Wrong size on APC_Game_C");
+static_assert(sizeof(APC_Game_C) == 0x000968, "Wrong size on APC_Game_C");
 static_assert(offsetof(APC_Game_C, UberGraphFrame_PC_Game_C) == 0x000870, "Member 'APC_Game_C::UberGraphFrame_PC_Game_C' has a wrong offset!");
 static_assert(offsetof(APC_Game_C, ControlledActor) == 0x000878, "Member 'APC_Game_C::ControlledActor' has a wrong offset!");
 static_assert(offsetof(APC_Game_C, Tchat) == 0x000880, "Member 'APC_Game_C::Tchat' has a wrong offset!");
@@ -174,6 +180,7 @@ static_assert(offsetof(APC_Game_C, OnEndScreen) == 0x000940, "Member 'APC_Game_C
 static_assert(offsetof(APC_Game_C, PingStart) == 0x000948, "Member 'APC_Game_C::PingStart' has a wrong offset!");
 static_assert(offsetof(APC_Game_C, Ping) == 0x000950, "Member 'APC_Game_C::Ping' has a wrong offset!");
 static_assert(offsetof(APC_Game_C, FlyModeActivated) == 0x000954, "Member 'APC_Game_C::FlyModeActivated' has a wrong offset!");
+static_assert(offsetof(APC_Game_C, MainMenuAction) == 0x000958, "Member 'APC_Game_C::MainMenuAction' has a wrong offset!");
 
 }
 

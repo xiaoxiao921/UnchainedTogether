@@ -24,7 +24,7 @@ class APS_Lobby_C : public APlayerState
 public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 ChosenChar;                                        // 0x0358(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3254[0x7];                                     // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E0B[0x7];                                     // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ChosenCharBP;                                      // 0x0360(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:

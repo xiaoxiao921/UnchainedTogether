@@ -223,6 +223,46 @@ void APC_WithSettings_C::ShowControls()
 }
 
 
+// Function PC_WithSettings.PC_WithSettings_C.SmoothCameraClient
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APC_WithSettings_C::SmoothCameraClient(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_WithSettings_C", "SmoothCameraClient");
+
+	Params::PC_WithSettings_C_SmoothCameraClient Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_WithSettings.PC_WithSettings_C.SmoothCameraServer
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APC_WithSettings_C::SmoothCameraServer(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_WithSettings_C", "SmoothCameraServer");
+
+	Params::PC_WithSettings_C_SmoothCameraServer Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function PC_WithSettings.PC_WithSettings_C.ToggleSettings
 // (Private, BlueprintCallable, BlueprintEvent)
 

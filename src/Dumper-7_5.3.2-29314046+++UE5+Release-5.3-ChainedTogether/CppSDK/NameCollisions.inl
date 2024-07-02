@@ -9,45 +9,52 @@
 // FORWARD DECLARATIONS
 
 
-namespace BP_Chains { class ABP_Chains_C; }
-
-namespace BP_Door_Double_01 { class ABP_Door_Double_01_C; }
-
-namespace BP_chains { class ABP_Chains_C; }
-
-namespace BP_Door_double_01 { class ABP_Door_Double_01_C; }
-
-namespace Drive_AnimBP { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace HumanWingAnimBP { struct FAnimBlueprintGeneratedConstantData; }
-
-
-namespace ThirdPerson_AnimBP
+namespace BP_Chains
 {
-	struct FAnimBlueprintGeneratedMutableData;
+	class ABP_Chains_C;
+}
+
+namespace BP_chains
+{
+	class ABP_Chains_C;
+}
+
+namespace HumanWingAnimBP
+{
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ThirdPerson_AnimBP_Torch
+namespace Drive_AnimBP
 {
 	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace Horse_AnimBP
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
-}
+} // namespace Horse_AnimBP
+
+namespace ThirdPerson_AnimBP
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+} // namespace ThirdPerson_AnimBP
+
+namespace ThirdPerson_AnimBP_Torch
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+} // namespace ThirdPerson_AnimBP_Torch
+
+namespace Christian_ALS_AnimBP
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+} // namespace Christian_ALS_AnimBP
 
 namespace Devil_AnimBP
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace Christian_ALS_AnimBP
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
+} // namespace Devil_AnimBP

@@ -237,17 +237,6 @@ enum class EListItemAlignment : uint8
 	EListItemAlignment_MAX                   = 7,
 };
 
-// ScriptStruct Slate.VirtualKeyboardOptions
-// 0x0001 (0x0001 - 0x0000)
-struct FVirtualKeyboardOptions final
-{
-public:
-	bool                                          bEnableAutocorrect;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FVirtualKeyboardOptions) == 0x000001, "Wrong alignment on FVirtualKeyboardOptions");
-static_assert(sizeof(FVirtualKeyboardOptions) == 0x000001, "Wrong size on FVirtualKeyboardOptions");
-static_assert(offsetof(FVirtualKeyboardOptions, bEnableAutocorrect) == 0x000000, "Member 'FVirtualKeyboardOptions::bEnableAutocorrect' has a wrong offset!");
-
 // ScriptStruct Slate.CustomizedToolMenuEntry
 // 0x0004 (0x0004 - 0x0000)
 struct FCustomizedToolMenuEntry final
@@ -259,6 +248,17 @@ static_assert(alignof(FCustomizedToolMenuEntry) == 0x000004, "Wrong alignment on
 static_assert(sizeof(FCustomizedToolMenuEntry) == 0x000004, "Wrong size on FCustomizedToolMenuEntry");
 static_assert(offsetof(FCustomizedToolMenuEntry, Visibility) == 0x000000, "Member 'FCustomizedToolMenuEntry::Visibility' has a wrong offset!");
 
+// ScriptStruct Slate.VirtualKeyboardOptions
+// 0x0001 (0x0001 - 0x0000)
+struct FVirtualKeyboardOptions final
+{
+public:
+	bool                                          bEnableAutocorrect;                                // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FVirtualKeyboardOptions) == 0x000001, "Wrong alignment on FVirtualKeyboardOptions");
+static_assert(sizeof(FVirtualKeyboardOptions) == 0x000001, "Wrong size on FVirtualKeyboardOptions");
+static_assert(offsetof(FVirtualKeyboardOptions, bEnableAutocorrect) == 0x000000, "Member 'FVirtualKeyboardOptions::bEnableAutocorrect' has a wrong offset!");
+
 // ScriptStruct Slate.InputChord
 // 0x0020 (0x0020 - 0x0000)
 struct FInputChord final
@@ -269,22 +269,11 @@ public:
 	uint8                                         bCtrl : 1;                                         // 0x0018(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bAlt : 1;                                          // 0x0018(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bCmd : 1;                                          // 0x0018(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_B7[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputChord) == 0x000008, "Wrong alignment on FInputChord");
 static_assert(sizeof(FInputChord) == 0x000020, "Wrong size on FInputChord");
 static_assert(offsetof(FInputChord, Key) == 0x000000, "Member 'FInputChord::Key' has a wrong offset!");
-
-// ScriptStruct Slate.CustomizedToolMenuSection
-// 0x0004 (0x0004 - 0x0000)
-struct FCustomizedToolMenuSection final
-{
-public:
-	ECustomizedToolMenuVisibility                 Visibility;                                        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCustomizedToolMenuSection) == 0x000004, "Wrong alignment on FCustomizedToolMenuSection");
-static_assert(sizeof(FCustomizedToolMenuSection) == 0x000004, "Wrong size on FCustomizedToolMenuSection");
-static_assert(offsetof(FCustomizedToolMenuSection, Visibility) == 0x000000, "Member 'FCustomizedToolMenuSection::Visibility' has a wrong offset!");
 
 // ScriptStruct Slate.Anchors
 // 0x0020 (0x0020 - 0x0000)
@@ -323,6 +312,17 @@ static_assert(alignof(FCharRangeList) == 0x000008, "Wrong alignment on FCharRang
 static_assert(sizeof(FCharRangeList) == 0x000010, "Wrong size on FCharRangeList");
 static_assert(offsetof(FCharRangeList, Ranges) == 0x000000, "Member 'FCharRangeList::Ranges' has a wrong offset!");
 
+// ScriptStruct Slate.CustomizedToolMenuSection
+// 0x0004 (0x0004 - 0x0000)
+struct FCustomizedToolMenuSection final
+{
+public:
+	ECustomizedToolMenuVisibility                 Visibility;                                        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCustomizedToolMenuSection) == 0x000004, "Wrong alignment on FCustomizedToolMenuSection");
+static_assert(sizeof(FCustomizedToolMenuSection) == 0x000004, "Wrong size on FCustomizedToolMenuSection");
+static_assert(offsetof(FCustomizedToolMenuSection, Visibility) == 0x000000, "Member 'FCustomizedToolMenuSection::Visibility' has a wrong offset!");
+
 // ScriptStruct Slate.CustomizedToolMenuNameArray
 // 0x0010 (0x0010 - 0x0000)
 struct FCustomizedToolMenuNameArray final
@@ -345,7 +345,7 @@ public:
 	TMap<class FName, struct FCustomizedToolMenuNameArray> EntryOrder;                                        // 0x00A8(0x0050)(NativeAccessSpecifierPublic)
 	TArray<class FName>                           SectionOrder;                                      // 0x00F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FName>                           SuppressExtenders;                                 // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B8[0xE8];                                      // 0x0118(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E9[0xE8];                                      // 0x0118(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCustomizedToolMenu) == 0x000008, "Wrong alignment on FCustomizedToolMenu");
 static_assert(sizeof(FCustomizedToolMenu) == 0x000200, "Wrong size on FCustomizedToolMenu");

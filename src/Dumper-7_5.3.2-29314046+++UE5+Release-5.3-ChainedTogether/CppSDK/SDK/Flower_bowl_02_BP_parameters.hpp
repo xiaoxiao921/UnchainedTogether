@@ -25,7 +25,7 @@ public:
 	class UMaterialInterface*                     CallFunc_Array_Get_Item;                           // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_RandomRotatorFromStream_ReturnValue;      // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_RandomIntegerInRangeFromStream_ReturnValue; // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3834[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38B9[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_BreakRotIntoAxes_X;                       // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakRotIntoAxes_Y;                       // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakRotIntoAxes_Z;                       // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

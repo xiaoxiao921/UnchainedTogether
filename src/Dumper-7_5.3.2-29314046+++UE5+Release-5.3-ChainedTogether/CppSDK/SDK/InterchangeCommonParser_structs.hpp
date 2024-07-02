@@ -55,7 +55,7 @@ public:
 	EInterchangeCurveInterpMode                   InterpMode;                                        // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EInterchangeCurveTangentMode                  TangentMode;                                       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EInterchangeCurveTangentWeightMode            TangentWeightMode;                                 // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D69[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D52[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ArriveTangent;                                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -92,7 +92,7 @@ struct FInterchangeStepCurve final
 {
 public:
 	TArray<float>                                 KeyTimes;                                          // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D6A[0x60];                                    // 0x0010(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D53[0x60];                                    // 0x0010(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInterchangeStepCurve) == 0x000008, "Wrong alignment on FInterchangeStepCurve");
 static_assert(sizeof(FInterchangeStepCurve) == 0x000070, "Wrong size on FInterchangeStepCurve");

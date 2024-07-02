@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "E_VentilationType_structs.hpp"
 #include "E_CornerDirectionVentilation_structs.hpp"
+#include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -28,28 +28,28 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	E_VentilationType                             Type;                                              // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_CornerDirectionVentilation                  CornerDirection;                                   // 0x02A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_392A[0x6];                                     // 0x02AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39AD[0x6];                                     // 0x02AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        TargetLength;                                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CurrentDistance;                                   // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        RealLength;                                        // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Snap_Location;                                     // 0x02C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_392B[0x3];                                     // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39AE[0x3];                                     // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Snap_Location_Unit_Grid;                           // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
 	int32                                         Snap_Location_Height_Grid;                         // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
 	bool                                          Snap_Rotation;                                     // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_392C[0x3];                                     // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39AF[0x3];                                     // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Snap_Rotation_Degrees;                             // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
 	int32                                         Material_Type;                                     // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UMaterialInterface*>             Materials;                                         // 0x02E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          Support_Post_Enable;                               // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_392D[0x3];                                     // 0x02F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39B0[0x3];                                     // 0x02F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Support_Post_Type;                                 // 0x02F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<bool>                                  Support_Posts;                                     // 0x02F8(0x0010)(Edit, BlueprintVisible, AdvancedDisplay)
 	TArray<class UStaticMesh*>                    Support_Posts_SM;                                  // 0x0308(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          Enable_All;                                        // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Enable_Only_Odd;                                   // 0x0319(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Enable_Only_Even;                                  // 0x031A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_392E[0x5];                                     // 0x031B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39B1[0x5];                                     // 0x031B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Height_Support_Posts;                              // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     Overwrite_Material;                                // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   TempMesh;                                          // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)

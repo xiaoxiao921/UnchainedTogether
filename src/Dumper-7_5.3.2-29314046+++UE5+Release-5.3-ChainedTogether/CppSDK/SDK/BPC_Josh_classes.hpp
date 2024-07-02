@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BPC_Josh.BPC_Josh_C
-// 0x0000 (0x0EC0 - 0x0EC0)
+// 0x0000 (0x0ED0 - 0x0ED0)
 class ABPC_Josh_C final : public ABP_Character_C
 {
 public:
@@ -36,7 +36,7 @@ public:
 	}
 };
 static_assert(alignof(ABPC_Josh_C) == 0x000010, "Wrong alignment on ABPC_Josh_C");
-static_assert(sizeof(ABPC_Josh_C) == 0x000EC0, "Wrong size on ABPC_Josh_C");
+static_assert(sizeof(ABPC_Josh_C) == 0x000ED0, "Wrong size on ABPC_Josh_C");
 
 }
 

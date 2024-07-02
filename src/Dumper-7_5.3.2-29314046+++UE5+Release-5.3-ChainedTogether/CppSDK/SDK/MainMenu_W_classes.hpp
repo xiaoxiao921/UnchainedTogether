@@ -54,7 +54,11 @@ public:
 	void BndEvt__MainMenu_W_Settings_Button_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature();
 	void Construct();
 	void ExecuteUbergraph_MainMenu_W(int32 EntryPoint);
+	struct FEventReply OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	void PlayButtonEvent();
 	void PlayFade();
+	void QuitButtonEvent();
+	void SettingsButtonEvent();
 	void UpdateVersion();
 
 public:

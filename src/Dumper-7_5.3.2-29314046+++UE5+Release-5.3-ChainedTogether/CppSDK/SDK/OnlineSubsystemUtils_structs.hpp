@@ -126,6 +126,16 @@ enum class ESpectatorReservationResult : uint8
 	ESpectatorReservationResult_MAX          = 16,
 };
 
+// ScriptStruct OnlineSubsystemUtils.BlueprintSessionResult
+// 0x0120 (0x0120 - 0x0000)
+struct alignas(0x08) FBlueprintSessionResult final
+{
+public:
+	uint8                                         Pad_1779[0x120];                                   // 0x0000(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FBlueprintSessionResult) == 0x000008, "Wrong alignment on FBlueprintSessionResult");
+static_assert(sizeof(FBlueprintSessionResult) == 0x000120, "Wrong size on FBlueprintSessionResult");
+
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductRequest2
 // 0x0018 (0x0018 - 0x0000)
 struct FInAppPurchaseProductRequest2 final
@@ -133,7 +143,7 @@ struct FInAppPurchaseProductRequest2 final
 public:
 	class FString                                 ProductIdentifier;                                 // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsConsumable;                                     // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1751[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_177A[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInAppPurchaseProductRequest2) == 0x000008, "Wrong alignment on FInAppPurchaseProductRequest2");
 static_assert(sizeof(FInAppPurchaseProductRequest2) == 0x000018, "Wrong size on FInAppPurchaseProductRequest2");
@@ -157,54 +167,6 @@ static_assert(offsetof(FInAppPurchaseReceiptInfo2, ItemId) == 0x000010, "Member 
 static_assert(offsetof(FInAppPurchaseReceiptInfo2, ValidationInfo) == 0x000020, "Member 'FInAppPurchaseReceiptInfo2::ValidationInfo' has a wrong offset!");
 static_assert(offsetof(FInAppPurchaseReceiptInfo2, TransactionIdentifier) == 0x000030, "Member 'FInAppPurchaseReceiptInfo2::TransactionIdentifier' has a wrong offset!");
 
-// ScriptStruct OnlineSubsystemUtils.BlueprintSessionResult
-// 0x0120 (0x0120 - 0x0000)
-struct alignas(0x08) FBlueprintSessionResult final
-{
-public:
-	uint8                                         Pad_1752[0x120];                                   // 0x0000(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FBlueprintSessionResult) == 0x000008, "Wrong alignment on FBlueprintSessionResult");
-static_assert(sizeof(FBlueprintSessionResult) == 0x000120, "Wrong size on FBlueprintSessionResult");
-
-// ScriptStruct OnlineSubsystemUtils.OnlineProxyStoreOffer
-// 0x0110 (0x0110 - 0x0000)
-struct FOnlineProxyStoreOffer final
-{
-public:
-	class FString                                 OfferId;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Title;                                             // 0x0010(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   Description;                                       // 0x0028(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   LongDescription;                                   // 0x0040(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   RegularPriceText;                                  // 0x0058(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         RegularPrice;                                      // 0x0070(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1753[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   PriceText;                                         // 0x0078(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NumericPrice;                                      // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1754[0x4];                                     // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CurrencyCode;                                      // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              ReleaseDate;                                       // 0x00A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              ExpirationDate;                                    // 0x00B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOnlineProxyStoreOfferDiscountType            DiscountType;                                      // 0x00B8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1755[0x7];                                     // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class FString>            DynamicFields;                                     // 0x00C0(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FOnlineProxyStoreOffer) == 0x000008, "Wrong alignment on FOnlineProxyStoreOffer");
-static_assert(sizeof(FOnlineProxyStoreOffer) == 0x000110, "Wrong size on FOnlineProxyStoreOffer");
-static_assert(offsetof(FOnlineProxyStoreOffer, OfferId) == 0x000000, "Member 'FOnlineProxyStoreOffer::OfferId' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, Title) == 0x000010, "Member 'FOnlineProxyStoreOffer::Title' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, Description) == 0x000028, "Member 'FOnlineProxyStoreOffer::Description' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, LongDescription) == 0x000040, "Member 'FOnlineProxyStoreOffer::LongDescription' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, RegularPriceText) == 0x000058, "Member 'FOnlineProxyStoreOffer::RegularPriceText' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, RegularPrice) == 0x000070, "Member 'FOnlineProxyStoreOffer::RegularPrice' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, PriceText) == 0x000078, "Member 'FOnlineProxyStoreOffer::PriceText' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, NumericPrice) == 0x000090, "Member 'FOnlineProxyStoreOffer::NumericPrice' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, CurrencyCode) == 0x000098, "Member 'FOnlineProxyStoreOffer::CurrencyCode' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, ReleaseDate) == 0x0000A8, "Member 'FOnlineProxyStoreOffer::ReleaseDate' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, ExpirationDate) == 0x0000B0, "Member 'FOnlineProxyStoreOffer::ExpirationDate' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, DiscountType) == 0x0000B8, "Member 'FOnlineProxyStoreOffer::DiscountType' has a wrong offset!");
-static_assert(offsetof(FOnlineProxyStoreOffer, DynamicFields) == 0x0000C0, "Member 'FOnlineProxyStoreOffer::DynamicFields' has a wrong offset!");
-
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductInfo2
 // 0x00F8 (0x00F8 - 0x0000)
 struct FInAppPurchaseProductInfo2 final
@@ -216,7 +178,7 @@ public:
 	class FString                                 DisplayDescription;                                // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 DisplayPrice;                                      // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RawPrice;                                          // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1756[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_177B[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CurrencyCode;                                      // 0x0058(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 CurrencySymbol;                                    // 0x0068(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 DecimalSeparator;                                  // 0x0078(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -238,6 +200,44 @@ static_assert(offsetof(FInAppPurchaseProductInfo2, DecimalSeparator) == 0x000078
 static_assert(offsetof(FInAppPurchaseProductInfo2, GroupingSeparator) == 0x000088, "Member 'FInAppPurchaseProductInfo2::GroupingSeparator' has a wrong offset!");
 static_assert(offsetof(FInAppPurchaseProductInfo2, ReceiptData) == 0x000098, "Member 'FInAppPurchaseProductInfo2::ReceiptData' has a wrong offset!");
 static_assert(offsetof(FInAppPurchaseProductInfo2, DynamicFields) == 0x0000A8, "Member 'FInAppPurchaseProductInfo2::DynamicFields' has a wrong offset!");
+
+// ScriptStruct OnlineSubsystemUtils.OnlineProxyStoreOffer
+// 0x0110 (0x0110 - 0x0000)
+struct FOnlineProxyStoreOffer final
+{
+public:
+	class FString                                 OfferId;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Title;                                             // 0x0010(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   Description;                                       // 0x0028(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   LongDescription;                                   // 0x0040(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   RegularPriceText;                                  // 0x0058(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         RegularPrice;                                      // 0x0070(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_177C[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   PriceText;                                         // 0x0078(0x0018)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NumericPrice;                                      // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_177D[0x4];                                     // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CurrencyCode;                                      // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              ReleaseDate;                                       // 0x00A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              ExpirationDate;                                    // 0x00B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOnlineProxyStoreOfferDiscountType            DiscountType;                                      // 0x00B8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_177E[0x7];                                     // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class FString>            DynamicFields;                                     // 0x00C0(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FOnlineProxyStoreOffer) == 0x000008, "Wrong alignment on FOnlineProxyStoreOffer");
+static_assert(sizeof(FOnlineProxyStoreOffer) == 0x000110, "Wrong size on FOnlineProxyStoreOffer");
+static_assert(offsetof(FOnlineProxyStoreOffer, OfferId) == 0x000000, "Member 'FOnlineProxyStoreOffer::OfferId' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, Title) == 0x000010, "Member 'FOnlineProxyStoreOffer::Title' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, Description) == 0x000028, "Member 'FOnlineProxyStoreOffer::Description' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, LongDescription) == 0x000040, "Member 'FOnlineProxyStoreOffer::LongDescription' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, RegularPriceText) == 0x000058, "Member 'FOnlineProxyStoreOffer::RegularPriceText' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, RegularPrice) == 0x000070, "Member 'FOnlineProxyStoreOffer::RegularPrice' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, PriceText) == 0x000078, "Member 'FOnlineProxyStoreOffer::PriceText' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, NumericPrice) == 0x000090, "Member 'FOnlineProxyStoreOffer::NumericPrice' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, CurrencyCode) == 0x000098, "Member 'FOnlineProxyStoreOffer::CurrencyCode' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, ReleaseDate) == 0x0000A8, "Member 'FOnlineProxyStoreOffer::ReleaseDate' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, ExpirationDate) == 0x0000B0, "Member 'FOnlineProxyStoreOffer::ExpirationDate' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, DiscountType) == 0x0000B8, "Member 'FOnlineProxyStoreOffer::DiscountType' has a wrong offset!");
+static_assert(offsetof(FOnlineProxyStoreOffer, DynamicFields) == 0x0000C0, "Member 'FOnlineProxyStoreOffer::DynamicFields' has a wrong offset!");
 
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseRestoreInfo2
 // 0x0030 (0x0030 - 0x0000)
@@ -263,7 +263,7 @@ public:
 	class FString                                 ValidationStr;                                     // 0x0030(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Platform;                                          // 0x0040(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAllowCrossplay;                                   // 0x0050(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1757[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_177F[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ElapsedTime;                                       // 0x0054(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPlayerReservation) == 0x000008, "Wrong alignment on FPlayerReservation");
@@ -297,7 +297,7 @@ struct FPartyReservation final
 {
 public:
 	int32                                         TeamNum;                                           // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1758[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1780[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FUniqueNetIdRepl                       PartyLeader;                                       // 0x0008(0x0030)(Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FPlayerReservation>             PartyMembers;                                      // 0x0038(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	TArray<struct FPlayerReservation>             RemovedPartyMembers;                               // 0x0048(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)

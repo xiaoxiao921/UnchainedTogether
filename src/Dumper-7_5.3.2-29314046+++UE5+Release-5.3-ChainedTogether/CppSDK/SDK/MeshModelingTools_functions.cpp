@@ -17,6 +17,63 @@
 namespace SDK
 {
 
+// Function MeshModelingTools.UVProjectionToolEditActions.AutoFit
+// (Final, Native, Public)
+
+void UUVProjectionToolEditActions::AutoFit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UVProjectionToolEditActions", "AutoFit");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.UVProjectionToolEditActions.AutoFitAlign
+// (Final, Native, Public)
+
+void UUVProjectionToolEditActions::AutoFitAlign()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UVProjectionToolEditActions", "AutoFitAlign");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MeshModelingTools.UVProjectionToolEditActions.Reset
+// (Final, Native, Public)
+
+void UUVProjectionToolEditActions::Reset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UVProjectionToolEditActions", "Reset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MeshModelingTools.PolyEditTopologyProperties.RegenerateExtraCorners
 // (Final, Native, Public)
 
@@ -938,63 +995,6 @@ const TArray<class FString> UMeshUVChannelProperties::GetUVChannelNamesFunc() co
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function MeshModelingTools.UVProjectionToolEditActions.AutoFit
-// (Final, Native, Public)
-
-void UUVProjectionToolEditActions::AutoFit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UVProjectionToolEditActions", "AutoFit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.UVProjectionToolEditActions.AutoFitAlign
-// (Final, Native, Public)
-
-void UUVProjectionToolEditActions::AutoFitAlign()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UVProjectionToolEditActions", "AutoFitAlign");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MeshModelingTools.UVProjectionToolEditActions.Reset
-// (Final, Native, Public)
-
-void UUVProjectionToolEditActions::Reset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UVProjectionToolEditActions", "Reset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

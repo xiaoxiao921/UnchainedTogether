@@ -122,7 +122,7 @@ class UAudioCodecEncoderSettings final : public UObject
 {
 public:
 	int32                                         Version;                                           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15C[0x4];                                      // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_161[0x4];                                      // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -177,7 +177,7 @@ static_assert(sizeof(UDummyEndpointSettings) == 0x000028, "Wrong size on UDummyE
 class USoundModulatorBase final : public UObject
 {
 public:
-	uint8                                         Pad_15D[0x8];                                      // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_162[0x8];                                      // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

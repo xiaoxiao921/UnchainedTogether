@@ -17,6 +17,34 @@
 namespace SDK
 {
 
+// Function BP_NewChain.BP_NewChain_C.30fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_NewChain_C::Three0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NewChain_C", "30fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_NewChain.BP_NewChain_C.60fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_NewChain_C::Six0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NewChain_C", "60fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_NewChain.BP_NewChain_C.AutoDestroyChain
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -93,6 +121,20 @@ void ABP_NewChain_C::Check_Chain_Force(double* Distance)
 
 	if (Distance != nullptr)
 		*Distance = Parms.Distance;
+}
+
+
+// Function BP_NewChain.BP_NewChain_C.CheckForce
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_NewChain_C::CheckForce()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NewChain_C", "CheckForce");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

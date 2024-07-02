@@ -26,7 +26,7 @@ class ULevelVariantSets final : public UObject
 public:
 	TSubclassOf<class UObject>                    DirectorClass;                                     // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<class UVariantSet*>                    VariantSets;                                       // 0x0030(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25E1[0x50];                                    // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25DA[0x50];                                    // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 GetNumVariantSets();
@@ -82,7 +82,7 @@ static_assert(offsetof(ALevelVariantSetsActor, DirectorInstances) == 0x0002B8, "
 class ULevelVariantSetsFunctionDirector final : public UObject
 {
 public:
-	uint8                                         Pad_25E6[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25DF[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -102,7 +102,7 @@ static_assert(sizeof(ULevelVariantSetsFunctionDirector) == 0x000040, "Wrong size
 class UPropertyValue : public UObject
 {
 public:
-	uint8                                         Pad_25E7[0x60];                                    // 0x0028(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E0[0x60];                                    // 0x0028(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TFieldPath<struct FProperty>>          Properties;                                        // 0x0088(0x0010)(ZeroConstructor, Deprecated, Protected, NativeAccessSpecifierProtected)
 	TArray<int32>                                 PropertyIndices;                                   // 0x0098(0x0010)(ZeroConstructor, Deprecated, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FCapturedPropSegment>           CapturedPropSegments;                              // 0x00A8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
@@ -110,12 +110,12 @@ public:
 	class FName                                   PropertySetterName;                                // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TMap<class FString, class FString>            PropertySetterParameterDefaults;                   // 0x00D0(0x0050)(Protected, NativeAccessSpecifierProtected)
 	bool                                          bHasRecordedData;                                  // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25E8[0x7];                                     // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E1[0x7];                                     // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UObject>                    LeafPropertyClass;                                 // 0x0128(0x0008)(ZeroConstructor, Deprecated, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25E9[0x8];                                     // 0x0130(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E2[0x8];                                     // 0x0130(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<uint8>                                 ValueBytes;                                        // 0x0138(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	EPropertyValueCategory                        PropCategory;                                      // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25EA[0x6F];                                    // 0x0149(0x006F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E3[0x6F];                                    // 0x0149(0x006F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class FString GetFullDisplayString() const;
@@ -252,10 +252,10 @@ static_assert(sizeof(UPropertyValueSoftObject) == 0x0001B8, "Wrong size on UProp
 class ASwitchActor final : public AActor
 {
 public:
-	uint8                                         Pad_25EB[0x18];                                    // 0x0298(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E4[0x18];                                    // 0x0298(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        SceneComponent;                                    // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         LastSelectedOption;                                // 0x02B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25EC[0x4];                                     // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E5[0x4];                                     // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SelectOption(int32 OptionIndex);
@@ -285,7 +285,7 @@ class UVariant final : public UObject
 public:
 	TArray<struct FVariantDependency>             Dependencies;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	class FText                                   DisplayText;                                       // 0x0038(0x0018)(Deprecated, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25ED[0x18];                                    // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25E6[0x18];                                    // 0x0050(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UVariantObjectBinding*>          ObjectBindings;                                    // 0x0068(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 	class UTexture2D*                             Thumbnail;                                         // 0x0078(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -362,9 +362,9 @@ class UVariantSet final : public UObject
 {
 public:
 	class FText                                   DisplayText;                                       // 0x0028(0x0018)(Deprecated, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25F5[0x18];                                    // 0x0040(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25EE[0x18];                                    // 0x0040(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bExpanded;                                         // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25F6[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25EF[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UVariant*>                       Variants;                                          // 0x0060(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 	class UTexture2D*                             Thumbnail;                                         // 0x0070(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "ACLPlugin_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -24,7 +24,7 @@ struct AnimationCompressionLibraryDatabase_GetVisualFidelity final
 public:
 	class UAnimationCompressionLibraryDatabase*   DatabaseAsset;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EACLVisualFidelity                            ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F9E[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FCD[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(AnimationCompressionLibraryDatabase_GetVisualFidelity) == 0x000008, "Wrong alignment on AnimationCompressionLibraryDatabase_GetVisualFidelity");
 static_assert(sizeof(AnimationCompressionLibraryDatabase_GetVisualFidelity) == 0x000010, "Wrong size on AnimationCompressionLibraryDatabase_GetVisualFidelity");
@@ -41,7 +41,7 @@ public:
 	class UAnimationCompressionLibraryDatabase*   DatabaseAsset;                                     // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EACLVisualFidelityChangeResult                Result;                                            // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EACLVisualFidelity                            VisualFidelity;                                    // 0x0029(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F9F[0x6];                                     // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FCE[0x6];                                     // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(AnimationCompressionLibraryDatabase_SetVisualFidelity) == 0x000008, "Wrong alignment on AnimationCompressionLibraryDatabase_SetVisualFidelity");
 static_assert(sizeof(AnimationCompressionLibraryDatabase_SetVisualFidelity) == 0x000030, "Wrong size on AnimationCompressionLibraryDatabase_SetVisualFidelity");

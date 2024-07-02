@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "InterchangeImport_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "InterchangeCore_classes.hpp"
-#include "InterchangeImport_structs.hpp"
 
 
 namespace SDK
@@ -43,7 +43,7 @@ static_assert(sizeof(IInterchangeAnimationPayloadInterface) == 0x000028, "Wrong 
 class UInterchangeAnimationTrackSetFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2A9C[0x8];                                     // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7[0x8];                                        // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -74,6 +74,26 @@ public:
 };
 static_assert(alignof(IInterchangeBlockedTexturePayloadInterface) == 0x000008, "Wrong alignment on IInterchangeBlockedTexturePayloadInterface");
 static_assert(sizeof(IInterchangeBlockedTexturePayloadInterface) == 0x000028, "Wrong size on IInterchangeBlockedTexturePayloadInterface");
+
+// Class InterchangeImport.InterchangeTextureFactory
+// 0x0090 (0x00C0 - 0x0030)
+class UInterchangeTextureFactory final : public UInterchangeFactoryBase
+{
+public:
+	uint8                                         Pad_8[0x90];                                       // 0x0030(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeTextureFactory">();
+	}
+	static class UInterchangeTextureFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeTextureFactory>();
+	}
+};
+static_assert(alignof(UInterchangeTextureFactory) == 0x000008, "Wrong alignment on UInterchangeTextureFactory");
+static_assert(sizeof(UInterchangeTextureFactory) == 0x0000C0, "Wrong size on UInterchangeTextureFactory");
 
 // Class InterchangeImport.InterchangeActorFactory
 // 0x0000 (0x0030 - 0x0030)
@@ -148,7 +168,7 @@ static_assert(sizeof(UInterchangeSceneImportAssetFactory) == 0x000030, "Wrong si
 class UInterchangeSceneVariantSetsFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2A9D[0x8];                                     // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x8];                                        // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -242,7 +262,7 @@ public:
 	struct FExpressionInput                       C;                                                 // 0x0128(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       D;                                                 // 0x0150(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A9E[0x7];                                     // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x7];                                        // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -262,6 +282,26 @@ static_assert(offsetof(UMaterialExpressionMaterialXRamp4, B) == 0x000100, "Membe
 static_assert(offsetof(UMaterialExpressionMaterialXRamp4, C) == 0x000128, "Member 'UMaterialExpressionMaterialXRamp4::C' has a wrong offset!");
 static_assert(offsetof(UMaterialExpressionMaterialXRamp4, D) == 0x000150, "Member 'UMaterialExpressionMaterialXRamp4::D' has a wrong offset!");
 static_assert(offsetof(UMaterialExpressionMaterialXRamp4, ConstCoordinate) == 0x000178, "Member 'UMaterialExpressionMaterialXRamp4::ConstCoordinate' has a wrong offset!");
+
+// Class InterchangeImport.InterchangePCXTranslator
+// 0x0008 (0x0040 - 0x0038)
+class UInterchangePCXTranslator final : public UInterchangeTranslatorBase
+{
+public:
+	uint8                                         Pad_B[0x8];                                        // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangePCXTranslator">();
+	}
+	static class UInterchangePCXTranslator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangePCXTranslator>();
+	}
+};
+static_assert(alignof(UInterchangePCXTranslator) == 0x000008, "Wrong alignment on UInterchangePCXTranslator");
+static_assert(sizeof(UInterchangePCXTranslator) == 0x000040, "Wrong size on UInterchangePCXTranslator");
 
 // Class InterchangeImport.InterchangeAnimSequenceFactory
 // 0x0000 (0x0030 - 0x0030)
@@ -285,7 +325,7 @@ static_assert(sizeof(UInterchangeAnimSequenceFactory) == 0x000030, "Wrong size o
 class UInterchangeFbxTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2A9F[0x20];                                    // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x20];                                       // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -300,32 +340,12 @@ public:
 static_assert(alignof(UInterchangeFbxTranslator) == 0x000008, "Wrong alignment on UInterchangeFbxTranslator");
 static_assert(sizeof(UInterchangeFbxTranslator) == 0x000058, "Wrong size on UInterchangeFbxTranslator");
 
-// Class InterchangeImport.InterchangeTextureFactory
-// 0x0090 (0x00C0 - 0x0030)
-class UInterchangeTextureFactory final : public UInterchangeFactoryBase
-{
-public:
-	uint8                                         Pad_2AA0[0x90];                                    // 0x0030(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeTextureFactory">();
-	}
-	static class UInterchangeTextureFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeTextureFactory>();
-	}
-};
-static_assert(alignof(UInterchangeTextureFactory) == 0x000008, "Wrong alignment on UInterchangeTextureFactory");
-static_assert(sizeof(UInterchangeTextureFactory) == 0x0000C0, "Wrong size on UInterchangeTextureFactory");
-
 // Class InterchangeImport.InterchangeGLTFTranslator
 // 0x0240 (0x0278 - 0x0038)
 class UInterchangeGLTFTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AA1[0x240];                                   // 0x0038(0x0240)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x240];                                      // 0x0038(0x0240)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -345,7 +365,7 @@ static_assert(sizeof(UInterchangeGLTFTranslator) == 0x000278, "Wrong size on UIn
 class UInterchangeMaterialXTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AA2[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x8];                                        // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -421,7 +441,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA3[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F[0x4];                                        // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -449,7 +469,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA4[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -477,7 +497,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA5[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -505,7 +525,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA6[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -532,18 +552,18 @@ public:
 	struct FExpressionInput                       Position;                                          // 0x00B0(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Amplitude;                                         // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAmplitude;                                    // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA7[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x4];                                       // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FExpressionInput                       Octaves;                                           // 0x0108(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         ConstOctaves;                                      // 0x0130(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA8[0x4];                                     // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FExpressionInput                       Lacunarity;                                        // 0x0138(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstLacunarity;                                   // 0x0160(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA9[0x4];                                     // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x4];                                       // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FExpressionInput                       Diminish;                                          // 0x0168(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstDiminish;                                     // 0x0190(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Scale;                                             // 0x0194(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bTurbulence;                                       // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAA[0x3];                                     // 0x0199(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16[0x3];                                       // 0x0199(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Levels;                                            // 0x019C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OutputMin;                                         // 0x01A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OutputMax;                                         // 0x01A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -584,7 +604,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAB[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -611,7 +631,7 @@ public:
 	struct FExpressionInput                       Input;                                             // 0x00B0(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FLinearColor                           LuminanceFactors;                                  // 0x00D8(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMaterialXLuminanceMode                       LuminanceMode;                                     // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAC[0x7];                                     // 0x00E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x7];                                       // 0x00E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -638,7 +658,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAD[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -666,7 +686,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAE[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -694,7 +714,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAF[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -722,7 +742,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB0[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -750,7 +770,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB1[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -778,7 +798,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB2[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -809,7 +829,7 @@ public:
 	struct FExpressionInput                       RotationAngle;                                     // 0x0150(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstRotationAngle;                                // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB3[0x3];                                     // 0x017D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F[0x3];                                       // 0x017D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -840,7 +860,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB4[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_20[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -889,7 +909,7 @@ public:
 	struct FExpressionInput                       A;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       B;                                                 // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB5[0x7];                                     // 0x0129(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0129(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -917,7 +937,7 @@ public:
 	struct FExpressionInput                       A;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       B;                                                 // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB6[0x7];                                     // 0x0129(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22[0x7];                                       // 0x0129(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -981,7 +1001,7 @@ public:
 	struct FExpressionInput                       Input;                                             // 0x00B0(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       RotationAngle;                                     // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstRotationAngle;                                // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB7[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x4];                                       // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1008,7 +1028,7 @@ public:
 	struct FExpressionInput                       B;                                                 // 0x00D8(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FExpressionInput                       Alpha;                                             // 0x0100(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstAlpha;                                        // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB8[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1038,7 +1058,7 @@ public:
 	struct FExpressionInput                       Center;                                            // 0x0128(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstCenter;                                       // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x0154(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB9[0x3];                                     // 0x0155(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0155(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1070,7 +1090,7 @@ public:
 	struct FExpressionInput                       Center;                                            // 0x0128(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 	float                                         ConstCenter;                                       // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ConstCoordinate;                                   // 0x0154(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ABA[0x3];                                     // 0x0155(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_26[0x3];                                       // 0x0155(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1123,7 +1143,7 @@ public:
 	float                                         FilterSize;                                        // 0x0244(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FilterOffset;                                      // 0x0248(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMaterialXTextureSampleBlurFilter             Filter;                                            // 0x024C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ABB[0x3];                                     // 0x024D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_27[0x3];                                       // 0x024D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1141,6 +1161,26 @@ static_assert(offsetof(UMaterialExpressionMaterialXTextureSampleParameterBlur, K
 static_assert(offsetof(UMaterialExpressionMaterialXTextureSampleParameterBlur, FilterSize) == 0x000244, "Member 'UMaterialExpressionMaterialXTextureSampleParameterBlur::FilterSize' has a wrong offset!");
 static_assert(offsetof(UMaterialExpressionMaterialXTextureSampleParameterBlur, FilterOffset) == 0x000248, "Member 'UMaterialExpressionMaterialXTextureSampleParameterBlur::FilterOffset' has a wrong offset!");
 static_assert(offsetof(UMaterialExpressionMaterialXTextureSampleParameterBlur, Filter) == 0x00024C, "Member 'UMaterialExpressionMaterialXTextureSampleParameterBlur::Filter' has a wrong offset!");
+
+// Class InterchangeImport.InterchangePSDTranslator
+// 0x0008 (0x0040 - 0x0038)
+class UInterchangePSDTranslator final : public UInterchangeTranslatorBase
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangePSDTranslator">();
+	}
+	static class UInterchangePSDTranslator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangePSDTranslator>();
+	}
+};
+static_assert(alignof(UInterchangePSDTranslator) == 0x000008, "Wrong alignment on UInterchangePSDTranslator");
+static_assert(sizeof(UInterchangePSDTranslator) == 0x000040, "Wrong size on UInterchangePSDTranslator");
 
 // Class InterchangeImport.MaterialExpressionMaterialXUnpremult
 // 0x0028 (0x00D8 - 0x00B0)
@@ -1168,7 +1208,7 @@ static_assert(offsetof(UMaterialExpressionMaterialXUnpremult, Input) == 0x0000B0
 class UInterchangeMaterialFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2ABC[0x8];                                     // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1188,7 +1228,7 @@ static_assert(sizeof(UInterchangeMaterialFactory) == 0x000038, "Wrong size on UI
 class UInterchangeMaterialFunctionFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2ABD[0x8];                                     // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1208,7 +1248,7 @@ static_assert(sizeof(UInterchangeMaterialFunctionFactory) == 0x000038, "Wrong si
 class UInterchangeOBJTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2ABE[0x18];                                    // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1245,7 +1285,7 @@ static_assert(sizeof(UInterchangePhysicsAssetFactory) == 0x000030, "Wrong size o
 class UInterchangeSkeletalMeshFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2ABF[0x30];                                    // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x30];                                      // 0x0030(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1282,7 +1322,7 @@ static_assert(sizeof(UInterchangeSkeletonFactory) == 0x000030, "Wrong size on UI
 class UInterchangeStaticMeshFactory final : public UInterchangeFactoryBase
 {
 public:
-	uint8                                         Pad_2AC0[0x18];                                    // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x18];                                      // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1370,7 +1410,7 @@ static_assert(sizeof(UInterchangeStaticMeshActorFactory) == 0x000030, "Wrong siz
 class UInterchangeDDSTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AC1[0x10];                                    // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1390,7 +1430,7 @@ static_assert(sizeof(UInterchangeDDSTranslator) == 0x000048, "Wrong size on UInt
 class UInterchangeIESTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AC2[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1410,7 +1450,7 @@ static_assert(sizeof(UInterchangeIESTranslator) == 0x000040, "Wrong size on UInt
 class UInterchangeImageWrapperTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AC3[0x10];                                    // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1430,7 +1470,7 @@ static_assert(sizeof(UInterchangeImageWrapperTranslator) == 0x000048, "Wrong siz
 class UInterchangeJPGTranslator final : public UInterchangeTranslatorBase
 {
 public:
-	uint8                                         Pad_2AC4[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1444,46 +1484,6 @@ public:
 };
 static_assert(alignof(UInterchangeJPGTranslator) == 0x000008, "Wrong alignment on UInterchangeJPGTranslator");
 static_assert(sizeof(UInterchangeJPGTranslator) == 0x000040, "Wrong size on UInterchangeJPGTranslator");
-
-// Class InterchangeImport.InterchangePCXTranslator
-// 0x0008 (0x0040 - 0x0038)
-class UInterchangePCXTranslator final : public UInterchangeTranslatorBase
-{
-public:
-	uint8                                         Pad_2AC5[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangePCXTranslator">();
-	}
-	static class UInterchangePCXTranslator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangePCXTranslator>();
-	}
-};
-static_assert(alignof(UInterchangePCXTranslator) == 0x000008, "Wrong alignment on UInterchangePCXTranslator");
-static_assert(sizeof(UInterchangePCXTranslator) == 0x000040, "Wrong size on UInterchangePCXTranslator");
-
-// Class InterchangeImport.InterchangePSDTranslator
-// 0x0008 (0x0040 - 0x0038)
-class UInterchangePSDTranslator final : public UInterchangeTranslatorBase
-{
-public:
-	uint8                                         Pad_2AC6[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangePSDTranslator">();
-	}
-	static class UInterchangePSDTranslator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangePSDTranslator>();
-	}
-};
-static_assert(alignof(UInterchangePSDTranslator) == 0x000008, "Wrong alignment on UInterchangePSDTranslator");
-static_assert(sizeof(UInterchangePSDTranslator) == 0x000040, "Wrong size on UInterchangePSDTranslator");
 
 }
 

@@ -51,7 +51,7 @@ class ULoadingScreenSettings final : public UDeveloperSettings
 {
 public:
 	bool                                          bPreloadBackgroundImages;                          // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A8F[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AB6[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FALoadingScreenSettings                StartupLoadingScreen;                              // 0x0040(0x04E0)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FALoadingScreenSettings                DefaultLoadingScreen;                              // 0x0520(0x04E0)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FClassicLayoutSettings                 Classic;                                           // 0x0A00(0x00F0)(Edit, Config, NativeAccessSpecifierPublic)

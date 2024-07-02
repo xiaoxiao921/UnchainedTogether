@@ -54,7 +54,7 @@ public:
 	double                                        Total;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   PreviousMaillon;                                   // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE3[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1739[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -62,7 +62,7 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE4[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173A[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Vector_Distance_ReturnValue;              // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Add_DoubleDouble_ReturnValue;             // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -91,10 +91,10 @@ struct BP_CosmeticChain_C_DetectDesyncWithTrueChain final
 public:
 	double                                        MaillonAlpha;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Desync;                                            // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE5[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173B[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE6[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173C[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue_1;           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -108,16 +108,16 @@ public:
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_Gamestate_C>      K2Node_DynamicCast_AsBPI_Gamestate;                // 0x0088(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE7[0x7];                                     // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173D[0x7];                                     // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          CallFunc_GetPawnArray_Array;                       // 0x00A0(0x0010)(ReferenceParm)
 	struct FHitResult                             CallFunc_SphereTraceSingle_OutHit;                 // 0x00B0(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	bool                                          CallFunc_SphereTraceSingle_ReturnValue;            // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BreakHitResult_bBlockingHit;              // 0x0199(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BreakHitResult_bInitialOverlap;           // 0x019A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE8[0x1];                                     // 0x019B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173E[0x1];                                     // 0x019B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_BreakHitResult_Time;                      // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakHitResult_Distance;                  // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE9[0x4];                                     // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_173F[0x4];                                     // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_BreakHitResult_Location;                  // 0x01A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakHitResult_ImpactPoint;               // 0x01C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakHitResult_Normal;                    // 0x01D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -130,7 +130,7 @@ public:
 	int32                                         CallFunc_BreakHitResult_HitItem;                   // 0x0230(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_BreakHitResult_ElementIndex;              // 0x0234(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_BreakHitResult_FaceIndex;                 // 0x0238(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEA[0x4];                                     // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1740[0x4];                                     // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_BreakHitResult_TraceStart;                // 0x0240(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakHitResult_TraceEnd;                  // 0x0258(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECollisionResponse                            CallFunc_GetCollisionResponseToChannel_ReturnValue; // 0x0270(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -191,151 +191,159 @@ static_assert(sizeof(BP_CosmeticChain_C_Dissolve) == 0x000004, "Wrong size on BP
 static_assert(offsetof(BP_CosmeticChain_C_Dissolve, TL_Rate) == 0x000000, "Member 'BP_CosmeticChain_C_Dissolve::TL_Rate' has a wrong offset!");
 
 // Function BP_CosmeticChain.BP_CosmeticChain_C.ExecuteUbergraph_BP_CosmeticChain
-// 0x03B8 (0x03B8 - 0x0000)
+// 0x03E8 (0x03E8 - 0x0000)
 struct BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1741[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Lerp_ReturnValue;                         // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEC[0x2];                                     // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DED[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment;         // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEE[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp;                   // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment_1;       // 0x0060(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEF[0x7];                                     // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0078(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp_1;                 // 0x0090(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetActorLocation_SweepHitResult;       // 0x0098(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_K2_SetActorLocation_ReturnValue;          // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF0[0x7];                                     // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x0188(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue;           // 0x01A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x01BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF1[0x3];                                     // 0x01BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x01C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF2[0x3];                                     // 0x01C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF3[0x4];                                     // 0x01D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x01D8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x01E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x01E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x01E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF4[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_CustomEvent_TL_Rate;                        // 0x01F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x01F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF5[0x4];                                     // 0x01FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0200(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_2;                         // 0x0208(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0210(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0214(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF6[0x3];                                     // 0x0215(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_3;                         // 0x0218(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF7[0x7];                                     // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_2;    // 0x0228(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_4;                         // 0x0240(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_3;    // 0x0248(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0260(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0264(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF8[0x3];                                     // 0x0265(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DF9[0x4];                                     // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_Array_Get_Item_5;                         // 0x0270(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x0288(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFA[0x7];                                     // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_VLerp_ReturnValue;                        // 0x0290(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x02A8(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x0390(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFB[0x4];                                     // 0x0394(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_6;                         // 0x0398(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x03A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFC[0x7];                                     // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Lerp_Alpha_ImplicitCast;                  // 0x03A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetScalarParameterValue_Value_ImplicitCast; // 0x03B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0020(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0030(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue_1;        // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1742[0x3];                                     // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1743[0x3];                                     // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1744[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment;         // 0x0078(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1745[0x7];                                     // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp;                   // 0x0090(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment_1;       // 0x0098(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1746[0x7];                                     // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp_1;                 // 0x00B0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x00B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetActorLocation_SweepHitResult;       // 0x00D0(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_K2_SetActorLocation_ReturnValue;          // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1747[0x7];                                     // 0x01B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x01C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue;           // 0x01D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1748[0x7];                                     // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x01F8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0200(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0204(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0208(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0210(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_CustomEvent_TL_Rate;                        // 0x021C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0224(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1749[0x3];                                     // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174A[0x4];                                     // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_2;                         // 0x0230(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0238(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x023C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174B[0x3];                                     // 0x023D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x0240(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0244(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174C[0x3];                                     // 0x0245(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0248(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174D[0x4];                                     // 0x024C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_3;                         // 0x0250(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0258(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174E[0x7];                                     // 0x0259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_2;    // 0x0260(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_4;                         // 0x0278(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_3;    // 0x0280(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x029C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174F[0x3];                                     // 0x029D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x02A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1750[0x4];                                     // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_Array_Get_Item_5;                         // 0x02A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_VLerp_ReturnValue;                        // 0x02C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x02D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1751[0x7];                                     // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x02E0(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_6;                         // 0x03C8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x03D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x03D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1752[0x3];                                     // 0x03D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Lerp_Alpha_ImplicitCast;                  // 0x03D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetScalarParameterValue_Value_ImplicitCast; // 0x03E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain) == 0x000008, "Wrong alignment on BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain");
-static_assert(sizeof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain) == 0x0003B8, "Wrong size on BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain");
+static_assert(sizeof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain) == 0x0003E8, "Wrong size on BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain");
 static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, EntryPoint) == 0x000000, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Lerp_ReturnValue) == 0x000008, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Lerp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_bool_Has_Been_Initd_Variable) == 0x000010, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_bool_IsClosed_Variable) == 0x000011, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable) == 0x000014, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue) == 0x000018, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable) == 0x00001C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_1) == 0x000020, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_1) == 0x000024, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_1) == 0x000028, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_2) == 0x00002C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_2) == 0x000030, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_2) == 0x000034, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_3) == 0x000038, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_AsBPI_Chain_Attachment) == 0x000040, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_AsBPI_Chain_Attachment' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_GetCosmeticSocket_Comp) == 0x000058, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_GetCosmeticSocket_Comp' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_AsBPI_Chain_Attachment_1) == 0x000060, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_AsBPI_Chain_Attachment_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_bSuccess_1) == 0x000070, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x000078, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_GetCosmeticSocket_Comp_1) == 0x000090, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_GetCosmeticSocket_Comp_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorLocation_SweepHitResult) == 0x000098, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorLocation_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorLocation_ReturnValue) == 0x000180, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_1) == 0x000188, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_FindLookAtRotation_ReturnValue) == 0x0001A0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_FindLookAtRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue) == 0x0001B8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorRotation_ReturnValue) == 0x0001BC, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_3) == 0x0001C0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_Event_DeltaSeconds) == 0x0001C4, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue) == 0x0001C8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_3) == 0x0001CC, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_4) == 0x0001D0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item) == 0x0001D8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_4) == 0x0001E0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_1) == 0x0001E4, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x0001E8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_1) == 0x0001F0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_CustomEvent_TL_Rate) == 0x0001F4, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_CustomEvent_TL_Rate' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_4) == 0x0001F8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_1) == 0x000200, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_2) == 0x000208, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_2) == 0x000210, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_2) == 0x000214, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_3) == 0x000218, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_IsValid_ReturnValue) == 0x000220, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_2) == 0x000228, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_4) == 0x000240, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_3) == 0x000248, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_3) == 0x000260, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_3) == 0x000264, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Add_ReturnValue) == 0x000268, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_5) == 0x000270, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_5' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_IsPlaying_ReturnValue) == 0x000288, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_IsPlaying_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_VLerp_ReturnValue) == 0x000290, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_VLerp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetWorldLocation_SweepHitResult) == 0x0002A8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetWorldLocation_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_4) == 0x000390, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_6) == 0x000398, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_6' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_4) == 0x0003A0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Lerp_Alpha_ImplicitCast) == 0x0003A8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Lerp_Alpha_ImplicitCast' has a wrong offset!");
-static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_SetScalarParameterValue_Value_ImplicitCast) == 0x0003B0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_SetScalarParameterValue_Value_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_CreateDelegate_OutputDelegate) == 0x000010, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_CreateDelegate_OutputDelegate_1) == 0x000020, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetTimerDelegate_ReturnValue) == 0x000030, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetTimerDelegate_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetTimerDelegate_ReturnValue_1) == 0x000038, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetTimerDelegate_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_bool_Has_Been_Initd_Variable) == 0x000040, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable) == 0x000044, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable) == 0x000048, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue) == 0x00004C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_1) == 0x000050, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_bool_IsClosed_Variable) == 0x000054, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_1) == 0x000058, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_1) == 0x00005C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_2) == 0x000060, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_3) == 0x000064, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_2) == 0x000068, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_2) == 0x00006C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Array_Index_Variable_4) == 0x000070, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Array_Index_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_AsBPI_Chain_Attachment) == 0x000078, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_AsBPI_Chain_Attachment' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_bSuccess) == 0x000088, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_GetCosmeticSocket_Comp) == 0x000090, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_GetCosmeticSocket_Comp' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_AsBPI_Chain_Attachment_1) == 0x000098, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_AsBPI_Chain_Attachment_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_DynamicCast_bSuccess_1) == 0x0000A8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_GetCosmeticSocket_Comp_1) == 0x0000B0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_GetCosmeticSocket_Comp_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x0000B8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorLocation_SweepHitResult) == 0x0000D0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorLocation_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorLocation_ReturnValue) == 0x0001B8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_1) == 0x0001C0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_FindLookAtRotation_ReturnValue) == 0x0001D8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_FindLookAtRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetActorRotation_ReturnValue) == 0x0001F0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetActorRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item) == 0x0001F8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue) == 0x000200, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_Event_DeltaSeconds) == 0x000204, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000208, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_1) == 0x000210, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_1) == 0x000218, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, K2Node_CustomEvent_TL_Rate) == 0x00021C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::K2Node_CustomEvent_TL_Rate' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_3) == 0x000220, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue) == 0x000224, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_3) == 0x000228, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_2) == 0x000230, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_2) == 0x000238, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_1) == 0x00023C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, Temp_int_Loop_Counter_Variable_4) == 0x000240, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_2) == 0x000244, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Add_IntInt_ReturnValue_4) == 0x000248, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_3) == 0x000250, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_IsValid_ReturnValue) == 0x000258, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_2) == 0x000260, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_4) == 0x000278, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_GetComponentLocation_ReturnValue_3) == 0x000280, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_GetComponentLocation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_3) == 0x000298, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_3) == 0x00029C, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Add_ReturnValue) == 0x0002A0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_5) == 0x0002A8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_5' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_VLerp_ReturnValue) == 0x0002C0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_VLerp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_IsPlaying_ReturnValue) == 0x0002D8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_IsPlaying_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_K2_SetWorldLocation_SweepHitResult) == 0x0002E0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_K2_SetWorldLocation_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Get_Item_6) == 0x0003C8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Get_Item_6' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Array_Length_ReturnValue_4) == 0x0003D0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Less_IntInt_ReturnValue_4) == 0x0003D4, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_Lerp_Alpha_ImplicitCast) == 0x0003D8, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_Lerp_Alpha_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain, CallFunc_SetScalarParameterValue_Value_ImplicitCast) == 0x0003E0, "Member 'BP_CosmeticChain_C_ExecuteUbergraph_BP_CosmeticChain::CallFunc_SetScalarParameterValue_Value_ImplicitCast' has a wrong offset!");
 
 // Function BP_CosmeticChain.BP_CosmeticChain_C.Pulling
 // 0x0098 (0x0098 - 0x0000)
@@ -345,7 +353,7 @@ public:
 	TScriptInterface<class IBPI_Character_C>      K2Node_DynamicCast_AsBPI_Character;                // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFD[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1753[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_GetHandLocation_Location;                 // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -353,7 +361,7 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFE[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1754[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_GetDirectionUnitVector_ReturnValue;       // 0x0068(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x0080(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -394,7 +402,7 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DFF[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1755[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -403,46 +411,46 @@ public:
 	int32                                         Temp_int_Variable;                                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E00[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1756[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UPhysicsConstraintComponent*>    CallFunc_K2_GetComponentsByClass_ReturnValue;      // 0x0038(0x0010)(ReferenceParm, ContainsInstancedReference)
 	class UPhysicsConstraintComponent*            CallFunc_Array_Get_Item;                           // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Max_ReturnValue;                          // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E01[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1757[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_2;            // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Max_ReturnValue_1;                        // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E02[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1758[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPhysicsConstraintComponent*            CallFunc_AddConstraint_ReturnValue;                // 0x0078(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_2;                         // 0x0080(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UPhysicsConstraintComponent*            CallFunc_AddConstraint_ReturnValue_1;              // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E03[0x4];                                     // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1759[0x4];                                     // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_3;                         // 0x0098(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_4;                         // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UPhysicsConstraintComponent*            CallFunc_AddConstraint_ReturnValue_2;              // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E04[0x3];                                     // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175A[0x3];                                     // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_3;            // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue_1;        // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E05[0x7];                                     // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175B[0x7];                                     // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Multiply_IntFloat_ReturnValue;            // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x00D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Multiply_IntFloat_ReturnValue_1;          // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FHitResult                             CallFunc_K2_SetRelativeLocation_SweepHitResult;    // 0x00F8(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	struct FVector                                CallFunc_MakeVector_ReturnValue_1;                 // 0x01E0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E06[0x8];                                     // 0x01F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175C[0x8];                                     // 0x01F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0200(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_4;            // 0x0260(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E07[0x4];                                     // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175D[0x4];                                     // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   CallFunc_AddComponent_ReturnValue;                 // 0x0268(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0270(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E08[0x3];                                     // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175E[0x3];                                     // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0274(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_CosmeticChain_C_SpawnChainsAndConstraints) == 0x000010, "Wrong alignment on BP_CosmeticChain_C_SpawnChainsAndConstraints");
@@ -523,11 +531,11 @@ public:
 	TArray<class UStaticMeshComponent*>           Array;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 	double                                        MaillonAlpha;                                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E09[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_175F[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0A[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1760[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -554,7 +562,7 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0B[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1761[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_CalculateDistance_Distance;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -577,14 +585,14 @@ struct BP_CosmeticChain_C_UpdateSocketsLocation final
 public:
 	TScriptInterface<class IBPI_Character_C>      K2Node_DynamicCast_AsBPI_Character;                // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0C[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1762[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IBPI_Character_C>      K2Node_DynamicCast_AsBPI_Character_1;              // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0D[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1763[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment;         // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0E[0x6];                                     // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1764[0x6];                                     // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp;                   // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue;       // 0x0050(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_GetVelocity_ReturnValue;                  // 0x00B0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -596,17 +604,17 @@ public:
 	double                                        CallFunc_BreakVector_Z;                            // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x0129(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0F[0x6];                                     // 0x012A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1765[0x6];                                     // 0x012A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IBPI_ChainAttachment_C> K2Node_DynamicCast_AsBPI_Chain_Attachment_1;       // 0x0130(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E10[0x7];                                     // 0x0141(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1766[0x7];                                     // 0x0141(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_GetVelocity_ReturnValue_1;                // 0x0148(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UPrimitiveComponent*                    CallFunc_GetCosmeticSocket_Comp_1;                 // 0x0160(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_X_1;                          // 0x0168(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_Y_1;                          // 0x0170(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_Z_1;                          // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_DoubleDouble_ReturnValue_1;          // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E11[0xF];                                     // 0x0181(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1767[0xF];                                     // 0x0181(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue_1;     // 0x0190(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakTransform_Location_1;                // 0x01F0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation_1;                // 0x0208(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -618,7 +626,7 @@ public:
 	struct FVector                                CallFunc_VInterpTo_ReturnValue;                    // 0x0268(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_SelectVector_ReturnValue;                 // 0x0280(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E12[0x4];                                     // 0x029C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1768[0x4];                                     // 0x029C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x02A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x02B8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_VInterpTo_ReturnValue_1;                  // 0x02C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

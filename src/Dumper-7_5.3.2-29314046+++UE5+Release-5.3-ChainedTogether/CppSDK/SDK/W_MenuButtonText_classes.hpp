@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Buttons_E_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Buttons_E_structs.hpp"
 #include "UMG_classes.hpp"
 
 

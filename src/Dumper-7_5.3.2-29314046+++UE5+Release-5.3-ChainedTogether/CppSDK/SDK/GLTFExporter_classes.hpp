@@ -36,7 +36,7 @@ public:
 	EGLTFMaterialBakeSizePOT                      DefaultMaterialBakeSize;                           // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextureFilter                                DefaultMaterialBakeFilter;                         // 0x0035(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextureAddress                               DefaultMaterialBakeTiling;                         // 0x0036(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_262B[0x1];                                     // 0x0037(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2624[0x1];                                     // 0x0037(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<EGLTFMaterialPropertyGroup, struct FGLTFOverrideMaterialBakeSettings> DefaultInputBakeSettings;                          // 0x0038(0x0050)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
 	int32                                         DefaultLevelOfDetail;                              // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bExportVertexColors;                               // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -45,7 +45,7 @@ public:
 	bool                                          bExportLevelSequences;                             // 0x008F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bExportAnimationSequences;                         // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGLTFTextureImageFormat                       TextureImageFormat;                                // 0x0091(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_262C[0x2];                                     // 0x0092(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2625[0x2];                                     // 0x0092(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TextureImageQuality;                               // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bExportTextureTransforms;                          // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAdjustNormalmaps;                                 // 0x0099(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -53,7 +53,7 @@ public:
 	bool                                          bExportLights;                                     // 0x009B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bExportCameras;                                    // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGLTFMaterialVariantMode                      ExportMaterialVariants;                            // 0x009D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_262D[0x2];                                     // 0x009E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2626[0x2];                                     // 0x009E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ResetToDefault();
@@ -246,7 +246,7 @@ public:
 	EGLTFMaterialBakeSizePOT                      DefaultMaterialBakeSize;                           // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextureFilter                                DefaultMaterialBakeFilter;                         // 0x002A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextureAddress                               DefaultMaterialBakeTiling;                         // 0x002B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_262F[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2628[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<EGLTFMaterialPropertyGroup, struct FGLTFOverrideMaterialBakeSettings> DefaultInputBakeSettings;                          // 0x0030(0x0050)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
 
 public:
@@ -277,7 +277,7 @@ class UGLTFMaterialExportOptions final : public UAssetUserData
 public:
 	class UMaterialInterface*                     Proxy;                                             // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGLTFOverrideMaterialBakeSettings      Default;                                           // 0x0030(0x0006)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2630[0x2];                                     // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2629[0x2];                                     // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<EGLTFMaterialPropertyGroup, struct FGLTFOverrideMaterialBakeSettings> Inputs;                                            // 0x0038(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
 #include "DataflowCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "GeometryCollectionEngine_structs.hpp"
 #include "FractureEngine_structs.hpp"
 
@@ -356,18 +356,21 @@ enum class ESelectSubjectTypeEnum : uint8
 	Dataflow_Max                             = 3,
 };
 
-// ScriptStruct GeometryCollectionNodes.ArcCosDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FArcCosDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.NormalizeDataflowNode
+// 0x0038 (0x0120 - 0x00E8)
+struct FNormalizeDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorA;                                           // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Tolerance;                                         // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CAD[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0108(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FArcCosDataflowNode) == 0x000008, "Wrong alignment on FArcCosDataflowNode");
-static_assert(sizeof(FArcCosDataflowNode) == 0x0000F0, "Wrong size on FArcCosDataflowNode");
-static_assert(offsetof(FArcCosDataflowNode, Float) == 0x0000E8, "Member 'FArcCosDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FArcCosDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcCosDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FNormalizeDataflowNode) == 0x000008, "Wrong alignment on FNormalizeDataflowNode");
+static_assert(sizeof(FNormalizeDataflowNode) == 0x000120, "Wrong size on FNormalizeDataflowNode");
+static_assert(offsetof(FNormalizeDataflowNode, VectorA) == 0x0000E8, "Member 'FNormalizeDataflowNode::VectorA' has a wrong offset!");
+static_assert(offsetof(FNormalizeDataflowNode, Tolerance) == 0x000100, "Member 'FNormalizeDataflowNode::Tolerance' has a wrong offset!");
+static_assert(offsetof(FNormalizeDataflowNode, ReturnValue) == 0x000108, "Member 'FNormalizeDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.GetFloatArrayElementDataflowNode
 // 0x0020 (0x0108 - 0x00E8)
@@ -375,10 +378,10 @@ struct FGetFloatArrayElementDataflowNode final : public FDataflowNode
 {
 public:
 	int32                                         Index;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CBE[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CAE[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FloatArray;                                        // 0x00F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         FloatValue;                                        // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CBF[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CAF[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetFloatArrayElementDataflowNode) == 0x000008, "Wrong alignment on FGetFloatArrayElementDataflowNode");
 static_assert(sizeof(FGetFloatArrayElementDataflowNode) == 0x000108, "Wrong size on FGetFloatArrayElementDataflowNode");
@@ -392,7 +395,7 @@ struct FFloatArrayToIntArrayDataflowNode final : public FDataflowNode
 {
 public:
 	EFloatArrayToIntArrayFunctionEnum             Function;                                          // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC0[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB0[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FloatArray;                                        // 0x00F0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 IntArray;                                          // 0x0100(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -402,21 +405,18 @@ static_assert(offsetof(FFloatArrayToIntArrayDataflowNode, Function) == 0x0000E8,
 static_assert(offsetof(FFloatArrayToIntArrayDataflowNode, FloatArray) == 0x0000F0, "Member 'FFloatArrayToIntArrayDataflowNode::FloatArray' has a wrong offset!");
 static_assert(offsetof(FFloatArrayToIntArrayDataflowNode, IntArray) == 0x000100, "Member 'FFloatArrayToIntArrayDataflowNode::IntArray' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.DistanceDataflowNode
-// 0x0038 (0x0120 - 0x00E8)
-struct FDistanceDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ArcTanDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FArcTanDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                PointA;                                            // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                PointB;                                            // 0x0100(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC1[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FDistanceDataflowNode) == 0x000008, "Wrong alignment on FDistanceDataflowNode");
-static_assert(sizeof(FDistanceDataflowNode) == 0x000120, "Wrong size on FDistanceDataflowNode");
-static_assert(offsetof(FDistanceDataflowNode, PointA) == 0x0000E8, "Member 'FDistanceDataflowNode::PointA' has a wrong offset!");
-static_assert(offsetof(FDistanceDataflowNode, PointB) == 0x000100, "Member 'FDistanceDataflowNode::PointB' has a wrong offset!");
-static_assert(offsetof(FDistanceDataflowNode, ReturnValue) == 0x000118, "Member 'FDistanceDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FArcTanDataflowNode) == 0x000008, "Wrong alignment on FArcTanDataflowNode");
+static_assert(sizeof(FArcTanDataflowNode) == 0x0000F0, "Wrong size on FArcTanDataflowNode");
+static_assert(offsetof(FArcTanDataflowNode, Float) == 0x0000E8, "Member 'FArcTanDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FArcTanDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcTanDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.GetArrayElementDataflowNode
 // 0x0030 (0x0118 - 0x00E8)
@@ -424,7 +424,7 @@ struct FGetArrayElementDataflowNode final : public FDataflowNode
 {
 public:
 	int32                                         Index;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC2[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB1[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        Points;                                            // 0x00F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FVector                                Point;                                             // 0x0100(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -444,7 +444,7 @@ public:
 	TArray<struct FVector>                        Points;                                            // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FVector3f>                      Vector3fArray;                                     // 0x0118(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumElements;                                       // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC3[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB2[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetNumArrayElementsDataflowNode) == 0x000008, "Wrong alignment on FGetNumArrayElementsDataflowNode");
 static_assert(sizeof(FGetNumArrayElementsDataflowNode) == 0x000130, "Wrong size on FGetNumArrayElementsDataflowNode");
@@ -454,22 +454,18 @@ static_assert(offsetof(FGetNumArrayElementsDataflowNode, Points) == 0x000108, "M
 static_assert(offsetof(FGetNumArrayElementsDataflowNode, Vector3fArray) == 0x000118, "Member 'FGetNumArrayElementsDataflowNode::Vector3fArray' has a wrong offset!");
 static_assert(offsetof(FGetNumArrayElementsDataflowNode, NumElements) == 0x000128, "Member 'FGetNumArrayElementsDataflowNode::NumElements' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.NormalizeToRangeDataflowNode
-// 0x0010 (0x00F8 - 0x00E8)
-struct FNormalizeToRangeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.ExpDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FExpDataflowNode final : public FDataflowNode
 {
 public:
 	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RangeMin;                                          // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RangeMax;                                          // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FNormalizeToRangeDataflowNode) == 0x000008, "Wrong alignment on FNormalizeToRangeDataflowNode");
-static_assert(sizeof(FNormalizeToRangeDataflowNode) == 0x0000F8, "Wrong size on FNormalizeToRangeDataflowNode");
-static_assert(offsetof(FNormalizeToRangeDataflowNode, Float) == 0x0000E8, "Member 'FNormalizeToRangeDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FNormalizeToRangeDataflowNode, RangeMin) == 0x0000EC, "Member 'FNormalizeToRangeDataflowNode::RangeMin' has a wrong offset!");
-static_assert(offsetof(FNormalizeToRangeDataflowNode, RangeMax) == 0x0000F0, "Member 'FNormalizeToRangeDataflowNode::RangeMax' has a wrong offset!");
-static_assert(offsetof(FNormalizeToRangeDataflowNode, ReturnValue) == 0x0000F4, "Member 'FNormalizeToRangeDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FExpDataflowNode) == 0x000008, "Wrong alignment on FExpDataflowNode");
+static_assert(sizeof(FExpDataflowNode) == 0x0000F0, "Wrong size on FExpDataflowNode");
+static_assert(offsetof(FExpDataflowNode, Float) == 0x0000E8, "Member 'FExpDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FExpDataflowNode, ReturnValue) == 0x0000EC, "Member 'FExpDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.BoolArrayToFaceSelectionDataflowNode
 // 0x0030 (0x0118 - 0x00E8)
@@ -491,7 +487,7 @@ struct FFloatArrayToVertexSelectionDataflowNode final : public FDataflowNode
 public:
 	TArray<float>                                 FloatArray;                                        // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	ECompareOperation1Enum                        Operation;                                         // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC4[0x3];                                     // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB3[0x3];                                     // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Threshold;                                         // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0100(0x0020)(NativeAccessSpecifierPublic)
 };
@@ -501,19 +497,6 @@ static_assert(offsetof(FFloatArrayToVertexSelectionDataflowNode, FloatArray) == 
 static_assert(offsetof(FFloatArrayToVertexSelectionDataflowNode, Operation) == 0x0000F8, "Member 'FFloatArrayToVertexSelectionDataflowNode::Operation' has a wrong offset!");
 static_assert(offsetof(FFloatArrayToVertexSelectionDataflowNode, Threshold) == 0x0000FC, "Member 'FFloatArrayToVertexSelectionDataflowNode::Threshold' has a wrong offset!");
 static_assert(offsetof(FFloatArrayToVertexSelectionDataflowNode, VertexSelection) == 0x000100, "Member 'FFloatArrayToVertexSelectionDataflowNode::VertexSelection' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.ArcSinDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FArcSinDataflowNode final : public FDataflowNode
-{
-public:
-	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FArcSinDataflowNode) == 0x000008, "Wrong alignment on FArcSinDataflowNode");
-static_assert(sizeof(FArcSinDataflowNode) == 0x0000F0, "Wrong size on FArcSinDataflowNode");
-static_assert(offsetof(FArcSinDataflowNode, Float) == 0x0000E8, "Member 'FArcSinDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FArcSinDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcSinDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.FloatArrayNormalizeDataflowNode
 // 0x0048 (0x0130 - 0x00E8)
@@ -542,7 +525,7 @@ public:
 	TArray<struct FVector>                        InVectorArray;                                     // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               Selection;                                         // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC5[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB4[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        OutVectorArray;                                    // 0x0120(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FVectorArrayNormalizeDataflowNode) == 0x000008, "Wrong alignment on FVectorArrayNormalizeDataflowNode");
@@ -551,6 +534,19 @@ static_assert(offsetof(FVectorArrayNormalizeDataflowNode, InVectorArray) == 0x00
 static_assert(offsetof(FVectorArrayNormalizeDataflowNode, Selection) == 0x0000F8, "Member 'FVectorArrayNormalizeDataflowNode::Selection' has a wrong offset!");
 static_assert(offsetof(FVectorArrayNormalizeDataflowNode, Magnitude) == 0x000118, "Member 'FVectorArrayNormalizeDataflowNode::Magnitude' has a wrong offset!");
 static_assert(offsetof(FVectorArrayNormalizeDataflowNode, OutVectorArray) == 0x000120, "Member 'FVectorArrayNormalizeDataflowNode::OutVectorArray' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.RadiansToDegreesDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FRadiansToDegreesDataflowNode final : public FDataflowNode
+{
+public:
+	float                                         Radians;                                           // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Degrees;                                           // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRadiansToDegreesDataflowNode) == 0x000008, "Wrong alignment on FRadiansToDegreesDataflowNode");
+static_assert(sizeof(FRadiansToDegreesDataflowNode) == 0x0000F0, "Wrong size on FRadiansToDegreesDataflowNode");
+static_assert(offsetof(FRadiansToDegreesDataflowNode, Radians) == 0x0000E8, "Member 'FRadiansToDegreesDataflowNode::Radians' has a wrong offset!");
+static_assert(offsetof(FRadiansToDegreesDataflowNode, Degrees) == 0x0000EC, "Member 'FRadiansToDegreesDataflowNode::Degrees' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.UnionIntArraysDataflowNode
 // 0x0030 (0x0118 - 0x00E8)
@@ -574,7 +570,7 @@ struct FRemoveFloatArrayElementDataflowNode final : public FDataflowNode
 public:
 	int32                                         Index;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPreserveOrder;                                    // 0x00EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC6[0x3];                                     // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB5[0x3];                                     // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FloatArray;                                        // 0x00F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRemoveFloatArrayElementDataflowNode) == 0x000008, "Wrong alignment on FRemoveFloatArrayElementDataflowNode");
@@ -582,20 +578,6 @@ static_assert(sizeof(FRemoveFloatArrayElementDataflowNode) == 0x000100, "Wrong s
 static_assert(offsetof(FRemoveFloatArrayElementDataflowNode, Index) == 0x0000E8, "Member 'FRemoveFloatArrayElementDataflowNode::Index' has a wrong offset!");
 static_assert(offsetof(FRemoveFloatArrayElementDataflowNode, bPreserveOrder) == 0x0000EC, "Member 'FRemoveFloatArrayElementDataflowNode::bPreserveOrder' has a wrong offset!");
 static_assert(offsetof(FRemoveFloatArrayElementDataflowNode, FloatArray) == 0x0000F0, "Member 'FRemoveFloatArrayElementDataflowNode::FloatArray' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.MathConstantsDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FMathConstantsDataflowNode final : public FDataflowNode
-{
-public:
-	EMathConstantsEnum                            Constant;                                          // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC7[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FMathConstantsDataflowNode) == 0x000008, "Wrong alignment on FMathConstantsDataflowNode");
-static_assert(sizeof(FMathConstantsDataflowNode) == 0x0000F0, "Wrong size on FMathConstantsDataflowNode");
-static_assert(offsetof(FMathConstantsDataflowNode, Constant) == 0x0000E8, "Member 'FMathConstantsDataflowNode::Constant' has a wrong offset!");
-static_assert(offsetof(FMathConstantsDataflowNode, ReturnValue) == 0x0000EC, "Member 'FMathConstantsDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.FloatArrayComputeStatisticsDataflowNode
 // 0x0048 (0x0130 - 0x00E8)
@@ -605,7 +587,7 @@ public:
 	TArray<float>                                 FloatArray;                                        // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	EStatisticsOperationEnum                      OperationName;                                     // 0x0118(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC8[0x3];                                     // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB6[0x3];                                     // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Value;                                             // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 Indices;                                           // 0x0120(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -656,6 +638,22 @@ static_assert(sizeof(FGetGeometryCollectionSourcesDataflowNode) == 0x000100, "Wr
 static_assert(offsetof(FGetGeometryCollectionSourcesDataflowNode, Asset) == 0x0000E8, "Member 'FGetGeometryCollectionSourcesDataflowNode::Asset' has a wrong offset!");
 static_assert(offsetof(FGetGeometryCollectionSourcesDataflowNode, Sources) == 0x0000F0, "Member 'FGetGeometryCollectionSourcesDataflowNode::Sources' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.RandomUnitVectorDataflowNode
+// 0x0020 (0x0108 - 0x00E8)
+struct FRandomUnitVectorDataflowNode final : public FDataflowNode
+{
+public:
+	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CB7[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x00F0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRandomUnitVectorDataflowNode) == 0x000008, "Wrong alignment on FRandomUnitVectorDataflowNode");
+static_assert(sizeof(FRandomUnitVectorDataflowNode) == 0x000108, "Wrong size on FRandomUnitVectorDataflowNode");
+static_assert(offsetof(FRandomUnitVectorDataflowNode, bDeterministic) == 0x0000E8, "Member 'FRandomUnitVectorDataflowNode::bDeterministic' has a wrong offset!");
+static_assert(offsetof(FRandomUnitVectorDataflowNode, RandomSeed) == 0x0000EC, "Member 'FRandomUnitVectorDataflowNode::RandomSeed' has a wrong offset!");
+static_assert(offsetof(FRandomUnitVectorDataflowNode, ReturnValue) == 0x0000F0, "Member 'FRandomUnitVectorDataflowNode::ReturnValue' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.CreateGeometryCollectionFromSourcesDataflowNode
 // 0x00E0 (0x01C8 - 0x00E8)
 struct FCreateGeometryCollectionFromSourcesDataflowNode final : public FDataflowNode
@@ -687,12 +685,12 @@ public:
 	float                                         MaxRange;                                          // 0x0158(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Default;                                           // 0x015C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowFieldFalloffType                     FalloffType;                                       // 0x0160(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC9[0x7];                                     // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB8[0x7];                                     // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x0168(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0178(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               FieldSelectionMask;                                // 0x0188(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCA[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CB9[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRadialFalloffFieldDataflowNode) == 0x000008, "Wrong alignment on FRadialFalloffFieldDataflowNode");
 static_assert(sizeof(FRadialFalloffFieldDataflowNode) == 0x0001B0, "Wrong size on FRadialFalloffFieldDataflowNode");
@@ -710,18 +708,23 @@ static_assert(offsetof(FRadialFalloffFieldDataflowNode, FieldRemap) == 0x000178,
 static_assert(offsetof(FRadialFalloffFieldDataflowNode, FieldSelectionMask) == 0x000188, "Member 'FRadialFalloffFieldDataflowNode::FieldSelectionMask' has a wrong offset!");
 static_assert(offsetof(FRadialFalloffFieldDataflowNode, NumSamplePositions) == 0x0001A8, "Member 'FRadialFalloffFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.RadiansToDegreesDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FRadiansToDegreesDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.StaticMeshToMeshDataflowNode
+// 0x0018 (0x0100 - 0x00E8)
+struct FStaticMeshToMeshDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         Radians;                                           // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Degrees;                                           // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            StaticMesh;                                        // 0x00E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseHiRes;                                         // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CBA[0x3];                                     // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LODLevel;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh;                                              // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FRadiansToDegreesDataflowNode) == 0x000008, "Wrong alignment on FRadiansToDegreesDataflowNode");
-static_assert(sizeof(FRadiansToDegreesDataflowNode) == 0x0000F0, "Wrong size on FRadiansToDegreesDataflowNode");
-static_assert(offsetof(FRadiansToDegreesDataflowNode, Radians) == 0x0000E8, "Member 'FRadiansToDegreesDataflowNode::Radians' has a wrong offset!");
-static_assert(offsetof(FRadiansToDegreesDataflowNode, Degrees) == 0x0000EC, "Member 'FRadiansToDegreesDataflowNode::Degrees' has a wrong offset!");
+static_assert(alignof(FStaticMeshToMeshDataflowNode) == 0x000008, "Wrong alignment on FStaticMeshToMeshDataflowNode");
+static_assert(sizeof(FStaticMeshToMeshDataflowNode) == 0x000100, "Wrong size on FStaticMeshToMeshDataflowNode");
+static_assert(offsetof(FStaticMeshToMeshDataflowNode, StaticMesh) == 0x0000E8, "Member 'FStaticMeshToMeshDataflowNode::StaticMesh' has a wrong offset!");
+static_assert(offsetof(FStaticMeshToMeshDataflowNode, bUseHiRes) == 0x0000F0, "Member 'FStaticMeshToMeshDataflowNode::bUseHiRes' has a wrong offset!");
+static_assert(offsetof(FStaticMeshToMeshDataflowNode, LODLevel) == 0x0000F4, "Member 'FStaticMeshToMeshDataflowNode::LODLevel' has a wrong offset!");
+static_assert(offsetof(FStaticMeshToMeshDataflowNode, Mesh) == 0x0000F8, "Member 'FStaticMeshToMeshDataflowNode::Mesh' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.BoxFalloffFieldDataflowNode
 // 0x0128 (0x0210 - 0x00E8)
@@ -737,12 +740,12 @@ public:
 	float                                         MaxRange;                                          // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Default;                                           // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowFieldFalloffType                     FalloffType;                                       // 0x01C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCB[0x7];                                     // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CBB[0x7];                                     // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x01C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x01D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               FieldSelectionMask;                                // 0x01E8(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0208(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCC[0x4];                                     // 0x020C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CBC[0x4];                                     // 0x020C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBoxFalloffFieldDataflowNode) == 0x000010, "Wrong alignment on FBoxFalloffFieldDataflowNode");
 static_assert(sizeof(FBoxFalloffFieldDataflowNode) == 0x000210, "Wrong size on FBoxFalloffFieldDataflowNode");
@@ -770,19 +773,19 @@ public:
 	struct FVector                                Position;                                          // 0x0118(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Normal;                                            // 0x0130(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Distance;                                          // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCD[0x4];                                     // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CBD[0x4];                                     // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Translation;                                       // 0x0150(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0168(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MinRange;                                          // 0x016C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxRange;                                          // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Default;                                           // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowFieldFalloffType                     FalloffType;                                       // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCE[0x7];                                     // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CBE[0x7];                                     // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x0180(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0190(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               FieldSelectionMask;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CCF[0x4];                                     // 0x01C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CBF[0x4];                                     // 0x01C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPlaneFalloffFieldDataflowNode) == 0x000008, "Wrong alignment on FPlaneFalloffFieldDataflowNode");
 static_assert(sizeof(FPlaneFalloffFieldDataflowNode) == 0x0001C8, "Wrong size on FPlaneFalloffFieldDataflowNode");
@@ -802,23 +805,19 @@ static_assert(offsetof(FPlaneFalloffFieldDataflowNode, FieldRemap) == 0x000190, 
 static_assert(offsetof(FPlaneFalloffFieldDataflowNode, FieldSelectionMask) == 0x0001A0, "Member 'FPlaneFalloffFieldDataflowNode::FieldSelectionMask' has a wrong offset!");
 static_assert(offsetof(FPlaneFalloffFieldDataflowNode, NumSamplePositions) == 0x0001C0, "Member 'FPlaneFalloffFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.MeshBooleanDataflowNode
-// 0x0020 (0x0108 - 0x00E8)
-struct FMeshBooleanDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MathConstantsDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FMathConstantsDataflowNode final : public FDataflowNode
 {
 public:
-	EMeshBooleanOperationEnum                     Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD0[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDynamicMesh*                           Mesh1;                                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           Mesh2;                                             // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           Mesh;                                              // 0x0100(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMathConstantsEnum                            Constant;                                          // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC0[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FMeshBooleanDataflowNode) == 0x000008, "Wrong alignment on FMeshBooleanDataflowNode");
-static_assert(sizeof(FMeshBooleanDataflowNode) == 0x000108, "Wrong size on FMeshBooleanDataflowNode");
-static_assert(offsetof(FMeshBooleanDataflowNode, Operation) == 0x0000E8, "Member 'FMeshBooleanDataflowNode::Operation' has a wrong offset!");
-static_assert(offsetof(FMeshBooleanDataflowNode, Mesh1) == 0x0000F0, "Member 'FMeshBooleanDataflowNode::Mesh1' has a wrong offset!");
-static_assert(offsetof(FMeshBooleanDataflowNode, Mesh2) == 0x0000F8, "Member 'FMeshBooleanDataflowNode::Mesh2' has a wrong offset!");
-static_assert(offsetof(FMeshBooleanDataflowNode, Mesh) == 0x000100, "Member 'FMeshBooleanDataflowNode::Mesh' has a wrong offset!");
+static_assert(alignof(FMathConstantsDataflowNode) == 0x000008, "Wrong alignment on FMathConstantsDataflowNode");
+static_assert(sizeof(FMathConstantsDataflowNode) == 0x0000F0, "Wrong size on FMathConstantsDataflowNode");
+static_assert(offsetof(FMathConstantsDataflowNode, Constant) == 0x0000E8, "Member 'FMathConstantsDataflowNode::Constant' has a wrong offset!");
+static_assert(offsetof(FMathConstantsDataflowNode, ReturnValue) == 0x0000EC, "Member 'FMathConstantsDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.RadialIntMaskFieldDataflowNode
 // 0x00A0 (0x0188 - 0x00E8)
@@ -832,11 +831,11 @@ public:
 	int32                                         InteriorValue;                                     // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ExteriorValue;                                     // 0x0154(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowSetMaskConditionType                 SetMaskConditionType;                              // 0x0158(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD1[0x7];                                     // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC1[0x7];                                     // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 FieldIntResult;                                    // 0x0160(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0170(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD2[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC2[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRadialIntMaskFieldDataflowNode) == 0x000008, "Wrong alignment on FRadialIntMaskFieldDataflowNode");
 static_assert(sizeof(FRadialIntMaskFieldDataflowNode) == 0x000188, "Wrong size on FRadialIntMaskFieldDataflowNode");
@@ -859,11 +858,11 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD3[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC3[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x0120(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD4[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC4[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUniformScalarFieldDataflowNode) == 0x000008, "Wrong alignment on FUniformScalarFieldDataflowNode");
 static_assert(sizeof(FUniformScalarFieldDataflowNode) == 0x000148, "Wrong size on FUniformScalarFieldDataflowNode");
@@ -874,21 +873,22 @@ static_assert(offsetof(FUniformScalarFieldDataflowNode, FieldFloatResult) == 0x0
 static_assert(offsetof(FUniformScalarFieldDataflowNode, FieldRemap) == 0x000130, "Member 'FUniformScalarFieldDataflowNode::FieldRemap' has a wrong offset!");
 static_assert(offsetof(FUniformScalarFieldDataflowNode, NumSamplePositions) == 0x000140, "Member 'FUniformScalarFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.BoxToMeshDataflowNode
-// 0x0048 (0x0130 - 0x00E8)
-struct FBoxToMeshDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.RandomFloatDataflowNode
+// 0x0010 (0x00F8 - 0x00E8)
+struct FRandomFloatDataflowNode final : public FDataflowNode
 {
 public:
-	struct FBox                                   Box;                                               // 0x00E8(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           Mesh;                                              // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TriangleCount;                                     // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD5[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC5[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC6[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FBoxToMeshDataflowNode) == 0x000008, "Wrong alignment on FBoxToMeshDataflowNode");
-static_assert(sizeof(FBoxToMeshDataflowNode) == 0x000130, "Wrong size on FBoxToMeshDataflowNode");
-static_assert(offsetof(FBoxToMeshDataflowNode, Box) == 0x0000E8, "Member 'FBoxToMeshDataflowNode::Box' has a wrong offset!");
-static_assert(offsetof(FBoxToMeshDataflowNode, Mesh) == 0x000120, "Member 'FBoxToMeshDataflowNode::Mesh' has a wrong offset!");
-static_assert(offsetof(FBoxToMeshDataflowNode, TriangleCount) == 0x000128, "Member 'FBoxToMeshDataflowNode::TriangleCount' has a wrong offset!");
+static_assert(alignof(FRandomFloatDataflowNode) == 0x000008, "Wrong alignment on FRandomFloatDataflowNode");
+static_assert(sizeof(FRandomFloatDataflowNode) == 0x0000F8, "Wrong size on FRandomFloatDataflowNode");
+static_assert(offsetof(FRandomFloatDataflowNode, bDeterministic) == 0x0000E8, "Member 'FRandomFloatDataflowNode::bDeterministic' has a wrong offset!");
+static_assert(offsetof(FRandomFloatDataflowNode, RandomSeed) == 0x0000EC, "Member 'FRandomFloatDataflowNode::RandomSeed' has a wrong offset!");
+static_assert(offsetof(FRandomFloatDataflowNode, ReturnValue) == 0x0000F0, "Member 'FRandomFloatDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.UniformVectorFieldDataflowNode
 // 0x0078 (0x0160 - 0x00E8)
@@ -898,12 +898,12 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD6[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC7[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Direction;                                         // 0x0120(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                        FieldVectorResult;                                 // 0x0138(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0148(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD7[0x4];                                     // 0x015C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC8[0x4];                                     // 0x015C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUniformVectorFieldDataflowNode) == 0x000008, "Wrong alignment on FUniformVectorFieldDataflowNode");
 static_assert(sizeof(FUniformVectorFieldDataflowNode) == 0x000160, "Wrong size on FUniformVectorFieldDataflowNode");
@@ -923,12 +923,12 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD8[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC9[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0120(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                        FieldVectorResult;                                 // 0x0138(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0148(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD9[0x4];                                     // 0x015C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CCA[0x4];                                     // 0x015C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRadialVectorFieldDataflowNode) == 0x000008, "Wrong alignment on FRadialVectorFieldDataflowNode");
 static_assert(sizeof(FRadialVectorFieldDataflowNode) == 0x000160, "Wrong size on FRadialVectorFieldDataflowNode");
@@ -940,21 +940,18 @@ static_assert(offsetof(FRadialVectorFieldDataflowNode, FieldVectorResult) == 0x0
 static_assert(offsetof(FRadialVectorFieldDataflowNode, FieldRemap) == 0x000148, "Member 'FRadialVectorFieldDataflowNode::FieldRemap' has a wrong offset!");
 static_assert(offsetof(FRadialVectorFieldDataflowNode, NumSamplePositions) == 0x000158, "Member 'FRadialVectorFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.RandomUnitVectorDataflowNode
-// 0x0020 (0x0108 - 0x00E8)
-struct FRandomUnitVectorDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MeshToCollectionDataflowNode
+// 0x00B8 (0x01A0 - 0x00E8)
+struct FMeshToCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDA[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x00F0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00F0(0x00B0)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FRandomUnitVectorDataflowNode) == 0x000008, "Wrong alignment on FRandomUnitVectorDataflowNode");
-static_assert(sizeof(FRandomUnitVectorDataflowNode) == 0x000108, "Wrong size on FRandomUnitVectorDataflowNode");
-static_assert(offsetof(FRandomUnitVectorDataflowNode, bDeterministic) == 0x0000E8, "Member 'FRandomUnitVectorDataflowNode::bDeterministic' has a wrong offset!");
-static_assert(offsetof(FRandomUnitVectorDataflowNode, RandomSeed) == 0x0000EC, "Member 'FRandomUnitVectorDataflowNode::RandomSeed' has a wrong offset!");
-static_assert(offsetof(FRandomUnitVectorDataflowNode, ReturnValue) == 0x0000F0, "Member 'FRandomUnitVectorDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FMeshToCollectionDataflowNode) == 0x000008, "Wrong alignment on FMeshToCollectionDataflowNode");
+static_assert(sizeof(FMeshToCollectionDataflowNode) == 0x0001A0, "Wrong size on FMeshToCollectionDataflowNode");
+static_assert(offsetof(FMeshToCollectionDataflowNode, Mesh) == 0x0000E8, "Member 'FMeshToCollectionDataflowNode::Mesh' has a wrong offset!");
+static_assert(offsetof(FMeshToCollectionDataflowNode, Collection) == 0x0000F0, "Member 'FMeshToCollectionDataflowNode::Collection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.RandomVectorFieldDataflowNode
 // 0x0060 (0x0148 - 0x00E8)
@@ -964,11 +961,11 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDB[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CCB[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        FieldVectorResult;                                 // 0x0120(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDC[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CCC[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRandomVectorFieldDataflowNode) == 0x000008, "Wrong alignment on FRandomVectorFieldDataflowNode");
 static_assert(sizeof(FRandomVectorFieldDataflowNode) == 0x000148, "Wrong size on FRandomVectorFieldDataflowNode");
@@ -992,7 +989,7 @@ public:
 	TArray<float>                                 FieldFloatResult;                                  // 0x0180(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0190(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDD[0xC];                                     // 0x01A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CCD[0xC];                                     // 0x01A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FNoiseFieldDataflowNode) == 0x000010, "Wrong alignment on FNoiseFieldDataflowNode");
 static_assert(sizeof(FNoiseFieldDataflowNode) == 0x0001B0, "Wrong size on FNoiseFieldDataflowNode");
@@ -1005,23 +1002,19 @@ static_assert(offsetof(FNoiseFieldDataflowNode, FieldFloatResult) == 0x000180, "
 static_assert(offsetof(FNoiseFieldDataflowNode, FieldRemap) == 0x000190, "Member 'FNoiseFieldDataflowNode::FieldRemap' has a wrong offset!");
 static_assert(offsetof(FNoiseFieldDataflowNode, NumSamplePositions) == 0x0001A0, "Member 'FNoiseFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.StaticMeshToMeshDataflowNode
+// ScriptStruct GeometryCollectionNodes.LogStringDataflowNode
 // 0x0018 (0x0100 - 0x00E8)
-struct FStaticMeshToMeshDataflowNode final : public FDataflowNode
+struct FLogStringDataflowNode final : public FDataflowNode
 {
 public:
-	class UStaticMesh*                            StaticMesh;                                        // 0x00E8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseHiRes;                                         // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDE[0x3];                                     // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LODLevel;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           Mesh;                                              // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrintToLog;                                       // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CCE[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 String;                                            // 0x00F0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FStaticMeshToMeshDataflowNode) == 0x000008, "Wrong alignment on FStaticMeshToMeshDataflowNode");
-static_assert(sizeof(FStaticMeshToMeshDataflowNode) == 0x000100, "Wrong size on FStaticMeshToMeshDataflowNode");
-static_assert(offsetof(FStaticMeshToMeshDataflowNode, StaticMesh) == 0x0000E8, "Member 'FStaticMeshToMeshDataflowNode::StaticMesh' has a wrong offset!");
-static_assert(offsetof(FStaticMeshToMeshDataflowNode, bUseHiRes) == 0x0000F0, "Member 'FStaticMeshToMeshDataflowNode::bUseHiRes' has a wrong offset!");
-static_assert(offsetof(FStaticMeshToMeshDataflowNode, LODLevel) == 0x0000F4, "Member 'FStaticMeshToMeshDataflowNode::LODLevel' has a wrong offset!");
-static_assert(offsetof(FStaticMeshToMeshDataflowNode, Mesh) == 0x0000F8, "Member 'FStaticMeshToMeshDataflowNode::Mesh' has a wrong offset!");
+static_assert(alignof(FLogStringDataflowNode) == 0x000008, "Wrong alignment on FLogStringDataflowNode");
+static_assert(sizeof(FLogStringDataflowNode) == 0x000100, "Wrong size on FLogStringDataflowNode");
+static_assert(offsetof(FLogStringDataflowNode, bPrintToLog) == 0x0000E8, "Member 'FLogStringDataflowNode::bPrintToLog' has a wrong offset!");
+static_assert(offsetof(FLogStringDataflowNode, String) == 0x0000F0, "Member 'FLogStringDataflowNode::String' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.UniformIntegerFieldDataflowNode
 // 0x0060 (0x0148 - 0x00E8)
@@ -1031,11 +1024,11 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CDF[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CCF[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 FieldIntResult;                                    // 0x0120(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE0[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD0[0x4];                                     // 0x0144(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUniformIntegerFieldDataflowNode) == 0x000008, "Wrong alignment on FUniformIntegerFieldDataflowNode");
 static_assert(sizeof(FUniformIntegerFieldDataflowNode) == 0x000148, "Wrong size on FUniformIntegerFieldDataflowNode");
@@ -1054,18 +1047,18 @@ public:
 	TArray<struct FVector3f>                      SamplePositions;                                   // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               SampleIndices;                                     // 0x00F8(0x0020)(NativeAccessSpecifierPublic)
 	float                                         Magnitude;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE1[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD1[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0120(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Translation;                                       // 0x0138(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Wavelength;                                        // 0x0150(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Period;                                            // 0x0154(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowWaveFunctionType                     FunctionType;                                      // 0x0158(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowFieldFalloffType                     FalloffType;                                       // 0x0159(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE2[0x6];                                     // 0x015A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD2[0x6];                                     // 0x015A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x0160(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0170(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumSamplePositions;                                // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE3[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD3[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWaveScalarFieldDataflowNode) == 0x000008, "Wrong alignment on FWaveScalarFieldDataflowNode");
 static_assert(sizeof(FWaveScalarFieldDataflowNode) == 0x000188, "Wrong size on FWaveScalarFieldDataflowNode");
@@ -1082,21 +1075,23 @@ static_assert(offsetof(FWaveScalarFieldDataflowNode, FieldFloatResult) == 0x0001
 static_assert(offsetof(FWaveScalarFieldDataflowNode, FieldRemap) == 0x000170, "Member 'FWaveScalarFieldDataflowNode::FieldRemap' has a wrong offset!");
 static_assert(offsetof(FWaveScalarFieldDataflowNode, NumSamplePositions) == 0x000180, "Member 'FWaveScalarFieldDataflowNode::NumSamplePositions' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetBoxLengthsDataflowNode
-// 0x0028 (0x0110 - 0x00E8)
-struct FGetBoxLengthsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MeshBooleanDataflowNode
+// 0x0020 (0x0108 - 0x00E8)
+struct FMeshBooleanDataflowNode final : public FDataflowNode
 {
 public:
-	TArray<struct FBox>                           Boxes;                                             // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 Lengths;                                           // 0x00F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	EBoxLengthMeasurementMethod                   MeasurementMethod;                                 // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE4[0x7];                                     // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EMeshBooleanOperationEnum                     Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CD4[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh1;                                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh2;                                             // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh;                                              // 0x0100(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGetBoxLengthsDataflowNode) == 0x000008, "Wrong alignment on FGetBoxLengthsDataflowNode");
-static_assert(sizeof(FGetBoxLengthsDataflowNode) == 0x000110, "Wrong size on FGetBoxLengthsDataflowNode");
-static_assert(offsetof(FGetBoxLengthsDataflowNode, Boxes) == 0x0000E8, "Member 'FGetBoxLengthsDataflowNode::Boxes' has a wrong offset!");
-static_assert(offsetof(FGetBoxLengthsDataflowNode, Lengths) == 0x0000F8, "Member 'FGetBoxLengthsDataflowNode::Lengths' has a wrong offset!");
-static_assert(offsetof(FGetBoxLengthsDataflowNode, MeasurementMethod) == 0x000108, "Member 'FGetBoxLengthsDataflowNode::MeasurementMethod' has a wrong offset!");
+static_assert(alignof(FMeshBooleanDataflowNode) == 0x000008, "Wrong alignment on FMeshBooleanDataflowNode");
+static_assert(sizeof(FMeshBooleanDataflowNode) == 0x000108, "Wrong size on FMeshBooleanDataflowNode");
+static_assert(offsetof(FMeshBooleanDataflowNode, Operation) == 0x0000E8, "Member 'FMeshBooleanDataflowNode::Operation' has a wrong offset!");
+static_assert(offsetof(FMeshBooleanDataflowNode, Mesh1) == 0x0000F0, "Member 'FMeshBooleanDataflowNode::Mesh1' has a wrong offset!");
+static_assert(offsetof(FMeshBooleanDataflowNode, Mesh2) == 0x0000F8, "Member 'FMeshBooleanDataflowNode::Mesh2' has a wrong offset!");
+static_assert(offsetof(FMeshBooleanDataflowNode, Mesh) == 0x000100, "Member 'FMeshBooleanDataflowNode::Mesh' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.SumScalarFieldDataflowNode
 // 0x0068 (0x0150 - 0x00E8)
@@ -1110,7 +1105,7 @@ public:
 	float                                         Magnitude;                                         // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowFloatFieldOperationType              Operation;                                         // 0x012C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSwapInputs;                                       // 0x012D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE5[0x2];                                     // 0x012E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD5[0x2];                                     // 0x012E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 FieldFloatResult;                                  // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0140(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -1140,7 +1135,7 @@ public:
 	float                                         Magnitude;                                         // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataflowVectorFieldOperationType             Operation;                                         // 0x014C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSwapVectorInputs;                                 // 0x014D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE6[0x2];                                     // 0x014E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD6[0x2];                                     // 0x014E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        FieldVectorResult;                                 // 0x0150(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 FieldRemap;                                        // 0x0160(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -1158,23 +1153,21 @@ static_assert(offsetof(FSumVectorFieldDataflowNode, bSwapVectorInputs) == 0x0001
 static_assert(offsetof(FSumVectorFieldDataflowNode, FieldVectorResult) == 0x000150, "Member 'FSumVectorFieldDataflowNode::FieldVectorResult' has a wrong offset!");
 static_assert(offsetof(FSumVectorFieldDataflowNode, FieldRemap) == 0x000160, "Member 'FSumVectorFieldDataflowNode::FieldRemap' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetMeshDataDataflowNode
-// 0x0018 (0x0100 - 0x00E8)
-struct FGetMeshDataDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.BoxToMeshDataflowNode
+// 0x0048 (0x0130 - 0x00E8)
+struct FBoxToMeshDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         VertexCount;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EdgeCount;                                         // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TriangleCount;                                     // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE7[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBox                                   Box;                                               // 0x00E8(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           Mesh;                                              // 0x0120(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TriangleCount;                                     // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CD7[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGetMeshDataDataflowNode) == 0x000008, "Wrong alignment on FGetMeshDataDataflowNode");
-static_assert(sizeof(FGetMeshDataDataflowNode) == 0x000100, "Wrong size on FGetMeshDataDataflowNode");
-static_assert(offsetof(FGetMeshDataDataflowNode, Mesh) == 0x0000E8, "Member 'FGetMeshDataDataflowNode::Mesh' has a wrong offset!");
-static_assert(offsetof(FGetMeshDataDataflowNode, VertexCount) == 0x0000F0, "Member 'FGetMeshDataDataflowNode::VertexCount' has a wrong offset!");
-static_assert(offsetof(FGetMeshDataDataflowNode, EdgeCount) == 0x0000F4, "Member 'FGetMeshDataDataflowNode::EdgeCount' has a wrong offset!");
-static_assert(offsetof(FGetMeshDataDataflowNode, TriangleCount) == 0x0000F8, "Member 'FGetMeshDataDataflowNode::TriangleCount' has a wrong offset!");
+static_assert(alignof(FBoxToMeshDataflowNode) == 0x000008, "Wrong alignment on FBoxToMeshDataflowNode");
+static_assert(sizeof(FBoxToMeshDataflowNode) == 0x000130, "Wrong size on FBoxToMeshDataflowNode");
+static_assert(offsetof(FBoxToMeshDataflowNode, Box) == 0x0000E8, "Member 'FBoxToMeshDataflowNode::Box' has a wrong offset!");
+static_assert(offsetof(FBoxToMeshDataflowNode, Mesh) == 0x000120, "Member 'FBoxToMeshDataflowNode::Mesh' has a wrong offset!");
+static_assert(offsetof(FBoxToMeshDataflowNode, TriangleCount) == 0x000128, "Member 'FBoxToMeshDataflowNode::TriangleCount' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.FieldMakeDenseFloatArrayDataflowNode
 // 0x0038 (0x0120 - 0x00E8)
@@ -1207,7 +1200,7 @@ public:
 	class UMaterial*                              InsideMaterial;                                    // 0x01D0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAssignOutsideMaterial;                            // 0x01D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAssignInsideMaterial;                             // 0x01D9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE8[0x6];                                     // 0x01DA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD8[0x6];                                     // 0x01DA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAddMaterialToCollectionDataflowNode) == 0x000008, "Wrong alignment on FAddMaterialToCollectionDataflowNode");
 static_assert(sizeof(FAddMaterialToCollectionDataflowNode) == 0x0001E0, "Wrong size on FAddMaterialToCollectionDataflowNode");
@@ -1219,18 +1212,22 @@ static_assert(offsetof(FAddMaterialToCollectionDataflowNode, InsideMaterial) == 
 static_assert(offsetof(FAddMaterialToCollectionDataflowNode, bAssignOutsideMaterial) == 0x0001D8, "Member 'FAddMaterialToCollectionDataflowNode::bAssignOutsideMaterial' has a wrong offset!");
 static_assert(offsetof(FAddMaterialToCollectionDataflowNode, bAssignInsideMaterial) == 0x0001D9, "Member 'FAddMaterialToCollectionDataflowNode::bAssignInsideMaterial' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.MeshToCollectionDataflowNode
-// 0x00B8 (0x01A0 - 0x00E8)
-struct FMeshToCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.AppendCollectionAssetsDataflowNode
+// 0x0180 (0x0268 - 0x00E8)
+struct FAppendCollectionAssetsDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FManagedArrayCollection                Collection;                                        // 0x00F0(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection1;                                       // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection2;                                       // 0x0198(0x00B0)(NativeAccessSpecifierPublic)
+	TArray<class FString>                         GeometryGroupGuidsOut1;                            // 0x0248(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         GeometryGroupGuidsOut2;                            // 0x0258(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FMeshToCollectionDataflowNode) == 0x000008, "Wrong alignment on FMeshToCollectionDataflowNode");
-static_assert(sizeof(FMeshToCollectionDataflowNode) == 0x0001A0, "Wrong size on FMeshToCollectionDataflowNode");
-static_assert(offsetof(FMeshToCollectionDataflowNode, Mesh) == 0x0000E8, "Member 'FMeshToCollectionDataflowNode::Mesh' has a wrong offset!");
-static_assert(offsetof(FMeshToCollectionDataflowNode, Collection) == 0x0000F0, "Member 'FMeshToCollectionDataflowNode::Collection' has a wrong offset!");
+static_assert(alignof(FAppendCollectionAssetsDataflowNode) == 0x000008, "Wrong alignment on FAppendCollectionAssetsDataflowNode");
+static_assert(sizeof(FAppendCollectionAssetsDataflowNode) == 0x000268, "Wrong size on FAppendCollectionAssetsDataflowNode");
+static_assert(offsetof(FAppendCollectionAssetsDataflowNode, Collection1) == 0x0000E8, "Member 'FAppendCollectionAssetsDataflowNode::Collection1' has a wrong offset!");
+static_assert(offsetof(FAppendCollectionAssetsDataflowNode, Collection2) == 0x000198, "Member 'FAppendCollectionAssetsDataflowNode::Collection2' has a wrong offset!");
+static_assert(offsetof(FAppendCollectionAssetsDataflowNode, GeometryGroupGuidsOut1) == 0x000248, "Member 'FAppendCollectionAssetsDataflowNode::GeometryGroupGuidsOut1' has a wrong offset!");
+static_assert(offsetof(FAppendCollectionAssetsDataflowNode, GeometryGroupGuidsOut2) == 0x000258, "Member 'FAppendCollectionAssetsDataflowNode::GeometryGroupGuidsOut2' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.ReAssignMaterialInCollectionDataflowNode
 // 0x00F0 (0x01D8 - 0x00E8)
@@ -1244,7 +1241,7 @@ public:
 	int32                                         InsideMaterialIdx;                                 // 0x01CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAssignOutsideMaterial;                            // 0x01D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAssignInsideMaterial;                             // 0x01D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CE9[0x6];                                     // 0x01D2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CD9[0x6];                                     // 0x01D2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FReAssignMaterialInCollectionDataflowNode) == 0x000008, "Wrong alignment on FReAssignMaterialInCollectionDataflowNode");
 static_assert(sizeof(FReAssignMaterialInCollectionDataflowNode) == 0x0001D8, "Wrong size on FReAssignMaterialInCollectionDataflowNode");
@@ -1269,19 +1266,20 @@ static_assert(sizeof(FMaterialsInfoDataflowNode) == 0x000108, "Wrong size on FMa
 static_assert(offsetof(FMaterialsInfoDataflowNode, Materials) == 0x0000E8, "Member 'FMaterialsInfoDataflowNode::Materials' has a wrong offset!");
 static_assert(offsetof(FMaterialsInfoDataflowNode, String) == 0x0000F8, "Member 'FMaterialsInfoDataflowNode::String' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.LogStringDataflowNode
-// 0x0018 (0x0100 - 0x00E8)
-struct FLogStringDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetBoundingBoxesFromCollectionDataflowNode
+// 0x00E0 (0x01C8 - 0x00E8)
+struct FGetBoundingBoxesFromCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bPrintToLog;                                       // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CEA[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 String;                                            // 0x00F0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+	TArray<struct FBox>                           BoundingBoxes;                                     // 0x01B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FLogStringDataflowNode) == 0x000008, "Wrong alignment on FLogStringDataflowNode");
-static_assert(sizeof(FLogStringDataflowNode) == 0x000100, "Wrong size on FLogStringDataflowNode");
-static_assert(offsetof(FLogStringDataflowNode, bPrintToLog) == 0x0000E8, "Member 'FLogStringDataflowNode::bPrintToLog' has a wrong offset!");
-static_assert(offsetof(FLogStringDataflowNode, String) == 0x0000F0, "Member 'FLogStringDataflowNode::String' has a wrong offset!");
+static_assert(alignof(FGetBoundingBoxesFromCollectionDataflowNode) == 0x000008, "Wrong alignment on FGetBoundingBoxesFromCollectionDataflowNode");
+static_assert(sizeof(FGetBoundingBoxesFromCollectionDataflowNode) == 0x0001C8, "Wrong size on FGetBoundingBoxesFromCollectionDataflowNode");
+static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, TransformSelection) == 0x000198, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, BoundingBoxes) == 0x0001B8, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::BoundingBoxes' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.GetMaterialFromMaterialsArrayDataflowNode
 // 0x0020 (0x0108 - 0x00E8)
@@ -1291,7 +1289,7 @@ public:
 	TArray<class UMaterial*>                      Materials;                                         // 0x00E8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UMaterial*                              Material;                                          // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIdx;                                       // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CEB[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CDA[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetMaterialFromMaterialsArrayDataflowNode) == 0x000008, "Wrong alignment on FGetMaterialFromMaterialsArrayDataflowNode");
 static_assert(sizeof(FGetMaterialFromMaterialsArrayDataflowNode) == 0x000108, "Wrong size on FGetMaterialFromMaterialsArrayDataflowNode");
@@ -1307,7 +1305,7 @@ public:
 	TArray<class UMaterial*>                      Materials;                                         // 0x00E8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UMaterial*                              Material;                                          // 0x00F8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESetMaterialOperationTypeEnum                 Operation;                                         // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CEC[0x3];                                     // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CDB[0x3];                                     // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaterialIdx;                                       // 0x0104(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSetMaterialInMaterialsArrayDataflowNode) == 0x000008, "Wrong alignment on FSetMaterialInMaterialsArrayDataflowNode");
@@ -1317,20 +1315,21 @@ static_assert(offsetof(FSetMaterialInMaterialsArrayDataflowNode, Material) == 0x
 static_assert(offsetof(FSetMaterialInMaterialsArrayDataflowNode, Operation) == 0x000100, "Member 'FSetMaterialInMaterialsArrayDataflowNode::Operation' has a wrong offset!");
 static_assert(offsetof(FSetMaterialInMaterialsArrayDataflowNode, MaterialIdx) == 0x000104, "Member 'FSetMaterialInMaterialsArrayDataflowNode::MaterialIdx' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetCentroidsFromCollectionDataflowNode
-// 0x00E0 (0x01C8 - 0x00E8)
-struct FGetCentroidsFromCollectionDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetBoxLengthsDataflowNode
+// 0x0028 (0x0110 - 0x00E8)
+struct FGetBoxLengthsDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        Centroids;                                         // 0x01B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FBox>                           Boxes;                                             // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 Lengths;                                           // 0x00F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	EBoxLengthMeasurementMethod                   MeasurementMethod;                                 // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CDC[0x7];                                     // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGetCentroidsFromCollectionDataflowNode) == 0x000008, "Wrong alignment on FGetCentroidsFromCollectionDataflowNode");
-static_assert(sizeof(FGetCentroidsFromCollectionDataflowNode) == 0x0001C8, "Wrong size on FGetCentroidsFromCollectionDataflowNode");
-static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FGetCentroidsFromCollectionDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, TransformSelection) == 0x000198, "Member 'FGetCentroidsFromCollectionDataflowNode::TransformSelection' has a wrong offset!");
-static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, Centroids) == 0x0001B8, "Member 'FGetCentroidsFromCollectionDataflowNode::Centroids' has a wrong offset!");
+static_assert(alignof(FGetBoxLengthsDataflowNode) == 0x000008, "Wrong alignment on FGetBoxLengthsDataflowNode");
+static_assert(sizeof(FGetBoxLengthsDataflowNode) == 0x000110, "Wrong size on FGetBoxLengthsDataflowNode");
+static_assert(offsetof(FGetBoxLengthsDataflowNode, Boxes) == 0x0000E8, "Member 'FGetBoxLengthsDataflowNode::Boxes' has a wrong offset!");
+static_assert(offsetof(FGetBoxLengthsDataflowNode, Lengths) == 0x0000F8, "Member 'FGetBoxLengthsDataflowNode::Lengths' has a wrong offset!");
+static_assert(offsetof(FGetBoxLengthsDataflowNode, MeasurementMethod) == 0x000108, "Member 'FGetBoxLengthsDataflowNode::MeasurementMethod' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeMaterialDataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
@@ -1356,23 +1355,23 @@ static_assert(alignof(FMakeMaterialsArrayDataflowNode) == 0x000008, "Wrong align
 static_assert(sizeof(FMakeMaterialsArrayDataflowNode) == 0x0000F8, "Wrong size on FMakeMaterialsArrayDataflowNode");
 static_assert(offsetof(FMakeMaterialsArrayDataflowNode, Materials) == 0x0000E8, "Member 'FMakeMaterialsArrayDataflowNode::Materials' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.ExpandVectorDataflowNode
-// 0x0028 (0x0110 - 0x00E8)
-struct FExpandVectorDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetMeshDataDataflowNode
+// 0x0018 (0x0100 - 0x00E8)
+struct FGetMeshDataDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                Vector;                                            // 0x00E8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         X;                                                 // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Y;                                                 // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Z;                                                 // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CED[0x4];                                     // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         VertexCount;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EdgeCount;                                         // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TriangleCount;                                     // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CDD[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FExpandVectorDataflowNode) == 0x000008, "Wrong alignment on FExpandVectorDataflowNode");
-static_assert(sizeof(FExpandVectorDataflowNode) == 0x000110, "Wrong size on FExpandVectorDataflowNode");
-static_assert(offsetof(FExpandVectorDataflowNode, Vector) == 0x0000E8, "Member 'FExpandVectorDataflowNode::Vector' has a wrong offset!");
-static_assert(offsetof(FExpandVectorDataflowNode, X) == 0x000100, "Member 'FExpandVectorDataflowNode::X' has a wrong offset!");
-static_assert(offsetof(FExpandVectorDataflowNode, Y) == 0x000104, "Member 'FExpandVectorDataflowNode::Y' has a wrong offset!");
-static_assert(offsetof(FExpandVectorDataflowNode, Z) == 0x000108, "Member 'FExpandVectorDataflowNode::Z' has a wrong offset!");
+static_assert(alignof(FGetMeshDataDataflowNode) == 0x000008, "Wrong alignment on FGetMeshDataDataflowNode");
+static_assert(sizeof(FGetMeshDataDataflowNode) == 0x000100, "Wrong size on FGetMeshDataDataflowNode");
+static_assert(offsetof(FGetMeshDataDataflowNode, Mesh) == 0x0000E8, "Member 'FGetMeshDataDataflowNode::Mesh' has a wrong offset!");
+static_assert(offsetof(FGetMeshDataDataflowNode, VertexCount) == 0x0000F0, "Member 'FGetMeshDataDataflowNode::VertexCount' has a wrong offset!");
+static_assert(offsetof(FGetMeshDataDataflowNode, EdgeCount) == 0x0000F4, "Member 'FGetMeshDataDataflowNode::EdgeCount' has a wrong offset!");
+static_assert(offsetof(FGetMeshDataDataflowNode, TriangleCount) == 0x0000F8, "Member 'FGetMeshDataDataflowNode::TriangleCount' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.CloseGeometryOnCollectionDataflowNode
 // 0x00B0 (0x0198 - 0x00E8)
@@ -1397,23 +1396,6 @@ static_assert(alignof(FSkeletonToCollectionDataflowNode) == 0x000008, "Wrong ali
 static_assert(sizeof(FSkeletonToCollectionDataflowNode) == 0x0001A0, "Wrong size on FSkeletonToCollectionDataflowNode");
 static_assert(offsetof(FSkeletonToCollectionDataflowNode, Skeleton) == 0x0000E8, "Member 'FSkeletonToCollectionDataflowNode::Skeleton' has a wrong offset!");
 static_assert(offsetof(FSkeletonToCollectionDataflowNode, Collection) == 0x0000F0, "Member 'FSkeletonToCollectionDataflowNode::Collection' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.AppendCollectionAssetsDataflowNode
-// 0x0180 (0x0268 - 0x00E8)
-struct FAppendCollectionAssetsDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection1;                                       // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FManagedArrayCollection                Collection2;                                       // 0x0198(0x00B0)(NativeAccessSpecifierPublic)
-	TArray<class FString>                         GeometryGroupGuidsOut1;                            // 0x0248(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         GeometryGroupGuidsOut2;                            // 0x0258(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAppendCollectionAssetsDataflowNode) == 0x000008, "Wrong alignment on FAppendCollectionAssetsDataflowNode");
-static_assert(sizeof(FAppendCollectionAssetsDataflowNode) == 0x000268, "Wrong size on FAppendCollectionAssetsDataflowNode");
-static_assert(offsetof(FAppendCollectionAssetsDataflowNode, Collection1) == 0x0000E8, "Member 'FAppendCollectionAssetsDataflowNode::Collection1' has a wrong offset!");
-static_assert(offsetof(FAppendCollectionAssetsDataflowNode, Collection2) == 0x000198, "Member 'FAppendCollectionAssetsDataflowNode::Collection2' has a wrong offset!");
-static_assert(offsetof(FAppendCollectionAssetsDataflowNode, GeometryGroupGuidsOut1) == 0x000248, "Member 'FAppendCollectionAssetsDataflowNode::GeometryGroupGuidsOut1' has a wrong offset!");
-static_assert(offsetof(FAppendCollectionAssetsDataflowNode, GeometryGroupGuidsOut2) == 0x000258, "Member 'FAppendCollectionAssetsDataflowNode::GeometryGroupGuidsOut2' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.DataflowConvexDecompositionSettings
 // 0x0018 (0x0018 - 0x0000)
@@ -1459,6 +1441,24 @@ static_assert(offsetof(FMakeDataflowConvexDecompositionSettingsNode, MinThicknes
 static_assert(offsetof(FMakeDataflowConvexDecompositionSettingsNode, NumAdditionalSplits) == 0x0000FC, "Member 'FMakeDataflowConvexDecompositionSettingsNode::NumAdditionalSplits' has a wrong offset!");
 static_assert(offsetof(FMakeDataflowConvexDecompositionSettingsNode, DecompositionSettings) == 0x000100, "Member 'FMakeDataflowConvexDecompositionSettingsNode::DecompositionSettings' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.BranchDataflowNode
+// 0x0020 (0x0108 - 0x00E8)
+struct FBranchDataflowNode final : public FDataflowNode
+{
+public:
+	class UDynamicMesh*                           MeshA;                                             // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDynamicMesh*                           MeshB;                                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCondition;                                        // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CDE[0x7];                                     // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDynamicMesh*                           Mesh;                                              // 0x0100(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FBranchDataflowNode) == 0x000008, "Wrong alignment on FBranchDataflowNode");
+static_assert(sizeof(FBranchDataflowNode) == 0x000108, "Wrong size on FBranchDataflowNode");
+static_assert(offsetof(FBranchDataflowNode, MeshA) == 0x0000E8, "Member 'FBranchDataflowNode::MeshA' has a wrong offset!");
+static_assert(offsetof(FBranchDataflowNode, MeshB) == 0x0000F0, "Member 'FBranchDataflowNode::MeshB' has a wrong offset!");
+static_assert(offsetof(FBranchDataflowNode, bCondition) == 0x0000F8, "Member 'FBranchDataflowNode::bCondition' has a wrong offset!");
+static_assert(offsetof(FBranchDataflowNode, Mesh) == 0x000100, "Member 'FBranchDataflowNode::Mesh' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.CreateLeafConvexHullsDataflowNode
 // 0x00F8 (0x01E0 - 0x00E8)
 struct FCreateLeafConvexHullsDataflowNode final : public FDataflowNode
@@ -1467,7 +1467,7 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 	EGenerateConvexMethod                         GenerateMethod;                                    // 0x01B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CEE[0x3];                                     // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CDF[0x3];                                     // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         IntersectIfComputedIsSmallerByFactor;              // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MinExternalVolumeToIntersect;                      // 0x01C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SimplificationDistanceThreshold;                   // 0x01C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1495,7 +1495,7 @@ public:
 	float                                         SimplificationDistanceThreshold;                   // 0x01C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MinTargetTriangleCount;                            // 0x01C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseExistingVertices;                              // 0x01C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CEF[0x7];                                     // 0x01C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE0[0x7];                                     // 0x01C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSimplifyConvexHullsDataflowNode) == 0x000008, "Wrong alignment on FSimplifyConvexHullsDataflowNode");
 static_assert(sizeof(FSimplifyConvexHullsDataflowNode) == 0x0001D0, "Wrong size on FSimplifyConvexHullsDataflowNode");
@@ -1507,19 +1507,6 @@ static_assert(offsetof(FSimplifyConvexHullsDataflowNode, SimplificationDistanceT
 static_assert(offsetof(FSimplifyConvexHullsDataflowNode, MinTargetTriangleCount) == 0x0001C4, "Member 'FSimplifyConvexHullsDataflowNode::MinTargetTriangleCount' has a wrong offset!");
 static_assert(offsetof(FSimplifyConvexHullsDataflowNode, bUseExistingVertices) == 0x0001C8, "Member 'FSimplifyConvexHullsDataflowNode::bUseExistingVertices' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetSchemaDataflowNode
-// 0x00C0 (0x01A8 - 0x00E8)
-struct FGetSchemaDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 String;                                            // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGetSchemaDataflowNode) == 0x000008, "Wrong alignment on FGetSchemaDataflowNode");
-static_assert(sizeof(FGetSchemaDataflowNode) == 0x0001A8, "Wrong size on FGetSchemaDataflowNode");
-static_assert(offsetof(FGetSchemaDataflowNode, Collection) == 0x0000E8, "Member 'FGetSchemaDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FGetSchemaDataflowNode, String) == 0x000198, "Member 'FGetSchemaDataflowNode::String' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.CreateNonOverlappingConvexHullsDataflowNode
 // 0x00C8 (0x01B0 - 0x00E8)
 struct FCreateNonOverlappingConvexHullsDataflowNode final : public FDataflowNode
@@ -1529,10 +1516,10 @@ public:
 	float                                         CanExceedFraction;                                 // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SimplificationDistanceThreshold;                   // 0x019C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EConvexOverlapRemovalMethodEnum               OverlapRemovalMethod;                              // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF0[0x3];                                     // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE1[0x3];                                     // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         OverlapRemovalShrinkPercent;                       // 0x01A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CanRemoveFraction;                                 // 0x01A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF1[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE2[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCreateNonOverlappingConvexHullsDataflowNode) == 0x000008, "Wrong alignment on FCreateNonOverlappingConvexHullsDataflowNode");
 static_assert(sizeof(FCreateNonOverlappingConvexHullsDataflowNode) == 0x0001B0, "Wrong size on FCreateNonOverlappingConvexHullsDataflowNode");
@@ -1548,7 +1535,7 @@ static_assert(offsetof(FCreateNonOverlappingConvexHullsDataflowNode, CanRemoveFr
 struct alignas(0x08) FDataflowSphereCovering final
 {
 public:
-	uint8                                         Pad_2CF2[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE3[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDataflowSphereCovering) == 0x000008, "Wrong alignment on FDataflowSphereCovering");
 static_assert(sizeof(FDataflowSphereCovering) == 0x000020, "Wrong size on FDataflowSphereCovering");
@@ -1561,14 +1548,14 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowSphereCovering                SphereCovering;                                    // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         ConvexCount;                                       // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF3[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE4[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        ErrorTolerance;                                    // 0x01C0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPreferExternalCollisionShapes;                    // 0x01C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EAllowConvexMergeMethod                       AllowMerges;                                       // 0x01C9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF4[0x6];                                     // 0x01CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE5[0x6];                                     // 0x01CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x01D0(0x0020)(NativeAccessSpecifierPublic)
 	bool                                          bProtectNegativeSpace;                             // 0x01F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF5[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE6[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TargetNumSamples;                                  // 0x01F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        MinSampleSpacing;                                  // 0x01F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        NegativeSpaceTolerance;                            // 0x0200(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1597,13 +1584,13 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowSphereCovering                SphereCovering;                                    // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         ConvexCount;                                       // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF6[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE7[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        ErrorTolerance;                                    // 0x01C0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPreferExternalCollisionShapes;                    // 0x01C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF7[0x7];                                     // 0x01C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE8[0x7];                                     // 0x01C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x01D0(0x0020)(NativeAccessSpecifierPublic)
 	bool                                          bProtectNegativeSpace;                             // 0x01F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF8[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CE9[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TargetNumSamples;                                  // 0x01F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        MinSampleSpacing;                                  // 0x01F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        NegativeSpaceTolerance;                            // 0x0200(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1623,6 +1610,25 @@ static_assert(offsetof(FGenerateClusterConvexHullsFromChildrenHullsDataflowNode,
 static_assert(offsetof(FGenerateClusterConvexHullsFromChildrenHullsDataflowNode, NegativeSpaceTolerance) == 0x000200, "Member 'FGenerateClusterConvexHullsFromChildrenHullsDataflowNode::NegativeSpaceTolerance' has a wrong offset!");
 static_assert(offsetof(FGenerateClusterConvexHullsFromChildrenHullsDataflowNode, MinRadius) == 0x000208, "Member 'FGenerateClusterConvexHullsFromChildrenHullsDataflowNode::MinRadius' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.CompareIntDataflowNode
+// 0x0010 (0x00F8 - 0x00E8)
+struct FCompareIntDataflowNode final : public FDataflowNode
+{
+public:
+	ECompareOperationEnum                         Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CEA[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         IntA;                                              // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IntB;                                              // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Result;                                            // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CEB[0x3];                                     // 0x00F5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FCompareIntDataflowNode) == 0x000008, "Wrong alignment on FCompareIntDataflowNode");
+static_assert(sizeof(FCompareIntDataflowNode) == 0x0000F8, "Wrong size on FCompareIntDataflowNode");
+static_assert(offsetof(FCompareIntDataflowNode, Operation) == 0x0000E8, "Member 'FCompareIntDataflowNode::Operation' has a wrong offset!");
+static_assert(offsetof(FCompareIntDataflowNode, IntA) == 0x0000EC, "Member 'FCompareIntDataflowNode::IntA' has a wrong offset!");
+static_assert(offsetof(FCompareIntDataflowNode, IntB) == 0x0000F0, "Member 'FCompareIntDataflowNode::IntB' has a wrong offset!");
+static_assert(offsetof(FCompareIntDataflowNode, Result) == 0x0000F4, "Member 'FCompareIntDataflowNode::Result' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.MergeConvexHullsDataflowNode
 // 0x0120 (0x0208 - 0x00E8)
 struct FMergeConvexHullsDataflowNode final : public FDataflowNode
@@ -1631,11 +1637,11 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowSphereCovering                SphereCovering;                                    // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         MaxConvexCount;                                    // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF9[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CEC[0x4];                                     // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        ErrorTolerance;                                    // 0x01C0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            OptionalSelectionFilter;                           // 0x01C8(0x0020)(NativeAccessSpecifierPublic)
 	bool                                          bProtectNegativeSpace;                             // 0x01E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFA[0x3];                                     // 0x01E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CED[0x3];                                     // 0x01E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TargetNumSamples;                                  // 0x01EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        MinSampleSpacing;                                  // 0x01F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        NegativeSpaceTolerance;                            // 0x01F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1665,23 +1671,24 @@ static_assert(alignof(FUpdateVolumeAttributesDataflowNode) == 0x000008, "Wrong a
 static_assert(sizeof(FUpdateVolumeAttributesDataflowNode) == 0x000198, "Wrong size on FUpdateVolumeAttributesDataflowNode");
 static_assert(offsetof(FUpdateVolumeAttributesDataflowNode, Collection) == 0x0000E8, "Member 'FUpdateVolumeAttributesDataflowNode::Collection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.BranchDataflowNode
-// 0x0020 (0x0108 - 0x00E8)
-struct FBranchDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetNumElementsInCollectionGroupDataflowNode
+// 0x00D0 (0x01B8 - 0x00E8)
+struct FGetNumElementsInCollectionGroupDataflowNode final : public FDataflowNode
 {
 public:
-	class UDynamicMesh*                           MeshA;                                             // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDynamicMesh*                           MeshB;                                             // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCondition;                                        // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFB[0x7];                                     // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDynamicMesh*                           Mesh;                                              // 0x0100(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CEE[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumElements;                                       // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CEF[0x4];                                     // 0x01B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FBranchDataflowNode) == 0x000008, "Wrong alignment on FBranchDataflowNode");
-static_assert(sizeof(FBranchDataflowNode) == 0x000108, "Wrong size on FBranchDataflowNode");
-static_assert(offsetof(FBranchDataflowNode, MeshA) == 0x0000E8, "Member 'FBranchDataflowNode::MeshA' has a wrong offset!");
-static_assert(offsetof(FBranchDataflowNode, MeshB) == 0x0000F0, "Member 'FBranchDataflowNode::MeshB' has a wrong offset!");
-static_assert(offsetof(FBranchDataflowNode, bCondition) == 0x0000F8, "Member 'FBranchDataflowNode::bCondition' has a wrong offset!");
-static_assert(offsetof(FBranchDataflowNode, Mesh) == 0x000100, "Member 'FBranchDataflowNode::Mesh' has a wrong offset!");
+static_assert(alignof(FGetNumElementsInCollectionGroupDataflowNode) == 0x000008, "Wrong alignment on FGetNumElementsInCollectionGroupDataflowNode");
+static_assert(sizeof(FGetNumElementsInCollectionGroupDataflowNode) == 0x0001B8, "Wrong size on FGetNumElementsInCollectionGroupDataflowNode");
+static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, Collection) == 0x0000E8, "Member 'FGetNumElementsInCollectionGroupDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, GroupName) == 0x000198, "Member 'FGetNumElementsInCollectionGroupDataflowNode::GroupName' has a wrong offset!");
+static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, CustomGroupName) == 0x0001A0, "Member 'FGetNumElementsInCollectionGroupDataflowNode::CustomGroupName' has a wrong offset!");
+static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, NumElements) == 0x0001B0, "Member 'FGetNumElementsInCollectionGroupDataflowNode::NumElements' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.GetConvexHullVolumeDataflowNode
 // 0x00D8 (0x01C0 - 0x00E8)
@@ -1693,7 +1700,7 @@ public:
 	float                                         Volume;                                            // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSumChildrenForClustersWithoutHulls;               // 0x01BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVolumeOfUnion;                                    // 0x01BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFC[0x2];                                     // 0x01BE(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF0[0x2];                                     // 0x01BE(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetConvexHullVolumeDataflowNode) == 0x000008, "Wrong alignment on FGetConvexHullVolumeDataflowNode");
 static_assert(sizeof(FGetConvexHullVolumeDataflowNode) == 0x0001C0, "Wrong size on FGetConvexHullVolumeDataflowNode");
@@ -1709,7 +1716,7 @@ struct FAutoClusterDataflowNode final : public FDataflowNode
 {
 public:
 	EClusterSizeMethodEnum                        ClusterSizeMethod;                                 // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFD[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF1[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ClusterSites;                                      // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ClusterFraction;                                   // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SiteSize;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1721,7 +1728,7 @@ public:
 	bool                                          AutoCluster;                                       // 0x010C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnforceSiteParameters;                             // 0x010D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AvoidIsolated;                                     // 0x010E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFE[0x1];                                     // 0x010F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF2[0x1];                                     // 0x010F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FManagedArrayCollection                Collection;                                        // 0x0110(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x01C0(0x0020)(NativeAccessSpecifierPublic)
 };
@@ -1742,37 +1749,18 @@ static_assert(offsetof(FAutoClusterDataflowNode, AvoidIsolated) == 0x00010E, "Me
 static_assert(offsetof(FAutoClusterDataflowNode, Collection) == 0x000110, "Member 'FAutoClusterDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FAutoClusterDataflowNode, TransformSelection) == 0x0001C0, "Member 'FAutoClusterDataflowNode::TransformSelection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.SetCollectionAttributeDataTypedDataflowNode
-// 0x0148 (0x0230 - 0x00E8)
-struct FSetCollectionAttributeDataTypedDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetSchemaDataflowNode
+// 0x00C0 (0x01A8 - 0x00E8)
+struct FGetSchemaDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CFF[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AttrName;                                          // 0x01B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<bool>                                  BoolAttributeData;                                 // 0x01C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 FloatAttributeData;                                // 0x01D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<double>                                DoubleAttributeData;                               // 0x01E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Int32AttributeData;                                // 0x01F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         StringAttributeData;                               // 0x0200(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector3f>                      Vector3fAttributeData;                             // 0x0210(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector3d>                      Vector3dAttributeData;                             // 0x0220(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 String;                                            // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSetCollectionAttributeDataTypedDataflowNode) == 0x000008, "Wrong alignment on FSetCollectionAttributeDataTypedDataflowNode");
-static_assert(sizeof(FSetCollectionAttributeDataTypedDataflowNode) == 0x000230, "Wrong size on FSetCollectionAttributeDataTypedDataflowNode");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Collection) == 0x0000E8, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, GroupName) == 0x000198, "Member 'FSetCollectionAttributeDataTypedDataflowNode::GroupName' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, CustomGroupName) == 0x0001A0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::CustomGroupName' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, AttrName) == 0x0001B0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::AttrName' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, BoolAttributeData) == 0x0001C0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::BoolAttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, FloatAttributeData) == 0x0001D0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::FloatAttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, DoubleAttributeData) == 0x0001E0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::DoubleAttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Int32AttributeData) == 0x0001F0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Int32AttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, StringAttributeData) == 0x000200, "Member 'FSetCollectionAttributeDataTypedDataflowNode::StringAttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Vector3fAttributeData) == 0x000210, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Vector3fAttributeData' has a wrong offset!");
-static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Vector3dAttributeData) == 0x000220, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Vector3dAttributeData' has a wrong offset!");
+static_assert(alignof(FGetSchemaDataflowNode) == 0x000008, "Wrong alignment on FGetSchemaDataflowNode");
+static_assert(sizeof(FGetSchemaDataflowNode) == 0x0001A8, "Wrong size on FGetSchemaDataflowNode");
+static_assert(offsetof(FGetSchemaDataflowNode, Collection) == 0x0000E8, "Member 'FGetSchemaDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FGetSchemaDataflowNode, String) == 0x000198, "Member 'FGetSchemaDataflowNode::String' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.ClusterFlattenDataflowNode
 // 0x00B0 (0x0198 - 0x00E8)
@@ -1798,23 +1786,16 @@ static_assert(sizeof(FClusterUnclusterDataflowNode) == 0x0001B8, "Wrong size on 
 static_assert(offsetof(FClusterUnclusterDataflowNode, Collection) == 0x0000E8, "Member 'FClusterUnclusterDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FClusterUnclusterDataflowNode, TransformSelection) == 0x000198, "Member 'FClusterUnclusterDataflowNode::TransformSelection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.SetAnchorStateDataflowNode
-// 0x00D8 (0x01C0 - 0x00E8)
-struct FSetAnchorStateDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.BakeTransformsInCollectionDataflowNode
+// 0x00B0 (0x0198 - 0x00E8)
+struct FBakeTransformsInCollectionDataflowNode final : public FDataflowNode
 {
 public:
-	EAnchorStateEnum                              AnchorState;                                       // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSetNotSelectedBonesToOppositeState;               // 0x00E9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D00[0x6];                                     // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FManagedArrayCollection                Collection;                                        // 0x00F0(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSetAnchorStateDataflowNode) == 0x000008, "Wrong alignment on FSetAnchorStateDataflowNode");
-static_assert(sizeof(FSetAnchorStateDataflowNode) == 0x0001C0, "Wrong size on FSetAnchorStateDataflowNode");
-static_assert(offsetof(FSetAnchorStateDataflowNode, AnchorState) == 0x0000E8, "Member 'FSetAnchorStateDataflowNode::AnchorState' has a wrong offset!");
-static_assert(offsetof(FSetAnchorStateDataflowNode, bSetNotSelectedBonesToOppositeState) == 0x0000E9, "Member 'FSetAnchorStateDataflowNode::bSetNotSelectedBonesToOppositeState' has a wrong offset!");
-static_assert(offsetof(FSetAnchorStateDataflowNode, Collection) == 0x0000F0, "Member 'FSetAnchorStateDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FSetAnchorStateDataflowNode, TransformSelection) == 0x0001A0, "Member 'FSetAnchorStateDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FBakeTransformsInCollectionDataflowNode) == 0x000008, "Wrong alignment on FBakeTransformsInCollectionDataflowNode");
+static_assert(sizeof(FBakeTransformsInCollectionDataflowNode) == 0x000198, "Wrong size on FBakeTransformsInCollectionDataflowNode");
+static_assert(offsetof(FBakeTransformsInCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FBakeTransformsInCollectionDataflowNode::Collection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.ClusterDataflowNode
 // 0x00D0 (0x01B8 - 0x00E8)
@@ -1842,24 +1823,19 @@ static_assert(sizeof(FClusterMergeDataflowNode) == 0x0001B8, "Wrong size on FClu
 static_assert(offsetof(FClusterMergeDataflowNode, Collection) == 0x0000E8, "Member 'FClusterMergeDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FClusterMergeDataflowNode, TransformSelection) == 0x000198, "Member 'FClusterMergeDataflowNode::TransformSelection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CompareIntDataflowNode
-// 0x0010 (0x00F8 - 0x00E8)
-struct FCompareIntDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionSetPivotDataflowNode
+// 0x0118 (0x0200 - 0x00E8)
+struct FCollectionSetPivotDataflowNode final : public FDataflowNode
 {
 public:
-	ECompareOperationEnum                         Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D01[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         IntA;                                              // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IntB;                                              // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Result;                                            // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D02[0x3];                                     // 0x00F5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CF3[0x8];                                     // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x01A0(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCompareIntDataflowNode) == 0x000008, "Wrong alignment on FCompareIntDataflowNode");
-static_assert(sizeof(FCompareIntDataflowNode) == 0x0000F8, "Wrong size on FCompareIntDataflowNode");
-static_assert(offsetof(FCompareIntDataflowNode, Operation) == 0x0000E8, "Member 'FCompareIntDataflowNode::Operation' has a wrong offset!");
-static_assert(offsetof(FCompareIntDataflowNode, IntA) == 0x0000EC, "Member 'FCompareIntDataflowNode::IntA' has a wrong offset!");
-static_assert(offsetof(FCompareIntDataflowNode, IntB) == 0x0000F0, "Member 'FCompareIntDataflowNode::IntB' has a wrong offset!");
-static_assert(offsetof(FCompareIntDataflowNode, Result) == 0x0000F4, "Member 'FCompareIntDataflowNode::Result' has a wrong offset!");
+static_assert(alignof(FCollectionSetPivotDataflowNode) == 0x000010, "Wrong alignment on FCollectionSetPivotDataflowNode");
+static_assert(sizeof(FCollectionSetPivotDataflowNode) == 0x000200, "Wrong size on FCollectionSetPivotDataflowNode");
+static_assert(offsetof(FCollectionSetPivotDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionSetPivotDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionSetPivotDataflowNode, Transform) == 0x0001A0, "Member 'FCollectionSetPivotDataflowNode::Transform' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.VectorToStringDataflowNode
 // 0x0028 (0x0110 - 0x00E8)
@@ -1880,7 +1856,7 @@ struct FFloatToStringDataflowNode final : public FDataflowNode
 {
 public:
 	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D03[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF4[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 String;                                            // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FFloatToStringDataflowNode) == 0x000008, "Wrong alignment on FFloatToStringDataflowNode");
@@ -1888,24 +1864,18 @@ static_assert(sizeof(FFloatToStringDataflowNode) == 0x000100, "Wrong size on FFl
 static_assert(offsetof(FFloatToStringDataflowNode, Float) == 0x0000E8, "Member 'FFloatToStringDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FFloatToStringDataflowNode, String) == 0x0000F0, "Member 'FFloatToStringDataflowNode::String' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetNumElementsInCollectionGroupDataflowNode
-// 0x00D0 (0x01B8 - 0x00E8)
-struct FGetNumElementsInCollectionGroupDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetFloatOverrideFromAssetDataflowNode
+// 0x0008 (0x0110 - 0x0108)
+struct FGetFloatOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D04[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumElements;                                       // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D05[0x4];                                     // 0x01B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Float;                                             // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatDefault;                                      // 0x010C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGetNumElementsInCollectionGroupDataflowNode) == 0x000008, "Wrong alignment on FGetNumElementsInCollectionGroupDataflowNode");
-static_assert(sizeof(FGetNumElementsInCollectionGroupDataflowNode) == 0x0001B8, "Wrong size on FGetNumElementsInCollectionGroupDataflowNode");
-static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, Collection) == 0x0000E8, "Member 'FGetNumElementsInCollectionGroupDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, GroupName) == 0x000198, "Member 'FGetNumElementsInCollectionGroupDataflowNode::GroupName' has a wrong offset!");
-static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, CustomGroupName) == 0x0001A0, "Member 'FGetNumElementsInCollectionGroupDataflowNode::CustomGroupName' has a wrong offset!");
-static_assert(offsetof(FGetNumElementsInCollectionGroupDataflowNode, NumElements) == 0x0001B0, "Member 'FGetNumElementsInCollectionGroupDataflowNode::NumElements' has a wrong offset!");
+static_assert(alignof(FGetFloatOverrideFromAssetDataflowNode) == 0x000008, "Wrong alignment on FGetFloatOverrideFromAssetDataflowNode");
+static_assert(sizeof(FGetFloatOverrideFromAssetDataflowNode) == 0x000110, "Wrong size on FGetFloatOverrideFromAssetDataflowNode");
+static_assert(offsetof(FGetFloatOverrideFromAssetDataflowNode, Float) == 0x000108, "Member 'FGetFloatOverrideFromAssetDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FGetFloatOverrideFromAssetDataflowNode, FloatDefault) == 0x00010C, "Member 'FGetFloatOverrideFromAssetDataflowNode::FloatDefault' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.IntToStringDataflowNode
 // 0x0018 (0x0100 - 0x00E8)
@@ -1913,7 +1883,7 @@ struct FIntToStringDataflowNode final : public FDataflowNode
 {
 public:
 	int32                                         Int;                                               // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D06[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF5[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 String;                                            // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FIntToStringDataflowNode) == 0x000008, "Wrong alignment on FIntToStringDataflowNode");
@@ -1927,7 +1897,7 @@ struct FBoolToStringDataflowNode final : public FDataflowNode
 {
 public:
 	bool                                          Bool;                                              // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D07[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF6[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 String;                                            // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FBoolToStringDataflowNode) == 0x000008, "Wrong alignment on FBoolToStringDataflowNode");
@@ -1935,19 +1905,37 @@ static_assert(sizeof(FBoolToStringDataflowNode) == 0x000100, "Wrong size on FBoo
 static_assert(offsetof(FBoolToStringDataflowNode, Bool) == 0x0000E8, "Member 'FBoolToStringDataflowNode::Bool' has a wrong offset!");
 static_assert(offsetof(FBoolToStringDataflowNode, String) == 0x0000F0, "Member 'FBoolToStringDataflowNode::String' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetBoolOverrideFromAssetDataflowNode
-// 0x0008 (0x0110 - 0x0108)
-struct FGetBoolOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
+// ScriptStruct GeometryCollectionNodes.SetCollectionAttributeDataTypedDataflowNode
+// 0x0148 (0x0230 - 0x00E8)
+struct FSetCollectionAttributeDataTypedDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          Bool;                                              // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BoolDefault;                                       // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D08[0x6];                                     // 0x010A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CF7[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AttrName;                                          // 0x01B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<bool>                                  BoolAttributeData;                                 // 0x01C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 FloatAttributeData;                                // 0x01D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<double>                                DoubleAttributeData;                               // 0x01E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Int32AttributeData;                                // 0x01F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         StringAttributeData;                               // 0x0200(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector3f>                      Vector3fAttributeData;                             // 0x0210(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector3d>                      Vector3dAttributeData;                             // 0x0220(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGetBoolOverrideFromAssetDataflowNode) == 0x000008, "Wrong alignment on FGetBoolOverrideFromAssetDataflowNode");
-static_assert(sizeof(FGetBoolOverrideFromAssetDataflowNode) == 0x000110, "Wrong size on FGetBoolOverrideFromAssetDataflowNode");
-static_assert(offsetof(FGetBoolOverrideFromAssetDataflowNode, Bool) == 0x000108, "Member 'FGetBoolOverrideFromAssetDataflowNode::Bool' has a wrong offset!");
-static_assert(offsetof(FGetBoolOverrideFromAssetDataflowNode, BoolDefault) == 0x000109, "Member 'FGetBoolOverrideFromAssetDataflowNode::BoolDefault' has a wrong offset!");
+static_assert(alignof(FSetCollectionAttributeDataTypedDataflowNode) == 0x000008, "Wrong alignment on FSetCollectionAttributeDataTypedDataflowNode");
+static_assert(sizeof(FSetCollectionAttributeDataTypedDataflowNode) == 0x000230, "Wrong size on FSetCollectionAttributeDataTypedDataflowNode");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Collection) == 0x0000E8, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, GroupName) == 0x000198, "Member 'FSetCollectionAttributeDataTypedDataflowNode::GroupName' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, CustomGroupName) == 0x0001A0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::CustomGroupName' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, AttrName) == 0x0001B0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::AttrName' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, BoolAttributeData) == 0x0001C0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::BoolAttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, FloatAttributeData) == 0x0001D0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::FloatAttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, DoubleAttributeData) == 0x0001E0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::DoubleAttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Int32AttributeData) == 0x0001F0, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Int32AttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, StringAttributeData) == 0x000200, "Member 'FSetCollectionAttributeDataTypedDataflowNode::StringAttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Vector3fAttributeData) == 0x000210, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Vector3fAttributeData' has a wrong offset!");
+static_assert(offsetof(FSetCollectionAttributeDataTypedDataflowNode, Vector3dAttributeData) == 0x000220, "Member 'FSetCollectionAttributeDataTypedDataflowNode::Vector3dAttributeData' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.IntToFloatDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -1968,7 +1956,7 @@ struct FIntToDoubleDataflowNode final : public FDataflowNode
 {
 public:
 	int32                                         Int;                                               // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D09[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CF8[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Double;                                            // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FIntToDoubleDataflowNode) == 0x000008, "Wrong alignment on FIntToDoubleDataflowNode");
@@ -1976,18 +1964,23 @@ static_assert(sizeof(FIntToDoubleDataflowNode) == 0x0000F8, "Wrong size on FIntT
 static_assert(offsetof(FIntToDoubleDataflowNode, Int) == 0x0000E8, "Member 'FIntToDoubleDataflowNode::Int' has a wrong offset!");
 static_assert(offsetof(FIntToDoubleDataflowNode, Double) == 0x0000F0, "Member 'FIntToDoubleDataflowNode::Double' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.SelectionToVertexListDataflowNode
-// 0x0030 (0x0118 - 0x00E8)
-struct FSelectionToVertexListDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.SetAnchorStateDataflowNode
+// 0x00D8 (0x01C0 - 0x00E8)
+struct FSetAnchorStateDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
-	TArray<int32>                                 VertexList;                                        // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	EAnchorStateEnum                              AnchorState;                                       // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetNotSelectedBonesToOppositeState;               // 0x00E9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CF9[0x6];                                     // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FManagedArrayCollection                Collection;                                        // 0x00F0(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSelectionToVertexListDataflowNode) == 0x000008, "Wrong alignment on FSelectionToVertexListDataflowNode");
-static_assert(sizeof(FSelectionToVertexListDataflowNode) == 0x000118, "Wrong size on FSelectionToVertexListDataflowNode");
-static_assert(offsetof(FSelectionToVertexListDataflowNode, VertexSelection) == 0x0000E8, "Member 'FSelectionToVertexListDataflowNode::VertexSelection' has a wrong offset!");
-static_assert(offsetof(FSelectionToVertexListDataflowNode, VertexList) == 0x000108, "Member 'FSelectionToVertexListDataflowNode::VertexList' has a wrong offset!");
+static_assert(alignof(FSetAnchorStateDataflowNode) == 0x000008, "Wrong alignment on FSetAnchorStateDataflowNode");
+static_assert(sizeof(FSetAnchorStateDataflowNode) == 0x0001C0, "Wrong size on FSetAnchorStateDataflowNode");
+static_assert(offsetof(FSetAnchorStateDataflowNode, AnchorState) == 0x0000E8, "Member 'FSetAnchorStateDataflowNode::AnchorState' has a wrong offset!");
+static_assert(offsetof(FSetAnchorStateDataflowNode, bSetNotSelectedBonesToOppositeState) == 0x0000E9, "Member 'FSetAnchorStateDataflowNode::bSetNotSelectedBonesToOppositeState' has a wrong offset!");
+static_assert(offsetof(FSetAnchorStateDataflowNode, Collection) == 0x0000F0, "Member 'FSetAnchorStateDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FSetAnchorStateDataflowNode, TransformSelection) == 0x0001A0, "Member 'FSetAnchorStateDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.FloatToDoubleDataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
@@ -1995,7 +1988,7 @@ struct FFloatToDoubleDataflowNode final : public FDataflowNode
 {
 public:
 	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0A[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CFA[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Double;                                            // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FFloatToDoubleDataflowNode) == 0x000008, "Wrong alignment on FFloatToDoubleDataflowNode");
@@ -2009,10 +2002,10 @@ struct FFloatToIntDataflowNode final : public FDataflowNode
 {
 public:
 	EFloatToIntFunctionEnum                       Function;                                          // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0B[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CFB[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Float;                                             // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Int;                                               // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0C[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CFC[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FFloatToIntDataflowNode) == 0x000008, "Wrong alignment on FFloatToIntDataflowNode");
 static_assert(sizeof(FFloatToIntDataflowNode) == 0x0000F8, "Wrong size on FFloatToIntDataflowNode");
@@ -2020,19 +2013,21 @@ static_assert(offsetof(FFloatToIntDataflowNode, Function) == 0x0000E8, "Member '
 static_assert(offsetof(FFloatToIntDataflowNode, Float) == 0x0000EC, "Member 'FFloatToIntDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FFloatToIntDataflowNode, Int) == 0x0000F0, "Member 'FFloatToIntDataflowNode::Int' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionSetPivotDataflowNode
-// 0x0118 (0x0200 - 0x00E8)
-struct FCollectionSetPivotDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.MultiplyTransformDataflowNode
+// 0x0128 (0x0210 - 0x00E8)
+struct FMultiplyTransformDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0D[0x8];                                     // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x01A0(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CFD[0x8];                                     // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InLeftTransform;                                   // 0x00F0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             InRightTransform;                                  // 0x0150(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             OutTransform;                                      // 0x01B0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionSetPivotDataflowNode) == 0x000010, "Wrong alignment on FCollectionSetPivotDataflowNode");
-static_assert(sizeof(FCollectionSetPivotDataflowNode) == 0x000200, "Wrong size on FCollectionSetPivotDataflowNode");
-static_assert(offsetof(FCollectionSetPivotDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionSetPivotDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionSetPivotDataflowNode, Transform) == 0x0001A0, "Member 'FCollectionSetPivotDataflowNode::Transform' has a wrong offset!");
+static_assert(alignof(FMultiplyTransformDataflowNode) == 0x000010, "Wrong alignment on FMultiplyTransformDataflowNode");
+static_assert(sizeof(FMultiplyTransformDataflowNode) == 0x000210, "Wrong size on FMultiplyTransformDataflowNode");
+static_assert(offsetof(FMultiplyTransformDataflowNode, InLeftTransform) == 0x0000F0, "Member 'FMultiplyTransformDataflowNode::InLeftTransform' has a wrong offset!");
+static_assert(offsetof(FMultiplyTransformDataflowNode, InRightTransform) == 0x000150, "Member 'FMultiplyTransformDataflowNode::InRightTransform' has a wrong offset!");
+static_assert(offsetof(FMultiplyTransformDataflowNode, OutTransform) == 0x0001B0, "Member 'FMultiplyTransformDataflowNode::OutTransform' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.IntToBoolDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2041,7 +2036,7 @@ struct FIntToBoolDataflowNode final : public FDataflowNode
 public:
 	int32                                         Int;                                               // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Bool;                                              // 0x00EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0E[0x3];                                     // 0x00ED(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CFE[0x3];                                     // 0x00ED(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FIntToBoolDataflowNode) == 0x000008, "Wrong alignment on FIntToBoolDataflowNode");
 static_assert(sizeof(FIntToBoolDataflowNode) == 0x0000F0, "Wrong size on FIntToBoolDataflowNode");
@@ -2054,7 +2049,7 @@ struct FBoolToIntDataflowNode final : public FDataflowNode
 {
 public:
 	bool                                          Bool;                                              // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D0F[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CFF[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Int;                                               // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FBoolToIntDataflowNode) == 0x000008, "Wrong alignment on FBoolToIntDataflowNode");
@@ -2062,18 +2057,16 @@ static_assert(sizeof(FBoolToIntDataflowNode) == 0x0000F0, "Wrong size on FBoolTo
 static_assert(offsetof(FBoolToIntDataflowNode, Bool) == 0x0000E8, "Member 'FBoolToIntDataflowNode::Bool' has a wrong offset!");
 static_assert(offsetof(FBoolToIntDataflowNode, Int) == 0x0000EC, "Member 'FBoolToIntDataflowNode::Int' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.GetFloatOverrideFromAssetDataflowNode
-// 0x0008 (0x0110 - 0x0108)
-struct FGetFloatOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInvertDataflowNode
+// 0x0020 (0x0108 - 0x00E8)
+struct FCollectionTransformSelectionInvertDataflowNode final : public FDataflowNode
 {
 public:
-	float                                         Float;                                             // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatDefault;                                      // 0x010C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGetFloatOverrideFromAssetDataflowNode) == 0x000008, "Wrong alignment on FGetFloatOverrideFromAssetDataflowNode");
-static_assert(sizeof(FGetFloatOverrideFromAssetDataflowNode) == 0x000110, "Wrong size on FGetFloatOverrideFromAssetDataflowNode");
-static_assert(offsetof(FGetFloatOverrideFromAssetDataflowNode, Float) == 0x000108, "Member 'FGetFloatOverrideFromAssetDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FGetFloatOverrideFromAssetDataflowNode, FloatDefault) == 0x00010C, "Member 'FGetFloatOverrideFromAssetDataflowNode::FloatDefault' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionInvertDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionInvertDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionInvertDataflowNode) == 0x000108, "Wrong size on FCollectionTransformSelectionInvertDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionInvertDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionInvertDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.ConvexHullToMeshDataflowNode
 // 0x00D8 (0x01C0 - 0x00E8)
@@ -2097,7 +2090,7 @@ struct FSphereCoveringToMeshDataflowNode final : public FDataflowNode
 public:
 	struct FDataflowSphereCovering                SphereCovering;                                    // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         VerticesAlongEachSide;                             // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D10[0x4];                                     // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D00[0x4];                                     // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDynamicMesh*                           Mesh;                                              // 0x0110(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSphereCoveringToMeshDataflowNode) == 0x000008, "Wrong alignment on FSphereCoveringToMeshDataflowNode");
@@ -2106,18 +2099,19 @@ static_assert(offsetof(FSphereCoveringToMeshDataflowNode, SphereCovering) == 0x0
 static_assert(offsetof(FSphereCoveringToMeshDataflowNode, VerticesAlongEachSide) == 0x000108, "Member 'FSphereCoveringToMeshDataflowNode::VerticesAlongEachSide' has a wrong offset!");
 static_assert(offsetof(FSphereCoveringToMeshDataflowNode, Mesh) == 0x000110, "Member 'FSphereCoveringToMeshDataflowNode::Mesh' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionRootDataflowNode
-// 0x00D0 (0x01B8 - 0x00E8)
-struct FCollectionTransformSelectionRootDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.GetBoolOverrideFromAssetDataflowNode
+// 0x0008 (0x0110 - 0x0108)
+struct FGetBoolOverrideFromAssetDataflowNode final : public FDataflowOverrideNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+	bool                                          Bool;                                              // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BoolDefault;                                       // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D01[0x6];                                     // 0x010A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FCollectionTransformSelectionRootDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionRootDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionRootDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionRootDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionRootDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionRootDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionRootDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionRootDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FGetBoolOverrideFromAssetDataflowNode) == 0x000008, "Wrong alignment on FGetBoolOverrideFromAssetDataflowNode");
+static_assert(sizeof(FGetBoolOverrideFromAssetDataflowNode) == 0x000110, "Wrong size on FGetBoolOverrideFromAssetDataflowNode");
+static_assert(offsetof(FGetBoolOverrideFromAssetDataflowNode, Bool) == 0x000108, "Member 'FGetBoolOverrideFromAssetDataflowNode::Bool' has a wrong offset!");
+static_assert(offsetof(FGetBoolOverrideFromAssetDataflowNode, BoolDefault) == 0x000109, "Member 'FGetBoolOverrideFromAssetDataflowNode::BoolDefault' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MeshToOBJStringDebugDataflowNode
 // 0x0020 (0x0108 - 0x00E8)
@@ -2126,7 +2120,7 @@ struct FMeshToOBJStringDebugDataflowNode final : public FDataflowNode
 public:
 	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInvertFaces;                                      // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D11[0x7];                                     // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D02[0x7];                                     // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 StringOBJ;                                         // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMeshToOBJStringDebugDataflowNode) == 0x000008, "Wrong alignment on FMeshToOBJStringDebugDataflowNode");
@@ -2148,18 +2142,18 @@ static_assert(sizeof(FWriteStringToFile) == 0x000108, "Wrong size on FWriteStrin
 static_assert(offsetof(FWriteStringToFile, FilePath) == 0x0000E8, "Member 'FWriteStringToFile::FilePath' has a wrong offset!");
 static_assert(offsetof(FWriteStringToFile, FileContents) == 0x0000F8, "Member 'FWriteStringToFile::FileContents' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionAllDataflowNode
-// 0x00D0 (0x01B8 - 0x00E8)
-struct FCollectionTransformSelectionAllDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.SelectionToVertexListDataflowNode
+// 0x0030 (0x0118 - 0x00E8)
+struct FSelectionToVertexListDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
+	TArray<int32>                                 VertexList;                                        // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionAllDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionAllDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionAllDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionAllDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionAllDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionAllDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionAllDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionAllDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FSelectionToVertexListDataflowNode) == 0x000008, "Wrong alignment on FSelectionToVertexListDataflowNode");
+static_assert(sizeof(FSelectionToVertexListDataflowNode) == 0x000118, "Wrong size on FSelectionToVertexListDataflowNode");
+static_assert(offsetof(FSelectionToVertexListDataflowNode, VertexSelection) == 0x0000E8, "Member 'FSelectionToVertexListDataflowNode::VertexSelection' has a wrong offset!");
+static_assert(offsetof(FSelectionToVertexListDataflowNode, VertexList) == 0x000108, "Member 'FSelectionToVertexListDataflowNode::VertexList' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.PruneInCollectionDataflowNode
 // 0x00D0 (0x01B8 - 0x00E8)
@@ -2180,7 +2174,7 @@ struct FSetVisibilityInCollectionDataflowNode final : public FDataflowNode
 {
 public:
 	EVisibiltyOptionsEnum                         Visibility;                                        // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D12[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D03[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FManagedArrayCollection                Collection;                                        // 0x00F0(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
 	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x01C0(0x0020)(NativeAccessSpecifierPublic)
@@ -2192,21 +2186,21 @@ static_assert(offsetof(FSetVisibilityInCollectionDataflowNode, Collection) == 0x
 static_assert(offsetof(FSetVisibilityInCollectionDataflowNode, TransformSelection) == 0x0001A0, "Member 'FSetVisibilityInCollectionDataflowNode::TransformSelection' has a wrong offset!");
 static_assert(offsetof(FSetVisibilityInCollectionDataflowNode, FaceSelection) == 0x0001C0, "Member 'FSetVisibilityInCollectionDataflowNode::FaceSelection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.MultiplyTransformDataflowNode
-// 0x0128 (0x0210 - 0x00E8)
-struct FMultiplyTransformDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.DotProductDataflowNode
+// 0x0038 (0x0120 - 0x00E8)
+struct FDotProductDataflowNode final : public FDataflowNode
 {
 public:
-	uint8                                         Pad_2D13[0x8];                                     // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             InLeftTransform;                                   // 0x00F0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             InRightTransform;                                  // 0x0150(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             OutTransform;                                      // 0x01B0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorA;                                           // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorB;                                           // 0x0100(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D04[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FMultiplyTransformDataflowNode) == 0x000010, "Wrong alignment on FMultiplyTransformDataflowNode");
-static_assert(sizeof(FMultiplyTransformDataflowNode) == 0x000210, "Wrong size on FMultiplyTransformDataflowNode");
-static_assert(offsetof(FMultiplyTransformDataflowNode, InLeftTransform) == 0x0000F0, "Member 'FMultiplyTransformDataflowNode::InLeftTransform' has a wrong offset!");
-static_assert(offsetof(FMultiplyTransformDataflowNode, InRightTransform) == 0x000150, "Member 'FMultiplyTransformDataflowNode::InRightTransform' has a wrong offset!");
-static_assert(offsetof(FMultiplyTransformDataflowNode, OutTransform) == 0x0001B0, "Member 'FMultiplyTransformDataflowNode::OutTransform' has a wrong offset!");
+static_assert(alignof(FDotProductDataflowNode) == 0x000008, "Wrong alignment on FDotProductDataflowNode");
+static_assert(sizeof(FDotProductDataflowNode) == 0x000120, "Wrong size on FDotProductDataflowNode");
+static_assert(offsetof(FDotProductDataflowNode, VectorA) == 0x0000E8, "Member 'FDotProductDataflowNode::VectorA' has a wrong offset!");
+static_assert(offsetof(FDotProductDataflowNode, VectorB) == 0x000100, "Member 'FDotProductDataflowNode::VectorB' has a wrong offset!");
+static_assert(offsetof(FDotProductDataflowNode, ReturnValue) == 0x000118, "Member 'FDotProductDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MergeInCollectionDataflowNode
 // 0x00D0 (0x01B8 - 0x00E8)
@@ -2229,7 +2223,7 @@ public:
 	int32                                         MinNumberOfPoints;                                 // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaxNumberOfPoints;                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RandomSeed;                                        // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D14[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D05[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FBox                                   BoundingBox;                                       // 0x00F8(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                        Points;                                            // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -2241,21 +2235,18 @@ static_assert(offsetof(FUniformScatterPointsDataflowNode, RandomSeed) == 0x0000F
 static_assert(offsetof(FUniformScatterPointsDataflowNode, BoundingBox) == 0x0000F8, "Member 'FUniformScatterPointsDataflowNode::BoundingBox' has a wrong offset!");
 static_assert(offsetof(FUniformScatterPointsDataflowNode, Points) == 0x000130, "Member 'FUniformScatterPointsDataflowNode::Points' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.NormalizeDataflowNode
-// 0x0038 (0x0120 - 0x00E8)
-struct FNormalizeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSiblingsDataflowNode
+// 0x00D0 (0x01B8 - 0x00E8)
+struct FCollectionTransformSelectionSiblingsDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                VectorA;                                           // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Tolerance;                                         // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D15[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ReturnValue;                                       // 0x0108(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x0108(0x00B0)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FNormalizeDataflowNode) == 0x000008, "Wrong alignment on FNormalizeDataflowNode");
-static_assert(sizeof(FNormalizeDataflowNode) == 0x000120, "Wrong size on FNormalizeDataflowNode");
-static_assert(offsetof(FNormalizeDataflowNode, VectorA) == 0x0000E8, "Member 'FNormalizeDataflowNode::VectorA' has a wrong offset!");
-static_assert(offsetof(FNormalizeDataflowNode, Tolerance) == 0x000100, "Member 'FNormalizeDataflowNode::Tolerance' has a wrong offset!");
-static_assert(offsetof(FNormalizeDataflowNode, ReturnValue) == 0x000108, "Member 'FNormalizeDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionSiblingsDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionSiblingsDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionSiblingsDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionSiblingsDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionSiblingsDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionSiblingsDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionSiblingsDataflowNode, Collection) == 0x000108, "Member 'FCollectionTransformSelectionSiblingsDataflowNode::Collection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.RadialScatterPointsDataflowNode
 // 0x0058 (0x0140 - 0x00E8)
@@ -2295,7 +2286,7 @@ public:
 	float                                         RandomSeed;                                        // 0x01C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ChanceToFracture;                                  // 0x01CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          GroupFracture;                                     // 0x01D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D16[0x3];                                     // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D06[0x3];                                     // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Grout;                                             // 0x01D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Amplitude;                                         // 0x01D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Frequency;                                         // 0x01DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2304,7 +2295,7 @@ public:
 	int32                                         OctaveNumber;                                      // 0x01E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PointSpacing;                                      // 0x01EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AddSamplesForCollision;                            // 0x01F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D17[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D07[0x3];                                     // 0x01F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CollisionSampleSpacing;                            // 0x01F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FVoronoiFractureDataflowNode) == 0x000008, "Wrong alignment on FVoronoiFractureDataflowNode");
@@ -2325,23 +2316,21 @@ static_assert(offsetof(FVoronoiFractureDataflowNode, PointSpacing) == 0x0001EC, 
 static_assert(offsetof(FVoronoiFractureDataflowNode, AddSamplesForCollision) == 0x0001F0, "Member 'FVoronoiFractureDataflowNode::AddSamplesForCollision' has a wrong offset!");
 static_assert(offsetof(FVoronoiFractureDataflowNode, CollisionSampleSpacing) == 0x0001F4, "Member 'FVoronoiFractureDataflowNode::CollisionSampleSpacing' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionTargetLevelDataflowNode
-// 0x00D8 (0x01C0 - 0x00E8)
-struct FCollectionTransformSelectionTargetLevelDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.DistanceDataflowNode
+// 0x0038 (0x0120 - 0x00E8)
+struct FDistanceDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	int32                                         TargetLevel;                                       // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSkipEmbedded;                                     // 0x019C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D18[0x3];                                     // 0x019D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
+	struct FVector                                PointA;                                            // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                PointB;                                            // 0x0100(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D08[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FCollectionTransformSelectionTargetLevelDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionTargetLevelDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionTargetLevelDataflowNode) == 0x0001C0, "Wrong size on FCollectionTransformSelectionTargetLevelDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, TargetLevel) == 0x000198, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::TargetLevel' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, bSkipEmbedded) == 0x00019C, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::bSkipEmbedded' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, TransformSelection) == 0x0001A0, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FDistanceDataflowNode) == 0x000008, "Wrong alignment on FDistanceDataflowNode");
+static_assert(sizeof(FDistanceDataflowNode) == 0x000120, "Wrong size on FDistanceDataflowNode");
+static_assert(offsetof(FDistanceDataflowNode, PointA) == 0x0000E8, "Member 'FDistanceDataflowNode::PointA' has a wrong offset!");
+static_assert(offsetof(FDistanceDataflowNode, PointB) == 0x000100, "Member 'FDistanceDataflowNode::PointB' has a wrong offset!");
+static_assert(offsetof(FDistanceDataflowNode, ReturnValue) == 0x000118, "Member 'FDistanceDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.PlaneCutterDataflowNode
 // 0x0138 (0x0220 - 0x00E8)
@@ -2361,9 +2350,9 @@ public:
 	int32                                         OctaveNumber;                                      // 0x020C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PointSpacing;                                      // 0x0210(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AddSamplesForCollision;                            // 0x0214(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D19[0x3];                                     // 0x0215(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D09[0x3];                                     // 0x0215(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CollisionSampleSpacing;                            // 0x0218(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1A[0x4];                                     // 0x021C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0A[0x4];                                     // 0x021C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPlaneCutterDataflowNode) == 0x000008, "Wrong alignment on FPlaneCutterDataflowNode");
 static_assert(sizeof(FPlaneCutterDataflowNode) == 0x000220, "Wrong size on FPlaneCutterDataflowNode");
@@ -2389,7 +2378,7 @@ struct FExplodedViewDataflowNode final : public FDataflowNode
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	float                                         UniformScale;                                      // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1B[0x4];                                     // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0B[0x4];                                     // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Scale;                                             // 0x01A0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FExplodedViewDataflowNode) == 0x000008, "Wrong alignment on FExplodedViewDataflowNode");
@@ -2398,22 +2387,22 @@ static_assert(offsetof(FExplodedViewDataflowNode, Collection) == 0x0000E8, "Memb
 static_assert(offsetof(FExplodedViewDataflowNode, UniformScale) == 0x000198, "Member 'FExplodedViewDataflowNode::UniformScale' has a wrong offset!");
 static_assert(offsetof(FExplodedViewDataflowNode, Scale) == 0x0001A0, "Member 'FExplodedViewDataflowNode::Scale' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.RandomFloatDataflowNode
+// ScriptStruct GeometryCollectionNodes.NormalizeToRangeDataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
-struct FRandomFloatDataflowNode final : public FDataflowNode
+struct FNormalizeToRangeDataflowNode final : public FDataflowNode
 {
 public:
-	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1C[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1D[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RangeMin;                                          // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RangeMax;                                          // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FRandomFloatDataflowNode) == 0x000008, "Wrong alignment on FRandomFloatDataflowNode");
-static_assert(sizeof(FRandomFloatDataflowNode) == 0x0000F8, "Wrong size on FRandomFloatDataflowNode");
-static_assert(offsetof(FRandomFloatDataflowNode, bDeterministic) == 0x0000E8, "Member 'FRandomFloatDataflowNode::bDeterministic' has a wrong offset!");
-static_assert(offsetof(FRandomFloatDataflowNode, RandomSeed) == 0x0000EC, "Member 'FRandomFloatDataflowNode::RandomSeed' has a wrong offset!");
-static_assert(offsetof(FRandomFloatDataflowNode, ReturnValue) == 0x0000F0, "Member 'FRandomFloatDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FNormalizeToRangeDataflowNode) == 0x000008, "Wrong alignment on FNormalizeToRangeDataflowNode");
+static_assert(sizeof(FNormalizeToRangeDataflowNode) == 0x0000F8, "Wrong size on FNormalizeToRangeDataflowNode");
+static_assert(offsetof(FNormalizeToRangeDataflowNode, Float) == 0x0000E8, "Member 'FNormalizeToRangeDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FNormalizeToRangeDataflowNode, RangeMin) == 0x0000EC, "Member 'FNormalizeToRangeDataflowNode::RangeMin' has a wrong offset!");
+static_assert(offsetof(FNormalizeToRangeDataflowNode, RangeMax) == 0x0000F0, "Member 'FNormalizeToRangeDataflowNode::RangeMax' has a wrong offset!");
+static_assert(offsetof(FNormalizeToRangeDataflowNode, ReturnValue) == 0x0000F4, "Member 'FNormalizeToRangeDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralStringDataflowNode
 // 0x0020 (0x0108 - 0x00E8)
@@ -2441,21 +2430,24 @@ static_assert(sizeof(FMakePointsDataflowNode) == 0x000108, "Wrong size on FMakeP
 static_assert(offsetof(FMakePointsDataflowNode, Point) == 0x0000E8, "Member 'FMakePointsDataflowNode::Point' has a wrong offset!");
 static_assert(offsetof(FMakePointsDataflowNode, Points) == 0x0000F8, "Member 'FMakePointsDataflowNode::Points' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.DotProductDataflowNode
-// 0x0038 (0x0120 - 0x00E8)
-struct FDotProductDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByPercentageDataflowNode
+// 0x0030 (0x0118 - 0x00E8)
+struct FCollectionTransformSelectionByPercentageDataflowNode final : public FDataflowNode
 {
 public:
-	struct FVector                                VectorA;                                           // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                VectorB;                                           // 0x0100(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1E[0x4];                                     // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
+	int32                                         Percentage;                                        // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDeterministic;                                    // 0x010C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D0C[0x3];                                     // 0x010D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomSeed;                                        // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D0D[0x4];                                     // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FDotProductDataflowNode) == 0x000008, "Wrong alignment on FDotProductDataflowNode");
-static_assert(sizeof(FDotProductDataflowNode) == 0x000120, "Wrong size on FDotProductDataflowNode");
-static_assert(offsetof(FDotProductDataflowNode, VectorA) == 0x0000E8, "Member 'FDotProductDataflowNode::VectorA' has a wrong offset!");
-static_assert(offsetof(FDotProductDataflowNode, VectorB) == 0x000100, "Member 'FDotProductDataflowNode::VectorB' has a wrong offset!");
-static_assert(offsetof(FDotProductDataflowNode, ReturnValue) == 0x000118, "Member 'FDotProductDataflowNode::ReturnValue' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionByPercentageDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByPercentageDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionByPercentageDataflowNode) == 0x000118, "Wrong size on FCollectionTransformSelectionByPercentageDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, Percentage) == 0x000108, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::Percentage' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, bDeterministic) == 0x00010C, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::bDeterministic' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, RandomSeed) == 0x000110, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::RandomSeed' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeBoxDataflowNode
 // 0x00A0 (0x0188 - 0x00E8)
@@ -2463,7 +2455,7 @@ struct FMakeBoxDataflowNode final : public FDataflowNode
 {
 public:
 	EMakeBoxDataTypeEnum                          DataType;                                          // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1F[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0E[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Min;                                               // 0x00F0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Max;                                               // 0x0108(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Center;                                            // 0x0120(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2486,7 +2478,7 @@ struct FMakeSphereDataflowNode final : public FDataflowNode
 public:
 	struct FVector                                Center;                                            // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Radius;                                            // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D20[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0F[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSphere                                Sphere;                                            // 0x0108(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMakeSphereDataflowNode) == 0x000008, "Wrong alignment on FMakeSphereDataflowNode");
@@ -2495,18 +2487,27 @@ static_assert(offsetof(FMakeSphereDataflowNode, Center) == 0x0000E8, "Member 'FM
 static_assert(offsetof(FMakeSphereDataflowNode, Radius) == 0x000100, "Member 'FMakeSphereDataflowNode::Radius' has a wrong offset!");
 static_assert(offsetof(FMakeSphereDataflowNode, Sphere) == 0x000108, "Member 'FMakeSphereDataflowNode::Sphere' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSiblingsDataflowNode
-// 0x00D0 (0x01B8 - 0x00E8)
-struct FCollectionTransformSelectionSiblingsDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByVolumeDataflowNode
+// 0x00E0 (0x01C8 - 0x00E8)
+struct FCollectionTransformSelectionByVolumeDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
-	struct FManagedArrayCollection                Collection;                                        // 0x0108(0x00B0)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	float                                         VolumeMin;                                         // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VolumeMax;                                         // 0x019C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERangeSettingEnum                             RangeSetting;                                      // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInclusive;                                        // 0x01A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D10[0x6];                                     // 0x01A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionSiblingsDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionSiblingsDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionSiblingsDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionSiblingsDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionSiblingsDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionSiblingsDataflowNode::TransformSelection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionSiblingsDataflowNode, Collection) == 0x000108, "Member 'FCollectionTransformSelectionSiblingsDataflowNode::Collection' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionByVolumeDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByVolumeDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionByVolumeDataflowNode) == 0x0001C8, "Wrong size on FCollectionTransformSelectionByVolumeDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, VolumeMin) == 0x000198, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::VolumeMin' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, VolumeMax) == 0x00019C, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::VolumeMax' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, RangeSetting) == 0x0001A0, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::RangeSetting' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, bInclusive) == 0x0001A1, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::bInclusive' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralFloatDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2534,29 +2535,23 @@ static_assert(sizeof(FMakeLiteralIntDataflowNode) == 0x0000F0, "Wrong size on FM
 static_assert(offsetof(FMakeLiteralIntDataflowNode, Value) == 0x0000E8, "Member 'FMakeLiteralIntDataflowNode::Value' has a wrong offset!");
 static_assert(offsetof(FMakeLiteralIntDataflowNode, Int) == 0x0000EC, "Member 'FMakeLiteralIntDataflowNode::Int' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInSphereDataflowNode
-// 0x0168 (0x0250 - 0x00E8)
-struct FCollectionTransformSelectionInSphereDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionTargetLevelDataflowNode
+// 0x00D8 (0x01C0 - 0x00E8)
+struct FCollectionTransformSelectionTargetLevelDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FSphere                                Sphere;                                            // 0x0198(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D21[0x8];                                     // 0x01B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x01C0(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESelectSubjectTypeEnum                        Type;                                              // 0x0220(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllVerticesMustContainedInSphere;                 // 0x0221(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D22[0x6];                                     // 0x0222(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0228(0x0020)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D23[0x8];                                     // 0x0248(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         TargetLevel;                                       // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipEmbedded;                                     // 0x019C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D11[0x3];                                     // 0x019D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A0(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionInSphereDataflowNode) == 0x000010, "Wrong alignment on FCollectionTransformSelectionInSphereDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionInSphereDataflowNode) == 0x000250, "Wrong size on FCollectionTransformSelectionInSphereDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Sphere) == 0x000198, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Sphere' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Transform) == 0x0001C0, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Transform' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Type) == 0x000220, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Type' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, bAllVerticesMustContainedInSphere) == 0x000221, "Member 'FCollectionTransformSelectionInSphereDataflowNode::bAllVerticesMustContainedInSphere' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, TransformSelection) == 0x000228, "Member 'FCollectionTransformSelectionInSphereDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionTargetLevelDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionTargetLevelDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionTargetLevelDataflowNode) == 0x0001C0, "Wrong size on FCollectionTransformSelectionTargetLevelDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, TargetLevel) == 0x000198, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::TargetLevel' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, bSkipEmbedded) == 0x00019C, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::bSkipEmbedded' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionTargetLevelDataflowNode, TransformSelection) == 0x0001A0, "Member 'FCollectionTransformSelectionTargetLevelDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeLiteralBoolDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2565,7 +2560,7 @@ struct FMakeLiteralBoolDataflowNode final : public FDataflowNode
 public:
 	bool                                          Value;                                             // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Bool;                                              // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D24[0x6];                                     // 0x00EA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D12[0x6];                                     // 0x00EA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMakeLiteralBoolDataflowNode) == 0x000008, "Wrong alignment on FMakeLiteralBoolDataflowNode");
 static_assert(sizeof(FMakeLiteralBoolDataflowNode) == 0x0000F0, "Wrong size on FMakeLiteralBoolDataflowNode");
@@ -2580,7 +2575,7 @@ public:
 	float                                         X;                                                 // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Y;                                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Z;                                                 // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D25[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D13[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Vector;                                            // 0x00F8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMakeLiteralVectorDataflowNode) == 0x000008, "Wrong alignment on FMakeLiteralVectorDataflowNode");
@@ -2590,18 +2585,20 @@ static_assert(offsetof(FMakeLiteralVectorDataflowNode, Y) == 0x0000EC, "Member '
 static_assert(offsetof(FMakeLiteralVectorDataflowNode, Z) == 0x0000F0, "Member 'FMakeLiteralVectorDataflowNode::Z' has a wrong offset!");
 static_assert(offsetof(FMakeLiteralVectorDataflowNode, Vector) == 0x0000F8, "Member 'FMakeLiteralVectorDataflowNode::Vector' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionLeafDataflowNode
-// 0x00D0 (0x01B8 - 0x00E8)
-struct FCollectionTransformSelectionLeafDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionFromIndexArrayDataflowNode
+// 0x00E0 (0x01C8 - 0x00E8)
+struct FCollectionTransformSelectionFromIndexArrayDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+	TArray<int32>                                 BoneIndices;                                       // 0x0198(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionLeafDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionLeafDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionLeafDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionLeafDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionLeafDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionLeafDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionLeafDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionLeafDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionFromIndexArrayDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionFromIndexArrayDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionFromIndexArrayDataflowNode) == 0x0001C8, "Wrong size on FCollectionTransformSelectionFromIndexArrayDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, BoneIndices) == 0x000198, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::BoneIndices' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MakeTransformDataflowNode
 // 0x00A8 (0x0190 - 0x00E8)
@@ -2629,7 +2626,7 @@ public:
 	float                                         Y;                                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Z;                                                 // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         W;                                                 // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D26[0x8];                                     // 0x00F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D14[0x8];                                     // 0x00F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FQuat                                  Quaternion;                                        // 0x0100(0x0020)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMakeQuaternionDataflowNode) == 0x000010, "Wrong alignment on FMakeQuaternionDataflowNode");
@@ -2640,24 +2637,27 @@ static_assert(offsetof(FMakeQuaternionDataflowNode, Z) == 0x0000F0, "Member 'FMa
 static_assert(offsetof(FMakeQuaternionDataflowNode, W) == 0x0000F4, "Member 'FMakeQuaternionDataflowNode::W' has a wrong offset!");
 static_assert(offsetof(FMakeQuaternionDataflowNode, Quaternion) == 0x000100, "Member 'FMakeQuaternionDataflowNode::Quaternion' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByPercentageDataflowNode
+// ScriptStruct GeometryCollectionNodes.SelectFloatArrayIndicesInRangeDataflowNode
 // 0x0030 (0x0118 - 0x00E8)
-struct FCollectionTransformSelectionByPercentageDataflowNode final : public FDataflowNode
+struct FSelectFloatArrayIndicesInRangeDataflowNode final : public FDataflowNode
 {
 public:
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
-	int32                                         Percentage;                                        // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDeterministic;                                    // 0x010C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D27[0x3];                                     // 0x010D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RandomSeed;                                        // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D28[0x4];                                     // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 Values;                                            // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Min;                                               // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERangeSettingEnum                             RangeSetting;                                      // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInclusive;                                        // 0x0101(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D15[0x6];                                     // 0x0102(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 Indices;                                           // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionByPercentageDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByPercentageDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionByPercentageDataflowNode) == 0x000118, "Wrong size on FCollectionTransformSelectionByPercentageDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::TransformSelection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, Percentage) == 0x000108, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::Percentage' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, bDeterministic) == 0x00010C, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::bDeterministic' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByPercentageDataflowNode, RandomSeed) == 0x000110, "Member 'FCollectionTransformSelectionByPercentageDataflowNode::RandomSeed' has a wrong offset!");
+static_assert(alignof(FSelectFloatArrayIndicesInRangeDataflowNode) == 0x000008, "Wrong alignment on FSelectFloatArrayIndicesInRangeDataflowNode");
+static_assert(sizeof(FSelectFloatArrayIndicesInRangeDataflowNode) == 0x000118, "Wrong size on FSelectFloatArrayIndicesInRangeDataflowNode");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Values) == 0x0000E8, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Values' has a wrong offset!");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Min) == 0x0000F8, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Min' has a wrong offset!");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Max) == 0x0000FC, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Max' has a wrong offset!");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, RangeSetting) == 0x000100, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::RangeSetting' has a wrong offset!");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, bInclusive) == 0x000101, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::bInclusive' has a wrong offset!");
+static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Indices) == 0x000108, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Indices' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.AddDataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
@@ -2667,7 +2667,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D29[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D16[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAddDataflowNode) == 0x000008, "Wrong alignment on FAddDataflowNode");
 static_assert(sizeof(FAddDataflowNode) == 0x0000F8, "Wrong size on FAddDataflowNode");
@@ -2683,7 +2683,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2A[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D17[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSubtractDataflowNode) == 0x000008, "Wrong alignment on FSubtractDataflowNode");
 static_assert(sizeof(FSubtractDataflowNode) == 0x0000F8, "Wrong size on FSubtractDataflowNode");
@@ -2691,27 +2691,16 @@ static_assert(offsetof(FSubtractDataflowNode, FloatA) == 0x0000E8, "Member 'FSub
 static_assert(offsetof(FSubtractDataflowNode, FloatB) == 0x0000EC, "Member 'FSubtractDataflowNode::FloatB' has a wrong offset!");
 static_assert(offsetof(FSubtractDataflowNode, ReturnValue) == 0x0000F0, "Member 'FSubtractDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByVolumeDataflowNode
-// 0x00E0 (0x01C8 - 0x00E8)
-struct FCollectionTransformSelectionByVolumeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionFaceSelectionInvertDataflowNode
+// 0x0020 (0x0108 - 0x00E8)
+struct FCollectionFaceSelectionInvertDataflowNode final : public FDataflowNode
 {
 public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	float                                         VolumeMin;                                         // 0x0198(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VolumeMax;                                         // 0x019C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERangeSettingEnum                             RangeSetting;                                      // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInclusive;                                        // 0x01A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2B[0x6];                                     // 0x01A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
+	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionByVolumeDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByVolumeDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionByVolumeDataflowNode) == 0x0001C8, "Wrong size on FCollectionTransformSelectionByVolumeDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, VolumeMin) == 0x000198, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::VolumeMin' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, VolumeMax) == 0x00019C, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::VolumeMax' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, RangeSetting) == 0x0001A0, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::RangeSetting' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, bInclusive) == 0x0001A1, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::bInclusive' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByVolumeDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionByVolumeDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FCollectionFaceSelectionInvertDataflowNode) == 0x000008, "Wrong alignment on FCollectionFaceSelectionInvertDataflowNode");
+static_assert(sizeof(FCollectionFaceSelectionInvertDataflowNode) == 0x000108, "Wrong size on FCollectionFaceSelectionInvertDataflowNode");
+static_assert(offsetof(FCollectionFaceSelectionInvertDataflowNode, FaceSelection) == 0x0000E8, "Member 'FCollectionFaceSelectionInvertDataflowNode::FaceSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.MultiplyDataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
@@ -2721,7 +2710,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2C[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D18[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMultiplyDataflowNode) == 0x000008, "Wrong alignment on FMultiplyDataflowNode");
 static_assert(sizeof(FMultiplyDataflowNode) == 0x0000F8, "Wrong size on FMultiplyDataflowNode");
@@ -2737,7 +2726,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2D[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D19[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSafeDivideDataflowNode) == 0x000008, "Wrong alignment on FSafeDivideDataflowNode");
 static_assert(sizeof(FSafeDivideDataflowNode) == 0x0000F8, "Wrong size on FSafeDivideDataflowNode");
@@ -2745,23 +2734,29 @@ static_assert(offsetof(FSafeDivideDataflowNode, FloatA) == 0x0000E8, "Member 'FS
 static_assert(offsetof(FSafeDivideDataflowNode, FloatB) == 0x0000EC, "Member 'FSafeDivideDataflowNode::FloatB' has a wrong offset!");
 static_assert(offsetof(FSafeDivideDataflowNode, ReturnValue) == 0x0000F0, "Member 'FSafeDivideDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionSetOperationDataflowNode
-// 0x0068 (0x0150 - 0x00E8)
-struct FCollectionVertexSelectionSetOperationDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInSphereDataflowNode
+// 0x0168 (0x0250 - 0x00E8)
+struct FCollectionTransformSelectionInSphereDataflowNode final : public FDataflowNode
 {
 public:
-	ESetOperationEnum                             Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2E[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowVertexSelection               VertexSelectionA;                                  // 0x00F0(0x0020)(NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelectionB;                                  // 0x0110(0x0020)(NativeAccessSpecifierPublic)
-	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0130(0x0020)(NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FSphere                                Sphere;                                            // 0x0198(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1A[0x8];                                     // 0x01B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x01C0(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESelectSubjectTypeEnum                        Type;                                              // 0x0220(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllVerticesMustContainedInSphere;                 // 0x0221(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1B[0x6];                                     // 0x0222(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0228(0x0020)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1C[0x8];                                     // 0x0248(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FCollectionVertexSelectionSetOperationDataflowNode) == 0x000008, "Wrong alignment on FCollectionVertexSelectionSetOperationDataflowNode");
-static_assert(sizeof(FCollectionVertexSelectionSetOperationDataflowNode) == 0x000150, "Wrong size on FCollectionVertexSelectionSetOperationDataflowNode");
-static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, Operation) == 0x0000E8, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::Operation' has a wrong offset!");
-static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelectionA) == 0x0000F0, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelectionA' has a wrong offset!");
-static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelectionB) == 0x000110, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelectionB' has a wrong offset!");
-static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelection) == 0x000130, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelection' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionInSphereDataflowNode) == 0x000010, "Wrong alignment on FCollectionTransformSelectionInSphereDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionInSphereDataflowNode) == 0x000250, "Wrong size on FCollectionTransformSelectionInSphereDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Sphere) == 0x000198, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Sphere' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Transform) == 0x0001C0, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Transform' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, Type) == 0x000220, "Member 'FCollectionTransformSelectionInSphereDataflowNode::Type' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, bAllVerticesMustContainedInSphere) == 0x000221, "Member 'FCollectionTransformSelectionInSphereDataflowNode::bAllVerticesMustContainedInSphere' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionInSphereDataflowNode, TransformSelection) == 0x000228, "Member 'FCollectionTransformSelectionInSphereDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.DivideDataflowNode
 // 0x0000 (0x00F8 - 0x00F8)
@@ -2788,31 +2783,18 @@ static_assert(offsetof(FDivisionDataflowNode, Divisor) == 0x0000EC, "Member 'FDi
 static_assert(offsetof(FDivisionDataflowNode, Remainder) == 0x0000F0, "Member 'FDivisionDataflowNode::Remainder' has a wrong offset!");
 static_assert(offsetof(FDivisionDataflowNode, ReturnValue) == 0x0000F4, "Member 'FDivisionDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByIntAttrDataflowNode
-// 0x0100 (0x01E8 - 0x00E8)
-struct FCollectionTransformSelectionByIntAttrDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionLeafDataflowNode
+// 0x00D0 (0x01B8 - 0x00E8)
+struct FCollectionTransformSelectionLeafDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 GroupName;                                         // 0x0198(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AttrName;                                          // 0x01A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Min;                                               // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Max;                                               // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERangeSettingEnum                             RangeSetting;                                      // 0x01C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInclusive;                                        // 0x01C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D2F[0x6];                                     // 0x01C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x01C8(0x0020)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCollectionTransformSelectionByIntAttrDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByIntAttrDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionByIntAttrDataflowNode) == 0x0001E8, "Wrong size on FCollectionTransformSelectionByIntAttrDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, GroupName) == 0x000198, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::GroupName' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, AttrName) == 0x0001A8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::AttrName' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Min) == 0x0001B8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Min' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Max) == 0x0001BC, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Max' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, RangeSetting) == 0x0001C0, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::RangeSetting' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, bInclusive) == 0x0001C1, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::bInclusive' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, TransformSelection) == 0x0001C8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(alignof(FCollectionTransformSelectionLeafDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionLeafDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionLeafDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionLeafDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionLeafDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionLeafDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionLeafDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionLeafDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.SafeReciprocalDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2840,27 +2822,20 @@ static_assert(sizeof(FSquareDataflowNode) == 0x0000F0, "Wrong size on FSquareDat
 static_assert(offsetof(FSquareDataflowNode, Float) == 0x0000E8, "Member 'FSquareDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FSquareDataflowNode, ReturnValue) == 0x0000EC, "Member 'FSquareDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.SelectFloatArrayIndicesInRangeDataflowNode
-// 0x0030 (0x0118 - 0x00E8)
-struct FSelectFloatArrayIndicesInRangeDataflowNode final : public FDataflowNode
+// ScriptStruct GeometryCollectionNodes.CollectionFaceSelectionCustomDataflowNode
+// 0x00E0 (0x01C8 - 0x00E8)
+struct FCollectionFaceSelectionCustomDataflowNode final : public FDataflowNode
 {
 public:
-	TArray<float>                                 Values;                                            // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Min;                                               // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERangeSettingEnum                             RangeSetting;                                      // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInclusive;                                        // 0x0101(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D30[0x6];                                     // 0x0102(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 Indices;                                           // 0x0108(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	class FString                                 FaceIndicies;                                      // 0x0198(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSelectFloatArrayIndicesInRangeDataflowNode) == 0x000008, "Wrong alignment on FSelectFloatArrayIndicesInRangeDataflowNode");
-static_assert(sizeof(FSelectFloatArrayIndicesInRangeDataflowNode) == 0x000118, "Wrong size on FSelectFloatArrayIndicesInRangeDataflowNode");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Values) == 0x0000E8, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Values' has a wrong offset!");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Min) == 0x0000F8, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Min' has a wrong offset!");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Max) == 0x0000FC, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Max' has a wrong offset!");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, RangeSetting) == 0x000100, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::RangeSetting' has a wrong offset!");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, bInclusive) == 0x000101, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::bInclusive' has a wrong offset!");
-static_assert(offsetof(FSelectFloatArrayIndicesInRangeDataflowNode, Indices) == 0x000108, "Member 'FSelectFloatArrayIndicesInRangeDataflowNode::Indices' has a wrong offset!");
+static_assert(alignof(FCollectionFaceSelectionCustomDataflowNode) == 0x000008, "Wrong alignment on FCollectionFaceSelectionCustomDataflowNode");
+static_assert(sizeof(FCollectionFaceSelectionCustomDataflowNode) == 0x0001C8, "Wrong size on FCollectionFaceSelectionCustomDataflowNode");
+static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionFaceSelectionCustomDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, FaceIndicies) == 0x000198, "Member 'FCollectionFaceSelectionCustomDataflowNode::FaceIndicies' has a wrong offset!");
+static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, FaceSelection) == 0x0001A8, "Member 'FCollectionFaceSelectionCustomDataflowNode::FaceSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.SquareRootDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2888,17 +2863,6 @@ static_assert(sizeof(FInverseSqrtDataflowNode) == 0x0000F0, "Wrong size on FInve
 static_assert(offsetof(FInverseSqrtDataflowNode, Float) == 0x0000E8, "Member 'FInverseSqrtDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FInverseSqrtDataflowNode, ReturnValue) == 0x0000EC, "Member 'FInverseSqrtDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionFaceSelectionInvertDataflowNode
-// 0x0020 (0x0108 - 0x00E8)
-struct FCollectionFaceSelectionInvertDataflowNode final : public FDataflowNode
-{
-public:
-	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCollectionFaceSelectionInvertDataflowNode) == 0x000008, "Wrong alignment on FCollectionFaceSelectionInvertDataflowNode");
-static_assert(sizeof(FCollectionFaceSelectionInvertDataflowNode) == 0x000108, "Wrong size on FCollectionFaceSelectionInvertDataflowNode");
-static_assert(offsetof(FCollectionFaceSelectionInvertDataflowNode, FaceSelection) == 0x0000E8, "Member 'FCollectionFaceSelectionInvertDataflowNode::FaceSelection' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.CubeDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
 struct FCubeDataflowNode final : public FDataflowNode
@@ -2924,6 +2888,24 @@ static_assert(alignof(FNegateDataflowNode) == 0x000008, "Wrong alignment on FNeg
 static_assert(sizeof(FNegateDataflowNode) == 0x0000F0, "Wrong size on FNegateDataflowNode");
 static_assert(offsetof(FNegateDataflowNode, Float) == 0x0000E8, "Member 'FNegateDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FNegateDataflowNode, ReturnValue) == 0x0000EC, "Member 'FNegateDataflowNode::ReturnValue' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.CollectionVertexSelectionSetOperationDataflowNode
+// 0x0068 (0x0150 - 0x00E8)
+struct FCollectionVertexSelectionSetOperationDataflowNode final : public FDataflowNode
+{
+public:
+	ESetOperationEnum                             Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1D[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowVertexSelection               VertexSelectionA;                                  // 0x00F0(0x0020)(NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelectionB;                                  // 0x0110(0x0020)(NativeAccessSpecifierPublic)
+	struct FDataflowVertexSelection               VertexSelection;                                   // 0x0130(0x0020)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCollectionVertexSelectionSetOperationDataflowNode) == 0x000008, "Wrong alignment on FCollectionVertexSelectionSetOperationDataflowNode");
+static_assert(sizeof(FCollectionVertexSelectionSetOperationDataflowNode) == 0x000150, "Wrong size on FCollectionVertexSelectionSetOperationDataflowNode");
+static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, Operation) == 0x0000E8, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::Operation' has a wrong offset!");
+static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelectionA) == 0x0000F0, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelectionA' has a wrong offset!");
+static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelectionB) == 0x000110, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelectionB' has a wrong offset!");
+static_assert(offsetof(FCollectionVertexSelectionSetOperationDataflowNode, VertexSelection) == 0x000130, "Member 'FCollectionVertexSelectionSetOperationDataflowNode::VertexSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.AbsDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -2951,6 +2933,32 @@ static_assert(sizeof(FFloorDataflowNode) == 0x0000F0, "Wrong size on FFloorDataf
 static_assert(offsetof(FFloorDataflowNode, Float) == 0x0000E8, "Member 'FFloorDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FFloorDataflowNode, ReturnValue) == 0x0000EC, "Member 'FFloorDataflowNode::ReturnValue' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionByIntAttrDataflowNode
+// 0x0100 (0x01E8 - 0x00E8)
+struct FCollectionTransformSelectionByIntAttrDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	class FString                                 GroupName;                                         // 0x0198(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AttrName;                                          // 0x01A8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Min;                                               // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Max;                                               // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERangeSettingEnum                             RangeSetting;                                      // 0x01C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInclusive;                                        // 0x01C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1E[0x6];                                     // 0x01C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x01C8(0x0020)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCollectionTransformSelectionByIntAttrDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByIntAttrDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionByIntAttrDataflowNode) == 0x0001E8, "Wrong size on FCollectionTransformSelectionByIntAttrDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, GroupName) == 0x000198, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::GroupName' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, AttrName) == 0x0001A8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::AttrName' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Min) == 0x0001B8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Min' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, Max) == 0x0001BC, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::Max' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, RangeSetting) == 0x0001C0, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::RangeSetting' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, bInclusive) == 0x0001C1, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::bInclusive' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionByIntAttrDataflowNode, TransformSelection) == 0x0001C8, "Member 'FCollectionTransformSelectionByIntAttrDataflowNode::TransformSelection' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.CeilDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
 struct FCeilDataflowNode final : public FDataflowNode
@@ -2976,21 +2984,6 @@ static_assert(alignof(FRoundDataflowNode) == 0x000008, "Wrong alignment on FRoun
 static_assert(sizeof(FRoundDataflowNode) == 0x0000F0, "Wrong size on FRoundDataflowNode");
 static_assert(offsetof(FRoundDataflowNode, Float) == 0x0000E8, "Member 'FRoundDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FRoundDataflowNode, ReturnValue) == 0x0000EC, "Member 'FRoundDataflowNode::ReturnValue' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.CollectionFaceSelectionCustomDataflowNode
-// 0x00E0 (0x01C8 - 0x00E8)
-struct FCollectionFaceSelectionCustomDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	class FString                                 FaceIndicies;                                      // 0x0198(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCollectionFaceSelectionCustomDataflowNode) == 0x000008, "Wrong alignment on FCollectionFaceSelectionCustomDataflowNode");
-static_assert(sizeof(FCollectionFaceSelectionCustomDataflowNode) == 0x0001C8, "Wrong size on FCollectionFaceSelectionCustomDataflowNode");
-static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionFaceSelectionCustomDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, FaceIndicies) == 0x000198, "Member 'FCollectionFaceSelectionCustomDataflowNode::FaceIndicies' has a wrong offset!");
-static_assert(offsetof(FCollectionFaceSelectionCustomDataflowNode, FaceSelection) == 0x0001A8, "Member 'FCollectionFaceSelectionCustomDataflowNode::FaceSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.TruncDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -3026,7 +3019,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D31[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D1F[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMinDataflowNode) == 0x000008, "Wrong alignment on FMinDataflowNode");
 static_assert(sizeof(FMinDataflowNode) == 0x0000F8, "Wrong size on FMinDataflowNode");
@@ -3042,7 +3035,7 @@ public:
 	float                                         FloatA;                                            // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D32[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D20[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMaxDataflowNode) == 0x000008, "Wrong alignment on FMaxDataflowNode");
 static_assert(sizeof(FMaxDataflowNode) == 0x0000F8, "Wrong size on FMaxDataflowNode");
@@ -3164,7 +3157,7 @@ public:
 	float                                         base;                                              // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Exp;                                               // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D33[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D21[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPowDataflowNode) == 0x000008, "Wrong alignment on FPowDataflowNode");
 static_assert(sizeof(FPowDataflowNode) == 0x0000F8, "Wrong size on FPowDataflowNode");
@@ -3180,7 +3173,7 @@ public:
 	float                                         base;                                              // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         A;                                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D34[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D22[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLogDataflowNode) == 0x000008, "Wrong alignment on FLogDataflowNode");
 static_assert(sizeof(FLogDataflowNode) == 0x0000F8, "Wrong size on FLogDataflowNode");
@@ -3235,19 +3228,6 @@ static_assert(offsetof(FWrapDataflowNode, Min) == 0x0000EC, "Member 'FWrapDatafl
 static_assert(offsetof(FWrapDataflowNode, Max) == 0x0000F0, "Member 'FWrapDataflowNode::Max' has a wrong offset!");
 static_assert(offsetof(FWrapDataflowNode, ReturnValue) == 0x0000F4, "Member 'FWrapDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.ExpDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FExpDataflowNode final : public FDataflowNode
-{
-public:
-	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FExpDataflowNode) == 0x000008, "Wrong alignment on FExpDataflowNode");
-static_assert(sizeof(FExpDataflowNode) == 0x0000F0, "Wrong size on FExpDataflowNode");
-static_assert(offsetof(FExpDataflowNode, Float) == 0x0000E8, "Member 'FExpDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FExpDataflowNode, ReturnValue) == 0x0000EC, "Member 'FExpDataflowNode::ReturnValue' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.SinDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
 struct FSinDataflowNode final : public FDataflowNode
@@ -3260,6 +3240,19 @@ static_assert(alignof(FSinDataflowNode) == 0x000008, "Wrong alignment on FSinDat
 static_assert(sizeof(FSinDataflowNode) == 0x0000F0, "Wrong size on FSinDataflowNode");
 static_assert(offsetof(FSinDataflowNode, Float) == 0x0000E8, "Member 'FSinDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FSinDataflowNode, ReturnValue) == 0x0000EC, "Member 'FSinDataflowNode::ReturnValue' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.ArcSinDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FArcSinDataflowNode final : public FDataflowNode
+{
+public:
+	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FArcSinDataflowNode) == 0x000008, "Wrong alignment on FArcSinDataflowNode");
+static_assert(sizeof(FArcSinDataflowNode) == 0x0000F0, "Wrong size on FArcSinDataflowNode");
+static_assert(offsetof(FArcSinDataflowNode, Float) == 0x0000E8, "Member 'FArcSinDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FArcSinDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcSinDataflowNode::ReturnValue' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.CosDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
@@ -3274,6 +3267,19 @@ static_assert(sizeof(FCosDataflowNode) == 0x0000F0, "Wrong size on FCosDataflowN
 static_assert(offsetof(FCosDataflowNode, Float) == 0x0000E8, "Member 'FCosDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FCosDataflowNode, ReturnValue) == 0x0000EC, "Member 'FCosDataflowNode::ReturnValue' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.ArcCosDataflowNode
+// 0x0008 (0x00F0 - 0x00E8)
+struct FArcCosDataflowNode final : public FDataflowNode
+{
+public:
+	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FArcCosDataflowNode) == 0x000008, "Wrong alignment on FArcCosDataflowNode");
+static_assert(sizeof(FArcCosDataflowNode) == 0x0000F0, "Wrong size on FArcCosDataflowNode");
+static_assert(offsetof(FArcCosDataflowNode, Float) == 0x0000E8, "Member 'FArcCosDataflowNode::Float' has a wrong offset!");
+static_assert(offsetof(FArcCosDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcCosDataflowNode::ReturnValue' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.TanDataflowNode
 // 0x0008 (0x00F0 - 0x00E8)
 struct FTanDataflowNode final : public FDataflowNode
@@ -3287,19 +3293,6 @@ static_assert(sizeof(FTanDataflowNode) == 0x0000F0, "Wrong size on FTanDataflowN
 static_assert(offsetof(FTanDataflowNode, Float) == 0x0000E8, "Member 'FTanDataflowNode::Float' has a wrong offset!");
 static_assert(offsetof(FTanDataflowNode, ReturnValue) == 0x0000EC, "Member 'FTanDataflowNode::ReturnValue' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.ArcTanDataflowNode
-// 0x0008 (0x00F0 - 0x00E8)
-struct FArcTanDataflowNode final : public FDataflowNode
-{
-public:
-	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FArcTanDataflowNode) == 0x000008, "Wrong alignment on FArcTanDataflowNode");
-static_assert(sizeof(FArcTanDataflowNode) == 0x0000F0, "Wrong size on FArcTanDataflowNode");
-static_assert(offsetof(FArcTanDataflowNode, Float) == 0x0000E8, "Member 'FArcTanDataflowNode::Float' has a wrong offset!");
-static_assert(offsetof(FArcTanDataflowNode, ReturnValue) == 0x0000EC, "Member 'FArcTanDataflowNode::ReturnValue' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.ArcTan2DataflowNode
 // 0x0010 (0x00F8 - 0x00E8)
 struct FArcTan2DataflowNode final : public FDataflowNode
@@ -3308,7 +3301,7 @@ public:
 	float                                         Y;                                                 // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         X;                                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D35[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D23[0x4];                                     // 0x00F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FArcTan2DataflowNode) == 0x000008, "Wrong alignment on FArcTan2DataflowNode");
 static_assert(sizeof(FArcTan2DataflowNode) == 0x0000F8, "Wrong size on FArcTan2DataflowNode");
@@ -3323,7 +3316,7 @@ struct FScaleVectorDataflowNode final : public FDataflowNode
 public:
 	struct FVector                                Vector;                                            // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Scale;                                             // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D36[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D24[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ScaledVector;                                      // 0x0108(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FScaleVectorDataflowNode) == 0x000008, "Wrong alignment on FScaleVectorDataflowNode");
@@ -3354,7 +3347,7 @@ struct FLengthDataflowNode final : public FDataflowNode
 public:
 	struct FVector                                Vector;                                            // 0x00E8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D37[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D25[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLengthDataflowNode) == 0x000008, "Wrong alignment on FLengthDataflowNode");
 static_assert(sizeof(FLengthDataflowNode) == 0x000108, "Wrong size on FLengthDataflowNode");
@@ -3368,7 +3361,7 @@ struct FIsNearlyZeroDataflowNode final : public FDataflowNode
 public:
 	float                                         Float;                                             // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x00EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D38[0x3];                                     // 0x00ED(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D26[0x3];                                     // 0x00ED(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FIsNearlyZeroDataflowNode) == 0x000008, "Wrong alignment on FIsNearlyZeroDataflowNode");
 static_assert(sizeof(FIsNearlyZeroDataflowNode) == 0x0000F0, "Wrong size on FIsNearlyZeroDataflowNode");
@@ -3381,12 +3374,12 @@ struct FRandomFloatInRangeDataflowNode final : public FDataflowNode
 {
 public:
 	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D39[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D27[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Min;                                               // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Max;                                               // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3A[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D28[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRandomFloatInRangeDataflowNode) == 0x000008, "Wrong alignment on FRandomFloatInRangeDataflowNode");
 static_assert(sizeof(FRandomFloatInRangeDataflowNode) == 0x000100, "Wrong size on FRandomFloatInRangeDataflowNode");
@@ -3402,11 +3395,11 @@ struct FRandomUnitVectorInConeDataflowNode final : public FDataflowNode
 {
 public:
 	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3B[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D29[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ConeDirection;                                     // 0x00F0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ConeHalfAngle;                                     // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3C[0x4];                                     // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2A[0x4];                                     // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0110(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRandomUnitVectorInConeDataflowNode) == 0x000008, "Wrong alignment on FRandomUnitVectorInConeDataflowNode");
@@ -3438,7 +3431,7 @@ public:
 	TArray<struct FVector>                        Points;                                            // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           Mesh;                                              // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TriangleCount;                                     // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3D[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2B[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPointsToMeshDataflowNode) == 0x000008, "Wrong alignment on FPointsToMeshDataflowNode");
 static_assert(sizeof(FPointsToMeshDataflowNode) == 0x000108, "Wrong size on FPointsToMeshDataflowNode");
@@ -3466,7 +3459,7 @@ struct FCollectionToMeshDataflowNode final : public FDataflowNode
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	bool                                          bCenterPivot;                                      // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3E[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2C[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDynamicMesh*                           Mesh;                                              // 0x01A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCollectionToMeshDataflowNode) == 0x000008, "Wrong alignment on FCollectionToMeshDataflowNode");
@@ -3498,7 +3491,7 @@ public:
 	TArray<struct FVector>                        Points;                                            // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           MeshToCopy;                                        // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Scale;                                             // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D3F[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2D[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDynamicMesh*                           Mesh;                                              // 0x0108(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMeshCopyToPointsDataflowNode) == 0x000008, "Wrong alignment on FMeshCopyToPointsDataflowNode");
@@ -3528,10 +3521,10 @@ struct FPrintStringDataflowNode final : public FDataflowNode
 public:
 	bool                                          bPrintToScreen;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPrintToLog;                                       // 0x00E9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D40[0x2];                                     // 0x00EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2E[0x2];                                     // 0x00EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FColor                                 Color;                                             // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Duration;                                          // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D41[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D2F[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 String;                                            // 0x00F8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPrintStringDataflowNode) == 0x000008, "Wrong alignment on FPrintStringDataflowNode");
@@ -3566,7 +3559,7 @@ public:
 	struct FVector                                Center;                                            // 0x0150(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                HalfExtents;                                       // 0x0168(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Volume;                                            // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D42[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D30[0x4];                                     // 0x0184(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FExpandBoundingBoxDataflowNode) == 0x000008, "Wrong alignment on FExpandBoundingBoxDataflowNode");
 static_assert(sizeof(FExpandBoundingBoxDataflowNode) == 0x000188, "Wrong size on FExpandBoundingBoxDataflowNode");
@@ -3576,6 +3569,24 @@ static_assert(offsetof(FExpandBoundingBoxDataflowNode, Max) == 0x000138, "Member
 static_assert(offsetof(FExpandBoundingBoxDataflowNode, Center) == 0x000150, "Member 'FExpandBoundingBoxDataflowNode::Center' has a wrong offset!");
 static_assert(offsetof(FExpandBoundingBoxDataflowNode, HalfExtents) == 0x000168, "Member 'FExpandBoundingBoxDataflowNode::HalfExtents' has a wrong offset!");
 static_assert(offsetof(FExpandBoundingBoxDataflowNode, Volume) == 0x000180, "Member 'FExpandBoundingBoxDataflowNode::Volume' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.ExpandVectorDataflowNode
+// 0x0028 (0x0110 - 0x00E8)
+struct FExpandVectorDataflowNode final : public FDataflowNode
+{
+public:
+	struct FVector                                Vector;                                            // 0x00E8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         X;                                                 // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Z;                                                 // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D31[0x4];                                     // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FExpandVectorDataflowNode) == 0x000008, "Wrong alignment on FExpandVectorDataflowNode");
+static_assert(sizeof(FExpandVectorDataflowNode) == 0x000110, "Wrong size on FExpandVectorDataflowNode");
+static_assert(offsetof(FExpandVectorDataflowNode, Vector) == 0x0000E8, "Member 'FExpandVectorDataflowNode::Vector' has a wrong offset!");
+static_assert(offsetof(FExpandVectorDataflowNode, X) == 0x000100, "Member 'FExpandVectorDataflowNode::X' has a wrong offset!");
+static_assert(offsetof(FExpandVectorDataflowNode, Y) == 0x000104, "Member 'FExpandVectorDataflowNode::Y' has a wrong offset!");
+static_assert(offsetof(FExpandVectorDataflowNode, Z) == 0x000108, "Member 'FExpandVectorDataflowNode::Z' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.StringAppendDataflowNode
 // 0x0030 (0x0118 - 0x00E8)
@@ -3599,7 +3610,7 @@ struct FHashStringDataflowNode final : public FDataflowNode
 public:
 	class FString                                 String;                                            // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Hash;                                              // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D43[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D32[0x4];                                     // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FHashStringDataflowNode) == 0x000008, "Wrong alignment on FHashStringDataflowNode");
 static_assert(sizeof(FHashStringDataflowNode) == 0x000100, "Wrong size on FHashStringDataflowNode");
@@ -3613,27 +3624,12 @@ struct FHashVectorDataflowNode final : public FDataflowNode
 public:
 	struct FVector                                Vector;                                            // 0x00E8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Hash;                                              // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D44[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D33[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FHashVectorDataflowNode) == 0x000008, "Wrong alignment on FHashVectorDataflowNode");
 static_assert(sizeof(FHashVectorDataflowNode) == 0x000108, "Wrong size on FHashVectorDataflowNode");
 static_assert(offsetof(FHashVectorDataflowNode, Vector) == 0x0000E8, "Member 'FHashVectorDataflowNode::Vector' has a wrong offset!");
 static_assert(offsetof(FHashVectorDataflowNode, Hash) == 0x000100, "Member 'FHashVectorDataflowNode::Hash' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.GetBoundingBoxesFromCollectionDataflowNode
-// 0x00E0 (0x01C8 - 0x00E8)
-struct FGetBoundingBoxesFromCollectionDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
-	TArray<struct FBox>                           BoundingBoxes;                                     // 0x01B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGetBoundingBoxesFromCollectionDataflowNode) == 0x000008, "Wrong alignment on FGetBoundingBoxesFromCollectionDataflowNode");
-static_assert(sizeof(FGetBoundingBoxesFromCollectionDataflowNode) == 0x0001C8, "Wrong size on FGetBoundingBoxesFromCollectionDataflowNode");
-static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, TransformSelection) == 0x000198, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::TransformSelection' has a wrong offset!");
-static_assert(offsetof(FGetBoundingBoxesFromCollectionDataflowNode, BoundingBoxes) == 0x0001B8, "Member 'FGetBoundingBoxesFromCollectionDataflowNode::BoundingBoxes' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.GetRootIndexFromCollectionDataflowNode
 // 0x00B8 (0x01A0 - 0x00E8)
@@ -3642,12 +3638,27 @@ struct FGetRootIndexFromCollectionDataflowNode final : public FDataflowNode
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	int32                                         RootIndex;                                         // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D45[0x4];                                     // 0x019C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D34[0x4];                                     // 0x019C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGetRootIndexFromCollectionDataflowNode) == 0x000008, "Wrong alignment on FGetRootIndexFromCollectionDataflowNode");
 static_assert(sizeof(FGetRootIndexFromCollectionDataflowNode) == 0x0001A0, "Wrong size on FGetRootIndexFromCollectionDataflowNode");
 static_assert(offsetof(FGetRootIndexFromCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FGetRootIndexFromCollectionDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FGetRootIndexFromCollectionDataflowNode, RootIndex) == 0x000198, "Member 'FGetRootIndexFromCollectionDataflowNode::RootIndex' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.GetCentroidsFromCollectionDataflowNode
+// 0x00E0 (0x01C8 - 0x00E8)
+struct FGetCentroidsFromCollectionDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Centroids;                                         // 0x01B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGetCentroidsFromCollectionDataflowNode) == 0x000008, "Wrong alignment on FGetCentroidsFromCollectionDataflowNode");
+static_assert(sizeof(FGetCentroidsFromCollectionDataflowNode) == 0x0001C8, "Wrong size on FGetCentroidsFromCollectionDataflowNode");
+static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FGetCentroidsFromCollectionDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, TransformSelection) == 0x000198, "Member 'FGetCentroidsFromCollectionDataflowNode::TransformSelection' has a wrong offset!");
+static_assert(offsetof(FGetCentroidsFromCollectionDataflowNode, Centroids) == 0x0001B8, "Member 'FGetCentroidsFromCollectionDataflowNode::Centroids' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.TransformCollectionDataflowNode
 // 0x0140 (0x0228 - 0x00E8)
@@ -3657,15 +3668,15 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FVector                                Translate;                                         // 0x0198(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ERotationOrderEnum                            RotationOrder;                                     // 0x01B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D46[0x7];                                     // 0x01B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D35[0x7];                                     // 0x01B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Rotate;                                            // 0x01B8(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x01D0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         UniformScale;                                      // 0x01E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D47[0x4];                                     // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D36[0x4];                                     // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                RotatePivot;                                       // 0x01F0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ScalePivot;                                        // 0x0208(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInvertTransformation;                             // 0x0220(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D48[0x7];                                     // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D37[0x7];                                     // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTransformCollectionDataflowNode) == 0x000008, "Wrong alignment on FTransformCollectionDataflowNode");
 static_assert(sizeof(FTransformCollectionDataflowNode) == 0x000228, "Wrong size on FTransformCollectionDataflowNode");
@@ -3679,17 +3690,6 @@ static_assert(offsetof(FTransformCollectionDataflowNode, RotatePivot) == 0x0001F
 static_assert(offsetof(FTransformCollectionDataflowNode, ScalePivot) == 0x000208, "Member 'FTransformCollectionDataflowNode::ScalePivot' has a wrong offset!");
 static_assert(offsetof(FTransformCollectionDataflowNode, bInvertTransformation) == 0x000220, "Member 'FTransformCollectionDataflowNode::bInvertTransformation' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.BakeTransformsInCollectionDataflowNode
-// 0x00B0 (0x0198 - 0x00E8)
-struct FBakeTransformsInCollectionDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FBakeTransformsInCollectionDataflowNode) == 0x000008, "Wrong alignment on FBakeTransformsInCollectionDataflowNode");
-static_assert(sizeof(FBakeTransformsInCollectionDataflowNode) == 0x000198, "Wrong size on FBakeTransformsInCollectionDataflowNode");
-static_assert(offsetof(FBakeTransformsInCollectionDataflowNode, Collection) == 0x0000E8, "Member 'FBakeTransformsInCollectionDataflowNode::Collection' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.TransformMeshDataflowNode
 // 0x0098 (0x0180 - 0x00E8)
 struct FTransformMeshDataflowNode final : public FDataflowNode
@@ -3698,15 +3698,15 @@ public:
 	class UDynamicMesh*                           Mesh;                                              // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Translate;                                         // 0x00F0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ERotationOrderEnum                            RotationOrder;                                     // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D49[0x7];                                     // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D38[0x7];                                     // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Rotate;                                            // 0x0110(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x0128(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         UniformScale;                                      // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4A[0x4];                                     // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D39[0x4];                                     // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                RotatePivot;                                       // 0x0148(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ScalePivot;                                        // 0x0160(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInvertTransformation;                             // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4B[0x7];                                     // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3A[0x7];                                     // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTransformMeshDataflowNode) == 0x000008, "Wrong alignment on FTransformMeshDataflowNode");
 static_assert(sizeof(FTransformMeshDataflowNode) == 0x000180, "Wrong size on FTransformMeshDataflowNode");
@@ -3726,11 +3726,11 @@ struct FCompareFloatDataflowNode final : public FDataflowNode
 {
 public:
 	ECompareOperationEnum                         Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4C[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3B[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FloatA;                                            // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatB;                                            // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Result;                                            // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4D[0x3];                                     // 0x00F5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3C[0x3];                                     // 0x00F5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCompareFloatDataflowNode) == 0x000008, "Wrong alignment on FCompareFloatDataflowNode");
 static_assert(sizeof(FCompareFloatDataflowNode) == 0x0000F8, "Wrong size on FCompareFloatDataflowNode");
@@ -3747,7 +3747,7 @@ public:
 	struct FManagedArrayCollection                TrueCollection;                                    // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FManagedArrayCollection                FalseCollection;                                   // 0x0198(0x00B0)(NativeAccessSpecifierPublic)
 	bool                                          bCondition;                                        // 0x0248(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4E[0x7];                                     // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3D[0x7];                                     // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FManagedArrayCollection                ChosenCollection;                                  // 0x0250(0x00B0)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FBranchCollectionDataflowNode) == 0x000008, "Wrong alignment on FBranchCollectionDataflowNode");
@@ -3765,11 +3765,11 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
 	bool                                          bEnabledRemoval;                                   // 0x01B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4F[0x3];                                     // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3E[0x3];                                     // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2f                              PostBreakTimer;                                    // 0x01BC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2f                              RemovalTimer;                                      // 0x01C4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bClusterCrumbling;                                 // 0x01CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D50[0x3];                                     // 0x01CD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D3F[0x3];                                     // 0x01CD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoveOnBreakDataflowNode) == 0x000008, "Wrong alignment on FRemoveOnBreakDataflowNode");
 static_assert(sizeof(FRemoveOnBreakDataflowNode) == 0x0001D0, "Wrong size on FRemoveOnBreakDataflowNode");
@@ -3786,13 +3786,13 @@ struct FProximityDataflowNode final : public FDataflowNode
 {
 public:
 	EProximityMethodEnum                          ProximityMethod;                                   // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D51[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D40[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DistanceThreshold;                                 // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ContactThreshold;                                  // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EProximityContactFilteringMethodEnum          FilterContactMethod;                               // 0x00F4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseAsConnectionGraph;                             // 0x00F5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EConnectionContactAreaMethodEnum              ContactAreaMethod;                                 // 0x00F6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D52[0x1];                                     // 0x00F7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D41[0x1];                                     // 0x00F7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FManagedArrayCollection                Collection;                                        // 0x00F8(0x00B0)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FProximityDataflowNode) == 0x000008, "Wrong alignment on FProximityDataflowNode");
@@ -3812,11 +3812,11 @@ struct FAddCustomCollectionAttributeDataflowNode final : public FDataflowNode
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D53[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D42[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AttrName;                                          // 0x01B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECustomAttributeTypeEnum                      CustomAttributeType;                               // 0x01C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D54[0x3];                                     // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D43[0x3];                                     // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         NumElements;                                       // 0x01C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FAddCustomCollectionAttributeDataflowNode) == 0x000008, "Wrong alignment on FAddCustomCollectionAttributeDataflowNode");
@@ -3835,7 +3835,7 @@ struct FGetCollectionAttributeDataTypedDataflowNode final : public FDataflowNode
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	EStandardGroupNameEnum                        GroupName;                                         // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D55[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D44[0x7];                                     // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomGroupName;                                   // 0x01A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AttrName;                                          // 0x01B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<bool>                                  BoolAttributeData;                                 // 0x01C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
@@ -3885,7 +3885,7 @@ public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
 	TArray<float>                                 FloatArray;                                        // 0x0198(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         Scale;                                             // 0x01A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D56[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D45[0x4];                                     // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSetVertexColorInCollectionFromFloatArrayDataflowNode) == 0x000008, "Wrong alignment on FSetVertexColorInCollectionFromFloatArrayDataflowNode");
 static_assert(sizeof(FSetVertexColorInCollectionFromFloatArrayDataflowNode) == 0x0001B0, "Wrong size on FSetVertexColorInCollectionFromFloatArrayDataflowNode");
@@ -3898,7 +3898,7 @@ static_assert(offsetof(FSetVertexColorInCollectionFromFloatArrayDataflowNode, Sc
 struct FInvertTransformDataflowNode final : public FDataflowNode
 {
 public:
-	uint8                                         Pad_2D57[0x8];                                     // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D46[0x8];                                     // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             InTransform;                                       // 0x00F0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                             OutTransform;                                      // 0x0150(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3933,13 +3933,26 @@ static_assert(sizeof(FGetStringOverrideFromAssetDataflowNode) == 0x000128, "Wron
 static_assert(offsetof(FGetStringOverrideFromAssetDataflowNode, String) == 0x000108, "Member 'FGetStringOverrideFromAssetDataflowNode::String' has a wrong offset!");
 static_assert(offsetof(FGetStringOverrideFromAssetDataflowNode, StringDefault) == 0x000118, "Member 'FGetStringOverrideFromAssetDataflowNode::StringDefault' has a wrong offset!");
 
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionAllDataflowNode
+// 0x00D0 (0x01B8 - 0x00E8)
+struct FCollectionTransformSelectionAllDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCollectionTransformSelectionAllDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionAllDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionAllDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionAllDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionAllDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionAllDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionAllDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionAllDataflowNode::TransformSelection' has a wrong offset!");
+
 // ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionSetOperationDataflowNode
 // 0x0068 (0x0150 - 0x00E8)
 struct FCollectionTransformSelectionSetOperationDataflowNode final : public FDataflowNode
 {
 public:
 	ESetOperationEnum                             Operation;                                         // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D58[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D47[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            TransformSelectionA;                               // 0x00F0(0x0020)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelectionB;                               // 0x0110(0x0020)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0130(0x0020)(NativeAccessSpecifierPublic)
@@ -3979,27 +3992,16 @@ static_assert(sizeof(FCollectionTransformSelectionNoneDataflowNode) == 0x0001B8,
 static_assert(offsetof(FCollectionTransformSelectionNoneDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionNoneDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FCollectionTransformSelectionNoneDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionNoneDataflowNode::TransformSelection' has a wrong offset!");
 
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionInvertDataflowNode
-// 0x0020 (0x0108 - 0x00E8)
-struct FCollectionTransformSelectionInvertDataflowNode final : public FDataflowNode
-{
-public:
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCollectionTransformSelectionInvertDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionInvertDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionInvertDataflowNode) == 0x000108, "Wrong size on FCollectionTransformSelectionInvertDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionInvertDataflowNode, TransformSelection) == 0x0000E8, "Member 'FCollectionTransformSelectionInvertDataflowNode::TransformSelection' has a wrong offset!");
-
 // ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionRandomDataflowNode
 // 0x00E0 (0x01C8 - 0x00E8)
 struct FCollectionTransformSelectionRandomDataflowNode final : public FDataflowNode
 {
 public:
 	bool                                          bDeterministic;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D59[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D48[0x3];                                     // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RandomSeed;                                        // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RandomThreshold;                                   // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5A[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D49[0x4];                                     // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FManagedArrayCollection                Collection;                                        // 0x00F8(0x00B0)(NativeAccessSpecifierPublic)
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
 };
@@ -4010,6 +4012,19 @@ static_assert(offsetof(FCollectionTransformSelectionRandomDataflowNode, RandomSe
 static_assert(offsetof(FCollectionTransformSelectionRandomDataflowNode, RandomThreshold) == 0x0000F0, "Member 'FCollectionTransformSelectionRandomDataflowNode::RandomThreshold' has a wrong offset!");
 static_assert(offsetof(FCollectionTransformSelectionRandomDataflowNode, Collection) == 0x0000F8, "Member 'FCollectionTransformSelectionRandomDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FCollectionTransformSelectionRandomDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionRandomDataflowNode::TransformSelection' has a wrong offset!");
+
+// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionRootDataflowNode
+// 0x00D0 (0x01B8 - 0x00E8)
+struct FCollectionTransformSelectionRootDataflowNode final : public FDataflowNode
+{
+public:
+	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
+	struct FDataflowTransformSelection            TransformSelection;                                // 0x0198(0x0020)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCollectionTransformSelectionRootDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionRootDataflowNode");
+static_assert(sizeof(FCollectionTransformSelectionRootDataflowNode) == 0x0001B8, "Wrong size on FCollectionTransformSelectionRootDataflowNode");
+static_assert(offsetof(FCollectionTransformSelectionRootDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionRootDataflowNode::Collection' has a wrong offset!");
+static_assert(offsetof(FCollectionTransformSelectionRootDataflowNode, TransformSelection) == 0x000198, "Member 'FCollectionTransformSelectionRootDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionCustomDataflowNode
 // 0x00E0 (0x01C8 - 0x00E8)
@@ -4025,21 +4040,6 @@ static_assert(sizeof(FCollectionTransformSelectionCustomDataflowNode) == 0x0001C
 static_assert(offsetof(FCollectionTransformSelectionCustomDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionCustomDataflowNode::Collection' has a wrong offset!");
 static_assert(offsetof(FCollectionTransformSelectionCustomDataflowNode, BoneIndicies) == 0x000198, "Member 'FCollectionTransformSelectionCustomDataflowNode::BoneIndicies' has a wrong offset!");
 static_assert(offsetof(FCollectionTransformSelectionCustomDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionCustomDataflowNode::TransformSelection' has a wrong offset!");
-
-// ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionFromIndexArrayDataflowNode
-// 0x00E0 (0x01C8 - 0x00E8)
-struct FCollectionTransformSelectionFromIndexArrayDataflowNode final : public FDataflowNode
-{
-public:
-	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	TArray<int32>                                 BoneIndices;                                       // 0x0198(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCollectionTransformSelectionFromIndexArrayDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionFromIndexArrayDataflowNode");
-static_assert(sizeof(FCollectionTransformSelectionFromIndexArrayDataflowNode) == 0x0001C8, "Wrong size on FCollectionTransformSelectionFromIndexArrayDataflowNode");
-static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, Collection) == 0x0000E8, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::Collection' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, BoneIndices) == 0x000198, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::BoneIndices' has a wrong offset!");
-static_assert(offsetof(FCollectionTransformSelectionFromIndexArrayDataflowNode, TransformSelection) == 0x0001A8, "Member 'FCollectionTransformSelectionFromIndexArrayDataflowNode::TransformSelection' has a wrong offset!");
 
 // ScriptStruct GeometryCollectionNodes.CollectionTransformSelectionParentDataflowNode
 // 0x00D0 (0x01B8 - 0x00E8)
@@ -4117,7 +4117,7 @@ public:
 	ERangeSettingEnum                             RangeSetting;                                      // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInclusive;                                        // 0x01A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseRelativeSize;                                  // 0x01A2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5B[0x5];                                     // 0x01A3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4A[0x5];                                     // 0x01A3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x01A8(0x0020)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCollectionTransformSelectionBySizeDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionBySizeDataflowNode");
@@ -4140,9 +4140,9 @@ public:
 	struct FTransform                             Transform;                                         // 0x01D0(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESelectSubjectTypeEnum                        Type;                                              // 0x0230(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAllVerticesMustContainedInBox;                    // 0x0231(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5C[0x6];                                     // 0x0232(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4B[0x6];                                     // 0x0232(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x0238(0x0020)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5D[0x8];                                     // 0x0258(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4C[0x8];                                     // 0x0258(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCollectionTransformSelectionInBoxDataflowNode) == 0x000010, "Wrong alignment on FCollectionTransformSelectionInBoxDataflowNode");
 static_assert(sizeof(FCollectionTransformSelectionInBoxDataflowNode) == 0x000260, "Wrong size on FCollectionTransformSelectionInBoxDataflowNode");
@@ -4165,7 +4165,7 @@ public:
 	float                                         Max;                                               // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ERangeSettingEnum                             RangeSetting;                                      // 0x01C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInclusive;                                        // 0x01C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5E[0x6];                                     // 0x01C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4D[0x6];                                     // 0x01C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowTransformSelection            TransformSelection;                                // 0x01C8(0x0020)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FCollectionTransformSelectionByFloatAttrDataflowNode) == 0x000008, "Wrong alignment on FCollectionTransformSelectionByFloatAttrDataflowNode");
@@ -4204,7 +4204,7 @@ public:
 	struct FDataflowFaceSelection                 FaceSelection;                                     // 0x01B8(0x0020)(NativeAccessSpecifierPublic)
 	struct FDataflowVertexSelection               VertexSelection;                                   // 0x01D8(0x0020)(NativeAccessSpecifierPublic)
 	bool                                          bAllElementsMustBeSelected;                        // 0x01F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5F[0x7];                                     // 0x01F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4E[0x7];                                     // 0x01F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCollectionSelectionConvertDataflowNode) == 0x000008, "Wrong alignment on FCollectionSelectionConvertDataflowNode");
 static_assert(sizeof(FCollectionSelectionConvertDataflowNode) == 0x000200, "Wrong size on FCollectionSelectionConvertDataflowNode");
@@ -4222,9 +4222,9 @@ public:
 	struct FDataflowVertexSelection               VertexSelection;                                   // 0x00E8(0x0020)(NativeAccessSpecifierPublic)
 	int32                                         Percentage;                                        // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDeterministic;                                    // 0x010C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D60[0x3];                                     // 0x010D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D4F[0x3];                                     // 0x010D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RandomSeed;                                        // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D61[0x4];                                     // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D50[0x4];                                     // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCollectionVertexSelectionByPercentageDataflowNode) == 0x000008, "Wrong alignment on FCollectionVertexSelectionByPercentageDataflowNode");
 static_assert(sizeof(FCollectionVertexSelectionByPercentageDataflowNode) == 0x000118, "Wrong size on FCollectionVertexSelectionByPercentageDataflowNode");
@@ -4239,7 +4239,7 @@ struct FTransformCollectionAttributeDataflowNode final : public FDataflowNode
 {
 public:
 	struct FManagedArrayCollection                Collection;                                        // 0x00E8(0x00B0)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D62[0x8];                                     // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D51[0x8];                                     // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             TransformIn;                                       // 0x01A0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                             LocalTransform;                                    // 0x0200(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 GroupName;                                         // 0x0260(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

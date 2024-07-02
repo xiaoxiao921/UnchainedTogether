@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EnhancedInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "S_Setting_structs.hpp"
+#include "EnhancedInput_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -21,20 +21,21 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Setting.W_Setting_C
-// 0x0170 (0x0430 - 0x02C0)
+// 0x0178 (0x0438 - 0x02C0)
 class UW_Setting_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UW_Bind_C*                              W_Bind;                                            // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_SettingTitle_C*                      W_SettingTitle_5;                                  // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Slider_C*                            W_Slider;                                          // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        WidgetSwitcher_0;                                  // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FS_Setting                             Setting;                                           // 0x02F0(0x0090)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
-	FMulticastInlineDelegateProperty_             SliderValueChanged;                                // 0x0380(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	FMulticastInlineDelegateProperty_             ComboValueChanged;                                 // 0x0390(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	struct FPlayerKeyMapping                      Key;                                               // 0x03A0(0x0090)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
+	class UW_ComboBox_C*                          W_ComboBox;                                        // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_NewBind_C*                           W_NewBind;                                         // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_NewBind_C*                           W_NewBind_2;                                       // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_SettingTitle_C*                      W_SettingTitle_5;                                  // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Slider_C*                            W_Slider;                                          // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWidgetSwitcher*                        WidgetSwitcher_0;                                  // 0x02F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FS_Setting                             Setting;                                           // 0x02F8(0x0090)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
+	FMulticastInlineDelegateProperty_             SliderValueChanged;                                // 0x0388(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             ComboValueChanged;                                 // 0x0398(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FPlayerKeyMapping                      Key;                                               // 0x03A8(0x0090)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_Setting_W_ComboBox_K2Node_ComponentBoundEvent_1_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType);
@@ -42,6 +43,7 @@ public:
 	void ComboValueChanged__DelegateSignature(const class FString& NewSelection, const class FString& Identifier, const class FText& SettingName);
 	void Construct();
 	void ExecuteUbergraph_W_Setting(int32 EntryPoint);
+	void FindSecondaryInput();
 	void PreConstruct(bool IsDesignTime);
 	void RefreshAudioDevices();
 	void RefreshBind();
@@ -61,17 +63,18 @@ public:
 	}
 };
 static_assert(alignof(UW_Setting_C) == 0x000008, "Wrong alignment on UW_Setting_C");
-static_assert(sizeof(UW_Setting_C) == 0x000430, "Wrong size on UW_Setting_C");
+static_assert(sizeof(UW_Setting_C) == 0x000438, "Wrong size on UW_Setting_C");
 static_assert(offsetof(UW_Setting_C, UberGraphFrame) == 0x0002C0, "Member 'UW_Setting_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, W_Bind) == 0x0002C8, "Member 'UW_Setting_C::W_Bind' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, W_ComboBox) == 0x0002D0, "Member 'UW_Setting_C::W_ComboBox' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, W_SettingTitle_5) == 0x0002D8, "Member 'UW_Setting_C::W_SettingTitle_5' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, W_Slider) == 0x0002E0, "Member 'UW_Setting_C::W_Slider' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, WidgetSwitcher_0) == 0x0002E8, "Member 'UW_Setting_C::WidgetSwitcher_0' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, Setting) == 0x0002F0, "Member 'UW_Setting_C::Setting' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, SliderValueChanged) == 0x000380, "Member 'UW_Setting_C::SliderValueChanged' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, ComboValueChanged) == 0x000390, "Member 'UW_Setting_C::ComboValueChanged' has a wrong offset!");
-static_assert(offsetof(UW_Setting_C, Key) == 0x0003A0, "Member 'UW_Setting_C::Key' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, W_ComboBox) == 0x0002C8, "Member 'UW_Setting_C::W_ComboBox' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, W_NewBind) == 0x0002D0, "Member 'UW_Setting_C::W_NewBind' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, W_NewBind_2) == 0x0002D8, "Member 'UW_Setting_C::W_NewBind_2' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, W_SettingTitle_5) == 0x0002E0, "Member 'UW_Setting_C::W_SettingTitle_5' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, W_Slider) == 0x0002E8, "Member 'UW_Setting_C::W_Slider' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, WidgetSwitcher_0) == 0x0002F0, "Member 'UW_Setting_C::WidgetSwitcher_0' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, Setting) == 0x0002F8, "Member 'UW_Setting_C::Setting' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, SliderValueChanged) == 0x000388, "Member 'UW_Setting_C::SliderValueChanged' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, ComboValueChanged) == 0x000398, "Member 'UW_Setting_C::ComboValueChanged' has a wrong offset!");
+static_assert(offsetof(UW_Setting_C, Key) == 0x0003A8, "Member 'UW_Setting_C::Key' has a wrong offset!");
 
 }
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Runs_S_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Categories_S_structs.hpp"
-#include "Runs_S_structs.hpp"
 #include "PlayerNumber_E_structs.hpp"
 #include "UMG_classes.hpp"
 
@@ -46,10 +46,10 @@ public:
 	struct FRuns_S                                RunsTemp;                                          // 0x0360(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TArray<class FString>                         PlayerName_Temp;                                   // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         CategoryIndex;                                     // 0x03D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_331D[0x4];                                     // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3073[0x4];                                     // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         PlayersID_temp;                                    // 0x03D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	EPlayerNumber_E                               PlayerNumber;                                      // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_331E[0x3];                                     // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3074[0x3];                                     // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Classement;                                        // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:

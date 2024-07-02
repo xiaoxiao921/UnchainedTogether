@@ -205,6 +205,45 @@ void UMainMenu_W_C::ExecuteUbergraph_MainMenu_W(int32 EntryPoint)
 }
 
 
+// Function MainMenu_W.MainMenu_W_C.OnMouseButtonDown
+// (BlueprintCosmetic, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// struct FPointerEvent                    MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+struct FEventReply UMainMenu_W_C::OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "OnMouseButtonDown");
+
+	Params::MainMenu_W_C_OnMouseButtonDown Parms{};
+
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.MouseEvent = std::move(MouseEvent);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MainMenu_W.MainMenu_W_C.PlayButtonEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_W_C::PlayButtonEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "PlayButtonEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function MainMenu_W.MainMenu_W_C.PlayFade
 // (BlueprintCallable, BlueprintEvent)
 
@@ -214,6 +253,34 @@ void UMainMenu_W_C::PlayFade()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("MainMenu_W_C", "PlayFade");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function MainMenu_W.MainMenu_W_C.QuitButtonEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_W_C::QuitButtonEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "QuitButtonEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function MainMenu_W.MainMenu_W_C.SettingsButtonEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UMainMenu_W_C::SettingsButtonEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "SettingsButtonEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

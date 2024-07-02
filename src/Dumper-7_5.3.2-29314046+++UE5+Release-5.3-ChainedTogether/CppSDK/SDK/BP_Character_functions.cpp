@@ -17,6 +17,48 @@
 namespace SDK
 {
 
+// Function BP_Character.BP_Character_C.30fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::Three0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "30fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.40fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::Four0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "40fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.50fps
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::Five0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "50fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Character.BP_Character_C.ActivateCollisions
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1732,6 +1774,26 @@ void ABP_Character_C::EmissiveDissolve_TL__UpdateFunc()
 		Func = Class->GetFunction("BP_Character_C", "EmissiveDissolve_TL__UpdateFunc");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.Enable Disable Camera Smooting SRV
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Character_C::Enable_Disable_Camera_Smooting_SRV(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "Enable Disable Camera Smooting SRV");
+
+	Params::BP_Character_C_Enable_Disable_Camera_Smooting_SRV Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -3801,7 +3863,7 @@ void ABP_Character_C::OnOverlayStateChanged(EALS_OverlayState NewOverlayState)
 
 
 // Function BP_Character.BP_Character_C.OnPossessOwner
-// (Net, NetClient, BlueprintCallable, BlueprintEvent)
+// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 
 void ABP_Character_C::OnPossessOwner()
 {
@@ -3879,6 +3941,20 @@ void ABP_Character_C::OnRep_Rep_Attached_Characters()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Character_C", "OnRep_Rep Attached Characters");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.OnRep_RepCameraSmoothing
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::OnRep_RepCameraSmoothing()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "OnRep_RepCameraSmoothing");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -4125,6 +4201,26 @@ void ABP_Character_C::Replicate_Location()
 		Func = Class->GetFunction("BP_Character_C", "Replicate Location");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.ReplicateCameraSmoothing
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Character_C::ReplicateCameraSmoothing(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "ReplicateCameraSmoothing");
+
+	Params::BP_Character_C_ReplicateCameraSmoothing Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -6041,6 +6137,20 @@ void ABP_Character_C::Update_Balancier_Arrow_Rotation()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Character_C", "Update Balancier Arrow Rotation");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Character.BP_Character_C.Update_CustomDepth
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::Update_CustomDepth()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "Update_CustomDepth");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

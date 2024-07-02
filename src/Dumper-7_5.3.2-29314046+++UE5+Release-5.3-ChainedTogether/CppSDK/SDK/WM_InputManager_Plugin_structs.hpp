@@ -105,40 +105,15 @@ enum class ERawControllerType : uint8
 	ERawControllerType_MAX                   = 4,
 };
 
-// ScriptStruct WM_InputManager_Plugin.WM_HID_DeviceInfo
-// 0x00A0 (0x00A0 - 0x0000)
-struct FWM_HID_DeviceInfo final
+// ScriptStruct WM_InputManager_Plugin.WM_Keyboard_DeviceInfo
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x04) FWM_Keyboard_DeviceInfo final
 {
 public:
-	class FString                                 ProductString;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ManufacturerString;                                // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SerialNumberString;                                // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         VID;                                               // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PID;                                               // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Version;                                           // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D47[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 VID_HEX;                                           // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PID_HEX;                                           // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Version_HEX;                                       // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 VPID_HEX;                                          // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 VID_PID_;                                          // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParserVersion;                                     // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D48[0xC];                                     // 0x0094(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D64[0x18];                                    // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FWM_HID_DeviceInfo) == 0x000008, "Wrong alignment on FWM_HID_DeviceInfo");
-static_assert(sizeof(FWM_HID_DeviceInfo) == 0x0000A0, "Wrong size on FWM_HID_DeviceInfo");
-static_assert(offsetof(FWM_HID_DeviceInfo, ProductString) == 0x000000, "Member 'FWM_HID_DeviceInfo::ProductString' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, ManufacturerString) == 0x000010, "Member 'FWM_HID_DeviceInfo::ManufacturerString' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, SerialNumberString) == 0x000020, "Member 'FWM_HID_DeviceInfo::SerialNumberString' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, VID) == 0x000030, "Member 'FWM_HID_DeviceInfo::VID' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, PID) == 0x000034, "Member 'FWM_HID_DeviceInfo::PID' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, Version) == 0x000038, "Member 'FWM_HID_DeviceInfo::Version' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, VID_HEX) == 0x000040, "Member 'FWM_HID_DeviceInfo::VID_HEX' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, PID_HEX) == 0x000050, "Member 'FWM_HID_DeviceInfo::PID_HEX' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, Version_HEX) == 0x000060, "Member 'FWM_HID_DeviceInfo::Version_HEX' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, VPID_HEX) == 0x000070, "Member 'FWM_HID_DeviceInfo::VPID_HEX' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, VID_PID_) == 0x000080, "Member 'FWM_HID_DeviceInfo::VID_PID_' has a wrong offset!");
-static_assert(offsetof(FWM_HID_DeviceInfo, ParserVersion) == 0x000090, "Member 'FWM_HID_DeviceInfo::ParserVersion' has a wrong offset!");
+static_assert(alignof(FWM_Keyboard_DeviceInfo) == 0x000004, "Wrong alignment on FWM_Keyboard_DeviceInfo");
+static_assert(sizeof(FWM_Keyboard_DeviceInfo) == 0x000018, "Wrong size on FWM_Keyboard_DeviceInfo");
 
 // ScriptStruct WM_InputManager_Plugin.DPADCollection
 // 0x0070 (0x0070 - 0x0000)
@@ -170,7 +145,7 @@ public:
 	class FString                                 DN_C;                                              // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 DN_D;                                              // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 DeviceTypeString;                                  // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D49[0x8];                                     // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D65[0x8];                                     // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWM_BasicDeviceInfo) == 0x000008, "Wrong alignment on FWM_BasicDeviceInfo");
 static_assert(sizeof(FWM_BasicDeviceInfo) == 0x000068, "Wrong size on FWM_BasicDeviceInfo");
@@ -186,24 +161,59 @@ static_assert(offsetof(FWM_BasicDeviceInfo, DeviceTypeString) == 0x000050, "Memb
 struct alignas(0x08) FWM_HID_XInputWrap final
 {
 public:
-	uint8                                         Pad_1D4A[0x50];                                    // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D66[0x50];                                    // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWM_HID_XInputWrap) == 0x000008, "Wrong alignment on FWM_HID_XInputWrap");
 static_assert(sizeof(FWM_HID_XInputWrap) == 0x000050, "Wrong size on FWM_HID_XInputWrap");
+
+// ScriptStruct WM_InputManager_Plugin.WM_HID_DeviceInfo
+// 0x00A0 (0x00A0 - 0x0000)
+struct FWM_HID_DeviceInfo final
+{
+public:
+	class FString                                 ProductString;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ManufacturerString;                                // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SerialNumberString;                                // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         VID;                                               // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PID;                                               // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Version;                                           // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D67[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 VID_HEX;                                           // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PID_HEX;                                           // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Version_HEX;                                       // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 VPID_HEX;                                          // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 VID_PID_;                                          // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParserVersion;                                     // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D68[0xC];                                     // 0x0094(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FWM_HID_DeviceInfo) == 0x000008, "Wrong alignment on FWM_HID_DeviceInfo");
+static_assert(sizeof(FWM_HID_DeviceInfo) == 0x0000A0, "Wrong size on FWM_HID_DeviceInfo");
+static_assert(offsetof(FWM_HID_DeviceInfo, ProductString) == 0x000000, "Member 'FWM_HID_DeviceInfo::ProductString' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, ManufacturerString) == 0x000010, "Member 'FWM_HID_DeviceInfo::ManufacturerString' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, SerialNumberString) == 0x000020, "Member 'FWM_HID_DeviceInfo::SerialNumberString' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, VID) == 0x000030, "Member 'FWM_HID_DeviceInfo::VID' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, PID) == 0x000034, "Member 'FWM_HID_DeviceInfo::PID' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, Version) == 0x000038, "Member 'FWM_HID_DeviceInfo::Version' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, VID_HEX) == 0x000040, "Member 'FWM_HID_DeviceInfo::VID_HEX' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, PID_HEX) == 0x000050, "Member 'FWM_HID_DeviceInfo::PID_HEX' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, Version_HEX) == 0x000060, "Member 'FWM_HID_DeviceInfo::Version_HEX' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, VPID_HEX) == 0x000070, "Member 'FWM_HID_DeviceInfo::VPID_HEX' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, VID_PID_) == 0x000080, "Member 'FWM_HID_DeviceInfo::VID_PID_' has a wrong offset!");
+static_assert(offsetof(FWM_HID_DeviceInfo, ParserVersion) == 0x000090, "Member 'FWM_HID_DeviceInfo::ParserVersion' has a wrong offset!");
 
 // ScriptStruct WM_InputManager_Plugin.WM_HID_ButtonData
 // 0x0028 (0x0028 - 0x0000)
 struct FWM_HID_ButtonData final
 {
 public:
-	uint8                                         Pad_1D4B[0x1];                                     // 0x0000(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D69[0x1];                                     // 0x0000(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bIsPressed;                                        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D4C[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6A[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ButtonNumber;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWM_KeyTriggerState                           KeyTriggerState;                                   // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D4D[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6B[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ButtonBindingCode;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D4E[0x8];                                     // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6C[0x8];                                     // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWM_HID_ButtonData) == 0x000008, "Wrong alignment on FWM_HID_ButtonData");
 static_assert(sizeof(FWM_HID_ButtonData) == 0x000028, "Wrong size on FWM_HID_ButtonData");
@@ -217,7 +227,7 @@ static_assert(offsetof(FWM_HID_ButtonData, ButtonBindingCode) == 0x000010, "Memb
 struct FWM_HID_AxisData final
 {
 public:
-	uint8                                         Pad_1D4F[0x24];                                    // 0x0000(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6D[0x24];                                    // 0x0000(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         LogicalMin;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LogicalMax;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         LogicalCenter;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -227,13 +237,13 @@ public:
 	float                                         NormalizedRawValue;                                // 0x003C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CenteredValue;                                     // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AxisValue;                                         // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D50[0xE];                                     // 0x0048(0x000E)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6E[0xE];                                     // 0x0048(0x000E)(Fixing Size After Last Property [ Dumper-7 ])
 	EWM_AxisCodeTable                             AxisEnum;                                          // 0x0056(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D51[0x19];                                    // 0x0057(0x0019)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6F[0x19];                                    // 0x0057(0x0019)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AxisBindingCode;                                   // 0x0070(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D52[0x10];                                    // 0x0080(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D70[0x10];                                    // 0x0080(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Instance;                                          // 0x0090(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D53[0x14];                                    // 0x0094(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D71[0x14];                                    // 0x0094(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWM_HID_AxisData) == 0x000008, "Wrong alignment on FWM_HID_AxisData");
 static_assert(sizeof(FWM_HID_AxisData) == 0x0000A8, "Wrong size on FWM_HID_AxisData");
@@ -255,30 +265,20 @@ static_assert(offsetof(FWM_HID_AxisData, Instance) == 0x000090, "Member 'FWM_HID
 struct alignas(0x08) FWM_HID_DPADData final
 {
 public:
-	uint8                                         Pad_1D54[0x158];                                   // 0x0000(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D72[0x158];                                   // 0x0000(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FWM_HID_DPADData) == 0x000008, "Wrong alignment on FWM_HID_DPADData");
 static_assert(sizeof(FWM_HID_DPADData) == 0x000158, "Wrong size on FWM_HID_DPADData");
-
-// ScriptStruct WM_InputManager_Plugin.WM_Keyboard_DeviceInfo
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x04) FWM_Keyboard_DeviceInfo final
-{
-public:
-	uint8                                         Pad_1D55[0x18];                                    // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FWM_Keyboard_DeviceInfo) == 0x000004, "Wrong alignment on FWM_Keyboard_DeviceInfo");
-static_assert(sizeof(FWM_Keyboard_DeviceInfo) == 0x000018, "Wrong size on FWM_Keyboard_DeviceInfo");
 
 // ScriptStruct WM_InputManager_Plugin.WM_HID_AxisConfiguration
 // 0x0010 (0x0010 - 0x0000)
 struct FWM_HID_AxisConfiguration final
 {
 public:
-	uint8                                         Pad_1D56[0x4];                                     // 0x0000(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D73[0x4];                                     // 0x0000(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bInverted;                                         // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsPedal;                                          // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D57[0x2];                                     // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D74[0x2];                                     // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Sensitivity;                                       // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DeadZone;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -294,15 +294,15 @@ static_assert(offsetof(FWM_HID_AxisConfiguration, DeadZone) == 0x00000C, "Member
 struct FHID_Joystick_CONFIG final
 {
 public:
-	uint8                                         Pad_1D58[0x10];                                    // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D75[0x10];                                    // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FKey, EWM_GamepadKeyType>         KEY_TYPES;                                         // 0x0010(0x0050)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D59[0x50];                                    // 0x0060(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D76[0x50];                                    // 0x0060(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FKey, class FString>              AXIS_BINDINGS;                                     // 0x00B0(0x0050)(Edit, NativeAccessSpecifierPublic)
 	TMap<struct FKey, class FString>              BUTTONS_BINDINGS;                                  // 0x0100(0x0050)(Edit, NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>            DPADS_BINDINGS;                                    // 0x0150(0x0050)(Edit, NativeAccessSpecifierPublic)
 	TArray<struct FWM_HID_AxisConfiguration>      AxisConfigurations;                                // 0x01A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          RAWDataRecieved;                                   // 0x01B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D5A[0x7];                                     // 0x01B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D77[0x7];                                     // 0x01B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FHID_Joystick_CONFIG) == 0x000008, "Wrong alignment on FHID_Joystick_CONFIG");
 static_assert(sizeof(FHID_Joystick_CONFIG) == 0x0001B8, "Wrong size on FHID_Joystick_CONFIG");
@@ -322,7 +322,7 @@ public:
 	TMap<struct FKey, class FString>              Axes;                                              // 0x0050(0x0050)(NativeAccessSpecifierPublic)
 	TMap<struct FKey, class FString>              Buttons;                                           // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
 	TMap<class FString, struct FDPADCollection>   DPADs;                                             // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D5B[0xA0];                                    // 0x0140(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D78[0xA0];                                    // 0x0140(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FHidKeysByClass) == 0x000008, "Wrong alignment on FHidKeysByClass");
 static_assert(sizeof(FHidKeysByClass) == 0x0001E0, "Wrong size on FHidKeysByClass");
@@ -336,7 +336,7 @@ static_assert(offsetof(FHidKeysByClass, DPADs) == 0x0000F0, "Member 'FHidKeysByC
 struct alignas(0x08) F_PCS_Device final
 {
 public:
-	uint8                                         Pad_1D5C[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D79[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(F_PCS_Device) == 0x000008, "Wrong alignment on F_PCS_Device");
 static_assert(sizeof(F_PCS_Device) == 0x000010, "Wrong size on F_PCS_Device");
@@ -348,11 +348,11 @@ struct FEnhancedInputMapping_WM final
 public:
 	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PlayerMappable;                                    // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D5D[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D7A[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ActionName;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ActionFName;                                       // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsPlayerMappable;                                  // 0x0040(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D5E[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D7B[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 DisplayName;                                       // 0x0048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FEnhancedInputMapping_WM) == 0x000008, "Wrong alignment on FEnhancedInputMapping_WM");
@@ -386,7 +386,7 @@ public:
 	int32                                         Instance;                                          // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Inverted;                                          // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Pedal;                                             // 0x0015(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D5F[0x2];                                     // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D7C[0x2];                                     // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDriver_AxisDefaults) == 0x000008, "Wrong alignment on FDriver_AxisDefaults");
 static_assert(sizeof(FDriver_AxisDefaults) == 0x000018, "Wrong size on FDriver_AxisDefaults");

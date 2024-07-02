@@ -210,7 +210,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 		    0,
 		    [](PVOID) -> DWORD
 		    {
-			    //Sleep(5000);
+			    Sleep(5000);
 
 			    // https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/setlocale-wsetlocale?view=msvc-170#utf-8-support
 			    //setlocale(LC_ALL, ".utf8");

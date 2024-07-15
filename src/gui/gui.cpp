@@ -1,4 +1,4 @@
-#include "gui.hpp"
+﻿#include "gui.hpp"
 
 #include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK.hpp"
 #include "gui/renderer.hpp"
@@ -286,7 +286,7 @@ namespace big
 		g_gui = nullptr;
 	}
 
-	bool gui::is_open()
+	bool gui::is_open() const
 	{
 		return m_is_open;
 	}
@@ -393,12 +393,12 @@ namespace big
 		return {origin.X + (x * cos(theta) - y * sin(theta)), origin.Y + (x * sin(theta) + y * cos(theta)), corner.Z};
 	}
 
-	constexpr float DegreesToRadians(float degrees)
+	static constexpr float DegreesToRadians(float degrees)
 	{
 		return degrees * (M_PI / 180.0f);
 	}
 
-	bool is_player_inside_sphere(const SDK::FVector& center, const SDK::FVector& player, double radius)
+	static bool is_player_inside_sphere(const SDK::FVector& center, const SDK::FVector& player, double radius)
 	{
 		// Calculate the squared distance between the center and the player
 		double distanceSquared =
@@ -411,7 +411,7 @@ namespace big
 		return distanceSquared <= radiusSquared;
 	}
 
-	void draw_sphere(SDK::APlayerController* playerController, SDK::FVector world_coords, int32_t segment_count, float radius, ImU32 color)
+	static void draw_sphere(SDK::APlayerController* playerController, SDK::FVector world_coords, int32_t segment_count, float radius, ImU32 color)
 	{
 		auto draw_list = ImGui::GetBackgroundDrawList();
 
@@ -467,7 +467,23 @@ namespace big
 		}
 	}
 
-	void DrawBoundingRect(SDK::APlayerController* playerController, SDK::AActor* actor)
+	static void hook_event(SDK::UObject* obj, SDK::UFunction* func, void* idk)
+	{
+		big::g_hooking->get_original<hook_event>()(obj, func, idk);
+
+		//if (fKey.KeyName.ToString() == "SpaceBar")
+		{
+			static std::unordered_set<std::string> allFuncs;
+			const auto funcName = func->GetFullName();
+			if (!allFuncs.contains(funcName))
+			{
+				LOG(INFO) << funcName;
+				allFuncs.insert(funcName);
+			}
+		}
+	}
+
+	static void DrawBoundingRect(SDK::APlayerController* playerController, SDK::AActor* actor)
 	{
 		SDK::FVector origin, extent;
 		actor->GetActorBounds(true, &origin, &extent, true);
@@ -1395,7 +1411,7 @@ namespace big
 		memcpy(&m_default_config, &ImGui::GetStyle(), sizeof(ImGuiStyle));
 	}
 
-	void gui::restore_default_style()
+	void gui::restore_default_style() const
 	{
 		memcpy(&ImGui::GetStyle(), &m_default_config, sizeof(ImGuiStyle));
 	}
@@ -1593,7 +1609,7 @@ namespace big
 		::VirtualProtect(&dst, sizeof(T), old_flag, &old_flag);
 	}
 
-	void gui::toggle_mouse()
+	void gui::toggle_mouse() const
 	{
 		auto& io = ImGui::GetIO();
 
@@ -1693,7 +1709,7 @@ namespace big
 		}
 	}
 
-	void gui::save_pref()
+	void gui::save_pref() const
 	{
 		std::ofstream file_stream(m_file_path, std::ios::out | std::ios::trunc);
 		if (file_stream.is_open())

@@ -24,7 +24,7 @@ namespace big
 		gui& operator=(const gui&)     = delete;
 		gui& operator=(gui&&) noexcept = delete;
 
-		bool is_open();
+		bool is_open() const;
 		void toggle(bool toggle);
 
 		ImGuiMouseCursor m_mouse_cursor = ImGuiMouseCursor_Arrow;
@@ -33,7 +33,7 @@ namespace big
 		void dx_on_tick();
 
 		void save_default_style();
-		void restore_default_style();
+		void restore_default_style() const;
 
 		void push_theme_colors();
 		void pop_theme_colors();
@@ -41,12 +41,12 @@ namespace big
 		void wndproc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 	private:
-		void toggle_mouse();
+		void toggle_mouse() const;
 
 		std::filesystem::path m_file_path;
 		toml::table m_table;
 		void init_pref();
-		void save_pref();
+		void save_pref() const;
 
 	private:
 		bool m_is_open;

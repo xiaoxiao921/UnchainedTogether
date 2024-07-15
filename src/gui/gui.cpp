@@ -13,15 +13,30 @@
 #include <input/is_key_pressed.hpp>
 #include <lua/lua_manager.hpp>
 #include <memory/gm_address.hpp>
+#include <Minhook.h>
 #include <misc/cpp/imgui_stdlib.h>
+//#include <polyhook2/PE/IatHook.hpp>
 
-#define M_PI 3.14159265358979323846
+CRITICAL_SECTION g_mutex = {0};
+
+#define Lock()                          \
+	{                                   \
+		EnterCriticalSection(&g_mutex); \
+	}
+
+#define Unlock()                        \
+	{                                   \
+		LeaveCriticalSection(&g_mutex); \
+	}
+
+constexpr auto M_PI = 3.14159265358979323846;
 
 namespace big
 {
-	static SDK::ABP_Character_C* g_pawn = nullptr;
-	static SDK::UCustomGI_C* g_customgi = nullptr;
-	static SDK::AHUD* g_ahud            = nullptr;
+	static SDK::ABP_Character_C* g_pawn                = nullptr;
+	static SDK::APlayerController* g_player_controller = nullptr;
+	static SDK::UCustomGI_C* g_customgi                = nullptr;
+	static SDK::AHUD* g_ahud                           = nullptr;
 
 	static bool g_draw_g_pawn_foot_pos        = false;
 	static bool g_draw_g_pawn_hitbox          = false;
@@ -41,6 +56,18 @@ namespace big
 	static bool g_chained_together_perfect_bunny_state = false;
 	static hotkey g_chained_together_perfect_bunny_hotkey("chained_together_perfect_bunny_toggle", 0);
 
+	static hotkey g_chained_together_record_replay_hotkey("chained_together_record_replay", 0);
+	static bool g_chained_together_record_replay_state = false;
+
+	static hotkey g_chained_together_play_replay_hotkey("chained_together_play_replay", 0);
+	static bool g_chained_together_play_replay_state = false;
+
+	static hotkey g_chained_together_clear_replay_hotkey("chained_together_clear_replay", 0);
+
+	static hotkey g_chained_together_freeze_hotkey("chained_together_freeze", 0);
+	static bool g_chained_together_freeze_state      = false;
+	static bool g_chained_together_advance_one_frame = false;
+
 	struct shouldDrawActorInfo
 	{
 		size_t index;
@@ -49,8 +76,187 @@ namespace big
 
 	static std::unordered_map<size_t, shouldDrawActorInfo> g_shouldDraw;
 
+	struct replay_entry_t
+	{
+		bool m_pressed_forward : 1;
+		bool m_pressed_right   : 1;
+		bool m_pressed_left    : 1;
+		bool m_pressed_down    : 1;
+
+		bool m_pressed_sprint  : 1;
+		bool m_pressed_jump    : 1;
+
+		SDK::FRotator m_camera_rotation;
+	};
+
+	static std::filesystem::path g_replay_file_path;
+	static std::vector<replay_entry_t> g_replay_entries;
+	static size_t g_replay_entry_index{};
+
+	static double* FApp_DeltaTime                       = nullptr;
+	static double* FApp_CurrentTime                     = nullptr;
+	static double* FApp_LastTime                        = nullptr;
+	static double* FGenericPlatformTime_SecondsPerCycle = nullptr;
+
+	//static double g_delay = 0.02f;
+	//static double g_delay = 0.1f;
+	//static double g_delay = 1 / 2.0f;
+	static double g_delay = 1 / 30.0f;
+
+	static DWORD g_game_thread = 0;
+
+	template<typename T>
+	void CreateAndEnableHook(void* target, void* detour, T** original)
+	{
+		MH_STATUS status = MH_CreateHook(target, detour, reinterpret_cast<void**>(original));
+		if (status != MH_OK)
+		{
+			LOG(INFO) << "Failed to create hook: " << MH_StatusToString(status);
+		}
+
+		if (MH_EnableHook(target) != MH_OK)
+		{
+			LOG(INFO) << "Failed to enable hook";
+		}
+	}
+
+	static struct
+	{
+		DWORD ticks;
+		LARGE_INTEGER frequency;
+	} g_qpc = {0};
+
+	typedef BOOL(WINAPI* fn_QueryPerformanceFrequency)(LARGE_INTEGER* lpPerformanceCount);
+	fn_QueryPerformanceFrequency g_orig_QueryPerformanceFrequency;
+
+	static BOOL WINAPI QueryPerformanceFrequencyHook(LARGE_INTEGER* f)
+	{
+		f->QuadPart = (ULONG64)1e7;
+		return TRUE;
+	}
+
+	typedef BOOL(WINAPI* fn_QueryPerformanceCounter)(LARGE_INTEGER* lpPerformanceCount);
+	fn_QueryPerformanceCounter g_orig_QueryPerformanceCounter;
+
+	static BOOL WINAPI QueryPerformanceCounterHook(LARGE_INTEGER* f)
+	{
+		if (!g_game_thread)
+		{
+			++g_qpc.ticks;
+		}
+		f->QuadPart = g_qpc.ticks;
+		return TRUE;
+	}
+
+	static void hook_UEngine_UpdateTimeAndHandleMaxTickRate(void* this_)
+	{
+		big::g_hooking->get_original<hook_UEngine_UpdateTimeAndHandleMaxTickRate>()(this_);
+
+		FApp_CurrentTime = 0;
+		*FApp_LastTime   = 0;
+		*FApp_DeltaTime  = g_delay;
+
+		return;
+
+		static struct
+		{
+			uint8_t state;
+			LARGE_INTEGER time;
+		} last = {0};
+
+		if (!g_game_thread)
+		{
+			g_game_thread = GetCurrentThreadId();
+		}
+
+		Lock();
+		g_qpc.ticks += 1'000'000;
+
+		*FApp_CurrentTime = 0;
+		*FApp_LastTime    = 0;
+		*FApp_DeltaTime   = g_delay;
+
+		for (;;)
+		{
+			LARGE_INTEGER t = {0};
+			g_orig_QueryPerformanceCounter(&t);
+			if ((double)(t.QuadPart - last.time.QuadPart) / (double)g_qpc.frequency.QuadPart >= g_delay)
+			{
+				break;
+			}
+
+			Sleep(0);
+		}
+
+		Unlock();
+
+		g_orig_QueryPerformanceCounter(&last.time);
+	}
+
+	static void hook_srand(unsigned int seed)
+	{
+	}
+
+	static int hook_rand()
+	{
+		return 1337;
+	}
+
 	gui::gui()
 	{
+		// Initialize MinHook.
+		if (MH_Initialize() != MH_OK)
+		{
+		}
+
+		InitializeCriticalSection(&g_mutex);
+
+		g_replay_file_path = g_file_manager.get_project_file("./replay.bin").get_path();
+
+		static auto inside_UpdateTimeAndHandleMaxTickRate = gmAddress::scan("66 0F 5A C0 C6 05");
+		static auto UpdateTimeAndHandleMaxTickRate        = inside_UpdateTimeAndHandleMaxTickRate.offset(-0xCB);
+		FApp_DeltaTime                       = inside_UpdateTimeAndHandleMaxTickRate.offset(30).rip().as<double*>();
+		FApp_CurrentTime                     = inside_UpdateTimeAndHandleMaxTickRate.offset(-25).rip().as<double*>();
+		FApp_LastTime                        = inside_UpdateTimeAndHandleMaxTickRate.offset(38).rip().as<double*>();
+		FGenericPlatformTime_SecondsPerCycle = inside_UpdateTimeAndHandleMaxTickRate.offset(168).rip().as<double*>();
+
+		std::thread(
+		    []()
+		    {
+			    while (true)
+			    {
+				    if (GetAsyncKeyState(g_chained_together_freeze_hotkey.get_vk_value()) & 0x80'00)
+				    {
+					    g_chained_together_freeze_state = !g_chained_together_freeze_state;
+					    LOG(INFO) << "Freeze: " << g_chained_together_freeze_state;
+
+					    // debounce
+					    Sleep(100);
+				    }
+
+				    if (GetAsyncKeyState(VK_RIGHT) & 0x80'00)
+				    {
+					    g_chained_together_advance_one_frame = true;
+
+					    // debounce
+					    Sleep(100);
+				    }
+
+				    Sleep(5);
+			    }
+		    })
+		    .detach();
+
+		static auto hook_deltaTimeSetter = big::hooking::detour_hook_helper::add<hook_UEngine_UpdateTimeAndHandleMaxTickRate>("hook deltaTime setter", UpdateTimeAndHandleMaxTickRate);
+		static auto hook_srand_ = big::hooking::detour_hook_helper::add<hook_srand>("hook init random", GetProcAddress(GetModuleHandleA("api-ms-win-crt-utility-l1-1-0.dll"), "srand"));
+		static auto hook_rand_ = big::hooking::detour_hook_helper::add<hook_rand>("hook random", GetProcAddress(GetModuleHandleA("api-ms-win-crt-utility-l1-1-0.dll"), "rand"));
+		//CreateAndEnableHook(&QueryPerformanceCounter, &QueryPerformanceCounterHook, &g_orig_QueryPerformanceCounter);
+		//CreateAndEnableHook(&QueryPerformanceFrequency, &QueryPerformanceFrequencyHook, &g_orig_QueryPerformanceFrequency);
+
+		//QueryPerformanceFrequencyHook(&g_qpc.frequency);
+		//*FGenericPlatformTime_SecondsPerCycle = 1.0 / (double)g_qpc.frequency.QuadPart;
+		//g_orig_QueryPerformanceFrequency(&g_qpc.frequency);
+
 		init_pref();
 
 		g_renderer->add_dx_callback({[this]
@@ -327,6 +533,112 @@ namespace big
 		draw_line(drawList, ts4, bs4, color);
 	}
 
+	static void tas_update()
+	{
+		auto playerController = g_player_controller;
+
+		auto fkey_ctor = [](const wchar_t* str)
+		{
+			auto k    = SDK::FKey();
+			k.KeyName = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(str));
+			return k;
+		};
+		static auto fkey_forward = [&]()
+		{
+			return fkey_ctor(L"Z");
+		};
+		static auto fkey_right = [&]()
+		{
+			return fkey_ctor(L"D");
+		};
+		static auto fkey_left = [&]()
+		{
+			return fkey_ctor(L"Q");
+		};
+		static auto fkey_down = [&]()
+		{
+			return fkey_ctor(L"S");
+		};
+		static auto fkey_sprint = [&]()
+		{
+			return fkey_ctor(L"LeftShift");
+		};
+		static auto fkey_jump = [&]()
+		{
+			return fkey_ctor(L"SpaceBar");
+		};
+
+		while (g_chained_together_freeze_state)
+		{
+			if (g_chained_together_advance_one_frame)
+			{
+				break;
+			}
+
+			Sleep(0);
+		}
+		if (g_chained_together_advance_one_frame)
+		{
+			g_chained_together_advance_one_frame = false;
+		}
+
+		if (g_chained_together_record_replay_state)
+		{
+			ImDrawList* draw_list = ImGui::GetForegroundDrawList();
+			static int32_t color  = 0;
+			color++;
+			color = color % 255;
+			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(color, 255, 255, 255), "Recording");
+
+			replay_entry_t entry;
+			entry.m_pressed_forward = playerController->IsInputKeyDown(fkey_forward());
+			entry.m_pressed_right   = playerController->IsInputKeyDown(fkey_right());
+			entry.m_pressed_left    = playerController->IsInputKeyDown(fkey_left());
+			entry.m_pressed_down    = playerController->IsInputKeyDown(fkey_down());
+
+			entry.m_pressed_sprint = playerController->IsInputKeyDown(fkey_sprint());
+			entry.m_pressed_jump   = playerController->IsInputKeyDown(fkey_jump());
+
+			entry.m_camera_rotation = playerController->GetControlRotation();
+
+			g_replay_entries.push_back(entry);
+		}
+
+		if (g_chained_together_play_replay_state)
+		{
+			ImDrawList* draw_list = ImGui::GetForegroundDrawList();
+			static int32_t color  = 0;
+			color++;
+			color = color % 255;
+			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(255, color, 255, 255), "Replaying");
+
+			static auto InputKey =
+			    gmAddress::scan("4C 8B DC 49 89 5B 08 49 89 6B 10 49 89 73 18 49 89 7B 20 41 56 48 81 "
+			                    "EC ? ? ? ? 48 8B 05 ? ? ? ? 41 8B E8 49 89 43 A0 4C 8B F2")
+			        .as_func<bool(SDK::APlayerController*, SDK::FKey, SDK::EInputEvent, float, bool)>();
+
+
+			const auto& entry = g_replay_entries[g_replay_entry_index++];
+
+			InputKey(playerController, fkey_forward(), entry.m_pressed_forward ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+			InputKey(playerController, fkey_right(), entry.m_pressed_right ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+			InputKey(playerController, fkey_left(), entry.m_pressed_left ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+			InputKey(playerController, fkey_down(), entry.m_pressed_down ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+
+			InputKey(playerController, fkey_sprint(), entry.m_pressed_sprint ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+			InputKey(playerController, fkey_jump(), entry.m_pressed_jump ? SDK::EInputEvent::IE_Pressed : SDK::EInputEvent::IE_Released, 1.0f, false);
+
+			playerController->SetControlRotation(entry.m_camera_rotation);
+
+			if (g_replay_entry_index >= g_replay_entries.size())
+			{
+				LOG(INFO) << "Finished replay";
+				g_chained_together_play_replay_state = false;
+				g_replay_entry_index                 = 0;
+			}
+		}
+	}
+
 	void gui::dx_on_tick()
 	{
 		if (!g_lua_manager)
@@ -386,8 +698,10 @@ namespace big
 			}
 		}
 
-		g_pawn     = nullptr;
-		g_customgi = nullptr;
+		g_pawn              = nullptr;
+		g_player_controller = nullptr;
+		g_customgi          = nullptr;
+		g_ahud              = nullptr;
 
 		SDK::UWorld* World = SDK::UWorld::GetWorld();
 		if (World)
@@ -417,6 +731,7 @@ namespace big
 				{
 					return;
 				}
+				g_player_controller = playerController;
 
 				g_pawn = (decltype(g_pawn))playerController->Pawn;
 				if (!g_pawn)
@@ -424,9 +739,37 @@ namespace big
 					return;
 				}
 
+				tas_update();
+
 				if (g_chained_together_perfect_bunny_state)
 				{
 					g_pawn->Jump_Input();
+
+					/*static auto addrInputKey =
+					    gmAddress::scan("4C 8B DC 49 89 5B 08 49 89 6B 10 49 89 73 18 49 89 7B 20 41 56 48 81 "
+					                    "EC ? ? ? ? 48 8B 05 ? ? ? ? 41 8B E8 49 89 43 A0 4C 8B F2")
+					        .as_func<bool(SDK::APlayerController*, SDK::FKey, SDK::EInputEvent, float, bool)>();
+
+					//static auto hook_input = big::hooking::detour_hook_helper::add<hook_inputkey>("hook input key", addrInputKey);
+					//static void* processEventAddr = (void*)(SDK::InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
+					//static auto hook_event_ = big::hooking::detour_hook_helper::add<hook_event>("hook event", processEventAddr);
+
+					static SDK::FString blaaa = SDK::FString(L"SpaceBar");
+					static auto fkey          = []()
+					{
+						auto k    = SDK::FKey();
+						k.KeyName = SDK::UKismetStringLibrary::Conv_StringToName(blaaa);
+						return k;
+					}();
+
+					static auto hook_it_once = true;
+					if (hook_it_once)
+					{
+						auto tick_func = g_pawn->Class->GetFunction("BP_Character_C", "ReceiveTick");
+						//static auto hook_tick_char =
+						//  big::hooking::detour_hook_helper::add<hook_tick_character>("hook char tick", tick_func->ExecFunction);
+						hook_it_once = false;
+					}*/
 
 					ImDrawList* draw_list              = ImGui::GetForegroundDrawList();
 					static int32_t perfect_bunny_color = 0;
@@ -621,6 +964,40 @@ namespace big
 
 			if (1)
 			{
+				// If the record replay hotkey is binded show the TAS GUI
+				if (g_chained_together_record_replay_hotkey.get_vk_value() != 0)
+				{
+					ImGui::SetNextWindowSize({483, 544}, ImGuiCond_FirstUseEver);
+					if (ImGui::Begin("TAS"))
+					{
+						if (ImGui::Button("Rewind"))
+						{
+							g_replay_entry_index = 0;
+						}
+
+						for (size_t i = 0; i < g_replay_entries.size(); i++)
+						{
+							const auto& entry = g_replay_entries[i];
+							ImGui::Text("Z: %s | Q: %s | S: %s | D: %s | Sprint: %s | Jump: %s | Pitch: %d | Yaw: %d | "
+							            "Roll: %d",
+							            entry.m_pressed_forward ? "Y" : "N",
+							            entry.m_pressed_left ? "Y" : "N",
+							            entry.m_pressed_down ? "Y" : "N",
+							            entry.m_pressed_right ? "Y" : "N",
+							            entry.m_pressed_sprint ? "Y" : "N",
+							            entry.m_pressed_jump ? "Y" : "N",
+							            entry.m_camera_rotation.Pitch,
+							            entry.m_camera_rotation.Yaw,
+							            entry.m_camera_rotation.Roll);
+							if (i != g_replay_entries.size() - 1)
+							{
+								ImGui::Separator();
+							}
+						}
+					}
+					ImGui::End();
+				}
+
 				ImGui::SetNextWindowSize({483, 544}, ImGuiCond_FirstUseEver);
 				if (ImGui::Begin("Unchained Together"))
 				{
@@ -707,6 +1084,19 @@ namespace big
 												{
 													auto gs_game_c = (SDK::AGS_Game_C*)Actor;
 													ImGui::Text("In-Game Timer: %d", gs_game_c->Timer);
+
+													/*SDK::UWorld* World = SDK::UWorld::GetWorld();    // 0x06F40D08
+													auto gameInstance     = World->OwningGameInstance;  // 0x1B8
+													auto localPlayers     = gameInstance->LocalPlayers; // 0x38
+													auto localPlayer      = localPlayers[0];            // deref pointer
+													auto playerController = localPlayer->PlayerController; // 0x30
+													auto playerPawn       = playerController->Pawn;        // 0x2D8
+													auto rootComp         = playerPawn->RootComponent;     // 0x1A0
+													auto playerPosition   = rootComp->RelativeLocation;    // 0x128
+													ImGui::Text("pos: %f | %f | %f",
+													            playerPosition.X,
+													            playerPosition.Y,
+													            playerPosition.Z);*/
 												}
 											}
 										}
@@ -1093,6 +1483,44 @@ namespace big
 		if (msg == WM_KEYUP && wparam == g_chained_together_perfect_bunny_hotkey.get_vk_value() && g_pawn)
 		{
 			g_chained_together_perfect_bunny_state = !g_chained_together_perfect_bunny_state;
+		}
+		/*if (g_chained_together_perfect_bunny_state && g_pawn)
+		{
+			static SDK::FString blaaa = SDK::FString(L"SpaceBar");
+			auto fkey                 = SDK::FKey();
+			fkey.KeyName              = SDK::UKismetStringLibrary::Conv_StringToName(blaaa);
+
+			static auto InputKey =
+			    gmAddress::scan("4C 8B DC 49 89 5B 08 49 89 6B 10 49 89 73 18 49 89 7B 20 41 56 48 81 "
+			                    "EC ? ? ? ? 48 8B 05 ? ? ? ? 41 8B E8 49 89 43 A0 4C 8B F2")
+			        .as_func<bool(SDK::APlayerController*, SDK::FKey, SDK::EInputEvent, float, bool)>();
+
+			if (g_pawn->Grounded)
+			{
+				InputKey(g_player_controller, fkey, SDK::EInputEvent::IE_Pressed, 1.0f, false);
+			}
+			else
+			{
+				InputKey(g_player_controller, fkey, SDK::EInputEvent::IE_Released, 1.0f, false);
+			}
+		}*/
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_record_replay_hotkey.get_vk_value())
+		{
+			g_chained_together_record_replay_state = !g_chained_together_record_replay_state;
+			LOG(INFO) << "Record Replay: " << g_chained_together_record_replay_state;
+		}
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_play_replay_hotkey.get_vk_value())
+		{
+			g_chained_together_play_replay_state = !g_chained_together_play_replay_state;
+			LOG(INFO) << "Play Replay: " << g_chained_together_play_replay_state;
+		}
+
+		if (msg == WM_KEYUP && wparam == g_chained_together_clear_replay_hotkey.get_vk_value())
+		{
+			LOG(INFO) << "Cleared Replay: " << g_replay_entries.size();
+			g_replay_entries.clear();
 		}
 	}
 

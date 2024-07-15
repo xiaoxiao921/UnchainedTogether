@@ -9,6 +9,7 @@ set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 # Fetch modules
 message("\nFetching modules")
 include(cmake_scripts/git.cmake)
+include(cmake_scripts/minhook.cmake)
 include(cmake_scripts/rom.cmake)
 include(cmake_scripts/utfcpp.cmake)
 
@@ -42,11 +43,12 @@ source_group(TREE ${SRC_DIR} PREFIX "src" FILES ${SRC_MAIN})
 target_include_directories(UnchainedTogether PRIVATE
     "${SRC_DIR}"
     "${utfcpp_SOURCE_DIR}/source"
+    "${minhook_SOURCE_DIR}/src/hde"
 )
 
 target_precompile_headers(UnchainedTogether PRIVATE "${SRC_DIR}/common.hpp")
 
-target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase comctl32)
+target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase comctl32 minhook)
 
 # Warnings as errors
 #set_property(TARGET UnchainedTogether PROPERTY COMPILE_WARNING_AS_ERROR ON)

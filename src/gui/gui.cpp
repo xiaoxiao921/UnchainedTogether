@@ -65,8 +65,12 @@ namespace big
 	static hotkey g_chained_together_clear_replay_hotkey("chained_together_clear_replay", 0);
 
 	static hotkey g_chained_together_freeze_hotkey("chained_together_freeze", 0);
-	static bool g_chained_together_freeze_state      = false;
+	static bool g_chained_together_freeze_state = false;
+
+	static hotkey g_chained_together_advance_one_frame_hotkey("chained_together_advance_one_frame", 0);
 	static bool g_chained_together_advance_one_frame = false;
+
+	static hotkey g_chained_together_freecam_hotkey("chained_together_freecam", 0);
 
 	struct shouldDrawActorInfo
 	{
@@ -102,6 +106,7 @@ namespace big
 	//static double g_delay = 0.1f;
 	//static double g_delay = 1 / 2.0f;
 	static double g_delay = 1 / 30.0f;
+	//static double g_delay = 1 / 144.0f;
 
 	static DWORD g_game_thread = 0;
 
@@ -234,7 +239,7 @@ namespace big
 					    Sleep(100);
 				    }
 
-				    if (GetAsyncKeyState(VK_RIGHT) & 0x80'00)
+				    if (GetAsyncKeyState(g_chained_together_advance_one_frame_hotkey.get_vk_value()) & 0x80'00)
 				    {
 					    g_chained_together_advance_one_frame = true;
 
@@ -1302,6 +1307,8 @@ namespace big
 
 									ImGui::Hotkey("Perfect Bunny Hop##2", g_chained_together_perfect_bunny_hotkey);
 
+									ImGui::Hotkey("Free Camera Toggle", g_chained_together_freecam_hotkey);
+
 									ImGui::PopID();
 								}
 							}
@@ -1537,6 +1544,18 @@ namespace big
 		{
 			LOG(INFO) << "Cleared Replay: " << g_replay_entries.size();
 			g_replay_entries.clear();
+		}
+		if (msg == WM_KEYUP && wparam == g_chained_together_freecam_hotkey.get_vk_value())
+		{
+			if (g_player_controller)
+			{
+				if (!g_player_controller->CheatManager)
+				{
+					g_player_controller->CheatManager = (SDK::UCheatManager*)(SDK::UGameplayStatics::SpawnObject(SDK::UCheatManager::StaticClass(), g_player_controller));
+				}
+
+				g_player_controller->CheatManager->ToggleDebugCamera();
+			}
 		}
 	}
 

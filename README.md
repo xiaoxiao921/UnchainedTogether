@@ -4,6 +4,10 @@
 
 ---
 
+## About
+
+If you're enjoying this mod, and want to support me, you can [buy me a coffee here](https://ko-fi.com/xiaoxiao921).
+
 ## Manual Installation
 
 - Place the main UnchainedTogether file, called `d3d12.dll`, next to the game executable called `ChainedTogether-Win64-Shipping.exe` in the game's `ChainedTogether\Binaries\Win64` folder.

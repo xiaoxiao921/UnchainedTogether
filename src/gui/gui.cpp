@@ -210,7 +210,7 @@ namespace big
 	gui::gui()
 	{
 		// Initialize MinHook.
-		if (MH_Initialize() != MH_OK)
+		/*if (MH_Initialize() != MH_OK)
 		{
 		}
 
@@ -261,7 +261,7 @@ namespace big
 		//QueryPerformanceFrequencyHook(&g_qpc.frequency);
 		//*FGenericPlatformTime_SecondsPerCycle = 1.0 / (double)g_qpc.frequency.QuadPart;
 		//g_orig_QueryPerformanceFrequency(&g_qpc.frequency);
-
+		*/
 		init_pref();
 
 		g_renderer->add_dx_callback({[this]
@@ -760,7 +760,7 @@ namespace big
 					return;
 				}
 
-				tas_update();
+				//tas_update();
 
 				if (g_chained_together_perfect_bunny_state)
 				{

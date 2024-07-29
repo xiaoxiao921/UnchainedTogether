@@ -19215,15 +19215,17 @@ static_assert(offsetof(UMaterialExpressionSmoothStep, ConstValue) == 0x000130, "
 class UGameViewportClient : public UScriptViewportClient
 {
 public:
-	uint8                                         Pad_A63[0x8];                                      // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UConsole*                               ViewportConsole;                                   // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FDebugDisplayProperty>          DebugProperties;                                   // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A64[0x10];                                     // 0x0058(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaxSplitscreenPlayers;                             // 0x0068(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A65[0xC];                                      // 0x006C(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWorld*                                 World;                                             // 0x0078(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UGameInstance*                          GameInstance;                                      // 0x0080(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A66[0x328];                                    // 0x0088(0x0328)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8 Pad_A63[0x8]; // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UConsole* ViewportConsole; // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FDebugDisplayProperty> DebugProperties; // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8 Pad_A64[0x10];         // 0x0058(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	int32 MaxSplitscreenPlayers; // 0x0068(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32 bIsPlayInEditorViewport : 1;
+	uint32 bDisableWorldRendering  : 1;
+	uint8 Pad_A65[0x8];  // 0x006C(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorld* World; // 0x0078(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UGameInstance* GameInstance; // 0x0080(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8 Pad_A66[0x3'28];             // 0x0088(0x0328)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetConsoleTarget(int32 PlayerIndex);

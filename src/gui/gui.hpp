@@ -1,6 +1,9 @@
 #pragma once
 
 #include "input/hotkey.hpp"
+#include <tas/tas.hpp>
+
+#define M_PI 3.14159265358979323846
 
 namespace big
 {
@@ -41,7 +44,7 @@ namespace big
 		void wndproc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 	private:
-		void toggle_mouse();
+		void toggle_mouse(bool force = false);
 
 		std::filesystem::path m_file_path;
 		toml::table m_table;
@@ -50,6 +53,7 @@ namespace big
 
 	private:
 		bool m_is_open;
+		tas tas;
 		toml::node* m_is_open_at_startup;
 		toml::node* m_onboarded;
 

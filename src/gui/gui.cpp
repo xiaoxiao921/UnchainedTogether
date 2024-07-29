@@ -15,8 +15,6 @@
 #include <memory/gm_address.hpp>
 #include <misc/cpp/imgui_stdlib.h>
 
-#define M_PI 3.14159265358979323846
-
 namespace big
 {
 	static SDK::ABP_Character_C* g_pawn = nullptr;
@@ -41,6 +39,9 @@ namespace big
 	static bool g_chained_together_perfect_bunny_state = false;
 	static hotkey g_chained_together_perfect_bunny_hotkey("chained_together_perfect_bunny_toggle", 0);
 
+	static hotkey g_chained_together_freeze_hotkey("chained_together_freeze", 0);
+	static hotkey g_chained_together_advance_one_frame_hotkey("chained_together_advance_one_frame", 0);
+
 	struct shouldDrawActorInfo
 	{
 		size_t index;
@@ -51,6 +52,37 @@ namespace big
 
 	gui::gui()
 	{
+		std::thread(
+		    []()
+		    {
+			    while (true)
+			    {
+				    if (GetAsyncKeyState(g_chained_together_freeze_hotkey.get_vk_value()) & 0x80'00)
+				    {
+					    g_chained_together_freeze_state = !g_chained_together_freeze_state;
+					    LOG(DEBUG) << "Freeze: " << g_chained_together_freeze_state;
+
+					    // debounce
+					    Sleep(250);
+				    }
+
+					Sleep(5);
+
+				    if (GetAsyncKeyState(g_chained_together_advance_one_frame_hotkey.get_vk_value()) & 0x80'00)
+				    {
+					    g_chained_together_freeze_state = true;
+					    g_chained_together_advance_one_frame = true;
+					    LOG(DEBUG) << "Freeze!";
+
+					    // debounce
+					    Sleep(250);
+				    }
+
+				    Sleep(5);
+			    }
+		    })
+		    .detach();
+
 		init_pref();
 
 		g_renderer->add_dx_callback({[this]
@@ -152,6 +184,8 @@ namespace big
 		colors[ImGuiCol_TextSelectedBg]       = ImVec4(0.25f, 1.00f, 0.00f, 0.43f);
 
 		save_default_style();
+
+		tas.init();
 	}
 
 	static void SetPlayerPosition(SDK::ABP_Character_C* Pawn, SDK::FVector& new_position)
@@ -159,6 +193,7 @@ namespace big
 		SDK::FRotator unused{};
 		SDK::FHitResult unused2{};
 		Pawn->SetActorLocationAndRotation_UpdateTarget_(new_position, unused, false, true, &unused2);
+		Pawn->CharacterVelocity = SDK::FVector(0.0, 0.0, 0.0);
 	}
 
 	static void SetPlayerPosition(SDK::ABP_Character_C* Pawn, SDK::FVector3f& new_position)
@@ -329,6 +364,23 @@ namespace big
 
 	void gui::dx_on_tick()
 	{
+		g_render_thread = GetCurrentThreadId();
+
+		while (g_chained_together_freeze_state)
+		{
+			if (g_chained_together_advance_one_frame)
+			{
+				break;
+			}
+
+			Sleep(0);
+		}
+
+		if (g_chained_together_advance_one_frame)
+		{
+			g_chained_together_advance_one_frame = false;
+		}
+
 		if (!g_lua_manager)
 		{
 			return;
@@ -419,6 +471,7 @@ namespace big
 				}
 
 				g_pawn = (decltype(g_pawn))playerController->Pawn;
+				tas.on_tick(!!g_pawn, playerController);
 				if (!g_pawn)
 				{
 					return;
@@ -651,6 +704,14 @@ namespace big
 									static auto positions_file_path =
 									    g_file_manager.get_project_file("./positions.json").get_path();
 
+									if (g_pawn)
+									{
+										SDK::FVector vel = g_pawn->CharacterVelocity;
+										ImGui::Text(std::format("Velocity: {:.2f}", vel.Magnitude()).c_str());
+										vel.Z = 0;
+										ImGui::Text(std::format("Velocity (noZ): {:.2f}", vel.Magnitude()).c_str());
+									}
+
 									if (ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state))
 									{
 										Pawn->SetFlyMode(g_chained_together_fly_mode_state);
@@ -725,7 +786,7 @@ namespace big
 											enable_console_once = false;
 
 											SDK::UEngine* Engine = SDK::UEngine::GetEngine();
-											SDK::UObject* ConsoleObject =
+											SDK::UObject* ConsoleObject false
 											    SDK::UGameplayStatics::SpawnObject(Engine->ConsoleClass, Engine->GameViewport);
 											Engine->GameViewport->ViewportConsole = static_cast<SDK::UConsole*>(ConsoleObject);
 										}
@@ -1052,10 +1113,11 @@ namespace big
 
 	void gui::wndproc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
+		// Persist and restore the cursor position between menu instances.
+		static POINT cursor_coords{};
+
 		if (msg == WM_KEYUP && wparam == g_gui_toggle.get_vk_value())
 		{
-			// Persist and restore the cursor position between menu instances.
-			static POINT cursor_coords{};
 			if (g_gui->m_is_open)
 			{
 				GetCursorPos(&cursor_coords);
@@ -1072,6 +1134,11 @@ namespace big
 			}
 
 			LOG(DEBUG) << "Toggled Modding GUI to: " << (m_is_open ? "visible" : "hidden");
+		}
+
+		if (msg == WM_KEYUP && wparam == 'H')
+		{
+			toggle_mouse(true);
 		}
 
 		if (msg == WM_KEYUP && wparam == g_chained_together_save_current_position.get_vk_value() && g_pawn)
@@ -1094,6 +1161,8 @@ namespace big
 		{
 			g_chained_together_perfect_bunny_state = !g_chained_together_perfect_bunny_state;
 		}
+
+		tas.wndproc(msg, wparam, lparam);
 	}
 
 	// TODO: Cleanup all this
@@ -1165,11 +1234,11 @@ namespace big
 		::VirtualProtect(&dst, sizeof(T), old_flag, &old_flag);
 	}
 
-	void gui::toggle_mouse()
+	void gui::toggle_mouse(bool force)
 	{
 		auto& io = ImGui::GetIO();
 
-		if (m_is_open)
+		if ((!force && m_is_open) || (force && !io.MouseDrawCursor))
 		{
 			io.MouseDrawCursor  = true;
 			io.ConfigFlags     &= ~ImGuiConfigFlags_NoMouse;
@@ -1202,7 +1271,7 @@ namespace big
 				}
 			}
 		}
-		else
+		else// if ((!force && !m_is_open) || (force && io.MouseDrawCursor))
 		{
 			io.MouseDrawCursor  = false;
 			io.ConfigFlags     |= ImGuiConfigFlags_NoMouse;

@@ -37,6 +37,20 @@ void UW_Slider_C::BndEvt__W_Slider_Slider_119_K2Node_ComponentBoundEvent_0_OnFlo
 }
 
 
+// Function W_Slider.W_Slider_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_Slider_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Slider_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Slider.W_Slider_C.ExecuteUbergraph_W_Slider
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

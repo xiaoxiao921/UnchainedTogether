@@ -23,8 +23,8 @@ class IBPI_Balancier_C final : public IInterface
 public:
 	void AttachMaillonToHands(class USceneComponent* Socket, class UPrimitiveComponent* Maillon);
 	void DetachMaillons();
-	void GetMaillonByIndex(int32 Param_Index, class UPrimitiveComponent** Maillon);
-	void GetMaillonIndex(class UPrimitiveComponent* Maillon, int32* Param_Index);
+	void GetMaillonByIndex(int32 Index_0, class UPrimitiveComponent** Maillon);
+	void GetMaillonIndex(class UPrimitiveComponent* Maillon, int32* Index_0);
 	void GetRoot(class UPrimitiveComponent** Root);
 	void IsOccupied(bool* Occupied);
 	void SetOccupied(bool Occupied);

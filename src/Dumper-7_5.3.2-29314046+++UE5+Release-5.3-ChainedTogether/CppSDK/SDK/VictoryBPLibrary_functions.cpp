@@ -963,10 +963,10 @@ void UVictoryBPFunctionLibrary::GetUTCFromUnixTimeStamp(int64 UnixTimeStamp, str
 // (Final, BlueprintCosmetic, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UUserWidget*                      ParentUserWidget                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Param_Name                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWidget* UVictoryBPFunctionLibrary::GetWidgetFromName(class UUserWidget* ParentUserWidget, const class FName& Param_Name)
+class UWidget* UVictoryBPFunctionLibrary::GetWidgetFromName(class UUserWidget* ParentUserWidget, const class FName& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -976,7 +976,7 @@ class UWidget* UVictoryBPFunctionLibrary::GetWidgetFromName(class UUserWidget* P
 	Params::VictoryBPFunctionLibrary_GetWidgetFromName Parms{};
 
 	Parms.ParentUserWidget = ParentUserWidget;
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -56,10 +56,10 @@ void IBPI_Balancier_C::DetachMaillons()
 // Function BPI_Balancier.BPI_Balancier_C.GetMaillonByIndex
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPrimitiveComponent*              Maillon                                                (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Balancier_C::GetMaillonByIndex(int32 Param_Index, class UPrimitiveComponent** Maillon)
+void IBPI_Balancier_C::GetMaillonByIndex(int32 Index_0, class UPrimitiveComponent** Maillon)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,7 +68,7 @@ void IBPI_Balancier_C::GetMaillonByIndex(int32 Param_Index, class UPrimitiveComp
 
 	Params::BPI_Balancier_C_GetMaillonByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -81,9 +81,9 @@ void IBPI_Balancier_C::GetMaillonByIndex(int32 Param_Index, class UPrimitiveComp
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UPrimitiveComponent*              Maillon                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Balancier_C::GetMaillonIndex(class UPrimitiveComponent* Maillon, int32* Param_Index)
+void IBPI_Balancier_C::GetMaillonIndex(class UPrimitiveComponent* Maillon, int32* Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96,8 +96,8 @@ void IBPI_Balancier_C::GetMaillonIndex(class UPrimitiveComponent* Maillon, int32
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Index != nullptr)
-		*Param_Index = Parms.Param_Index;
+	if (Index_0 != nullptr)
+		*Index_0 = Parms.Index_0;
 }
 
 

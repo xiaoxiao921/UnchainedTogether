@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 
@@ -19,36 +18,29 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_ComboChoice.W_ComboChoice_C
-// 0x0060 (0x0320 - 0x02C0)
+// 0x0070 (0x0330 - 0x02C0)
 class UW_ComboChoice_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       Entry;                                             // 0x02C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UBorder*                                Border_105;                                        // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Button_0;                                          // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TextBlock_85;                                      // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class FString                                 Item;                                              // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
-	class UComboBoxString*                        ComboBox;                                          // 0x02F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	FMulticastInlineDelegateProperty_             Press;                                             // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	bool                                          Selected;                                          // 0x0310(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ToolTip;                                           // 0x0311(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_1C46[0x6];                                     // 0x0312(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 ToolTipClass;                                      // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UBorder*                                Border_105;                                        // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TextBlock_85;                                      // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class FString                                 Item;                                              // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UComboBoxString*                        ComboBox;                                          // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	FMulticastInlineDelegateProperty_             Press;                                             // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	bool                                          Selected;                                          // 0x0300(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ToolTip;                                           // 0x0301(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_302[0x6];                                      // 0x0302(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   ToolTipClass;                                      // 0x0308(0x0028)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_4_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature();
-	void BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature();
-	void Construct();
 	void ExecuteUbergraph_W_ComboChoice(int32 EntryPoint);
 	class UWidget* GetToolTipWidget();
 	void InitColors();
 	struct FEventReply OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
-	void OnSelectionChanged_Event_0(const class FString& SelectedItem, ESelectInfo SelectionType);
+	struct FEventReply OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	void PreConstruct(bool IsDesignTime);
-	void Press__DelegateSignature(const class FString& Param_Item);
-	void RefreshClickable();
+	void Press__DelegateSignature(const class FString& Item_0);
 
 public:
 	static class UClass* StaticClass()
@@ -61,18 +53,16 @@ public:
 	}
 };
 static_assert(alignof(UW_ComboChoice_C) == 0x000008, "Wrong alignment on UW_ComboChoice_C");
-static_assert(sizeof(UW_ComboChoice_C) == 0x000320, "Wrong size on UW_ComboChoice_C");
+static_assert(sizeof(UW_ComboChoice_C) == 0x000330, "Wrong size on UW_ComboChoice_C");
 static_assert(offsetof(UW_ComboChoice_C, UberGraphFrame) == 0x0002C0, "Member 'UW_ComboChoice_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Entry) == 0x0002C8, "Member 'UW_ComboChoice_C::Entry' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Border_105) == 0x0002D0, "Member 'UW_ComboChoice_C::Border_105' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Button_0) == 0x0002D8, "Member 'UW_ComboChoice_C::Button_0' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, TextBlock_85) == 0x0002E0, "Member 'UW_ComboChoice_C::TextBlock_85' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Item) == 0x0002E8, "Member 'UW_ComboChoice_C::Item' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, ComboBox) == 0x0002F8, "Member 'UW_ComboChoice_C::ComboBox' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Press) == 0x000300, "Member 'UW_ComboChoice_C::Press' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, Selected) == 0x000310, "Member 'UW_ComboChoice_C::Selected' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, ToolTip) == 0x000311, "Member 'UW_ComboChoice_C::ToolTip' has a wrong offset!");
-static_assert(offsetof(UW_ComboChoice_C, ToolTipClass) == 0x000318, "Member 'UW_ComboChoice_C::ToolTipClass' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, Border_105) == 0x0002C8, "Member 'UW_ComboChoice_C::Border_105' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, TextBlock_85) == 0x0002D0, "Member 'UW_ComboChoice_C::TextBlock_85' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, Item) == 0x0002D8, "Member 'UW_ComboChoice_C::Item' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, ComboBox) == 0x0002E8, "Member 'UW_ComboChoice_C::ComboBox' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, Press) == 0x0002F0, "Member 'UW_ComboChoice_C::Press' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, Selected) == 0x000300, "Member 'UW_ComboChoice_C::Selected' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, ToolTip) == 0x000301, "Member 'UW_ComboChoice_C::ToolTip' has a wrong offset!");
+static_assert(offsetof(UW_ComboChoice_C, ToolTipClass) == 0x000308, "Member 'UW_ComboChoice_C::ToolTipClass' has a wrong offset!");
 
 }
 

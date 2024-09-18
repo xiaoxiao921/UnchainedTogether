@@ -285,10 +285,10 @@ void IBPI_ChainPhysics_C::Resync()
 // Function BPI_ChainPhysics.BPI_ChainPhysics_C.SetAttachedChar
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Char                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_ChainPhysics_C::SetAttachedChar(const int32 Param_Index, class AActor* Char)
+void IBPI_ChainPhysics_C::SetAttachedChar(const int32 Index_0, class AActor* Char)
 {
 	static class UFunction* Func = nullptr;
 
@@ -297,7 +297,7 @@ void IBPI_ChainPhysics_C::SetAttachedChar(const int32 Param_Index, class AActor*
 
 	Params::BPI_ChainPhysics_C_SetAttachedChar Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Char = Char;
 
 	UObject::ProcessEvent(Func, &Parms);

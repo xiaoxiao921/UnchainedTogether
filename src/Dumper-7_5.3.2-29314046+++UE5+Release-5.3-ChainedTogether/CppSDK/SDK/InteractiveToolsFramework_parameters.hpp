@@ -38,6 +38,28 @@ static_assert(alignof(GizmoBaseComponent_UpdateWorldLocalState) == 0x000001, "Wr
 static_assert(sizeof(GizmoBaseComponent_UpdateWorldLocalState) == 0x000001, "Wrong size on GizmoBaseComponent_UpdateWorldLocalState");
 static_assert(offsetof(GizmoBaseComponent_UpdateWorldLocalState, bWorldIn) == 0x000000, "Member 'GizmoBaseComponent_UpdateWorldLocalState::bWorldIn' has a wrong offset!");
 
+// Function InteractiveToolsFramework.GizmoVec2ParameterSource.SetParameter
+// 0x0010 (0x0010 - 0x0000)
+struct GizmoVec2ParameterSource_SetParameter final
+{
+public:
+	struct FVector2D                              NewValue;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GizmoVec2ParameterSource_SetParameter) == 0x000008, "Wrong alignment on GizmoVec2ParameterSource_SetParameter");
+static_assert(sizeof(GizmoVec2ParameterSource_SetParameter) == 0x000010, "Wrong size on GizmoVec2ParameterSource_SetParameter");
+static_assert(offsetof(GizmoVec2ParameterSource_SetParameter, NewValue) == 0x000000, "Member 'GizmoVec2ParameterSource_SetParameter::NewValue' has a wrong offset!");
+
+// Function InteractiveToolsFramework.GizmoVec2ParameterSource.GetParameter
+// 0x0010 (0x0010 - 0x0000)
+struct GizmoVec2ParameterSource_GetParameter final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GizmoVec2ParameterSource_GetParameter) == 0x000008, "Wrong alignment on GizmoVec2ParameterSource_GetParameter");
+static_assert(sizeof(GizmoVec2ParameterSource_GetParameter) == 0x000010, "Wrong size on GizmoVec2ParameterSource_GetParameter");
+static_assert(offsetof(GizmoVec2ParameterSource_GetParameter, ReturnValue) == 0x000000, "Member 'GizmoVec2ParameterSource_GetParameter::ReturnValue' has a wrong offset!");
+
 // Function InteractiveToolsFramework.GizmoTransformSource.SetTransform
 // 0x0060 (0x0060 - 0x0000)
 struct GizmoTransformSource_SetTransform final
@@ -134,7 +156,7 @@ struct GizmoClickMultiTarget_UpdateHittableState final
 {
 public:
 	bool                                          bHittable;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B2F[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(GizmoClickMultiTarget_UpdateHittableState) == 0x000004, "Wrong alignment on GizmoClickMultiTarget_UpdateHittableState");
@@ -148,7 +170,7 @@ struct GizmoClickMultiTarget_UpdateHoverState final
 {
 public:
 	bool                                          bHovering;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B30[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(GizmoClickMultiTarget_UpdateHoverState) == 0x000004, "Wrong alignment on GizmoClickMultiTarget_UpdateHoverState");
@@ -162,7 +184,7 @@ struct GizmoClickMultiTarget_UpdateInteractingState final
 {
 public:
 	bool                                          bInteracting;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B31[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(GizmoClickMultiTarget_UpdateInteractingState) == 0x000004, "Wrong alignment on GizmoClickMultiTarget_UpdateInteractingState");
@@ -176,7 +198,7 @@ struct GizmoRenderMultiTarget_UpdateVisibilityState final
 {
 public:
 	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B32[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        InPartIdentifier;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(GizmoRenderMultiTarget_UpdateVisibilityState) == 0x000004, "Wrong alignment on GizmoRenderMultiTarget_UpdateVisibilityState");
@@ -205,28 +227,6 @@ public:
 static_assert(alignof(GizmoFloatParameterSource_GetParameter) == 0x000004, "Wrong alignment on GizmoFloatParameterSource_GetParameter");
 static_assert(sizeof(GizmoFloatParameterSource_GetParameter) == 0x000004, "Wrong size on GizmoFloatParameterSource_GetParameter");
 static_assert(offsetof(GizmoFloatParameterSource_GetParameter, ReturnValue) == 0x000000, "Member 'GizmoFloatParameterSource_GetParameter::ReturnValue' has a wrong offset!");
-
-// Function InteractiveToolsFramework.GizmoVec2ParameterSource.SetParameter
-// 0x0010 (0x0010 - 0x0000)
-struct GizmoVec2ParameterSource_SetParameter final
-{
-public:
-	struct FVector2D                              NewValue;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GizmoVec2ParameterSource_SetParameter) == 0x000008, "Wrong alignment on GizmoVec2ParameterSource_SetParameter");
-static_assert(sizeof(GizmoVec2ParameterSource_SetParameter) == 0x000010, "Wrong size on GizmoVec2ParameterSource_SetParameter");
-static_assert(offsetof(GizmoVec2ParameterSource_SetParameter, NewValue) == 0x000000, "Member 'GizmoVec2ParameterSource_SetParameter::NewValue' has a wrong offset!");
-
-// Function InteractiveToolsFramework.GizmoVec2ParameterSource.GetParameter
-// 0x0010 (0x0010 - 0x0000)
-struct GizmoVec2ParameterSource_GetParameter final
-{
-public:
-	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GizmoVec2ParameterSource_GetParameter) == 0x000008, "Wrong alignment on GizmoVec2ParameterSource_GetParameter");
-static_assert(sizeof(GizmoVec2ParameterSource_GetParameter) == 0x000010, "Wrong size on GizmoVec2ParameterSource_GetParameter");
-static_assert(offsetof(GizmoVec2ParameterSource_GetParameter, ReturnValue) == 0x000000, "Member 'GizmoVec2ParameterSource_GetParameter::ReturnValue' has a wrong offset!");
 
 }
 

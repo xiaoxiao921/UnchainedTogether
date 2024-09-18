@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum E_ChoosenChar.E_ChoosenChar
-// NumValues: 0x0007
+// NumValues: 0x000A
 enum class E_ChoosenChar : uint8
 {
 	NewEnumerator0                           = 0,
@@ -24,7 +24,10 @@ enum class E_ChoosenChar : uint8
 	NewEnumerator3                           = 3,
 	NewEnumerator4                           = 4,
 	NewEnumerator5                           = 5,
-	E_MAX                                    = 6,
+	NewEnumerator6                           = 6,
+	NewEnumerator7                           = 7,
+	NewEnumerator8                           = 8,
+	E_MAX                                    = 9,
 };
 
 }

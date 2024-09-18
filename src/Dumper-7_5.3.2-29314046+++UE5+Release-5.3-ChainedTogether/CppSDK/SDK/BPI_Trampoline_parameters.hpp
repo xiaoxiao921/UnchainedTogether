@@ -10,9 +10,22 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+
 
 namespace SDK::Params
 {
+
+// Function BPI_Trampoline.BPI_Trampoline_C.BounceVector
+// 0x0018 (0x0018 - 0x0000)
+struct BPI_Trampoline_C_BounceVector final
+{
+public:
+	struct FVector                                Vector;                                            // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BPI_Trampoline_C_BounceVector) == 0x000008, "Wrong alignment on BPI_Trampoline_C_BounceVector");
+static_assert(sizeof(BPI_Trampoline_C_BounceVector) == 0x000018, "Wrong size on BPI_Trampoline_C_BounceVector");
+static_assert(offsetof(BPI_Trampoline_C_BounceVector, Vector) == 0x000000, "Member 'BPI_Trampoline_C_BounceVector::Vector' has a wrong offset!");
 
 // Function BPI_Trampoline.BPI_Trampoline_C.GetBounceForce
 // 0x0008 (0x0008 - 0x0000)

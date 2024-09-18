@@ -114,10 +114,10 @@ class UMediaPlayer* UMediaPlateComponent::GetMediaPlayer()
 // Function MediaPlate.MediaPlateComponent.GetMediaTexture
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMediaTexture*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMediaTexture* UMediaPlateComponent::GetMediaTexture(int32 Param_Index)
+class UMediaTexture* UMediaPlateComponent::GetMediaTexture(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,7 +126,7 @@ class UMediaTexture* UMediaPlateComponent::GetMediaTexture(int32 Param_Index)
 
 	Params::MediaPlateComponent_GetMediaTexture Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

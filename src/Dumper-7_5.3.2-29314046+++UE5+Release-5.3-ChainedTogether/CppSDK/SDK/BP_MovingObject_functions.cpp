@@ -163,10 +163,10 @@ bool ABP_MovingObject_C::OnBoxDetection(class UObject* Object)
 // Function BP_MovingObject.BP_MovingObject_C.OpenCloseDoor
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Open                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MovingObject_C::OpenCloseDoor(int32 Param_Index, bool Open)
+void ABP_MovingObject_C::OpenCloseDoor(int32 Index_0, bool Open)
 {
 	static class UFunction* Func = nullptr;
 
@@ -175,7 +175,7 @@ void ABP_MovingObject_C::OpenCloseDoor(int32 Param_Index, bool Open)
 
 	Params::BP_MovingObject_C_OpenCloseDoor Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Open = Open;
 
 	UObject::ProcessEvent(Func, &Parms);

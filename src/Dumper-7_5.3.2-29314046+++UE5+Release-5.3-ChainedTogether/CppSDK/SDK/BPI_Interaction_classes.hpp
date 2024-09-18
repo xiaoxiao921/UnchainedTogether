@@ -21,8 +21,8 @@ namespace SDK
 class IBPI_Interaction_C final : public IInterface
 {
 public:
-	void CanBeUsed(bool* Param_CanBeUsed);
-	void Detected(bool Param_Detected, class APlayerController* PC);
+	void CanBeUsed(bool* CanBeUsed_0);
+	void Detected(bool Detected_0, class APlayerController* PC);
 	void Use(class AController* Controller, class AActor* ControlledActor);
 
 public:

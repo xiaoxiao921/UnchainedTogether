@@ -160,9 +160,9 @@ void ABP_LobbyCharacter_C::ResetMaterials()
 // Function BP_LobbyCharacter.BP_LobbyCharacter_C.SetAffectedPS
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APlayerState*                     Param_Ps                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APlayerState*                     Ps_0                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LobbyCharacter_C::SetAffectedPS(class APlayerState* Param_Ps)
+void ABP_LobbyCharacter_C::SetAffectedPS(class APlayerState* Ps_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,7 +171,7 @@ void ABP_LobbyCharacter_C::SetAffectedPS(class APlayerState* Param_Ps)
 
 	Params::BP_LobbyCharacter_C_SetAffectedPS Parms{};
 
-	Parms.Param_Ps = Param_Ps;
+	Parms.Ps_0 = Ps_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -192,6 +192,26 @@ void ABP_LobbyCharacter_C::SetChosenChar(E_ChoosenChar ChosenChar)
 	Params::BP_LobbyCharacter_C_SetChosenChar Parms{};
 
 	Parms.ChosenChar = ChosenChar;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LobbyCharacter.BP_LobbyCharacter_C.SetOverlayState
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EALS_OverlayState                       OverlayState                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_LobbyCharacter_C::SetOverlayState(EALS_OverlayState OverlayState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LobbyCharacter_C", "SetOverlayState");
+
+	Params::BP_LobbyCharacter_C_SetOverlayState Parms{};
+
+	Parms.OverlayState = OverlayState;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

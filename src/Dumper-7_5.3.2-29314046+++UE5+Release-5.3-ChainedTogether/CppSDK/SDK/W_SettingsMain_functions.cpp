@@ -45,20 +45,6 @@ void UW_SettingsMain_C::BndEvt__W_Settings_W_Button_K2Node_ComponentBoundEvent_0
 }
 
 
-// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_Settings_W_Buttons_2_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SettingsMain_C::BndEvt__W_Settings_W_Buttons_2_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_Settings_W_Buttons_2_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_AntialiasingMethod_K2Node_ComponentBoundEvent_39_OnComboSettingChange__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -78,6 +64,20 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_AntialiasingMethod_K2Node_Compone
 	Parms.SelectType = SelectType;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_Back_Button_K2Node_ComponentBoundEvent_41_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_Back_Button_K2Node_ComponentBoundEvent_41_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_Back_Button_K2Node_ComponentBoundEvent_41_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -465,15 +465,15 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_RelaunchButton_1_K2Node_Component
 }
 
 
-// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_ResetButton_1_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_Reset_Button_K2Node_ComponentBoundEvent_43_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
-void UW_SettingsMain_C::BndEvt__W_SettingsMain_ResetButton_1_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature()
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_Reset_Button_K2Node_ComponentBoundEvent_43_OnButtonClickedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_ResetButton_1_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature");
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_Reset_Button_K2Node_ComponentBoundEvent_43_OnButtonClickedEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -520,6 +520,20 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_ResolutionScale_K2Node_ComponentB
 	Parms.Setting = std::move(Setting);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_Save_Button_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_Save_Button_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_Save_Button_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -611,6 +625,20 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_SSR_K2Node_ComponentBoundEvent_32
 }
 
 
+// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_TeleportationTab_K2Node_ComponentBoundEvent_40_OnClicked__DelegateSignature
+// (BlueprintEvent)
+
+void UW_SettingsMain_C::BndEvt__W_SettingsMain_TeleportationTab_K2Node_ComponentBoundEvent_40_OnClicked__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_TeleportationTab_K2Node_ComponentBoundEvent_40_OnClicked__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_TeleportButton_K2Node_ComponentBoundEvent_12_OnClicked__DelegateSignature
 // (BlueprintEvent)
 
@@ -688,20 +716,6 @@ void UW_SettingsMain_C::BndEvt__W_SettingsMain_VSync_K2Node_ComponentBoundEvent_
 	Parms.SelectType = SelectType;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_SettingsMain.W_SettingsMain_C.BndEvt__W_SettingsMain_W_Buttons_1_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SettingsMain_C::BndEvt__W_SettingsMain_W_Buttons_1_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SettingsMain_C", "BndEvt__W_SettingsMain_W_Buttons_1_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -962,11 +976,11 @@ class UWidget* UW_SettingsMain_C::Get_NearestSafeLocation_Button_ToolTipWidget()
 // Function W_SettingsMain.W_SettingsMain_C.GetCheckpointByName
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ACheckpoint_BP_C*                 Checkpoint                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    Found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_SettingsMain_C::GetCheckpointByName(const class FString& Param_Name, class ACheckpoint_BP_C** Checkpoint, bool* Found)
+void UW_SettingsMain_C::GetCheckpointByName(const class FString& Name_0, class ACheckpoint_BP_C** Checkpoint, bool* Found)
 {
 	static class UFunction* Func = nullptr;
 
@@ -975,7 +989,7 @@ void UW_SettingsMain_C::GetCheckpointByName(const class FString& Param_Name, cla
 
 	Params::W_SettingsMain_C_GetCheckpointByName Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1206,9 +1220,9 @@ void UW_SettingsMain_C::UpdateLoadCheckpointVisibility()
 // Function W_SettingsMain.W_SettingsMain_C.UpdateResolution
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Resolution                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Resolution_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_SettingsMain_C::UpdateResolution(const class FString& Param_Resolution)
+void UW_SettingsMain_C::UpdateResolution(const class FString& Resolution_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1217,7 +1231,7 @@ void UW_SettingsMain_C::UpdateResolution(const class FString& Param_Resolution)
 
 	Params::W_SettingsMain_C_UpdateResolution Parms{};
 
-	Parms.Param_Resolution = std::move(Param_Resolution);
+	Parms.Resolution_0 = std::move(Resolution_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

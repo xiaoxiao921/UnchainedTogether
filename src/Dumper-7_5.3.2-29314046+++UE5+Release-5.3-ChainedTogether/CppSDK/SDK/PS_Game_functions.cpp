@@ -40,9 +40,9 @@ void APS_Game_C::ExecuteUbergraph_PS_Game(int32 EntryPoint)
 // Function PS_Game.PS_Game_C.GetColor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     Param_Color                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     Color_0                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void APS_Game_C::GetColor(struct FLinearColor* Param_Color)
+void APS_Game_C::GetColor(struct FLinearColor* Color_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -53,8 +53,8 @@ void APS_Game_C::GetColor(struct FLinearColor* Param_Color)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Color != nullptr)
-		*Param_Color = std::move(Parms.Param_Color);
+	if (Color_0 != nullptr)
+		*Color_0 = std::move(Parms.Color_0);
 }
 
 

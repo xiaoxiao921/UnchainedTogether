@@ -84,7 +84,7 @@ public:
 	void SetChainComp(class UStaticMeshComponent* Comp);
 	void SetCollisionResponse(ECollisionChannel Collision, ECollisionResponse Response);
 	void SetController(const struct FVector& Location);
-	void SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Param_Name);
+	void SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Name_0);
 	void SetFlyMode(bool FlyMode);
 	void SetInAirDamping(double Damping);
 	void SetIsDetectableByPlacingBlocks(bool Detectable);
@@ -100,7 +100,7 @@ public:
 	void ShuffleReplicationScale(double NullDuration, double TimelineDuration);
 	void SnapCharacterToVehicle(class USphereComponent* DriverSocket);
 	void Spawn_Chains();
-	void SwitchToTyrolienne(class ABP_Tyrolienne_C* Tyrolienne);
+	void SwitchToTyrolienne(class AActor* Tyrolienne);
 	void TrampolineBounce(double Force, bool Instigator, bool UseControlRot);
 	void UnderLava();
 	void UpdateDriveHands(const struct FVector& Left, const struct FVector& Right);

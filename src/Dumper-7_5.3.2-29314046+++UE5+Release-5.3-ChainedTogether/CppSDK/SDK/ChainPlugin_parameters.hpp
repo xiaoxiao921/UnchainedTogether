@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ChainPlugin_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ChainPlugin_structs.hpp"
 
 
 namespace SDK::Params
@@ -25,7 +25,7 @@ struct ChainComponent_ApplyForce final
 public:
 	struct FVector                                InPosition;                                        // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InRadius;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1774[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                InForce;                                           // 0x0020(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 ReturnValue;                                       // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -67,13 +67,13 @@ static_assert(offsetof(ChainComponent_AttachStartToActor, Socket) == 0x000028, "
 struct ChainComponent_GetChainPoint final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1775[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ChainComponent_GetChainPoint) == 0x000008, "Wrong alignment on ChainComponent_GetChainPoint");
 static_assert(sizeof(ChainComponent_GetChainPoint) == 0x000020, "Wrong size on ChainComponent_GetChainPoint");
-static_assert(offsetof(ChainComponent_GetChainPoint, Param_Index) == 0x000000, "Member 'ChainComponent_GetChainPoint::Param_Index' has a wrong offset!");
+static_assert(offsetof(ChainComponent_GetChainPoint, Index_0) == 0x000000, "Member 'ChainComponent_GetChainPoint::Index_0' has a wrong offset!");
 static_assert(offsetof(ChainComponent_GetChainPoint, ReturnValue) == 0x000008, "Member 'ChainComponent_GetChainPoint::ReturnValue' has a wrong offset!");
 
 // Function ChainPlugin.ChainComponent.GetChainPoints

@@ -1690,7 +1690,7 @@ enum class ESteamBroadcastUploadResult : uint8
 struct alignas(0x08) FSteamLeaderboard final
 {
 public:
-	uint8                                         Pad_17C9[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamLeaderboard) == 0x000008, "Wrong alignment on FSteamLeaderboard");
 static_assert(sizeof(FSteamLeaderboard) == 0x000008, "Wrong size on FSteamLeaderboard");
@@ -1700,7 +1700,7 @@ static_assert(sizeof(FSteamLeaderboard) == 0x000008, "Wrong size on FSteamLeader
 struct alignas(0x08) FSteamLeaderboardEntries final
 {
 public:
-	uint8                                         Pad_17CA[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamLeaderboardEntries) == 0x000008, "Wrong alignment on FSteamLeaderboardEntries");
 static_assert(sizeof(FSteamLeaderboardEntries) == 0x000008, "Wrong size on FSteamLeaderboardEntries");
@@ -1713,7 +1713,7 @@ public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamLeaderboardEntries               SteamLeaderboardEntries;                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         EntryCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17CB[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardScoresDownloadedForUsers) == 0x000008, "Wrong alignment on FLeaderboardScoresDownloadedForUsers");
 static_assert(sizeof(FLeaderboardScoresDownloadedForUsers) == 0x000018, "Wrong size on FLeaderboardScoresDownloadedForUsers");
@@ -1726,30 +1726,33 @@ static_assert(offsetof(FLeaderboardScoresDownloadedForUsers, EntryCount) == 0x00
 struct alignas(0x08) FPublishedFileID final
 {
 public:
-	uint8                                         Pad_17CC[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPublishedFileID) == 0x000008, "Wrong alignment on FPublishedFileID");
 static_assert(sizeof(FPublishedFileID) == 0x000008, "Wrong size on FPublishedFileID");
 
-// ScriptStruct SteamCorePro.GetAppDependenciesResult
-// 0x0028 (0x0028 - 0x0000)
-struct FGetAppDependenciesResult final
+// ScriptStruct SteamCorePro.WorkshopEULAStatus
+// 0x0014 (0x0014 - 0x0000)
+struct FWorkshopEULAStatus final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17CD[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 AppIDs;                                            // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         NumAppDependencies;                                // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalNumAppDependencies;                           // 0x0024(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AppID;                                             // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Version;                                           // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Action;                                            // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAccepted;                                         // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNeedsAction;                                      // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGetAppDependenciesResult) == 0x000008, "Wrong alignment on FGetAppDependenciesResult");
-static_assert(sizeof(FGetAppDependenciesResult) == 0x000028, "Wrong size on FGetAppDependenciesResult");
-static_assert(offsetof(FGetAppDependenciesResult, Result) == 0x000000, "Member 'FGetAppDependenciesResult::Result' has a wrong offset!");
-static_assert(offsetof(FGetAppDependenciesResult, PublishedFileID) == 0x000008, "Member 'FGetAppDependenciesResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FGetAppDependenciesResult, AppIDs) == 0x000010, "Member 'FGetAppDependenciesResult::AppIDs' has a wrong offset!");
-static_assert(offsetof(FGetAppDependenciesResult, NumAppDependencies) == 0x000020, "Member 'FGetAppDependenciesResult::NumAppDependencies' has a wrong offset!");
-static_assert(offsetof(FGetAppDependenciesResult, TotalNumAppDependencies) == 0x000024, "Member 'FGetAppDependenciesResult::TotalNumAppDependencies' has a wrong offset!");
+static_assert(alignof(FWorkshopEULAStatus) == 0x000004, "Wrong alignment on FWorkshopEULAStatus");
+static_assert(sizeof(FWorkshopEULAStatus) == 0x000014, "Wrong size on FWorkshopEULAStatus");
+static_assert(offsetof(FWorkshopEULAStatus, Result) == 0x000000, "Member 'FWorkshopEULAStatus::Result' has a wrong offset!");
+static_assert(offsetof(FWorkshopEULAStatus, AppID) == 0x000004, "Member 'FWorkshopEULAStatus::AppID' has a wrong offset!");
+static_assert(offsetof(FWorkshopEULAStatus, Version) == 0x000008, "Member 'FWorkshopEULAStatus::Version' has a wrong offset!");
+static_assert(offsetof(FWorkshopEULAStatus, Action) == 0x00000C, "Member 'FWorkshopEULAStatus::Action' has a wrong offset!");
+static_assert(offsetof(FWorkshopEULAStatus, bAccepted) == 0x000010, "Member 'FWorkshopEULAStatus::bAccepted' has a wrong offset!");
+static_assert(offsetof(FWorkshopEULAStatus, bNeedsAction) == 0x000011, "Member 'FWorkshopEULAStatus::bNeedsAction' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.DownloadItemResult
 // 0x0018 (0x0018 - 0x0000)
@@ -1757,10 +1760,10 @@ struct FDownloadItemResult final
 {
 public:
 	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17CE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17CF[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDownloadItemResult) == 0x000008, "Wrong alignment on FDownloadItemResult");
 static_assert(sizeof(FDownloadItemResult) == 0x000018, "Wrong size on FDownloadItemResult");
@@ -1768,13 +1771,34 @@ static_assert(offsetof(FDownloadItemResult, AppID) == 0x000000, "Member 'FDownlo
 static_assert(offsetof(FDownloadItemResult, PublishedFileID) == 0x000008, "Member 'FDownloadItemResult::PublishedFileID' has a wrong offset!");
 static_assert(offsetof(FDownloadItemResult, Result) == 0x000010, "Member 'FDownloadItemResult::Result' has a wrong offset!");
 
+// ScriptStruct SteamCorePro.SteamID
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FSteamID final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamID) == 0x000008, "Wrong alignment on FSteamID");
+static_assert(sizeof(FSteamID) == 0x000008, "Wrong size on FSteamID");
+
+// ScriptStruct SteamCorePro.P2PSessionRequest
+// 0x0008 (0x0008 - 0x0000)
+struct FP2PSessionRequest final
+{
+public:
+	struct FSteamID                               SteamIDRemote;                                     // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FP2PSessionRequest) == 0x000008, "Wrong alignment on FP2PSessionRequest");
+static_assert(sizeof(FP2PSessionRequest) == 0x000008, "Wrong size on FP2PSessionRequest");
+static_assert(offsetof(FP2PSessionRequest, SteamIDRemote) == 0x000000, "Member 'FP2PSessionRequest::SteamIDRemote' has a wrong offset!");
+
 // ScriptStruct SteamCorePro.EndGameResultCallback
 // 0x0018 (0x0018 - 0x0000)
 struct FEndGameResultCallback final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D0[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 UniqueGameID;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FEndGameResultCallback) == 0x000008, "Wrong alignment on FEndGameResultCallback");
@@ -1782,23 +1806,13 @@ static_assert(sizeof(FEndGameResultCallback) == 0x000018, "Wrong size on FEndGam
 static_assert(offsetof(FEndGameResultCallback, Result) == 0x000000, "Member 'FEndGameResultCallback::Result' has a wrong offset!");
 static_assert(offsetof(FEndGameResultCallback, UniqueGameID) == 0x000008, "Member 'FEndGameResultCallback::UniqueGameID' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.SteamID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FSteamID final
-{
-public:
-	uint8                                         Pad_17D1[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamID) == 0x000008, "Wrong alignment on FSteamID");
-static_assert(sizeof(FSteamID) == 0x000008, "Wrong size on FSteamID");
-
 // ScriptStruct SteamCorePro.FriendsEnumerateFollowingList
 // 0x0020 (0x0020 - 0x0000)
 struct FFriendsEnumerateFollowingList final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D2[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSteamID>                       SteamIDs;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	int32                                         Results;                                           // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TotalResult;                                       // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1818,7 +1832,7 @@ public:
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bWasAddRequest;                                    // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D3[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUserFavoriteItemsListChanged) == 0x000008, "Wrong alignment on FUserFavoriteItemsListChanged");
 static_assert(sizeof(FUserFavoriteItemsListChanged) == 0x000010, "Wrong size on FUserFavoriteItemsListChanged");
@@ -1826,46 +1840,12 @@ static_assert(offsetof(FUserFavoriteItemsListChanged, PublishedFileID) == 0x0000
 static_assert(offsetof(FUserFavoriteItemsListChanged, Result) == 0x000008, "Member 'FUserFavoriteItemsListChanged::Result' has a wrong offset!");
 static_assert(offsetof(FUserFavoriteItemsListChanged, bWasAddRequest) == 0x000009, "Member 'FUserFavoriteItemsListChanged::bWasAddRequest' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.SteamSessionSearchSetting
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FSteamSessionSearchSetting final
-{
-public:
-	uint8                                         Pad_17D4[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamSessionSearchSetting) == 0x000008, "Wrong alignment on FSteamSessionSearchSetting");
-static_assert(sizeof(FSteamSessionSearchSetting) == 0x000020, "Wrong size on FSteamSessionSearchSetting");
-
-// ScriptStruct SteamCorePro.SteamTicketHandle
-// 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FSteamTicketHandle final
-{
-public:
-	uint8                                         Pad_17D5[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamTicketHandle) == 0x000004, "Wrong alignment on FSteamTicketHandle");
-static_assert(sizeof(FSteamTicketHandle) == 0x000004, "Wrong size on FSteamTicketHandle");
-
-// ScriptStruct SteamCorePro.GetAuthSessionTicketResponse
-// 0x0008 (0x0008 - 0x0000)
-struct FGetAuthSessionTicketResponse final
-{
-public:
-	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D6[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGetAuthSessionTicketResponse) == 0x000004, "Wrong alignment on FGetAuthSessionTicketResponse");
-static_assert(sizeof(FGetAuthSessionTicketResponse) == 0x000008, "Wrong size on FGetAuthSessionTicketResponse");
-static_assert(offsetof(FGetAuthSessionTicketResponse, AuthTicket) == 0x000000, "Member 'FGetAuthSessionTicketResponse::AuthTicket' has a wrong offset!");
-static_assert(offsetof(FGetAuthSessionTicketResponse, Result) == 0x000004, "Member 'FGetAuthSessionTicketResponse::Result' has a wrong offset!");
-
 // ScriptStruct SteamCorePro.SteamSessionSetting
 // 0x0028 (0x0028 - 0x0000)
 struct alignas(0x08) FSteamSessionSetting final
 {
 public:
-	uint8                                         Pad_17D7[0x28];                                    // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamSessionSetting) == 0x000008, "Wrong alignment on FSteamSessionSetting");
 static_assert(sizeof(FSteamSessionSetting) == 0x000028, "Wrong size on FSteamSessionSetting");
@@ -1891,7 +1871,7 @@ public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSteamLeaderboardEntries               SteamLeaderboardEntries;                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         EntryCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D8[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardScoresDownloaded) == 0x000008, "Wrong alignment on FLeaderboardScoresDownloaded");
 static_assert(sizeof(FLeaderboardScoresDownloaded) == 0x000018, "Wrong size on FLeaderboardScoresDownloaded");
@@ -1905,32 +1885,16 @@ struct FAddAppDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D9[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17DA[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAddAppDependencyResult) == 0x000008, "Wrong alignment on FAddAppDependencyResult");
 static_assert(sizeof(FAddAppDependencyResult) == 0x000018, "Wrong size on FAddAppDependencyResult");
 static_assert(offsetof(FAddAppDependencyResult, Result) == 0x000000, "Member 'FAddAppDependencyResult::Result' has a wrong offset!");
 static_assert(offsetof(FAddAppDependencyResult, PublishedFileID) == 0x000008, "Member 'FAddAppDependencyResult::PublishedFileID' has a wrong offset!");
 static_assert(offsetof(FAddAppDependencyResult, AppID) == 0x000010, "Member 'FAddAppDependencyResult::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GetTicketForWebApiResponse
-// 0x0018 (0x0018 - 0x0000)
-struct FGetTicketForWebApiResponse final
-{
-public:
-	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17DB[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 Ticket;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGetTicketForWebApiResponse) == 0x000008, "Wrong alignment on FGetTicketForWebApiResponse");
-static_assert(sizeof(FGetTicketForWebApiResponse) == 0x000018, "Wrong size on FGetTicketForWebApiResponse");
-static_assert(offsetof(FGetTicketForWebApiResponse, AuthTicket) == 0x000000, "Member 'FGetTicketForWebApiResponse::AuthTicket' has a wrong offset!");
-static_assert(offsetof(FGetTicketForWebApiResponse, Result) == 0x000004, "Member 'FGetTicketForWebApiResponse::Result' has a wrong offset!");
-static_assert(offsetof(FGetTicketForWebApiResponse, Ticket) == 0x000008, "Member 'FGetTicketForWebApiResponse::Ticket' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.EquippedProfileItemsChanged
 // 0x0008 (0x0008 - 0x0000)
@@ -1949,7 +1913,7 @@ struct FAddUGCDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17DC[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPublishedFileID                       ChildPublishedFileId;                              // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -1958,6 +1922,16 @@ static_assert(sizeof(FAddUGCDependencyResult) == 0x000018, "Wrong size on FAddUG
 static_assert(offsetof(FAddUGCDependencyResult, Result) == 0x000000, "Member 'FAddUGCDependencyResult::Result' has a wrong offset!");
 static_assert(offsetof(FAddUGCDependencyResult, PublishedFileID) == 0x000008, "Member 'FAddUGCDependencyResult::PublishedFileID' has a wrong offset!");
 static_assert(offsetof(FAddUGCDependencyResult, ChildPublishedFileId) == 0x000010, "Member 'FAddUGCDependencyResult::ChildPublishedFileId' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamTicketHandle
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FSteamTicketHandle final
+{
+public:
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamTicketHandle) == 0x000004, "Wrong alignment on FSteamTicketHandle");
+static_assert(sizeof(FSteamTicketHandle) == 0x000004, "Wrong size on FSteamTicketHandle");
 
 // ScriptStruct SteamCorePro.FavoritesListAccountsUpdated
 // 0x0001 (0x0001 - 0x0000)
@@ -1970,41 +1944,15 @@ static_assert(alignof(FFavoritesListAccountsUpdated) == 0x000001, "Wrong alignme
 static_assert(sizeof(FFavoritesListAccountsUpdated) == 0x000001, "Wrong size on FFavoritesListAccountsUpdated");
 static_assert(offsetof(FFavoritesListAccountsUpdated, Result) == 0x000000, "Member 'FFavoritesListAccountsUpdated::Result' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.SteamGameID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FSteamGameID final
-{
-public:
-	uint8                                         Pad_17DD[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamGameID) == 0x000008, "Wrong alignment on FSteamGameID");
-static_assert(sizeof(FSteamGameID) == 0x000008, "Wrong size on FSteamGameID");
-
 // ScriptStruct SteamCorePro.AppResumingFromSuspend
 // 0x0001 (0x0001 - 0x0000)
 struct FAppResumingFromSuspend final
 {
 public:
-	uint8                                         Pad_17DE[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAppResumingFromSuspend) == 0x000001, "Wrong alignment on FAppResumingFromSuspend");
 static_assert(sizeof(FAppResumingFromSuspend) == 0x000001, "Wrong size on FAppResumingFromSuspend");
-
-// ScriptStruct SteamCorePro.GetVideoURLResult
-// 0x0018 (0x0018 - 0x0000)
-struct FGetVideoURLResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17DF[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 URL;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGetVideoURLResult) == 0x000008, "Wrong alignment on FGetVideoURLResult");
-static_assert(sizeof(FGetVideoURLResult) == 0x000018, "Wrong size on FGetVideoURLResult");
-static_assert(offsetof(FGetVideoURLResult, Result) == 0x000000, "Member 'FGetVideoURLResult::Result' has a wrong offset!");
-static_assert(offsetof(FGetVideoURLResult, AppID) == 0x000004, "Member 'FGetVideoURLResult::AppID' has a wrong offset!");
-static_assert(offsetof(FGetVideoURLResult, URL) == 0x000008, "Member 'FGetVideoURLResult::URL' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.FavoritesListChanged
 // 0x0040 (0x0040 - 0x0000)
@@ -2015,10 +1963,10 @@ public:
 	int32                                         QueryPort;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ConnectionPort;                                    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AppID;                                             // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E0[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<ESteamFavoriteFlags>                   Flags;                                             // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	bool                                          bAdd;                                              // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E1[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               SteamID;                                           // 0x0038(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FFavoritesListChanged) == 0x000008, "Wrong alignment on FFavoritesListChanged");
@@ -2042,28 +1990,25 @@ static_assert(alignof(FAssociateWithClanResult) == 0x000001, "Wrong alignment on
 static_assert(sizeof(FAssociateWithClanResult) == 0x000001, "Wrong size on FAssociateWithClanResult");
 static_assert(offsetof(FAssociateWithClanResult, Result) == 0x000000, "Member 'FAssociateWithClanResult::Result' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.WorkshopEULAStatus
-// 0x0014 (0x0014 - 0x0000)
-struct FWorkshopEULAStatus final
+// ScriptStruct SteamCorePro.GetAppDependenciesResult
+// 0x0028 (0x0028 - 0x0000)
+struct FGetAppDependenciesResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E2[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AppID;                                             // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Version;                                           // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Action;                                            // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAccepted;                                         // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNeedsAction;                                      // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E3[0x2];                                     // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AppIDs;                                            // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         NumAppDependencies;                                // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalNumAppDependencies;                           // 0x0024(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FWorkshopEULAStatus) == 0x000004, "Wrong alignment on FWorkshopEULAStatus");
-static_assert(sizeof(FWorkshopEULAStatus) == 0x000014, "Wrong size on FWorkshopEULAStatus");
-static_assert(offsetof(FWorkshopEULAStatus, Result) == 0x000000, "Member 'FWorkshopEULAStatus::Result' has a wrong offset!");
-static_assert(offsetof(FWorkshopEULAStatus, AppID) == 0x000004, "Member 'FWorkshopEULAStatus::AppID' has a wrong offset!");
-static_assert(offsetof(FWorkshopEULAStatus, Version) == 0x000008, "Member 'FWorkshopEULAStatus::Version' has a wrong offset!");
-static_assert(offsetof(FWorkshopEULAStatus, Action) == 0x00000C, "Member 'FWorkshopEULAStatus::Action' has a wrong offset!");
-static_assert(offsetof(FWorkshopEULAStatus, bAccepted) == 0x000010, "Member 'FWorkshopEULAStatus::bAccepted' has a wrong offset!");
-static_assert(offsetof(FWorkshopEULAStatus, bNeedsAction) == 0x000011, "Member 'FWorkshopEULAStatus::bNeedsAction' has a wrong offset!");
+static_assert(alignof(FGetAppDependenciesResult) == 0x000008, "Wrong alignment on FGetAppDependenciesResult");
+static_assert(sizeof(FGetAppDependenciesResult) == 0x000028, "Wrong size on FGetAppDependenciesResult");
+static_assert(offsetof(FGetAppDependenciesResult, Result) == 0x000000, "Member 'FGetAppDependenciesResult::Result' has a wrong offset!");
+static_assert(offsetof(FGetAppDependenciesResult, PublishedFileID) == 0x000008, "Member 'FGetAppDependenciesResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FGetAppDependenciesResult, AppIDs) == 0x000010, "Member 'FGetAppDependenciesResult::AppIDs' has a wrong offset!");
+static_assert(offsetof(FGetAppDependenciesResult, NumAppDependencies) == 0x000020, "Member 'FGetAppDependenciesResult::NumAppDependencies' has a wrong offset!");
+static_assert(offsetof(FGetAppDependenciesResult, TotalNumAppDependencies) == 0x000024, "Member 'FGetAppDependenciesResult::TotalNumAppDependencies' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.AttachLeaderboardUGCData
 // 0x0010 (0x0010 - 0x0000)
@@ -2072,7 +2017,7 @@ struct FAttachLeaderboardUGCData final
 public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E4[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAttachLeaderboardUGCData) == 0x000008, "Wrong alignment on FAttachLeaderboardUGCData");
 static_assert(sizeof(FAttachLeaderboardUGCData) == 0x000010, "Wrong size on FAttachLeaderboardUGCData");
@@ -2085,7 +2030,7 @@ struct FFileDetailsResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E5[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         FileSize;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SHA;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 Flags;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
@@ -2097,41 +2042,55 @@ static_assert(offsetof(FFileDetailsResult, FileSize) == 0x000004, "Member 'FFile
 static_assert(offsetof(FFileDetailsResult, SHA) == 0x000008, "Member 'FFileDetailsResult::SHA' has a wrong offset!");
 static_assert(offsetof(FFileDetailsResult, Flags) == 0x000018, "Member 'FFileDetailsResult::Flags' has a wrong offset!");
 
+// ScriptStruct SteamCorePro.RemoveAppDependencyResult
+// 0x0018 (0x0018 - 0x0000)
+struct FRemoveAppDependencyResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         AppID;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FRemoveAppDependencyResult) == 0x000008, "Wrong alignment on FRemoveAppDependencyResult");
+static_assert(sizeof(FRemoveAppDependencyResult) == 0x000018, "Wrong size on FRemoveAppDependencyResult");
+static_assert(offsetof(FRemoveAppDependencyResult, Result) == 0x000000, "Member 'FRemoveAppDependencyResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoveAppDependencyResult, PublishedFileID) == 0x000008, "Member 'FRemoveAppDependencyResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FRemoveAppDependencyResult, AppID) == 0x000010, "Member 'FRemoveAppDependencyResult::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GetVideoURLResult
+// 0x0018 (0x0018 - 0x0000)
+struct FGetVideoURLResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 URL;                                               // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGetVideoURLResult) == 0x000008, "Wrong alignment on FGetVideoURLResult");
+static_assert(sizeof(FGetVideoURLResult) == 0x000018, "Wrong size on FGetVideoURLResult");
+static_assert(offsetof(FGetVideoURLResult, Result) == 0x000000, "Member 'FGetVideoURLResult::Result' has a wrong offset!");
+static_assert(offsetof(FGetVideoURLResult, AppID) == 0x000004, "Member 'FGetVideoURLResult::AppID' has a wrong offset!");
+static_assert(offsetof(FGetVideoURLResult, URL) == 0x000008, "Member 'FGetVideoURLResult::URL' has a wrong offset!");
+
 // ScriptStruct SteamCorePro.RemoteStorageFileReadAsyncComplete
 // 0x0018 (0x0018 - 0x0000)
 struct alignas(0x08) FRemoteStorageFileReadAsyncComplete final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E6[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Offset;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Read;                                              // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E7[0xC];                                     // 0x000C(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0xC];                                        // 0x000C(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRemoteStorageFileReadAsyncComplete) == 0x000008, "Wrong alignment on FRemoteStorageFileReadAsyncComplete");
 static_assert(sizeof(FRemoteStorageFileReadAsyncComplete) == 0x000018, "Wrong size on FRemoteStorageFileReadAsyncComplete");
 static_assert(offsetof(FRemoteStorageFileReadAsyncComplete, Result) == 0x000000, "Member 'FRemoteStorageFileReadAsyncComplete::Result' has a wrong offset!");
 static_assert(offsetof(FRemoteStorageFileReadAsyncComplete, Offset) == 0x000004, "Member 'FRemoteStorageFileReadAsyncComplete::Offset' has a wrong offset!");
 static_assert(offsetof(FRemoteStorageFileReadAsyncComplete, Read) == 0x000008, "Member 'FRemoteStorageFileReadAsyncComplete::Read' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.UserAchievementIconFetched
-// 0x0030 (0x0030 - 0x0000)
-struct FUserAchievementIconFetched final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 AchievementName;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAchieved;                                         // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E8[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             Icon;                                              // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E9[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUserAchievementIconFetched) == 0x000008, "Wrong alignment on FUserAchievementIconFetched");
-static_assert(sizeof(FUserAchievementIconFetched) == 0x000030, "Wrong size on FUserAchievementIconFetched");
-static_assert(offsetof(FUserAchievementIconFetched, GameID) == 0x000000, "Member 'FUserAchievementIconFetched::GameID' has a wrong offset!");
-static_assert(offsetof(FUserAchievementIconFetched, AchievementName) == 0x000008, "Member 'FUserAchievementIconFetched::AchievementName' has a wrong offset!");
-static_assert(offsetof(FUserAchievementIconFetched, bAchieved) == 0x000018, "Member 'FUserAchievementIconFetched::bAchieved' has a wrong offset!");
-static_assert(offsetof(FUserAchievementIconFetched, Icon) == 0x000020, "Member 'FUserAchievementIconFetched::Icon' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.AvatarImageLoaded
 // 0x0020 (0x0020 - 0x0000)
@@ -2140,57 +2099,19 @@ struct FAvatarImageLoaded final
 public:
 	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class UTexture2D*                             Image;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17EA[0x10];                                    // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAvatarImageLoaded) == 0x000008, "Wrong alignment on FAvatarImageLoaded");
 static_assert(sizeof(FAvatarImageLoaded) == 0x000020, "Wrong size on FAvatarImageLoaded");
 static_assert(offsetof(FAvatarImageLoaded, SteamID) == 0x000000, "Member 'FAvatarImageLoaded::SteamID' has a wrong offset!");
 static_assert(offsetof(FAvatarImageLoaded, Image) == 0x000008, "Member 'FAvatarImageLoaded::Image' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.SteamItemInstanceID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FSteamItemInstanceID final
-{
-public:
-	uint8                                         Pad_17EB[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamItemInstanceID) == 0x000008, "Wrong alignment on FSteamItemInstanceID");
-static_assert(sizeof(FSteamItemInstanceID) == 0x000008, "Wrong size on FSteamItemInstanceID");
-
-// ScriptStruct SteamCorePro.SteamItemDef
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamItemDef final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-static_assert(alignof(FSteamItemDef) == 0x000004, "Wrong alignment on FSteamItemDef");
-static_assert(sizeof(FSteamItemDef) == 0x000004, "Wrong size on FSteamItemDef");
-static_assert(offsetof(FSteamItemDef, Value) == 0x000000, "Member 'FSteamItemDef::Value' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamItemDetails
-// 0x0020 (0x0020 - 0x0000)
-struct FSteamItemDetails final
-{
-public:
-	struct FSteamItemInstanceID                   InstanceId;                                        // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamItemDef                          Definition;                                        // 0x0008(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Quantity;                                          // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<ESteamCoreProItemFlags>                Flags;                                             // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamItemDetails) == 0x000008, "Wrong alignment on FSteamItemDetails");
-static_assert(sizeof(FSteamItemDetails) == 0x000020, "Wrong size on FSteamItemDetails");
-static_assert(offsetof(FSteamItemDetails, InstanceId) == 0x000000, "Member 'FSteamItemDetails::InstanceId' has a wrong offset!");
-static_assert(offsetof(FSteamItemDetails, Definition) == 0x000008, "Member 'FSteamItemDetails::Definition' has a wrong offset!");
-static_assert(offsetof(FSteamItemDetails, Quantity) == 0x00000C, "Member 'FSteamItemDetails::Quantity' has a wrong offset!");
-static_assert(offsetof(FSteamItemDetails, Flags) == 0x000010, "Member 'FSteamItemDetails::Flags' has a wrong offset!");
-
 // ScriptStruct SteamCorePro.SteamUGCHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FSteamUGCHandle final
 {
 public:
-	uint8                                         Pad_17EC[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamUGCHandle) == 0x000008, "Wrong alignment on FSteamUGCHandle");
 static_assert(sizeof(FSteamUGCHandle) == 0x000008, "Wrong size on FSteamUGCHandle");
@@ -2213,12 +2134,912 @@ struct FLeaderboardFindResult final
 public:
 	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bLeaderboardFound;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17ED[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLeaderboardFindResult) == 0x000008, "Wrong alignment on FLeaderboardFindResult");
 static_assert(sizeof(FLeaderboardFindResult) == 0x000010, "Wrong size on FLeaderboardFindResult");
 static_assert(offsetof(FLeaderboardFindResult, SteamLeaderboard) == 0x000000, "Member 'FLeaderboardFindResult::SteamLeaderboard' has a wrong offset!");
 static_assert(offsetof(FLeaderboardFindResult, bLeaderboardFound) == 0x000008, "Member 'FLeaderboardFindResult::bLeaderboardFound' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.CheckFileSignature
+// 0x0001 (0x0001 - 0x0000)
+struct FCheckFileSignature final
+{
+public:
+	ESteamCheckFileSignature                      CheckFileSignature;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCheckFileSignature) == 0x000001, "Wrong alignment on FCheckFileSignature");
+static_assert(sizeof(FCheckFileSignature) == 0x000001, "Wrong size on FCheckFileSignature");
+static_assert(offsetof(FCheckFileSignature, CheckFileSignature) == 0x000000, "Member 'FCheckFileSignature::CheckFileSignature' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.FindOrCreateLeaderboardData
+// 0x0010 (0x0010 - 0x0000)
+struct FFindOrCreateLeaderboardData final
+{
+public:
+	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bLeaderboardFound;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFindOrCreateLeaderboardData) == 0x000008, "Wrong alignment on FFindOrCreateLeaderboardData");
+static_assert(sizeof(FFindOrCreateLeaderboardData) == 0x000010, "Wrong size on FFindOrCreateLeaderboardData");
+static_assert(offsetof(FFindOrCreateLeaderboardData, SteamLeaderboard) == 0x000000, "Member 'FFindOrCreateLeaderboardData::SteamLeaderboard' has a wrong offset!");
+static_assert(offsetof(FFindOrCreateLeaderboardData, bLeaderboardFound) == 0x000008, "Member 'FFindOrCreateLeaderboardData::bLeaderboardFound' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ClanOfficerListResponse
+// 0x0010 (0x0010 - 0x0000)
+struct FClanOfficerListResponse final
+{
+public:
+	struct FSteamID                               SteamIDClan;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Officers;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FClanOfficerListResponse) == 0x000008, "Wrong alignment on FClanOfficerListResponse");
+static_assert(sizeof(FClanOfficerListResponse) == 0x000010, "Wrong size on FClanOfficerListResponse");
+static_assert(offsetof(FClanOfficerListResponse, SteamIDClan) == 0x000000, "Member 'FClanOfficerListResponse::SteamIDClan' has a wrong offset!");
+static_assert(offsetof(FClanOfficerListResponse, Officers) == 0x000008, "Member 'FClanOfficerListResponse::Officers' has a wrong offset!");
+static_assert(offsetof(FClanOfficerListResponse, bSuccess) == 0x00000C, "Member 'FClanOfficerListResponse::bSuccess' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.PartyBeaconID
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FPartyBeaconID final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FPartyBeaconID) == 0x000008, "Wrong alignment on FPartyBeaconID");
+static_assert(sizeof(FPartyBeaconID) == 0x000008, "Wrong size on FPartyBeaconID");
+
+// ScriptStruct SteamCorePro.JoinPartyData
+// 0x0028 (0x0028 - 0x0000)
+struct FJoinPartyData final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDBeaconOwner;                                // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ConnectString;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FJoinPartyData) == 0x000008, "Wrong alignment on FJoinPartyData");
+static_assert(sizeof(FJoinPartyData) == 0x000028, "Wrong size on FJoinPartyData");
+static_assert(offsetof(FJoinPartyData, Result) == 0x000000, "Member 'FJoinPartyData::Result' has a wrong offset!");
+static_assert(offsetof(FJoinPartyData, BeaconID) == 0x000008, "Member 'FJoinPartyData::BeaconID' has a wrong offset!");
+static_assert(offsetof(FJoinPartyData, SteamIDBeaconOwner) == 0x000010, "Member 'FJoinPartyData::SteamIDBeaconOwner' has a wrong offset!");
+static_assert(offsetof(FJoinPartyData, ConnectString) == 0x000018, "Member 'FJoinPartyData::ConnectString' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ClientGameServerDeny
+// 0x0020 (0x0020 - 0x0000)
+struct FClientGameServerDeny final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 GameServerIP;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GameServerPort;                                    // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BSecure;                                           // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamDenyReason                              Reason;                                            // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FClientGameServerDeny) == 0x000008, "Wrong alignment on FClientGameServerDeny");
+static_assert(sizeof(FClientGameServerDeny) == 0x000020, "Wrong size on FClientGameServerDeny");
+static_assert(offsetof(FClientGameServerDeny, AppID) == 0x000000, "Member 'FClientGameServerDeny::AppID' has a wrong offset!");
+static_assert(offsetof(FClientGameServerDeny, GameServerIP) == 0x000008, "Member 'FClientGameServerDeny::GameServerIP' has a wrong offset!");
+static_assert(offsetof(FClientGameServerDeny, GameServerPort) == 0x000018, "Member 'FClientGameServerDeny::GameServerPort' has a wrong offset!");
+static_assert(offsetof(FClientGameServerDeny, BSecure) == 0x00001C, "Member 'FClientGameServerDeny::BSecure' has a wrong offset!");
+static_assert(offsetof(FClientGameServerDeny, Reason) == 0x00001D, "Member 'FClientGameServerDeny::Reason' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GetOPFSettingsResult
+// 0x0008 (0x0008 - 0x0000)
+struct FGetOPFSettingsResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGetOPFSettingsResult) == 0x000004, "Wrong alignment on FGetOPFSettingsResult");
+static_assert(sizeof(FGetOPFSettingsResult) == 0x000008, "Wrong size on FGetOPFSettingsResult");
+static_assert(offsetof(FGetOPFSettingsResult, Result) == 0x000000, "Member 'FGetOPFSettingsResult::Result' has a wrong offset!");
+static_assert(offsetof(FGetOPFSettingsResult, AppID) == 0x000004, "Member 'FGetOPFSettingsResult::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ComputeNewPlayerCompatibilityResult
+// 0x0018 (0x0018 - 0x0000)
+struct FComputeNewPlayerCompatibilityResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PlayersThatDontLikeCandidate;                      // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayersThatCandidateDoesntLike;                    // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClanPlayersThatDontLikeCandidate;                  // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDCandidate;                                  // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FComputeNewPlayerCompatibilityResult) == 0x000008, "Wrong alignment on FComputeNewPlayerCompatibilityResult");
+static_assert(sizeof(FComputeNewPlayerCompatibilityResult) == 0x000018, "Wrong size on FComputeNewPlayerCompatibilityResult");
+static_assert(offsetof(FComputeNewPlayerCompatibilityResult, Result) == 0x000000, "Member 'FComputeNewPlayerCompatibilityResult::Result' has a wrong offset!");
+static_assert(offsetof(FComputeNewPlayerCompatibilityResult, PlayersThatDontLikeCandidate) == 0x000004, "Member 'FComputeNewPlayerCompatibilityResult::PlayersThatDontLikeCandidate' has a wrong offset!");
+static_assert(offsetof(FComputeNewPlayerCompatibilityResult, PlayersThatCandidateDoesntLike) == 0x000008, "Member 'FComputeNewPlayerCompatibilityResult::PlayersThatCandidateDoesntLike' has a wrong offset!");
+static_assert(offsetof(FComputeNewPlayerCompatibilityResult, ClanPlayersThatDontLikeCandidate) == 0x00000C, "Member 'FComputeNewPlayerCompatibilityResult::ClanPlayersThatDontLikeCandidate' has a wrong offset!");
+static_assert(offsetof(FComputeNewPlayerCompatibilityResult, SteamIDCandidate) == 0x000010, "Member 'FComputeNewPlayerCompatibilityResult::SteamIDCandidate' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.CreateBeaconData
+// 0x0010 (0x0010 - 0x0000)
+struct FCreateBeaconData final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCreateBeaconData) == 0x000008, "Wrong alignment on FCreateBeaconData");
+static_assert(sizeof(FCreateBeaconData) == 0x000010, "Wrong size on FCreateBeaconData");
+static_assert(offsetof(FCreateBeaconData, Result) == 0x000000, "Member 'FCreateBeaconData::Result' has a wrong offset!");
+static_assert(offsetof(FCreateBeaconData, BeaconID) == 0x000008, "Member 'FCreateBeaconData::BeaconID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.NumberOfCurrentPlayers
+// 0x0008 (0x0008 - 0x0000)
+struct FNumberOfCurrentPlayers final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Players;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FNumberOfCurrentPlayers) == 0x000004, "Wrong alignment on FNumberOfCurrentPlayers");
+static_assert(sizeof(FNumberOfCurrentPlayers) == 0x000008, "Wrong size on FNumberOfCurrentPlayers");
+static_assert(offsetof(FNumberOfCurrentPlayers, bSuccess) == 0x000000, "Member 'FNumberOfCurrentPlayers::bSuccess' has a wrong offset!");
+static_assert(offsetof(FNumberOfCurrentPlayers, Players) == 0x000004, "Member 'FNumberOfCurrentPlayers::Players' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamGameID
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FSteamGameID final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamGameID) == 0x000008, "Wrong alignment on FSteamGameID");
+static_assert(sizeof(FSteamGameID) == 0x000008, "Wrong size on FSteamGameID");
+
+// ScriptStruct SteamCorePro.LobbyInviteData
+// 0x0018 (0x0018 - 0x0000)
+struct FLobbyInviteData final
+{
+public:
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDLobby;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamGameID                           GameID;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLobbyInviteData) == 0x000008, "Wrong alignment on FLobbyInviteData");
+static_assert(sizeof(FLobbyInviteData) == 0x000018, "Wrong size on FLobbyInviteData");
+static_assert(offsetof(FLobbyInviteData, SteamIDUser) == 0x000000, "Member 'FLobbyInviteData::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FLobbyInviteData, SteamIDLobby) == 0x000008, "Member 'FLobbyInviteData::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyInviteData, GameID) == 0x000010, "Member 'FLobbyInviteData::GameID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameConnectedChatJoin
+// 0x0010 (0x0010 - 0x0000)
+struct FGameConnectedChatJoin final
+{
+public:
+	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameConnectedChatJoin) == 0x000008, "Wrong alignment on FGameConnectedChatJoin");
+static_assert(sizeof(FGameConnectedChatJoin) == 0x000010, "Wrong size on FGameConnectedChatJoin");
+static_assert(offsetof(FGameConnectedChatJoin, SteamIDClanChat) == 0x000000, "Member 'FGameConnectedChatJoin::SteamIDClanChat' has a wrong offset!");
+static_assert(offsetof(FGameConnectedChatJoin, SteamIDUser) == 0x000008, "Member 'FGameConnectedChatJoin::SteamIDUser' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.CreateItemResult
+// 0x0018 (0x0018 - 0x0000)
+struct FCreateItemResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FCreateItemResult) == 0x000008, "Wrong alignment on FCreateItemResult");
+static_assert(sizeof(FCreateItemResult) == 0x000018, "Wrong size on FCreateItemResult");
+static_assert(offsetof(FCreateItemResult, Result) == 0x000000, "Member 'FCreateItemResult::Result' has a wrong offset!");
+static_assert(offsetof(FCreateItemResult, PublishedFileID) == 0x000008, "Member 'FCreateItemResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FCreateItemResult, bUserNeedsToAcceptWorkshopLegalAgreement) == 0x000010, "Member 'FCreateItemResult::bUserNeedsToAcceptWorkshopLegalAgreement' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameLobbyJoinRequested
+// 0x0010 (0x0010 - 0x0000)
+struct FGameLobbyJoinRequested final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDFriend;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameLobbyJoinRequested) == 0x000008, "Wrong alignment on FGameLobbyJoinRequested");
+static_assert(sizeof(FGameLobbyJoinRequested) == 0x000010, "Wrong size on FGameLobbyJoinRequested");
+static_assert(offsetof(FGameLobbyJoinRequested, SteamIDLobby) == 0x000000, "Member 'FGameLobbyJoinRequested::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FGameLobbyJoinRequested, SteamIDFriend) == 0x000008, "Member 'FGameLobbyJoinRequested::SteamIDFriend' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.InputHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FInputHandle final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FInputHandle) == 0x000008, "Wrong alignment on FInputHandle");
+static_assert(sizeof(FInputHandle) == 0x000008, "Wrong size on FInputHandle");
+
+// ScriptStruct SteamCorePro.CreateLobbyData
+// 0x0010 (0x0010 - 0x0000)
+struct FCreateLobbyData final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDLobby;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCreateLobbyData) == 0x000008, "Wrong alignment on FCreateLobbyData");
+static_assert(sizeof(FCreateLobbyData) == 0x000010, "Wrong size on FCreateLobbyData");
+static_assert(offsetof(FCreateLobbyData, Result) == 0x000000, "Member 'FCreateLobbyData::Result' has a wrong offset!");
+static_assert(offsetof(FCreateLobbyData, SteamIDLobby) == 0x000008, "Member 'FCreateLobbyData::SteamIDLobby' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.UGCDeleteItemResult
+// 0x0010 (0x0010 - 0x0000)
+struct FUGCDeleteItemResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FUGCDeleteItemResult) == 0x000008, "Wrong alignment on FUGCDeleteItemResult");
+static_assert(sizeof(FUGCDeleteItemResult) == 0x000010, "Wrong size on FUGCDeleteItemResult");
+static_assert(offsetof(FUGCDeleteItemResult, Result) == 0x000000, "Member 'FUGCDeleteItemResult::Result' has a wrong offset!");
+static_assert(offsetof(FUGCDeleteItemResult, PublishedFileID) == 0x000008, "Member 'FUGCDeleteItemResult::PublishedFileID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryResult
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamInventoryResult final
+{
+public:
+	int32                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+static_assert(alignof(FSteamInventoryResult) == 0x000004, "Wrong alignment on FSteamInventoryResult");
+static_assert(sizeof(FSteamInventoryResult) == 0x000004, "Wrong size on FSteamInventoryResult");
+static_assert(offsetof(FSteamInventoryResult, Value) == 0x000000, "Member 'FSteamInventoryResult::Value' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameRichPresenceJoinRequested
+// 0x0018 (0x0018 - 0x0000)
+struct FGameRichPresenceJoinRequested final
+{
+public:
+	struct FSteamID                               SteamIDFriend;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Connect;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameRichPresenceJoinRequested) == 0x000008, "Wrong alignment on FGameRichPresenceJoinRequested");
+static_assert(sizeof(FGameRichPresenceJoinRequested) == 0x000018, "Wrong size on FGameRichPresenceJoinRequested");
+static_assert(offsetof(FGameRichPresenceJoinRequested, SteamIDFriend) == 0x000000, "Member 'FGameRichPresenceJoinRequested::SteamIDFriend' has a wrong offset!");
+static_assert(offsetof(FGameRichPresenceJoinRequested, Connect) == 0x000008, "Member 'FGameRichPresenceJoinRequested::Connect' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryEligiblePromoItemDefIDs
+// 0x0018 (0x0018 - 0x0000)
+struct FSteamInventoryEligiblePromoItemDefIDs final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         NumEligiblePromoItemDefs;                          // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000008, "Wrong alignment on FSteamInventoryEligiblePromoItemDefIDs");
+static_assert(sizeof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000018, "Wrong size on FSteamInventoryEligiblePromoItemDefIDs");
+static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, Result) == 0x000000, "Member 'FSteamInventoryEligiblePromoItemDefIDs::Result' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, SteamID) == 0x000008, "Member 'FSteamInventoryEligiblePromoItemDefIDs::SteamID' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, NumEligiblePromoItemDefs) == 0x000010, "Member 'FSteamInventoryEligiblePromoItemDefIDs::NumEligiblePromoItemDefs' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, bCachedData) == 0x000014, "Member 'FSteamInventoryEligiblePromoItemDefIDs::bCachedData' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.DLCInstalled
+// 0x0004 (0x0004 - 0x0000)
+struct FDLCInstalled final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FDLCInstalled) == 0x000004, "Wrong alignment on FDLCInstalled");
+static_assert(sizeof(FDLCInstalled) == 0x000004, "Wrong size on FDLCInstalled");
+static_assert(offsetof(FDLCInstalled, AppID) == 0x000000, "Member 'FDLCInstalled::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.DownloadClanActivityCountsResult
+// 0x0001 (0x0001 - 0x0000)
+struct FDownloadClanActivityCountsResult final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FDownloadClanActivityCountsResult) == 0x000001, "Wrong alignment on FDownloadClanActivityCountsResult");
+static_assert(sizeof(FDownloadClanActivityCountsResult) == 0x000001, "Wrong size on FDownloadClanActivityCountsResult");
+static_assert(offsetof(FDownloadClanActivityCountsResult, bSuccess) == 0x000000, "Member 'FDownloadClanActivityCountsResult::bSuccess' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSClientDeny
+// 0x0020 (0x0020 - 0x0000)
+struct FGSClientDeny final
+{
+public:
+	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamDenyReason                              DenyReason;                                        // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OptionalText;                                      // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSClientDeny) == 0x000008, "Wrong alignment on FGSClientDeny");
+static_assert(sizeof(FGSClientDeny) == 0x000020, "Wrong size on FGSClientDeny");
+static_assert(offsetof(FGSClientDeny, SteamID) == 0x000000, "Member 'FGSClientDeny::SteamID' has a wrong offset!");
+static_assert(offsetof(FGSClientDeny, DenyReason) == 0x000008, "Member 'FGSClientDeny::DenyReason' has a wrong offset!");
+static_assert(offsetof(FGSClientDeny, OptionalText) == 0x000010, "Member 'FGSClientDeny::OptionalText' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameServerChangeRequested
+// 0x0020 (0x0020 - 0x0000)
+struct FGameServerChangeRequested final
+{
+public:
+	class FString                                 Server;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Password;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameServerChangeRequested) == 0x000008, "Wrong alignment on FGameServerChangeRequested");
+static_assert(sizeof(FGameServerChangeRequested) == 0x000020, "Wrong size on FGameServerChangeRequested");
+static_assert(offsetof(FGameServerChangeRequested, Server) == 0x000000, "Member 'FGameServerChangeRequested::Server' has a wrong offset!");
+static_assert(offsetof(FGameServerChangeRequested, Password) == 0x000010, "Member 'FGameServerChangeRequested::Password' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryResultReady
+// 0x0008 (0x0008 - 0x0000)
+struct FSteamInventoryResultReady final
+{
+public:
+	struct FSteamInventoryResult                  Handle;                                            // 0x0000(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0004(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamInventoryResultReady) == 0x000004, "Wrong alignment on FSteamInventoryResultReady");
+static_assert(sizeof(FSteamInventoryResultReady) == 0x000008, "Wrong size on FSteamInventoryResultReady");
+static_assert(offsetof(FSteamInventoryResultReady, Handle) == 0x000000, "Member 'FSteamInventoryResultReady::Handle' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryResultReady, Result) == 0x000004, "Member 'FSteamInventoryResultReady::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RemoteStorageFileShareResult
+// 0x0020 (0x0020 - 0x0000)
+struct FRemoteStorageFileShareResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamUGCHandle                        File;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Filename;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRemoteStorageFileShareResult) == 0x000008, "Wrong alignment on FRemoteStorageFileShareResult");
+static_assert(sizeof(FRemoteStorageFileShareResult) == 0x000020, "Wrong size on FRemoteStorageFileShareResult");
+static_assert(offsetof(FRemoteStorageFileShareResult, Result) == 0x000000, "Member 'FRemoteStorageFileShareResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageFileShareResult, File) == 0x000008, "Member 'FRemoteStorageFileShareResult::File' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageFileShareResult, Filename) == 0x000010, "Member 'FRemoteStorageFileShareResult::Filename' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RemoteStorageFileWriteAsyncComplete
+// 0x0001 (0x0001 - 0x0000)
+struct FRemoteStorageFileWriteAsyncComplete final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRemoteStorageFileWriteAsyncComplete) == 0x000001, "Wrong alignment on FRemoteStorageFileWriteAsyncComplete");
+static_assert(sizeof(FRemoteStorageFileWriteAsyncComplete) == 0x000001, "Wrong size on FRemoteStorageFileWriteAsyncComplete");
+static_assert(offsetof(FRemoteStorageFileWriteAsyncComplete, Result) == 0x000000, "Member 'FRemoteStorageFileWriteAsyncComplete::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.FloatingGamepadTextInputDismissed
+// 0x0001 (0x0001 - 0x0000)
+struct FFloatingGamepadTextInputDismissed final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong alignment on FFloatingGamepadTextInputDismissed");
+static_assert(sizeof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong size on FFloatingGamepadTextInputDismissed");
+
+// ScriptStruct SteamCorePro.FriendRichPresenceUpdate
+// 0x0010 (0x0010 - 0x0000)
+struct FFriendRichPresenceUpdate final
+{
+public:
+	struct FSteamID                               SteamIDFriend;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFriendRichPresenceUpdate) == 0x000008, "Wrong alignment on FFriendRichPresenceUpdate");
+static_assert(sizeof(FFriendRichPresenceUpdate) == 0x000010, "Wrong size on FFriendRichPresenceUpdate");
+static_assert(offsetof(FFriendRichPresenceUpdate, SteamIDFriend) == 0x000000, "Member 'FFriendRichPresenceUpdate::SteamIDFriend' has a wrong offset!");
+static_assert(offsetof(FFriendRichPresenceUpdate, AppID) == 0x000008, "Member 'FFriendRichPresenceUpdate::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.JoinClanChatRoomCompletionResult
+// 0x0010 (0x0010 - 0x0000)
+struct FJoinClanChatRoomCompletionResult final
+{
+public:
+	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FJoinClanChatRoomCompletionResult) == 0x000008, "Wrong alignment on FJoinClanChatRoomCompletionResult");
+static_assert(sizeof(FJoinClanChatRoomCompletionResult) == 0x000010, "Wrong size on FJoinClanChatRoomCompletionResult");
+static_assert(offsetof(FJoinClanChatRoomCompletionResult, SteamIDClanChat) == 0x000000, "Member 'FJoinClanChatRoomCompletionResult::SteamIDClanChat' has a wrong offset!");
+static_assert(offsetof(FJoinClanChatRoomCompletionResult, ChatRoomEnterResponse) == 0x000008, "Member 'FJoinClanChatRoomCompletionResult::ChatRoomEnterResponse' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameConnectedChatLeave
+// 0x0018 (0x0018 - 0x0000)
+struct FGameConnectedChatLeave final
+{
+public:
+	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bKicked;                                           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDropped;                                          // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameConnectedChatLeave) == 0x000008, "Wrong alignment on FGameConnectedChatLeave");
+static_assert(sizeof(FGameConnectedChatLeave) == 0x000018, "Wrong size on FGameConnectedChatLeave");
+static_assert(offsetof(FGameConnectedChatLeave, SteamIDClanChat) == 0x000000, "Member 'FGameConnectedChatLeave::SteamIDClanChat' has a wrong offset!");
+static_assert(offsetof(FGameConnectedChatLeave, SteamIDUser) == 0x000008, "Member 'FGameConnectedChatLeave::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FGameConnectedChatLeave, bKicked) == 0x000010, "Member 'FGameConnectedChatLeave::bKicked' has a wrong offset!");
+static_assert(offsetof(FGameConnectedChatLeave, bDropped) == 0x000011, "Member 'FGameConnectedChatLeave::bDropped' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameConnectedClanChatMsg
+// 0x0018 (0x0018 - 0x0000)
+struct FGameConnectedClanChatMsg final
+{
+public:
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDClanChat;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         MessageID;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameConnectedClanChatMsg) == 0x000008, "Wrong alignment on FGameConnectedClanChatMsg");
+static_assert(sizeof(FGameConnectedClanChatMsg) == 0x000018, "Wrong size on FGameConnectedClanChatMsg");
+static_assert(offsetof(FGameConnectedClanChatMsg, SteamIDUser) == 0x000000, "Member 'FGameConnectedClanChatMsg::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FGameConnectedClanChatMsg, SteamIDClanChat) == 0x000008, "Member 'FGameConnectedClanChatMsg::SteamIDClanChat' has a wrong offset!");
+static_assert(offsetof(FGameConnectedClanChatMsg, MessageID) == 0x000010, "Member 'FGameConnectedClanChatMsg::MessageID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSClientGroupStatus
+// 0x0018 (0x0018 - 0x0000)
+struct FGSClientGroupStatus final
+{
+public:
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDGroup;                                      // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bMember;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOfficer;                                          // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGSClientGroupStatus) == 0x000008, "Wrong alignment on FGSClientGroupStatus");
+static_assert(sizeof(FGSClientGroupStatus) == 0x000018, "Wrong size on FGSClientGroupStatus");
+static_assert(offsetof(FGSClientGroupStatus, SteamIDUser) == 0x000000, "Member 'FGSClientGroupStatus::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FGSClientGroupStatus, SteamIDGroup) == 0x000008, "Member 'FGSClientGroupStatus::SteamIDGroup' has a wrong offset!");
+static_assert(offsetof(FGSClientGroupStatus, bMember) == 0x000010, "Member 'FGSClientGroupStatus::bMember' has a wrong offset!");
+static_assert(offsetof(FGSClientGroupStatus, bOfficer) == 0x000011, "Member 'FGSClientGroupStatus::bOfficer' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameConnectedFriendChatMsg
+// 0x0010 (0x0010 - 0x0000)
+struct FGameConnectedFriendChatMsg final
+{
+public:
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         MessageID;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameConnectedFriendChatMsg) == 0x000008, "Wrong alignment on FGameConnectedFriendChatMsg");
+static_assert(sizeof(FGameConnectedFriendChatMsg) == 0x000010, "Wrong size on FGameConnectedFriendChatMsg");
+static_assert(offsetof(FGameConnectedFriendChatMsg, SteamIDUser) == 0x000000, "Member 'FGameConnectedFriendChatMsg::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FGameConnectedFriendChatMsg, MessageID) == 0x000008, "Member 'FGameConnectedFriendChatMsg::MessageID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LobbyGameCreated
+// 0x0028 (0x0028 - 0x0000)
+struct FLobbyGameCreated final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDGameServer;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 IP;                                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLobbyGameCreated) == 0x000008, "Wrong alignment on FLobbyGameCreated");
+static_assert(sizeof(FLobbyGameCreated) == 0x000028, "Wrong size on FLobbyGameCreated");
+static_assert(offsetof(FLobbyGameCreated, SteamIDLobby) == 0x000000, "Member 'FLobbyGameCreated::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyGameCreated, SteamIDGameServer) == 0x000008, "Member 'FLobbyGameCreated::SteamIDGameServer' has a wrong offset!");
+static_assert(offsetof(FLobbyGameCreated, IP) == 0x000010, "Member 'FLobbyGameCreated::IP' has a wrong offset!");
+static_assert(offsetof(FLobbyGameCreated, Port) == 0x000020, "Member 'FLobbyGameCreated::Port' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameOverlayActivated
+// 0x0008 (0x0008 - 0x0000)
+struct FGameOverlayActivated final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUserInitiated;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameOverlayActivated) == 0x000004, "Wrong alignment on FGameOverlayActivated");
+static_assert(sizeof(FGameOverlayActivated) == 0x000008, "Wrong size on FGameOverlayActivated");
+static_assert(offsetof(FGameOverlayActivated, bActive) == 0x000000, "Member 'FGameOverlayActivated::bActive' has a wrong offset!");
+static_assert(offsetof(FGameOverlayActivated, bUserInitiated) == 0x000001, "Member 'FGameOverlayActivated::bUserInitiated' has a wrong offset!");
+static_assert(offsetof(FGameOverlayActivated, AppID) == 0x000004, "Member 'FGameOverlayActivated::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GamepadTextInputDismissed
+// 0x0008 (0x0008 - 0x0000)
+struct FGamepadTextInputDismissed final
+{
+public:
+	bool                                          bSubmitted;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SubmittedText;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGamepadTextInputDismissed) == 0x000004, "Wrong alignment on FGamepadTextInputDismissed");
+static_assert(sizeof(FGamepadTextInputDismissed) == 0x000008, "Wrong size on FGamepadTextInputDismissed");
+static_assert(offsetof(FGamepadTextInputDismissed, bSubmitted) == 0x000000, "Member 'FGamepadTextInputDismissed::bSubmitted' has a wrong offset!");
+static_assert(offsetof(FGamepadTextInputDismissed, SubmittedText) == 0x000004, "Member 'FGamepadTextInputDismissed::SubmittedText' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameWebCallback
+// 0x0010 (0x0010 - 0x0000)
+struct FGameWebCallback final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameWebCallback) == 0x000008, "Wrong alignment on FGameWebCallback");
+static_assert(sizeof(FGameWebCallback) == 0x000010, "Wrong size on FGameWebCallback");
+static_assert(offsetof(FGameWebCallback, URL) == 0x000000, "Member 'FGameWebCallback::URL' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GetAuthSessionTicketResponse
+// 0x0008 (0x0008 - 0x0000)
+struct FGetAuthSessionTicketResponse final
+{
+public:
+	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGetAuthSessionTicketResponse) == 0x000004, "Wrong alignment on FGetAuthSessionTicketResponse");
+static_assert(sizeof(FGetAuthSessionTicketResponse) == 0x000008, "Wrong size on FGetAuthSessionTicketResponse");
+static_assert(offsetof(FGetAuthSessionTicketResponse, AuthTicket) == 0x000000, "Member 'FGetAuthSessionTicketResponse::AuthTicket' has a wrong offset!");
+static_assert(offsetof(FGetAuthSessionTicketResponse, Result) == 0x000004, "Member 'FGetAuthSessionTicketResponse::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.FriendsGetFollowerCount
+// 0x0018 (0x0018 - 0x0000)
+struct FFriendsGetFollowerCount final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFriendsGetFollowerCount) == 0x000008, "Wrong alignment on FFriendsGetFollowerCount");
+static_assert(sizeof(FFriendsGetFollowerCount) == 0x000018, "Wrong size on FFriendsGetFollowerCount");
+static_assert(offsetof(FFriendsGetFollowerCount, Result) == 0x000000, "Member 'FFriendsGetFollowerCount::Result' has a wrong offset!");
+static_assert(offsetof(FFriendsGetFollowerCount, SteamID) == 0x000008, "Member 'FFriendsGetFollowerCount::SteamID' has a wrong offset!");
+static_assert(offsetof(FFriendsGetFollowerCount, Count) == 0x000010, "Member 'FFriendsGetFollowerCount::Count' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GetTicketForWebApiResponse
+// 0x0018 (0x0018 - 0x0000)
+struct FGetTicketForWebApiResponse final
+{
+public:
+	struct FSteamTicketHandle                     AuthTicket;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 Ticket;                                            // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGetTicketForWebApiResponse) == 0x000008, "Wrong alignment on FGetTicketForWebApiResponse");
+static_assert(sizeof(FGetTicketForWebApiResponse) == 0x000018, "Wrong size on FGetTicketForWebApiResponse");
+static_assert(offsetof(FGetTicketForWebApiResponse, AuthTicket) == 0x000000, "Member 'FGetTicketForWebApiResponse::AuthTicket' has a wrong offset!");
+static_assert(offsetof(FGetTicketForWebApiResponse, Result) == 0x000004, "Member 'FGetTicketForWebApiResponse::Result' has a wrong offset!");
+static_assert(offsetof(FGetTicketForWebApiResponse, Ticket) == 0x000008, "Member 'FGetTicketForWebApiResponse::Ticket' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GetUserItemVoteResult
+// 0x0010 (0x0010 - 0x0000)
+struct FGetUserItemVoteResult final
+{
+public:
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVotedUp;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVotedDown;                                        // 0x000A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVoteSkipped;                                      // 0x000B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGetUserItemVoteResult) == 0x000008, "Wrong alignment on FGetUserItemVoteResult");
+static_assert(sizeof(FGetUserItemVoteResult) == 0x000010, "Wrong size on FGetUserItemVoteResult");
+static_assert(offsetof(FGetUserItemVoteResult, PublishedFileID) == 0x000000, "Member 'FGetUserItemVoteResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FGetUserItemVoteResult, Result) == 0x000008, "Member 'FGetUserItemVoteResult::Result' has a wrong offset!");
+static_assert(offsetof(FGetUserItemVoteResult, bVotedUp) == 0x000009, "Member 'FGetUserItemVoteResult::bVotedUp' has a wrong offset!");
+static_assert(offsetof(FGetUserItemVoteResult, bVotedDown) == 0x00000A, "Member 'FGetUserItemVoteResult::bVotedDown' has a wrong offset!");
+static_assert(offsetof(FGetUserItemVoteResult, bVoteSkipped) == 0x00000B, "Member 'FGetUserItemVoteResult::bVoteSkipped' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSClientApprove
+// 0x0010 (0x0010 - 0x0000)
+struct FGSClientApprove final
+{
+public:
+	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               OwnerSteamID;                                      // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSClientApprove) == 0x000008, "Wrong alignment on FGSClientApprove");
+static_assert(sizeof(FGSClientApprove) == 0x000010, "Wrong size on FGSClientApprove");
+static_assert(offsetof(FGSClientApprove, SteamID) == 0x000000, "Member 'FGSClientApprove::SteamID' has a wrong offset!");
+static_assert(offsetof(FGSClientApprove, OwnerSteamID) == 0x000008, "Member 'FGSClientApprove::OwnerSteamID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSPolicyResponse
+// 0x0001 (0x0001 - 0x0000)
+struct FGSPolicyResponse final
+{
+public:
+	bool                                          BSecure;                                           // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSPolicyResponse) == 0x000001, "Wrong alignment on FGSPolicyResponse");
+static_assert(sizeof(FGSPolicyResponse) == 0x000001, "Wrong size on FGSPolicyResponse");
+static_assert(offsetof(FGSPolicyResponse, BSecure) == 0x000000, "Member 'FGSPolicyResponse::BSecure' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSStatsUnloaded
+// 0x0008 (0x0008 - 0x0000)
+struct FGSStatsUnloaded final
+{
+public:
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSStatsUnloaded) == 0x000008, "Wrong alignment on FGSStatsUnloaded");
+static_assert(sizeof(FGSStatsUnloaded) == 0x000008, "Wrong size on FGSStatsUnloaded");
+static_assert(offsetof(FGSStatsUnloaded, SteamIDUser) == 0x000000, "Member 'FGSStatsUnloaded::SteamIDUser' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ValidateAuthTicketResponse
+// 0x0018 (0x0018 - 0x0000)
+struct FValidateAuthTicketResponse final
+{
+public:
+	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamAuthSessionResponse                     AuthSessionResponse;                               // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               OwnerSteamID;                                      // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FValidateAuthTicketResponse) == 0x000008, "Wrong alignment on FValidateAuthTicketResponse");
+static_assert(sizeof(FValidateAuthTicketResponse) == 0x000018, "Wrong size on FValidateAuthTicketResponse");
+static_assert(offsetof(FValidateAuthTicketResponse, SteamID) == 0x000000, "Member 'FValidateAuthTicketResponse::SteamID' has a wrong offset!");
+static_assert(offsetof(FValidateAuthTicketResponse, AuthSessionResponse) == 0x000008, "Member 'FValidateAuthTicketResponse::AuthSessionResponse' has a wrong offset!");
+static_assert(offsetof(FValidateAuthTicketResponse, OwnerSteamID) == 0x000010, "Member 'FValidateAuthTicketResponse::OwnerSteamID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.IPCFailure
+// 0x0001 (0x0001 - 0x0000)
+struct FIPCFailure final
+{
+public:
+	ESteamFailureType                             FailureType;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FIPCFailure) == 0x000001, "Wrong alignment on FIPCFailure");
+static_assert(sizeof(FIPCFailure) == 0x000001, "Wrong size on FIPCFailure");
+static_assert(offsetof(FIPCFailure, FailureType) == 0x000000, "Member 'FIPCFailure::FailureType' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.IPCountry
+// 0x0001 (0x0001 - 0x0000)
+struct FIPCountry final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FIPCountry) == 0x000001, "Wrong alignment on FIPCountry");
+static_assert(sizeof(FIPCountry) == 0x000001, "Wrong size on FIPCountry");
+
+// ScriptStruct SteamCorePro.FriendsIsFollowing
+// 0x0018 (0x0018 - 0x0000)
+struct FFriendsIsFollowing final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bIsFollowing;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFriendsIsFollowing) == 0x000008, "Wrong alignment on FFriendsIsFollowing");
+static_assert(sizeof(FFriendsIsFollowing) == 0x000018, "Wrong size on FFriendsIsFollowing");
+static_assert(offsetof(FFriendsIsFollowing, Result) == 0x000000, "Member 'FFriendsIsFollowing::Result' has a wrong offset!");
+static_assert(offsetof(FFriendsIsFollowing, SteamID) == 0x000008, "Member 'FFriendsIsFollowing::SteamID' has a wrong offset!");
+static_assert(offsetof(FFriendsIsFollowing, bIsFollowing) == 0x000010, "Member 'FFriendsIsFollowing::bIsFollowing' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ItemInstalled
+// 0x0010 (0x0010 - 0x0000)
+struct FItemInstalled final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FItemInstalled) == 0x000008, "Wrong alignment on FItemInstalled");
+static_assert(sizeof(FItemInstalled) == 0x000010, "Wrong size on FItemInstalled");
+static_assert(offsetof(FItemInstalled, AppID) == 0x000000, "Member 'FItemInstalled::AppID' has a wrong offset!");
+static_assert(offsetof(FItemInstalled, PublishedFileID) == 0x000008, "Member 'FItemInstalled::PublishedFileID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.JoinLobbyData
+// 0x0010 (0x0010 - 0x0000)
+struct FJoinLobbyData final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FJoinLobbyData) == 0x000008, "Wrong alignment on FJoinLobbyData");
+static_assert(sizeof(FJoinLobbyData) == 0x000010, "Wrong size on FJoinLobbyData");
+static_assert(offsetof(FJoinLobbyData, SteamIDLobby) == 0x000000, "Member 'FJoinLobbyData::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FJoinLobbyData, bLocked) == 0x000008, "Member 'FJoinLobbyData::bLocked' has a wrong offset!");
+static_assert(offsetof(FJoinLobbyData, ChatRoomEnterResponse) == 0x000009, "Member 'FJoinLobbyData::ChatRoomEnterResponse' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LicensesUpdated
+// 0x0001 (0x0001 - 0x0000)
+struct FLicensesUpdated final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLicensesUpdated) == 0x000001, "Wrong alignment on FLicensesUpdated");
+static_assert(sizeof(FLicensesUpdated) == 0x000001, "Wrong size on FLicensesUpdated");
+
+// ScriptStruct SteamCorePro.LobbyChatMsg
+// 0x0018 (0x0018 - 0x0000)
+struct FLobbyChatMsg final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamChatEntryType                           ChatEntryType;                                     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ChatID;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLobbyChatMsg) == 0x000008, "Wrong alignment on FLobbyChatMsg");
+static_assert(sizeof(FLobbyChatMsg) == 0x000018, "Wrong size on FLobbyChatMsg");
+static_assert(offsetof(FLobbyChatMsg, SteamIDLobby) == 0x000000, "Member 'FLobbyChatMsg::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyChatMsg, SteamIDUser) == 0x000008, "Member 'FLobbyChatMsg::SteamIDUser' has a wrong offset!");
+static_assert(offsetof(FLobbyChatMsg, ChatEntryType) == 0x000010, "Member 'FLobbyChatMsg::ChatEntryType' has a wrong offset!");
+static_assert(offsetof(FLobbyChatMsg, ChatID) == 0x000014, "Member 'FLobbyChatMsg::ChatID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LobbyChatUpdate
+// 0x0028 (0x0028 - 0x0000)
+struct FLobbyChatUpdate final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDUserChanged;                                // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDMakingChange;                               // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<ESteamChatMemberStateChange>           ChatMemberStateChange;                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLobbyChatUpdate) == 0x000008, "Wrong alignment on FLobbyChatUpdate");
+static_assert(sizeof(FLobbyChatUpdate) == 0x000028, "Wrong size on FLobbyChatUpdate");
+static_assert(offsetof(FLobbyChatUpdate, SteamIDLobby) == 0x000000, "Member 'FLobbyChatUpdate::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyChatUpdate, SteamIDUserChanged) == 0x000008, "Member 'FLobbyChatUpdate::SteamIDUserChanged' has a wrong offset!");
+static_assert(offsetof(FLobbyChatUpdate, SteamIDMakingChange) == 0x000010, "Member 'FLobbyChatUpdate::SteamIDMakingChange' has a wrong offset!");
+static_assert(offsetof(FLobbyChatUpdate, ChatMemberStateChange) == 0x000018, "Member 'FLobbyChatUpdate::ChatMemberStateChange' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LobbyDataUpdate
+// 0x0018 (0x0018 - 0x0000)
+struct FLobbyDataUpdate final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDMember;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLobbyDataUpdate) == 0x000008, "Wrong alignment on FLobbyDataUpdate");
+static_assert(sizeof(FLobbyDataUpdate) == 0x000018, "Wrong size on FLobbyDataUpdate");
+static_assert(offsetof(FLobbyDataUpdate, SteamIDLobby) == 0x000000, "Member 'FLobbyDataUpdate::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyDataUpdate, SteamIDMember) == 0x000008, "Member 'FLobbyDataUpdate::SteamIDMember' has a wrong offset!");
+static_assert(offsetof(FLobbyDataUpdate, bSuccess) == 0x000010, "Member 'FLobbyDataUpdate::bSuccess' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ScePadTriggerEffectOffParam
+// 0x0001 (0x0001 - 0x0000)
+struct FScePadTriggerEffectOffParam final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong alignment on FScePadTriggerEffectOffParam");
+static_assert(sizeof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong size on FScePadTriggerEffectOffParam");
+
+// ScriptStruct SteamCorePro.LobbyEnterData
+// 0x0010 (0x0010 - 0x0000)
+struct FLobbyEnterData final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLobbyEnterData) == 0x000008, "Wrong alignment on FLobbyEnterData");
+static_assert(sizeof(FLobbyEnterData) == 0x000010, "Wrong size on FLobbyEnterData");
+static_assert(offsetof(FLobbyEnterData, SteamIDLobby) == 0x000000, "Member 'FLobbyEnterData::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyEnterData, bLocked) == 0x000008, "Member 'FLobbyEnterData::bLocked' has a wrong offset!");
+static_assert(offsetof(FLobbyEnterData, ChatRoomEnterResponse) == 0x000009, "Member 'FLobbyEnterData::ChatRoomEnterResponse' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LobbyKickedData
+// 0x0018 (0x0018 - 0x0000)
+struct FLobbyKickedData final
+{
+public:
+	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDAdmin;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bKickedDueToDisconnect;                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLobbyKickedData) == 0x000008, "Wrong alignment on FLobbyKickedData");
+static_assert(sizeof(FLobbyKickedData) == 0x000018, "Wrong size on FLobbyKickedData");
+static_assert(offsetof(FLobbyKickedData, SteamIDLobby) == 0x000000, "Member 'FLobbyKickedData::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FLobbyKickedData, SteamIDAdmin) == 0x000008, "Member 'FLobbyKickedData::SteamIDAdmin' has a wrong offset!");
+static_assert(offsetof(FLobbyKickedData, bKickedDueToDisconnect) == 0x000010, "Member 'FLobbyKickedData::bKickedDueToDisconnect' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LowBatteryPower
+// 0x0004 (0x0004 - 0x0000)
+struct FLowBatteryPower final
+{
+public:
+	int32                                         MinutesBatteryLeft;                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLowBatteryPower) == 0x000004, "Wrong alignment on FLowBatteryPower");
+static_assert(sizeof(FLowBatteryPower) == 0x000004, "Wrong size on FLowBatteryPower");
+static_assert(offsetof(FLowBatteryPower, MinutesBatteryLeft) == 0x000000, "Member 'FLowBatteryPower::MinutesBatteryLeft' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.MicroTxnAuthorizationResponse
+// 0x0020 (0x0020 - 0x0000)
+struct FMicroTxnAuthorizationResponse final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OrderID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAuthorized;                                       // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FMicroTxnAuthorizationResponse) == 0x000008, "Wrong alignment on FMicroTxnAuthorizationResponse");
+static_assert(sizeof(FMicroTxnAuthorizationResponse) == 0x000020, "Wrong size on FMicroTxnAuthorizationResponse");
+static_assert(offsetof(FMicroTxnAuthorizationResponse, AppID) == 0x000000, "Member 'FMicroTxnAuthorizationResponse::AppID' has a wrong offset!");
+static_assert(offsetof(FMicroTxnAuthorizationResponse, OrderID) == 0x000008, "Member 'FMicroTxnAuthorizationResponse::OrderID' has a wrong offset!");
+static_assert(offsetof(FMicroTxnAuthorizationResponse, bAuthorized) == 0x000018, "Member 'FMicroTxnAuthorizationResponse::bAuthorized' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.P2PSessionConnectFail
+// 0x0010 (0x0010 - 0x0000)
+struct FP2PSessionConnectFail final
+{
+public:
+	struct FSteamID                               SteamIDRemote;                                     // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamP2PSessionError                         P2PSessionError;                                   // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FP2PSessionConnectFail) == 0x000008, "Wrong alignment on FP2PSessionConnectFail");
+static_assert(sizeof(FP2PSessionConnectFail) == 0x000010, "Wrong size on FP2PSessionConnectFail");
+static_assert(offsetof(FP2PSessionConnectFail, SteamIDRemote) == 0x000000, "Member 'FP2PSessionConnectFail::SteamIDRemote' has a wrong offset!");
+static_assert(offsetof(FP2PSessionConnectFail, P2PSessionError) == 0x000008, "Member 'FP2PSessionConnectFail::P2PSessionError' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.PersonaStateChange
+// 0x0018 (0x0018 - 0x0000)
+struct FPersonaStateChange final
+{
+public:
+	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<ESteamPersonaChange>                   Flags;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FPersonaStateChange) == 0x000008, "Wrong alignment on FPersonaStateChange");
+static_assert(sizeof(FPersonaStateChange) == 0x000018, "Wrong size on FPersonaStateChange");
+static_assert(offsetof(FPersonaStateChange, SteamID) == 0x000000, "Member 'FPersonaStateChange::SteamID' has a wrong offset!");
+static_assert(offsetof(FPersonaStateChange, Flags) == 0x000008, "Member 'FPersonaStateChange::Flags' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.SteamServerAddr
 // 0x0038 (0x0038 - 0x0000)
@@ -2256,7 +3077,7 @@ public:
 	int32                                         ServerVersion;                                     // 0x0088(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPassword;                                         // 0x008C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          BSecure;                                           // 0x008D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17EE[0x22];                                    // 0x008E(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8E[0x22];                                      // 0x008E(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameServerItem) == 0x000008, "Wrong alignment on FGameServerItem");
 static_assert(sizeof(FGameServerItem) == 0x0000B0, "Wrong size on FGameServerItem");
@@ -2273,277 +3094,632 @@ static_assert(offsetof(FGameServerItem, ServerVersion) == 0x000088, "Member 'FGa
 static_assert(offsetof(FGameServerItem, bPassword) == 0x00008C, "Member 'FGameServerItem::bPassword' has a wrong offset!");
 static_assert(offsetof(FGameServerItem, BSecure) == 0x00008D, "Member 'FGameServerItem::BSecure' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.CheckFileSignature
+// ScriptStruct SteamCorePro.PlaybackStatusHasChanged
 // 0x0001 (0x0001 - 0x0000)
-struct FCheckFileSignature final
+struct FPlaybackStatusHasChanged final
 {
 public:
-	ESteamCheckFileSignature                      CheckFileSignature;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FCheckFileSignature) == 0x000001, "Wrong alignment on FCheckFileSignature");
-static_assert(sizeof(FCheckFileSignature) == 0x000001, "Wrong size on FCheckFileSignature");
-static_assert(offsetof(FCheckFileSignature, CheckFileSignature) == 0x000000, "Member 'FCheckFileSignature::CheckFileSignature' has a wrong offset!");
+static_assert(alignof(FPlaybackStatusHasChanged) == 0x000001, "Wrong alignment on FPlaybackStatusHasChanged");
+static_assert(sizeof(FPlaybackStatusHasChanged) == 0x000001, "Wrong size on FPlaybackStatusHasChanged");
 
-// ScriptStruct SteamCorePro.FindOrCreateLeaderboardData
+// ScriptStruct SteamCorePro.RemoteStoragePublishedFileSubscribed
 // 0x0010 (0x0010 - 0x0000)
-struct FFindOrCreateLeaderboardData final
+struct FRemoteStoragePublishedFileSubscribed final
 {
 public:
-	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bLeaderboardFound;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17EF[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FFindOrCreateLeaderboardData) == 0x000008, "Wrong alignment on FFindOrCreateLeaderboardData");
-static_assert(sizeof(FFindOrCreateLeaderboardData) == 0x000010, "Wrong size on FFindOrCreateLeaderboardData");
-static_assert(offsetof(FFindOrCreateLeaderboardData, SteamLeaderboard) == 0x000000, "Member 'FFindOrCreateLeaderboardData::SteamLeaderboard' has a wrong offset!");
-static_assert(offsetof(FFindOrCreateLeaderboardData, bLeaderboardFound) == 0x000008, "Member 'FFindOrCreateLeaderboardData::bLeaderboardFound' has a wrong offset!");
+static_assert(alignof(FRemoteStoragePublishedFileSubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileSubscribed");
+static_assert(sizeof(FRemoteStoragePublishedFileSubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileSubscribed");
+static_assert(offsetof(FRemoteStoragePublishedFileSubscribed, PublishedFileID) == 0x000000, "Member 'FRemoteStoragePublishedFileSubscribed::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FRemoteStoragePublishedFileSubscribed, AppID) == 0x000008, "Member 'FRemoteStoragePublishedFileSubscribed::AppID' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.ClanOfficerListResponse
+// ScriptStruct SteamCorePro.RemoteStoragePublishedFileUnsubscribed
 // 0x0010 (0x0010 - 0x0000)
-struct FClanOfficerListResponse final
+struct FRemoteStoragePublishedFileUnsubscribed final
 {
 public:
-	struct FSteamID                               SteamIDClan;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Officers;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSuccess;                                          // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F0[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FClanOfficerListResponse) == 0x000008, "Wrong alignment on FClanOfficerListResponse");
-static_assert(sizeof(FClanOfficerListResponse) == 0x000010, "Wrong size on FClanOfficerListResponse");
-static_assert(offsetof(FClanOfficerListResponse, SteamIDClan) == 0x000000, "Member 'FClanOfficerListResponse::SteamIDClan' has a wrong offset!");
-static_assert(offsetof(FClanOfficerListResponse, Officers) == 0x000008, "Member 'FClanOfficerListResponse::Officers' has a wrong offset!");
-static_assert(offsetof(FClanOfficerListResponse, bSuccess) == 0x00000C, "Member 'FClanOfficerListResponse::bSuccess' has a wrong offset!");
+static_assert(alignof(FRemoteStoragePublishedFileUnsubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileUnsubscribed");
+static_assert(sizeof(FRemoteStoragePublishedFileUnsubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileUnsubscribed");
+static_assert(offsetof(FRemoteStoragePublishedFileUnsubscribed, PublishedFileID) == 0x000000, "Member 'FRemoteStoragePublishedFileUnsubscribed::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FRemoteStoragePublishedFileUnsubscribed, AppID) == 0x000008, "Member 'FRemoteStoragePublishedFileUnsubscribed::AppID' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.ScePadTriggerEffectSlopeFeedbackParam
+// ScriptStruct SteamCorePro.RemoteStorageSubscribePublishedFileResult
 // 0x0010 (0x0010 - 0x0000)
-struct FScePadTriggerEffectSlopeFeedbackParam final
-{
-public:
-	int32                                         StartPosition;                                     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EndPosition;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StartStrength;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EndStrength;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FScePadTriggerEffectSlopeFeedbackParam) == 0x000004, "Wrong alignment on FScePadTriggerEffectSlopeFeedbackParam");
-static_assert(sizeof(FScePadTriggerEffectSlopeFeedbackParam) == 0x000010, "Wrong size on FScePadTriggerEffectSlopeFeedbackParam");
-static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, StartPosition) == 0x000000, "Member 'FScePadTriggerEffectSlopeFeedbackParam::StartPosition' has a wrong offset!");
-static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, EndPosition) == 0x000004, "Member 'FScePadTriggerEffectSlopeFeedbackParam::EndPosition' has a wrong offset!");
-static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, StartStrength) == 0x000008, "Member 'FScePadTriggerEffectSlopeFeedbackParam::StartStrength' has a wrong offset!");
-static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, EndStrength) == 0x00000C, "Member 'FScePadTriggerEffectSlopeFeedbackParam::EndStrength' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ClientGameServerDeny
-// 0x0020 (0x0020 - 0x0000)
-struct FClientGameServerDeny final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 GameServerIP;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GameServerPort;                                    // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BSecure;                                           // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamDenyReason                              Reason;                                            // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F2[0x2];                                     // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FClientGameServerDeny) == 0x000008, "Wrong alignment on FClientGameServerDeny");
-static_assert(sizeof(FClientGameServerDeny) == 0x000020, "Wrong size on FClientGameServerDeny");
-static_assert(offsetof(FClientGameServerDeny, AppID) == 0x000000, "Member 'FClientGameServerDeny::AppID' has a wrong offset!");
-static_assert(offsetof(FClientGameServerDeny, GameServerIP) == 0x000008, "Member 'FClientGameServerDeny::GameServerIP' has a wrong offset!");
-static_assert(offsetof(FClientGameServerDeny, GameServerPort) == 0x000018, "Member 'FClientGameServerDeny::GameServerPort' has a wrong offset!");
-static_assert(offsetof(FClientGameServerDeny, BSecure) == 0x00001C, "Member 'FClientGameServerDeny::BSecure' has a wrong offset!");
-static_assert(offsetof(FClientGameServerDeny, Reason) == 0x00001D, "Member 'FClientGameServerDeny::Reason' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.P2PSessionConnectFail
-// 0x0010 (0x0010 - 0x0000)
-struct FP2PSessionConnectFail final
-{
-public:
-	struct FSteamID                               SteamIDRemote;                                     // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamP2PSessionError                         P2PSessionError;                                   // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F3[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FP2PSessionConnectFail) == 0x000008, "Wrong alignment on FP2PSessionConnectFail");
-static_assert(sizeof(FP2PSessionConnectFail) == 0x000010, "Wrong size on FP2PSessionConnectFail");
-static_assert(offsetof(FP2PSessionConnectFail, SteamIDRemote) == 0x000000, "Member 'FP2PSessionConnectFail::SteamIDRemote' has a wrong offset!");
-static_assert(offsetof(FP2PSessionConnectFail, P2PSessionError) == 0x000008, "Member 'FP2PSessionConnectFail::P2PSessionError' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ComputeNewPlayerCompatibilityResult
-// 0x0018 (0x0018 - 0x0000)
-struct FComputeNewPlayerCompatibilityResult final
+struct FRemoteStorageSubscribePublishedFileResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F4[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PlayersThatDontLikeCandidate;                      // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PlayersThatCandidateDoesntLike;                    // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ClanPlayersThatDontLikeCandidate;                  // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDCandidate;                                  // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FComputeNewPlayerCompatibilityResult) == 0x000008, "Wrong alignment on FComputeNewPlayerCompatibilityResult");
-static_assert(sizeof(FComputeNewPlayerCompatibilityResult) == 0x000018, "Wrong size on FComputeNewPlayerCompatibilityResult");
-static_assert(offsetof(FComputeNewPlayerCompatibilityResult, Result) == 0x000000, "Member 'FComputeNewPlayerCompatibilityResult::Result' has a wrong offset!");
-static_assert(offsetof(FComputeNewPlayerCompatibilityResult, PlayersThatDontLikeCandidate) == 0x000004, "Member 'FComputeNewPlayerCompatibilityResult::PlayersThatDontLikeCandidate' has a wrong offset!");
-static_assert(offsetof(FComputeNewPlayerCompatibilityResult, PlayersThatCandidateDoesntLike) == 0x000008, "Member 'FComputeNewPlayerCompatibilityResult::PlayersThatCandidateDoesntLike' has a wrong offset!");
-static_assert(offsetof(FComputeNewPlayerCompatibilityResult, ClanPlayersThatDontLikeCandidate) == 0x00000C, "Member 'FComputeNewPlayerCompatibilityResult::ClanPlayersThatDontLikeCandidate' has a wrong offset!");
-static_assert(offsetof(FComputeNewPlayerCompatibilityResult, SteamIDCandidate) == 0x000010, "Member 'FComputeNewPlayerCompatibilityResult::SteamIDCandidate' has a wrong offset!");
+static_assert(alignof(FRemoteStorageSubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageSubscribePublishedFileResult");
+static_assert(sizeof(FRemoteStorageSubscribePublishedFileResult) == 0x000010, "Wrong size on FRemoteStorageSubscribePublishedFileResult");
+static_assert(offsetof(FRemoteStorageSubscribePublishedFileResult, Result) == 0x000000, "Member 'FRemoteStorageSubscribePublishedFileResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageSubscribePublishedFileResult, PublishedFileID) == 0x000008, "Member 'FRemoteStorageSubscribePublishedFileResult::PublishedFileID' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.GameConnectedChatJoin
+// ScriptStruct SteamCorePro.RemoteStorageUnsubscribePublishedFileResult
 // 0x0010 (0x0010 - 0x0000)
-struct FGameConnectedChatJoin final
-{
-public:
-	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGameConnectedChatJoin) == 0x000008, "Wrong alignment on FGameConnectedChatJoin");
-static_assert(sizeof(FGameConnectedChatJoin) == 0x000010, "Wrong size on FGameConnectedChatJoin");
-static_assert(offsetof(FGameConnectedChatJoin, SteamIDClanChat) == 0x000000, "Member 'FGameConnectedChatJoin::SteamIDClanChat' has a wrong offset!");
-static_assert(offsetof(FGameConnectedChatJoin, SteamIDUser) == 0x000008, "Member 'FGameConnectedChatJoin::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.PartyBeaconID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FPartyBeaconID final
-{
-public:
-	uint8                                         Pad_17F5[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FPartyBeaconID) == 0x000008, "Wrong alignment on FPartyBeaconID");
-static_assert(sizeof(FPartyBeaconID) == 0x000008, "Wrong size on FPartyBeaconID");
-
-// ScriptStruct SteamCorePro.CreateBeaconData
-// 0x0010 (0x0010 - 0x0000)
-struct FCreateBeaconData final
+struct FRemoteStorageUnsubscribePublishedFileResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F6[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCreateBeaconData) == 0x000008, "Wrong alignment on FCreateBeaconData");
-static_assert(sizeof(FCreateBeaconData) == 0x000010, "Wrong size on FCreateBeaconData");
-static_assert(offsetof(FCreateBeaconData, Result) == 0x000000, "Member 'FCreateBeaconData::Result' has a wrong offset!");
-static_assert(offsetof(FCreateBeaconData, BeaconID) == 0x000008, "Member 'FCreateBeaconData::BeaconID' has a wrong offset!");
+static_assert(alignof(FRemoteStorageUnsubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageUnsubscribePublishedFileResult");
+static_assert(sizeof(FRemoteStorageUnsubscribePublishedFileResult) == 0x000010, "Wrong size on FRemoteStorageUnsubscribePublishedFileResult");
+static_assert(offsetof(FRemoteStorageUnsubscribePublishedFileResult, Result) == 0x000000, "Member 'FRemoteStorageUnsubscribePublishedFileResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageUnsubscribePublishedFileResult, PublishedFileID) == 0x000008, "Member 'FRemoteStorageUnsubscribePublishedFileResult::PublishedFileID' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.CreateItemResult
+// ScriptStruct SteamCorePro.RemoveUGCDependencyResult
 // 0x0018 (0x0018 - 0x0000)
-struct FCreateItemResult final
+struct FRemoveUGCDependencyResult final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F7[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F8[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       ChildPublishedFileId;                              // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCreateItemResult) == 0x000008, "Wrong alignment on FCreateItemResult");
-static_assert(sizeof(FCreateItemResult) == 0x000018, "Wrong size on FCreateItemResult");
-static_assert(offsetof(FCreateItemResult, Result) == 0x000000, "Member 'FCreateItemResult::Result' has a wrong offset!");
-static_assert(offsetof(FCreateItemResult, PublishedFileID) == 0x000008, "Member 'FCreateItemResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FCreateItemResult, bUserNeedsToAcceptWorkshopLegalAgreement) == 0x000010, "Member 'FCreateItemResult::bUserNeedsToAcceptWorkshopLegalAgreement' has a wrong offset!");
+static_assert(alignof(FRemoveUGCDependencyResult) == 0x000008, "Wrong alignment on FRemoveUGCDependencyResult");
+static_assert(sizeof(FRemoveUGCDependencyResult) == 0x000018, "Wrong size on FRemoveUGCDependencyResult");
+static_assert(offsetof(FRemoveUGCDependencyResult, Result) == 0x000000, "Member 'FRemoveUGCDependencyResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoveUGCDependencyResult, PublishedFileID) == 0x000008, "Member 'FRemoveUGCDependencyResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FRemoveUGCDependencyResult, ChildPublishedFileId) == 0x000010, "Member 'FRemoveUGCDependencyResult::ChildPublishedFileId' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.GameLobbyJoinRequested
-// 0x0010 (0x0010 - 0x0000)
-struct FGameLobbyJoinRequested final
+// ScriptStruct SteamCorePro.RequestCurrentStatsData
+// 0x0018 (0x0018 - 0x0000)
+struct FRequestCurrentStatsData final
 {
 public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDFriend;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameLobbyJoinRequested) == 0x000008, "Wrong alignment on FGameLobbyJoinRequested");
-static_assert(sizeof(FGameLobbyJoinRequested) == 0x000010, "Wrong size on FGameLobbyJoinRequested");
-static_assert(offsetof(FGameLobbyJoinRequested, SteamIDLobby) == 0x000000, "Member 'FGameLobbyJoinRequested::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FGameLobbyJoinRequested, SteamIDFriend) == 0x000008, "Member 'FGameLobbyJoinRequested::SteamIDFriend' has a wrong offset!");
+static_assert(alignof(FRequestCurrentStatsData) == 0x000008, "Wrong alignment on FRequestCurrentStatsData");
+static_assert(sizeof(FRequestCurrentStatsData) == 0x000018, "Wrong size on FRequestCurrentStatsData");
+static_assert(offsetof(FRequestCurrentStatsData, GameID) == 0x000000, "Member 'FRequestCurrentStatsData::GameID' has a wrong offset!");
+static_assert(offsetof(FRequestCurrentStatsData, Result) == 0x000008, "Member 'FRequestCurrentStatsData::Result' has a wrong offset!");
+static_assert(offsetof(FRequestCurrentStatsData, SteamIDUser) == 0x000010, "Member 'FRequestCurrentStatsData::SteamIDUser' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.CreateLobbyData
-// 0x0010 (0x0010 - 0x0000)
-struct FCreateLobbyData final
+// ScriptStruct SteamCorePro.EncryptedAppTicketResponse
+// 0x0001 (0x0001 - 0x0000)
+struct FEncryptedAppTicketResponse final
 {
 public:
 	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F9[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDLobby;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FCreateLobbyData) == 0x000008, "Wrong alignment on FCreateLobbyData");
-static_assert(sizeof(FCreateLobbyData) == 0x000010, "Wrong size on FCreateLobbyData");
-static_assert(offsetof(FCreateLobbyData, Result) == 0x000000, "Member 'FCreateLobbyData::Result' has a wrong offset!");
-static_assert(offsetof(FCreateLobbyData, SteamIDLobby) == 0x000008, "Member 'FCreateLobbyData::SteamIDLobby' has a wrong offset!");
+static_assert(alignof(FEncryptedAppTicketResponse) == 0x000001, "Wrong alignment on FEncryptedAppTicketResponse");
+static_assert(sizeof(FEncryptedAppTicketResponse) == 0x000001, "Wrong size on FEncryptedAppTicketResponse");
+static_assert(offsetof(FEncryptedAppTicketResponse, Result) == 0x000000, "Member 'FEncryptedAppTicketResponse::Result' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.UGCDeleteItemResult
-// 0x0010 (0x0010 - 0x0000)
-struct FUGCDeleteItemResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17FA[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUGCDeleteItemResult) == 0x000008, "Wrong alignment on FUGCDeleteItemResult");
-static_assert(sizeof(FUGCDeleteItemResult) == 0x000010, "Wrong size on FUGCDeleteItemResult");
-static_assert(offsetof(FUGCDeleteItemResult, Result) == 0x000000, "Member 'FUGCDeleteItemResult::Result' has a wrong offset!");
-static_assert(offsetof(FUGCDeleteItemResult, PublishedFileID) == 0x000008, "Member 'FUGCDeleteItemResult::PublishedFileID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameRichPresenceJoinRequested
+// ScriptStruct SteamCorePro.EquippedProfileItems
 // 0x0018 (0x0018 - 0x0000)
-struct FGameRichPresenceJoinRequested final
+struct FEquippedProfileItems final
 {
 public:
-	struct FSteamID                               SteamIDFriend;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 Connect;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bHasAnimatedAvatar;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasAvatarFrame;                                   // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasProfileModifier;                               // 0x0012(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasProfileBackground;                             // 0x0013(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasMiniProfileBackground;                         // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGameRichPresenceJoinRequested) == 0x000008, "Wrong alignment on FGameRichPresenceJoinRequested");
-static_assert(sizeof(FGameRichPresenceJoinRequested) == 0x000018, "Wrong size on FGameRichPresenceJoinRequested");
-static_assert(offsetof(FGameRichPresenceJoinRequested, SteamIDFriend) == 0x000000, "Member 'FGameRichPresenceJoinRequested::SteamIDFriend' has a wrong offset!");
-static_assert(offsetof(FGameRichPresenceJoinRequested, Connect) == 0x000008, "Member 'FGameRichPresenceJoinRequested::Connect' has a wrong offset!");
+static_assert(alignof(FEquippedProfileItems) == 0x000008, "Wrong alignment on FEquippedProfileItems");
+static_assert(sizeof(FEquippedProfileItems) == 0x000018, "Wrong size on FEquippedProfileItems");
+static_assert(offsetof(FEquippedProfileItems, Result) == 0x000000, "Member 'FEquippedProfileItems::Result' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, SteamID) == 0x000008, "Member 'FEquippedProfileItems::SteamID' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, bHasAnimatedAvatar) == 0x000010, "Member 'FEquippedProfileItems::bHasAnimatedAvatar' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, bHasAvatarFrame) == 0x000011, "Member 'FEquippedProfileItems::bHasAvatarFrame' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, bHasProfileModifier) == 0x000012, "Member 'FEquippedProfileItems::bHasProfileModifier' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, bHasProfileBackground) == 0x000013, "Member 'FEquippedProfileItems::bHasProfileBackground' has a wrong offset!");
+static_assert(offsetof(FEquippedProfileItems, bHasMiniProfileBackground) == 0x000014, "Member 'FEquippedProfileItems::bHasMiniProfileBackground' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.DLCInstalled
+// ScriptStruct SteamCorePro.GlobalAchievementPercentagesReady
+// 0x0010 (0x0010 - 0x0000)
+struct FGlobalAchievementPercentagesReady final
+{
+public:
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGlobalAchievementPercentagesReady) == 0x000008, "Wrong alignment on FGlobalAchievementPercentagesReady");
+static_assert(sizeof(FGlobalAchievementPercentagesReady) == 0x000010, "Wrong size on FGlobalAchievementPercentagesReady");
+static_assert(offsetof(FGlobalAchievementPercentagesReady, GameID) == 0x000000, "Member 'FGlobalAchievementPercentagesReady::GameID' has a wrong offset!");
+static_assert(offsetof(FGlobalAchievementPercentagesReady, Result) == 0x000008, "Member 'FGlobalAchievementPercentagesReady::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GlobalStatsReceived
+// 0x0010 (0x0010 - 0x0000)
+struct FGlobalStatsReceived final
+{
+public:
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGlobalStatsReceived) == 0x000008, "Wrong alignment on FGlobalStatsReceived");
+static_assert(sizeof(FGlobalStatsReceived) == 0x000010, "Wrong size on FGlobalStatsReceived");
+static_assert(offsetof(FGlobalStatsReceived, GameID) == 0x000000, "Member 'FGlobalStatsReceived::GameID' has a wrong offset!");
+static_assert(offsetof(FGlobalStatsReceived, Result) == 0x000008, "Member 'FGlobalStatsReceived::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LobbyMatchList
 // 0x0004 (0x0004 - 0x0000)
-struct FDLCInstalled final
+struct FLobbyMatchList final
 {
 public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LobbiesMatching;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FDLCInstalled) == 0x000004, "Wrong alignment on FDLCInstalled");
-static_assert(sizeof(FDLCInstalled) == 0x000004, "Wrong size on FDLCInstalled");
-static_assert(offsetof(FDLCInstalled, AppID) == 0x000000, "Member 'FDLCInstalled::AppID' has a wrong offset!");
+static_assert(alignof(FLobbyMatchList) == 0x000004, "Wrong alignment on FLobbyMatchList");
+static_assert(sizeof(FLobbyMatchList) == 0x000004, "Wrong size on FLobbyMatchList");
+static_assert(offsetof(FLobbyMatchList, LobbiesMatching) == 0x000000, "Member 'FLobbyMatchList::LobbiesMatching' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.SteamP2PSessionState
-// 0x0028 (0x0028 - 0x0000)
-struct FSteamP2PSessionState final
+// ScriptStruct SteamCorePro.RequestUserStatsData
+// 0x0018 (0x0018 - 0x0000)
+struct FRequestUserStatsData final
 {
 public:
-	bool                                          bConnectionActive;                                 // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bConnecting;                                       // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ESteamP2PSessionError                         P2PSessionError;                                   // 0x0002(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUsingRelay;                                       // 0x0003(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BytesQueuedForSend;                                // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         PacketsQueuedForSend;                              // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17FB[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 RemoteIP;                                          // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         RemotePort;                                        // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17FC[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSteamP2PSessionState) == 0x000008, "Wrong alignment on FSteamP2PSessionState");
-static_assert(sizeof(FSteamP2PSessionState) == 0x000028, "Wrong size on FSteamP2PSessionState");
-static_assert(offsetof(FSteamP2PSessionState, bConnectionActive) == 0x000000, "Member 'FSteamP2PSessionState::bConnectionActive' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, bConnecting) == 0x000001, "Member 'FSteamP2PSessionState::bConnecting' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, P2PSessionError) == 0x000002, "Member 'FSteamP2PSessionState::P2PSessionError' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, bUsingRelay) == 0x000003, "Member 'FSteamP2PSessionState::bUsingRelay' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, BytesQueuedForSend) == 0x000004, "Member 'FSteamP2PSessionState::BytesQueuedForSend' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, PacketsQueuedForSend) == 0x000008, "Member 'FSteamP2PSessionState::PacketsQueuedForSend' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, RemoteIP) == 0x000010, "Member 'FSteamP2PSessionState::RemoteIP' has a wrong offset!");
-static_assert(offsetof(FSteamP2PSessionState, RemotePort) == 0x000020, "Member 'FSteamP2PSessionState::RemotePort' has a wrong offset!");
+static_assert(alignof(FRequestUserStatsData) == 0x000008, "Wrong alignment on FRequestUserStatsData");
+static_assert(sizeof(FRequestUserStatsData) == 0x000018, "Wrong size on FRequestUserStatsData");
+static_assert(offsetof(FRequestUserStatsData, GameID) == 0x000000, "Member 'FRequestUserStatsData::GameID' has a wrong offset!");
+static_assert(offsetof(FRequestUserStatsData, Result) == 0x000008, "Member 'FRequestUserStatsData::Result' has a wrong offset!");
+static_assert(offsetof(FRequestUserStatsData, SteamIDUser) == 0x000010, "Member 'FRequestUserStatsData::SteamIDUser' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.GameServerChangeRequested
+// ScriptStruct SteamCorePro.ReservationNotificationData
+// 0x0010 (0x0010 - 0x0000)
+struct FReservationNotificationData final
+{
+public:
+	struct FPartyBeaconID                         BeaconID;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDJoiner;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FReservationNotificationData) == 0x000008, "Wrong alignment on FReservationNotificationData");
+static_assert(sizeof(FReservationNotificationData) == 0x000010, "Wrong size on FReservationNotificationData");
+static_assert(offsetof(FReservationNotificationData, BeaconID) == 0x000000, "Member 'FReservationNotificationData::BeaconID' has a wrong offset!");
+static_assert(offsetof(FReservationNotificationData, SteamIDJoiner) == 0x000008, "Member 'FReservationNotificationData::SteamIDJoiner' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ScreenshotHandle
+// 0x0004 (0x0004 - 0x0000)
+struct alignas(0x04) FScreenshotHandle final
+{
+public:
+	uint8                                         Pad_0[0x4];                                        // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FScreenshotHandle) == 0x000004, "Wrong alignment on FScreenshotHandle");
+static_assert(sizeof(FScreenshotHandle) == 0x000004, "Wrong size on FScreenshotHandle");
+
+// ScriptStruct SteamCorePro.ScreenshotReady
+// 0x0008 (0x0008 - 0x0000)
+struct FScreenshotReady final
+{
+public:
+	struct FScreenshotHandle                      Handle;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FScreenshotReady) == 0x000004, "Wrong alignment on FScreenshotReady");
+static_assert(sizeof(FScreenshotReady) == 0x000008, "Wrong size on FScreenshotReady");
+static_assert(offsetof(FScreenshotReady, Handle) == 0x000000, "Member 'FScreenshotReady::Handle' has a wrong offset!");
+static_assert(offsetof(FScreenshotReady, Result) == 0x000004, "Member 'FScreenshotReady::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.ScreenshotRequested
+// 0x0001 (0x0001 - 0x0000)
+struct FScreenshotRequested final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FScreenshotRequested) == 0x000001, "Wrong alignment on FScreenshotRequested");
+static_assert(sizeof(FScreenshotRequested) == 0x000001, "Wrong size on FScreenshotRequested");
+
+// ScriptStruct SteamCorePro.UGCQueryHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FUGCQueryHandle final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUGCQueryHandle) == 0x000008, "Wrong alignment on FUGCQueryHandle");
+static_assert(sizeof(FUGCQueryHandle) == 0x000008, "Wrong size on FUGCQueryHandle");
+
+// ScriptStruct SteamCorePro.SteamUGCQueryCompleted
+// 0x0018 (0x0018 - 0x0000)
+struct FSteamUGCQueryCompleted final
+{
+public:
+	struct FUGCQueryHandle                        Handle;                                            // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumResultsReturned;                                // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalMatchingResults;                              // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamUGCQueryCompleted) == 0x000008, "Wrong alignment on FSteamUGCQueryCompleted");
+static_assert(sizeof(FSteamUGCQueryCompleted) == 0x000018, "Wrong size on FSteamUGCQueryCompleted");
+static_assert(offsetof(FSteamUGCQueryCompleted, Handle) == 0x000000, "Member 'FSteamUGCQueryCompleted::Handle' has a wrong offset!");
+static_assert(offsetof(FSteamUGCQueryCompleted, Result) == 0x000008, "Member 'FSteamUGCQueryCompleted::Result' has a wrong offset!");
+static_assert(offsetof(FSteamUGCQueryCompleted, NumResultsReturned) == 0x00000C, "Member 'FSteamUGCQueryCompleted::NumResultsReturned' has a wrong offset!");
+static_assert(offsetof(FSteamUGCQueryCompleted, TotalMatchingResults) == 0x000010, "Member 'FSteamUGCQueryCompleted::TotalMatchingResults' has a wrong offset!");
+static_assert(offsetof(FSteamUGCQueryCompleted, bCachedData) == 0x000014, "Member 'FSteamUGCQueryCompleted::bCachedData' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSStatsReceived
+// 0x0010 (0x0010 - 0x0000)
+struct FGSStatsReceived final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSStatsReceived) == 0x000008, "Wrong alignment on FGSStatsReceived");
+static_assert(sizeof(FGSStatsReceived) == 0x000010, "Wrong size on FGSStatsReceived");
+static_assert(offsetof(FGSStatsReceived, Result) == 0x000000, "Member 'FGSStatsReceived::Result' has a wrong offset!");
+static_assert(offsetof(FGSStatsReceived, SteamIDUser) == 0x000008, "Member 'FGSStatsReceived::SteamIDUser' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GameServerRule
 // 0x0020 (0x0020 - 0x0000)
-struct FGameServerChangeRequested final
+struct FGameServerRule final
 {
 public:
-	class FString                                 Server;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Password;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameServerChangeRequested) == 0x000008, "Wrong alignment on FGameServerChangeRequested");
-static_assert(sizeof(FGameServerChangeRequested) == 0x000020, "Wrong size on FGameServerChangeRequested");
-static_assert(offsetof(FGameServerChangeRequested, Server) == 0x000000, "Member 'FGameServerChangeRequested::Server' has a wrong offset!");
-static_assert(offsetof(FGameServerChangeRequested, Password) == 0x000010, "Member 'FGameServerChangeRequested::Password' has a wrong offset!");
+static_assert(alignof(FGameServerRule) == 0x000008, "Wrong alignment on FGameServerRule");
+static_assert(sizeof(FGameServerRule) == 0x000020, "Wrong size on FGameServerRule");
+static_assert(offsetof(FGameServerRule, Name) == 0x000000, "Member 'FGameServerRule::Name' has a wrong offset!");
+static_assert(offsetof(FGameServerRule, Value) == 0x000010, "Member 'FGameServerRule::Value' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.GSStatsStored
+// 0x0010 (0x0010 - 0x0000)
+struct FGSStatsStored final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGSStatsStored) == 0x000008, "Wrong alignment on FGSStatsStored");
+static_assert(sizeof(FGSStatsStored) == 0x000010, "Wrong size on FGSStatsStored");
+static_assert(offsetof(FGSStatsStored, Result) == 0x000000, "Member 'FGSStatsStored::Result' has a wrong offset!");
+static_assert(offsetof(FGSStatsStored, SteamIDUser) == 0x000008, "Member 'FGSStatsStored::SteamIDUser' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SetPersonaNameResponse
+// 0x0003 (0x0003 - 0x0000)
+struct FSetPersonaNameResponse final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLocalSuccess;                                     // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSetPersonaNameResponse) == 0x000001, "Wrong alignment on FSetPersonaNameResponse");
+static_assert(sizeof(FSetPersonaNameResponse) == 0x000003, "Wrong size on FSetPersonaNameResponse");
+static_assert(offsetof(FSetPersonaNameResponse, Result) == 0x000000, "Member 'FSetPersonaNameResponse::Result' has a wrong offset!");
+static_assert(offsetof(FSetPersonaNameResponse, bSuccess) == 0x000001, "Member 'FSetPersonaNameResponse::bSuccess' has a wrong offset!");
+static_assert(offsetof(FSetPersonaNameResponse, bLocalSuccess) == 0x000002, "Member 'FSetPersonaNameResponse::bLocalSuccess' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SetUserItemVoteResult
+// 0x0010 (0x0010 - 0x0000)
+struct FSetUserItemVoteResult final
+{
+public:
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVoteUp;                                           // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSetUserItemVoteResult) == 0x000008, "Wrong alignment on FSetUserItemVoteResult");
+static_assert(sizeof(FSetUserItemVoteResult) == 0x000010, "Wrong size on FSetUserItemVoteResult");
+static_assert(offsetof(FSetUserItemVoteResult, PublishedFileID) == 0x000000, "Member 'FSetUserItemVoteResult::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FSetUserItemVoteResult, Result) == 0x000008, "Member 'FSetUserItemVoteResult::Result' has a wrong offset!");
+static_assert(offsetof(FSetUserItemVoteResult, bVoteUp) == 0x000009, "Member 'FSetUserItemVoteResult::bVoteUp' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.StartPlaytimeTrackingResult
+// 0x0001 (0x0001 - 0x0000)
+struct FStartPlaytimeTrackingResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FStartPlaytimeTrackingResult) == 0x000001, "Wrong alignment on FStartPlaytimeTrackingResult");
+static_assert(sizeof(FStartPlaytimeTrackingResult) == 0x000001, "Wrong size on FStartPlaytimeTrackingResult");
+static_assert(offsetof(FStartPlaytimeTrackingResult, Result) == 0x000000, "Member 'FStartPlaytimeTrackingResult::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamAppInstalled
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamAppInstalled final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamAppInstalled) == 0x000004, "Wrong alignment on FSteamAppInstalled");
+static_assert(sizeof(FSteamAppInstalled) == 0x000004, "Wrong size on FSteamAppInstalled");
+static_assert(offsetof(FSteamAppInstalled, AppID) == 0x000000, "Member 'FSteamAppInstalled::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.InputAnalogActionHandle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FInputAnalogActionHandle final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FInputAnalogActionHandle) == 0x000008, "Wrong alignment on FInputAnalogActionHandle");
+static_assert(sizeof(FInputAnalogActionHandle) == 0x000008, "Wrong size on FInputAnalogActionHandle");
+
+// ScriptStruct SteamCorePro.SteamAppUninstalled
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamAppUninstalled final
+{
+public:
+	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamAppUninstalled) == 0x000004, "Wrong alignment on FSteamAppUninstalled");
+static_assert(sizeof(FSteamAppUninstalled) == 0x000004, "Wrong size on FSteamAppUninstalled");
+static_assert(offsetof(FSteamAppUninstalled, AppID) == 0x000000, "Member 'FSteamAppUninstalled::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryFullUpdate
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamInventoryFullUpdate final
+{
+public:
+	struct FSteamInventoryResult                  Handle;                                            // 0x0000(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamInventoryFullUpdate) == 0x000004, "Wrong alignment on FSteamInventoryFullUpdate");
+static_assert(sizeof(FSteamInventoryFullUpdate) == 0x000004, "Wrong size on FSteamInventoryFullUpdate");
+static_assert(offsetof(FSteamInventoryFullUpdate, Handle) == 0x000000, "Member 'FSteamInventoryFullUpdate::Handle' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryRequestPricesResult
+// 0x0018 (0x0018 - 0x0000)
+struct FSteamInventoryRequestPricesResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Currency;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamInventoryRequestPricesResult) == 0x000008, "Wrong alignment on FSteamInventoryRequestPricesResult");
+static_assert(sizeof(FSteamInventoryRequestPricesResult) == 0x000018, "Wrong size on FSteamInventoryRequestPricesResult");
+static_assert(offsetof(FSteamInventoryRequestPricesResult, Result) == 0x000000, "Member 'FSteamInventoryRequestPricesResult::Result' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryRequestPricesResult, Currency) == 0x000008, "Member 'FSteamInventoryRequestPricesResult::Currency' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamInventoryStartPurchaseResult
+// 0x0028 (0x0028 - 0x0000)
+struct FSteamInventoryStartPurchaseResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OrderID;                                           // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TransactionId;                                     // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamInventoryStartPurchaseResult) == 0x000008, "Wrong alignment on FSteamInventoryStartPurchaseResult");
+static_assert(sizeof(FSteamInventoryStartPurchaseResult) == 0x000028, "Wrong size on FSteamInventoryStartPurchaseResult");
+static_assert(offsetof(FSteamInventoryStartPurchaseResult, Result) == 0x000000, "Member 'FSteamInventoryStartPurchaseResult::Result' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryStartPurchaseResult, OrderID) == 0x000008, "Member 'FSteamInventoryStartPurchaseResult::OrderID' has a wrong offset!");
+static_assert(offsetof(FSteamInventoryStartPurchaseResult, TransactionId) == 0x000018, "Member 'FSteamInventoryStartPurchaseResult::TransactionId' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamRemotePlaySessionConnected
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamRemotePlaySessionConnected final
+{
+public:
+	int32                                         SessionID;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamRemotePlaySessionConnected) == 0x000004, "Wrong alignment on FSteamRemotePlaySessionConnected");
+static_assert(sizeof(FSteamRemotePlaySessionConnected) == 0x000004, "Wrong size on FSteamRemotePlaySessionConnected");
+static_assert(offsetof(FSteamRemotePlaySessionConnected, SessionID) == 0x000000, "Member 'FSteamRemotePlaySessionConnected::SessionID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamRemotePlaySessionDisconnected
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamRemotePlaySessionDisconnected final
+{
+public:
+	int32                                         SessionID;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamRemotePlaySessionDisconnected) == 0x000004, "Wrong alignment on FSteamRemotePlaySessionDisconnected");
+static_assert(sizeof(FSteamRemotePlaySessionDisconnected) == 0x000004, "Wrong size on FSteamRemotePlaySessionDisconnected");
+static_assert(offsetof(FSteamRemotePlaySessionDisconnected, SessionID) == 0x000000, "Member 'FSteamRemotePlaySessionDisconnected::SessionID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamServerConnectFailure
+// 0x0002 (0x0002 - 0x0000)
+struct FSteamServerConnectFailure final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStillRetrying;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamServerConnectFailure) == 0x000001, "Wrong alignment on FSteamServerConnectFailure");
+static_assert(sizeof(FSteamServerConnectFailure) == 0x000002, "Wrong size on FSteamServerConnectFailure");
+static_assert(offsetof(FSteamServerConnectFailure, Result) == 0x000000, "Member 'FSteamServerConnectFailure::Result' has a wrong offset!");
+static_assert(offsetof(FSteamServerConnectFailure, bStillRetrying) == 0x000001, "Member 'FSteamServerConnectFailure::bStillRetrying' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamServersConnected
+// 0x0001 (0x0001 - 0x0000)
+struct FSteamServersConnected final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamServersConnected) == 0x000001, "Wrong alignment on FSteamServersConnected");
+static_assert(sizeof(FSteamServersConnected) == 0x000001, "Wrong size on FSteamServersConnected");
+
+// ScriptStruct SteamCorePro.SteamServersDisconnected
+// 0x0001 (0x0001 - 0x0000)
+struct FSteamServersDisconnected final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamServersDisconnected) == 0x000001, "Wrong alignment on FSteamServersDisconnected");
+static_assert(sizeof(FSteamServersDisconnected) == 0x000001, "Wrong size on FSteamServersDisconnected");
+static_assert(offsetof(FSteamServersDisconnected, Result) == 0x000000, "Member 'FSteamServersDisconnected::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamShutdown
+// 0x0001 (0x0001 - 0x0000)
+struct FSteamShutdown final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamShutdown) == 0x000001, "Wrong alignment on FSteamShutdown");
+static_assert(sizeof(FSteamShutdown) == 0x000001, "Wrong size on FSteamShutdown");
+
+// ScriptStruct SteamCorePro.StopPlaytimeTrackingResult
+// 0x0001 (0x0001 - 0x0000)
+struct FStopPlaytimeTrackingResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FStopPlaytimeTrackingResult) == 0x000001, "Wrong alignment on FStopPlaytimeTrackingResult");
+static_assert(sizeof(FStopPlaytimeTrackingResult) == 0x000001, "Wrong size on FStopPlaytimeTrackingResult");
+static_assert(offsetof(FStopPlaytimeTrackingResult, Result) == 0x000000, "Member 'FStopPlaytimeTrackingResult::Result' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.StoreAuthURLResponse
+// 0x0010 (0x0010 - 0x0000)
+struct FStoreAuthURLResponse final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FStoreAuthURLResponse) == 0x000008, "Wrong alignment on FStoreAuthURLResponse");
+static_assert(sizeof(FStoreAuthURLResponse) == 0x000010, "Wrong size on FStoreAuthURLResponse");
+static_assert(offsetof(FStoreAuthURLResponse, URL) == 0x000000, "Member 'FStoreAuthURLResponse::URL' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SubmitItemUpdateResult
+// 0x0010 (0x0010 - 0x0000)
+struct FSubmitItemUpdateResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSubmitItemUpdateResult) == 0x000008, "Wrong alignment on FSubmitItemUpdateResult");
+static_assert(sizeof(FSubmitItemUpdateResult) == 0x000010, "Wrong size on FSubmitItemUpdateResult");
+static_assert(offsetof(FSubmitItemUpdateResult, Result) == 0x000000, "Member 'FSubmitItemUpdateResult::Result' has a wrong offset!");
+static_assert(offsetof(FSubmitItemUpdateResult, bUserNeedsToAcceptWorkshopLegalAgreement) == 0x000001, "Member 'FSubmitItemUpdateResult::bUserNeedsToAcceptWorkshopLegalAgreement' has a wrong offset!");
+static_assert(offsetof(FSubmitItemUpdateResult, PublishedFileID) == 0x000008, "Member 'FSubmitItemUpdateResult::PublishedFileID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RemoteStorageDownloadUGCResult
+// 0x0030 (0x0030 - 0x0000)
+struct FRemoteStorageDownloadUGCResult final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamUGCHandle                        FileHandle;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         AppID;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SizeInBytes;                                       // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Filename;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDOwner;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRemoteStorageDownloadUGCResult) == 0x000008, "Wrong alignment on FRemoteStorageDownloadUGCResult");
+static_assert(sizeof(FRemoteStorageDownloadUGCResult) == 0x000030, "Wrong size on FRemoteStorageDownloadUGCResult");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, Result) == 0x000000, "Member 'FRemoteStorageDownloadUGCResult::Result' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, FileHandle) == 0x000008, "Member 'FRemoteStorageDownloadUGCResult::FileHandle' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, AppID) == 0x000010, "Member 'FRemoteStorageDownloadUGCResult::AppID' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, SizeInBytes) == 0x000014, "Member 'FRemoteStorageDownloadUGCResult::SizeInBytes' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, Filename) == 0x000018, "Member 'FRemoteStorageDownloadUGCResult::Filename' has a wrong offset!");
+static_assert(offsetof(FRemoteStorageDownloadUGCResult, SteamIDOwner) == 0x000028, "Member 'FRemoteStorageDownloadUGCResult::SteamIDOwner' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.LeaderboardScoreUploaded
+// 0x0020 (0x0020 - 0x0000)
+struct FLeaderboardScoreUploaded final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Score;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bScoreChanged;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         GlobalRankNew;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GlobalRankPrevious;                                // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLeaderboardScoreUploaded) == 0x000008, "Wrong alignment on FLeaderboardScoreUploaded");
+static_assert(sizeof(FLeaderboardScoreUploaded) == 0x000020, "Wrong size on FLeaderboardScoreUploaded");
+static_assert(offsetof(FLeaderboardScoreUploaded, bSuccess) == 0x000000, "Member 'FLeaderboardScoreUploaded::bSuccess' has a wrong offset!");
+static_assert(offsetof(FLeaderboardScoreUploaded, SteamLeaderboard) == 0x000008, "Member 'FLeaderboardScoreUploaded::SteamLeaderboard' has a wrong offset!");
+static_assert(offsetof(FLeaderboardScoreUploaded, Score) == 0x000010, "Member 'FLeaderboardScoreUploaded::Score' has a wrong offset!");
+static_assert(offsetof(FLeaderboardScoreUploaded, bScoreChanged) == 0x000014, "Member 'FLeaderboardScoreUploaded::bScoreChanged' has a wrong offset!");
+static_assert(offsetof(FLeaderboardScoreUploaded, GlobalRankNew) == 0x000018, "Member 'FLeaderboardScoreUploaded::GlobalRankNew' has a wrong offset!");
+static_assert(offsetof(FLeaderboardScoreUploaded, GlobalRankPrevious) == 0x00001C, "Member 'FLeaderboardScoreUploaded::GlobalRankPrevious' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.UserAchievementIconFetched
+// 0x0030 (0x0030 - 0x0000)
+struct FUserAchievementIconFetched final
+{
+public:
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 AchievementName;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAchieved;                                         // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             Icon;                                              // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUserAchievementIconFetched) == 0x000008, "Wrong alignment on FUserAchievementIconFetched");
+static_assert(sizeof(FUserAchievementIconFetched) == 0x000030, "Wrong size on FUserAchievementIconFetched");
+static_assert(offsetof(FUserAchievementIconFetched, GameID) == 0x000000, "Member 'FUserAchievementIconFetched::GameID' has a wrong offset!");
+static_assert(offsetof(FUserAchievementIconFetched, AchievementName) == 0x000008, "Member 'FUserAchievementIconFetched::AchievementName' has a wrong offset!");
+static_assert(offsetof(FUserAchievementIconFetched, bAchieved) == 0x000018, "Member 'FUserAchievementIconFetched::bAchieved' has a wrong offset!");
+static_assert(offsetof(FUserAchievementIconFetched, Icon) == 0x000020, "Member 'FUserAchievementIconFetched::Icon' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.UserAchievementStored
+// 0x0028 (0x0028 - 0x0000)
+struct FUserAchievementStored final
+{
+public:
+	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bGroupAchievement;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AchievementName;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentProgress;                                   // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxProgress;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FUserAchievementStored) == 0x000008, "Wrong alignment on FUserAchievementStored");
+static_assert(sizeof(FUserAchievementStored) == 0x000028, "Wrong size on FUserAchievementStored");
+static_assert(offsetof(FUserAchievementStored, GameID) == 0x000000, "Member 'FUserAchievementStored::GameID' has a wrong offset!");
+static_assert(offsetof(FUserAchievementStored, bGroupAchievement) == 0x000008, "Member 'FUserAchievementStored::bGroupAchievement' has a wrong offset!");
+static_assert(offsetof(FUserAchievementStored, AchievementName) == 0x000010, "Member 'FUserAchievementStored::AchievementName' has a wrong offset!");
+static_assert(offsetof(FUserAchievementStored, CurrentProgress) == 0x000020, "Member 'FUserAchievementStored::CurrentProgress' has a wrong offset!");
+static_assert(offsetof(FUserAchievementStored, MaxProgress) == 0x000024, "Member 'FUserAchievementStored::MaxProgress' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.UserStatsReceived
+// 0x0018 (0x0018 - 0x0000)
+struct FUserStatsReceived final
+{
+public:
+	struct FSteamID                               GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamID;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FUserStatsReceived) == 0x000008, "Wrong alignment on FUserStatsReceived");
+static_assert(sizeof(FUserStatsReceived) == 0x000018, "Wrong size on FUserStatsReceived");
+static_assert(offsetof(FUserStatsReceived, GameID) == 0x000000, "Member 'FUserStatsReceived::GameID' has a wrong offset!");
+static_assert(offsetof(FUserStatsReceived, Result) == 0x000008, "Member 'FUserStatsReceived::Result' has a wrong offset!");
+static_assert(offsetof(FUserStatsReceived, SteamID) == 0x000010, "Member 'FUserStatsReceived::SteamID' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.UserStatsStored
 // 0x0010 (0x0010 - 0x0000)
@@ -2552,148 +3728,242 @@ struct FUserStatsStored final
 public:
 	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17FD[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUserStatsStored) == 0x000008, "Wrong alignment on FUserStatsStored");
 static_assert(sizeof(FUserStatsStored) == 0x000010, "Wrong size on FUserStatsStored");
 static_assert(offsetof(FUserStatsStored, GameID) == 0x000000, "Member 'FUserStatsStored::GameID' has a wrong offset!");
 static_assert(offsetof(FUserStatsStored, Result) == 0x000008, "Member 'FUserStatsStored::Result' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.DownloadClanActivityCountsResult
-// 0x0001 (0x0001 - 0x0000)
-struct FDownloadClanActivityCountsResult final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FDownloadClanActivityCountsResult) == 0x000001, "Wrong alignment on FDownloadClanActivityCountsResult");
-static_assert(sizeof(FDownloadClanActivityCountsResult) == 0x000001, "Wrong size on FDownloadClanActivityCountsResult");
-static_assert(offsetof(FDownloadClanActivityCountsResult, bSuccess) == 0x000000, "Member 'FDownloadClanActivityCountsResult::bSuccess' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStorageFileShareResult
-// 0x0020 (0x0020 - 0x0000)
-struct FRemoteStorageFileShareResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17FE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamUGCHandle                        File;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 Filename;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoteStorageFileShareResult) == 0x000008, "Wrong alignment on FRemoteStorageFileShareResult");
-static_assert(sizeof(FRemoteStorageFileShareResult) == 0x000020, "Wrong size on FRemoteStorageFileShareResult");
-static_assert(offsetof(FRemoteStorageFileShareResult, Result) == 0x000000, "Member 'FRemoteStorageFileShareResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageFileShareResult, File) == 0x000008, "Member 'FRemoteStorageFileShareResult::File' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageFileShareResult, Filename) == 0x000010, "Member 'FRemoteStorageFileShareResult::Filename' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStorageFileWriteAsyncComplete
-// 0x0001 (0x0001 - 0x0000)
-struct FRemoteStorageFileWriteAsyncComplete final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoteStorageFileWriteAsyncComplete) == 0x000001, "Wrong alignment on FRemoteStorageFileWriteAsyncComplete");
-static_assert(sizeof(FRemoteStorageFileWriteAsyncComplete) == 0x000001, "Wrong size on FRemoteStorageFileWriteAsyncComplete");
-static_assert(offsetof(FRemoteStorageFileWriteAsyncComplete, Result) == 0x000000, "Member 'FRemoteStorageFileWriteAsyncComplete::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.FloatingGamepadTextInputDismissed
-// 0x0001 (0x0001 - 0x0000)
-struct FFloatingGamepadTextInputDismissed final
-{
-public:
-	uint8                                         Pad_17FF[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong alignment on FFloatingGamepadTextInputDismissed");
-static_assert(sizeof(FFloatingGamepadTextInputDismissed) == 0x000001, "Wrong size on FFloatingGamepadTextInputDismissed");
-
-// ScriptStruct SteamCorePro.FriendRichPresenceUpdate
-// 0x0010 (0x0010 - 0x0000)
-struct FFriendRichPresenceUpdate final
-{
-public:
-	struct FSteamID                               SteamIDFriend;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1800[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FFriendRichPresenceUpdate) == 0x000008, "Wrong alignment on FFriendRichPresenceUpdate");
-static_assert(sizeof(FFriendRichPresenceUpdate) == 0x000010, "Wrong size on FFriendRichPresenceUpdate");
-static_assert(offsetof(FFriendRichPresenceUpdate, SteamIDFriend) == 0x000000, "Member 'FFriendRichPresenceUpdate::SteamIDFriend' has a wrong offset!");
-static_assert(offsetof(FFriendRichPresenceUpdate, AppID) == 0x000008, "Member 'FFriendRichPresenceUpdate::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameConnectedChatLeave
-// 0x0018 (0x0018 - 0x0000)
-struct FGameConnectedChatLeave final
-{
-public:
-	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bKicked;                                           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDropped;                                          // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1801[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameConnectedChatLeave) == 0x000008, "Wrong alignment on FGameConnectedChatLeave");
-static_assert(sizeof(FGameConnectedChatLeave) == 0x000018, "Wrong size on FGameConnectedChatLeave");
-static_assert(offsetof(FGameConnectedChatLeave, SteamIDClanChat) == 0x000000, "Member 'FGameConnectedChatLeave::SteamIDClanChat' has a wrong offset!");
-static_assert(offsetof(FGameConnectedChatLeave, SteamIDUser) == 0x000008, "Member 'FGameConnectedChatLeave::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FGameConnectedChatLeave, bKicked) == 0x000010, "Member 'FGameConnectedChatLeave::bKicked' has a wrong offset!");
-static_assert(offsetof(FGameConnectedChatLeave, bDropped) == 0x000011, "Member 'FGameConnectedChatLeave::bDropped' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameConnectedClanChatMsg
-// 0x0018 (0x0018 - 0x0000)
-struct FGameConnectedClanChatMsg final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDClanChat;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         MessageID;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1802[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameConnectedClanChatMsg) == 0x000008, "Wrong alignment on FGameConnectedClanChatMsg");
-static_assert(sizeof(FGameConnectedClanChatMsg) == 0x000018, "Wrong size on FGameConnectedClanChatMsg");
-static_assert(offsetof(FGameConnectedClanChatMsg, SteamIDUser) == 0x000000, "Member 'FGameConnectedClanChatMsg::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FGameConnectedClanChatMsg, SteamIDClanChat) == 0x000008, "Member 'FGameConnectedClanChatMsg::SteamIDClanChat' has a wrong offset!");
-static_assert(offsetof(FGameConnectedClanChatMsg, MessageID) == 0x000010, "Member 'FGameConnectedClanChatMsg::MessageID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameConnectedFriendChatMsg
-// 0x0010 (0x0010 - 0x0000)
-struct FGameConnectedFriendChatMsg final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         MessageID;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1803[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameConnectedFriendChatMsg) == 0x000008, "Wrong alignment on FGameConnectedFriendChatMsg");
-static_assert(sizeof(FGameConnectedFriendChatMsg) == 0x000010, "Wrong size on FGameConnectedFriendChatMsg");
-static_assert(offsetof(FGameConnectedFriendChatMsg, SteamIDUser) == 0x000000, "Member 'FGameConnectedFriendChatMsg::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FGameConnectedFriendChatMsg, MessageID) == 0x000008, "Member 'FGameConnectedFriendChatMsg::MessageID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameOverlayActivated
+// ScriptStruct SteamCorePro.UserStatsUnloaded
 // 0x0008 (0x0008 - 0x0000)
-struct FGameOverlayActivated final
+struct FUserStatsUnloaded final
 {
 public:
-	bool                                          bActive;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUserInitiated;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1804[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameOverlayActivated) == 0x000004, "Wrong alignment on FGameOverlayActivated");
-static_assert(sizeof(FGameOverlayActivated) == 0x000008, "Wrong size on FGameOverlayActivated");
-static_assert(offsetof(FGameOverlayActivated, bActive) == 0x000000, "Member 'FGameOverlayActivated::bActive' has a wrong offset!");
-static_assert(offsetof(FGameOverlayActivated, bUserInitiated) == 0x000001, "Member 'FGameOverlayActivated::bUserInitiated' has a wrong offset!");
-static_assert(offsetof(FGameOverlayActivated, AppID) == 0x000004, "Member 'FGameOverlayActivated::AppID' has a wrong offset!");
+static_assert(alignof(FUserStatsUnloaded) == 0x000008, "Wrong alignment on FUserStatsUnloaded");
+static_assert(sizeof(FUserStatsUnloaded) == 0x000008, "Wrong size on FUserStatsUnloaded");
+static_assert(offsetof(FUserStatsUnloaded, SteamIDUser) == 0x000000, "Member 'FUserStatsUnloaded::SteamIDUser' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.ScePadTriggerEffectOffParam
-// 0x0001 (0x0001 - 0x0000)
-struct FScePadTriggerEffectOffParam final
+// ScriptStruct SteamCorePro.UserSubscribedItemsListChanged
+// 0x0004 (0x0004 - 0x0000)
+struct FUserSubscribedItemsListChanged final
 {
 public:
-	uint8                                         Pad_1805[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong alignment on FScePadTriggerEffectOffParam");
-static_assert(sizeof(FScePadTriggerEffectOffParam) == 0x000001, "Wrong size on FScePadTriggerEffectOffParam");
+static_assert(alignof(FUserSubscribedItemsListChanged) == 0x000004, "Wrong alignment on FUserSubscribedItemsListChanged");
+static_assert(sizeof(FUserSubscribedItemsListChanged) == 0x000004, "Wrong size on FUserSubscribedItemsListChanged");
+static_assert(offsetof(FUserSubscribedItemsListChanged, AppID) == 0x000000, "Member 'FUserSubscribedItemsListChanged::AppID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.VolumeHasChanged
+// 0x0004 (0x0004 - 0x0000)
+struct FVolumeHasChanged final
+{
+public:
+	float                                         Volume;                                            // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FVolumeHasChanged) == 0x000004, "Wrong alignment on FVolumeHasChanged");
+static_assert(sizeof(FVolumeHasChanged) == 0x000004, "Wrong size on FVolumeHasChanged");
+static_assert(offsetof(FVolumeHasChanged, Volume) == 0x000000, "Member 'FVolumeHasChanged::Volume' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RequestPlayersForGameFinalResultCallback
+// 0x0028 (0x0028 - 0x0000)
+struct FRequestPlayersForGameFinalResultCallback final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UniqueGameID;                                      // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRequestPlayersForGameFinalResultCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameFinalResultCallback");
+static_assert(sizeof(FRequestPlayersForGameFinalResultCallback) == 0x000028, "Wrong size on FRequestPlayersForGameFinalResultCallback");
+static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameFinalResultCallback::Result' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameFinalResultCallback::SearchID' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, UniqueGameID) == 0x000018, "Member 'FRequestPlayersForGameFinalResultCallback::UniqueGameID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RequestPlayersForGameProgressCallback
+// 0x0018 (0x0018 - 0x0000)
+struct FRequestPlayersForGameProgressCallback final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRequestPlayersForGameProgressCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameProgressCallback");
+static_assert(sizeof(FRequestPlayersForGameProgressCallback) == 0x000018, "Wrong size on FRequestPlayersForGameProgressCallback");
+static_assert(offsetof(FRequestPlayersForGameProgressCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameProgressCallback::Result' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameProgressCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameProgressCallback::SearchID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.RequestPlayersForGameResultCallback
+// 0x0050 (0x0050 - 0x0000)
+struct FRequestPlayersForGameResultCallback final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDPlayerFound;                                // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDLobby;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamPlayerAcceptState                       PlayerAcceptState;                                 // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PlayerIndex;                                       // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalPlayersFound;                                 // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalPlayersAcceptedGame;                          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SuggestedTeamIndex;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UniqueGameID;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRequestPlayersForGameResultCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameResultCallback");
+static_assert(sizeof(FRequestPlayersForGameResultCallback) == 0x000050, "Wrong size on FRequestPlayersForGameResultCallback");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameResultCallback::Result' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameResultCallback::SearchID' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, SteamIDPlayerFound) == 0x000018, "Member 'FRequestPlayersForGameResultCallback::SteamIDPlayerFound' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, SteamIDLobby) == 0x000020, "Member 'FRequestPlayersForGameResultCallback::SteamIDLobby' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, PlayerAcceptState) == 0x000028, "Member 'FRequestPlayersForGameResultCallback::PlayerAcceptState' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, PlayerIndex) == 0x00002C, "Member 'FRequestPlayersForGameResultCallback::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, TotalPlayersFound) == 0x000030, "Member 'FRequestPlayersForGameResultCallback::TotalPlayersFound' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, TotalPlayersAcceptedGame) == 0x000034, "Member 'FRequestPlayersForGameResultCallback::TotalPlayersAcceptedGame' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, SuggestedTeamIndex) == 0x000038, "Member 'FRequestPlayersForGameResultCallback::SuggestedTeamIndex' has a wrong offset!");
+static_assert(offsetof(FRequestPlayersForGameResultCallback, UniqueGameID) == 0x000040, "Member 'FRequestPlayersForGameResultCallback::UniqueGameID' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamUGCDetails
+// 0x00A8 (0x00A8 - 0x0000)
+struct FSteamUGCDetails final
+{
+public:
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamWorkshopFileType                        FileType;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CreatorAppID;                                      // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ConsumerAppID;                                     // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDOwner;                                      // 0x0038(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         TimeCreated;                                       // 0x0040(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TimeUpdated;                                       // 0x0044(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TimeAddedToUserList;                               // 0x0048(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamRemoteStoragePublishedFileVisibility    Visibility;                                        // 0x004C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBanned;                                           // 0x004D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAcceptedForUse;                                   // 0x004E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTagsTruncated;                                    // 0x004F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Tags;                                              // 0x0050(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FSteamUGCHandle                        File;                                              // 0x0060(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamUGCHandle                        PreviewFile;                                       // 0x0068(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Filename;                                          // 0x0070(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FileSize;                                          // 0x0080(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PreviewFileSize;                                   // 0x0084(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 URL;                                               // 0x0088(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         VotesUp;                                           // 0x0098(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         VotesDown;                                         // 0x009C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Score;                                             // 0x00A0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumChildren;                                       // 0x00A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamUGCDetails) == 0x000008, "Wrong alignment on FSteamUGCDetails");
+static_assert(sizeof(FSteamUGCDetails) == 0x0000A8, "Wrong size on FSteamUGCDetails");
+static_assert(offsetof(FSteamUGCDetails, PublishedFileID) == 0x000000, "Member 'FSteamUGCDetails::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Result) == 0x000008, "Member 'FSteamUGCDetails::Result' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, FileType) == 0x000009, "Member 'FSteamUGCDetails::FileType' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, CreatorAppID) == 0x00000C, "Member 'FSteamUGCDetails::CreatorAppID' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, ConsumerAppID) == 0x000010, "Member 'FSteamUGCDetails::ConsumerAppID' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Title) == 0x000018, "Member 'FSteamUGCDetails::Title' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Description) == 0x000028, "Member 'FSteamUGCDetails::Description' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, SteamIDOwner) == 0x000038, "Member 'FSteamUGCDetails::SteamIDOwner' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, TimeCreated) == 0x000040, "Member 'FSteamUGCDetails::TimeCreated' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, TimeUpdated) == 0x000044, "Member 'FSteamUGCDetails::TimeUpdated' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, TimeAddedToUserList) == 0x000048, "Member 'FSteamUGCDetails::TimeAddedToUserList' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Visibility) == 0x00004C, "Member 'FSteamUGCDetails::Visibility' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, bBanned) == 0x00004D, "Member 'FSteamUGCDetails::bBanned' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, bAcceptedForUse) == 0x00004E, "Member 'FSteamUGCDetails::bAcceptedForUse' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, bTagsTruncated) == 0x00004F, "Member 'FSteamUGCDetails::bTagsTruncated' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Tags) == 0x000050, "Member 'FSteamUGCDetails::Tags' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, File) == 0x000060, "Member 'FSteamUGCDetails::File' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, PreviewFile) == 0x000068, "Member 'FSteamUGCDetails::PreviewFile' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Filename) == 0x000070, "Member 'FSteamUGCDetails::Filename' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, FileSize) == 0x000080, "Member 'FSteamUGCDetails::FileSize' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, PreviewFileSize) == 0x000084, "Member 'FSteamUGCDetails::PreviewFileSize' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, URL) == 0x000088, "Member 'FSteamUGCDetails::URL' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, VotesUp) == 0x000098, "Member 'FSteamUGCDetails::VotesUp' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, VotesDown) == 0x00009C, "Member 'FSteamUGCDetails::VotesDown' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, Score) == 0x0000A0, "Member 'FSteamUGCDetails::Score' has a wrong offset!");
+static_assert(offsetof(FSteamUGCDetails, NumChildren) == 0x0000A4, "Member 'FSteamUGCDetails::NumChildren' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SearchForGameProgressCallback
+// 0x0030 (0x0030 - 0x0000)
+struct FSearchForGameProgressCallback final
+{
+public:
+	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               LobbyID;                                           // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDEndedSearch;                                // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         SecondsRemainingEstimate;                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayersSearching;                                  // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSearchForGameProgressCallback) == 0x000008, "Wrong alignment on FSearchForGameProgressCallback");
+static_assert(sizeof(FSearchForGameProgressCallback) == 0x000030, "Wrong size on FSearchForGameProgressCallback");
+static_assert(offsetof(FSearchForGameProgressCallback, SearchID) == 0x000000, "Member 'FSearchForGameProgressCallback::SearchID' has a wrong offset!");
+static_assert(offsetof(FSearchForGameProgressCallback, Result) == 0x000010, "Member 'FSearchForGameProgressCallback::Result' has a wrong offset!");
+static_assert(offsetof(FSearchForGameProgressCallback, LobbyID) == 0x000018, "Member 'FSearchForGameProgressCallback::LobbyID' has a wrong offset!");
+static_assert(offsetof(FSearchForGameProgressCallback, SteamIDEndedSearch) == 0x000020, "Member 'FSearchForGameProgressCallback::SteamIDEndedSearch' has a wrong offset!");
+static_assert(offsetof(FSearchForGameProgressCallback, SecondsRemainingEstimate) == 0x000028, "Member 'FSearchForGameProgressCallback::SecondsRemainingEstimate' has a wrong offset!");
+static_assert(offsetof(FSearchForGameProgressCallback, PlayersSearching) == 0x00002C, "Member 'FSearchForGameProgressCallback::PlayersSearching' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SearchForGameResultCallback
+// 0x0030 (0x0030 - 0x0000)
+struct FSearchForGameResultCallback final
+{
+public:
+	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CountPlayersInGame;                                // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CountAcceptedGame;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               SteamIDHost;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bFinalCallback;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSearchForGameResultCallback) == 0x000008, "Wrong alignment on FSearchForGameResultCallback");
+static_assert(sizeof(FSearchForGameResultCallback) == 0x000030, "Wrong size on FSearchForGameResultCallback");
+static_assert(offsetof(FSearchForGameResultCallback, SearchID) == 0x000000, "Member 'FSearchForGameResultCallback::SearchID' has a wrong offset!");
+static_assert(offsetof(FSearchForGameResultCallback, Result) == 0x000010, "Member 'FSearchForGameResultCallback::Result' has a wrong offset!");
+static_assert(offsetof(FSearchForGameResultCallback, CountPlayersInGame) == 0x000014, "Member 'FSearchForGameResultCallback::CountPlayersInGame' has a wrong offset!");
+static_assert(offsetof(FSearchForGameResultCallback, CountAcceptedGame) == 0x000018, "Member 'FSearchForGameResultCallback::CountAcceptedGame' has a wrong offset!");
+static_assert(offsetof(FSearchForGameResultCallback, SteamIDHost) == 0x000020, "Member 'FSearchForGameResultCallback::SteamIDHost' has a wrong offset!");
+static_assert(offsetof(FSearchForGameResultCallback, bFinalCallback) == 0x000028, "Member 'FSearchForGameResultCallback::bFinalCallback' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SubmitPlayerResultResultCallback
+// 0x0020 (0x0020 - 0x0000)
+struct FSubmitPlayerResultResultCallback final
+{
+public:
+	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UniqueGameID;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSteamID                               SteamIDPlayer;                                     // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSubmitPlayerResultResultCallback) == 0x000008, "Wrong alignment on FSubmitPlayerResultResultCallback");
+static_assert(sizeof(FSubmitPlayerResultResultCallback) == 0x000020, "Wrong size on FSubmitPlayerResultResultCallback");
+static_assert(offsetof(FSubmitPlayerResultResultCallback, Result) == 0x000000, "Member 'FSubmitPlayerResultResultCallback::Result' has a wrong offset!");
+static_assert(offsetof(FSubmitPlayerResultResultCallback, UniqueGameID) == 0x000008, "Member 'FSubmitPlayerResultResultCallback::UniqueGameID' has a wrong offset!");
+static_assert(offsetof(FSubmitPlayerResultResultCallback, SteamIDPlayer) == 0x000018, "Member 'FSubmitPlayerResultResultCallback::SteamIDPlayer' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamFriendsGroupID
+// 0x0002 (0x0002 - 0x0000)
+struct alignas(0x02) FSteamFriendsGroupID final
+{
+public:
+	uint8                                         Pad_0[0x2];                                        // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamFriendsGroupID) == 0x000002, "Wrong alignment on FSteamFriendsGroupID");
+static_assert(sizeof(FSteamFriendsGroupID) == 0x000002, "Wrong size on FSteamFriendsGroupID");
 
 // ScriptStruct SteamCorePro.ScePadTriggerEffectFeedbackParam
 // 0x0008 (0x0008 - 0x0000)
@@ -2749,13 +4019,30 @@ static_assert(alignof(FScePadTriggerEffectMultiplePositionFeedbackParam) == 0x00
 static_assert(sizeof(FScePadTriggerEffectMultiplePositionFeedbackParam) == 0x000010, "Wrong size on FScePadTriggerEffectMultiplePositionFeedbackParam");
 static_assert(offsetof(FScePadTriggerEffectMultiplePositionFeedbackParam, Strength) == 0x000000, "Member 'FScePadTriggerEffectMultiplePositionFeedbackParam::Strength' has a wrong offset!");
 
+// ScriptStruct SteamCorePro.ScePadTriggerEffectSlopeFeedbackParam
+// 0x0010 (0x0010 - 0x0000)
+struct FScePadTriggerEffectSlopeFeedbackParam final
+{
+public:
+	int32                                         StartPosition;                                     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EndPosition;                                       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StartStrength;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EndStrength;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FScePadTriggerEffectSlopeFeedbackParam) == 0x000004, "Wrong alignment on FScePadTriggerEffectSlopeFeedbackParam");
+static_assert(sizeof(FScePadTriggerEffectSlopeFeedbackParam) == 0x000010, "Wrong size on FScePadTriggerEffectSlopeFeedbackParam");
+static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, StartPosition) == 0x000000, "Member 'FScePadTriggerEffectSlopeFeedbackParam::StartPosition' has a wrong offset!");
+static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, EndPosition) == 0x000004, "Member 'FScePadTriggerEffectSlopeFeedbackParam::EndPosition' has a wrong offset!");
+static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, StartStrength) == 0x000008, "Member 'FScePadTriggerEffectSlopeFeedbackParam::StartStrength' has a wrong offset!");
+static_assert(offsetof(FScePadTriggerEffectSlopeFeedbackParam, EndStrength) == 0x00000C, "Member 'FScePadTriggerEffectSlopeFeedbackParam::EndStrength' has a wrong offset!");
+
 // ScriptStruct SteamCorePro.ScePadTriggerEffectMultiplePositionVibrationParam
 // 0x0018 (0x0018 - 0x0000)
 struct FScePadTriggerEffectMultiplePositionVibrationParam final
 {
 public:
 	int32                                         Frequency;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1806[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 Amplitude;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FScePadTriggerEffectMultiplePositionVibrationParam) == 0x000008, "Wrong alignment on FScePadTriggerEffectMultiplePositionVibrationParam");
@@ -2769,11 +4056,11 @@ struct FScePadTriggerEffectCommandData final
 {
 public:
 	struct FScePadTriggerEffectOffParam           OffParam;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1807[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FScePadTriggerEffectFeedbackParam      FeedbackParam;                                     // 0x0004(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectWeaponParam        WeaponParam;                                       // 0x000C(0x000C)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectVibrationParam     VibrationParam;                                    // 0x0018(0x000C)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1808[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FScePadTriggerEffectMultiplePositionFeedbackParam MultiplePositionFeedbackParam;                     // 0x0028(0x0010)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectSlopeFeedbackParam SlopeFeedbackParam;                                // 0x0038(0x0010)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	struct FScePadTriggerEffectMultiplePositionVibrationParam MultiplePositionVibrationParam;                    // 0x0048(0x0018)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
@@ -2788,243 +4075,51 @@ static_assert(offsetof(FScePadTriggerEffectCommandData, MultiplePositionFeedback
 static_assert(offsetof(FScePadTriggerEffectCommandData, SlopeFeedbackParam) == 0x000038, "Member 'FScePadTriggerEffectCommandData::SlopeFeedbackParam' has a wrong offset!");
 static_assert(offsetof(FScePadTriggerEffectCommandData, MultiplePositionVibrationParam) == 0x000048, "Member 'FScePadTriggerEffectCommandData::MultiplePositionVibrationParam' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.GamepadTextInputDismissed
-// 0x0008 (0x0008 - 0x0000)
-struct FGamepadTextInputDismissed final
+// ScriptStruct SteamCorePro.ScePadTriggerEffectCommand
+// 0x0068 (0x0068 - 0x0000)
+struct FScePadTriggerEffectCommand final
 {
 public:
-	bool                                          bSubmitted;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1809[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SubmittedText;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EScePadTriggerEffectMode                      Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FScePadTriggerEffectCommandData        CommandData;                                       // 0x0008(0x0060)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGamepadTextInputDismissed) == 0x000004, "Wrong alignment on FGamepadTextInputDismissed");
-static_assert(sizeof(FGamepadTextInputDismissed) == 0x000008, "Wrong size on FGamepadTextInputDismissed");
-static_assert(offsetof(FGamepadTextInputDismissed, bSubmitted) == 0x000000, "Member 'FGamepadTextInputDismissed::bSubmitted' has a wrong offset!");
-static_assert(offsetof(FGamepadTextInputDismissed, SubmittedText) == 0x000004, "Member 'FGamepadTextInputDismissed::SubmittedText' has a wrong offset!");
+static_assert(alignof(FScePadTriggerEffectCommand) == 0x000008, "Wrong alignment on FScePadTriggerEffectCommand");
+static_assert(sizeof(FScePadTriggerEffectCommand) == 0x000068, "Wrong size on FScePadTriggerEffectCommand");
+static_assert(offsetof(FScePadTriggerEffectCommand, Mode) == 0x000000, "Member 'FScePadTriggerEffectCommand::Mode' has a wrong offset!");
+static_assert(offsetof(FScePadTriggerEffectCommand, CommandData) == 0x000008, "Member 'FScePadTriggerEffectCommand::CommandData' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.GameWebCallback
+// ScriptStruct SteamCorePro.InputAnalogActionData
 // 0x0010 (0x0010 - 0x0000)
-struct FGameWebCallback final
+struct FInputAnalogActionData final
 {
 public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESteamCoreProInputSourceMode                  Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         X;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActive;                                           // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGameWebCallback) == 0x000008, "Wrong alignment on FGameWebCallback");
-static_assert(sizeof(FGameWebCallback) == 0x000010, "Wrong size on FGameWebCallback");
-static_assert(offsetof(FGameWebCallback, URL) == 0x000000, "Member 'FGameWebCallback::URL' has a wrong offset!");
+static_assert(alignof(FInputAnalogActionData) == 0x000004, "Wrong alignment on FInputAnalogActionData");
+static_assert(sizeof(FInputAnalogActionData) == 0x000010, "Wrong size on FInputAnalogActionData");
+static_assert(offsetof(FInputAnalogActionData, Mode) == 0x000000, "Member 'FInputAnalogActionData::Mode' has a wrong offset!");
+static_assert(offsetof(FInputAnalogActionData, X) == 0x000004, "Member 'FInputAnalogActionData::X' has a wrong offset!");
+static_assert(offsetof(FInputAnalogActionData, Y) == 0x000008, "Member 'FInputAnalogActionData::Y' has a wrong offset!");
+static_assert(offsetof(FInputAnalogActionData, bActive) == 0x00000C, "Member 'FInputAnalogActionData::bActive' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.FriendsGetFollowerCount
-// 0x0018 (0x0018 - 0x0000)
-struct FFriendsGetFollowerCount final
+// ScriptStruct SteamCorePro.InputDigitalActionData
+// 0x0002 (0x0002 - 0x0000)
+struct FInputDigitalActionData final
 {
 public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Count;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180B[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bState;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActive;                                           // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FFriendsGetFollowerCount) == 0x000008, "Wrong alignment on FFriendsGetFollowerCount");
-static_assert(sizeof(FFriendsGetFollowerCount) == 0x000018, "Wrong size on FFriendsGetFollowerCount");
-static_assert(offsetof(FFriendsGetFollowerCount, Result) == 0x000000, "Member 'FFriendsGetFollowerCount::Result' has a wrong offset!");
-static_assert(offsetof(FFriendsGetFollowerCount, SteamID) == 0x000008, "Member 'FFriendsGetFollowerCount::SteamID' has a wrong offset!");
-static_assert(offsetof(FFriendsGetFollowerCount, Count) == 0x000010, "Member 'FFriendsGetFollowerCount::Count' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.NumberOfCurrentPlayers
-// 0x0008 (0x0008 - 0x0000)
-struct FNumberOfCurrentPlayers final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180C[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Players;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FNumberOfCurrentPlayers) == 0x000004, "Wrong alignment on FNumberOfCurrentPlayers");
-static_assert(sizeof(FNumberOfCurrentPlayers) == 0x000008, "Wrong size on FNumberOfCurrentPlayers");
-static_assert(offsetof(FNumberOfCurrentPlayers, bSuccess) == 0x000000, "Member 'FNumberOfCurrentPlayers::bSuccess' has a wrong offset!");
-static_assert(offsetof(FNumberOfCurrentPlayers, Players) == 0x000004, "Member 'FNumberOfCurrentPlayers::Players' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GetOPFSettingsResult
-// 0x0008 (0x0008 - 0x0000)
-struct FGetOPFSettingsResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180D[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AppID;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGetOPFSettingsResult) == 0x000004, "Wrong alignment on FGetOPFSettingsResult");
-static_assert(sizeof(FGetOPFSettingsResult) == 0x000008, "Wrong size on FGetOPFSettingsResult");
-static_assert(offsetof(FGetOPFSettingsResult, Result) == 0x000000, "Member 'FGetOPFSettingsResult::Result' has a wrong offset!");
-static_assert(offsetof(FGetOPFSettingsResult, AppID) == 0x000004, "Member 'FGetOPFSettingsResult::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GetUserItemVoteResult
-// 0x0010 (0x0010 - 0x0000)
-struct FGetUserItemVoteResult final
-{
-public:
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVotedUp;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVotedDown;                                        // 0x000A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVoteSkipped;                                      // 0x000B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180E[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGetUserItemVoteResult) == 0x000008, "Wrong alignment on FGetUserItemVoteResult");
-static_assert(sizeof(FGetUserItemVoteResult) == 0x000010, "Wrong size on FGetUserItemVoteResult");
-static_assert(offsetof(FGetUserItemVoteResult, PublishedFileID) == 0x000000, "Member 'FGetUserItemVoteResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FGetUserItemVoteResult, Result) == 0x000008, "Member 'FGetUserItemVoteResult::Result' has a wrong offset!");
-static_assert(offsetof(FGetUserItemVoteResult, bVotedUp) == 0x000009, "Member 'FGetUserItemVoteResult::bVotedUp' has a wrong offset!");
-static_assert(offsetof(FGetUserItemVoteResult, bVotedDown) == 0x00000A, "Member 'FGetUserItemVoteResult::bVotedDown' has a wrong offset!");
-static_assert(offsetof(FGetUserItemVoteResult, bVoteSkipped) == 0x00000B, "Member 'FGetUserItemVoteResult::bVoteSkipped' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamAppInstalled
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamAppInstalled final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamAppInstalled) == 0x000004, "Wrong alignment on FSteamAppInstalled");
-static_assert(sizeof(FSteamAppInstalled) == 0x000004, "Wrong size on FSteamAppInstalled");
-static_assert(offsetof(FSteamAppInstalled, AppID) == 0x000000, "Member 'FSteamAppInstalled::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSClientApprove
-// 0x0010 (0x0010 - 0x0000)
-struct FGSClientApprove final
-{
-public:
-	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               OwnerSteamID;                                      // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSClientApprove) == 0x000008, "Wrong alignment on FGSClientApprove");
-static_assert(sizeof(FGSClientApprove) == 0x000010, "Wrong size on FGSClientApprove");
-static_assert(offsetof(FGSClientApprove, SteamID) == 0x000000, "Member 'FGSClientApprove::SteamID' has a wrong offset!");
-static_assert(offsetof(FGSClientApprove, OwnerSteamID) == 0x000008, "Member 'FGSClientApprove::OwnerSteamID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSClientDeny
-// 0x0020 (0x0020 - 0x0000)
-struct FGSClientDeny final
-{
-public:
-	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamDenyReason                              DenyReason;                                        // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_180F[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 OptionalText;                                      // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSClientDeny) == 0x000008, "Wrong alignment on FGSClientDeny");
-static_assert(sizeof(FGSClientDeny) == 0x000020, "Wrong size on FGSClientDeny");
-static_assert(offsetof(FGSClientDeny, SteamID) == 0x000000, "Member 'FGSClientDeny::SteamID' has a wrong offset!");
-static_assert(offsetof(FGSClientDeny, DenyReason) == 0x000008, "Member 'FGSClientDeny::DenyReason' has a wrong offset!");
-static_assert(offsetof(FGSClientDeny, OptionalText) == 0x000010, "Member 'FGSClientDeny::OptionalText' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.IPCountry
-// 0x0001 (0x0001 - 0x0000)
-struct FIPCountry final
-{
-public:
-	uint8                                         Pad_1810[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FIPCountry) == 0x000001, "Wrong alignment on FIPCountry");
-static_assert(sizeof(FIPCountry) == 0x000001, "Wrong size on FIPCountry");
-
-// ScriptStruct SteamCorePro.GSClientGroupStatus
-// 0x0018 (0x0018 - 0x0000)
-struct FGSClientGroupStatus final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDGroup;                                      // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bMember;                                           // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOfficer;                                          // 0x0011(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1811[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGSClientGroupStatus) == 0x000008, "Wrong alignment on FGSClientGroupStatus");
-static_assert(sizeof(FGSClientGroupStatus) == 0x000018, "Wrong size on FGSClientGroupStatus");
-static_assert(offsetof(FGSClientGroupStatus, SteamIDUser) == 0x000000, "Member 'FGSClientGroupStatus::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FGSClientGroupStatus, SteamIDGroup) == 0x000008, "Member 'FGSClientGroupStatus::SteamIDGroup' has a wrong offset!");
-static_assert(offsetof(FGSClientGroupStatus, bMember) == 0x000010, "Member 'FGSClientGroupStatus::bMember' has a wrong offset!");
-static_assert(offsetof(FGSClientGroupStatus, bOfficer) == 0x000011, "Member 'FGSClientGroupStatus::bOfficer' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSPolicyResponse
-// 0x0001 (0x0001 - 0x0000)
-struct FGSPolicyResponse final
-{
-public:
-	bool                                          BSecure;                                           // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSPolicyResponse) == 0x000001, "Wrong alignment on FGSPolicyResponse");
-static_assert(sizeof(FGSPolicyResponse) == 0x000001, "Wrong size on FGSPolicyResponse");
-static_assert(offsetof(FGSPolicyResponse, BSecure) == 0x000000, "Member 'FGSPolicyResponse::BSecure' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSStatsUnloaded
-// 0x0008 (0x0008 - 0x0000)
-struct FGSStatsUnloaded final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSStatsUnloaded) == 0x000008, "Wrong alignment on FGSStatsUnloaded");
-static_assert(sizeof(FGSStatsUnloaded) == 0x000008, "Wrong size on FGSStatsUnloaded");
-static_assert(offsetof(FGSStatsUnloaded, SteamIDUser) == 0x000000, "Member 'FGSStatsUnloaded::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ValidateAuthTicketResponse
-// 0x0018 (0x0018 - 0x0000)
-struct FValidateAuthTicketResponse final
-{
-public:
-	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamAuthSessionResponse                     AuthSessionResponse;                               // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1812[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               OwnerSteamID;                                      // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FValidateAuthTicketResponse) == 0x000008, "Wrong alignment on FValidateAuthTicketResponse");
-static_assert(sizeof(FValidateAuthTicketResponse) == 0x000018, "Wrong size on FValidateAuthTicketResponse");
-static_assert(offsetof(FValidateAuthTicketResponse, SteamID) == 0x000000, "Member 'FValidateAuthTicketResponse::SteamID' has a wrong offset!");
-static_assert(offsetof(FValidateAuthTicketResponse, AuthSessionResponse) == 0x000008, "Member 'FValidateAuthTicketResponse::AuthSessionResponse' has a wrong offset!");
-static_assert(offsetof(FValidateAuthTicketResponse, OwnerSteamID) == 0x000010, "Member 'FValidateAuthTicketResponse::OwnerSteamID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.IPCFailure
-// 0x0001 (0x0001 - 0x0000)
-struct FIPCFailure final
-{
-public:
-	ESteamFailureType                             FailureType;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FIPCFailure) == 0x000001, "Wrong alignment on FIPCFailure");
-static_assert(sizeof(FIPCFailure) == 0x000001, "Wrong size on FIPCFailure");
-static_assert(offsetof(FIPCFailure, FailureType) == 0x000000, "Member 'FIPCFailure::FailureType' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.FriendsIsFollowing
-// 0x0018 (0x0018 - 0x0000)
-struct FFriendsIsFollowing final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1813[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bIsFollowing;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1814[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FFriendsIsFollowing) == 0x000008, "Wrong alignment on FFriendsIsFollowing");
-static_assert(sizeof(FFriendsIsFollowing) == 0x000018, "Wrong size on FFriendsIsFollowing");
-static_assert(offsetof(FFriendsIsFollowing, Result) == 0x000000, "Member 'FFriendsIsFollowing::Result' has a wrong offset!");
-static_assert(offsetof(FFriendsIsFollowing, SteamID) == 0x000008, "Member 'FFriendsIsFollowing::SteamID' has a wrong offset!");
-static_assert(offsetof(FFriendsIsFollowing, bIsFollowing) == 0x000010, "Member 'FFriendsIsFollowing::bIsFollowing' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ItemInstalled
-// 0x0010 (0x0010 - 0x0000)
-struct FItemInstalled final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1815[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FItemInstalled) == 0x000008, "Wrong alignment on FItemInstalled");
-static_assert(sizeof(FItemInstalled) == 0x000010, "Wrong size on FItemInstalled");
-static_assert(offsetof(FItemInstalled, AppID) == 0x000000, "Member 'FItemInstalled::AppID' has a wrong offset!");
-static_assert(offsetof(FItemInstalled, PublishedFileID) == 0x000008, "Member 'FItemInstalled::PublishedFileID' has a wrong offset!");
+static_assert(alignof(FInputDigitalActionData) == 0x000001, "Wrong alignment on FInputDigitalActionData");
+static_assert(sizeof(FInputDigitalActionData) == 0x000002, "Wrong size on FInputDigitalActionData");
+static_assert(offsetof(FInputDigitalActionData, bState) == 0x000000, "Member 'FInputDigitalActionData::bState' has a wrong offset!");
+static_assert(offsetof(FInputDigitalActionData, bActive) == 0x000001, "Member 'FInputDigitalActionData::bActive' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.InputMotionData
 // 0x0028 (0x0028 - 0x0000)
@@ -3055,1172 +4150,12 @@ static_assert(offsetof(FInputMotionData, RotVelX) == 0x00001C, "Member 'FInputMo
 static_assert(offsetof(FInputMotionData, RotVelY) == 0x000020, "Member 'FInputMotionData::RotVelY' has a wrong offset!");
 static_assert(offsetof(FInputMotionData, RotVelZ) == 0x000024, "Member 'FInputMotionData::RotVelZ' has a wrong offset!");
 
-// ScriptStruct SteamCorePro.JoinClanChatRoomCompletionResult
-// 0x0010 (0x0010 - 0x0000)
-struct FJoinClanChatRoomCompletionResult final
-{
-public:
-	struct FSteamID                               SteamIDClanChat;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1816[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FJoinClanChatRoomCompletionResult) == 0x000008, "Wrong alignment on FJoinClanChatRoomCompletionResult");
-static_assert(sizeof(FJoinClanChatRoomCompletionResult) == 0x000010, "Wrong size on FJoinClanChatRoomCompletionResult");
-static_assert(offsetof(FJoinClanChatRoomCompletionResult, SteamIDClanChat) == 0x000000, "Member 'FJoinClanChatRoomCompletionResult::SteamIDClanChat' has a wrong offset!");
-static_assert(offsetof(FJoinClanChatRoomCompletionResult, ChatRoomEnterResponse) == 0x000008, "Member 'FJoinClanChatRoomCompletionResult::ChatRoomEnterResponse' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.JoinLobbyData
-// 0x0010 (0x0010 - 0x0000)
-struct FJoinLobbyData final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1817[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FJoinLobbyData) == 0x000008, "Wrong alignment on FJoinLobbyData");
-static_assert(sizeof(FJoinLobbyData) == 0x000010, "Wrong size on FJoinLobbyData");
-static_assert(offsetof(FJoinLobbyData, SteamIDLobby) == 0x000000, "Member 'FJoinLobbyData::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FJoinLobbyData, bLocked) == 0x000008, "Member 'FJoinLobbyData::bLocked' has a wrong offset!");
-static_assert(offsetof(FJoinLobbyData, ChatRoomEnterResponse) == 0x000009, "Member 'FJoinLobbyData::ChatRoomEnterResponse' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.JoinPartyData
-// 0x0028 (0x0028 - 0x0000)
-struct FJoinPartyData final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1818[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPartyBeaconID                         BeaconID;                                          // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDBeaconOwner;                                // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 ConnectString;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FJoinPartyData) == 0x000008, "Wrong alignment on FJoinPartyData");
-static_assert(sizeof(FJoinPartyData) == 0x000028, "Wrong size on FJoinPartyData");
-static_assert(offsetof(FJoinPartyData, Result) == 0x000000, "Member 'FJoinPartyData::Result' has a wrong offset!");
-static_assert(offsetof(FJoinPartyData, BeaconID) == 0x000008, "Member 'FJoinPartyData::BeaconID' has a wrong offset!");
-static_assert(offsetof(FJoinPartyData, SteamIDBeaconOwner) == 0x000010, "Member 'FJoinPartyData::SteamIDBeaconOwner' has a wrong offset!");
-static_assert(offsetof(FJoinPartyData, ConnectString) == 0x000018, "Member 'FJoinPartyData::ConnectString' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LicensesUpdated
-// 0x0001 (0x0001 - 0x0000)
-struct FLicensesUpdated final
-{
-public:
-	uint8                                         Pad_1819[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLicensesUpdated) == 0x000001, "Wrong alignment on FLicensesUpdated");
-static_assert(sizeof(FLicensesUpdated) == 0x000001, "Wrong size on FLicensesUpdated");
-
-// ScriptStruct SteamCorePro.LobbyChatMsg
-// 0x0018 (0x0018 - 0x0000)
-struct FLobbyChatMsg final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamChatEntryType                           ChatEntryType;                                     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181A[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ChatID;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLobbyChatMsg) == 0x000008, "Wrong alignment on FLobbyChatMsg");
-static_assert(sizeof(FLobbyChatMsg) == 0x000018, "Wrong size on FLobbyChatMsg");
-static_assert(offsetof(FLobbyChatMsg, SteamIDLobby) == 0x000000, "Member 'FLobbyChatMsg::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyChatMsg, SteamIDUser) == 0x000008, "Member 'FLobbyChatMsg::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FLobbyChatMsg, ChatEntryType) == 0x000010, "Member 'FLobbyChatMsg::ChatEntryType' has a wrong offset!");
-static_assert(offsetof(FLobbyChatMsg, ChatID) == 0x000014, "Member 'FLobbyChatMsg::ChatID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyChatUpdate
-// 0x0028 (0x0028 - 0x0000)
-struct FLobbyChatUpdate final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDUserChanged;                                // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDMakingChange;                               // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<ESteamChatMemberStateChange>           ChatMemberStateChange;                             // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLobbyChatUpdate) == 0x000008, "Wrong alignment on FLobbyChatUpdate");
-static_assert(sizeof(FLobbyChatUpdate) == 0x000028, "Wrong size on FLobbyChatUpdate");
-static_assert(offsetof(FLobbyChatUpdate, SteamIDLobby) == 0x000000, "Member 'FLobbyChatUpdate::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyChatUpdate, SteamIDUserChanged) == 0x000008, "Member 'FLobbyChatUpdate::SteamIDUserChanged' has a wrong offset!");
-static_assert(offsetof(FLobbyChatUpdate, SteamIDMakingChange) == 0x000010, "Member 'FLobbyChatUpdate::SteamIDMakingChange' has a wrong offset!");
-static_assert(offsetof(FLobbyChatUpdate, ChatMemberStateChange) == 0x000018, "Member 'FLobbyChatUpdate::ChatMemberStateChange' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyDataUpdate
-// 0x0018 (0x0018 - 0x0000)
-struct FLobbyDataUpdate final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDMember;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bSuccess;                                          // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181B[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLobbyDataUpdate) == 0x000008, "Wrong alignment on FLobbyDataUpdate");
-static_assert(sizeof(FLobbyDataUpdate) == 0x000018, "Wrong size on FLobbyDataUpdate");
-static_assert(offsetof(FLobbyDataUpdate, SteamIDLobby) == 0x000000, "Member 'FLobbyDataUpdate::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyDataUpdate, SteamIDMember) == 0x000008, "Member 'FLobbyDataUpdate::SteamIDMember' has a wrong offset!");
-static_assert(offsetof(FLobbyDataUpdate, bSuccess) == 0x000010, "Member 'FLobbyDataUpdate::bSuccess' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyEnterData
-// 0x0010 (0x0010 - 0x0000)
-struct FLobbyEnterData final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bLocked;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamChatRoomEnterResponse                   ChatRoomEnterResponse;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181C[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLobbyEnterData) == 0x000008, "Wrong alignment on FLobbyEnterData");
-static_assert(sizeof(FLobbyEnterData) == 0x000010, "Wrong size on FLobbyEnterData");
-static_assert(offsetof(FLobbyEnterData, SteamIDLobby) == 0x000000, "Member 'FLobbyEnterData::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyEnterData, bLocked) == 0x000008, "Member 'FLobbyEnterData::bLocked' has a wrong offset!");
-static_assert(offsetof(FLobbyEnterData, ChatRoomEnterResponse) == 0x000009, "Member 'FLobbyEnterData::ChatRoomEnterResponse' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyGameCreated
-// 0x0028 (0x0028 - 0x0000)
-struct FLobbyGameCreated final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDGameServer;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 IP;                                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Port;                                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181D[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLobbyGameCreated) == 0x000008, "Wrong alignment on FLobbyGameCreated");
-static_assert(sizeof(FLobbyGameCreated) == 0x000028, "Wrong size on FLobbyGameCreated");
-static_assert(offsetof(FLobbyGameCreated, SteamIDLobby) == 0x000000, "Member 'FLobbyGameCreated::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyGameCreated, SteamIDGameServer) == 0x000008, "Member 'FLobbyGameCreated::SteamIDGameServer' has a wrong offset!");
-static_assert(offsetof(FLobbyGameCreated, IP) == 0x000010, "Member 'FLobbyGameCreated::IP' has a wrong offset!");
-static_assert(offsetof(FLobbyGameCreated, Port) == 0x000020, "Member 'FLobbyGameCreated::Port' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyInviteData
-// 0x0018 (0x0018 - 0x0000)
-struct FLobbyInviteData final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDLobby;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamGameID                           GameID;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLobbyInviteData) == 0x000008, "Wrong alignment on FLobbyInviteData");
-static_assert(sizeof(FLobbyInviteData) == 0x000018, "Wrong size on FLobbyInviteData");
-static_assert(offsetof(FLobbyInviteData, SteamIDUser) == 0x000000, "Member 'FLobbyInviteData::SteamIDUser' has a wrong offset!");
-static_assert(offsetof(FLobbyInviteData, SteamIDLobby) == 0x000008, "Member 'FLobbyInviteData::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyInviteData, GameID) == 0x000010, "Member 'FLobbyInviteData::GameID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyKickedData
-// 0x0018 (0x0018 - 0x0000)
-struct FLobbyKickedData final
-{
-public:
-	struct FSteamID                               SteamIDLobby;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDAdmin;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bKickedDueToDisconnect;                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLobbyKickedData) == 0x000008, "Wrong alignment on FLobbyKickedData");
-static_assert(sizeof(FLobbyKickedData) == 0x000018, "Wrong size on FLobbyKickedData");
-static_assert(offsetof(FLobbyKickedData, SteamIDLobby) == 0x000000, "Member 'FLobbyKickedData::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FLobbyKickedData, SteamIDAdmin) == 0x000008, "Member 'FLobbyKickedData::SteamIDAdmin' has a wrong offset!");
-static_assert(offsetof(FLobbyKickedData, bKickedDueToDisconnect) == 0x000010, "Member 'FLobbyKickedData::bKickedDueToDisconnect' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LowBatteryPower
-// 0x0004 (0x0004 - 0x0000)
-struct FLowBatteryPower final
-{
-public:
-	int32                                         MinutesBatteryLeft;                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLowBatteryPower) == 0x000004, "Wrong alignment on FLowBatteryPower");
-static_assert(sizeof(FLowBatteryPower) == 0x000004, "Wrong size on FLowBatteryPower");
-static_assert(offsetof(FLowBatteryPower, MinutesBatteryLeft) == 0x000000, "Member 'FLowBatteryPower::MinutesBatteryLeft' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.MicroTxnAuthorizationResponse
-// 0x0020 (0x0020 - 0x0000)
-struct FMicroTxnAuthorizationResponse final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 OrderID;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAuthorized;                                       // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1820[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FMicroTxnAuthorizationResponse) == 0x000008, "Wrong alignment on FMicroTxnAuthorizationResponse");
-static_assert(sizeof(FMicroTxnAuthorizationResponse) == 0x000020, "Wrong size on FMicroTxnAuthorizationResponse");
-static_assert(offsetof(FMicroTxnAuthorizationResponse, AppID) == 0x000000, "Member 'FMicroTxnAuthorizationResponse::AppID' has a wrong offset!");
-static_assert(offsetof(FMicroTxnAuthorizationResponse, OrderID) == 0x000008, "Member 'FMicroTxnAuthorizationResponse::OrderID' has a wrong offset!");
-static_assert(offsetof(FMicroTxnAuthorizationResponse, bAuthorized) == 0x000018, "Member 'FMicroTxnAuthorizationResponse::bAuthorized' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.P2PSessionRequest
-// 0x0008 (0x0008 - 0x0000)
-struct FP2PSessionRequest final
-{
-public:
-	struct FSteamID                               SteamIDRemote;                                     // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FP2PSessionRequest) == 0x000008, "Wrong alignment on FP2PSessionRequest");
-static_assert(sizeof(FP2PSessionRequest) == 0x000008, "Wrong size on FP2PSessionRequest");
-static_assert(offsetof(FP2PSessionRequest, SteamIDRemote) == 0x000000, "Member 'FP2PSessionRequest::SteamIDRemote' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.PersonaStateChange
-// 0x0018 (0x0018 - 0x0000)
-struct FPersonaStateChange final
-{
-public:
-	struct FSteamID                               SteamID;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<ESteamPersonaChange>                   Flags;                                             // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPersonaStateChange) == 0x000008, "Wrong alignment on FPersonaStateChange");
-static_assert(sizeof(FPersonaStateChange) == 0x000018, "Wrong size on FPersonaStateChange");
-static_assert(offsetof(FPersonaStateChange, SteamID) == 0x000000, "Member 'FPersonaStateChange::SteamID' has a wrong offset!");
-static_assert(offsetof(FPersonaStateChange, Flags) == 0x000008, "Member 'FPersonaStateChange::Flags' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.PlaybackStatusHasChanged
-// 0x0001 (0x0001 - 0x0000)
-struct FPlaybackStatusHasChanged final
-{
-public:
-	uint8                                         Pad_1821[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FPlaybackStatusHasChanged) == 0x000001, "Wrong alignment on FPlaybackStatusHasChanged");
-static_assert(sizeof(FPlaybackStatusHasChanged) == 0x000001, "Wrong size on FPlaybackStatusHasChanged");
-
-// ScriptStruct SteamCorePro.SteamUGCDetails
-// 0x00A8 (0x00A8 - 0x0000)
-struct FSteamUGCDetails final
-{
-public:
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamWorkshopFileType                        FileType;                                          // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1822[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CreatorAppID;                                      // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ConsumerAppID;                                     // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1823[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x0028(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDOwner;                                      // 0x0038(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         TimeCreated;                                       // 0x0040(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TimeUpdated;                                       // 0x0044(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TimeAddedToUserList;                               // 0x0048(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamRemoteStoragePublishedFileVisibility    Visibility;                                        // 0x004C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bBanned;                                           // 0x004D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAcceptedForUse;                                   // 0x004E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTagsTruncated;                                    // 0x004F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Tags;                                              // 0x0050(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FSteamUGCHandle                        File;                                              // 0x0060(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamUGCHandle                        PreviewFile;                                       // 0x0068(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	class FString                                 Filename;                                          // 0x0070(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FileSize;                                          // 0x0080(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PreviewFileSize;                                   // 0x0084(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 URL;                                               // 0x0088(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         VotesUp;                                           // 0x0098(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         VotesDown;                                         // 0x009C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Score;                                             // 0x00A0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumChildren;                                       // 0x00A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamUGCDetails) == 0x000008, "Wrong alignment on FSteamUGCDetails");
-static_assert(sizeof(FSteamUGCDetails) == 0x0000A8, "Wrong size on FSteamUGCDetails");
-static_assert(offsetof(FSteamUGCDetails, PublishedFileID) == 0x000000, "Member 'FSteamUGCDetails::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Result) == 0x000008, "Member 'FSteamUGCDetails::Result' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, FileType) == 0x000009, "Member 'FSteamUGCDetails::FileType' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, CreatorAppID) == 0x00000C, "Member 'FSteamUGCDetails::CreatorAppID' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, ConsumerAppID) == 0x000010, "Member 'FSteamUGCDetails::ConsumerAppID' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Title) == 0x000018, "Member 'FSteamUGCDetails::Title' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Description) == 0x000028, "Member 'FSteamUGCDetails::Description' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, SteamIDOwner) == 0x000038, "Member 'FSteamUGCDetails::SteamIDOwner' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, TimeCreated) == 0x000040, "Member 'FSteamUGCDetails::TimeCreated' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, TimeUpdated) == 0x000044, "Member 'FSteamUGCDetails::TimeUpdated' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, TimeAddedToUserList) == 0x000048, "Member 'FSteamUGCDetails::TimeAddedToUserList' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Visibility) == 0x00004C, "Member 'FSteamUGCDetails::Visibility' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, bBanned) == 0x00004D, "Member 'FSteamUGCDetails::bBanned' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, bAcceptedForUse) == 0x00004E, "Member 'FSteamUGCDetails::bAcceptedForUse' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, bTagsTruncated) == 0x00004F, "Member 'FSteamUGCDetails::bTagsTruncated' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Tags) == 0x000050, "Member 'FSteamUGCDetails::Tags' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, File) == 0x000060, "Member 'FSteamUGCDetails::File' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, PreviewFile) == 0x000068, "Member 'FSteamUGCDetails::PreviewFile' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Filename) == 0x000070, "Member 'FSteamUGCDetails::Filename' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, FileSize) == 0x000080, "Member 'FSteamUGCDetails::FileSize' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, PreviewFileSize) == 0x000084, "Member 'FSteamUGCDetails::PreviewFileSize' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, URL) == 0x000088, "Member 'FSteamUGCDetails::URL' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, VotesUp) == 0x000098, "Member 'FSteamUGCDetails::VotesUp' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, VotesDown) == 0x00009C, "Member 'FSteamUGCDetails::VotesDown' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, Score) == 0x0000A0, "Member 'FSteamUGCDetails::Score' has a wrong offset!");
-static_assert(offsetof(FSteamUGCDetails, NumChildren) == 0x0000A4, "Member 'FSteamUGCDetails::NumChildren' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStoragePublishedFileSubscribed
-// 0x0010 (0x0010 - 0x0000)
-struct FRemoteStoragePublishedFileSubscribed final
-{
-public:
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1824[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FRemoteStoragePublishedFileSubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileSubscribed");
-static_assert(sizeof(FRemoteStoragePublishedFileSubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileSubscribed");
-static_assert(offsetof(FRemoteStoragePublishedFileSubscribed, PublishedFileID) == 0x000000, "Member 'FRemoteStoragePublishedFileSubscribed::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FRemoteStoragePublishedFileSubscribed, AppID) == 0x000008, "Member 'FRemoteStoragePublishedFileSubscribed::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStoragePublishedFileUnsubscribed
-// 0x0010 (0x0010 - 0x0000)
-struct FRemoteStoragePublishedFileUnsubscribed final
-{
-public:
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AppID;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1825[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FRemoteStoragePublishedFileUnsubscribed) == 0x000008, "Wrong alignment on FRemoteStoragePublishedFileUnsubscribed");
-static_assert(sizeof(FRemoteStoragePublishedFileUnsubscribed) == 0x000010, "Wrong size on FRemoteStoragePublishedFileUnsubscribed");
-static_assert(offsetof(FRemoteStoragePublishedFileUnsubscribed, PublishedFileID) == 0x000000, "Member 'FRemoteStoragePublishedFileUnsubscribed::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FRemoteStoragePublishedFileUnsubscribed, AppID) == 0x000008, "Member 'FRemoteStoragePublishedFileUnsubscribed::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStorageSubscribePublishedFileResult
-// 0x0010 (0x0010 - 0x0000)
-struct FRemoteStorageSubscribePublishedFileResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1826[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoteStorageSubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageSubscribePublishedFileResult");
-static_assert(sizeof(FRemoteStorageSubscribePublishedFileResult) == 0x000010, "Wrong size on FRemoteStorageSubscribePublishedFileResult");
-static_assert(offsetof(FRemoteStorageSubscribePublishedFileResult, Result) == 0x000000, "Member 'FRemoteStorageSubscribePublishedFileResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageSubscribePublishedFileResult, PublishedFileID) == 0x000008, "Member 'FRemoteStorageSubscribePublishedFileResult::PublishedFileID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStorageUnsubscribePublishedFileResult
-// 0x0010 (0x0010 - 0x0000)
-struct FRemoteStorageUnsubscribePublishedFileResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1827[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoteStorageUnsubscribePublishedFileResult) == 0x000008, "Wrong alignment on FRemoteStorageUnsubscribePublishedFileResult");
-static_assert(sizeof(FRemoteStorageUnsubscribePublishedFileResult) == 0x000010, "Wrong size on FRemoteStorageUnsubscribePublishedFileResult");
-static_assert(offsetof(FRemoteStorageUnsubscribePublishedFileResult, Result) == 0x000000, "Member 'FRemoteStorageUnsubscribePublishedFileResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageUnsubscribePublishedFileResult, PublishedFileID) == 0x000008, "Member 'FRemoteStorageUnsubscribePublishedFileResult::PublishedFileID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoveAppDependencyResult
-// 0x0018 (0x0018 - 0x0000)
-struct FRemoveAppDependencyResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1828[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AppID;                                             // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1829[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FRemoveAppDependencyResult) == 0x000008, "Wrong alignment on FRemoveAppDependencyResult");
-static_assert(sizeof(FRemoveAppDependencyResult) == 0x000018, "Wrong size on FRemoveAppDependencyResult");
-static_assert(offsetof(FRemoveAppDependencyResult, Result) == 0x000000, "Member 'FRemoveAppDependencyResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoveAppDependencyResult, PublishedFileID) == 0x000008, "Member 'FRemoveAppDependencyResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FRemoveAppDependencyResult, AppID) == 0x000010, "Member 'FRemoveAppDependencyResult::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoveUGCDependencyResult
-// 0x0018 (0x0018 - 0x0000)
-struct FRemoveUGCDependencyResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPublishedFileID                       ChildPublishedFileId;                              // 0x0010(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoveUGCDependencyResult) == 0x000008, "Wrong alignment on FRemoveUGCDependencyResult");
-static_assert(sizeof(FRemoveUGCDependencyResult) == 0x000018, "Wrong size on FRemoveUGCDependencyResult");
-static_assert(offsetof(FRemoveUGCDependencyResult, Result) == 0x000000, "Member 'FRemoveUGCDependencyResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoveUGCDependencyResult, PublishedFileID) == 0x000008, "Member 'FRemoveUGCDependencyResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FRemoveUGCDependencyResult, ChildPublishedFileId) == 0x000010, "Member 'FRemoveUGCDependencyResult::ChildPublishedFileId' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RequestCurrentStatsData
-// 0x0018 (0x0018 - 0x0000)
-struct FRequestCurrentStatsData final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182B[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRequestCurrentStatsData) == 0x000008, "Wrong alignment on FRequestCurrentStatsData");
-static_assert(sizeof(FRequestCurrentStatsData) == 0x000018, "Wrong size on FRequestCurrentStatsData");
-static_assert(offsetof(FRequestCurrentStatsData, GameID) == 0x000000, "Member 'FRequestCurrentStatsData::GameID' has a wrong offset!");
-static_assert(offsetof(FRequestCurrentStatsData, Result) == 0x000008, "Member 'FRequestCurrentStatsData::Result' has a wrong offset!");
-static_assert(offsetof(FRequestCurrentStatsData, SteamIDUser) == 0x000010, "Member 'FRequestCurrentStatsData::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamInventoryEligiblePromoItemDefIDs
-// 0x0018 (0x0018 - 0x0000)
-struct FSteamInventoryEligiblePromoItemDefIDs final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         NumEligiblePromoItemDefs;                          // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182D[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000008, "Wrong alignment on FSteamInventoryEligiblePromoItemDefIDs");
-static_assert(sizeof(FSteamInventoryEligiblePromoItemDefIDs) == 0x000018, "Wrong size on FSteamInventoryEligiblePromoItemDefIDs");
-static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, Result) == 0x000000, "Member 'FSteamInventoryEligiblePromoItemDefIDs::Result' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, SteamID) == 0x000008, "Member 'FSteamInventoryEligiblePromoItemDefIDs::SteamID' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, NumEligiblePromoItemDefs) == 0x000010, "Member 'FSteamInventoryEligiblePromoItemDefIDs::NumEligiblePromoItemDefs' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryEligiblePromoItemDefIDs, bCachedData) == 0x000014, "Member 'FSteamInventoryEligiblePromoItemDefIDs::bCachedData' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.EncryptedAppTicketResponse
-// 0x0001 (0x0001 - 0x0000)
-struct FEncryptedAppTicketResponse final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FEncryptedAppTicketResponse) == 0x000001, "Wrong alignment on FEncryptedAppTicketResponse");
-static_assert(sizeof(FEncryptedAppTicketResponse) == 0x000001, "Wrong size on FEncryptedAppTicketResponse");
-static_assert(offsetof(FEncryptedAppTicketResponse, Result) == 0x000000, "Member 'FEncryptedAppTicketResponse::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.InputAnalogActionData
-// 0x0010 (0x0010 - 0x0000)
-struct FInputAnalogActionData final
-{
-public:
-	ESteamCoreProInputSourceMode                  Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182E[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         X;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Y;                                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bActive;                                           // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182F[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FInputAnalogActionData) == 0x000004, "Wrong alignment on FInputAnalogActionData");
-static_assert(sizeof(FInputAnalogActionData) == 0x000010, "Wrong size on FInputAnalogActionData");
-static_assert(offsetof(FInputAnalogActionData, Mode) == 0x000000, "Member 'FInputAnalogActionData::Mode' has a wrong offset!");
-static_assert(offsetof(FInputAnalogActionData, X) == 0x000004, "Member 'FInputAnalogActionData::X' has a wrong offset!");
-static_assert(offsetof(FInputAnalogActionData, Y) == 0x000008, "Member 'FInputAnalogActionData::Y' has a wrong offset!");
-static_assert(offsetof(FInputAnalogActionData, bActive) == 0x00000C, "Member 'FInputAnalogActionData::bActive' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.EquippedProfileItems
-// 0x0018 (0x0018 - 0x0000)
-struct FEquippedProfileItems final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1830[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamID;                                           // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bHasAnimatedAvatar;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasAvatarFrame;                                   // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasProfileModifier;                               // 0x0012(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasProfileBackground;                             // 0x0013(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasMiniProfileBackground;                         // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1831[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FEquippedProfileItems) == 0x000008, "Wrong alignment on FEquippedProfileItems");
-static_assert(sizeof(FEquippedProfileItems) == 0x000018, "Wrong size on FEquippedProfileItems");
-static_assert(offsetof(FEquippedProfileItems, Result) == 0x000000, "Member 'FEquippedProfileItems::Result' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, SteamID) == 0x000008, "Member 'FEquippedProfileItems::SteamID' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, bHasAnimatedAvatar) == 0x000010, "Member 'FEquippedProfileItems::bHasAnimatedAvatar' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, bHasAvatarFrame) == 0x000011, "Member 'FEquippedProfileItems::bHasAvatarFrame' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, bHasProfileModifier) == 0x000012, "Member 'FEquippedProfileItems::bHasProfileModifier' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, bHasProfileBackground) == 0x000013, "Member 'FEquippedProfileItems::bHasProfileBackground' has a wrong offset!");
-static_assert(offsetof(FEquippedProfileItems, bHasMiniProfileBackground) == 0x000014, "Member 'FEquippedProfileItems::bHasMiniProfileBackground' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GlobalAchievementPercentagesReady
-// 0x0010 (0x0010 - 0x0000)
-struct FGlobalAchievementPercentagesReady final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1832[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGlobalAchievementPercentagesReady) == 0x000008, "Wrong alignment on FGlobalAchievementPercentagesReady");
-static_assert(sizeof(FGlobalAchievementPercentagesReady) == 0x000010, "Wrong size on FGlobalAchievementPercentagesReady");
-static_assert(offsetof(FGlobalAchievementPercentagesReady, GameID) == 0x000000, "Member 'FGlobalAchievementPercentagesReady::GameID' has a wrong offset!");
-static_assert(offsetof(FGlobalAchievementPercentagesReady, Result) == 0x000008, "Member 'FGlobalAchievementPercentagesReady::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GlobalStatsReceived
-// 0x0010 (0x0010 - 0x0000)
-struct FGlobalStatsReceived final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1833[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGlobalStatsReceived) == 0x000008, "Wrong alignment on FGlobalStatsReceived");
-static_assert(sizeof(FGlobalStatsReceived) == 0x000010, "Wrong size on FGlobalStatsReceived");
-static_assert(offsetof(FGlobalStatsReceived, GameID) == 0x000000, "Member 'FGlobalStatsReceived::GameID' has a wrong offset!");
-static_assert(offsetof(FGlobalStatsReceived, Result) == 0x000008, "Member 'FGlobalStatsReceived::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LobbyMatchList
-// 0x0004 (0x0004 - 0x0000)
-struct FLobbyMatchList final
-{
-public:
-	int32                                         LobbiesMatching;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLobbyMatchList) == 0x000004, "Wrong alignment on FLobbyMatchList");
-static_assert(sizeof(FLobbyMatchList) == 0x000004, "Wrong size on FLobbyMatchList");
-static_assert(offsetof(FLobbyMatchList, LobbiesMatching) == 0x000000, "Member 'FLobbyMatchList::LobbiesMatching' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RequestUserStatsData
-// 0x0018 (0x0018 - 0x0000)
-struct FRequestUserStatsData final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1834[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDUser;                                       // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRequestUserStatsData) == 0x000008, "Wrong alignment on FRequestUserStatsData");
-static_assert(sizeof(FRequestUserStatsData) == 0x000018, "Wrong size on FRequestUserStatsData");
-static_assert(offsetof(FRequestUserStatsData, GameID) == 0x000000, "Member 'FRequestUserStatsData::GameID' has a wrong offset!");
-static_assert(offsetof(FRequestUserStatsData, Result) == 0x000008, "Member 'FRequestUserStatsData::Result' has a wrong offset!");
-static_assert(offsetof(FRequestUserStatsData, SteamIDUser) == 0x000010, "Member 'FRequestUserStatsData::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ReservationNotificationData
-// 0x0010 (0x0010 - 0x0000)
-struct FReservationNotificationData final
-{
-public:
-	struct FPartyBeaconID                         BeaconID;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDJoiner;                                     // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FReservationNotificationData) == 0x000008, "Wrong alignment on FReservationNotificationData");
-static_assert(sizeof(FReservationNotificationData) == 0x000010, "Wrong size on FReservationNotificationData");
-static_assert(offsetof(FReservationNotificationData, BeaconID) == 0x000000, "Member 'FReservationNotificationData::BeaconID' has a wrong offset!");
-static_assert(offsetof(FReservationNotificationData, SteamIDJoiner) == 0x000008, "Member 'FReservationNotificationData::SteamIDJoiner' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ScreenshotHandle
-// 0x0004 (0x0004 - 0x0000)
-struct alignas(0x04) FScreenshotHandle final
-{
-public:
-	uint8                                         Pad_1835[0x4];                                     // 0x0000(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FScreenshotHandle) == 0x000004, "Wrong alignment on FScreenshotHandle");
-static_assert(sizeof(FScreenshotHandle) == 0x000004, "Wrong size on FScreenshotHandle");
-
-// ScriptStruct SteamCorePro.ScreenshotReady
-// 0x0008 (0x0008 - 0x0000)
-struct FScreenshotReady final
-{
-public:
-	struct FScreenshotHandle                      Handle;                                            // 0x0000(0x0004)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1836[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FScreenshotReady) == 0x000004, "Wrong alignment on FScreenshotReady");
-static_assert(sizeof(FScreenshotReady) == 0x000008, "Wrong size on FScreenshotReady");
-static_assert(offsetof(FScreenshotReady, Handle) == 0x000000, "Member 'FScreenshotReady::Handle' has a wrong offset!");
-static_assert(offsetof(FScreenshotReady, Result) == 0x000004, "Member 'FScreenshotReady::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ScreenshotRequested
-// 0x0001 (0x0001 - 0x0000)
-struct FScreenshotRequested final
-{
-public:
-	uint8                                         Pad_1837[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FScreenshotRequested) == 0x000001, "Wrong alignment on FScreenshotRequested");
-static_assert(sizeof(FScreenshotRequested) == 0x000001, "Wrong size on FScreenshotRequested");
-
-// ScriptStruct SteamCorePro.UGCQueryHandle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FUGCQueryHandle final
-{
-public:
-	uint8                                         Pad_1838[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUGCQueryHandle) == 0x000008, "Wrong alignment on FUGCQueryHandle");
-static_assert(sizeof(FUGCQueryHandle) == 0x000008, "Wrong size on FUGCQueryHandle");
-
-// ScriptStruct SteamCorePro.SteamUGCQueryCompleted
-// 0x0018 (0x0018 - 0x0000)
-struct FSteamUGCQueryCompleted final
-{
-public:
-	struct FUGCQueryHandle                        Handle;                                            // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1839[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NumResultsReturned;                                // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalMatchingResults;                              // 0x0010(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCachedData;                                       // 0x0014(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183A[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamUGCQueryCompleted) == 0x000008, "Wrong alignment on FSteamUGCQueryCompleted");
-static_assert(sizeof(FSteamUGCQueryCompleted) == 0x000018, "Wrong size on FSteamUGCQueryCompleted");
-static_assert(offsetof(FSteamUGCQueryCompleted, Handle) == 0x000000, "Member 'FSteamUGCQueryCompleted::Handle' has a wrong offset!");
-static_assert(offsetof(FSteamUGCQueryCompleted, Result) == 0x000008, "Member 'FSteamUGCQueryCompleted::Result' has a wrong offset!");
-static_assert(offsetof(FSteamUGCQueryCompleted, NumResultsReturned) == 0x00000C, "Member 'FSteamUGCQueryCompleted::NumResultsReturned' has a wrong offset!");
-static_assert(offsetof(FSteamUGCQueryCompleted, TotalMatchingResults) == 0x000010, "Member 'FSteamUGCQueryCompleted::TotalMatchingResults' has a wrong offset!");
-static_assert(offsetof(FSteamUGCQueryCompleted, bCachedData) == 0x000014, "Member 'FSteamUGCQueryCompleted::bCachedData' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSStatsReceived
-// 0x0010 (0x0010 - 0x0000)
-struct FGSStatsReceived final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183B[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSStatsReceived) == 0x000008, "Wrong alignment on FGSStatsReceived");
-static_assert(sizeof(FGSStatsReceived) == 0x000010, "Wrong size on FGSStatsReceived");
-static_assert(offsetof(FGSStatsReceived, Result) == 0x000000, "Member 'FGSStatsReceived::Result' has a wrong offset!");
-static_assert(offsetof(FGSStatsReceived, SteamIDUser) == 0x000008, "Member 'FGSStatsReceived::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GameServerRule
-// 0x0020 (0x0020 - 0x0000)
-struct FGameServerRule final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Value;                                             // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGameServerRule) == 0x000008, "Wrong alignment on FGameServerRule");
-static_assert(sizeof(FGameServerRule) == 0x000020, "Wrong size on FGameServerRule");
-static_assert(offsetof(FGameServerRule, Name) == 0x000000, "Member 'FGameServerRule::Name' has a wrong offset!");
-static_assert(offsetof(FGameServerRule, Value) == 0x000010, "Member 'FGameServerRule::Value' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.GSStatsStored
-// 0x0010 (0x0010 - 0x0000)
-struct FGSStatsStored final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDUser;                                       // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGSStatsStored) == 0x000008, "Wrong alignment on FGSStatsStored");
-static_assert(sizeof(FGSStatsStored) == 0x000010, "Wrong size on FGSStatsStored");
-static_assert(offsetof(FGSStatsStored, Result) == 0x000000, "Member 'FGSStatsStored::Result' has a wrong offset!");
-static_assert(offsetof(FGSStatsStored, SteamIDUser) == 0x000008, "Member 'FGSStatsStored::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SetPersonaNameResponse
-// 0x0003 (0x0003 - 0x0000)
-struct FSetPersonaNameResponse final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSuccess;                                          // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLocalSuccess;                                     // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSetPersonaNameResponse) == 0x000001, "Wrong alignment on FSetPersonaNameResponse");
-static_assert(sizeof(FSetPersonaNameResponse) == 0x000003, "Wrong size on FSetPersonaNameResponse");
-static_assert(offsetof(FSetPersonaNameResponse, Result) == 0x000000, "Member 'FSetPersonaNameResponse::Result' has a wrong offset!");
-static_assert(offsetof(FSetPersonaNameResponse, bSuccess) == 0x000001, "Member 'FSetPersonaNameResponse::bSuccess' has a wrong offset!");
-static_assert(offsetof(FSetPersonaNameResponse, bLocalSuccess) == 0x000002, "Member 'FSetPersonaNameResponse::bLocalSuccess' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SetUserItemVoteResult
-// 0x0010 (0x0010 - 0x0000)
-struct FSetUserItemVoteResult final
-{
-public:
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVoteUp;                                           // 0x0009(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183D[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSetUserItemVoteResult) == 0x000008, "Wrong alignment on FSetUserItemVoteResult");
-static_assert(sizeof(FSetUserItemVoteResult) == 0x000010, "Wrong size on FSetUserItemVoteResult");
-static_assert(offsetof(FSetUserItemVoteResult, PublishedFileID) == 0x000000, "Member 'FSetUserItemVoteResult::PublishedFileID' has a wrong offset!");
-static_assert(offsetof(FSetUserItemVoteResult, Result) == 0x000008, "Member 'FSetUserItemVoteResult::Result' has a wrong offset!");
-static_assert(offsetof(FSetUserItemVoteResult, bVoteUp) == 0x000009, "Member 'FSetUserItemVoteResult::bVoteUp' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.StartPlaytimeTrackingResult
-// 0x0001 (0x0001 - 0x0000)
-struct FStartPlaytimeTrackingResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FStartPlaytimeTrackingResult) == 0x000001, "Wrong alignment on FStartPlaytimeTrackingResult");
-static_assert(sizeof(FStartPlaytimeTrackingResult) == 0x000001, "Wrong size on FStartPlaytimeTrackingResult");
-static_assert(offsetof(FStartPlaytimeTrackingResult, Result) == 0x000000, "Member 'FStartPlaytimeTrackingResult::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamAppUninstalled
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamAppUninstalled final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamAppUninstalled) == 0x000004, "Wrong alignment on FSteamAppUninstalled");
-static_assert(sizeof(FSteamAppUninstalled) == 0x000004, "Wrong size on FSteamAppUninstalled");
-static_assert(offsetof(FSteamAppUninstalled, AppID) == 0x000000, "Member 'FSteamAppUninstalled::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamInventoryResult
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamInventoryResult final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-static_assert(alignof(FSteamInventoryResult) == 0x000004, "Wrong alignment on FSteamInventoryResult");
-static_assert(sizeof(FSteamInventoryResult) == 0x000004, "Wrong size on FSteamInventoryResult");
-static_assert(offsetof(FSteamInventoryResult, Value) == 0x000000, "Member 'FSteamInventoryResult::Value' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamInventoryFullUpdate
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamInventoryFullUpdate final
-{
-public:
-	struct FSteamInventoryResult                  Handle;                                            // 0x0000(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamInventoryFullUpdate) == 0x000004, "Wrong alignment on FSteamInventoryFullUpdate");
-static_assert(sizeof(FSteamInventoryFullUpdate) == 0x000004, "Wrong size on FSteamInventoryFullUpdate");
-static_assert(offsetof(FSteamInventoryFullUpdate, Handle) == 0x000000, "Member 'FSteamInventoryFullUpdate::Handle' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamFriendsGroupID
-// 0x0002 (0x0002 - 0x0000)
-struct alignas(0x02) FSteamFriendsGroupID final
-{
-public:
-	uint8                                         Pad_183E[0x2];                                     // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamFriendsGroupID) == 0x000002, "Wrong alignment on FSteamFriendsGroupID");
-static_assert(sizeof(FSteamFriendsGroupID) == 0x000002, "Wrong size on FSteamFriendsGroupID");
-
-// ScriptStruct SteamCorePro.SteamInventoryRequestPricesResult
-// 0x0018 (0x0018 - 0x0000)
-struct FSteamInventoryRequestPricesResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Currency;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamInventoryRequestPricesResult) == 0x000008, "Wrong alignment on FSteamInventoryRequestPricesResult");
-static_assert(sizeof(FSteamInventoryRequestPricesResult) == 0x000018, "Wrong size on FSteamInventoryRequestPricesResult");
-static_assert(offsetof(FSteamInventoryRequestPricesResult, Result) == 0x000000, "Member 'FSteamInventoryRequestPricesResult::Result' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryRequestPricesResult, Currency) == 0x000008, "Member 'FSteamInventoryRequestPricesResult::Currency' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamInventoryResultReady
-// 0x0008 (0x0008 - 0x0000)
-struct FSteamInventoryResultReady final
-{
-public:
-	struct FSteamInventoryResult                  Handle;                                            // 0x0000(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0004(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1840[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamInventoryResultReady) == 0x000004, "Wrong alignment on FSteamInventoryResultReady");
-static_assert(sizeof(FSteamInventoryResultReady) == 0x000008, "Wrong size on FSteamInventoryResultReady");
-static_assert(offsetof(FSteamInventoryResultReady, Handle) == 0x000000, "Member 'FSteamInventoryResultReady::Handle' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryResultReady, Result) == 0x000004, "Member 'FSteamInventoryResultReady::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamInventoryStartPurchaseResult
-// 0x0028 (0x0028 - 0x0000)
-struct FSteamInventoryStartPurchaseResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1841[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 OrderID;                                           // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 TransactionId;                                     // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamInventoryStartPurchaseResult) == 0x000008, "Wrong alignment on FSteamInventoryStartPurchaseResult");
-static_assert(sizeof(FSteamInventoryStartPurchaseResult) == 0x000028, "Wrong size on FSteamInventoryStartPurchaseResult");
-static_assert(offsetof(FSteamInventoryStartPurchaseResult, Result) == 0x000000, "Member 'FSteamInventoryStartPurchaseResult::Result' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryStartPurchaseResult, OrderID) == 0x000008, "Member 'FSteamInventoryStartPurchaseResult::OrderID' has a wrong offset!");
-static_assert(offsetof(FSteamInventoryStartPurchaseResult, TransactionId) == 0x000018, "Member 'FSteamInventoryStartPurchaseResult::TransactionId' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamRemotePlaySessionConnected
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamRemotePlaySessionConnected final
-{
-public:
-	int32                                         SessionID;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamRemotePlaySessionConnected) == 0x000004, "Wrong alignment on FSteamRemotePlaySessionConnected");
-static_assert(sizeof(FSteamRemotePlaySessionConnected) == 0x000004, "Wrong size on FSteamRemotePlaySessionConnected");
-static_assert(offsetof(FSteamRemotePlaySessionConnected, SessionID) == 0x000000, "Member 'FSteamRemotePlaySessionConnected::SessionID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamRemotePlaySessionDisconnected
-// 0x0004 (0x0004 - 0x0000)
-struct FSteamRemotePlaySessionDisconnected final
-{
-public:
-	int32                                         SessionID;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamRemotePlaySessionDisconnected) == 0x000004, "Wrong alignment on FSteamRemotePlaySessionDisconnected");
-static_assert(sizeof(FSteamRemotePlaySessionDisconnected) == 0x000004, "Wrong size on FSteamRemotePlaySessionDisconnected");
-static_assert(offsetof(FSteamRemotePlaySessionDisconnected, SessionID) == 0x000000, "Member 'FSteamRemotePlaySessionDisconnected::SessionID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamServerConnectFailure
-// 0x0002 (0x0002 - 0x0000)
-struct FSteamServerConnectFailure final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStillRetrying;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamServerConnectFailure) == 0x000001, "Wrong alignment on FSteamServerConnectFailure");
-static_assert(sizeof(FSteamServerConnectFailure) == 0x000002, "Wrong size on FSteamServerConnectFailure");
-static_assert(offsetof(FSteamServerConnectFailure, Result) == 0x000000, "Member 'FSteamServerConnectFailure::Result' has a wrong offset!");
-static_assert(offsetof(FSteamServerConnectFailure, bStillRetrying) == 0x000001, "Member 'FSteamServerConnectFailure::bStillRetrying' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamServersConnected
-// 0x0001 (0x0001 - 0x0000)
-struct FSteamServersConnected final
-{
-public:
-	uint8                                         Pad_1842[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamServersConnected) == 0x000001, "Wrong alignment on FSteamServersConnected");
-static_assert(sizeof(FSteamServersConnected) == 0x000001, "Wrong size on FSteamServersConnected");
-
-// ScriptStruct SteamCorePro.SteamServersDisconnected
-// 0x0001 (0x0001 - 0x0000)
-struct FSteamServersDisconnected final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSteamServersDisconnected) == 0x000001, "Wrong alignment on FSteamServersDisconnected");
-static_assert(sizeof(FSteamServersDisconnected) == 0x000001, "Wrong size on FSteamServersDisconnected");
-static_assert(offsetof(FSteamServersDisconnected, Result) == 0x000000, "Member 'FSteamServersDisconnected::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SteamShutdown
-// 0x0001 (0x0001 - 0x0000)
-struct FSteamShutdown final
-{
-public:
-	uint8                                         Pad_1843[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSteamShutdown) == 0x000001, "Wrong alignment on FSteamShutdown");
-static_assert(sizeof(FSteamShutdown) == 0x000001, "Wrong size on FSteamShutdown");
-
-// ScriptStruct SteamCorePro.StopPlaytimeTrackingResult
-// 0x0001 (0x0001 - 0x0000)
-struct FStopPlaytimeTrackingResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FStopPlaytimeTrackingResult) == 0x000001, "Wrong alignment on FStopPlaytimeTrackingResult");
-static_assert(sizeof(FStopPlaytimeTrackingResult) == 0x000001, "Wrong size on FStopPlaytimeTrackingResult");
-static_assert(offsetof(FStopPlaytimeTrackingResult, Result) == 0x000000, "Member 'FStopPlaytimeTrackingResult::Result' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.StoreAuthURLResponse
-// 0x0010 (0x0010 - 0x0000)
-struct FStoreAuthURLResponse final
-{
-public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FStoreAuthURLResponse) == 0x000008, "Wrong alignment on FStoreAuthURLResponse");
-static_assert(sizeof(FStoreAuthURLResponse) == 0x000010, "Wrong size on FStoreAuthURLResponse");
-static_assert(offsetof(FStoreAuthURLResponse, URL) == 0x000000, "Member 'FStoreAuthURLResponse::URL' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SubmitItemUpdateResult
-// 0x0010 (0x0010 - 0x0000)
-struct FSubmitItemUpdateResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUserNeedsToAcceptWorkshopLegalAgreement;          // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1844[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPublishedFileID                       PublishedFileID;                                   // 0x0008(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSubmitItemUpdateResult) == 0x000008, "Wrong alignment on FSubmitItemUpdateResult");
-static_assert(sizeof(FSubmitItemUpdateResult) == 0x000010, "Wrong size on FSubmitItemUpdateResult");
-static_assert(offsetof(FSubmitItemUpdateResult, Result) == 0x000000, "Member 'FSubmitItemUpdateResult::Result' has a wrong offset!");
-static_assert(offsetof(FSubmitItemUpdateResult, bUserNeedsToAcceptWorkshopLegalAgreement) == 0x000001, "Member 'FSubmitItemUpdateResult::bUserNeedsToAcceptWorkshopLegalAgreement' has a wrong offset!");
-static_assert(offsetof(FSubmitItemUpdateResult, PublishedFileID) == 0x000008, "Member 'FSubmitItemUpdateResult::PublishedFileID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RemoteStorageDownloadUGCResult
-// 0x0030 (0x0030 - 0x0000)
-struct FRemoteStorageDownloadUGCResult final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1845[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamUGCHandle                        FileHandle;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AppID;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SizeInBytes;                                       // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Filename;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDOwner;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRemoteStorageDownloadUGCResult) == 0x000008, "Wrong alignment on FRemoteStorageDownloadUGCResult");
-static_assert(sizeof(FRemoteStorageDownloadUGCResult) == 0x000030, "Wrong size on FRemoteStorageDownloadUGCResult");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, Result) == 0x000000, "Member 'FRemoteStorageDownloadUGCResult::Result' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, FileHandle) == 0x000008, "Member 'FRemoteStorageDownloadUGCResult::FileHandle' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, AppID) == 0x000010, "Member 'FRemoteStorageDownloadUGCResult::AppID' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, SizeInBytes) == 0x000014, "Member 'FRemoteStorageDownloadUGCResult::SizeInBytes' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, Filename) == 0x000018, "Member 'FRemoteStorageDownloadUGCResult::Filename' has a wrong offset!");
-static_assert(offsetof(FRemoteStorageDownloadUGCResult, SteamIDOwner) == 0x000028, "Member 'FRemoteStorageDownloadUGCResult::SteamIDOwner' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.LeaderboardScoreUploaded
-// 0x0020 (0x0020 - 0x0000)
-struct FLeaderboardScoreUploaded final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1846[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamLeaderboard                      SteamLeaderboard;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Score;                                             // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bScoreChanged;                                     // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1847[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         GlobalRankNew;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GlobalRankPrevious;                                // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLeaderboardScoreUploaded) == 0x000008, "Wrong alignment on FLeaderboardScoreUploaded");
-static_assert(sizeof(FLeaderboardScoreUploaded) == 0x000020, "Wrong size on FLeaderboardScoreUploaded");
-static_assert(offsetof(FLeaderboardScoreUploaded, bSuccess) == 0x000000, "Member 'FLeaderboardScoreUploaded::bSuccess' has a wrong offset!");
-static_assert(offsetof(FLeaderboardScoreUploaded, SteamLeaderboard) == 0x000008, "Member 'FLeaderboardScoreUploaded::SteamLeaderboard' has a wrong offset!");
-static_assert(offsetof(FLeaderboardScoreUploaded, Score) == 0x000010, "Member 'FLeaderboardScoreUploaded::Score' has a wrong offset!");
-static_assert(offsetof(FLeaderboardScoreUploaded, bScoreChanged) == 0x000014, "Member 'FLeaderboardScoreUploaded::bScoreChanged' has a wrong offset!");
-static_assert(offsetof(FLeaderboardScoreUploaded, GlobalRankNew) == 0x000018, "Member 'FLeaderboardScoreUploaded::GlobalRankNew' has a wrong offset!");
-static_assert(offsetof(FLeaderboardScoreUploaded, GlobalRankPrevious) == 0x00001C, "Member 'FLeaderboardScoreUploaded::GlobalRankPrevious' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.UserAchievementStored
-// 0x0028 (0x0028 - 0x0000)
-struct FUserAchievementStored final
-{
-public:
-	struct FSteamGameID                           GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bGroupAchievement;                                 // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1848[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AchievementName;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurrentProgress;                                   // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxProgress;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUserAchievementStored) == 0x000008, "Wrong alignment on FUserAchievementStored");
-static_assert(sizeof(FUserAchievementStored) == 0x000028, "Wrong size on FUserAchievementStored");
-static_assert(offsetof(FUserAchievementStored, GameID) == 0x000000, "Member 'FUserAchievementStored::GameID' has a wrong offset!");
-static_assert(offsetof(FUserAchievementStored, bGroupAchievement) == 0x000008, "Member 'FUserAchievementStored::bGroupAchievement' has a wrong offset!");
-static_assert(offsetof(FUserAchievementStored, AchievementName) == 0x000010, "Member 'FUserAchievementStored::AchievementName' has a wrong offset!");
-static_assert(offsetof(FUserAchievementStored, CurrentProgress) == 0x000020, "Member 'FUserAchievementStored::CurrentProgress' has a wrong offset!");
-static_assert(offsetof(FUserAchievementStored, MaxProgress) == 0x000024, "Member 'FUserAchievementStored::MaxProgress' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.UserStatsReceived
-// 0x0018 (0x0018 - 0x0000)
-struct FUserStatsReceived final
-{
-public:
-	struct FSteamID                               GameID;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1849[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamID;                                           // 0x0010(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUserStatsReceived) == 0x000008, "Wrong alignment on FUserStatsReceived");
-static_assert(sizeof(FUserStatsReceived) == 0x000018, "Wrong size on FUserStatsReceived");
-static_assert(offsetof(FUserStatsReceived, GameID) == 0x000000, "Member 'FUserStatsReceived::GameID' has a wrong offset!");
-static_assert(offsetof(FUserStatsReceived, Result) == 0x000008, "Member 'FUserStatsReceived::Result' has a wrong offset!");
-static_assert(offsetof(FUserStatsReceived, SteamID) == 0x000010, "Member 'FUserStatsReceived::SteamID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.UserStatsUnloaded
-// 0x0008 (0x0008 - 0x0000)
-struct FUserStatsUnloaded final
-{
-public:
-	struct FSteamID                               SteamIDUser;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUserStatsUnloaded) == 0x000008, "Wrong alignment on FUserStatsUnloaded");
-static_assert(sizeof(FUserStatsUnloaded) == 0x000008, "Wrong size on FUserStatsUnloaded");
-static_assert(offsetof(FUserStatsUnloaded, SteamIDUser) == 0x000000, "Member 'FUserStatsUnloaded::SteamIDUser' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.UserSubscribedItemsListChanged
-// 0x0004 (0x0004 - 0x0000)
-struct FUserSubscribedItemsListChanged final
-{
-public:
-	int32                                         AppID;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUserSubscribedItemsListChanged) == 0x000004, "Wrong alignment on FUserSubscribedItemsListChanged");
-static_assert(sizeof(FUserSubscribedItemsListChanged) == 0x000004, "Wrong size on FUserSubscribedItemsListChanged");
-static_assert(offsetof(FUserSubscribedItemsListChanged, AppID) == 0x000000, "Member 'FUserSubscribedItemsListChanged::AppID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.VolumeHasChanged
-// 0x0004 (0x0004 - 0x0000)
-struct FVolumeHasChanged final
-{
-public:
-	float                                         Volume;                                            // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FVolumeHasChanged) == 0x000004, "Wrong alignment on FVolumeHasChanged");
-static_assert(sizeof(FVolumeHasChanged) == 0x000004, "Wrong size on FVolumeHasChanged");
-static_assert(offsetof(FVolumeHasChanged, Volume) == 0x000000, "Member 'FVolumeHasChanged::Volume' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RequestPlayersForGameFinalResultCallback
-// 0x0028 (0x0028 - 0x0000)
-struct FRequestPlayersForGameFinalResultCallback final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UniqueGameID;                                      // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRequestPlayersForGameFinalResultCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameFinalResultCallback");
-static_assert(sizeof(FRequestPlayersForGameFinalResultCallback) == 0x000028, "Wrong size on FRequestPlayersForGameFinalResultCallback");
-static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameFinalResultCallback::Result' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameFinalResultCallback::SearchID' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameFinalResultCallback, UniqueGameID) == 0x000018, "Member 'FRequestPlayersForGameFinalResultCallback::UniqueGameID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RequestPlayersForGameProgressCallback
-// 0x0018 (0x0018 - 0x0000)
-struct FRequestPlayersForGameProgressCallback final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184B[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRequestPlayersForGameProgressCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameProgressCallback");
-static_assert(sizeof(FRequestPlayersForGameProgressCallback) == 0x000018, "Wrong size on FRequestPlayersForGameProgressCallback");
-static_assert(offsetof(FRequestPlayersForGameProgressCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameProgressCallback::Result' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameProgressCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameProgressCallback::SearchID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.RequestPlayersForGameResultCallback
-// 0x0050 (0x0050 - 0x0000)
-struct FRequestPlayersForGameResultCallback final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SearchID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDPlayerFound;                                // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDLobby;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	ESteamPlayerAcceptState                       PlayerAcceptState;                                 // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184D[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PlayerIndex;                                       // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalPlayersFound;                                 // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalPlayersAcceptedGame;                          // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SuggestedTeamIndex;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184E[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UniqueGameID;                                      // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRequestPlayersForGameResultCallback) == 0x000008, "Wrong alignment on FRequestPlayersForGameResultCallback");
-static_assert(sizeof(FRequestPlayersForGameResultCallback) == 0x000050, "Wrong size on FRequestPlayersForGameResultCallback");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, Result) == 0x000000, "Member 'FRequestPlayersForGameResultCallback::Result' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, SearchID) == 0x000008, "Member 'FRequestPlayersForGameResultCallback::SearchID' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, SteamIDPlayerFound) == 0x000018, "Member 'FRequestPlayersForGameResultCallback::SteamIDPlayerFound' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, SteamIDLobby) == 0x000020, "Member 'FRequestPlayersForGameResultCallback::SteamIDLobby' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, PlayerAcceptState) == 0x000028, "Member 'FRequestPlayersForGameResultCallback::PlayerAcceptState' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, PlayerIndex) == 0x00002C, "Member 'FRequestPlayersForGameResultCallback::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, TotalPlayersFound) == 0x000030, "Member 'FRequestPlayersForGameResultCallback::TotalPlayersFound' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, TotalPlayersAcceptedGame) == 0x000034, "Member 'FRequestPlayersForGameResultCallback::TotalPlayersAcceptedGame' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, SuggestedTeamIndex) == 0x000038, "Member 'FRequestPlayersForGameResultCallback::SuggestedTeamIndex' has a wrong offset!");
-static_assert(offsetof(FRequestPlayersForGameResultCallback, UniqueGameID) == 0x000040, "Member 'FRequestPlayersForGameResultCallback::UniqueGameID' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SearchForGameProgressCallback
-// 0x0030 (0x0030 - 0x0000)
-struct FSearchForGameProgressCallback final
-{
-public:
-	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184F[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               LobbyID;                                           // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDEndedSearch;                                // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         SecondsRemainingEstimate;                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PlayersSearching;                                  // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSearchForGameProgressCallback) == 0x000008, "Wrong alignment on FSearchForGameProgressCallback");
-static_assert(sizeof(FSearchForGameProgressCallback) == 0x000030, "Wrong size on FSearchForGameProgressCallback");
-static_assert(offsetof(FSearchForGameProgressCallback, SearchID) == 0x000000, "Member 'FSearchForGameProgressCallback::SearchID' has a wrong offset!");
-static_assert(offsetof(FSearchForGameProgressCallback, Result) == 0x000010, "Member 'FSearchForGameProgressCallback::Result' has a wrong offset!");
-static_assert(offsetof(FSearchForGameProgressCallback, LobbyID) == 0x000018, "Member 'FSearchForGameProgressCallback::LobbyID' has a wrong offset!");
-static_assert(offsetof(FSearchForGameProgressCallback, SteamIDEndedSearch) == 0x000020, "Member 'FSearchForGameProgressCallback::SteamIDEndedSearch' has a wrong offset!");
-static_assert(offsetof(FSearchForGameProgressCallback, SecondsRemainingEstimate) == 0x000028, "Member 'FSearchForGameProgressCallback::SecondsRemainingEstimate' has a wrong offset!");
-static_assert(offsetof(FSearchForGameProgressCallback, PlayersSearching) == 0x00002C, "Member 'FSearchForGameProgressCallback::PlayersSearching' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SearchForGameResultCallback
-// 0x0030 (0x0030 - 0x0000)
-struct FSearchForGameResultCallback final
-{
-public:
-	class FString                                 SearchID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESteamResult                                  Result;                                            // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1850[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CountPlayersInGame;                                // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CountAcceptedGame;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1851[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamID                               SteamIDHost;                                       // 0x0020(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bFinalCallback;                                    // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1852[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSearchForGameResultCallback) == 0x000008, "Wrong alignment on FSearchForGameResultCallback");
-static_assert(sizeof(FSearchForGameResultCallback) == 0x000030, "Wrong size on FSearchForGameResultCallback");
-static_assert(offsetof(FSearchForGameResultCallback, SearchID) == 0x000000, "Member 'FSearchForGameResultCallback::SearchID' has a wrong offset!");
-static_assert(offsetof(FSearchForGameResultCallback, Result) == 0x000010, "Member 'FSearchForGameResultCallback::Result' has a wrong offset!");
-static_assert(offsetof(FSearchForGameResultCallback, CountPlayersInGame) == 0x000014, "Member 'FSearchForGameResultCallback::CountPlayersInGame' has a wrong offset!");
-static_assert(offsetof(FSearchForGameResultCallback, CountAcceptedGame) == 0x000018, "Member 'FSearchForGameResultCallback::CountAcceptedGame' has a wrong offset!");
-static_assert(offsetof(FSearchForGameResultCallback, SteamIDHost) == 0x000020, "Member 'FSearchForGameResultCallback::SteamIDHost' has a wrong offset!");
-static_assert(offsetof(FSearchForGameResultCallback, bFinalCallback) == 0x000028, "Member 'FSearchForGameResultCallback::bFinalCallback' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.SubmitPlayerResultResultCallback
-// 0x0020 (0x0020 - 0x0000)
-struct FSubmitPlayerResultResultCallback final
-{
-public:
-	ESteamResult                                  Result;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1853[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UniqueGameID;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSteamID                               SteamIDPlayer;                                     // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSubmitPlayerResultResultCallback) == 0x000008, "Wrong alignment on FSubmitPlayerResultResultCallback");
-static_assert(sizeof(FSubmitPlayerResultResultCallback) == 0x000020, "Wrong size on FSubmitPlayerResultResultCallback");
-static_assert(offsetof(FSubmitPlayerResultResultCallback, Result) == 0x000000, "Member 'FSubmitPlayerResultResultCallback::Result' has a wrong offset!");
-static_assert(offsetof(FSubmitPlayerResultResultCallback, UniqueGameID) == 0x000008, "Member 'FSubmitPlayerResultResultCallback::UniqueGameID' has a wrong offset!");
-static_assert(offsetof(FSubmitPlayerResultResultCallback, SteamIDPlayer) == 0x000018, "Member 'FSubmitPlayerResultResultCallback::SteamIDPlayer' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.ScePadTriggerEffectCommand
-// 0x0068 (0x0068 - 0x0000)
-struct FScePadTriggerEffectCommand final
-{
-public:
-	EScePadTriggerEffectMode                      Mode;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1854[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FScePadTriggerEffectCommandData        CommandData;                                       // 0x0008(0x0060)(Edit, BlueprintVisible, EditConst, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FScePadTriggerEffectCommand) == 0x000008, "Wrong alignment on FScePadTriggerEffectCommand");
-static_assert(sizeof(FScePadTriggerEffectCommand) == 0x000068, "Wrong size on FScePadTriggerEffectCommand");
-static_assert(offsetof(FScePadTriggerEffectCommand, Mode) == 0x000000, "Member 'FScePadTriggerEffectCommand::Mode' has a wrong offset!");
-static_assert(offsetof(FScePadTriggerEffectCommand, CommandData) == 0x000008, "Member 'FScePadTriggerEffectCommand::CommandData' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.InputDigitalActionData
-// 0x0002 (0x0002 - 0x0000)
-struct FInputDigitalActionData final
-{
-public:
-	bool                                          bState;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bActive;                                           // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FInputDigitalActionData) == 0x000001, "Wrong alignment on FInputDigitalActionData");
-static_assert(sizeof(FInputDigitalActionData) == 0x000002, "Wrong size on FInputDigitalActionData");
-static_assert(offsetof(FInputDigitalActionData, bState) == 0x000000, "Member 'FInputDigitalActionData::bState' has a wrong offset!");
-static_assert(offsetof(FInputDigitalActionData, bActive) == 0x000001, "Member 'FInputDigitalActionData::bActive' has a wrong offset!");
-
-// ScriptStruct SteamCorePro.InputHandle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FInputHandle final
-{
-public:
-	uint8                                         Pad_1855[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FInputHandle) == 0x000008, "Wrong alignment on FInputHandle");
-static_assert(sizeof(FInputHandle) == 0x000008, "Wrong size on FInputHandle");
-
 // ScriptStruct SteamCorePro.InputActionSetHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FInputActionSetHandle final
 {
 public:
-	uint8                                         Pad_1856[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputActionSetHandle) == 0x000008, "Wrong alignment on FInputActionSetHandle");
 static_assert(sizeof(FInputActionSetHandle) == 0x000008, "Wrong size on FInputActionSetHandle");
@@ -4230,20 +4165,75 @@ static_assert(sizeof(FInputActionSetHandle) == 0x000008, "Wrong size on FInputAc
 struct alignas(0x08) FInputDigitalActionHandle final
 {
 public:
-	uint8                                         Pad_1857[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputDigitalActionHandle) == 0x000008, "Wrong alignment on FInputDigitalActionHandle");
 static_assert(sizeof(FInputDigitalActionHandle) == 0x000008, "Wrong size on FInputDigitalActionHandle");
 
-// ScriptStruct SteamCorePro.InputAnalogActionHandle
+// ScriptStruct SteamCorePro.SteamItemInstanceID
 // 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FInputAnalogActionHandle final
+struct alignas(0x08) FSteamItemInstanceID final
 {
 public:
-	uint8                                         Pad_1858[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FInputAnalogActionHandle) == 0x000008, "Wrong alignment on FInputAnalogActionHandle");
-static_assert(sizeof(FInputAnalogActionHandle) == 0x000008, "Wrong size on FInputAnalogActionHandle");
+static_assert(alignof(FSteamItemInstanceID) == 0x000008, "Wrong alignment on FSteamItemInstanceID");
+static_assert(sizeof(FSteamItemInstanceID) == 0x000008, "Wrong size on FSteamItemInstanceID");
+
+// ScriptStruct SteamCorePro.SteamItemDef
+// 0x0004 (0x0004 - 0x0000)
+struct FSteamItemDef final
+{
+public:
+	int32                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+static_assert(alignof(FSteamItemDef) == 0x000004, "Wrong alignment on FSteamItemDef");
+static_assert(sizeof(FSteamItemDef) == 0x000004, "Wrong size on FSteamItemDef");
+static_assert(offsetof(FSteamItemDef, Value) == 0x000000, "Member 'FSteamItemDef::Value' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamItemDetails
+// 0x0020 (0x0020 - 0x0000)
+struct FSteamItemDetails final
+{
+public:
+	struct FSteamItemInstanceID                   InstanceId;                                        // 0x0000(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSteamItemDef                          Definition;                                        // 0x0008(0x0004)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Quantity;                                          // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<ESteamCoreProItemFlags>                Flags;                                             // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSteamItemDetails) == 0x000008, "Wrong alignment on FSteamItemDetails");
+static_assert(sizeof(FSteamItemDetails) == 0x000020, "Wrong size on FSteamItemDetails");
+static_assert(offsetof(FSteamItemDetails, InstanceId) == 0x000000, "Member 'FSteamItemDetails::InstanceId' has a wrong offset!");
+static_assert(offsetof(FSteamItemDetails, Definition) == 0x000008, "Member 'FSteamItemDetails::Definition' has a wrong offset!");
+static_assert(offsetof(FSteamItemDetails, Quantity) == 0x00000C, "Member 'FSteamItemDetails::Quantity' has a wrong offset!");
+static_assert(offsetof(FSteamItemDetails, Flags) == 0x000010, "Member 'FSteamItemDetails::Flags' has a wrong offset!");
+
+// ScriptStruct SteamCorePro.SteamP2PSessionState
+// 0x0028 (0x0028 - 0x0000)
+struct FSteamP2PSessionState final
+{
+public:
+	bool                                          bConnectionActive;                                 // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bConnecting;                                       // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ESteamP2PSessionError                         P2PSessionError;                                   // 0x0002(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUsingRelay;                                       // 0x0003(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BytesQueuedForSend;                                // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         PacketsQueuedForSend;                              // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 RemoteIP;                                          // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         RemotePort;                                        // 0x0020(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamP2PSessionState) == 0x000008, "Wrong alignment on FSteamP2PSessionState");
+static_assert(sizeof(FSteamP2PSessionState) == 0x000028, "Wrong size on FSteamP2PSessionState");
+static_assert(offsetof(FSteamP2PSessionState, bConnectionActive) == 0x000000, "Member 'FSteamP2PSessionState::bConnectionActive' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, bConnecting) == 0x000001, "Member 'FSteamP2PSessionState::bConnecting' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, P2PSessionError) == 0x000002, "Member 'FSteamP2PSessionState::P2PSessionError' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, bUsingRelay) == 0x000003, "Member 'FSteamP2PSessionState::bUsingRelay' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, BytesQueuedForSend) == 0x000004, "Member 'FSteamP2PSessionState::BytesQueuedForSend' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, PacketsQueuedForSend) == 0x000008, "Member 'FSteamP2PSessionState::PacketsQueuedForSend' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, RemoteIP) == 0x000010, "Member 'FSteamP2PSessionState::RemoteIP' has a wrong offset!");
+static_assert(offsetof(FSteamP2PSessionState, RemotePort) == 0x000020, "Member 'FSteamP2PSessionState::RemotePort' has a wrong offset!");
 
 // ScriptStruct SteamCorePro.SteamNetworkPingLocation
 // 0x0010 (0x0010 - 0x0000)
@@ -4261,7 +4251,7 @@ static_assert(offsetof(FSteamNetworkPingLocation, Location) == 0x000000, "Member
 struct FSteamParentalSettingsChanged final
 {
 public:
-	uint8                                         Pad_1859[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamParentalSettingsChanged) == 0x000001, "Wrong alignment on FSteamParentalSettingsChanged");
 static_assert(sizeof(FSteamParentalSettingsChanged) == 0x000001, "Wrong size on FSteamParentalSettingsChanged");
@@ -4272,7 +4262,7 @@ struct FSteamPartyBeaconLocation final
 {
 public:
 	ESteamPartiesBeaconLocationType               Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_185A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 LocationId;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSteamPartyBeaconLocation) == 0x000008, "Wrong alignment on FSteamPartyBeaconLocation");
@@ -4285,7 +4275,7 @@ static_assert(offsetof(FSteamPartyBeaconLocation, LocationId) == 0x000008, "Memb
 struct alignas(0x08) FUGCFileWriteStreamHandle final
 {
 public:
-	uint8                                         Pad_185B[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong alignment on FUGCFileWriteStreamHandle");
 static_assert(sizeof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong size on FUGCFileWriteStreamHandle");
@@ -4295,7 +4285,7 @@ static_assert(sizeof(FUGCFileWriteStreamHandle) == 0x000008, "Wrong size on FUGC
 struct alignas(0x08) FSteamInventoryUpdateHandle final
 {
 public:
-	uint8                                         Pad_185C[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong alignment on FSteamInventoryUpdateHandle");
 static_assert(sizeof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong size on FSteamInventoryUpdateHandle");
@@ -4305,17 +4295,27 @@ static_assert(sizeof(FSteamInventoryUpdateHandle) == 0x000008, "Wrong size on FS
 struct FSteamNetworkingIdentity final
 {
 public:
-	uint8                                         Pad_185D[0x88];                                    // 0x0000(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x88];                                       // 0x0000(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSteamNetworkingIdentity) == 0x000001, "Wrong alignment on FSteamNetworkingIdentity");
 static_assert(sizeof(FSteamNetworkingIdentity) == 0x000088, "Wrong size on FSteamNetworkingIdentity");
+
+// ScriptStruct SteamCorePro.SteamSessionSearchSetting
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FSteamSessionSearchSetting final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSteamSessionSearchSetting) == 0x000008, "Wrong alignment on FSteamSessionSearchSetting");
+static_assert(sizeof(FSteamSessionSearchSetting) == 0x000020, "Wrong size on FSteamSessionSearchSetting");
 
 // ScriptStruct SteamCorePro.UGCUpdateHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FUGCUpdateHandle final
 {
 public:
-	uint8                                         Pad_185E[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUGCUpdateHandle) == 0x000008, "Wrong alignment on FUGCUpdateHandle");
 static_assert(sizeof(FUGCUpdateHandle) == 0x000008, "Wrong size on FUGCUpdateHandle");
@@ -4329,7 +4329,7 @@ public:
 	int32                                         GlobalRank;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Score;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Details;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_185F[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamUGCHandle                        UGCHandle;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSteamLeaderboardEntry) == 0x000008, "Wrong alignment on FSteamLeaderboardEntry");

@@ -63,11 +63,11 @@ static_assert(offsetof(BPI_Controls_C_MoveRight, Axis) == 0x000000, "Member 'BPI
 struct BPI_Controls_C_Sprint final
 {
 public:
-	bool                                          Param_Sprint;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Sprint_0;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Controls_C_Sprint) == 0x000001, "Wrong alignment on BPI_Controls_C_Sprint");
 static_assert(sizeof(BPI_Controls_C_Sprint) == 0x000001, "Wrong size on BPI_Controls_C_Sprint");
-static_assert(offsetof(BPI_Controls_C_Sprint, Param_Sprint) == 0x000000, "Member 'BPI_Controls_C_Sprint::Param_Sprint' has a wrong offset!");
+static_assert(offsetof(BPI_Controls_C_Sprint, Sprint_0) == 0x000000, "Member 'BPI_Controls_C_Sprint::Sprint_0' has a wrong offset!");
 
 }
 

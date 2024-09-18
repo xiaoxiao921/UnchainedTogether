@@ -39,7 +39,7 @@ public:
 
 public:
 	void BndEvt__W_Setting_W_ComboBox_K2Node_ComponentBoundEvent_1_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType);
-	void BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnValueChanged__DelegateSignature(double Value, const class FString& Param_Setting);
+	void BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnValueChanged__DelegateSignature(double Value, const class FString& Setting_0);
 	void ComboValueChanged__DelegateSignature(const class FString& NewSelection, const class FString& Identifier, const class FText& SettingName);
 	void Construct();
 	void ExecuteUbergraph_W_Setting(int32 EntryPoint);

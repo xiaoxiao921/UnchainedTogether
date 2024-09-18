@@ -23,16 +23,16 @@ struct W_Controls_C_ExecuteUbergraph_W_Controls final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B3[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_GetKeyName_DisplayName;                   // 0x0018(0x0018)()
 	TScriptInterface<class IBPI_ControllerWithSettings_C> K2Node_DynamicCast_AsBPI_Controller_with_Settings; // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B4[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsPlayerOnGamepad_Gamepad;                // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B5[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_GetKeyName_DisplayName_1;                 // 0x0070(0x0018)()
 	class FText                                   CallFunc_GetKeyName_DisplayName_2;                 // 0x0088(0x0018)()
@@ -81,14 +81,14 @@ struct W_Controls_C_GetKeyName final
 {
 public:
 	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EPlayerMappableKeySlot                        Param_Slot;                                        // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B6[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	EPlayerMappableKeySlot                        Slot_0;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   DisplayName;                                       // 0x0010(0x0018)(Parm, OutParm)
 	struct FPlayerKeyMapping                      FoundMap;                                          // 0x0028(0x0090)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B7[0x4];                                     // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x00C8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_GetUserSettings_self_CastInput;           // 0x00D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UEnhancedInputUserSettings*             CallFunc_GetUserSettings_ReturnValue;              // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -96,20 +96,20 @@ public:
 	TMap<class FName, struct FKeyMappingRow>      CallFunc_GetPlayerMappingRows_ReturnValue;         // 0x00F0(0x0050)(ConstParm)
 	struct FKeyMappingRow                         CallFunc_Map_Find_Value;                           // 0x0140(0x0050)()
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B8[0x7];                                     // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FPlayerKeyMapping>              CallFunc_Set_ToArray_Result;                       // 0x0198(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30B9[0x4];                                     // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x01B0(0x0090)(HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30BA[0x7];                                     // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_241[0x7];                                      // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_Key_GetDisplayName_ReturnValue;           // 0x0248(0x0018)()
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_Controls_C_GetKeyName) == 0x000008, "Wrong alignment on W_Controls_C_GetKeyName");
 static_assert(sizeof(W_Controls_C_GetKeyName) == 0x000268, "Wrong size on W_Controls_C_GetKeyName");
 static_assert(offsetof(W_Controls_C_GetKeyName, Key) == 0x000000, "Member 'W_Controls_C_GetKeyName::Key' has a wrong offset!");
-static_assert(offsetof(W_Controls_C_GetKeyName, Param_Slot) == 0x000008, "Member 'W_Controls_C_GetKeyName::Param_Slot' has a wrong offset!");
+static_assert(offsetof(W_Controls_C_GetKeyName, Slot_0) == 0x000008, "Member 'W_Controls_C_GetKeyName::Slot_0' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_GetKeyName, DisplayName) == 0x000010, "Member 'W_Controls_C_GetKeyName::DisplayName' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_GetKeyName, FoundMap) == 0x000028, "Member 'W_Controls_C_GetKeyName::FoundMap' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_GetKeyName, Temp_int_Array_Index_Variable) == 0x0000B8, "Member 'W_Controls_C_GetKeyName::Temp_int_Array_Index_Variable' has a wrong offset!");
@@ -179,8 +179,8 @@ struct W_Controls_C_ReturnKeyName final
 public:
 	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	const class UInputAction*                     Action;                                            // 0x0008(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         Param_Index;                                       // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30BB[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   KeyName;                                           // 0x0018(0x0018)(Parm, OutParm)
 	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue; // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_QueryKeysMappedToAction_self_CastInput;   // 0x0038(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -192,7 +192,7 @@ static_assert(alignof(W_Controls_C_ReturnKeyName) == 0x000008, "Wrong alignment 
 static_assert(sizeof(W_Controls_C_ReturnKeyName) == 0x000088, "Wrong size on W_Controls_C_ReturnKeyName");
 static_assert(offsetof(W_Controls_C_ReturnKeyName, PlayerController) == 0x000000, "Member 'W_Controls_C_ReturnKeyName::PlayerController' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_ReturnKeyName, Action) == 0x000008, "Member 'W_Controls_C_ReturnKeyName::Action' has a wrong offset!");
-static_assert(offsetof(W_Controls_C_ReturnKeyName, Param_Index) == 0x000010, "Member 'W_Controls_C_ReturnKeyName::Param_Index' has a wrong offset!");
+static_assert(offsetof(W_Controls_C_ReturnKeyName, Index_0) == 0x000010, "Member 'W_Controls_C_ReturnKeyName::Index_0' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_ReturnKeyName, KeyName) == 0x000018, "Member 'W_Controls_C_ReturnKeyName::KeyName' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_ReturnKeyName, CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue) == 0x000030, "Member 'W_Controls_C_ReturnKeyName::CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Controls_C_ReturnKeyName, CallFunc_QueryKeysMappedToAction_self_CastInput) == 0x000038, "Member 'W_Controls_C_ReturnKeyName::CallFunc_QueryKeysMappedToAction_self_CastInput' has a wrong offset!");

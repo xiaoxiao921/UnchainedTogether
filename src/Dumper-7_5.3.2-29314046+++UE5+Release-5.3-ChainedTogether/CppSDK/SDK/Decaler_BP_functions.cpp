@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function Decaler_BP.Decaler_BP_C.BndEvt__BP_ModSeesaw_IGLE_Interface_K2Node_ComponentBoundEvent_0_IGLE_OnPropertyValueChanged__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           PropertyName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ADecaler_BP_C::BndEvt__BP_ModSeesaw_IGLE_Interface_K2Node_ComponentBoundEvent_0_IGLE_OnPropertyValueChanged__DelegateSignature(const class FString& PropertyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Decaler_BP_C", "BndEvt__BP_ModSeesaw_IGLE_Interface_K2Node_ComponentBoundEvent_0_IGLE_OnPropertyValueChanged__DelegateSignature");
+
+	Params::Decaler_BP_C_BndEvt__BP_ModSeesaw_IGLE_Interface_K2Node_ComponentBoundEvent_0_IGLE_OnPropertyValueChanged__DelegateSignature Parms{};
+
+	Parms.PropertyName = std::move(PropertyName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Decaler_BP.Decaler_BP_C.BndEvt__Decaler_BP_Cylinder_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -76,6 +96,34 @@ void ADecaler_BP_C::MoveDecaler()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Decaler_BP_C", "MoveDecaler");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Decaler_BP.Decaler_BP_C.OnRep_CastShadows
+// (BlueprintCallable, BlueprintEvent)
+
+void ADecaler_BP_C::OnRep_CastShadows()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Decaler_BP_C", "OnRep_CastShadows");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Decaler_BP.Decaler_BP_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ADecaler_BP_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Decaler_BP_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

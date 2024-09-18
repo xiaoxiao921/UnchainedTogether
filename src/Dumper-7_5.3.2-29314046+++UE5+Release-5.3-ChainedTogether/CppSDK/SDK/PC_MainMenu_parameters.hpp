@@ -16,31 +16,43 @@
 namespace SDK::Params
 {
 
+// Function PC_MainMenu.PC_MainMenu_C.BPI_RequestCharacter
+// 0x0001 (0x0001 - 0x0000)
+struct PC_MainMenu_C_BPI_RequestCharacter final
+{
+public:
+	E_ChoosenChar                                 Character_0;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(PC_MainMenu_C_BPI_RequestCharacter) == 0x000001, "Wrong alignment on PC_MainMenu_C_BPI_RequestCharacter");
+static_assert(sizeof(PC_MainMenu_C_BPI_RequestCharacter) == 0x000001, "Wrong size on PC_MainMenu_C_BPI_RequestCharacter");
+static_assert(offsetof(PC_MainMenu_C_BPI_RequestCharacter, Character_0) == 0x000000, "Member 'PC_MainMenu_C_BPI_RequestCharacter::Character_0' has a wrong offset!");
+
 // Function PC_MainMenu.PC_MainMenu_C.ExecuteUbergraph_PC_MainMenu
 // 0x0068 (0x0068 - 0x0000)
 struct PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_CanEscape;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3482[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	E_ChoosenChar                                 K2Node_Event_Character;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 K2Node_Event_Actor;                                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_Message;                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_RefreshTchat;                         // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3483[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 K2Node_Event_Device;                               // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class ABP_MovingObject_C*                     K2Node_Event_MovingObject;                         // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundWave*                             K2Node_Event_Sound;                                // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        K2Node_Event_AudioComponent;                       // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 K2Node_Event_Char;                                 // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3484[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimitiveComponent*                    K2Node_Event_RescueComponent;                      // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_ExitingCar;                           // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_CanEscape;                            // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu) == 0x000008, "Wrong alignment on PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu");
 static_assert(sizeof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu) == 0x000068, "Wrong size on PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, EntryPoint) == 0x000000, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::EntryPoint' has a wrong offset!");
-static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_CanEscape) == 0x000004, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_CanEscape' has a wrong offset!");
+static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_Character) == 0x000004, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_Character' has a wrong offset!");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_Actor) == 0x000008, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_Actor' has a wrong offset!");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_Message) == 0x000010, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_Message' has a wrong offset!");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_RefreshTchat) == 0x000020, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_RefreshTchat' has a wrong offset!");
@@ -51,6 +63,7 @@ static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_Char) == 0x000050, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_Char' has a wrong offset!");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_RescueComponent) == 0x000058, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_RescueComponent' has a wrong offset!");
 static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_ExitingCar) == 0x000060, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_ExitingCar' has a wrong offset!");
+static_assert(offsetof(PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu, K2Node_Event_CanEscape) == 0x000061, "Member 'PC_MainMenu_C_ExecuteUbergraph_PC_MainMenu::K2Node_Event_CanEscape' has a wrong offset!");
 
 // Function PC_MainMenu.PC_MainMenu_C.GetAudioDevices
 // 0x0010 (0x0010 - 0x0000)
@@ -180,11 +193,11 @@ static_assert(offsetof(PC_MainMenu_C_Trigger_Moving_Object, MovingObject) == 0x0
 struct PC_MainMenu_C_UpdateCanEscape final
 {
 public:
-	bool                                          Param_CanEscape;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanEscape_0;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(PC_MainMenu_C_UpdateCanEscape) == 0x000001, "Wrong alignment on PC_MainMenu_C_UpdateCanEscape");
 static_assert(sizeof(PC_MainMenu_C_UpdateCanEscape) == 0x000001, "Wrong size on PC_MainMenu_C_UpdateCanEscape");
-static_assert(offsetof(PC_MainMenu_C_UpdateCanEscape, Param_CanEscape) == 0x000000, "Member 'PC_MainMenu_C_UpdateCanEscape::Param_CanEscape' has a wrong offset!");
+static_assert(offsetof(PC_MainMenu_C_UpdateCanEscape, CanEscape_0) == 0x000000, "Member 'PC_MainMenu_C_UpdateCanEscape::CanEscape_0' has a wrong offset!");
 
 }
 

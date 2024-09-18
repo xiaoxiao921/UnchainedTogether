@@ -646,10 +646,10 @@ class UAnimInstance* UAnimExecutionContextLibrary::GetAnimInstance(const struct 
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UAnimInstance*                    Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimNodeReference               ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(class UAnimInstance* Instance, int32 Param_Index)
+struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(class UAnimInstance* Instance, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -659,7 +659,7 @@ struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(cla
 	Params::AnimExecutionContextLibrary_GetAnimNodeReference Parms{};
 
 	Parms.Instance = Instance;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

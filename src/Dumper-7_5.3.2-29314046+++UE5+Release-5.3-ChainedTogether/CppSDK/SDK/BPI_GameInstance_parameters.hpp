@@ -113,6 +113,17 @@ static_assert(alignof(BPI_GameInstance_C_GetTrueChainVisible) == 0x000001, "Wron
 static_assert(sizeof(BPI_GameInstance_C_GetTrueChainVisible) == 0x000001, "Wrong size on BPI_GameInstance_C_GetTrueChainVisible");
 static_assert(offsetof(BPI_GameInstance_C_GetTrueChainVisible, Visible) == 0x000000, "Member 'BPI_GameInstance_C_GetTrueChainVisible::Visible' has a wrong offset!");
 
+// Function BPI_GameInstance.BPI_GameInstance_C.IsInMod
+// 0x0001 (0x0001 - 0x0000)
+struct BPI_GameInstance_C_IsInMod final
+{
+public:
+	bool                                          Mod;                                               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BPI_GameInstance_C_IsInMod) == 0x000001, "Wrong alignment on BPI_GameInstance_C_IsInMod");
+static_assert(sizeof(BPI_GameInstance_C_IsInMod) == 0x000001, "Wrong size on BPI_GameInstance_C_IsInMod");
+static_assert(offsetof(BPI_GameInstance_C_IsInMod, Mod) == 0x000000, "Member 'BPI_GameInstance_C_IsInMod::Mod' has a wrong offset!");
+
 // Function BPI_GameInstance.BPI_GameInstance_C.SetCollectedWing
 // 0x0004 (0x0004 - 0x0000)
 struct BPI_GameInstance_C_SetCollectedWing final

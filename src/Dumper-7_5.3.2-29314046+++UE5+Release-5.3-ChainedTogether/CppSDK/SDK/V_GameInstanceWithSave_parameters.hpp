@@ -37,7 +37,7 @@ struct V_GameInstanceWithSave_C_Apply_Push_to_Talk final
 public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8B[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_Apply_Push_to_Talk) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_Apply_Push_to_Talk");
@@ -52,7 +52,7 @@ struct V_GameInstanceWithSave_C_Apply_Resolution_And_Windowed final
 {
 public:
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -128,10 +128,10 @@ struct V_GameInstanceWithSave_C_ApplyBloom final
 {
 public:
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8E[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_ApplyBloom) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_ApplyBloom");
@@ -186,7 +186,7 @@ struct V_GameInstanceWithSave_C_ApplyGamma final
 {
 public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_DoubleToString_ReturnValue;          // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -267,7 +267,7 @@ struct V_GameInstanceWithSave_C_ApplyMaxFPS final
 {
 public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D90[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -287,7 +287,7 @@ public:
 	TScriptInterface<class IBPI_PlayerController_C> K2Node_DynamicCast_AsBPI_Player_Controller;        // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D91[0x6];                                     // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_ApplyMicrophone) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_ApplyMicrophone");
@@ -306,10 +306,10 @@ struct V_GameInstanceWithSave_C_ApplyMotionBlur final
 public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D92[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D93[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -370,10 +370,10 @@ struct V_GameInstanceWithSave_C_ApplyShadowQuality final
 public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D94[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D95[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -392,7 +392,7 @@ struct V_GameInstanceWithSave_C_ApplySharpen final
 {
 public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D96[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_DoubleToString_ReturnValue;          // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -434,7 +434,7 @@ struct V_GameInstanceWithSave_C_ApplyVideoSettings final
 {
 public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D97[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_ApplyVideoSettings) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_ApplyVideoSettings");
@@ -462,7 +462,7 @@ struct V_GameInstanceWithSave_C_ApplyVSync final
 public:
 	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D98[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue_1;        // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -492,15 +492,15 @@ public:
 	TArray<struct FS_SavedSetting>                SettingsArray;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class FString                                 ID;                                                // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          Same;                                              // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D99[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UV_SaveGame_C*                          CallFunc_GetSaveGame_SaveGame;                     // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromArray_returnValue;          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9A[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromArray_Value;                // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameSave_C>       K2Node_DynamicCast_AsBPI_Game_Save;                // 0x0048(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0059(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9B[0x6];                                     // 0x005A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5A[0x6];                                       // 0x005A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -524,37 +524,37 @@ struct V_GameInstanceWithSave_C_ExecuteUbergraph_V_GameInstanceWithSave final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9C[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	double                                        K2Node_Event_Value;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_Setting;                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	E_ApplySettingType                            K2Node_Event_Type_2;                               // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9D[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 K2Node_Event_Identifier_1;                         // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_NewString;                            // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	E_ApplySettingType                            K2Node_Event_Type_1;                               // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9E[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 K2Node_Event_Identifier;                           // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_Bool;                                 // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_ApplySettingType                            K2Node_Event_Type;                                 // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SaveGameToSlot_ReturnValue;               // 0x0072(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9F[0x5];                                     // 0x0073(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_73[0x5];                                       // 0x0073(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UW_SaveNotif_C*                         CallFunc_Create_ReturnValue;                       // 0x0078(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_ID;                                   // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_NewValue;                             // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_InvertY;                              // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_InvertX;                              // 0x00A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA0[0x6];                                     // 0x00A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A2[0x6];                                       // 0x00A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        K2Node_Event_Delay;                                // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FS_Checkpoint                          K2Node_Event_CheckpointS;                          // 0x00B0(0x0018)(ZeroConstructor, HasGetValueTypeHash)
 	struct FS_Checkpoint                          K2Node_MakeStruct_S_Checkpoint;                    // 0x00C8(0x0018)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_AddUnique_ReturnValue;              // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA1[0x4];                                     // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetProjectDirectory_ReturnValue;          // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	TArray<uint8>                                 CallFunc_ReadFileToBytes_ReturnValue;              // 0x0108(0x0010)(ReferenceParm)
 	bool                                          CallFunc_FileWrite_ReturnValue;                    // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA2[0x3];                                     // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_119[0x3];                                      // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_RetriggerableDelay_Duration_ImplicitCast; // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_ExecuteUbergraph_V_GameInstanceWithSave) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_ExecuteUbergraph_V_GameInstanceWithSave");
@@ -591,18 +591,18 @@ static_assert(offsetof(V_GameInstanceWithSave_C_ExecuteUbergraph_V_GameInstanceW
 struct V_GameInstanceWithSave_C_GetCameraSettings final
 {
 public:
-	bool                                          Param_InvertX;                                     // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Param_InvertY;                                     // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA3[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Param_X_Sensitivity;                               // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Param_Y_Sensitivity;                               // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InvertX_0;                                         // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InvertY_0;                                         // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        X_Sensitivity_0;                                   // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Y_Sensitivity_0;                                   // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_GetCameraSettings) == 0x000008, "Wrong alignment on V_GameInstanceWithSave_C_GetCameraSettings");
 static_assert(sizeof(V_GameInstanceWithSave_C_GetCameraSettings) == 0x000018, "Wrong size on V_GameInstanceWithSave_C_GetCameraSettings");
-static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, Param_InvertX) == 0x000000, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::Param_InvertX' has a wrong offset!");
-static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, Param_InvertY) == 0x000001, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::Param_InvertY' has a wrong offset!");
-static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, Param_X_Sensitivity) == 0x000008, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::Param_X_Sensitivity' has a wrong offset!");
-static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, Param_Y_Sensitivity) == 0x000010, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::Param_Y_Sensitivity' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, InvertX_0) == 0x000000, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::InvertX_0' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, InvertY_0) == 0x000001, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::InvertY_0' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, X_Sensitivity_0) == 0x000008, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::X_Sensitivity_0' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_GetCameraSettings, Y_Sensitivity_0) == 0x000010, "Member 'V_GameInstanceWithSave_C_GetCameraSettings::Y_Sensitivity_0' has a wrong offset!");
 
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.GetCheckpoints
 // 0x0010 (0x0010 - 0x0000)
@@ -680,7 +680,7 @@ public:
 	class UV_SaveGame_C*                          CallFunc_CreateSaveGameObject_ReturnValue;         // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA4[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UV_SaveGame_C*                          K2Node_DynamicCast_AsV_Save_Game;                  // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -701,7 +701,7 @@ public:
 	bool                                          NewBool;                                           // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_ApplySettingType                            SetType;                                           // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA5[0x5];                                     // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_BoolToString_ReturnValue;            // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -740,7 +740,7 @@ public:
 	class FString                                 NewString;                                         // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	E_ApplySettingType                            SetType;                                           // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA6[0x6];                                     // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
@@ -792,12 +792,12 @@ struct V_GameInstanceWithSave_C_ResetSettingsByCategory final
 {
 public:
 	E_SettingCategory                             Category;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA7[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA8[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_SavedSetting                        CallFunc_Array_Get_Item;                           // 0x0018(0x0020)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_SettingCategory                             CallFunc_GetSettingCategory_Category;              // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -842,22 +842,22 @@ static_assert(offsetof(V_GameInstanceWithSave_C_SaveCheckpoint, Checkpoints) == 
 struct V_GameInstanceWithSave_C_SetCameraInvertX final
 {
 public:
-	bool                                          Param_InvertX;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InvertX_0;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_SetCameraInvertX) == 0x000001, "Wrong alignment on V_GameInstanceWithSave_C_SetCameraInvertX");
 static_assert(sizeof(V_GameInstanceWithSave_C_SetCameraInvertX) == 0x000001, "Wrong size on V_GameInstanceWithSave_C_SetCameraInvertX");
-static_assert(offsetof(V_GameInstanceWithSave_C_SetCameraInvertX, Param_InvertX) == 0x000000, "Member 'V_GameInstanceWithSave_C_SetCameraInvertX::Param_InvertX' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_SetCameraInvertX, InvertX_0) == 0x000000, "Member 'V_GameInstanceWithSave_C_SetCameraInvertX::InvertX_0' has a wrong offset!");
 
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.SetCameraInvertY
 // 0x0001 (0x0001 - 0x0000)
 struct V_GameInstanceWithSave_C_SetCameraInvertY final
 {
 public:
-	bool                                          Param_InvertY;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InvertY_0;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(V_GameInstanceWithSave_C_SetCameraInvertY) == 0x000001, "Wrong alignment on V_GameInstanceWithSave_C_SetCameraInvertY");
 static_assert(sizeof(V_GameInstanceWithSave_C_SetCameraInvertY) == 0x000001, "Wrong size on V_GameInstanceWithSave_C_SetCameraInvertY");
-static_assert(offsetof(V_GameInstanceWithSave_C_SetCameraInvertY, Param_InvertY) == 0x000000, "Member 'V_GameInstanceWithSave_C_SetCameraInvertY::Param_InvertY' has a wrong offset!");
+static_assert(offsetof(V_GameInstanceWithSave_C_SetCameraInvertY, InvertY_0) == 0x000000, "Member 'V_GameInstanceWithSave_C_SetCameraInvertY::InvertY_0' has a wrong offset!");
 
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.SetResolutionScale
 // 0x0010 (0x0010 - 0x0000)

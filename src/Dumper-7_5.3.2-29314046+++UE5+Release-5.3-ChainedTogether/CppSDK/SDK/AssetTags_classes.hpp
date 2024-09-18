@@ -21,8 +21,8 @@ namespace SDK
 class UAssetTagsSubsystem final : public UEngineSubsystem
 {
 public:
-	bool CollectionExists(const class FName Param_Name);
-	TArray<struct FAssetData> GetAssetsInCollection(const class FName Param_Name);
+	bool CollectionExists(const class FName Name_0);
+	TArray<struct FAssetData> GetAssetsInCollection(const class FName Name_0);
 	TArray<class FName> GetCollections();
 	TArray<class FName> GetCollectionsContainingAsset(const class FName AssetPathName);
 	TArray<class FName> GetCollectionsContainingAssetData(const struct FAssetData& AssetData);

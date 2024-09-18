@@ -10,12 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "S_BiomeSave_structs.hpp"
-#include "S_ProgressSave_structs.hpp"
 #include "E_Gamemodes_structs.hpp"
-#include "SteamCorePro_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "OnlineSubsystemUtils_structs.hpp"
+#include "S_ProgressSave_structs.hpp"
+#include "SteamCorePro_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 
 
 namespace SDK::Params
@@ -39,12 +40,12 @@ static_assert(offsetof(CustomGI_C_Assign_Controllers_to_Players, PlayerNumber) =
 struct CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67 final
 {
 public:
-	class USaveGame*                              Param_SaveGame;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USaveGame*                              SaveGame_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          bSuccess;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67) == 0x000008, "Wrong alignment on CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67");
 static_assert(sizeof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67) == 0x000010, "Wrong size on CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67");
-static_assert(offsetof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67, Param_SaveGame) == 0x000000, "Member 'CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67::Param_SaveGame' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67, SaveGame_0) == 0x000000, "Member 'CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67::SaveGame_0' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67, bSuccess) == 0x000008, "Member 'CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67::bSuccess' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.Completed_F68F81F54A55E596F9A7118687AB01E9
@@ -52,168 +53,194 @@ static_assert(offsetof(CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67, bS
 struct CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9 final
 {
 public:
-	class USaveGame*                              Param_SaveGame;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USaveGame*                              SaveGame_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          bSuccess;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9) == 0x000008, "Wrong alignment on CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9");
 static_assert(sizeof(CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9) == 0x000010, "Wrong size on CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9");
-static_assert(offsetof(CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9, Param_SaveGame) == 0x000000, "Member 'CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9::Param_SaveGame' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9, SaveGame_0) == 0x000000, "Member 'CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9::SaveGame_0' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9, bSuccess) == 0x000008, "Member 'CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9::bSuccess' has a wrong offset!");
 
-// Function CustomGI.CustomGI_C.CustomEvent
-// 0x0138 (0x0138 - 0x0000)
-struct CustomGI_C_CustomEvent final
+// Function CustomGI.CustomGI_C.Downloaded
+// 0x0001 (0x0001 - 0x0000)
+struct CustomGI_C_Downloaded final
 {
 public:
-	bool                                          bWasSuccessful;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1193[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LocalPlayerNum;                                    // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 InvitedBy;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FBlueprintSessionResult                Session;                                           // 0x0018(0x0120)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          Success;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(CustomGI_C_CustomEvent) == 0x000008, "Wrong alignment on CustomGI_C_CustomEvent");
-static_assert(sizeof(CustomGI_C_CustomEvent) == 0x000138, "Wrong size on CustomGI_C_CustomEvent");
-static_assert(offsetof(CustomGI_C_CustomEvent, bWasSuccessful) == 0x000000, "Member 'CustomGI_C_CustomEvent::bWasSuccessful' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_CustomEvent, LocalPlayerNum) == 0x000004, "Member 'CustomGI_C_CustomEvent::LocalPlayerNum' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_CustomEvent, InvitedBy) == 0x000008, "Member 'CustomGI_C_CustomEvent::InvitedBy' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_CustomEvent, Session) == 0x000018, "Member 'CustomGI_C_CustomEvent::Session' has a wrong offset!");
+static_assert(alignof(CustomGI_C_Downloaded) == 0x000001, "Wrong alignment on CustomGI_C_Downloaded");
+static_assert(sizeof(CustomGI_C_Downloaded) == 0x000001, "Wrong size on CustomGI_C_Downloaded");
+static_assert(offsetof(CustomGI_C_Downloaded, Success) == 0x000000, "Member 'CustomGI_C_Downloaded::Success' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.ExecuteUbergraph_CustomGI
-// 0x0320 (0x0320 - 0x0000)
+// 0x04B0 (0x04B0 - 0x0000)
 struct CustomGI_C_ExecuteUbergraph_CustomGI final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(bool bWasSuccessful, int32 LocalPlayerNum, const class FString& InvitedBy, struct FBlueprintSessionResult& Session)> K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0014(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0024(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1194[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              K2Node_CustomEvent_SaveGame_1;                     // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bSuccess_1;                     // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1195[0x3];                                     // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class USaveGame* SaveGame, bool bSuccess)> K2Node_CreateDelegate_OutputDelegate_3;            // 0x0044(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1196[0x3];                                     // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              Temp_object_Variable;                              // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USaveGame*                              K2Node_CustomEvent_SaveGame;                       // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bSuccess;                       // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1197[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class USaveGame* SaveGame, bool bSuccess)> K2Node_CreateDelegate_OutputDelegate_4;            // 0x006C(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable_1;                              // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1198[0x3];                                     // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              Temp_object_Variable_1;                            // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UW_Save_C*                              CallFunc_Create_ReturnValue;                       // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_Save_C*                              CallFunc_Create_ReturnValue_1;                     // 0x0090(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_MultiGate_FirstRun;                         // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1199[0x3];                                     // 0x0099(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_CustomEvent_Success;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USaveGame*                              K2Node_CustomEvent_SaveGame_1;                     // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bSuccess_1;                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class USaveGame* SaveGame, bool bSuccess)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0024(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              Temp_object_Variable;                              // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USaveGame*                              K2Node_CustomEvent_SaveGame;                       // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bSuccess;                       // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class USaveGame* SaveGame, bool bSuccess)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x004C(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              Temp_object_Variable_1;                            // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UW_Save_C*                              CallFunc_Create_ReturnValue;                       // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_Save_C*                              CallFunc_Create_ReturnValue_1;                     // 0x0070(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_JoiningSession_C*                    CallFunc_Create_ReturnValue_2;                     // 0x0078(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(bool Success)>                 K2Node_CreateDelegate_OutputDelegate_3;            // 0x0080(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UDownloadSubscribedWorkshop_W_C*        CallFunc_Create_ReturnValue_3;                     // 0x0090(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_FirstRun;                         // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         K2Node_MultiGate_Data;                             // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_MultiGate_ScratchBool;                      // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119A[0x3];                                     // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         K2Node_MultiGate_ScratchIndex;                     // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x00A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119B[0x6];                                     // 0x00AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRequestCurrentStatsData               Temp_struct_Variable;                              // 0x00B0(0x0018)(NoDestructor)
-	bool                                          Temp_bool_Variable_2;                              // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_MultiGate_1_FirstRun;                       // 0x00C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119C[0x2];                                     // 0x00CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_MultiGate_1_Data;                           // 0x00CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Temp_string_Variable;                              // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetAchievement_ReturnValue;               // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119D[0x6];                                     // 0x00E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRequestCurrentStatsData               K2Node_CustomEvent_Data;                           // 0x00E8(0x0018)(ConstParm, NoDestructor)
-	bool                                          K2Node_CustomEvent_bWasSuccessful_1;               // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_MultiGate_2_FirstRun;                       // 0x0101(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119E[0x2];                                     // 0x0102(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_MultiGate_2_Data;                           // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsPackagedForDistribution_ReturnValue;    // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119F[0x3];                                     // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_Event_Count;                                // 0x010C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_WingIndex;                            // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A0[0x4];                                     // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USteamCoreProUserStatsAsyncActionRequestCurrentStats* CallFunc_RequestCurrentStatsAsync_ReturnValue;     // 0x0118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0124(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0125(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A1[0x2];                                     // 0x0126(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_AddUnique_ReturnValue;              // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bWasSuccessful;                 // 0x012C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A2[0x3];                                     // 0x012D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_CustomEvent_LocalPlayerNum;                 // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A3[0x4];                                     // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_InvitedBy;                      // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FBlueprintSessionResult                K2Node_CustomEvent_Session;                        // 0x0148(0x0120)(ConstParm)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0268(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UJoinSessionCallbackProxy*              CallFunc_JoinSession_ReturnValue;                  // 0x0270(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FS_BiomeSave                           K2Node_CustomEvent_NewItem_1;                      // 0x0278(0x0038)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A4[0x7];                                     // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FS_BiomeSave                           K2Node_CustomEvent_NewItem;                        // 0x02B8(0x0038)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void(struct FRequestCurrentStatsData& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_5;            // 0x02F0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UAsyncActionHandleSaveGame*             CallFunc_AsyncSaveGameToSlot_ReturnValue;          // 0x0300(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0308(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A5[0x7];                                     // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAsyncActionHandleSaveGame*             CallFunc_AsyncSaveGameToSlot_ReturnValue_1;        // 0x0310(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0318(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable;                              // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetAchievement_ReturnValue;               // 0x00B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class USteamCoreProUserStatsAsyncActionRequestCurrentStats* CallFunc_RequestCurrentStatsAsync_ReturnValue;     // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FRequestCurrentStatsData               Temp_struct_Variable;                              // 0x00C8(0x0018)(NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_1_FirstRun;                       // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E2[0x2];                                       // 0x00E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_1_Data;                           // 0x00E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsPackagedForDistribution_ReturnValue;    // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_Event_Count;                                // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_WingIndex;                            // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_AddUnique_ReturnValue;              // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_2;                              // 0x00FD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bWasSuccessful;                 // 0x00FE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FF[0x1];                                       // 0x00FF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_CustomEvent_LocalPlayerNum;                 // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_InvitedBy;                      // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FBlueprintSessionResult                K2Node_CustomEvent_Session_1;                      // 0x0118(0x0120)(ConstParm)
+	struct FS_BiomeSave                           K2Node_CustomEvent_NewItem_1;                      // 0x0238(0x0038)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_CustomEvent_NewItem;                        // 0x0270(0x0038)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	struct FRequestCurrentStatsData               K2Node_CustomEvent_Data;                           // 0x02A8(0x0018)(ConstParm, NoDestructor)
+	bool                                          K2Node_CustomEvent_bWasSuccessful_1;               // 0x02C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAsyncActionHandleSaveGame*             CallFunc_AsyncSaveGameToSlot_ReturnValue;          // 0x02C8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x02D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2D1[0x7];                                      // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAsyncActionHandleSaveGame*             CallFunc_AsyncSaveGameToSlot_ReturnValue_1;        // 0x02D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(struct FRequestCurrentStatsData& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_4;            // 0x02E0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x02F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_MultiGate_2_FirstRun;                       // 0x02F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2F2[0x2];                                      // 0x02F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_MultiGate_2_Data;                           // 0x02F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_CustomEvent_PlayerIndex;                    // 0x02F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlueprintSessionResult                K2Node_CustomEvent_Session;                        // 0x0300(0x0120)(ConstParm)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0420(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSessionPropertyKeyPair>        CallFunc_GetExtraSettings_ExtraSettings;           // 0x0428(0x0010)(ReferenceParm)
+	ESessionSettingSearchResult                   CallFunc_GetSessionPropertyString_SearchResult;    // 0x0438(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_439[0x7];                                      // 0x0439(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionPropertyString_SettingValue;    // 0x0440(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESessionSettingSearchResult                   CallFunc_GetSessionPropertyString_SearchResult_1;  // 0x0450(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_451[0x7];                                      // 0x0451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionPropertyString_SettingValue_1;  // 0x0458(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FPublishedFileID                       CallFunc_MakePublishedFileID_ReturnValue;          // 0x0468(0x0008)(NoDestructor)
+	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x0470(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0471(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0472(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_473[0x5];                                      // 0x0473(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0478(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_5;            // 0x0480(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UJoinSessionCallbackProxy*              CallFunc_JoinSession_ReturnValue;                  // 0x0490(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0498(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_499[0x3];                                      // 0x0499(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bWasSuccessful, int32 LocalPlayerNum, const class FString& InvitedBy, struct FBlueprintSessionResult& Session)> K2Node_CreateDelegate_OutputDelegate_6;            // 0x049C(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CustomGI_C_ExecuteUbergraph_CustomGI) == 0x000008, "Wrong alignment on CustomGI_C_ExecuteUbergraph_CustomGI");
-static_assert(sizeof(CustomGI_C_ExecuteUbergraph_CustomGI) == 0x000320, "Wrong size on CustomGI_C_ExecuteUbergraph_CustomGI");
+static_assert(sizeof(CustomGI_C_ExecuteUbergraph_CustomGI) == 0x0004B0, "Wrong size on CustomGI_C_ExecuteUbergraph_CustomGI");
 static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, EntryPoint) == 0x000000, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::EntryPoint' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_1) == 0x000014, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_2) == 0x000024, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_SaveGame_1) == 0x000038, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_SaveGame_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bSuccess_1) == 0x000040, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_3) == 0x000044, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable) == 0x000054, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_object_Variable) == 0x000058, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_object_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_SaveGame) == 0x000060, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_SaveGame' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bSuccess) == 0x000068, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bSuccess' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_4) == 0x00006C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable_1) == 0x00007C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_object_Variable_1) == 0x000080, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_object_Variable_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue) == 0x000088, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue_1) == 0x000090, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_FirstRun) == 0x000098, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_FirstRun' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Success) == 0x000004, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Success' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate) == 0x000008, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_SaveGame_1) == 0x000018, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_SaveGame_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bSuccess_1) == 0x000020, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_1) == 0x000024, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable) == 0x000034, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_object_Variable) == 0x000038, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_object_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_SaveGame) == 0x000040, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_SaveGame' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bSuccess) == 0x000048, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bSuccess' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_2) == 0x00004C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable_1) == 0x00005C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_object_Variable_1) == 0x000060, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_object_Variable_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue) == 0x000068, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue_1) == 0x000070, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue_2) == 0x000078, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_3) == 0x000080, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Create_ReturnValue_3) == 0x000090, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Create_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Has_Been_Initd_Variable) == 0x000098, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_FirstRun) == 0x000099, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_FirstRun' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_Data) == 0x00009C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_Data' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_ScratchBool) == 0x0000A0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_ScratchBool' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_ScratchIndex) == 0x0000A4, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_ScratchIndex' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_IsClosed_Variable) == 0x0000A8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Has_Been_Initd_Variable) == 0x0000A9, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_struct_Variable) == 0x0000B0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_struct_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable_2) == 0x0000C8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable_2' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_1_FirstRun) == 0x0000C9, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_1_FirstRun' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_1_Data) == 0x0000CC, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_1_Data' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_string_Variable) == 0x0000D0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_string_Variable' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_StoreStats_ReturnValue) == 0x0000E0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_SetAchievement_ReturnValue) == 0x0000E1, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_SetAchievement_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Data) == 0x0000E8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Data' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bWasSuccessful_1) == 0x000100, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bWasSuccessful_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_2_FirstRun) == 0x000101, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_2_FirstRun' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_2_Data) == 0x000104, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_2_Data' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsPackagedForDistribution_ReturnValue) == 0x000108, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsPackagedForDistribution_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_Event_Count) == 0x00010C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_Event_Count' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_Event_WingIndex) == 0x000110, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_Event_WingIndex' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_RequestCurrentStatsAsync_ReturnValue) == 0x000118, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_RequestCurrentStatsAsync_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Array_Length_ReturnValue) == 0x000120, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000124, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue) == 0x000125, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Array_AddUnique_ReturnValue) == 0x000128, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Array_AddUnique_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bWasSuccessful) == 0x00012C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bWasSuccessful' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_LocalPlayerNum) == 0x000130, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_LocalPlayerNum' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_InvitedBy) == 0x000138, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_InvitedBy' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Session) == 0x000148, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Session' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetPlayerController_ReturnValue) == 0x000268, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_JoinSession_ReturnValue) == 0x000270, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_JoinSession_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_NewItem_1) == 0x000278, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_NewItem_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_1) == 0x0002B0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_NewItem) == 0x0002B8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_NewItem' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_5) == 0x0002F0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_AsyncSaveGameToSlot_ReturnValue) == 0x000300, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_AsyncSaveGameToSlot_ReturnValue' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_2) == 0x000308, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_AsyncSaveGameToSlot_ReturnValue_1) == 0x000310, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_AsyncSaveGameToSlot_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_3) == 0x000318, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_string_Variable) == 0x0000A8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_string_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_StoreStats_ReturnValue) == 0x0000B8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_SetAchievement_ReturnValue) == 0x0000B9, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_SetAchievement_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_RequestCurrentStatsAsync_ReturnValue) == 0x0000C0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_RequestCurrentStatsAsync_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_struct_Variable) == 0x0000C8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_struct_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue) == 0x0000E0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_1_FirstRun) == 0x0000E1, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_1_FirstRun' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_1_Data) == 0x0000E4, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_1_Data' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsPackagedForDistribution_ReturnValue) == 0x0000E8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsPackagedForDistribution_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_Event_Count) == 0x0000EC, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_Event_Count' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_Event_WingIndex) == 0x0000F0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_Event_WingIndex' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Array_Length_ReturnValue) == 0x0000F4, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_Array_AddUnique_ReturnValue) == 0x0000F8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_Array_AddUnique_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x0000FC, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_Variable_2) == 0x0000FD, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_Variable_2' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bWasSuccessful) == 0x0000FE, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bWasSuccessful' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_LocalPlayerNum) == 0x000100, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_LocalPlayerNum' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_InvitedBy) == 0x000108, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_InvitedBy' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Session_1) == 0x000118, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Session_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_NewItem_1) == 0x000238, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_NewItem_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_NewItem) == 0x000270, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_NewItem' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Data) == 0x0002A8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Data' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_bWasSuccessful_1) == 0x0002C0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_bWasSuccessful_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_AsyncSaveGameToSlot_ReturnValue) == 0x0002C8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_AsyncSaveGameToSlot_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_1) == 0x0002D0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_AsyncSaveGameToSlot_ReturnValue_1) == 0x0002D8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_AsyncSaveGameToSlot_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_4) == 0x0002E0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_2) == 0x0002F0, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_2_FirstRun) == 0x0002F1, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_2_FirstRun' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_MultiGate_2_Data) == 0x0002F4, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_MultiGate_2_Data' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_PlayerIndex) == 0x0002F8, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_PlayerIndex' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CustomEvent_Session) == 0x000300, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CustomEvent_Session' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, Temp_bool_IsClosed_Variable) == 0x000420, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetExtraSettings_ExtraSettings) == 0x000428, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetExtraSettings_ExtraSettings' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetSessionPropertyString_SearchResult) == 0x000438, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetSessionPropertyString_SearchResult' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetSessionPropertyString_SettingValue) == 0x000440, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetSessionPropertyString_SettingValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetSessionPropertyString_SearchResult_1) == 0x000450, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetSessionPropertyString_SearchResult_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetSessionPropertyString_SettingValue_1) == 0x000458, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetSessionPropertyString_SettingValue_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_MakePublishedFileID_ReturnValue) == 0x000468, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_MakePublishedFileID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsEmpty_ReturnValue) == 0x000470, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsEmpty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_SwitchEnum_CmpSuccess) == 0x000471, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_SwitchEnum_CmpSuccess_1) == 0x000472, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_GetPlayerController_ReturnValue) == 0x000478, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_5) == 0x000480, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_JoinSession_ReturnValue) == 0x000490, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_JoinSession_ReturnValue' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, CallFunc_IsValid_ReturnValue_3) == 0x000498, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_ExecuteUbergraph_CustomGI, K2Node_CreateDelegate_OutputDelegate_6) == 0x00049C, "Member 'CustomGI_C_ExecuteUbergraph_CustomGI::K2Node_CreateDelegate_OutputDelegate_6' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.GetCollectedWings
 // 0x0010 (0x0010 - 0x0000)
@@ -231,11 +258,11 @@ static_assert(offsetof(CustomGI_C_GetCollectedWings, Wings) == 0x000000, "Member
 struct CustomGI_C_GetDevMode final
 {
 public:
-	bool                                          Param_DevMode;                                     // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          DevMode_0;                                         // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CustomGI_C_GetDevMode) == 0x000001, "Wrong alignment on CustomGI_C_GetDevMode");
 static_assert(sizeof(CustomGI_C_GetDevMode) == 0x000001, "Wrong size on CustomGI_C_GetDevMode");
-static_assert(offsetof(CustomGI_C_GetDevMode, Param_DevMode) == 0x000000, "Member 'CustomGI_C_GetDevMode::Param_DevMode' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_GetDevMode, DevMode_0) == 0x000000, "Member 'CustomGI_C_GetDevMode::DevMode_0' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.GetGameAlreadyLaunched
 // 0x0001 (0x0001 - 0x0000)
@@ -297,33 +324,11 @@ static_assert(offsetof(CustomGI_C_GetLocalMultiplayerMode, ReturnValue) == 0x000
 struct CustomGI_C_GetPlayersInSession final
 {
 public:
-	int32                                         Param_PlayersInSession;                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PlayersInSession_0;                                // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CustomGI_C_GetPlayersInSession) == 0x000004, "Wrong alignment on CustomGI_C_GetPlayersInSession");
 static_assert(sizeof(CustomGI_C_GetPlayersInSession) == 0x000004, "Wrong size on CustomGI_C_GetPlayersInSession");
-static_assert(offsetof(CustomGI_C_GetPlayersInSession, Param_PlayersInSession) == 0x000000, "Member 'CustomGI_C_GetPlayersInSession::Param_PlayersInSession' has a wrong offset!");
-
-// Function CustomGI.CustomGI_C.GetTestControl
-// 0x0001 (0x0001 - 0x0000)
-struct CustomGI_C_GetTestControl final
-{
-public:
-	bool                                          TestControl;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(CustomGI_C_GetTestControl) == 0x000001, "Wrong alignment on CustomGI_C_GetTestControl");
-static_assert(sizeof(CustomGI_C_GetTestControl) == 0x000001, "Wrong size on CustomGI_C_GetTestControl");
-static_assert(offsetof(CustomGI_C_GetTestControl, TestControl) == 0x000000, "Member 'CustomGI_C_GetTestControl::TestControl' has a wrong offset!");
-
-// Function CustomGI.CustomGI_C.GetTestPlayers
-// 0x0004 (0x0004 - 0x0000)
-struct CustomGI_C_GetTestPlayers final
-{
-public:
-	int32                                         Count;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(CustomGI_C_GetTestPlayers) == 0x000004, "Wrong alignment on CustomGI_C_GetTestPlayers");
-static_assert(sizeof(CustomGI_C_GetTestPlayers) == 0x000004, "Wrong size on CustomGI_C_GetTestPlayers");
-static_assert(offsetof(CustomGI_C_GetTestPlayers, Count) == 0x000000, "Member 'CustomGI_C_GetTestPlayers::Count' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_GetPlayersInSession, PlayersInSession_0) == 0x000000, "Member 'CustomGI_C_GetPlayersInSession::PlayersInSession_0' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.GetTrueChainVisible
 // 0x0001 (0x0001 - 0x0000)
@@ -343,7 +348,7 @@ struct CustomGI_C_InitProgressSave final
 public:
 	class USG_Progress_C*                         CallFunc_CreateSaveGameObject_ReturnValue;         // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SaveGameToSlot_ReturnValue;               // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A6[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue;             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USG_Progress_C*                         K2Node_DynamicCast_AsSG_Progress;                  // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -357,6 +362,31 @@ static_assert(offsetof(CustomGI_C_InitProgressSave, CallFunc_LoadGameFromSlot_Re
 static_assert(offsetof(CustomGI_C_InitProgressSave, K2Node_DynamicCast_AsSG_Progress) == 0x000018, "Member 'CustomGI_C_InitProgressSave::K2Node_DynamicCast_AsSG_Progress' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_InitProgressSave, K2Node_DynamicCast_bSuccess) == 0x000020, "Member 'CustomGI_C_InitProgressSave::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_InitProgressSave, CallFunc_IsValid_ReturnValue) == 0x000021, "Member 'CustomGI_C_InitProgressSave::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+
+// Function CustomGI.CustomGI_C.IsInMod
+// 0x0001 (0x0001 - 0x0000)
+struct CustomGI_C_IsInMod final
+{
+public:
+	bool                                          Mod;                                               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CustomGI_C_IsInMod) == 0x000001, "Wrong alignment on CustomGI_C_IsInMod");
+static_assert(sizeof(CustomGI_C_IsInMod) == 0x000001, "Wrong size on CustomGI_C_IsInMod");
+static_assert(offsetof(CustomGI_C_IsInMod, Mod) == 0x000000, "Member 'CustomGI_C_IsInMod::Mod' has a wrong offset!");
+
+// Function CustomGI.CustomGI_C.JoinSessionAfterCheckingMods
+// 0x0128 (0x0128 - 0x0000)
+struct CustomGI_C_JoinSessionAfterCheckingMods final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlueprintSessionResult                Session;                                           // 0x0008(0x0120)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(CustomGI_C_JoinSessionAfterCheckingMods) == 0x000008, "Wrong alignment on CustomGI_C_JoinSessionAfterCheckingMods");
+static_assert(sizeof(CustomGI_C_JoinSessionAfterCheckingMods) == 0x000128, "Wrong size on CustomGI_C_JoinSessionAfterCheckingMods");
+static_assert(offsetof(CustomGI_C_JoinSessionAfterCheckingMods, PlayerIndex) == 0x000000, "Member 'CustomGI_C_JoinSessionAfterCheckingMods::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_JoinSessionAfterCheckingMods, Session) == 0x000008, "Member 'CustomGI_C_JoinSessionAfterCheckingMods::Session' has a wrong offset!");
 
 // Function CustomGI.CustomGI_C.ManualSave
 // 0x0038 (0x0038 - 0x0000)
@@ -425,6 +455,24 @@ static_assert(sizeof(CustomGI_C_OnSaveBiome) == 0x000070, "Wrong size on CustomG
 static_assert(offsetof(CustomGI_C_OnSaveBiome, NewItem) == 0x000000, "Member 'CustomGI_C_OnSaveBiome::NewItem' has a wrong offset!");
 static_assert(offsetof(CustomGI_C_OnSaveBiome, ItemToSave) == 0x000038, "Member 'CustomGI_C_OnSaveBiome::ItemToSave' has a wrong offset!");
 
+// Function CustomGI.CustomGI_C.OnSessionInviteAccepted
+// 0x0138 (0x0138 - 0x0000)
+struct CustomGI_C_OnSessionInviteAccepted final
+{
+public:
+	bool                                          bWasSuccessful;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LocalPlayerNum;                                    // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 InvitedBy;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FBlueprintSessionResult                Session;                                           // 0x0018(0x0120)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(CustomGI_C_OnSessionInviteAccepted) == 0x000008, "Wrong alignment on CustomGI_C_OnSessionInviteAccepted");
+static_assert(sizeof(CustomGI_C_OnSessionInviteAccepted) == 0x000138, "Wrong size on CustomGI_C_OnSessionInviteAccepted");
+static_assert(offsetof(CustomGI_C_OnSessionInviteAccepted, bWasSuccessful) == 0x000000, "Member 'CustomGI_C_OnSessionInviteAccepted::bWasSuccessful' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_OnSessionInviteAccepted, LocalPlayerNum) == 0x000004, "Member 'CustomGI_C_OnSessionInviteAccepted::LocalPlayerNum' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_OnSessionInviteAccepted, InvitedBy) == 0x000008, "Member 'CustomGI_C_OnSessionInviteAccepted::InvitedBy' has a wrong offset!");
+static_assert(offsetof(CustomGI_C_OnSessionInviteAccepted, Session) == 0x000018, "Member 'CustomGI_C_OnSessionInviteAccepted::Session' has a wrong offset!");
+
 // Function CustomGI.CustomGI_C.SaveBiomeProgress
 // 0x0038 (0x0038 - 0x0000)
 struct CustomGI_C_SaveBiomeProgress final
@@ -447,11 +495,11 @@ public:
 	E_Gamemodes                                   Mode;                                              // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SaveGameToSlot_ReturnValue;               // 0x0022(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A7[0x1];                                     // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FS_ProgressSave                        K2Node_MakeStruct_S_ProgressSave;                  // 0x0028(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SaveGameToSlot_ReturnValue_1;             // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11A8[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FS_ProgressSave                        K2Node_MakeStruct_S_ProgressSave_1;                // 0x0050(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -490,6 +538,28 @@ public:
 static_assert(alignof(CustomGI_C_SetPlayersInSession) == 0x000004, "Wrong alignment on CustomGI_C_SetPlayersInSession");
 static_assert(sizeof(CustomGI_C_SetPlayersInSession) == 0x000004, "Wrong size on CustomGI_C_SetPlayersInSession");
 static_assert(offsetof(CustomGI_C_SetPlayersInSession, Count) == 0x000000, "Member 'CustomGI_C_SetPlayersInSession::Count' has a wrong offset!");
+
+// Function CustomGI.CustomGI_C.GetTestControl
+// 0x0001 (0x0001 - 0x0000)
+struct CustomGI_C_GetTestControl final
+{
+public:
+	bool                                          TestControl;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CustomGI_C_GetTestControl) == 0x000001, "Wrong alignment on CustomGI_C_GetTestControl");
+static_assert(sizeof(CustomGI_C_GetTestControl) == 0x000001, "Wrong size on CustomGI_C_GetTestControl");
+static_assert(offsetof(CustomGI_C_GetTestControl, TestControl) == 0x000000, "Member 'CustomGI_C_GetTestControl::TestControl' has a wrong offset!");
+
+// Function CustomGI.CustomGI_C.GetTestPlayers
+// 0x0004 (0x0004 - 0x0000)
+struct CustomGI_C_GetTestPlayers final
+{
+public:
+	int32                                         Count;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CustomGI_C_GetTestPlayers) == 0x000004, "Wrong alignment on CustomGI_C_GetTestPlayers");
+static_assert(sizeof(CustomGI_C_GetTestPlayers) == 0x000004, "Wrong size on CustomGI_C_GetTestPlayers");
+static_assert(offsetof(CustomGI_C_GetTestPlayers, Count) == 0x000000, "Member 'CustomGI_C_GetTestPlayers::Count' has a wrong offset!");
 
 }
 

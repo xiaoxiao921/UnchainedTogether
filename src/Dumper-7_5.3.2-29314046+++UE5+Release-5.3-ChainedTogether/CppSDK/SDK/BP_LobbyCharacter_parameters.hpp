@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "ALS_OverlayState_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "E_ChoosenChar_structs.hpp"
@@ -25,11 +26,11 @@ struct BP_LobbyCharacter_C_AddCloth final
 public:
 	class USkeletalMesh*                          NewMesh;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Tint;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3595[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Temp_struct_Variable;                              // 0x0020(0x0060)(ConstParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 CallFunc_AddComponent_ReturnValue;                 // 0x0080(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3596[0x7];                                     // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
@@ -50,15 +51,15 @@ struct BP_LobbyCharacter_C_ExecuteUbergraph_BP_LobbyCharacter final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 K2Node_Event_ChosenChar;                           // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3597[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerState*                           K2Node_Event_PS;                                   // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UW_Pseudo_C*                            CallFunc_Create_ReturnValue;                       // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3598[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3599[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x003C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetPlayersInSession_PlayersInSession;     // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -91,7 +92,7 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359A[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x0010(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -106,23 +107,35 @@ static_assert(offsetof(BP_LobbyCharacter_C_MakeBlack, CallFunc_Array_Length_Retu
 static_assert(offsetof(BP_LobbyCharacter_C_MakeBlack, CallFunc_Less_IntInt_ReturnValue) == 0x000024, "Member 'BP_LobbyCharacter_C_MakeBlack::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
 
 // Function BP_LobbyCharacter.BP_LobbyCharacter_C.OnRep_Chosen Char
-// 0x0044 (0x0044 - 0x0000)
+// 0x0090 (0x0090 - 0x0000)
 struct BP_LobbyCharacter_C_OnRep_Chosen_Char final
 {
 public:
 	struct FLinearColor                           CallFunc_GetCharacterColor_Color;                  // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetCharacterColor_Color_1;                // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetCharacterColor_Color_2;                // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetCharacterColor_Color_3;                // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_1;                // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_2;                // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_3;                // 0x0048(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_4;                // 0x0058(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_5;                // 0x0068(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetCharacterColor_Color_6;                // 0x0078(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_LobbyCharacter_C_OnRep_Chosen_Char) == 0x000004, "Wrong alignment on BP_LobbyCharacter_C_OnRep_Chosen_Char");
-static_assert(sizeof(BP_LobbyCharacter_C_OnRep_Chosen_Char) == 0x000044, "Wrong size on BP_LobbyCharacter_C_OnRep_Chosen_Char");
+static_assert(alignof(BP_LobbyCharacter_C_OnRep_Chosen_Char) == 0x000008, "Wrong alignment on BP_LobbyCharacter_C_OnRep_Chosen_Char");
+static_assert(sizeof(BP_LobbyCharacter_C_OnRep_Chosen_Char) == 0x000090, "Wrong size on BP_LobbyCharacter_C_OnRep_Chosen_Char");
 static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color) == 0x000000, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color' has a wrong offset!");
-static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_1) == 0x000010, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_1' has a wrong offset!");
-static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_2) == 0x000020, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_2' has a wrong offset!");
-static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_3) == 0x000030, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_3' has a wrong offset!");
-static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, K2Node_SwitchEnum_CmpSuccess) == 0x000040, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000010, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_1) == 0x000018, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_1' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_CreateDynamicMaterialInstance_ReturnValue_1) == 0x000028, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_CreateDynamicMaterialInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_2) == 0x000030, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_2' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_CreateDynamicMaterialInstance_ReturnValue_2) == 0x000040, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_CreateDynamicMaterialInstance_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_3) == 0x000048, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_3' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_4) == 0x000058, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_4' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_5) == 0x000068, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_5' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, CallFunc_GetCharacterColor_Color_6) == 0x000078, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::CallFunc_GetCharacterColor_Color_6' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_OnRep_Chosen_Char, K2Node_SwitchEnum_CmpSuccess) == 0x000088, "Member 'BP_LobbyCharacter_C_OnRep_Chosen_Char::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
 
 // Function BP_LobbyCharacter.BP_LobbyCharacter_C.OnRep_PlayerName
 // 0x0010 (0x0010 - 0x0000)
@@ -147,7 +160,7 @@ public:
 	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_HasAuthority_ReturnValue_1;               // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359B[0x5];                                     // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetPlayerName_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class APS_Lobby_C*                            K2Node_DynamicCast_AsPS_Lobby;                     // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -169,14 +182,14 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359C[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USceneComponent*>                CallFunc_GetChildrenComponents_Children;           // 0x0010(0x0010)(ReferenceParm, ContainsInstancedReference)
 	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359D[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWidgetComponent*                       K2Node_DynamicCast_AsWidget_Component;             // 0x0030(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359E[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Max_ReturnValue;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -203,14 +216,14 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_359F[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x0010(0x0010)(ReferenceParm)
-	class USkeletalMesh*                          CallFunc_GetSkeletalMesh_DEPRECATED_ReturnValue;   // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMesh*                          CallFunc_GetSkeletalMeshAsset_ReturnValue;         // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A0[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSkeletalMaterial>              CallFunc_GetMaterials_ReturnValue_1;               // 0x0030(0x0010)(ConstParm, ReferenceParm)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A1[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSkeletalMaterial                      CallFunc_Array_Get_Item;                           // 0x0048(0x0028)(NoDestructor)
 };
 static_assert(alignof(BP_LobbyCharacter_C_ResetMaterials) == 0x000008, "Wrong alignment on BP_LobbyCharacter_C_ResetMaterials");
@@ -219,7 +232,7 @@ static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, Temp_int_Array_Index_
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, Temp_int_Loop_Counter_Variable) == 0x000004, "Member 'BP_LobbyCharacter_C_ResetMaterials::Temp_int_Loop_Counter_Variable' has a wrong offset!");
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_GetMaterials_ReturnValue) == 0x000010, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_GetMaterials_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_GetSkeletalMesh_DEPRECATED_ReturnValue) == 0x000020, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_GetSkeletalMesh_DEPRECATED_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_GetSkeletalMeshAsset_ReturnValue) == 0x000020, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_GetSkeletalMeshAsset_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_GetMaterials_ReturnValue_1) == 0x000030, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_GetMaterials_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'BP_LobbyCharacter_C_ResetMaterials::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
@@ -230,11 +243,11 @@ static_assert(offsetof(BP_LobbyCharacter_C_ResetMaterials, CallFunc_Array_Get_It
 struct BP_LobbyCharacter_C_SetAffectedPS final
 {
 public:
-	class APlayerState*                           Param_Ps;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APlayerState*                           Ps_0;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_LobbyCharacter_C_SetAffectedPS) == 0x000008, "Wrong alignment on BP_LobbyCharacter_C_SetAffectedPS");
 static_assert(sizeof(BP_LobbyCharacter_C_SetAffectedPS) == 0x000008, "Wrong size on BP_LobbyCharacter_C_SetAffectedPS");
-static_assert(offsetof(BP_LobbyCharacter_C_SetAffectedPS, Param_Ps) == 0x000000, "Member 'BP_LobbyCharacter_C_SetAffectedPS::Param_Ps' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_SetAffectedPS, Ps_0) == 0x000000, "Member 'BP_LobbyCharacter_C_SetAffectedPS::Ps_0' has a wrong offset!");
 
 // Function BP_LobbyCharacter.BP_LobbyCharacter_C.SetChosenChar
 // 0x0001 (0x0001 - 0x0000)
@@ -246,6 +259,27 @@ public:
 static_assert(alignof(BP_LobbyCharacter_C_SetChosenChar) == 0x000001, "Wrong alignment on BP_LobbyCharacter_C_SetChosenChar");
 static_assert(sizeof(BP_LobbyCharacter_C_SetChosenChar) == 0x000001, "Wrong size on BP_LobbyCharacter_C_SetChosenChar");
 static_assert(offsetof(BP_LobbyCharacter_C_SetChosenChar, ChosenChar) == 0x000000, "Member 'BP_LobbyCharacter_C_SetChosenChar::ChosenChar' has a wrong offset!");
+
+// Function BP_LobbyCharacter.BP_LobbyCharacter_C.SetOverlayState
+// 0x0030 (0x0030 - 0x0000)
+struct BP_LobbyCharacter_C_SetOverlayState final
+{
+public:
+	EALS_OverlayState                             OverlayState;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UChristian_ALS_AnimBP_C*                K2Node_DynamicCast_AsChristian_ALS_Anim_BP;        // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_LobbyCharacter_C_SetOverlayState) == 0x000008, "Wrong alignment on BP_LobbyCharacter_C_SetOverlayState");
+static_assert(sizeof(BP_LobbyCharacter_C_SetOverlayState) == 0x000030, "Wrong size on BP_LobbyCharacter_C_SetOverlayState");
+static_assert(offsetof(BP_LobbyCharacter_C_SetOverlayState, OverlayState) == 0x000000, "Member 'BP_LobbyCharacter_C_SetOverlayState::OverlayState' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_SetOverlayState, CallFunc_GetAnimInstance_ReturnValue) == 0x000008, "Member 'BP_LobbyCharacter_C_SetOverlayState::CallFunc_GetAnimInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_SetOverlayState, K2Node_DynamicCast_AsChristian_ALS_Anim_BP) == 0x000010, "Member 'BP_LobbyCharacter_C_SetOverlayState::K2Node_DynamicCast_AsChristian_ALS_Anim_BP' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_SetOverlayState, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'BP_LobbyCharacter_C_SetOverlayState::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_LobbyCharacter_C_SetOverlayState, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x000020, "Member 'BP_LobbyCharacter_C_SetOverlayState::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
 
 }
 

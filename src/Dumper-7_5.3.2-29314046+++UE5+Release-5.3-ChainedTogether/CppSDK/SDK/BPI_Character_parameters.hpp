@@ -94,7 +94,7 @@ struct BPI_Character_C_AddForce final
 public:
 	struct FVector                                Vector;                                            // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          MakeSlide;                                         // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1B[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        StabilizeSpeed;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          PushedByTrain;                                     // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShuffleFixToGround;                                // 0x0029(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -189,7 +189,7 @@ struct BPI_Character_C_BeginPullOtherCharacter final
 {
 public:
 	bool                                          BeginPull;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 OtherCharacter;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Character_C_BeginPullOtherCharacter) == 0x000008, "Wrong alignment on BPI_Character_C_BeginPullOtherCharacter");
@@ -250,15 +250,15 @@ struct BPI_Character_C_GetAnimVariables final
 public:
 	bool                                          Jump;                                              // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Fall;                                              // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1D[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                RadialVelocity;                                    // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              MoveInput;                                         // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Climb;                                             // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Pull;                                              // 0x0031(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1E[0x6];                                     // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 PulledCharacter;                                   // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsDriving;                                         // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1F[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                DriveLeftHand;                                     // 0x0048(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                DriveRightHand;                                    // 0x0060(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          LookAround;                                        // 0x0078(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -685,12 +685,12 @@ struct BPI_Character_C_SetCosmeticChainFixSocket final
 {
 public:
 	class UPrimitiveComponent*                    Socket;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FName                                   Param_Name;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   Name_0;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Character_C_SetCosmeticChainFixSocket) == 0x000008, "Wrong alignment on BPI_Character_C_SetCosmeticChainFixSocket");
 static_assert(sizeof(BPI_Character_C_SetCosmeticChainFixSocket) == 0x000010, "Wrong size on BPI_Character_C_SetCosmeticChainFixSocket");
 static_assert(offsetof(BPI_Character_C_SetCosmeticChainFixSocket, Socket) == 0x000000, "Member 'BPI_Character_C_SetCosmeticChainFixSocket::Socket' has a wrong offset!");
-static_assert(offsetof(BPI_Character_C_SetCosmeticChainFixSocket, Param_Name) == 0x000008, "Member 'BPI_Character_C_SetCosmeticChainFixSocket::Param_Name' has a wrong offset!");
+static_assert(offsetof(BPI_Character_C_SetCosmeticChainFixSocket, Name_0) == 0x000008, "Member 'BPI_Character_C_SetCosmeticChainFixSocket::Name_0' has a wrong offset!");
 
 // Function BPI_Character.BPI_Character_C.SetFlyMode
 // 0x0001 (0x0001 - 0x0000)
@@ -853,7 +853,7 @@ static_assert(offsetof(BPI_Character_C_SnapCharacterToVehicle, DriverSocket) == 
 struct BPI_Character_C_SwitchToTyrolienne final
 {
 public:
-	class ABP_Tyrolienne_C*                       Tyrolienne;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Tyrolienne;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Character_C_SwitchToTyrolienne) == 0x000008, "Wrong alignment on BPI_Character_C_SwitchToTyrolienne");
 static_assert(sizeof(BPI_Character_C_SwitchToTyrolienne) == 0x000008, "Wrong size on BPI_Character_C_SwitchToTyrolienne");

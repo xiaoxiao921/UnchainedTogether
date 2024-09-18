@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EnhancedInput_structs.hpp"
 #include "ChainedTogether_classes.hpp"
 
@@ -31,7 +31,7 @@ public:
 	EPlayerMappableKeySlot                        Slot_0;                                            // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature(const struct FInputChord& Param_SelectedKey);
+	void BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature(const struct FInputChord& SelectedKey_0);
 	void ExecuteUbergraph_W_NewBind(int32 EntryPoint);
 	void RefreshBind(const struct FPlayerKeyMapping& Key);
 

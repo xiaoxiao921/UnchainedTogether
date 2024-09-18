@@ -45,9 +45,9 @@ class UWM_InputManager* UWM_ControllerFunctionLib::Get_WM_InputManager()
 // Function WM_InputManager_Plugin.WM_Device.AssignDeviceToPlayerIndex
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWM_Device::AssignDeviceToPlayerIndex(int32 Param_Index)
+void UWM_Device::AssignDeviceToPlayerIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UWM_Device::AssignDeviceToPlayerIndex(int32 Param_Index)
 
 	Params::WM_Device_AssignDeviceToPlayerIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -189,11 +189,11 @@ TArray<int32> UWM_Device_HID::GetRaw_Available_DPADs()
 // Function WM_InputManager_Plugin.WM_Device_HID.GetRaw_ButtonValue
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ButtonValue                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWM_KeyTriggerState                     KeyTriggerState                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWM_Device_HID::GetRaw_ButtonValue(int32 Param_Index, bool* ButtonValue, EWM_KeyTriggerState* KeyTriggerState)
+void UWM_Device_HID::GetRaw_ButtonValue(int32 Index_0, bool* ButtonValue, EWM_KeyTriggerState* KeyTriggerState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -202,7 +202,7 @@ void UWM_Device_HID::GetRaw_ButtonValue(int32 Param_Index, bool* ButtonValue, EW
 
 	Params::WM_Device_HID_GetRaw_ButtonValue Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -288,10 +288,10 @@ void UWM_Device_HID::GetButtonKeyValue(const struct FKey& Key, bool* ButtonValue
 // Function WM_InputManager_Plugin.WM_Device_HID.GetRaw_AxisData
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWM_HID_AxisData                 ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FWM_HID_AxisData UWM_Device_HID::GetRaw_AxisData(int32 Param_Index) const
+struct FWM_HID_AxisData UWM_Device_HID::GetRaw_AxisData(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,7 +300,7 @@ struct FWM_HID_AxisData UWM_Device_HID::GetRaw_AxisData(int32 Param_Index) const
 
 	Params::WM_Device_HID_GetRaw_AxisData Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -316,10 +316,10 @@ struct FWM_HID_AxisData UWM_Device_HID::GetRaw_AxisData(int32 Param_Index) const
 // Function WM_InputManager_Plugin.WM_Device_HID.GetRaw_AxisValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UWM_Device_HID::GetRaw_AxisValue(int32 Param_Index) const
+float UWM_Device_HID::GetRaw_AxisValue(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -328,7 +328,7 @@ float UWM_Device_HID::GetRaw_AxisValue(int32 Param_Index) const
 
 	Params::WM_Device_HID_GetRaw_AxisValue Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -344,7 +344,7 @@ float UWM_Device_HID::GetRaw_AxisValue(int32 Param_Index) const
 // Function WM_InputManager_Plugin.WM_Device_HID.GetRaw_DPADData
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Up                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Down                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Left                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -355,7 +355,7 @@ float UWM_Device_HID::GetRaw_AxisValue(int32 Param_Index) const
 // int32                                   Instance                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWM_Device_HID::GetRaw_DPADData(int32 Param_Index, bool* Up, bool* Down, bool* Left, bool* Right, EWM_AxisCodeTable* AxisEnum, class FString* AxisBindingCode, class FString* AxisHEX, int32* Instance, float* Value) const
+void UWM_Device_HID::GetRaw_DPADData(int32 Index_0, bool* Up, bool* Down, bool* Left, bool* Right, EWM_AxisCodeTable* AxisEnum, class FString* AxisBindingCode, class FString* AxisHEX, int32* Instance, float* Value) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -364,7 +364,7 @@ void UWM_Device_HID::GetRaw_DPADData(int32 Param_Index, bool* Up, bool* Down, bo
 
 	Params::WM_Device_HID_GetRaw_DPADData Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

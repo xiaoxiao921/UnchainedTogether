@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function PC_MainMenu.PC_MainMenu_C.BPI_RequestCharacter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// E_ChoosenChar                           Character_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APC_MainMenu_C::BPI_RequestCharacter(E_ChoosenChar Character_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_MainMenu_C", "BPI_RequestCharacter");
+
+	Params::PC_MainMenu_C_BPI_RequestCharacter Parms{};
+
+	Parms.Character_0 = Character_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function PC_MainMenu.PC_MainMenu_C.ExecuteUbergraph_PC_MainMenu
 // (Final, UbergraphFunction)
 // Parameters:
@@ -306,9 +326,9 @@ void APC_MainMenu_C::Trigger_Moving_Object(class ABP_MovingObject_C* MovingObjec
 // Function PC_MainMenu.PC_MainMenu_C.UpdateCanEscape
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_CanEscape                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    CanEscape_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void APC_MainMenu_C::UpdateCanEscape(bool Param_CanEscape)
+void APC_MainMenu_C::UpdateCanEscape(bool CanEscape_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -317,7 +337,7 @@ void APC_MainMenu_C::UpdateCanEscape(bool Param_CanEscape)
 
 	Params::PC_MainMenu_C_UpdateCanEscape Parms{};
 
-	Parms.Param_CanEscape = Param_CanEscape;
+	Parms.CanEscape_0 = CanEscape_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

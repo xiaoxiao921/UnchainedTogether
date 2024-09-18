@@ -10,40 +10,194 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+
 
 namespace SDK::Params
 {
 
+// Function W_CharacterSelector.W_CharacterSelector_C.ChangeSlot
+// 0x0001 (0x0001 - 0x0000)
+struct W_CharacterSelector_C_ChangeSlot final
+{
+public:
+	bool                                          Right_0;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_CharacterSelector_C_ChangeSlot) == 0x000001, "Wrong alignment on W_CharacterSelector_C_ChangeSlot");
+static_assert(sizeof(W_CharacterSelector_C_ChangeSlot) == 0x000001, "Wrong size on W_CharacterSelector_C_ChangeSlot");
+static_assert(offsetof(W_CharacterSelector_C_ChangeSlot, Right_0) == 0x000000, "Member 'W_CharacterSelector_C_ChangeSlot::Right_0' has a wrong offset!");
+
+// Function W_CharacterSelector.W_CharacterSelector_C.Check Negative Translate
+// 0x0060 (0x0060 - 0x0000)
+struct W_CharacterSelector_C_Check_Negative_Translate final
+{
+public:
+	TArray<class UW_CharacterSlot_C*>             Slots;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	bool                                          ContainsNegative;                                  // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              NewLocalVar;                                       // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_BreakVector2D_X;                          // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector2D_Y;                          // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_CharacterSelector_C_Check_Negative_Translate) == 0x000008, "Wrong alignment on W_CharacterSelector_C_Check_Negative_Translate");
+static_assert(sizeof(W_CharacterSelector_C_Check_Negative_Translate) == 0x000060, "Wrong size on W_CharacterSelector_C_Check_Negative_Translate");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, Slots) == 0x000000, "Member 'W_CharacterSelector_C_Check_Negative_Translate::Slots' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, ContainsNegative) == 0x000010, "Member 'W_CharacterSelector_C_Check_Negative_Translate::ContainsNegative' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, NewLocalVar) == 0x000018, "Member 'W_CharacterSelector_C_Check_Negative_Translate::NewLocalVar' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, Temp_int_Array_Index_Variable) == 0x00002C, "Member 'W_CharacterSelector_C_Check_Negative_Translate::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, Temp_int_Loop_Counter_Variable) == 0x000030, "Member 'W_CharacterSelector_C_Check_Negative_Translate::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_Array_Get_Item) == 0x000038, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_BreakVector2D_X) == 0x000048, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_BreakVector2D_Y) == 0x000050, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Negative_Translate, CallFunc_Less_DoubleDouble_ReturnValue) == 0x00005C, "Member 'W_CharacterSelector_C_Check_Negative_Translate::CallFunc_Less_DoubleDouble_ReturnValue' has a wrong offset!");
+
+// Function W_CharacterSelector.W_CharacterSelector_C.Check Positive Translate
+// 0x0060 (0x0060 - 0x0000)
+struct W_CharacterSelector_C_Check_Positive_Translate final
+{
+public:
+	TArray<class UW_CharacterSlot_C*>             Slots;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	bool                                          ContainsPositive;                                  // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              NewLocalVar;                                       // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_BreakVector2D_X;                          // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector2D_Y;                          // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_CharacterSelector_C_Check_Positive_Translate) == 0x000008, "Wrong alignment on W_CharacterSelector_C_Check_Positive_Translate");
+static_assert(sizeof(W_CharacterSelector_C_Check_Positive_Translate) == 0x000060, "Wrong size on W_CharacterSelector_C_Check_Positive_Translate");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, Slots) == 0x000000, "Member 'W_CharacterSelector_C_Check_Positive_Translate::Slots' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, ContainsPositive) == 0x000010, "Member 'W_CharacterSelector_C_Check_Positive_Translate::ContainsPositive' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, NewLocalVar) == 0x000018, "Member 'W_CharacterSelector_C_Check_Positive_Translate::NewLocalVar' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, Temp_int_Array_Index_Variable) == 0x00002C, "Member 'W_CharacterSelector_C_Check_Positive_Translate::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, Temp_int_Loop_Counter_Variable) == 0x000030, "Member 'W_CharacterSelector_C_Check_Positive_Translate::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_Array_Get_Item) == 0x000038, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_BreakVector2D_X) == 0x000048, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_BreakVector2D_Y) == 0x000050, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_Check_Positive_Translate, CallFunc_Greater_DoubleDouble_ReturnValue) == 0x00005C, "Member 'W_CharacterSelector_C_Check_Positive_Translate::CallFunc_Greater_DoubleDouble_ReturnValue' has a wrong offset!");
+
+// Function W_CharacterSelector.W_CharacterSelector_C.CheckHigherSlot
+// 0x0060 (0x0060 - 0x0000)
+struct W_CharacterSelector_C_CheckHigherSlot final
+{
+public:
+	TArray<class UW_CharacterSlot_C*>             Slots;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	class UW_CharacterSlot_C*                     HigherSlot1;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_CharacterSlot_C*                     HigherSlot;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        X_Translation_Local;                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_CharacterSlot_C*                     CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_BreakVector2D_X;                          // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector2D_Y;                          // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_DoubleDouble_ReturnValue;         // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_CharacterSelector_C_CheckHigherSlot) == 0x000008, "Wrong alignment on W_CharacterSelector_C_CheckHigherSlot");
+static_assert(sizeof(W_CharacterSelector_C_CheckHigherSlot) == 0x000060, "Wrong size on W_CharacterSelector_C_CheckHigherSlot");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, Slots) == 0x000000, "Member 'W_CharacterSelector_C_CheckHigherSlot::Slots' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, HigherSlot1) == 0x000010, "Member 'W_CharacterSelector_C_CheckHigherSlot::HigherSlot1' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, HigherSlot) == 0x000018, "Member 'W_CharacterSelector_C_CheckHigherSlot::HigherSlot' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, X_Translation_Local) == 0x000020, "Member 'W_CharacterSelector_C_CheckHigherSlot::X_Translation_Local' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, Temp_int_Array_Index_Variable) == 0x00002C, "Member 'W_CharacterSelector_C_CheckHigherSlot::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, Temp_int_Loop_Counter_Variable) == 0x000030, "Member 'W_CharacterSelector_C_CheckHigherSlot::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_Array_Get_Item) == 0x000038, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_BreakVector2D_X) == 0x000048, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_BreakVector2D_Y) == 0x000050, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckHigherSlot, CallFunc_Greater_DoubleDouble_ReturnValue) == 0x00005C, "Member 'W_CharacterSelector_C_CheckHigherSlot::CallFunc_Greater_DoubleDouble_ReturnValue' has a wrong offset!");
+
+// Function W_CharacterSelector.W_CharacterSelector_C.CheckLowerSlot
+// 0x0060 (0x0060 - 0x0000)
+struct W_CharacterSelector_C_CheckLowerSlot final
+{
+public:
+	TArray<class UW_CharacterSlot_C*>             Slots;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+	class UW_CharacterSlot_C*                     LowerSlot;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_CharacterSlot_C*                     LowerSlotLocal;                                    // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        X_Translation_Local;                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_CharacterSlot_C*                     CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_BreakVector2D_X;                          // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector2D_Y;                          // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_CharacterSelector_C_CheckLowerSlot) == 0x000008, "Wrong alignment on W_CharacterSelector_C_CheckLowerSlot");
+static_assert(sizeof(W_CharacterSelector_C_CheckLowerSlot) == 0x000060, "Wrong size on W_CharacterSelector_C_CheckLowerSlot");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, Slots) == 0x000000, "Member 'W_CharacterSelector_C_CheckLowerSlot::Slots' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, LowerSlot) == 0x000010, "Member 'W_CharacterSelector_C_CheckLowerSlot::LowerSlot' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, LowerSlotLocal) == 0x000018, "Member 'W_CharacterSelector_C_CheckLowerSlot::LowerSlotLocal' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, X_Translation_Local) == 0x000020, "Member 'W_CharacterSelector_C_CheckLowerSlot::X_Translation_Local' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, Temp_int_Array_Index_Variable) == 0x00002C, "Member 'W_CharacterSelector_C_CheckLowerSlot::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, Temp_int_Loop_Counter_Variable) == 0x000030, "Member 'W_CharacterSelector_C_CheckLowerSlot::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_Array_Get_Item) == 0x000038, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_BreakVector2D_X) == 0x000048, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_BreakVector2D_Y) == 0x000050, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_CheckLowerSlot, CallFunc_Less_DoubleDouble_ReturnValue) == 0x00005C, "Member 'W_CharacterSelector_C_CheckLowerSlot::CallFunc_Less_DoubleDouble_ReturnValue' has a wrong offset!");
+
 // Function W_CharacterSelector.W_CharacterSelector_C.ExecuteUbergraph_W_CharacterSelector
-// 0x0058 (0x0058 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A1[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0018(0x0018)()
-	TArray<class UW_CharacterSlot_C*>             K2Node_MakeArray_Array;                            // 0x0030(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A2[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_CharacterSlot_C*                     CallFunc_Array_Get_Item;                           // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0008(0x0018)()
+	bool                                          K2Node_CustomEvent_Right;                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnimationPlaying_ReturnValue;           // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0022(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0023(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnimationPlaying_ReturnValue_1;         // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector) == 0x000008, "Wrong alignment on W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector");
-static_assert(sizeof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector) == 0x000058, "Wrong size on W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector");
+static_assert(sizeof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector) == 0x000028, "Wrong size on W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector");
 static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, EntryPoint) == 0x000000, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::EntryPoint' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, Temp_int_Array_Index_Variable) == 0x000004, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, Temp_int_Loop_Counter_Variable) == 0x000008, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_GetLocalMultiplayer_ReturnValue) == 0x000010, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_GetLocalMultiplayer_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Conv_StringToText_ReturnValue) == 0x000018, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, K2Node_MakeArray_Array) == 0x000030, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Array_Length_ReturnValue) == 0x000040, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Array_Get_Item) == 0x000048, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Less_IntInt_ReturnValue) == 0x000050, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_GetLocalMultiplayer_ReturnValue) == 0x000004, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_GetLocalMultiplayer_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_Conv_StringToText_ReturnValue) == 0x000008, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, K2Node_CustomEvent_Right) == 0x000020, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::K2Node_CustomEvent_Right' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_IsAnimationPlaying_ReturnValue) == 0x000021, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_IsAnimationPlaying_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, K2Node_SwitchEnum_CmpSuccess) == 0x000022, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, K2Node_SwitchEnum_CmpSuccess_1) == 0x000023, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector, CallFunc_IsAnimationPlaying_ReturnValue_1) == 0x000024, "Member 'W_CharacterSelector_C_ExecuteUbergraph_W_CharacterSelector::CallFunc_IsAnimationPlaying_ReturnValue_1' has a wrong offset!");
 
 }
 

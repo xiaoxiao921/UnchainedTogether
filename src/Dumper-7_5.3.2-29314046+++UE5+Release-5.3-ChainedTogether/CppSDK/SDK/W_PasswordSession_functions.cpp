@@ -79,6 +79,20 @@ void UW_PasswordSession_C::ExecuteUbergraph_W_PasswordSession(int32 EntryPoint)
 }
 
 
+// Function W_PasswordSession.W_PasswordSession_C.Fail
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_PasswordSession_C::Fail()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PasswordSession_C", "Fail");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_PasswordSession.W_PasswordSession_C.JoinSession
 // (BlueprintCallable, BlueprintEvent)
 
@@ -88,34 +102,6 @@ void UW_PasswordSession_C::JoinSession()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_PasswordSession_C", "JoinSession");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_PasswordSession.W_PasswordSession_C.OnFailure_A3EA653E4CED4437FD71FDB9F764A87A
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_PasswordSession_C::OnFailure_A3EA653E4CED4437FD71FDB9F764A87A()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_PasswordSession_C", "OnFailure_A3EA653E4CED4437FD71FDB9F764A87A");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_PasswordSession.W_PasswordSession_C.OnSuccess_A3EA653E4CED4437FD71FDB9F764A87A
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_PasswordSession_C::OnSuccess_A3EA653E4CED4437FD71FDB9F764A87A()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_PasswordSession_C", "OnSuccess_A3EA653E4CED4437FD71FDB9F764A87A");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

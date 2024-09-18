@@ -19,13 +19,13 @@ namespace SDK::Params
 struct ChaosCacheManager_EnablePlayback final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnable;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2650[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ChaosCacheManager_EnablePlayback) == 0x000004, "Wrong alignment on ChaosCacheManager_EnablePlayback");
 static_assert(sizeof(ChaosCacheManager_EnablePlayback) == 0x000008, "Wrong size on ChaosCacheManager_EnablePlayback");
-static_assert(offsetof(ChaosCacheManager_EnablePlayback, Param_Index) == 0x000000, "Member 'ChaosCacheManager_EnablePlayback::Param_Index' has a wrong offset!");
+static_assert(offsetof(ChaosCacheManager_EnablePlayback, Index_0) == 0x000000, "Member 'ChaosCacheManager_EnablePlayback::Index_0' has a wrong offset!");
 static_assert(offsetof(ChaosCacheManager_EnablePlayback, bEnable) == 0x000004, "Member 'ChaosCacheManager_EnablePlayback::bEnable' has a wrong offset!");
 
 // Function ChaosCaching.ChaosCacheManager.EnablePlaybackByCache
@@ -35,7 +35,7 @@ struct ChaosCacheManager_EnablePlaybackByCache final
 public:
 	class FName                                   InCacheName;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnable;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2651[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ChaosCacheManager_EnablePlaybackByCache) == 0x000004, "Wrong alignment on ChaosCacheManager_EnablePlaybackByCache");
 static_assert(sizeof(ChaosCacheManager_EnablePlaybackByCache) == 0x00000C, "Wrong size on ChaosCacheManager_EnablePlaybackByCache");

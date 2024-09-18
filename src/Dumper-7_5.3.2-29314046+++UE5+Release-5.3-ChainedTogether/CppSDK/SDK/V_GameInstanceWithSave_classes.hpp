@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
+#include "IGLE_GI_classes.hpp"
 #include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "S_SavedSetting_structs.hpp"
 #include "E_SettingCategory_structs.hpp"
 #include "E_ApplySettingType_structs.hpp"
@@ -21,24 +21,24 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass V_GameInstanceWithSave.V_GameInstanceWithSave_C
-// 0x0070 (0x0230 - 0x01C0)
-class UV_GameInstanceWithSave_C : public UGameInstance
+// 0x0070 (0x02B8 - 0x0248)
+class UV_GameInstanceWithSave_C : public UIGLE_GI_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x01C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UV_SaveGame_C*                          SaveGameObject;                                    // 0x01C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShowSaveIcon;                                      // 0x01D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D89[0x7];                                     // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_SaveNotif_C*                         SaveNotifWidget;                                   // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FS_SavedSetting>                BackupSettings;                                    // 0x01E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FS_SavedSetting>                DefaultSettings;                                   // 0x01F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          InvertX;                                           // 0x0200(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          InvertY;                                           // 0x0201(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D8A[0x6];                                     // 0x0202(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        X_Sensitivity;                                     // 0x0208(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Y_Sensitivity;                                     // 0x0210(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 PushToTalk;                                        // 0x0218(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class UV_SaveGame_C*                          BackupSaveObject;                                  // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0248(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UV_SaveGame_C*                          SaveGameObject;                                    // 0x0250(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShowSaveIcon;                                      // 0x0258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_259[0x7];                                      // 0x0259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_SaveNotif_C*                         SaveNotifWidget;                                   // 0x0260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FS_SavedSetting>                BackupSettings;                                    // 0x0268(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FS_SavedSetting>                DefaultSettings;                                   // 0x0278(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          InvertX;                                           // 0x0288(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InvertY;                                           // 0x0289(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_28A[0x6];                                      // 0x028A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        X_Sensitivity;                                     // 0x0290(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Y_Sensitivity;                                     // 0x0298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 PushToTalk;                                        // 0x02A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class UV_SaveGame_C*                          BackupSaveObject;                                  // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Apply_Audio_Settings(E_ApplySettingType Type);
@@ -75,7 +75,7 @@ public:
 	void ConstructSavedSettings();
 	void EraseCheckpoint();
 	void ExecuteUbergraph_V_GameInstanceWithSave(int32 EntryPoint);
-	void GetCameraSettings(bool* Param_InvertX, bool* Param_InvertY, double* Param_X_Sensitivity, double* Param_Y_Sensitivity);
+	void GetCameraSettings(bool* InvertX_0, bool* InvertY_0, double* X_Sensitivity_0, double* Y_Sensitivity_0);
 	void GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints);
 	void GetPushToTalk(bool* PTT);
 	void GetSaveGameObject(class UV_SaveGame_C** SaveGame);
@@ -96,8 +96,8 @@ public:
 	void SaveAfterRetrigerableDelay(double Delay);
 	void SaveCheckpoint(const struct FS_Checkpoint& Checkpoints);
 	void SaveGame();
-	void SetCameraInvertX(bool Param_InvertX);
-	void SetCameraInvertY(bool Param_InvertY);
+	void SetCameraInvertX(bool InvertX_0);
+	void SetCameraInvertY(bool InvertY_0);
 	void SetInstructionsAlreadyShown();
 	void SetResolutionScale(double NewValue, E_ApplySettingType SetType);
 	void ShowResolutionConfirmWidget();
@@ -123,19 +123,19 @@ public:
 	}
 };
 static_assert(alignof(UV_GameInstanceWithSave_C) == 0x000008, "Wrong alignment on UV_GameInstanceWithSave_C");
-static_assert(sizeof(UV_GameInstanceWithSave_C) == 0x000230, "Wrong size on UV_GameInstanceWithSave_C");
-static_assert(offsetof(UV_GameInstanceWithSave_C, UberGraphFrame) == 0x0001C0, "Member 'UV_GameInstanceWithSave_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, SaveGameObject) == 0x0001C8, "Member 'UV_GameInstanceWithSave_C::SaveGameObject' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, ShowSaveIcon) == 0x0001D0, "Member 'UV_GameInstanceWithSave_C::ShowSaveIcon' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, SaveNotifWidget) == 0x0001D8, "Member 'UV_GameInstanceWithSave_C::SaveNotifWidget' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, BackupSettings) == 0x0001E0, "Member 'UV_GameInstanceWithSave_C::BackupSettings' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, DefaultSettings) == 0x0001F0, "Member 'UV_GameInstanceWithSave_C::DefaultSettings' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, InvertX) == 0x000200, "Member 'UV_GameInstanceWithSave_C::InvertX' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, InvertY) == 0x000201, "Member 'UV_GameInstanceWithSave_C::InvertY' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, X_Sensitivity) == 0x000208, "Member 'UV_GameInstanceWithSave_C::X_Sensitivity' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, Y_Sensitivity) == 0x000210, "Member 'UV_GameInstanceWithSave_C::Y_Sensitivity' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, PushToTalk) == 0x000218, "Member 'UV_GameInstanceWithSave_C::PushToTalk' has a wrong offset!");
-static_assert(offsetof(UV_GameInstanceWithSave_C, BackupSaveObject) == 0x000228, "Member 'UV_GameInstanceWithSave_C::BackupSaveObject' has a wrong offset!");
+static_assert(sizeof(UV_GameInstanceWithSave_C) == 0x0002B8, "Wrong size on UV_GameInstanceWithSave_C");
+static_assert(offsetof(UV_GameInstanceWithSave_C, UberGraphFrame) == 0x000248, "Member 'UV_GameInstanceWithSave_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, SaveGameObject) == 0x000250, "Member 'UV_GameInstanceWithSave_C::SaveGameObject' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, ShowSaveIcon) == 0x000258, "Member 'UV_GameInstanceWithSave_C::ShowSaveIcon' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, SaveNotifWidget) == 0x000260, "Member 'UV_GameInstanceWithSave_C::SaveNotifWidget' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, BackupSettings) == 0x000268, "Member 'UV_GameInstanceWithSave_C::BackupSettings' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, DefaultSettings) == 0x000278, "Member 'UV_GameInstanceWithSave_C::DefaultSettings' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, InvertX) == 0x000288, "Member 'UV_GameInstanceWithSave_C::InvertX' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, InvertY) == 0x000289, "Member 'UV_GameInstanceWithSave_C::InvertY' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, X_Sensitivity) == 0x000290, "Member 'UV_GameInstanceWithSave_C::X_Sensitivity' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, Y_Sensitivity) == 0x000298, "Member 'UV_GameInstanceWithSave_C::Y_Sensitivity' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, PushToTalk) == 0x0002A0, "Member 'UV_GameInstanceWithSave_C::PushToTalk' has a wrong offset!");
+static_assert(offsetof(UV_GameInstanceWithSave_C, BackupSaveObject) == 0x0002B0, "Member 'UV_GameInstanceWithSave_C::BackupSaveObject' has a wrong offset!");
 
 }
 

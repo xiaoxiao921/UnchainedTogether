@@ -20,10 +20,10 @@ namespace SDK
 // Function AssetTags.AssetTagsSubsystem.CollectionExists
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAssetTagsSubsystem::CollectionExists(const class FName Param_Name)
+bool UAssetTagsSubsystem::CollectionExists(const class FName Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ bool UAssetTagsSubsystem::CollectionExists(const class FName Param_Name)
 
 	Params::AssetTagsSubsystem_CollectionExists Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,10 +48,10 @@ bool UAssetTagsSubsystem::CollectionExists(const class FName Param_Name)
 // Function AssetTags.AssetTagsSubsystem.GetAssetsInCollection
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FAssetData>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(const class FName Param_Name)
+TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(const class FName Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(const class
 
 	Params::AssetTagsSubsystem_GetAssetsInCollection Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

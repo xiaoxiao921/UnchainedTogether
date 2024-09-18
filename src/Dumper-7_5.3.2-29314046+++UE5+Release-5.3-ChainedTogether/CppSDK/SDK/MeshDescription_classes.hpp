@@ -21,7 +21,7 @@ namespace SDK
 class UMeshDescriptionBase : public UObject
 {
 public:
-	uint8                                         Pad_10E[0x2C8];                                    // 0x0028(0x02C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x2C8];                                     // 0x0028(0x02C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ComputePolygonTriangulation(const struct FPolygonID& PolygonID);
@@ -87,7 +87,7 @@ public:
 	void GetTriangleEdges(const struct FTriangleID& TriangleID, TArray<struct FEdgeID>* OutEdgeIDs) const;
 	struct FPolygonID GetTrianglePolygon(const struct FTriangleID& TriangleID) const;
 	struct FPolygonGroupID GetTrianglePolygonGroup(const struct FTriangleID& TriangleID) const;
-	struct FVertexInstanceID GetTriangleVertexInstance(const struct FTriangleID& TriangleID, int32 Param_Index) const;
+	struct FVertexInstanceID GetTriangleVertexInstance(const struct FTriangleID& TriangleID, int32 Index_0) const;
 	void GetTriangleVertexInstances(const struct FTriangleID& TriangleID, TArray<struct FVertexInstanceID>* OutVertexInstanceIDs) const;
 	void GetTriangleVertices(const struct FTriangleID& TriangleID, TArray<struct FVertexID>* OutVertexIDs) const;
 	void GetVertexAdjacentVertices(const struct FVertexID& VertexID, TArray<struct FVertexID>* OutAdjacentVertexIDs) const;

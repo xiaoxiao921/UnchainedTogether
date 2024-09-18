@@ -40,9 +40,9 @@ void UC_VinceSync_C::ExecuteUbergraph_C_VinceSync(int32 EntryPoint)
 // Function C_VinceSync.C_VinceSync_C.InitSync
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*                  Param_ComponentToSync                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  ComponentToSync_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UC_VinceSync_C::InitSync(class USceneComponent* Param_ComponentToSync)
+void UC_VinceSync_C::InitSync(class USceneComponent* ComponentToSync_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -51,7 +51,7 @@ void UC_VinceSync_C::InitSync(class USceneComponent* Param_ComponentToSync)
 
 	Params::C_VinceSync_C_InitSync Parms{};
 
-	Parms.Param_ComponentToSync = Param_ComponentToSync;
+	Parms.ComponentToSync_0 = ComponentToSync_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -94,9 +94,9 @@ void UC_VinceSync_C::ReceiveTick(float DeltaSeconds)
 // Function C_VinceSync.C_VinceSync_C.SetComponentToSync
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USceneComponent*                  Param_ComponentToSync                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class USceneComponent*                  ComponentToSync_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UC_VinceSync_C::SetComponentToSync(class USceneComponent* Param_ComponentToSync)
+void UC_VinceSync_C::SetComponentToSync(class USceneComponent* ComponentToSync_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -105,7 +105,7 @@ void UC_VinceSync_C::SetComponentToSync(class USceneComponent* Param_ComponentTo
 
 	Params::C_VinceSync_C_SetComponentToSync Parms{};
 
-	Parms.Param_ComponentToSync = Param_ComponentToSync;
+	Parms.ComponentToSync_0 = ComponentToSync_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -114,10 +114,10 @@ void UC_VinceSync_C::SetComponentToSync(class USceneComponent* Param_ComponentTo
 // Function C_VinceSync.C_VinceSync_C.Teleport
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_SyncedLocation                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Param_SyncedRotation                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVector                          SyncedLocation_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         SyncedRotation_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UC_VinceSync_C::Teleport(const struct FVector& Param_SyncedLocation, const struct FRotator& Param_SyncedRotation)
+void UC_VinceSync_C::Teleport(const struct FVector& SyncedLocation_0, const struct FRotator& SyncedRotation_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,8 +126,8 @@ void UC_VinceSync_C::Teleport(const struct FVector& Param_SyncedLocation, const 
 
 	Params::C_VinceSync_C_Teleport Parms{};
 
-	Parms.Param_SyncedLocation = std::move(Param_SyncedLocation);
-	Parms.Param_SyncedRotation = std::move(Param_SyncedRotation);
+	Parms.SyncedLocation_0 = std::move(SyncedLocation_0);
+	Parms.SyncedRotation_0 = std::move(SyncedRotation_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -136,10 +136,10 @@ void UC_VinceSync_C::Teleport(const struct FVector& Param_SyncedLocation, const 
 // Function C_VinceSync.C_VinceSync_C.TeleportAll
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_SyncedLocation                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Param_SyncedRotation                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVector                          SyncedLocation_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         SyncedRotation_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UC_VinceSync_C::TeleportAll(const struct FVector& Param_SyncedLocation, const struct FRotator& Param_SyncedRotation)
+void UC_VinceSync_C::TeleportAll(const struct FVector& SyncedLocation_0, const struct FRotator& SyncedRotation_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -148,8 +148,8 @@ void UC_VinceSync_C::TeleportAll(const struct FVector& Param_SyncedLocation, con
 
 	Params::C_VinceSync_C_TeleportAll Parms{};
 
-	Parms.Param_SyncedLocation = std::move(Param_SyncedLocation);
-	Parms.Param_SyncedRotation = std::move(Param_SyncedRotation);
+	Parms.SyncedLocation_0 = std::move(SyncedLocation_0);
+	Parms.SyncedRotation_0 = std::move(SyncedRotation_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -22,7 +22,7 @@ namespace SDK
 class UHumanWingAnimBP_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_2E2D[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_348[0x8];                                      // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0358(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0360(0x0008)()
@@ -39,7 +39,7 @@ public:
 	bool                                          Flotte;                                            // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void AnimNotify_FlapSound();
 	void ExecuteUbergraph_HumanWingAnimBP(int32 EntryPoint);
 

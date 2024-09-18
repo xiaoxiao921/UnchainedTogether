@@ -203,6 +203,27 @@ void IBPI_GameInstance_C::GetTrueChainVisible(bool* Visible)
 }
 
 
+// Function BPI_GameInstance.BPI_GameInstance_C.IsInMod
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Mod                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_GameInstance_C::IsInMod(bool* Mod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_GameInstance_C", "IsInMod");
+
+	Params::BPI_GameInstance_C_IsInMod Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Mod != nullptr)
+		*Mod = Parms.Mod;
+}
+
+
 // Function BPI_GameInstance.BPI_GameInstance_C.SetCollectedWing
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

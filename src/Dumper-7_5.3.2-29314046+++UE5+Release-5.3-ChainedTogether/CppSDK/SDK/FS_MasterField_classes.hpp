@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "EFieldForceVel_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "FieldSystemEngine_classes.hpp"
-#include "EFieldShapeType_structs.hpp"
 #include "EFieldActivationType_structs.hpp"
-#include "Chaos_structs.hpp"
+#include "EFieldShapeType_structs.hpp"
+#include "FieldSystemEngine_classes.hpp"
 
 
 namespace SDK
@@ -67,65 +67,65 @@ public:
 	class UBoxComponent*                          BoxVolumeCol;                                      // 0x03C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UReturnResultsTerminal*                 ReturnResultsTerminal;                             // 0x03D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	bool                                          Field_Active;                                      // 0x03D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3722[0x7];                                     // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UOperatorField*                         OperatorFIeld_Input;                               // 0x03E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          Debug;                                             // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldActivationType                          ActivationType;                                    // 0x03E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldShapeType                               Field_Falloff_Shape;                               // 0x03EA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseTick;                                           // 0x03EB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3723[0x4];                                     // 0x03EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3EC[0x4];                                      // 0x03EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        DelayAmount;                                       // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Use_External_Strain;                               // 0x03F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3724[0x7];                                     // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3F9[0x7];                                      // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Strain_Magnitude;                                  // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldFalloffType                             StrainFalloffType;                                 // 0x0408(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3725[0x7];                                     // 0x0409(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_409[0x7];                                      // 0x0409(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              StrainFalloffMinMax;                               // 0x0410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         NumStrainHits;                                     // 0x0420(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseRadialVector;                                   // 0x0424(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3726[0x3];                                     // 0x0425(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_425[0x3];                                      // 0x0425(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Radial_Magnitude;                                  // 0x0428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseDirectionalVector;                              // 0x0430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3727[0x7];                                     // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_431[0x7];                                      // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        DirectionalMagnitude;                              // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseTorque;                                         // 0x0440(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3728[0x7];                                     // 0x0441(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_441[0x7];                                      // 0x0441(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        TorqueMult;                                        // 0x0448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldFalloffType                             VelocityFieldFalloffType;                          // 0x0450(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3729[0x7];                                     // 0x0451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_451[0x7];                                      // 0x0451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              VelocityFalloffMinMax;                             // 0x0458(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseNoise;                                          // 0x0468(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372A[0x7];                                     // 0x0469(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_469[0x7];                                      // 0x0469(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              NoiseMinMax;                                       // 0x0470(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseDecay;                                          // 0x0480(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372B[0x7];                                     // 0x0481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_481[0x7];                                      // 0x0481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        DecayAmount;                                       // 0x0488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldFalloffType                             DecayFalloffType;                                  // 0x0490(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372C[0x7];                                     // 0x0491(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_491[0x7];                                      // 0x0491(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              DecayFalloffMinMax;                                // 0x0498(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   FieldVolume;                                       // 0x04A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        DecayDelay;                                        // 0x04B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        MaxDecayAmount;                                    // 0x04B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                RadialPositionOffset;                              // 0x04C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          OverideDIrectionalVector;                          // 0x04D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372D[0x7];                                     // 0x04D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D9[0x7];                                      // 0x04D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                DIrectionalVectorOveride;                          // 0x04E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                TorqueVectorOveride;                               // 0x04F8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldForceVel                                Velocity_Vector_Switch;                            // 0x0510(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372E[0x7];                                     // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_511[0x7];                                      // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        ForceMult;                                         // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          BoxCullingOnPlanar;                                // 0x0520(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_372F[0x7];                                     // 0x0521(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_521[0x7];                                      // 0x0521(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        PlanarFalloffDistOveride;                          // 0x0528(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Force_Dynamic_Switch;                              // 0x0530(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ActivateTaggedStaticAndSkeletal;                   // 0x0531(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3730[0x6];                                     // 0x0532(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_532[0x6];                                      // 0x0532(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   Chaos_Field_Name;                                  // 0x0538(0x0018)(Edit, BlueprintVisible)
 	struct FLinearColor                           FieldColour;                                       // 0x0550(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShowDebugText;                                     // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShowWireFrame;                                     // 0x0561(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShowSolidShapes;                                   // 0x0562(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3731[0x5];                                     // 0x0563(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_563[0x5];                                      // 0x0563(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        DirectionalDisplayScale;                           // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        RadialDisplayScale;                                // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Text_Vertical_Offset;                              // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -135,13 +135,13 @@ public:
 	EFieldFalloffType                             Field_Falloff_Noise;                               // 0x0583(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldFalloffType                             Field_Falloff_Torque;                              // 0x0584(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseLifespan;                                       // 0x0585(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3732[0x2];                                     // 0x0586(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_586[0x2];                                      // 0x0586(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        FieldLifespan;                                     // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseFramesForTiming;                                // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3733[0x7];                                     // 0x0591(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_591[0x7];                                      // 0x0591(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        FPS;                                               // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EObjectStateTypeEnum                          Dynamic_State;                                     // 0x05A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3734[0x7];                                     // 0x05A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5A1[0x7];                                      // 0x05A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        PlanarFalloffDist;                                 // 0x05A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        TotalDecay;                                        // 0x05B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              FalloffMinMax;                                     // 0x05B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -164,14 +164,14 @@ public:
 	class UMaterialInstanceDynamic*               Preview_Material;                                  // 0x06E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        TimeElapsed;                                       // 0x06E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        NoiseScaleMult;                                    // 0x06F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3735[0x8];                                     // 0x06F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6F8[0x8];                                      // 0x06F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             NewVar_0;                                          // 0x0700(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsTriggered;                                       // 0x0760(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3736[0x7];                                     // 0x0761(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_761[0x7];                                      // 0x0761(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        NoiseScaleBase;                                    // 0x0768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          DestroyActor;                                      // 0x0770(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFieldFalloffType                             FieldFalloffType_Input;                            // 0x0771(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3737[0x6];                                     // 0x0772(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_772[0x6];                                      // 0x0772(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              FalloffMinMax_Input;                               // 0x0778(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Magnitude_Input;                                   // 0x0788(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -180,8 +180,8 @@ public:
 	void CE_Trigger();
 	void DisplayTextSetup();
 	void ExecuteUbergraph_FS_MasterField(int32 EntryPoint);
-	void FalloffAndCullSwitch_Main(double Magnitude, EFieldFalloffType FalloffType, const struct FVector2D& Param_FalloffMinMax, class UOperatorField* OperatorField, class UCullingField** CullingField);
-	void FalloffShapeSwitch(EFieldFalloffType FalloffType, const struct FVector2D& Param_FalloffMinMax, class UOperatorField** OperatorFieldOut);
+	void FalloffAndCullSwitch_Main(double Magnitude, EFieldFalloffType FalloffType, const struct FVector2D& FalloffMinMax_0, class UOperatorField* OperatorField, class UCullingField** CullingField);
+	void FalloffShapeSwitch(EFieldFalloffType FalloffType, const struct FVector2D& FalloffMinMax_0, class UOperatorField** OperatorFieldOut);
 	void ForceMultiplier();
 	void InitializeFieldVariables();
 	void MakeDynamic_EnableNonGC();

@@ -43,7 +43,7 @@ struct TraceUtilLibrary_IsChannelEnabled final
 public:
 	class FString                                 ChannelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C61[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TraceUtilLibrary_IsChannelEnabled) == 0x000008, "Wrong alignment on TraceUtilLibrary_IsChannelEnabled");
 static_assert(sizeof(TraceUtilLibrary_IsChannelEnabled) == 0x000018, "Wrong size on TraceUtilLibrary_IsChannelEnabled");
@@ -91,7 +91,7 @@ public:
 	class FString                                 Target;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                         Channels;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C62[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TraceUtilLibrary_StartTraceSendTo) == 0x000008, "Wrong alignment on TraceUtilLibrary_StartTraceSendTo");
 static_assert(sizeof(TraceUtilLibrary_StartTraceSendTo) == 0x000028, "Wrong size on TraceUtilLibrary_StartTraceSendTo");
@@ -107,7 +107,7 @@ public:
 	class FString                                 Filename;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                         Channels;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C63[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TraceUtilLibrary_StartTraceToFile) == 0x000008, "Wrong alignment on TraceUtilLibrary_StartTraceToFile");
 static_assert(sizeof(TraceUtilLibrary_StartTraceToFile) == 0x000028, "Wrong size on TraceUtilLibrary_StartTraceToFile");
@@ -134,7 +134,7 @@ public:
 	class FString                                 ChannelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Enabled;                                           // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C64[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TraceUtilLibrary_ToggleChannel) == 0x000008, "Wrong alignment on TraceUtilLibrary_ToggleChannel");
 static_assert(sizeof(TraceUtilLibrary_ToggleChannel) == 0x000018, "Wrong size on TraceUtilLibrary_ToggleChannel");
@@ -147,33 +147,33 @@ static_assert(offsetof(TraceUtilLibrary_ToggleChannel, ReturnValue) == 0x000011,
 struct TraceUtilLibrary_TraceBookmark final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TraceUtilLibrary_TraceBookmark) == 0x000008, "Wrong alignment on TraceUtilLibrary_TraceBookmark");
 static_assert(sizeof(TraceUtilLibrary_TraceBookmark) == 0x000010, "Wrong size on TraceUtilLibrary_TraceBookmark");
-static_assert(offsetof(TraceUtilLibrary_TraceBookmark, Param_Name) == 0x000000, "Member 'TraceUtilLibrary_TraceBookmark::Param_Name' has a wrong offset!");
+static_assert(offsetof(TraceUtilLibrary_TraceBookmark, Name_0) == 0x000000, "Member 'TraceUtilLibrary_TraceBookmark::Name_0' has a wrong offset!");
 
 // Function TraceUtilities.TraceUtilLibrary.TraceMarkRegionEnd
 // 0x0010 (0x0010 - 0x0000)
 struct TraceUtilLibrary_TraceMarkRegionEnd final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TraceUtilLibrary_TraceMarkRegionEnd) == 0x000008, "Wrong alignment on TraceUtilLibrary_TraceMarkRegionEnd");
 static_assert(sizeof(TraceUtilLibrary_TraceMarkRegionEnd) == 0x000010, "Wrong size on TraceUtilLibrary_TraceMarkRegionEnd");
-static_assert(offsetof(TraceUtilLibrary_TraceMarkRegionEnd, Param_Name) == 0x000000, "Member 'TraceUtilLibrary_TraceMarkRegionEnd::Param_Name' has a wrong offset!");
+static_assert(offsetof(TraceUtilLibrary_TraceMarkRegionEnd, Name_0) == 0x000000, "Member 'TraceUtilLibrary_TraceMarkRegionEnd::Name_0' has a wrong offset!");
 
 // Function TraceUtilities.TraceUtilLibrary.TraceMarkRegionStart
 // 0x0010 (0x0010 - 0x0000)
 struct TraceUtilLibrary_TraceMarkRegionStart final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TraceUtilLibrary_TraceMarkRegionStart) == 0x000008, "Wrong alignment on TraceUtilLibrary_TraceMarkRegionStart");
 static_assert(sizeof(TraceUtilLibrary_TraceMarkRegionStart) == 0x000010, "Wrong size on TraceUtilLibrary_TraceMarkRegionStart");
-static_assert(offsetof(TraceUtilLibrary_TraceMarkRegionStart, Param_Name) == 0x000000, "Member 'TraceUtilLibrary_TraceMarkRegionStart::Param_Name' has a wrong offset!");
+static_assert(offsetof(TraceUtilLibrary_TraceMarkRegionStart, Name_0) == 0x000000, "Member 'TraceUtilLibrary_TraceMarkRegionStart::Name_0' has a wrong offset!");
 
 }
 

@@ -43,9 +43,9 @@ void UW_Setting_C::BndEvt__W_Setting_W_ComboBox_K2Node_ComponentBoundEvent_1_OnC
 // (BlueprintEvent)
 // Parameters:
 // double                                  Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Param_Setting                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Setting_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_Setting_C::BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnValueChanged__DelegateSignature(double Value, const class FString& Param_Setting)
+void UW_Setting_C::BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnValueChanged__DelegateSignature(double Value, const class FString& Setting_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -55,7 +55,7 @@ void UW_Setting_C::BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnVal
 	Params::W_Setting_C_BndEvt__W_Setting_W_Slider_K2Node_ComponentBoundEvent_0_OnValueChanged__DelegateSignature Parms{};
 
 	Parms.Value = Value;
-	Parms.Param_Setting = std::move(Param_Setting);
+	Parms.Setting_0 = std::move(Setting_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

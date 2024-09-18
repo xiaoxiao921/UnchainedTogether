@@ -34,7 +34,7 @@ public:
 	void Reattach_Cube_Socket_to_Chain(class UPrimitiveComponent* CubeSocket);
 	void ReinitAttachment(int32 NewDensity, double NewChainMass, bool Human);
 	void Resync();
-	void SetAttachedChar(const int32 Param_Index, class AActor* Char);
+	void SetAttachedChar(const int32 Index_0, class AActor* Char);
 	void SetMaillonWeight(double NewWeight);
 	void SetSnapTips(bool SnapTips);
 	void SetTip0Location(const struct FVector& Loc);

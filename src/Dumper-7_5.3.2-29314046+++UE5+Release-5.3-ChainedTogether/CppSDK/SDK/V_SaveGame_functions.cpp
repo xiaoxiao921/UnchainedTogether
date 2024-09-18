@@ -17,6 +17,30 @@
 namespace SDK
 {
 
+// Function V_SaveGame.V_SaveGame_C.AddRemoveIDTimestamp
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           UGC_ID                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+// class FString                           Local_UGC_Timestamp                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    Remove                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UV_SaveGame_C::AddRemoveIDTimestamp(const class FString& UGC_ID, const class FString& Local_UGC_Timestamp, bool Remove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("V_SaveGame_C", "AddRemoveIDTimestamp");
+
+	Params::V_SaveGame_C_AddRemoveIDTimestamp Parms{};
+
+	Parms.UGC_ID = std::move(UGC_ID);
+	Parms.Local_UGC_Timestamp = std::move(Local_UGC_Timestamp);
+	Parms.Remove = Remove;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function V_SaveGame.V_SaveGame_C.AddRemoveMoney
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

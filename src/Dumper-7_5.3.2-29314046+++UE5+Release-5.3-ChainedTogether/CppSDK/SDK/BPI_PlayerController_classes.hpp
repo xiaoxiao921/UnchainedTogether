@@ -22,6 +22,7 @@ namespace SDK
 class IBPI_PlayerController_C final : public IInterface
 {
 public:
+	void BPI_RequestCharacter(E_ChoosenChar Character);
 	void GetAudioDevices(TArray<class FString>* Devices);
 	void GetControlledActor(class AActor** Actor);
 	void PlayAudioComponent(class UAudioComponent* AudioComponent);

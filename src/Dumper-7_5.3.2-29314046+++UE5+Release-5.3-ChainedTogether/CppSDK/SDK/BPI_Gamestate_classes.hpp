@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
+#include "E_ChoosenChar_structs.hpp"
 
 
 namespace SDK
@@ -38,8 +39,9 @@ public:
 	void IncrementSpawnedCharacter(int32* Result);
 	void LavaDeath_SRV_();
 	void NearestRescuePoint(bool Lava, bool* Found, class ABP_RescuePoint_C** RescuePoint);
-	void SendToChatSRV(const class FString& Param_Name, const class FString& Message, const struct FLinearColor& Color);
+	void SendToChatSRV(const class FString& Name_0, const class FString& Message, const struct FLinearColor& Color);
 	void ServerTravel(const class FString& Command);
+	void SetLocalMP_ChosenChar(E_ChoosenChar Character, int32 Index_0);
 	void SetTimer(int32 Timer);
 
 public:

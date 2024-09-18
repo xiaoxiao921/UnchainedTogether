@@ -1,6 +1,16 @@
 ﻿#include "gui.hpp"
 
-#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK.hpp"
+//Include just the files needed for faster compilation
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/CoreUObject_structs.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/CoreUObject_classes.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/InputCore_structs.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/Engine_classes.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/UnrealContainers.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/BP_Character_classes.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/CustomGI_classes.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/GS_Game_classes.hpp"
+#include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/Basic.hpp"
+
 #include "gui/renderer.hpp"
 #include "hooks/hooking.hpp"
 #include "lua/bindings/imgui_window.hpp"

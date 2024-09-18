@@ -35,7 +35,7 @@ public:
 	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x0077(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Variable;                                 // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E21[0x3];                                     // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7D[0x3];                                       // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_RandomIntegerInRange_ReturnValue;         // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           K2Node_Select_Default;                             // 0x0084(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -63,11 +63,11 @@ static_assert(offsetof(PS_Game_C_ExecuteUbergraph_PS_Game, K2Node_Select_Default
 struct PS_Game_C_GetColor final
 {
 public:
-	struct FLinearColor                           Param_Color;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Color_0;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(PS_Game_C_GetColor) == 0x000004, "Wrong alignment on PS_Game_C_GetColor");
 static_assert(sizeof(PS_Game_C_GetColor) == 0x000010, "Wrong size on PS_Game_C_GetColor");
-static_assert(offsetof(PS_Game_C_GetColor, Param_Color) == 0x000000, "Member 'PS_Game_C_GetColor::Param_Color' has a wrong offset!");
+static_assert(offsetof(PS_Game_C_GetColor, Color_0) == 0x000000, "Member 'PS_Game_C_GetColor::Color_0' has a wrong offset!");
 
 // Function PS_Game.PS_Game_C.OnRep_BeginLevelsLoaded
 // 0x0040 (0x0040 - 0x0000)
@@ -75,7 +75,7 @@ struct PS_Game_C_OnRep_BeginLevelsLoaded final
 {
 public:
 	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E22[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)

@@ -17,6 +17,50 @@
 namespace SDK::Params
 {
 
+// Function V_SaveGame.V_SaveGame_C.AddRemoveIDTimestamp
+// 0x00A0 (0x00A0 - 0x0000)
+struct V_SaveGame_C_AddRemoveIDTimestamp final
+{
+public:
+	class FString                                 UGC_ID;                                            // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+	class FString                                 Local_UGC_Timestamp;                               // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Remove;                                            // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_RemoveItem_ReturnValue;             // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_72[0x6];                                       // 0x0072(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue;               // 0x0078(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Array_Get_Item_1;                         // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(V_SaveGame_C_AddRemoveIDTimestamp) == 0x000008, "Wrong alignment on V_SaveGame_C_AddRemoveIDTimestamp");
+static_assert(sizeof(V_SaveGame_C_AddRemoveIDTimestamp) == 0x0000A0, "Wrong size on V_SaveGame_C_AddRemoveIDTimestamp");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, UGC_ID) == 0x000000, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::UGC_ID' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, Local_UGC_Timestamp) == 0x000010, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::Local_UGC_Timestamp' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, Remove) == 0x000020, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::Remove' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Concat_StrStr_ReturnValue) == 0x000028, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, Temp_int_Array_Index_Variable) == 0x000038, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000040, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, Temp_int_Loop_Counter_Variable) == 0x000050, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Add_IntInt_ReturnValue) == 0x000054, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Array_Add_ReturnValue) == 0x000058, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Array_Length_ReturnValue) == 0x00005C, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Array_Get_Item) == 0x000060, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Less_IntInt_ReturnValue) == 0x000070, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Array_RemoveItem_ReturnValue) == 0x000071, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Array_RemoveItem_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_ParseIntoArray_ReturnValue) == 0x000078, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_ParseIntoArray_ReturnValue' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_Array_Get_Item_1) == 0x000088, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(V_SaveGame_C_AddRemoveIDTimestamp, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000098, "Member 'V_SaveGame_C_AddRemoveIDTimestamp::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+
 // Function V_SaveGame.V_SaveGame_C.AddRemoveMoney
 // 0x0004 (0x0004 - 0x0000)
 struct V_SaveGame_C_AddRemoveMoney final
@@ -35,7 +79,7 @@ struct V_SaveGame_C_ContainsSetting_ final
 public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D79[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -63,18 +107,18 @@ struct V_SaveGame_C_DoesSettingStillExists_ final
 public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7A[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FName>                           CallFunc_GetDataTableRowNames_OutRowNames;         // 0x0018(0x0010)(ReferenceParm)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7B[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_Setting                             CallFunc_GetDataTableRowFromName_OutRow;           // 0x0038(0x0090)(HasGetValueTypeHash)
 	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7C[0x3];                                     // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7D[0x3];                                     // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -117,7 +161,7 @@ struct V_SaveGame_C_GetSettingFromIdentifier final
 public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7E[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Value;                                             // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -161,7 +205,7 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7F[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_SavedSetting                        CallFunc_Array_Get_Item;                           // 0x0040(0x0020)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -187,15 +231,15 @@ public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Value;                                             // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D80[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D81[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_SavedSetting                        CallFunc_Array_Get_Item;                           // 0x0038(0x0020)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D82[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FS_SavedSetting                        K2Node_SetFieldsInStruct_StructOut;                // 0x0060(0x0020)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

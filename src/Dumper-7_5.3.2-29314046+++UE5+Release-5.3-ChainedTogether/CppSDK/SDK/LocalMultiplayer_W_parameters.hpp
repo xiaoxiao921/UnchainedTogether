@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "S_BiomeSave_structs.hpp"
+#include "SteamCorePro_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -69,117 +70,214 @@ static_assert(sizeof(LocalMultiplayer_W_C_BndEvt__LocalMultiplayer_W_W_ComboBox_
 static_assert(offsetof(LocalMultiplayer_W_C_BndEvt__LocalMultiplayer_W_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature, NewSelection) == 0x000000, "Member 'LocalMultiplayer_W_C_BndEvt__LocalMultiplayer_W_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature::NewSelection' has a wrong offset!");
 static_assert(offsetof(LocalMultiplayer_W_C_BndEvt__LocalMultiplayer_W_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature, SelectType) == 0x000010, "Member 'LocalMultiplayer_W_C_BndEvt__LocalMultiplayer_W_W_ComboBox_K2Node_ComponentBoundEvent_0_OnComboSettingChange__DelegateSignature::SelectType' has a wrong offset!");
 
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.DeselectAllUGC
+// 0x0038 (0x0038 - 0x0000)
+struct LocalMultiplayer_W_C_DeselectAllUGC final
+{
+public:
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWorkshopItem_W_C*>              CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x0010(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorkshopItem_W_C*                      CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(LocalMultiplayer_W_C_DeselectAllUGC) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_DeselectAllUGC");
+static_assert(sizeof(LocalMultiplayer_W_C_DeselectAllUGC) == 0x000038, "Wrong size on LocalMultiplayer_W_C_DeselectAllUGC");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, Temp_int_Array_Index_Variable) == 0x000000, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, Temp_int_Loop_Counter_Variable) == 0x000004, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x000010, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, CallFunc_Array_Get_Item) == 0x000028, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_DeselectAllUGC, CallFunc_Less_IntInt_ReturnValue) == 0x000030, "Member 'LocalMultiplayer_W_C_DeselectAllUGC::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
 // Function LocalMultiplayer_W.LocalMultiplayer_W_C.ExecuteUbergraph_LocalMultiplayer_W
-// 0x0240 (0x0240 - 0x0000)
+// 0x0340 (0x0340 - 0x0000)
 struct LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_343D[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave;                     // 0x0008(0x0038)(ZeroConstructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue;                 // 0x0050(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection_3;         // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_3;           // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_343E[0x7];                                     // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_343F[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0080(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3440[0x6];                                     // 0x0092(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance_1;          // 0x00A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3441[0x7];                                     // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x00B8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3442[0x7];                                     // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection_2;         // 0x00C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_2;           // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3443[0x6];                                     // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection_1;         // 0x00E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_1;           // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3444[0x7];                                     // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess_1;                  // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3445[0x7];                                     // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_1;                  // 0x0108(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3446[0x7];                                     // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULoadSaveSwitcher_W_C*                  CallFunc_Create_ReturnValue;                       // 0x0118(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue;          // 0x0120(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue_1;        // 0x0128(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue_2;        // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 K2Node_ComponentBoundEvent_NewSelection;           // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType;             // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3447[0x7];                                     // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_3;            // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess_2;                  // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3448[0x7];                                     // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_2;                  // 0x0160(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3449[0x7];                                     // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave_1;                   // 0x0170(0x0038)(ZeroConstructor, HasGetValueTypeHash)
-	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave_2;                   // 0x01A8(0x0038)(ZeroConstructor, HasGetValueTypeHash)
-	struct FS_BiomeSave                           K2Node_Event_Save;                                 // 0x01E0(0x0038)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_344A[0x7];                                     // 0x0219(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_4;            // 0x0220(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_3;                  // 0x0228(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_344B[0x7];                                     // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue_1;                     // 0x0238(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave;                     // 0x0010(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue;                 // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection_3;         // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_3;           // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0078(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0088(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance_1;          // 0x00A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection_2;         // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_2;           // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection_1;         // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType_1;           // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FA[0x6];                                       // 0x00FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue;          // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue_1;        // 0x0108(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UGameMapsSettings*                      CallFunc_GetGameMapsSettings_ReturnValue_2;        // 0x0110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_ComponentBoundEvent_NewSelection;           // 0x0118(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectType;             // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess_1;                  // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_1;                  // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDownloadSubscribedWorkshop_W_C*        CallFunc_Create_ReturnValue_1;                     // 0x0150(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_Event_Save;                                 // 0x0158(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_3;            // 0x0198(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_2;                  // 0x01A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Update_UGC_References_UGC_Selected;       // 0x01A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1AA[0x6];                                      // 0x01AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_4;            // 0x01B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(bool Success)>                 K2Node_CreateDelegate_OutputDelegate;              // 0x01B8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_3;                  // 0x01C8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1D1[0x7];                                      // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULoadSaveSwitcher_W_C*                  CallFunc_Create_ReturnValue_2;                     // 0x01D8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave_1;                   // 0x01E0(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Success;                        // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetSelectedUGC_UGC_Selected;              // 0x0219(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21A[0x6];                                      // 0x021A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamUGCDetails                       CallFunc_GetSelectedUGC_UGC_Details;               // 0x0220(0x00A8)()
+	int32                                         CallFunc_GetItemInstallInfo_SizeOnDisk;            // 0x02C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetItemInstallInfo_Folder;                // 0x02D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetItemInstallInfo_TimeStamp;             // 0x02E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetItemInstallInfo_ReturnValue;           // 0x02E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2E5[0x3];                                      // 0x02E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x02E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<class FString>                         CallFunc_FindFiles_FoundFiles;                     // 0x02F8(0x0010)(ReferenceParm)
+	bool                                          CallFunc_FindFiles_ReturnValue;                    // 0x0308(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0310(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakPublishedFileID_ReturnValue;         // 0x0320(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0330(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W");
-static_assert(sizeof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W) == 0x000240, "Wrong size on LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W");
+static_assert(sizeof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W) == 0x000340, "Wrong size on LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W");
 static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, EntryPoint) == 0x000000, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::EntryPoint' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_MakeStruct_S_BiomeSave) == 0x000008, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_MakeStruct_S_BiomeSave' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetPlayerController_ReturnValue) == 0x000040, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_PlayAnimation_ReturnValue) == 0x000048, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_SpawnSound2D_ReturnValue) == 0x000050, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_SpawnSound2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_3) == 0x000058, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_3' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_3) == 0x000068, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_3' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue) == 0x000070, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Conv_StringToInt_ReturnValue) == 0x000078, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Conv_StringToInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsBPI_Game_Instance) == 0x000080, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsBPI_Game_Instance' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess) == 0x000090, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchInteger_CmpSuccess) == 0x000091, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_1) == 0x000098, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsBPI_Game_Instance_1) == 0x0000A0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsBPI_Game_Instance_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_1) == 0x0000B0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI) == 0x0000B8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_2) == 0x0000C0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_2) == 0x0000C8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_2) == 0x0000D8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchString_CmpSuccess) == 0x0000D9, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_1) == 0x0000E0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_1) == 0x0000F0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_2) == 0x0000F8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchString_CmpSuccess_1) == 0x000100, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchString_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_1) == 0x000108, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_3) == 0x000110, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Create_ReturnValue) == 0x000118, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue) == 0x000120, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue_1) == 0x000128, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue_2) == 0x000130, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection) == 0x000138, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType) == 0x000148, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_3) == 0x000150, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchString_CmpSuccess_2) == 0x000158, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchString_CmpSuccess_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_2) == 0x000160, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_4) == 0x000168, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_MakeStruct_S_BiomeSave_1) == 0x000170, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_MakeStruct_S_BiomeSave_1' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_MakeStruct_S_BiomeSave_2) == 0x0001A8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_MakeStruct_S_BiomeSave_2' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_Event_Save) == 0x0001E0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_Event_Save' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000218, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_4) == 0x000220, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_3) == 0x000228, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_3' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_5) == 0x000230, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
-static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Create_ReturnValue_1) == 0x000238, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Create_ReturnValue) == 0x000008, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_MakeStruct_S_BiomeSave) == 0x000010, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_MakeStruct_S_BiomeSave' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetPlayerController_ReturnValue) == 0x000048, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_PlayAnimation_ReturnValue) == 0x000050, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_SpawnSound2D_ReturnValue) == 0x000058, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_SpawnSound2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_3) == 0x000060, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_3' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_3) == 0x000070, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_3' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue) == 0x000078, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Conv_StringToInt_ReturnValue) == 0x000080, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Conv_StringToInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsBPI_Game_Instance) == 0x000088, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsBPI_Game_Instance' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess) == 0x000098, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchInteger_CmpSuccess) == 0x000099, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_1) == 0x0000A0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsBPI_Game_Instance_1) == 0x0000A8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsBPI_Game_Instance_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_1) == 0x0000B8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI) == 0x0000C0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_2) == 0x0000C8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_2) == 0x0000D0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_2) == 0x0000E0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection_1) == 0x0000E8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType_1) == 0x0000F8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchString_CmpSuccess) == 0x0000F9, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue) == 0x000100, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue_1) == 0x000108, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameMapsSettings_ReturnValue_2) == 0x000110, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameMapsSettings_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_NewSelection) == 0x000118, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_NewSelection' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_ComponentBoundEvent_SelectType) == 0x000128, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_ComponentBoundEvent_SelectType' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_2) == 0x000130, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_SwitchString_CmpSuccess_1) == 0x000138, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_SwitchString_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_1) == 0x000140, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_3) == 0x000148, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Create_ReturnValue_1) == 0x000150, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_Event_Save) == 0x000158, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_Event_Save' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000190, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_3) == 0x000198, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_2) == 0x0001A0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_4) == 0x0001A8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Update_UGC_References_UGC_Selected) == 0x0001A9, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Update_UGC_References_UGC_Selected' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetGameInstance_ReturnValue_4) == 0x0001B0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetGameInstance_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_CreateDelegate_OutputDelegate) == 0x0001B8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_AsCustom_GI_3) == 0x0001C8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_AsCustom_GI_3' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_DynamicCast_bSuccess_5) == 0x0001D0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Create_ReturnValue_2) == 0x0001D8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Create_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_MakeStruct_S_BiomeSave_1) == 0x0001E0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_MakeStruct_S_BiomeSave_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, K2Node_CustomEvent_Success) == 0x000218, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::K2Node_CustomEvent_Success' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetSelectedUGC_UGC_Selected) == 0x000219, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetSelectedUGC_UGC_Selected' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetSelectedUGC_UGC_Details) == 0x000220, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetSelectedUGC_UGC_Details' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetItemInstallInfo_SizeOnDisk) == 0x0002C8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetItemInstallInfo_SizeOnDisk' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetItemInstallInfo_Folder) == 0x0002D0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetItemInstallInfo_Folder' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetItemInstallInfo_TimeStamp) == 0x0002E0, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetItemInstallInfo_TimeStamp' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_GetItemInstallInfo_ReturnValue) == 0x0002E4, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_GetItemInstallInfo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Concat_StrStr_ReturnValue) == 0x0002E8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_FindFiles_FoundFiles) == 0x0002F8, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_FindFiles_FoundFiles' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_FindFiles_ReturnValue) == 0x000308, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_FindFiles_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Array_Get_Item) == 0x000310, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_BreakPublishedFileID_ReturnValue) == 0x000320, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_BreakPublishedFileID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000330, "Member 'LocalMultiplayer_W_C_ExecuteUbergraph_LocalMultiplayer_W::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.GetSelectedUGC
+// 0x00E8 (0x00E8 - 0x0000)
+struct LocalMultiplayer_W_C_GetSelectedUGC final
+{
+public:
+	bool                                          UGC_Selected;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamUGCDetails                       UGC_Details;                                       // 0x0008(0x00A8)(Parm, OutParm)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWorkshopItem_W_C*>              CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x00C0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorkshopItem_W_C*                      CallFunc_Array_Get_Item;                           // 0x00D8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(LocalMultiplayer_W_C_GetSelectedUGC) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_GetSelectedUGC");
+static_assert(sizeof(LocalMultiplayer_W_C_GetSelectedUGC) == 0x0000E8, "Wrong size on LocalMultiplayer_W_C_GetSelectedUGC");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, UGC_Selected) == 0x000000, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::UGC_Selected' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, UGC_Details) == 0x000008, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::UGC_Details' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, Temp_int_Array_Index_Variable) == 0x0000B0, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, Temp_int_Loop_Counter_Variable) == 0x0000B4, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, CallFunc_Add_IntInt_ReturnValue) == 0x0000B8, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x0000C0, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, CallFunc_Array_Length_ReturnValue) == 0x0000D0, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, CallFunc_Array_Get_Item) == 0x0000D8, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_GetSelectedUGC, CallFunc_Less_IntInt_ReturnValue) == 0x0000E0, "Member 'LocalMultiplayer_W_C_GetSelectedUGC::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.OnDownloaded_Event
+// 0x0001 (0x0001 - 0x0000)
+struct LocalMultiplayer_W_C_OnDownloaded_Event final
+{
+public:
+	bool                                          Success;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(LocalMultiplayer_W_C_OnDownloaded_Event) == 0x000001, "Wrong alignment on LocalMultiplayer_W_C_OnDownloaded_Event");
+static_assert(sizeof(LocalMultiplayer_W_C_OnDownloaded_Event) == 0x000001, "Wrong size on LocalMultiplayer_W_C_OnDownloaded_Event");
+static_assert(offsetof(LocalMultiplayer_W_C_OnDownloaded_Event, Success) == 0x000000, "Member 'LocalMultiplayer_W_C_OnDownloaded_Event::Success' has a wrong offset!");
 
 // Function LocalMultiplayer_W.LocalMultiplayer_W_C.RefreshSave
 // 0x0038 (0x0038 - 0x0000)
@@ -191,6 +289,72 @@ public:
 static_assert(alignof(LocalMultiplayer_W_C_RefreshSave) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_RefreshSave");
 static_assert(sizeof(LocalMultiplayer_W_C_RefreshSave) == 0x000038, "Wrong size on LocalMultiplayer_W_C_RefreshSave");
 static_assert(offsetof(LocalMultiplayer_W_C_RefreshSave, Save) == 0x000000, "Member 'LocalMultiplayer_W_C_RefreshSave::Save' has a wrong offset!");
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.Update_UGC_References
+// 0x0058 (0x0058 - 0x0000)
+struct LocalMultiplayer_W_C_Update_UGC_References final
+{
+public:
+	bool                                          UGC_Selected;                                      // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UWorkshopItem_W_C*>              CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x0010(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UWorkshopItem_W_C*                      CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_BreakPublishedFileID_ReturnValue;         // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(LocalMultiplayer_W_C_Update_UGC_References) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_Update_UGC_References");
+static_assert(sizeof(LocalMultiplayer_W_C_Update_UGC_References) == 0x000058, "Wrong size on LocalMultiplayer_W_C_Update_UGC_References");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, UGC_Selected) == 0x000000, "Member 'LocalMultiplayer_W_C_Update_UGC_References::UGC_Selected' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, Temp_int_Array_Index_Variable) == 0x000004, "Member 'LocalMultiplayer_W_C_Update_UGC_References::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, Temp_int_Loop_Counter_Variable) == 0x000008, "Member 'LocalMultiplayer_W_C_Update_UGC_References::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x000010, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_GetGameInstance_ReturnValue) == 0x000020, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_Array_Get_Item) == 0x000028, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, K2Node_DynamicCast_AsCustom_GI) == 0x000030, "Member 'LocalMultiplayer_W_C_Update_UGC_References::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, K2Node_DynamicCast_bSuccess) == 0x000038, "Member 'LocalMultiplayer_W_C_Update_UGC_References::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_BreakPublishedFileID_ReturnValue) == 0x000040, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_BreakPublishedFileID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_Array_Length_ReturnValue) == 0x000050, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_Update_UGC_References, CallFunc_Less_IntInt_ReturnValue) == 0x000054, "Member 'LocalMultiplayer_W_C_Update_UGC_References::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.UpdateGameMode
+// 0x00B8 (0x00B8 - 0x0000)
+struct LocalMultiplayer_W_C_UpdateGameMode final
+{
+public:
+	class FString                                 Selection;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave;                     // 0x0030(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	struct FS_BiomeSave                           K2Node_MakeStruct_S_BiomeSave_1;                   // 0x0068(0x0038)(ZeroConstructor, HasGetValueTypeHash)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI_1;                  // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(LocalMultiplayer_W_C_UpdateGameMode) == 0x000008, "Wrong alignment on LocalMultiplayer_W_C_UpdateGameMode");
+static_assert(sizeof(LocalMultiplayer_W_C_UpdateGameMode) == 0x0000B8, "Wrong size on LocalMultiplayer_W_C_UpdateGameMode");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, Selection) == 0x000000, "Member 'LocalMultiplayer_W_C_UpdateGameMode::Selection' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_SwitchString_CmpSuccess) == 0x000010, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, CallFunc_GetGameInstance_ReturnValue) == 0x000018, "Member 'LocalMultiplayer_W_C_UpdateGameMode::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_DynamicCast_AsCustom_GI) == 0x000020, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_MakeStruct_S_BiomeSave) == 0x000030, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_MakeStruct_S_BiomeSave' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_MakeStruct_S_BiomeSave_1) == 0x000068, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_MakeStruct_S_BiomeSave_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, CallFunc_GetGameInstance_ReturnValue_1) == 0x0000A0, "Member 'LocalMultiplayer_W_C_UpdateGameMode::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_DynamicCast_AsCustom_GI_1) == 0x0000A8, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_DynamicCast_AsCustom_GI_1' has a wrong offset!");
+static_assert(offsetof(LocalMultiplayer_W_C_UpdateGameMode, K2Node_DynamicCast_bSuccess_1) == 0x0000B0, "Member 'LocalMultiplayer_W_C_UpdateGameMode::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
 
 }
 

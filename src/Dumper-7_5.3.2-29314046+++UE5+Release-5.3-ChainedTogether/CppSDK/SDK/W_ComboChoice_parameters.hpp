@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -19,54 +19,40 @@ namespace SDK::Params
 {
 
 // Function W_ComboChoice.W_ComboChoice_C.ExecuteUbergraph_W_ComboChoice
-// 0x0090 (0x0090 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C47[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const class FString& SelectedItem, ESelectInfo SelectionType)> K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0008(0x0018)()
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C48[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0028(0x0018)()
-	class FString                                 K2Node_CustomEvent_SelectedItem;                   // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   K2Node_CustomEvent_SelectionType;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C49[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetSelectedOption_ReturnValue;            // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C4A[0x2];                                     // 0x006A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue;      // 0x006C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_1;    // 0x007C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice) == 0x000008, "Wrong alignment on W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice");
-static_assert(sizeof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice) == 0x000090, "Wrong size on W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice");
+static_assert(sizeof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice) == 0x000028, "Wrong size on W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice");
 static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, EntryPoint) == 0x000000, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::EntryPoint' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_PlayAnimation_ReturnValue) == 0x000008, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, K2Node_CreateDelegate_OutputDelegate) == 0x000010, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_Conv_StringToText_ReturnValue) == 0x000008, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, K2Node_Event_IsDesignTime) == 0x000020, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::K2Node_Event_IsDesignTime' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_Conv_StringToText_ReturnValue) == 0x000028, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, K2Node_CustomEvent_SelectedItem) == 0x000040, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::K2Node_CustomEvent_SelectedItem' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, K2Node_CustomEvent_SelectionType) == 0x000050, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::K2Node_CustomEvent_SelectionType' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_GetSelectedOption_ReturnValue) == 0x000058, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_GetSelectedOption_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000068, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_Not_PreBool_ReturnValue) == 0x000069, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_GetVectorParameterValue_ReturnValue) == 0x00006C, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_GetVectorParameterValue_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice, CallFunc_GetVectorParameterValue_ReturnValue_1) == 0x00007C, "Member 'W_ComboChoice_C_ExecuteUbergraph_W_ComboChoice::CallFunc_GetVectorParameterValue_ReturnValue_1' has a wrong offset!");
 
 // Function W_ComboChoice.W_ComboChoice_C.GetToolTipWidget
-// 0x0010 (0x0010 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct W_ComboChoice_C_GetToolTipWidget final
 {
 public:
 	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUserWidget*                            CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_LoadClassAsset_Blocking_ReturnValue;      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 K2Node_ClassDynamicCast_AsUser_Widget;             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            CallFunc_Create_ReturnValue;                       // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboChoice_C_GetToolTipWidget) == 0x000008, "Wrong alignment on W_ComboChoice_C_GetToolTipWidget");
-static_assert(sizeof(W_ComboChoice_C_GetToolTipWidget) == 0x000010, "Wrong size on W_ComboChoice_C_GetToolTipWidget");
+static_assert(sizeof(W_ComboChoice_C_GetToolTipWidget) == 0x000028, "Wrong size on W_ComboChoice_C_GetToolTipWidget");
 static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, ReturnValue) == 0x000000, "Member 'W_ComboChoice_C_GetToolTipWidget::ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, CallFunc_Create_ReturnValue) == 0x000008, "Member 'W_ComboChoice_C_GetToolTipWidget::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, CallFunc_LoadClassAsset_Blocking_ReturnValue) == 0x000008, "Member 'W_ComboChoice_C_GetToolTipWidget::CallFunc_LoadClassAsset_Blocking_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, K2Node_ClassDynamicCast_AsUser_Widget) == 0x000010, "Member 'W_ComboChoice_C_GetToolTipWidget::K2Node_ClassDynamicCast_AsUser_Widget' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, K2Node_ClassDynamicCast_bSuccess) == 0x000018, "Member 'W_ComboChoice_C_GetToolTipWidget::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_GetToolTipWidget, CallFunc_Create_ReturnValue) == 0x000020, "Member 'W_ComboChoice_C_GetToolTipWidget::CallFunc_Create_ReturnValue' has a wrong offset!");
 
 // Function W_ComboChoice.W_ComboChoice_C.InitColors
 // 0x0010 (0x0010 - 0x0000)
@@ -96,18 +82,22 @@ static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown, MouseEvent) == 0x00003
 static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown, ReturnValue) == 0x0000B0, "Member 'W_ComboChoice_C_OnMouseButtonDown::ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown, CallFunc_Unhandled_ReturnValue) == 0x000168, "Member 'W_ComboChoice_C_OnMouseButtonDown::CallFunc_Unhandled_ReturnValue' has a wrong offset!");
 
-// Function W_ComboChoice.W_ComboChoice_C.OnSelectionChanged_Event_0
-// 0x0018 (0x0018 - 0x0000)
-struct W_ComboChoice_C_OnSelectionChanged_Event_0 final
+// Function W_ComboChoice.W_ComboChoice_C.OnMouseButtonDown_0
+// 0x0220 (0x0220 - 0x0000)
+struct W_ComboChoice_C_OnMouseButtonDown_0 final
 {
 public:
-	class FString                                 SelectedItem;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	ESelectInfo                                   SelectionType;                                     // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	struct FPointerEvent                          MouseEvent;                                        // 0x0038(0x0078)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FEventReply                            ReturnValue;                                       // 0x00B0(0x00B8)(Parm, OutParm, ReturnParm)
+	struct FEventReply                            CallFunc_Unhandled_ReturnValue;                    // 0x0168(0x00B8)()
 };
-static_assert(alignof(W_ComboChoice_C_OnSelectionChanged_Event_0) == 0x000008, "Wrong alignment on W_ComboChoice_C_OnSelectionChanged_Event_0");
-static_assert(sizeof(W_ComboChoice_C_OnSelectionChanged_Event_0) == 0x000018, "Wrong size on W_ComboChoice_C_OnSelectionChanged_Event_0");
-static_assert(offsetof(W_ComboChoice_C_OnSelectionChanged_Event_0, SelectedItem) == 0x000000, "Member 'W_ComboChoice_C_OnSelectionChanged_Event_0::SelectedItem' has a wrong offset!");
-static_assert(offsetof(W_ComboChoice_C_OnSelectionChanged_Event_0, SelectionType) == 0x000010, "Member 'W_ComboChoice_C_OnSelectionChanged_Event_0::SelectionType' has a wrong offset!");
+static_assert(alignof(W_ComboChoice_C_OnMouseButtonDown_0) == 0x000008, "Wrong alignment on W_ComboChoice_C_OnMouseButtonDown_0");
+static_assert(sizeof(W_ComboChoice_C_OnMouseButtonDown_0) == 0x000220, "Wrong size on W_ComboChoice_C_OnMouseButtonDown_0");
+static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown_0, MyGeometry) == 0x000000, "Member 'W_ComboChoice_C_OnMouseButtonDown_0::MyGeometry' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown_0, MouseEvent) == 0x000038, "Member 'W_ComboChoice_C_OnMouseButtonDown_0::MouseEvent' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown_0, ReturnValue) == 0x0000B0, "Member 'W_ComboChoice_C_OnMouseButtonDown_0::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_OnMouseButtonDown_0, CallFunc_Unhandled_ReturnValue) == 0x000168, "Member 'W_ComboChoice_C_OnMouseButtonDown_0::CallFunc_Unhandled_ReturnValue' has a wrong offset!");
 
 // Function W_ComboChoice.W_ComboChoice_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)
@@ -125,11 +115,11 @@ static_assert(offsetof(W_ComboChoice_C_PreConstruct, IsDesignTime) == 0x000000, 
 struct W_ComboChoice_C_Press__DelegateSignature final
 {
 public:
-	class FString                                 Param_Item;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Item_0;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboChoice_C_Press__DelegateSignature) == 0x000008, "Wrong alignment on W_ComboChoice_C_Press__DelegateSignature");
 static_assert(sizeof(W_ComboChoice_C_Press__DelegateSignature) == 0x000010, "Wrong size on W_ComboChoice_C_Press__DelegateSignature");
-static_assert(offsetof(W_ComboChoice_C_Press__DelegateSignature, Param_Item) == 0x000000, "Member 'W_ComboChoice_C_Press__DelegateSignature::Param_Item' has a wrong offset!");
+static_assert(offsetof(W_ComboChoice_C_Press__DelegateSignature, Item_0) == 0x000000, "Member 'W_ComboChoice_C_Press__DelegateSignature::Item_0' has a wrong offset!");
 
 }
 

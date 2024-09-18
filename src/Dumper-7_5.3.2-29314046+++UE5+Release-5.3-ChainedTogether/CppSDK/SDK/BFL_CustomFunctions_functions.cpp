@@ -17,6 +17,86 @@
 namespace SDK
 {
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.AppendID_And_Name
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FSpeedrun_IDAndName              ID_And_Name                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FString                           String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::AppendID_And_Name(const struct FSpeedrun_IDAndName& ID_And_Name, class UObject* __WorldContext, class FString* String)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "AppendID_And_Name");
+
+	Params::BFL_CustomFunctions_C_AppendID_And_Name Parms{};
+
+	Parms.ID_And_Name = std::move(ID_And_Name);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (String != nullptr)
+		*String = std::move(Parms.String);
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.CheckUGC_State
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSteamUGCDetails                 SteamUGCDetails                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class FString                           State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UBFL_CustomFunctions_C::CheckUGC_State(const struct FSteamUGCDetails& SteamUGCDetails, const class FString& State, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "CheckUGC_State");
+
+	Params::BFL_CustomFunctions_C_CheckUGC_State Parms{};
+
+	Parms.SteamUGCDetails = std::move(SteamUGCDetails);
+	Parms.State = std::move(State);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.CheckUGC_State_FromPublishedID
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FPublishedFileID                 PublishedFileID                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UBFL_CustomFunctions_C::CheckUGC_State_FromPublishedID(const class FString& State, const struct FPublishedFileID& PublishedFileID, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "CheckUGC_State_FromPublishedID");
+
+	Params::BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID Parms{};
+
+	Parms.State = std::move(State);
+	Parms.PublishedFileID = std::move(PublishedFileID);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.ConvertTimeToTextFormat
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -66,6 +146,40 @@ bool UBFL_CustomFunctions_C::FindPlayerStart(class UObject* __WorldContext, clas
 		*Start = Parms.Start;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.Get_UGC_ID_FromSessionName
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           SessionName                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FString                           NameUpdated                                            (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           UGC_ID                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    UGC                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::Get_UGC_ID_FromSessionName(const class FString& SessionName, class UObject* __WorldContext, class FString* NameUpdated, class FString* UGC_ID, bool* UGC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "Get_UGC_ID_FromSessionName");
+
+	Params::BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName Parms{};
+
+	Parms.SessionName = std::move(SessionName);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (NameUpdated != nullptr)
+		*NameUpdated = std::move(Parms.NameUpdated);
+
+	if (UGC_ID != nullptr)
+		*UGC_ID = std::move(Parms.UGC_ID);
+
+	if (UGC != nullptr)
+		*UGC = Parms.UGC;
 }
 
 
@@ -251,6 +365,63 @@ bool UBFL_CustomFunctions_C::GetLocalMultiplayer(class UObject* __WorldContext)
 }
 
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetModButtonClasses
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// TArray<TSoftClassPtr<class UClass>>     ClassesOut                                             (Parm, OutParm)
+
+void UBFL_CustomFunctions_C::GetModButtonClasses(class UObject* __WorldContext, TArray<TSoftClassPtr<class UClass>>* ClassesOut)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "GetModButtonClasses");
+
+	Params::BFL_CustomFunctions_C_GetModButtonClasses Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (ClassesOut != nullptr)
+		*ClassesOut = std::move(Parms.ClassesOut);
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetModInfosFromDataTable
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UClass*                           ActorClass                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FIGLEPlacableActorInfo           Out_Row                                                (Parm, OutParm, HasGetValueTypeHash)
+// class FName                             RowName                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UBFL_CustomFunctions_C::GetModInfosFromDataTable(class UClass* ActorClass, class UObject* __WorldContext, struct FIGLEPlacableActorInfo* Out_Row, class FName* RowName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "GetModInfosFromDataTable");
+
+	Params::BFL_CustomFunctions_C_GetModInfosFromDataTable Parms{};
+
+	Parms.ActorClass = ActorClass;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (Out_Row != nullptr)
+		*Out_Row = std::move(Parms.Out_Row);
+
+	if (RowName != nullptr)
+		*RowName = Parms.RowName;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetNumPlayers
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -269,6 +440,37 @@ int32 UBFL_CustomFunctions_C::GetNumPlayers(class UObject* __WorldContext)
 	Parms.__WorldContext = __WorldContext;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetPlacableByID
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int64                                   ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TSoftClassPtr<class UClass>             Class_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Actor                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+bool UBFL_CustomFunctions_C::GetPlacableByID(int64 ID, TSoftClassPtr<class UClass> Class_0, class UObject* __WorldContext, class AActor** Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "GetPlacableByID");
+
+	Params::BFL_CustomFunctions_C_GetPlacableByID Parms{};
+
+	Parms.ID = ID;
+	Parms.Class_0 = Class_0;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (Actor != nullptr)
+		*Actor = Parms.Actor;
 
 	return Parms.ReturnValue;
 }
@@ -421,6 +623,32 @@ void UBFL_CustomFunctions_C::GetTrueChainVisible(class UObject* __WorldContext, 
 }
 
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.IGLE_OpenLevel
+// (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Edit                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           Path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::IGLE_OpenLevel(bool Edit, const class FString& Path, const class FString& Option, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "IGLE_OpenLevel");
+
+	Params::BFL_CustomFunctions_C_IGLE_OpenLevel Parms{};
+
+	Parms.Edit = Edit;
+	Parms.Path = std::move(Path);
+	Parms.Option = std::move(Option);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+}
+
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.IsInteractingWithMenu
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -444,6 +672,32 @@ bool UBFL_CustomFunctions_C::IsInteractingWithMenu(class UObject* __WorldContext
 }
 
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.IsModInstalled
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPublishedFileID                 PublishedFileID                                        (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    Installed                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::IsModInstalled(const struct FPublishedFileID& PublishedFileID, class UObject* __WorldContext, bool* Installed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "IsModInstalled");
+
+	Params::BFL_CustomFunctions_C_IsModInstalled Parms{};
+
+	Parms.PublishedFileID = std::move(PublishedFileID);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (Installed != nullptr)
+		*Installed = Parms.Installed;
+}
+
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.No Password Code
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -464,6 +718,26 @@ class FString UBFL_CustomFunctions_C::No_Password_Code(class UObject* __WorldCon
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.OpenChainedTogetherWorkshopPage
+// (Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::OpenChainedTogetherWorkshopPage(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BFL_CustomFunctions_C", "OpenChainedTogetherWorkshopPage");
+
+	Params::BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -686,6 +960,40 @@ bool UBFL_CustomFunctions_C::WidgetAlreadyInParent_(TSubclassOf<class UUserWidge
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.Find Group By Placable
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    Found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<int64>                           Group                                                  (Parm, OutParm)
+// class AMod_Group_C*                     GroupActor                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBFL_CustomFunctions_C::Find_Group_By_Placable(class AActor* Actor, class UObject* __WorldContext, bool* Found, TArray<int64>* Group, class AMod_Group_C** GroupActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BFL_CustomFunctions_C", "Find Group By Placable");
+
+	Params::BFL_CustomFunctions_C_Find_Group_By_Placable Parms{};
+
+	Parms.Actor = Actor;
+	Parms.__WorldContext = __WorldContext;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Found != nullptr)
+		*Found = Parms.Found;
+
+	if (Group != nullptr)
+		*Group = std::move(Parms.Group);
+
+	if (GroupActor != nullptr)
+		*GroupActor = Parms.GroupActor;
 }
 
 

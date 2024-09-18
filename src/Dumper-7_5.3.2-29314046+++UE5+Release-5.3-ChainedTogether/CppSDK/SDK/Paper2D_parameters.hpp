@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Paper2D_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Paper2D_structs.hpp"
 
 
 namespace SDK::Params
@@ -25,7 +25,7 @@ struct PaperFlipbook_GetKeyFrameIndexAtTime final
 public:
 	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bClampToEnds;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E67[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(PaperFlipbook_GetKeyFrameIndexAtTime) == 0x000004, "Wrong alignment on PaperFlipbook_GetKeyFrameIndexAtTime");
@@ -62,7 +62,7 @@ struct PaperFlipbook_GetSpriteAtFrame final
 {
 public:
 	int32                                         FrameIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E68[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPaperSprite*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(PaperFlipbook_GetSpriteAtFrame) == 0x000008, "Wrong alignment on PaperFlipbook_GetSpriteAtFrame");
@@ -77,7 +77,7 @@ struct PaperFlipbook_GetSpriteAtTime final
 public:
 	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bClampToEnds;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E69[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPaperSprite*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(PaperFlipbook_GetSpriteAtTime) == 0x000008, "Wrong alignment on PaperFlipbook_GetSpriteAtTime");
@@ -102,13 +102,13 @@ static_assert(offsetof(PaperFlipbook_GetTotalDuration, ReturnValue) == 0x000000,
 struct PaperFlipbook_IsValidKeyFrameIndex final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E6A[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperFlipbook_IsValidKeyFrameIndex) == 0x000004, "Wrong alignment on PaperFlipbook_IsValidKeyFrameIndex");
 static_assert(sizeof(PaperFlipbook_IsValidKeyFrameIndex) == 0x000008, "Wrong size on PaperFlipbook_IsValidKeyFrameIndex");
-static_assert(offsetof(PaperFlipbook_IsValidKeyFrameIndex, Param_Index) == 0x000000, "Member 'PaperFlipbook_IsValidKeyFrameIndex::Param_Index' has a wrong offset!");
+static_assert(offsetof(PaperFlipbook_IsValidKeyFrameIndex, Index_0) == 0x000000, "Member 'PaperFlipbook_IsValidKeyFrameIndex::Index_0' has a wrong offset!");
 static_assert(offsetof(PaperFlipbook_IsValidKeyFrameIndex, ReturnValue) == 0x000004, "Member 'PaperFlipbook_IsValidKeyFrameIndex::ReturnValue' has a wrong offset!");
 
 // Function Paper2D.PaperFlipbookComponent.GetFlipbook
@@ -140,7 +140,7 @@ struct PaperFlipbookComponent_SetFlipbook final
 public:
 	class UPaperFlipbook*                         NewFlipbook;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E6C[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperFlipbookComponent_SetFlipbook) == 0x000008, "Wrong alignment on PaperFlipbookComponent_SetFlipbook");
 static_assert(sizeof(PaperFlipbookComponent_SetFlipbook) == 0x000010, "Wrong size on PaperFlipbookComponent_SetFlipbook");
@@ -176,7 +176,7 @@ struct PaperFlipbookComponent_SetPlaybackPosition final
 public:
 	float                                         NewPosition;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFireEvents;                                       // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E6D[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperFlipbookComponent_SetPlaybackPosition) == 0x000004, "Wrong alignment on PaperFlipbookComponent_SetPlaybackPosition");
 static_assert(sizeof(PaperFlipbookComponent_SetPlaybackPosition) == 0x000008, "Wrong size on PaperFlipbookComponent_SetPlaybackPosition");
@@ -190,7 +190,7 @@ struct PaperFlipbookComponent_SetPlaybackPositionInFrames final
 public:
 	int32                                         NewFramePosition;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFireEvents;                                       // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E6E[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperFlipbookComponent_SetPlaybackPositionInFrames) == 0x000004, "Wrong alignment on PaperFlipbookComponent_SetPlaybackPositionInFrames");
 static_assert(sizeof(PaperFlipbookComponent_SetPlaybackPositionInFrames) == 0x000008, "Wrong size on PaperFlipbookComponent_SetPlaybackPositionInFrames");
@@ -337,7 +337,7 @@ public:
 	struct FTransform                             Transform;                                         // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPaperSprite*                           Sprite;                                            // 0x0060(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bWorldSpace;                                       // 0x0068(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E70[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           Color;                                             // 0x006C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x007C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -356,7 +356,7 @@ struct PaperGroupedSpriteComponent_RemoveInstance final
 public:
 	int32                                         InstanceIndex;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E71[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperGroupedSpriteComponent_RemoveInstance) == 0x000004, "Wrong alignment on PaperGroupedSpriteComponent_RemoveInstance");
 static_assert(sizeof(PaperGroupedSpriteComponent_RemoveInstance) == 0x000008, "Wrong size on PaperGroupedSpriteComponent_RemoveInstance");
@@ -383,7 +383,7 @@ public:
 	struct FLinearColor                           NewInstanceColor;                                  // 0x0004(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bMarkRenderStateDirty;                             // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0015(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E72[0x2];                                     // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperGroupedSpriteComponent_UpdateInstanceColor) == 0x000004, "Wrong alignment on PaperGroupedSpriteComponent_UpdateInstanceColor");
 static_assert(sizeof(PaperGroupedSpriteComponent_UpdateInstanceColor) == 0x000018, "Wrong size on PaperGroupedSpriteComponent_UpdateInstanceColor");
@@ -398,13 +398,13 @@ struct PaperGroupedSpriteComponent_UpdateInstanceTransform final
 {
 public:
 	int32                                         InstanceIndex;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E73[0xC];                                     // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             NewInstanceTransform;                              // 0x0010(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bWorldSpace;                                       // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bMarkRenderStateDirty;                             // 0x0071(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bTeleport;                                         // 0x0072(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0073(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E74[0xC];                                     // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperGroupedSpriteComponent_UpdateInstanceTransform) == 0x000010, "Wrong alignment on PaperGroupedSpriteComponent_UpdateInstanceTransform");
 static_assert(sizeof(PaperGroupedSpriteComponent_UpdateInstanceTransform) == 0x000080, "Wrong size on PaperGroupedSpriteComponent_UpdateInstanceTransform");
@@ -432,11 +432,11 @@ struct PaperGroupedSpriteComponent_GetInstanceTransform final
 {
 public:
 	int32                                         InstanceIndex;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E75[0xC];                                     // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutInstanceTransform;                              // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bWorldSpace;                                       // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0071(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E76[0xE];                                     // 0x0072(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_72[0xE];                                       // 0x0072(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperGroupedSpriteComponent_GetInstanceTransform) == 0x000010, "Wrong alignment on PaperGroupedSpriteComponent_GetInstanceTransform");
 static_assert(sizeof(PaperGroupedSpriteComponent_GetInstanceTransform) == 0x000080, "Wrong size on PaperGroupedSpriteComponent_GetInstanceTransform");
@@ -480,7 +480,7 @@ struct PaperSpriteComponent_SetSprite final
 public:
 	class UPaperSprite*                           NewSprite;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E7C[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PaperSpriteComponent_SetSprite) == 0x000008, "Wrong alignment on PaperSpriteComponent_SetSprite");
 static_assert(sizeof(PaperSpriteComponent_SetSprite) == 0x000010, "Wrong size on PaperSpriteComponent_SetSprite");
@@ -498,287 +498,6 @@ static_assert(alignof(PaperSpriteComponent_SetSpriteColor) == 0x000004, "Wrong a
 static_assert(sizeof(PaperSpriteComponent_SetSpriteColor) == 0x000010, "Wrong size on PaperSpriteComponent_SetSpriteColor");
 static_assert(offsetof(PaperSpriteComponent_SetSpriteColor, NewColor) == 0x000000, "Member 'PaperSpriteComponent_SetSpriteColor::NewColor' has a wrong offset!");
 
-// Function Paper2D.PaperTileMapComponent.AddNewLayer
-// 0x0008 (0x0008 - 0x0000)
-struct PaperTileMapComponent_AddNewLayer final
-{
-public:
-	class UPaperTileLayer*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_AddNewLayer) == 0x000008, "Wrong alignment on PaperTileMapComponent_AddNewLayer");
-static_assert(sizeof(PaperTileMapComponent_AddNewLayer) == 0x000008, "Wrong size on PaperTileMapComponent_AddNewLayer");
-static_assert(offsetof(PaperTileMapComponent_AddNewLayer, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_AddNewLayer::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.CreateNewTileMap
-// 0x0018 (0x0018 - 0x0000)
-struct PaperTileMapComponent_CreateNewTileMap final
-{
-public:
-	int32                                         Param_MapWidth;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_MapHeight;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_TileWidth;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_TileHeight;                                  // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PixelsPerUnrealUnit;                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCreateLayer;                                      // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E84[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PaperTileMapComponent_CreateNewTileMap) == 0x000004, "Wrong alignment on PaperTileMapComponent_CreateNewTileMap");
-static_assert(sizeof(PaperTileMapComponent_CreateNewTileMap) == 0x000018, "Wrong size on PaperTileMapComponent_CreateNewTileMap");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, Param_MapWidth) == 0x000000, "Member 'PaperTileMapComponent_CreateNewTileMap::Param_MapWidth' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, Param_MapHeight) == 0x000004, "Member 'PaperTileMapComponent_CreateNewTileMap::Param_MapHeight' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, Param_TileWidth) == 0x000008, "Member 'PaperTileMapComponent_CreateNewTileMap::Param_TileWidth' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, Param_TileHeight) == 0x00000C, "Member 'PaperTileMapComponent_CreateNewTileMap::Param_TileHeight' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, PixelsPerUnrealUnit) == 0x000010, "Member 'PaperTileMapComponent_CreateNewTileMap::PixelsPerUnrealUnit' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, bCreateLayer) == 0x000014, "Member 'PaperTileMapComponent_CreateNewTileMap::bCreateLayer' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetMapSize
-// 0x000C (0x000C - 0x0000)
-struct PaperTileMapComponent_GetMapSize final
-{
-public:
-	int32                                         Param_MapWidth;                                    // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_MapHeight;                                   // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumLayers;                                         // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetMapSize) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetMapSize");
-static_assert(sizeof(PaperTileMapComponent_GetMapSize) == 0x00000C, "Wrong size on PaperTileMapComponent_GetMapSize");
-static_assert(offsetof(PaperTileMapComponent_GetMapSize, Param_MapWidth) == 0x000000, "Member 'PaperTileMapComponent_GetMapSize::Param_MapWidth' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetMapSize, Param_MapHeight) == 0x000004, "Member 'PaperTileMapComponent_GetMapSize::Param_MapHeight' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetMapSize, NumLayers) == 0x000008, "Member 'PaperTileMapComponent_GetMapSize::NumLayers' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.ResizeMap
-// 0x0008 (0x0008 - 0x0000)
-struct PaperTileMapComponent_ResizeMap final
-{
-public:
-	int32                                         NewWidthInTiles;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NewHeightInTiles;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_ResizeMap) == 0x000004, "Wrong alignment on PaperTileMapComponent_ResizeMap");
-static_assert(sizeof(PaperTileMapComponent_ResizeMap) == 0x000008, "Wrong size on PaperTileMapComponent_ResizeMap");
-static_assert(offsetof(PaperTileMapComponent_ResizeMap, NewWidthInTiles) == 0x000000, "Member 'PaperTileMapComponent_ResizeMap::NewWidthInTiles' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_ResizeMap, NewHeightInTiles) == 0x000004, "Member 'PaperTileMapComponent_ResizeMap::NewHeightInTiles' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetDefaultCollisionThickness
-// 0x0008 (0x0008 - 0x0000)
-struct PaperTileMapComponent_SetDefaultCollisionThickness final
-{
-public:
-	float                                         Thickness;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildCollision;                                 // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E85[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PaperTileMapComponent_SetDefaultCollisionThickness) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetDefaultCollisionThickness");
-static_assert(sizeof(PaperTileMapComponent_SetDefaultCollisionThickness) == 0x000008, "Wrong size on PaperTileMapComponent_SetDefaultCollisionThickness");
-static_assert(offsetof(PaperTileMapComponent_SetDefaultCollisionThickness, Thickness) == 0x000000, "Member 'PaperTileMapComponent_SetDefaultCollisionThickness::Thickness' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetDefaultCollisionThickness, bRebuildCollision) == 0x000004, "Member 'PaperTileMapComponent_SetDefaultCollisionThickness::bRebuildCollision' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetLayerCollision
-// 0x0018 (0x0018 - 0x0000)
-struct PaperTileMapComponent_SetLayerCollision final
-{
-public:
-	int32                                         Layer;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasCollision;                                     // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOverrideThickness;                                // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E86[0x2];                                     // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CustomThickness;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOverrideOffset;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E87[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CustomOffset;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildCollision;                                 // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E88[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PaperTileMapComponent_SetLayerCollision) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetLayerCollision");
-static_assert(sizeof(PaperTileMapComponent_SetLayerCollision) == 0x000018, "Wrong size on PaperTileMapComponent_SetLayerCollision");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, Layer) == 0x000000, "Member 'PaperTileMapComponent_SetLayerCollision::Layer' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bHasCollision) == 0x000004, "Member 'PaperTileMapComponent_SetLayerCollision::bHasCollision' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bOverrideThickness) == 0x000005, "Member 'PaperTileMapComponent_SetLayerCollision::bOverrideThickness' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, CustomThickness) == 0x000008, "Member 'PaperTileMapComponent_SetLayerCollision::CustomThickness' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bOverrideOffset) == 0x00000C, "Member 'PaperTileMapComponent_SetLayerCollision::bOverrideOffset' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, CustomOffset) == 0x000010, "Member 'PaperTileMapComponent_SetLayerCollision::CustomOffset' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bRebuildCollision) == 0x000014, "Member 'PaperTileMapComponent_SetLayerCollision::bRebuildCollision' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetLayerColor
-// 0x0014 (0x0014 - 0x0000)
-struct PaperTileMapComponent_SetLayerColor final
-{
-public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Layer;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_SetLayerColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetLayerColor");
-static_assert(sizeof(PaperTileMapComponent_SetLayerColor) == 0x000014, "Wrong size on PaperTileMapComponent_SetLayerColor");
-static_assert(offsetof(PaperTileMapComponent_SetLayerColor, NewColor) == 0x000000, "Member 'PaperTileMapComponent_SetLayerColor::NewColor' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetLayerColor, Layer) == 0x000010, "Member 'PaperTileMapComponent_SetLayerColor::Layer' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetTile
-// 0x0020 (0x0020 - 0x0000)
-struct PaperTileMapComponent_SetTile final
-{
-public:
-	int32                                         X;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Y;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Layer;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E89[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPaperTileInfo                         NewValue;                                          // 0x0010(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_SetTile) == 0x000008, "Wrong alignment on PaperTileMapComponent_SetTile");
-static_assert(sizeof(PaperTileMapComponent_SetTile) == 0x000020, "Wrong size on PaperTileMapComponent_SetTile");
-static_assert(offsetof(PaperTileMapComponent_SetTile, X) == 0x000000, "Member 'PaperTileMapComponent_SetTile::X' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetTile, Y) == 0x000004, "Member 'PaperTileMapComponent_SetTile::Y' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetTile, Layer) == 0x000008, "Member 'PaperTileMapComponent_SetTile::Layer' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetTile, NewValue) == 0x000010, "Member 'PaperTileMapComponent_SetTile::NewValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetTileMap
-// 0x0010 (0x0010 - 0x0000)
-struct PaperTileMapComponent_SetTileMap final
-{
-public:
-	class UPaperTileMap*                          NewTileMap;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E8A[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PaperTileMapComponent_SetTileMap) == 0x000008, "Wrong alignment on PaperTileMapComponent_SetTileMap");
-static_assert(sizeof(PaperTileMapComponent_SetTileMap) == 0x000010, "Wrong size on PaperTileMapComponent_SetTileMap");
-static_assert(offsetof(PaperTileMapComponent_SetTileMap, NewTileMap) == 0x000000, "Member 'PaperTileMapComponent_SetTileMap::NewTileMap' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_SetTileMap, ReturnValue) == 0x000008, "Member 'PaperTileMapComponent_SetTileMap::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.SetTileMapColor
-// 0x0010 (0x0010 - 0x0000)
-struct PaperTileMapComponent_SetTileMapColor final
-{
-public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_SetTileMapColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetTileMapColor");
-static_assert(sizeof(PaperTileMapComponent_SetTileMapColor) == 0x000010, "Wrong size on PaperTileMapComponent_SetTileMapColor");
-static_assert(offsetof(PaperTileMapComponent_SetTileMapColor, NewColor) == 0x000000, "Member 'PaperTileMapComponent_SetTileMapColor::NewColor' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetLayerColor
-// 0x0014 (0x0014 - 0x0000)
-struct PaperTileMapComponent_GetLayerColor final
-{
-public:
-	int32                                         Layer;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ReturnValue;                                       // 0x0004(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetLayerColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetLayerColor");
-static_assert(sizeof(PaperTileMapComponent_GetLayerColor) == 0x000014, "Wrong size on PaperTileMapComponent_GetLayerColor");
-static_assert(offsetof(PaperTileMapComponent_GetLayerColor, Layer) == 0x000000, "Member 'PaperTileMapComponent_GetLayerColor::Layer' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetLayerColor, ReturnValue) == 0x000004, "Member 'PaperTileMapComponent_GetLayerColor::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetTile
-// 0x0020 (0x0020 - 0x0000)
-struct PaperTileMapComponent_GetTile final
-{
-public:
-	int32                                         X;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Y;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Layer;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E8B[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPaperTileInfo                         ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetTile) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTile");
-static_assert(sizeof(PaperTileMapComponent_GetTile) == 0x000020, "Wrong size on PaperTileMapComponent_GetTile");
-static_assert(offsetof(PaperTileMapComponent_GetTile, X) == 0x000000, "Member 'PaperTileMapComponent_GetTile::X' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTile, Y) == 0x000004, "Member 'PaperTileMapComponent_GetTile::Y' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTile, Layer) == 0x000008, "Member 'PaperTileMapComponent_GetTile::Layer' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTile, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTile::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetTileCenterPosition
-// 0x0028 (0x0028 - 0x0000)
-struct PaperTileMapComponent_GetTileCenterPosition final
-{
-public:
-	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LayerIndex;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWorldSpace;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E8C[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetTileCenterPosition) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTileCenterPosition");
-static_assert(sizeof(PaperTileMapComponent_GetTileCenterPosition) == 0x000028, "Wrong size on PaperTileMapComponent_GetTileCenterPosition");
-static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTileCenterPosition::TileX' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTileCenterPosition::TileY' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, LayerIndex) == 0x000008, "Member 'PaperTileMapComponent_GetTileCenterPosition::LayerIndex' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, bWorldSpace) == 0x00000C, "Member 'PaperTileMapComponent_GetTileCenterPosition::bWorldSpace' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTileCenterPosition::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetTileCornerPosition
-// 0x0028 (0x0028 - 0x0000)
-struct PaperTileMapComponent_GetTileCornerPosition final
-{
-public:
-	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LayerIndex;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWorldSpace;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E8D[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetTileCornerPosition) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTileCornerPosition");
-static_assert(sizeof(PaperTileMapComponent_GetTileCornerPosition) == 0x000028, "Wrong size on PaperTileMapComponent_GetTileCornerPosition");
-static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTileCornerPosition::TileX' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTileCornerPosition::TileY' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, LayerIndex) == 0x000008, "Member 'PaperTileMapComponent_GetTileCornerPosition::LayerIndex' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, bWorldSpace) == 0x00000C, "Member 'PaperTileMapComponent_GetTileCornerPosition::bWorldSpace' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTileCornerPosition::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetTileMapColor
-// 0x0010 (0x0010 - 0x0000)
-struct PaperTileMapComponent_GetTileMapColor final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_GetTileMapColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetTileMapColor");
-static_assert(sizeof(PaperTileMapComponent_GetTileMapColor) == 0x000010, "Wrong size on PaperTileMapComponent_GetTileMapColor");
-static_assert(offsetof(PaperTileMapComponent_GetTileMapColor, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_GetTileMapColor::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.GetTilePolygon
-// 0x0020 (0x0020 - 0x0000)
-struct PaperTileMapComponent_GetTilePolygon final
-{
-public:
-	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        Points;                                            // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         LayerIndex;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWorldSpace;                                       // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E8E[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PaperTileMapComponent_GetTilePolygon) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTilePolygon");
-static_assert(sizeof(PaperTileMapComponent_GetTilePolygon) == 0x000020, "Wrong size on PaperTileMapComponent_GetTilePolygon");
-static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTilePolygon::TileX' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTilePolygon::TileY' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, Points) == 0x000008, "Member 'PaperTileMapComponent_GetTilePolygon::Points' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, LayerIndex) == 0x000018, "Member 'PaperTileMapComponent_GetTilePolygon::LayerIndex' has a wrong offset!");
-static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, bWorldSpace) == 0x00001C, "Member 'PaperTileMapComponent_GetTilePolygon::bWorldSpace' has a wrong offset!");
-
-// Function Paper2D.PaperTileMapComponent.OwnsTileMap
-// 0x0001 (0x0001 - 0x0000)
-struct PaperTileMapComponent_OwnsTileMap final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTileMapComponent_OwnsTileMap) == 0x000001, "Wrong alignment on PaperTileMapComponent_OwnsTileMap");
-static_assert(sizeof(PaperTileMapComponent_OwnsTileMap) == 0x000001, "Wrong size on PaperTileMapComponent_OwnsTileMap");
-static_assert(offsetof(PaperTileMapComponent_OwnsTileMap, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_OwnsTileMap::ReturnValue' has a wrong offset!");
-
-// Function Paper2D.PaperTerrainComponent.SetTerrainColor
-// 0x0010 (0x0010 - 0x0000)
-struct PaperTerrainComponent_SetTerrainColor final
-{
-public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PaperTerrainComponent_SetTerrainColor) == 0x000004, "Wrong alignment on PaperTerrainComponent_SetTerrainColor");
-static_assert(sizeof(PaperTerrainComponent_SetTerrainColor) == 0x000010, "Wrong size on PaperTerrainComponent_SetTerrainColor");
-static_assert(offsetof(PaperTerrainComponent_SetTerrainColor, NewColor) == 0x000000, "Member 'PaperTerrainComponent_SetTerrainColor::NewColor' has a wrong offset!");
-
 // Function Paper2D.TileMapBlueprintLibrary.BreakTile
 // 0x0028 (0x0028 - 0x0000)
 struct TileMapBlueprintLibrary_BreakTile final
@@ -786,12 +505,12 @@ struct TileMapBlueprintLibrary_BreakTile final
 public:
 	struct FPaperTileInfo                         Tile;                                              // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         TileIndex;                                         // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E95[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPaperTileSet*                          TileSet;                                           // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipH;                                            // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipV;                                            // 0x0021(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipD;                                            // 0x0022(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E96[0x5];                                     // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TileMapBlueprintLibrary_BreakTile) == 0x000008, "Wrong alignment on TileMapBlueprintLibrary_BreakTile");
 static_assert(sizeof(TileMapBlueprintLibrary_BreakTile) == 0x000028, "Wrong size on TileMapBlueprintLibrary_BreakTile");
@@ -834,12 +553,12 @@ struct TileMapBlueprintLibrary_MakeTile final
 {
 public:
 	int32                                         TileIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E97[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPaperTileSet*                          TileSet;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipH;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipV;                                            // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipD;                                            // 0x0012(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E98[0x5];                                     // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPaperTileInfo                         ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TileMapBlueprintLibrary_MakeTile) == 0x000008, "Wrong alignment on TileMapBlueprintLibrary_MakeTile");
@@ -850,6 +569,287 @@ static_assert(offsetof(TileMapBlueprintLibrary_MakeTile, bFlipH) == 0x000010, "M
 static_assert(offsetof(TileMapBlueprintLibrary_MakeTile, bFlipV) == 0x000011, "Member 'TileMapBlueprintLibrary_MakeTile::bFlipV' has a wrong offset!");
 static_assert(offsetof(TileMapBlueprintLibrary_MakeTile, bFlipD) == 0x000012, "Member 'TileMapBlueprintLibrary_MakeTile::bFlipD' has a wrong offset!");
 static_assert(offsetof(TileMapBlueprintLibrary_MakeTile, ReturnValue) == 0x000018, "Member 'TileMapBlueprintLibrary_MakeTile::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.AddNewLayer
+// 0x0008 (0x0008 - 0x0000)
+struct PaperTileMapComponent_AddNewLayer final
+{
+public:
+	class UPaperTileLayer*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_AddNewLayer) == 0x000008, "Wrong alignment on PaperTileMapComponent_AddNewLayer");
+static_assert(sizeof(PaperTileMapComponent_AddNewLayer) == 0x000008, "Wrong size on PaperTileMapComponent_AddNewLayer");
+static_assert(offsetof(PaperTileMapComponent_AddNewLayer, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_AddNewLayer::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.CreateNewTileMap
+// 0x0018 (0x0018 - 0x0000)
+struct PaperTileMapComponent_CreateNewTileMap final
+{
+public:
+	int32                                         MapWidth_0;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MapHeight_0;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TileWidth_0;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TileHeight_0;                                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PixelsPerUnrealUnit;                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCreateLayer;                                      // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PaperTileMapComponent_CreateNewTileMap) == 0x000004, "Wrong alignment on PaperTileMapComponent_CreateNewTileMap");
+static_assert(sizeof(PaperTileMapComponent_CreateNewTileMap) == 0x000018, "Wrong size on PaperTileMapComponent_CreateNewTileMap");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, MapWidth_0) == 0x000000, "Member 'PaperTileMapComponent_CreateNewTileMap::MapWidth_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, MapHeight_0) == 0x000004, "Member 'PaperTileMapComponent_CreateNewTileMap::MapHeight_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, TileWidth_0) == 0x000008, "Member 'PaperTileMapComponent_CreateNewTileMap::TileWidth_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, TileHeight_0) == 0x00000C, "Member 'PaperTileMapComponent_CreateNewTileMap::TileHeight_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, PixelsPerUnrealUnit) == 0x000010, "Member 'PaperTileMapComponent_CreateNewTileMap::PixelsPerUnrealUnit' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_CreateNewTileMap, bCreateLayer) == 0x000014, "Member 'PaperTileMapComponent_CreateNewTileMap::bCreateLayer' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetMapSize
+// 0x000C (0x000C - 0x0000)
+struct PaperTileMapComponent_GetMapSize final
+{
+public:
+	int32                                         MapWidth_0;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MapHeight_0;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumLayers;                                         // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetMapSize) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetMapSize");
+static_assert(sizeof(PaperTileMapComponent_GetMapSize) == 0x00000C, "Wrong size on PaperTileMapComponent_GetMapSize");
+static_assert(offsetof(PaperTileMapComponent_GetMapSize, MapWidth_0) == 0x000000, "Member 'PaperTileMapComponent_GetMapSize::MapWidth_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetMapSize, MapHeight_0) == 0x000004, "Member 'PaperTileMapComponent_GetMapSize::MapHeight_0' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetMapSize, NumLayers) == 0x000008, "Member 'PaperTileMapComponent_GetMapSize::NumLayers' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.ResizeMap
+// 0x0008 (0x0008 - 0x0000)
+struct PaperTileMapComponent_ResizeMap final
+{
+public:
+	int32                                         NewWidthInTiles;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewHeightInTiles;                                  // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_ResizeMap) == 0x000004, "Wrong alignment on PaperTileMapComponent_ResizeMap");
+static_assert(sizeof(PaperTileMapComponent_ResizeMap) == 0x000008, "Wrong size on PaperTileMapComponent_ResizeMap");
+static_assert(offsetof(PaperTileMapComponent_ResizeMap, NewWidthInTiles) == 0x000000, "Member 'PaperTileMapComponent_ResizeMap::NewWidthInTiles' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_ResizeMap, NewHeightInTiles) == 0x000004, "Member 'PaperTileMapComponent_ResizeMap::NewHeightInTiles' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetDefaultCollisionThickness
+// 0x0008 (0x0008 - 0x0000)
+struct PaperTileMapComponent_SetDefaultCollisionThickness final
+{
+public:
+	float                                         Thickness;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildCollision;                                 // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PaperTileMapComponent_SetDefaultCollisionThickness) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetDefaultCollisionThickness");
+static_assert(sizeof(PaperTileMapComponent_SetDefaultCollisionThickness) == 0x000008, "Wrong size on PaperTileMapComponent_SetDefaultCollisionThickness");
+static_assert(offsetof(PaperTileMapComponent_SetDefaultCollisionThickness, Thickness) == 0x000000, "Member 'PaperTileMapComponent_SetDefaultCollisionThickness::Thickness' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetDefaultCollisionThickness, bRebuildCollision) == 0x000004, "Member 'PaperTileMapComponent_SetDefaultCollisionThickness::bRebuildCollision' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetLayerCollision
+// 0x0018 (0x0018 - 0x0000)
+struct PaperTileMapComponent_SetLayerCollision final
+{
+public:
+	int32                                         Layer;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasCollision;                                     // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOverrideThickness;                                // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CustomThickness;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOverrideOffset;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CustomOffset;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildCollision;                                 // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PaperTileMapComponent_SetLayerCollision) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetLayerCollision");
+static_assert(sizeof(PaperTileMapComponent_SetLayerCollision) == 0x000018, "Wrong size on PaperTileMapComponent_SetLayerCollision");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, Layer) == 0x000000, "Member 'PaperTileMapComponent_SetLayerCollision::Layer' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bHasCollision) == 0x000004, "Member 'PaperTileMapComponent_SetLayerCollision::bHasCollision' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bOverrideThickness) == 0x000005, "Member 'PaperTileMapComponent_SetLayerCollision::bOverrideThickness' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, CustomThickness) == 0x000008, "Member 'PaperTileMapComponent_SetLayerCollision::CustomThickness' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bOverrideOffset) == 0x00000C, "Member 'PaperTileMapComponent_SetLayerCollision::bOverrideOffset' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, CustomOffset) == 0x000010, "Member 'PaperTileMapComponent_SetLayerCollision::CustomOffset' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerCollision, bRebuildCollision) == 0x000014, "Member 'PaperTileMapComponent_SetLayerCollision::bRebuildCollision' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetLayerColor
+// 0x0014 (0x0014 - 0x0000)
+struct PaperTileMapComponent_SetLayerColor final
+{
+public:
+	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Layer;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_SetLayerColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetLayerColor");
+static_assert(sizeof(PaperTileMapComponent_SetLayerColor) == 0x000014, "Wrong size on PaperTileMapComponent_SetLayerColor");
+static_assert(offsetof(PaperTileMapComponent_SetLayerColor, NewColor) == 0x000000, "Member 'PaperTileMapComponent_SetLayerColor::NewColor' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetLayerColor, Layer) == 0x000010, "Member 'PaperTileMapComponent_SetLayerColor::Layer' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetTile
+// 0x0020 (0x0020 - 0x0000)
+struct PaperTileMapComponent_SetTile final
+{
+public:
+	int32                                         X;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Y;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Layer;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPaperTileInfo                         NewValue;                                          // 0x0010(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_SetTile) == 0x000008, "Wrong alignment on PaperTileMapComponent_SetTile");
+static_assert(sizeof(PaperTileMapComponent_SetTile) == 0x000020, "Wrong size on PaperTileMapComponent_SetTile");
+static_assert(offsetof(PaperTileMapComponent_SetTile, X) == 0x000000, "Member 'PaperTileMapComponent_SetTile::X' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetTile, Y) == 0x000004, "Member 'PaperTileMapComponent_SetTile::Y' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetTile, Layer) == 0x000008, "Member 'PaperTileMapComponent_SetTile::Layer' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetTile, NewValue) == 0x000010, "Member 'PaperTileMapComponent_SetTile::NewValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetTileMap
+// 0x0010 (0x0010 - 0x0000)
+struct PaperTileMapComponent_SetTileMap final
+{
+public:
+	class UPaperTileMap*                          NewTileMap;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PaperTileMapComponent_SetTileMap) == 0x000008, "Wrong alignment on PaperTileMapComponent_SetTileMap");
+static_assert(sizeof(PaperTileMapComponent_SetTileMap) == 0x000010, "Wrong size on PaperTileMapComponent_SetTileMap");
+static_assert(offsetof(PaperTileMapComponent_SetTileMap, NewTileMap) == 0x000000, "Member 'PaperTileMapComponent_SetTileMap::NewTileMap' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_SetTileMap, ReturnValue) == 0x000008, "Member 'PaperTileMapComponent_SetTileMap::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.SetTileMapColor
+// 0x0010 (0x0010 - 0x0000)
+struct PaperTileMapComponent_SetTileMapColor final
+{
+public:
+	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_SetTileMapColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_SetTileMapColor");
+static_assert(sizeof(PaperTileMapComponent_SetTileMapColor) == 0x000010, "Wrong size on PaperTileMapComponent_SetTileMapColor");
+static_assert(offsetof(PaperTileMapComponent_SetTileMapColor, NewColor) == 0x000000, "Member 'PaperTileMapComponent_SetTileMapColor::NewColor' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetLayerColor
+// 0x0014 (0x0014 - 0x0000)
+struct PaperTileMapComponent_GetLayerColor final
+{
+public:
+	int32                                         Layer;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ReturnValue;                                       // 0x0004(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetLayerColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetLayerColor");
+static_assert(sizeof(PaperTileMapComponent_GetLayerColor) == 0x000014, "Wrong size on PaperTileMapComponent_GetLayerColor");
+static_assert(offsetof(PaperTileMapComponent_GetLayerColor, Layer) == 0x000000, "Member 'PaperTileMapComponent_GetLayerColor::Layer' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetLayerColor, ReturnValue) == 0x000004, "Member 'PaperTileMapComponent_GetLayerColor::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetTile
+// 0x0020 (0x0020 - 0x0000)
+struct PaperTileMapComponent_GetTile final
+{
+public:
+	int32                                         X;                                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Y;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Layer;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPaperTileInfo                         ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetTile) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTile");
+static_assert(sizeof(PaperTileMapComponent_GetTile) == 0x000020, "Wrong size on PaperTileMapComponent_GetTile");
+static_assert(offsetof(PaperTileMapComponent_GetTile, X) == 0x000000, "Member 'PaperTileMapComponent_GetTile::X' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTile, Y) == 0x000004, "Member 'PaperTileMapComponent_GetTile::Y' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTile, Layer) == 0x000008, "Member 'PaperTileMapComponent_GetTile::Layer' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTile, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTile::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetTileCenterPosition
+// 0x0028 (0x0028 - 0x0000)
+struct PaperTileMapComponent_GetTileCenterPosition final
+{
+public:
+	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LayerIndex;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWorldSpace;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetTileCenterPosition) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTileCenterPosition");
+static_assert(sizeof(PaperTileMapComponent_GetTileCenterPosition) == 0x000028, "Wrong size on PaperTileMapComponent_GetTileCenterPosition");
+static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTileCenterPosition::TileX' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTileCenterPosition::TileY' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, LayerIndex) == 0x000008, "Member 'PaperTileMapComponent_GetTileCenterPosition::LayerIndex' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, bWorldSpace) == 0x00000C, "Member 'PaperTileMapComponent_GetTileCenterPosition::bWorldSpace' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCenterPosition, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTileCenterPosition::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetTileCornerPosition
+// 0x0028 (0x0028 - 0x0000)
+struct PaperTileMapComponent_GetTileCornerPosition final
+{
+public:
+	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LayerIndex;                                        // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWorldSpace;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetTileCornerPosition) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTileCornerPosition");
+static_assert(sizeof(PaperTileMapComponent_GetTileCornerPosition) == 0x000028, "Wrong size on PaperTileMapComponent_GetTileCornerPosition");
+static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTileCornerPosition::TileX' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTileCornerPosition::TileY' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, LayerIndex) == 0x000008, "Member 'PaperTileMapComponent_GetTileCornerPosition::LayerIndex' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, bWorldSpace) == 0x00000C, "Member 'PaperTileMapComponent_GetTileCornerPosition::bWorldSpace' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTileCornerPosition, ReturnValue) == 0x000010, "Member 'PaperTileMapComponent_GetTileCornerPosition::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetTileMapColor
+// 0x0010 (0x0010 - 0x0000)
+struct PaperTileMapComponent_GetTileMapColor final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_GetTileMapColor) == 0x000004, "Wrong alignment on PaperTileMapComponent_GetTileMapColor");
+static_assert(sizeof(PaperTileMapComponent_GetTileMapColor) == 0x000010, "Wrong size on PaperTileMapComponent_GetTileMapColor");
+static_assert(offsetof(PaperTileMapComponent_GetTileMapColor, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_GetTileMapColor::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.GetTilePolygon
+// 0x0020 (0x0020 - 0x0000)
+struct PaperTileMapComponent_GetTilePolygon final
+{
+public:
+	int32                                         TileX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TileY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Points;                                            // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         LayerIndex;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWorldSpace;                                       // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PaperTileMapComponent_GetTilePolygon) == 0x000008, "Wrong alignment on PaperTileMapComponent_GetTilePolygon");
+static_assert(sizeof(PaperTileMapComponent_GetTilePolygon) == 0x000020, "Wrong size on PaperTileMapComponent_GetTilePolygon");
+static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, TileX) == 0x000000, "Member 'PaperTileMapComponent_GetTilePolygon::TileX' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, TileY) == 0x000004, "Member 'PaperTileMapComponent_GetTilePolygon::TileY' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, Points) == 0x000008, "Member 'PaperTileMapComponent_GetTilePolygon::Points' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, LayerIndex) == 0x000018, "Member 'PaperTileMapComponent_GetTilePolygon::LayerIndex' has a wrong offset!");
+static_assert(offsetof(PaperTileMapComponent_GetTilePolygon, bWorldSpace) == 0x00001C, "Member 'PaperTileMapComponent_GetTilePolygon::bWorldSpace' has a wrong offset!");
+
+// Function Paper2D.PaperTileMapComponent.OwnsTileMap
+// 0x0001 (0x0001 - 0x0000)
+struct PaperTileMapComponent_OwnsTileMap final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTileMapComponent_OwnsTileMap) == 0x000001, "Wrong alignment on PaperTileMapComponent_OwnsTileMap");
+static_assert(sizeof(PaperTileMapComponent_OwnsTileMap) == 0x000001, "Wrong size on PaperTileMapComponent_OwnsTileMap");
+static_assert(offsetof(PaperTileMapComponent_OwnsTileMap, ReturnValue) == 0x000000, "Member 'PaperTileMapComponent_OwnsTileMap::ReturnValue' has a wrong offset!");
+
+// Function Paper2D.PaperTerrainComponent.SetTerrainColor
+// 0x0010 (0x0010 - 0x0000)
+struct PaperTerrainComponent_SetTerrainColor final
+{
+public:
+	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PaperTerrainComponent_SetTerrainColor) == 0x000004, "Wrong alignment on PaperTerrainComponent_SetTerrainColor");
+static_assert(sizeof(PaperTerrainComponent_SetTerrainColor) == 0x000010, "Wrong size on PaperTerrainComponent_SetTerrainColor");
+static_assert(offsetof(PaperTerrainComponent_SetTerrainColor, NewColor) == 0x000000, "Member 'PaperTerrainComponent_SetTerrainColor::NewColor' has a wrong offset!");
 
 }
 

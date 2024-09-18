@@ -32,15 +32,15 @@ struct FActorSequenceObjectReference final
 {
 public:
 	EActorSequenceObjectReferenceType             Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2AE8[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  ActorId;                                           // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2AE9[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  ActorID;                                           // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PathToComponent;                                   // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 static_assert(alignof(FActorSequenceObjectReference) == 0x000008, "Wrong alignment on FActorSequenceObjectReference");
 static_assert(sizeof(FActorSequenceObjectReference) == 0x000028, "Wrong size on FActorSequenceObjectReference");
 static_assert(offsetof(FActorSequenceObjectReference, Type) == 0x000000, "Member 'FActorSequenceObjectReference::Type' has a wrong offset!");
-static_assert(offsetof(FActorSequenceObjectReference, ActorId) == 0x000004, "Member 'FActorSequenceObjectReference::ActorId' has a wrong offset!");
+static_assert(offsetof(FActorSequenceObjectReference, ActorID) == 0x000004, "Member 'FActorSequenceObjectReference::ActorID' has a wrong offset!");
 static_assert(offsetof(FActorSequenceObjectReference, PathToComponent) == 0x000018, "Member 'FActorSequenceObjectReference::PathToComponent' has a wrong offset!");
 
 // ScriptStruct ActorSequence.ActorSequenceObjectReferences

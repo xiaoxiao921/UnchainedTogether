@@ -10,17 +10,120 @@
 
 #include "Basic.hpp"
 
-#include "S_CharColor_structs.hpp"
-#include "InputCore_structs.hpp"
+#include "Speedrun_IDAndName_structs.hpp"
+#include "E_ChoosenChar_structs.hpp"
 #include "SteamCorePro_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "InGameLevelEditor_structs.hpp"
+#include "IGLE_ST_GlobalSettings_structs.hpp"
 #include "Engine_structs.hpp"
 #include "EnhancedInput_structs.hpp"
-#include "E_ChoosenChar_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "S_CharColors_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.AppendID_And_Name
+// 0x0058 (0x0058 - 0x0000)
+struct BFL_CustomFunctions_C_AppendID_And_Name final
+{
+public:
+	struct FSpeedrun_IDAndName                    ID_And_Name;                                       // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 String;                                            // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_AppendID_And_Name) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_AppendID_And_Name");
+static_assert(sizeof(BFL_CustomFunctions_C_AppendID_And_Name) == 0x000058, "Wrong size on BFL_CustomFunctions_C_AppendID_And_Name");
+static_assert(offsetof(BFL_CustomFunctions_C_AppendID_And_Name, ID_And_Name) == 0x000000, "Member 'BFL_CustomFunctions_C_AppendID_And_Name::ID_And_Name' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_AppendID_And_Name, __WorldContext) == 0x000020, "Member 'BFL_CustomFunctions_C_AppendID_And_Name::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_AppendID_And_Name, String) == 0x000028, "Member 'BFL_CustomFunctions_C_AppendID_And_Name::String' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_AppendID_And_Name, CallFunc_Concat_StrStr_ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_AppendID_And_Name::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_AppendID_And_Name, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000048, "Member 'BFL_CustomFunctions_C_AppendID_And_Name::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.CheckUGC_State
+// 0x0108 (0x0108 - 0x0000)
+struct BFL_CustomFunctions_C_CheckUGC_State final
+{
+public:
+	struct FSteamUGCDetails                       SteamUGCDetails;                                   // 0x0000(0x00A8)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class FString                                 State;                                             // 0x00A8(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x00B8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x00C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<ESteamItemState>                       CallFunc_GetItemState_States;                      // 0x00C8(0x0010)(ReferenceParm)
+	int32                                         CallFunc_GetItemState_ReturnValue;                 // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESteamItemState                               CallFunc_Array_Get_Item;                           // 0x00DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DD[0x3];                                       // 0x00DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00FD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FE[0x2];                                       // 0x00FE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_CheckUGC_State) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_CheckUGC_State");
+static_assert(sizeof(BFL_CustomFunctions_C_CheckUGC_State) == 0x000108, "Wrong size on BFL_CustomFunctions_C_CheckUGC_State");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, SteamUGCDetails) == 0x000000, "Member 'BFL_CustomFunctions_C_CheckUGC_State::SteamUGCDetails' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, State) == 0x0000A8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::State' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, __WorldContext) == 0x0000B8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, ReturnValue) == 0x0000C0, "Member 'BFL_CustomFunctions_C_CheckUGC_State::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, Temp_int_Array_Index_Variable) == 0x0000C4, "Member 'BFL_CustomFunctions_C_CheckUGC_State::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_GetItemState_States) == 0x0000C8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_GetItemState_States' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_GetItemState_ReturnValue) == 0x0000D8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_GetItemState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_Array_Get_Item) == 0x0000DC, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_Array_Length_ReturnValue) == 0x0000E0, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x0000E8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, Temp_int_Loop_Counter_Variable) == 0x0000F8, "Member 'BFL_CustomFunctions_C_CheckUGC_State::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x0000FC, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_Less_IntInt_ReturnValue) == 0x0000FD, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State, CallFunc_Add_IntInt_ReturnValue) == 0x000100, "Member 'BFL_CustomFunctions_C_CheckUGC_State::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.CheckUGC_State_FromPublishedID
+// 0x0068 (0x0068 - 0x0000)
+struct BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID final
+{
+public:
+	class FString                                 State;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<ESteamItemState>                       CallFunc_GetItemState_States;                      // 0x0028(0x0010)(ReferenceParm)
+	int32                                         CallFunc_GetItemState_ReturnValue;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESteamItemState                               CallFunc_Array_Get_Item;                           // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x005D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5E[0x2];                                       // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID");
+static_assert(sizeof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID) == 0x000068, "Wrong size on BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, State) == 0x000000, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::State' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, PublishedFileID) == 0x000010, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, __WorldContext) == 0x000018, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, ReturnValue) == 0x000020, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_GetItemState_States) == 0x000028, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_GetItemState_States' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_GetItemState_ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_GetItemState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, Temp_int_Array_Index_Variable) == 0x00003C, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_Array_Length_ReturnValue) == 0x000040, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_Array_Get_Item) == 0x000044, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x000048, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, Temp_int_Loop_Counter_Variable) == 0x000058, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x00005C, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_Less_IntInt_ReturnValue) == 0x00005D, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID, CallFunc_Add_IntInt_ReturnValue) == 0x000060, "Member 'BFL_CustomFunctions_C_CheckUGC_State_FromPublishedID::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.ConvertTimeToTextFormat
 // 0x00F0 (0x00F0 - 0x0000)
@@ -28,7 +131,7 @@ struct BFL_CustomFunctions_C_ConvertTimeToTextFormat final
 {
 public:
 	int32                                         Time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33FE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class FText                                   ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm)
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -79,11 +182,11 @@ struct BFL_CustomFunctions_C_FindPlayerStart final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33FF[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 Start;                                             // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClass_OutActors;            // 0x0018(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3400[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerStart*                           CallFunc_Array_Get_Item;                           // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -97,6 +200,47 @@ static_assert(offsetof(BFL_CustomFunctions_C_FindPlayerStart, CallFunc_Array_Len
 static_assert(offsetof(BFL_CustomFunctions_C_FindPlayerStart, CallFunc_Array_Get_Item) == 0x000030, "Member 'BFL_CustomFunctions_C_FindPlayerStart::CallFunc_Array_Get_Item' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_FindPlayerStart, CallFunc_Greater_IntInt_ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_FindPlayerStart::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.Get_UGC_ID_FromSessionName
+// 0x00B8 (0x00B8 - 0x0000)
+struct BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName final
+{
+public:
+	class FString                                 SessionName;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 NameUpdated;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 UGC_ID;                                            // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          UGC;                                               // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SessionNameLocal;                                  // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue;               // 0x0050(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue_1;             // 0x0068(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Replace_ReturnValue;                      // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName");
+static_assert(sizeof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName) == 0x0000B8, "Wrong size on BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, SessionName) == 0x000000, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::SessionName' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, __WorldContext) == 0x000010, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, NameUpdated) == 0x000018, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::NameUpdated' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, UGC_ID) == 0x000028, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::UGC_ID' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, UGC) == 0x000038, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::UGC' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, SessionNameLocal) == 0x000040, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::SessionNameLocal' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_ParseIntoArray_ReturnValue) == 0x000050, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_ParseIntoArray_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Array_LastIndex_ReturnValue) == 0x000060, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_ParseIntoArray_ReturnValue_1) == 0x000068, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_ParseIntoArray_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Array_Get_Item) == 0x000078, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Array_Length_ReturnValue) == 0x000088, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Concat_StrStr_ReturnValue) == 0x000090, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Greater_IntInt_ReturnValue) == 0x0000A0, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName, CallFunc_Replace_ReturnValue) == 0x0000A8, "Member 'BFL_CustomFunctions_C_Get_UGC_ID_FromSessionName::CallFunc_Replace_ReturnValue' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetChainByCharacters
 // 0x0068 (0x0068 - 0x0000)
 struct BFL_CustomFunctions_C_GetChainByCharacters final
@@ -107,7 +251,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class ABP_NewChain_C*                         Array_Element;                                     // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3401[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ABP_NewChain_C*>                 CallFunc_GetAllActorsOfClass_OutActors;            // 0x0028(0x0010)(ReferenceParm)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -115,11 +259,11 @@ public:
 	TArray<class AActor*>                         CallFunc_GetAttachedChars_AttachedChars;           // 0x0048(0x0010)(ReferenceParm)
 	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Array_Contains_ReturnValue_1;             // 0x0059(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3402[0x2];                                     // 0x005A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5A[0x2];                                       // 0x005A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3403[0x2];                                     // 0x0062(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_62[0x2];                                       // 0x0062(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BFL_CustomFunctions_C_GetChainByCharacters) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetChainByCharacters");
@@ -158,7 +302,7 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0065(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3404[0x2];                                     // 0x0066(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_66[0x2];                                       // 0x0066(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -185,19 +329,19 @@ struct BFL_CustomFunctions_C_GetCharacterColor final
 {
 public:
 	E_ChoosenChar                                 Character;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3405[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Color;                                             // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3406[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           CallFunc_GetDataTableRowNames_OutRowNames;         // 0x0030(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0044(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3407[0x3];                                     // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FS_CharColor                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0050(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FS_CharColors                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0050(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0065(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -224,7 +368,7 @@ struct BFL_CustomFunctions_C_GetDevMode final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          DevMode;                                           // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3408[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -247,23 +391,23 @@ public:
 	class FName                                   Key;                                               // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3409[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKey                                   Current_Key;                                       // 0x0018(0x0018)(Parm, OutParm, HasGetValueTypeHash)
 	struct FPlayerKeyMapping                      FoundMap;                                          // 0x0030(0x0090)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340A[0x4];                                     // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_GetUserSettings_self_CastInput;           // 0x00D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UEnhancedInputUserSettings*             CallFunc_GetUserSettings_ReturnValue;              // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340B[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UEnhancedPlayerMappableKeyProfile*      CallFunc_GetCurrentKeyProfile_ReturnValue;         // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TMap<class FName, struct FKeyMappingRow>      CallFunc_GetPlayerMappingRows_ReturnValue;         // 0x00F8(0x0050)(ConstParm)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340C[0x4];                                     // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKeyMappingRow                         CallFunc_Map_Find_Value;                           // 0x0150(0x0050)()
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340D[0x3];                                     // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FPlayerKeyMapping>              CallFunc_Set_ToArray_Result;                       // 0x01A8(0x0010)(ReferenceParm)
 	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x01B8(0x0090)(HasGetValueTypeHash)
@@ -302,7 +446,7 @@ struct BFL_CustomFunctions_C_GetInputLagMode final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340E[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -324,7 +468,7 @@ struct BFL_CustomFunctions_C_GetLocalMultiplayer final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340F[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -339,6 +483,64 @@ static_assert(offsetof(BFL_CustomFunctions_C_GetLocalMultiplayer, K2Node_Dynamic
 static_assert(offsetof(BFL_CustomFunctions_C_GetLocalMultiplayer, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'BFL_CustomFunctions_C_GetLocalMultiplayer::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_GetLocalMultiplayer, CallFunc_GetLocalMultiplayerMode_ReturnValue) == 0x000029, "Member 'BFL_CustomFunctions_C_GetLocalMultiplayer::CallFunc_GetLocalMultiplayerMode_ReturnValue' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetModButtonClasses
+// 0x0038 (0x0038 - 0x0000)
+struct BFL_CustomFunctions_C_GetModButtonClasses final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<TSoftClassPtr<class UClass>>           ClassesOut;                                        // 0x0008(0x0010)(Parm, OutParm)
+	TArray<TSoftClassPtr<class UClass>>           Classes;                                           // 0x0018(0x0010)(Edit, BlueprintVisible)
+	TArray<TSoftClassPtr<class UClass>>           K2Node_MakeArray_Array;                            // 0x0028(0x0010)(ReferenceParm)
+};
+static_assert(alignof(BFL_CustomFunctions_C_GetModButtonClasses) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetModButtonClasses");
+static_assert(sizeof(BFL_CustomFunctions_C_GetModButtonClasses) == 0x000038, "Wrong size on BFL_CustomFunctions_C_GetModButtonClasses");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModButtonClasses, __WorldContext) == 0x000000, "Member 'BFL_CustomFunctions_C_GetModButtonClasses::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModButtonClasses, ClassesOut) == 0x000008, "Member 'BFL_CustomFunctions_C_GetModButtonClasses::ClassesOut' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModButtonClasses, Classes) == 0x000018, "Member 'BFL_CustomFunctions_C_GetModButtonClasses::Classes' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModButtonClasses, K2Node_MakeArray_Array) == 0x000028, "Member 'BFL_CustomFunctions_C_GetModButtonClasses::K2Node_MakeArray_Array' has a wrong offset!");
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetModInfosFromDataTable
+// 0x0210 (0x0210 - 0x0000)
+struct BFL_CustomFunctions_C_GetModInfosFromDataTable final
+{
+public:
+	class UClass*                                 ActorClass;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIGLEPlacableActorInfo                 Out_Row;                                           // 0x0018(0x00C0)(Parm, OutParm, HasGetValueTypeHash)
+	class FName                                   RowName;                                           // 0x00D8(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValidClass_ReturnValue;                 // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   CallFunc_Conv_ClassToSoftClassReference_ReturnValue; // 0x00E8(0x0028)(UObjectWrapper, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetClassDisplayName_ReturnValue;          // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Replace_ReturnValue;                      // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_LeftChop_ReturnValue;                     // 0x0130(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FIGLEPlacableActorInfo                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0148(0x00C0)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_SoftClassReference_ReturnValue; // 0x0209(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValidSoftClassReference_ReturnValue;    // 0x020A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_GetModInfosFromDataTable) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetModInfosFromDataTable");
+static_assert(sizeof(BFL_CustomFunctions_C_GetModInfosFromDataTable) == 0x000210, "Wrong size on BFL_CustomFunctions_C_GetModInfosFromDataTable");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, ActorClass) == 0x000000, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::ActorClass' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, __WorldContext) == 0x000008, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, ReturnValue) == 0x000010, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, Out_Row) == 0x000018, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::Out_Row' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, RowName) == 0x0000D8, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::RowName' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_IsValidClass_ReturnValue) == 0x0000E0, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_IsValidClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_Conv_ClassToSoftClassReference_ReturnValue) == 0x0000E8, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_Conv_ClassToSoftClassReference_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_GetClassDisplayName_ReturnValue) == 0x000110, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_GetClassDisplayName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_Replace_ReturnValue) == 0x000120, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_Replace_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_LeftChop_ReturnValue) == 0x000130, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_LeftChop_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_Conv_StringToName_ReturnValue) == 0x000140, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_GetDataTableRowFromName_OutRow) == 0x000148, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000208, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_EqualEqual_SoftClassReference_ReturnValue) == 0x000209, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_EqualEqual_SoftClassReference_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetModInfosFromDataTable, CallFunc_IsValidSoftClassReference_ReturnValue) == 0x00020A, "Member 'BFL_CustomFunctions_C_GetModInfosFromDataTable::CallFunc_IsValidSoftClassReference_ReturnValue' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetNumPlayers
 // 0x0050 (0x0050 - 0x0000)
 struct BFL_CustomFunctions_C_GetNumPlayers final
@@ -346,18 +548,18 @@ struct BFL_CustomFunctions_C_GetNumPlayers final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3410[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3411[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3412[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_GetPlayersInSession_PlayersInSession;     // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetLocalMultiplayer_ReturnValue;          // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3413[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_SelectInt_ReturnValue;                    // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BFL_CustomFunctions_C_GetNumPlayers) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetNumPlayers");
@@ -374,6 +576,75 @@ static_assert(offsetof(BFL_CustomFunctions_C_GetNumPlayers, CallFunc_Array_Lengt
 static_assert(offsetof(BFL_CustomFunctions_C_GetNumPlayers, CallFunc_GetLocalMultiplayer_ReturnValue) == 0x000044, "Member 'BFL_CustomFunctions_C_GetNumPlayers::CallFunc_GetLocalMultiplayer_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_GetNumPlayers, CallFunc_SelectInt_ReturnValue) == 0x000048, "Member 'BFL_CustomFunctions_C_GetNumPlayers::CallFunc_SelectInt_ReturnValue' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetPlacableByID
+// 0x0130 (0x0130 - 0x0000)
+struct BFL_CustomFunctions_C_GetPlacableByID final
+{
+public:
+	int64                                         ID;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Class_0;                                           // 0x0008(0x0028)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Actor;                                             // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UObject>                    CallFunc_Conv_SoftClassReferenceToClass_ReturnValue; // 0x0050(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 K2Node_ClassDynamicCast_AsActor;                   // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsOfClass_OutActors;            // 0x0070(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_Int64ToString_ReturnValue;           // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_Int64ToString_ReturnValue_1;         // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_Array_Get_Item;                           // 0x00B8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   CallFunc_Conv_ClassToSoftClassReference_ReturnValue; // 0x00C8(0x0028)(UObjectWrapper, HasGetValueTypeHash)
+	class UIGLE_InterfaceComponent*               CallFunc_GetComponentByClass_ReturnValue;          // 0x00F0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_SoftClassReference_ReturnValue; // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_Int64Int64_ReturnValue;        // 0x00FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FB[0x5];                                       // 0x00FB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_Int64ToString_ReturnValue_2;         // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_GetPlacableByID) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetPlacableByID");
+static_assert(sizeof(BFL_CustomFunctions_C_GetPlacableByID) == 0x000130, "Wrong size on BFL_CustomFunctions_C_GetPlacableByID");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, ID) == 0x000000, "Member 'BFL_CustomFunctions_C_GetPlacableByID::ID' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, Class_0) == 0x000008, "Member 'BFL_CustomFunctions_C_GetPlacableByID::Class_0' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, __WorldContext) == 0x000030, "Member 'BFL_CustomFunctions_C_GetPlacableByID::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_GetPlacableByID::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, Actor) == 0x000040, "Member 'BFL_CustomFunctions_C_GetPlacableByID::Actor' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, Temp_int_Loop_Counter_Variable) == 0x000048, "Member 'BFL_CustomFunctions_C_GetPlacableByID::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Conv_SoftClassReferenceToClass_ReturnValue) == 0x000050, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Conv_SoftClassReferenceToClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, K2Node_ClassDynamicCast_AsActor) == 0x000060, "Member 'BFL_CustomFunctions_C_GetPlacableByID::K2Node_ClassDynamicCast_AsActor' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, K2Node_ClassDynamicCast_bSuccess) == 0x000068, "Member 'BFL_CustomFunctions_C_GetPlacableByID::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_GetAllActorsOfClass_OutActors) == 0x000070, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Array_Length_ReturnValue) == 0x000080, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Conv_Int64ToString_ReturnValue) == 0x000088, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Conv_Int64ToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Less_IntInt_ReturnValue) == 0x000098, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Conv_Int64ToString_ReturnValue_1) == 0x0000A0, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Conv_Int64ToString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, Temp_int_Array_Index_Variable) == 0x0000B0, "Member 'BFL_CustomFunctions_C_GetPlacableByID::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Array_Get_Item) == 0x0000B8, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_GetObjectClass_ReturnValue) == 0x0000C0, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_GetObjectClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Conv_ClassToSoftClassReference_ReturnValue) == 0x0000C8, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Conv_ClassToSoftClassReference_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_GetComponentByClass_ReturnValue) == 0x0000F0, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_EqualEqual_SoftClassReference_ReturnValue) == 0x0000F8, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_EqualEqual_SoftClassReference_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_IsValid_ReturnValue) == 0x0000F9, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_EqualEqual_Int64Int64_ReturnValue) == 0x0000FA, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_EqualEqual_Int64Int64_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Conv_Int64ToString_ReturnValue_2) == 0x000100, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Conv_Int64ToString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Concat_StrStr_ReturnValue) == 0x000110, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_GetPlacableByID, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000120, "Member 'BFL_CustomFunctions_C_GetPlacableByID::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetPlayerCount
 // 0x0020 (0x0020 - 0x0000)
 struct BFL_CustomFunctions_C_GetPlayerCount final
@@ -381,7 +652,7 @@ struct BFL_CustomFunctions_C_GetPlayerCount final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3414[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -400,18 +671,18 @@ public:
 	class FName                                   Tag;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3415[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerStart*                           Start;                                             // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3416[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClass_OutActors;            // 0x0030(0x0010)(ReferenceParm)
 	class APlayerStart*                           CallFunc_Array_Get_Item;                           // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3417[0x2];                                     // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_52[0x2];                                       // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BFL_CustomFunctions_C_GetPlayerStartByTag) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetPlayerStartByTag");
@@ -437,7 +708,7 @@ struct BFL_CustomFunctions_C_GetSpawnWithoutLobby final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3418[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -457,7 +728,7 @@ struct BFL_CustomFunctions_C_GetTestControl final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          TestControl;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3419[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstanceWithSave_C> K2Node_DynamicCast_AsBPI_Game_Instance_with_Save;  // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -481,12 +752,12 @@ struct BFL_CustomFunctions_C_GetTestPlayersToSpawn final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Count;                                             // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341A[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstanceWithSave_C> K2Node_DynamicCast_AsBPI_Game_Instance_with_Save;  // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341B[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_GetTestPlayers_Count;                     // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BFL_CustomFunctions_C_GetTestPlayersToSpawn) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_GetTestPlayersToSpawn");
@@ -506,7 +777,7 @@ struct BFL_CustomFunctions_C_GetTrueChainVisible final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          Visible;                                           // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341C[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_GameInstance_C>   K2Node_DynamicCast_AsBPI_Game_Instance;            // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -521,6 +792,56 @@ static_assert(offsetof(BFL_CustomFunctions_C_GetTrueChainVisible, K2Node_Dynamic
 static_assert(offsetof(BFL_CustomFunctions_C_GetTrueChainVisible, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'BFL_CustomFunctions_C_GetTrueChainVisible::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_GetTrueChainVisible, CallFunc_GetTrueChainVisible_Visible) == 0x000029, "Member 'BFL_CustomFunctions_C_GetTrueChainVisible::CallFunc_GetTrueChainVisible_Visible' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.IGLE_OpenLevel
+// 0x0180 (0x0180 - 0x0000)
+struct BFL_CustomFunctions_C_IGLE_OpenLevel final
+{
+public:
+	bool                                          Edit;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Path;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Option;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FIGLE_ST_GlobalSettings                CallFunc_IGLE_GetGlobalSettings_Settings;          // 0x0040(0x0088)(HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable;                              // 0x00C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_SoftClassReferenceToString_ReturnValue; // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_SoftClassReferenceToString_ReturnValue_1; // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_1;                            // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_Select_Default;                             // 0x0118(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_Select_Default_1;                           // 0x0140(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0150(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0160(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0170(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_IGLE_OpenLevel) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_IGLE_OpenLevel");
+static_assert(sizeof(BFL_CustomFunctions_C_IGLE_OpenLevel) == 0x000180, "Wrong size on BFL_CustomFunctions_C_IGLE_OpenLevel");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Edit) == 0x000000, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Edit' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Path) == 0x000008, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Path' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Option) == 0x000018, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Option' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, __WorldContext) == 0x000028, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Temp_bool_Variable) == 0x000030, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_GetPlayerController_ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_IGLE_GetGlobalSettings_Settings) == 0x000040, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_IGLE_GetGlobalSettings_Settings' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Temp_string_Variable) == 0x0000C8, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Temp_string_Variable' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Conv_NameToString_ReturnValue) == 0x0000D8, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Conv_NameToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Conv_SoftClassReferenceToString_ReturnValue) == 0x0000E8, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Conv_SoftClassReferenceToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Conv_SoftClassReferenceToString_ReturnValue_1) == 0x0000F8, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Conv_SoftClassReferenceToString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Temp_string_Variable_1) == 0x000108, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Temp_string_Variable_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, K2Node_Select_Default) == 0x000118, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Concat_StrStr_ReturnValue) == 0x000128, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, Temp_bool_Variable_1) == 0x000138, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, K2Node_Select_Default_1) == 0x000140, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::K2Node_Select_Default_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000150, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000160, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IGLE_OpenLevel, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000170, "Member 'BFL_CustomFunctions_C_IGLE_OpenLevel::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.IsInteractingWithMenu
 // 0x0030 (0x0030 - 0x0000)
 struct BFL_CustomFunctions_C_IsInteractingWithMenu final
@@ -528,7 +849,7 @@ struct BFL_CustomFunctions_C_IsInteractingWithMenu final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341D[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0018(0x0010)(ReferenceParm, ContainsInstancedReference)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -543,6 +864,37 @@ static_assert(offsetof(BFL_CustomFunctions_C_IsInteractingWithMenu, CallFunc_Get
 static_assert(offsetof(BFL_CustomFunctions_C_IsInteractingWithMenu, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'BFL_CustomFunctions_C_IsInteractingWithMenu::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_IsInteractingWithMenu, CallFunc_Greater_IntInt_ReturnValue) == 0x00002C, "Member 'BFL_CustomFunctions_C_IsInteractingWithMenu::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.IsModInstalled
+// 0x0048 (0x0048 - 0x0000)
+struct BFL_CustomFunctions_C_IsModInstalled final
+{
+public:
+	struct FPublishedFileID                       PublishedFileID;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Installed;                                         // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetItemInstallInfo_SizeOnDisk;            // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetItemInstallInfo_Folder;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetItemInstallInfo_TimeStamp;             // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetItemInstallInfo_ReturnValue;           // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CallFunc_FindFiles_FoundFiles;                     // 0x0030(0x0010)(ReferenceParm)
+	bool                                          CallFunc_FindFiles_ReturnValue;                    // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsNotEmpty_ReturnValue;             // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_IsModInstalled) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_IsModInstalled");
+static_assert(sizeof(BFL_CustomFunctions_C_IsModInstalled) == 0x000048, "Wrong size on BFL_CustomFunctions_C_IsModInstalled");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, PublishedFileID) == 0x000000, "Member 'BFL_CustomFunctions_C_IsModInstalled::PublishedFileID' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, __WorldContext) == 0x000008, "Member 'BFL_CustomFunctions_C_IsModInstalled::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, Installed) == 0x000010, "Member 'BFL_CustomFunctions_C_IsModInstalled::Installed' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_GetItemInstallInfo_SizeOnDisk) == 0x000014, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_GetItemInstallInfo_SizeOnDisk' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_GetItemInstallInfo_Folder) == 0x000018, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_GetItemInstallInfo_Folder' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_GetItemInstallInfo_TimeStamp) == 0x000028, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_GetItemInstallInfo_TimeStamp' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_GetItemInstallInfo_ReturnValue) == 0x00002C, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_GetItemInstallInfo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_FindFiles_FoundFiles) == 0x000030, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_FindFiles_FoundFiles' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_FindFiles_ReturnValue) == 0x000040, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_FindFiles_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_IsModInstalled, CallFunc_Array_IsNotEmpty_ReturnValue) == 0x000041, "Member 'BFL_CustomFunctions_C_IsModInstalled::CallFunc_Array_IsNotEmpty_ReturnValue' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.No Password Code
 // 0x0018 (0x0018 - 0x0000)
 struct BFL_CustomFunctions_C_No_Password_Code final
@@ -555,6 +907,17 @@ static_assert(alignof(BFL_CustomFunctions_C_No_Password_Code) == 0x000008, "Wron
 static_assert(sizeof(BFL_CustomFunctions_C_No_Password_Code) == 0x000018, "Wrong size on BFL_CustomFunctions_C_No_Password_Code");
 static_assert(offsetof(BFL_CustomFunctions_C_No_Password_Code, __WorldContext) == 0x000000, "Member 'BFL_CustomFunctions_C_No_Password_Code::__WorldContext' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_No_Password_Code, ReturnValue) == 0x000008, "Member 'BFL_CustomFunctions_C_No_Password_Code::ReturnValue' has a wrong offset!");
+
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.OpenChainedTogetherWorkshopPage
+// 0x0008 (0x0008 - 0x0000)
+struct BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage");
+static_assert(sizeof(BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage) == 0x000008, "Wrong size on BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage");
+static_assert(offsetof(BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage, __WorldContext) == 0x000000, "Member 'BFL_CustomFunctions_C_OpenChainedTogetherWorkshopPage::__WorldContext' has a wrong offset!");
 
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.PrintStringOneFrame
 // 0x0038 (0x0038 - 0x0000)
@@ -592,7 +955,7 @@ public:
 	TSoftClassPtr<class UClass>                   CallFunc_Conv_ClassToSoftClassReference_ReturnValue; // 0x0048(0x0028)(UObjectWrapper, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0074(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341E[0x3];                                     // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -650,7 +1013,7 @@ struct BFL_CustomFunctions_C_ShowTip final
 public:
 	class FText                                   In_Text;                                           // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
 	float                                         Duration;                                          // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_341F[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UW_Tip_C*                               CallFunc_Create_ReturnValue;                       // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_SetDoublePropertyByName_Value_ImplicitCast; // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -686,14 +1049,14 @@ struct BFL_CustomFunctions_C_TraceVisibility final
 {
 public:
 	EDrawDebugTrace                               Type;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3420[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	EDrawDebugTrace                               Result;                                            // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_Variable;                                // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3421[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	EDrawDebugTrace                               Temp_byte_Variable;                                // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3422[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EDrawDebugTrace                               K2Node_Select_Default;                             // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -718,12 +1081,12 @@ public:
 	double                                        Speed;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        FourPlayersScale;                                  // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IgnoreTwoPlayers;                                  // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3423[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	double                                        ReturnSpeed;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetNumPlayers_ReturnValue;                // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3424[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -749,7 +1112,7 @@ public:
 	TSubclassOf<class UUserWidget>                WidgetClass;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3425[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x0018(0x0010)(ReferenceParm, ContainsInstancedReference)
 	bool                                          CallFunc_Array_IsNotEmpty_ReturnValue;             // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -761,6 +1124,53 @@ static_assert(offsetof(BFL_CustomFunctions_C_WidgetAlreadyInParent_, ReturnValue
 static_assert(offsetof(BFL_CustomFunctions_C_WidgetAlreadyInParent_, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x000018, "Member 'BFL_CustomFunctions_C_WidgetAlreadyInParent_::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
 static_assert(offsetof(BFL_CustomFunctions_C_WidgetAlreadyInParent_, CallFunc_Array_IsNotEmpty_ReturnValue) == 0x000028, "Member 'BFL_CustomFunctions_C_WidgetAlreadyInParent_::CallFunc_Array_IsNotEmpty_ReturnValue' has a wrong offset!");
 
+// Function BFL_CustomFunctions.BFL_CustomFunctions_C.Find Group By Placable
+// 0x0108 (0x0108 - 0x0000)
+struct BFL_CustomFunctions_C_Find_Group_By_Placable final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Found;                                             // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int64>                                 Group;                                             // 0x0018(0x0010)(Parm, OutParm)
+	class AMod_Group_C*                           GroupActor;                                        // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Array_Get_Item;                           // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsEmpty_ReturnValue;                // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AMod_Group_C*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0040(0x0010)(ReferenceParm)
+	class AMod_Group_C*                           CallFunc_Array_Get_Item_1;                         // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UIGLE_InterfaceComponent*               CallFunc_GetComponentByClass_ReturnValue;          // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UIGLE_InterfaceComponent*               CallFunc_GetComponentByClass_ReturnValue_1;        // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FIGLEProperty                          CallFunc_GetPropertyByName_Property;               // 0x0070(0x0080)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetPropertyByName_ReturnValue;            // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UIGLE_GroupProperty_C*                  K2Node_DynamicCast_AsIGLE_Group_Property;          // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BFL_CustomFunctions_C_Find_Group_By_Placable) == 0x000008, "Wrong alignment on BFL_CustomFunctions_C_Find_Group_By_Placable");
+static_assert(sizeof(BFL_CustomFunctions_C_Find_Group_By_Placable) == 0x000108, "Wrong size on BFL_CustomFunctions_C_Find_Group_By_Placable");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, Actor) == 0x000000, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::Actor' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, __WorldContext) == 0x000008, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, Found) == 0x000010, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::Found' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, Group) == 0x000018, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::Group' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, GroupActor) == 0x000028, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::GroupActor' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_Array_Get_Item) == 0x000030, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_Array_IsEmpty_ReturnValue) == 0x000038, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_Array_IsEmpty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_GetAllActorsOfClassWithTag_OutActors) == 0x000040, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_GetAllActorsOfClassWithTag_OutActors' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_Array_Get_Item_1) == 0x000050, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_GetComponentByClass_ReturnValue) == 0x000058, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_IsValid_ReturnValue) == 0x000060, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_IsValid_ReturnValue_1) == 0x000061, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_GetComponentByClass_ReturnValue_1) == 0x000068, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_GetComponentByClass_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_GetPropertyByName_Property) == 0x000070, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_GetPropertyByName_Property' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, CallFunc_GetPropertyByName_ReturnValue) == 0x0000F0, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::CallFunc_GetPropertyByName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, K2Node_DynamicCast_AsIGLE_Group_Property) == 0x0000F8, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::K2Node_DynamicCast_AsIGLE_Group_Property' has a wrong offset!");
+static_assert(offsetof(BFL_CustomFunctions_C_Find_Group_By_Placable, K2Node_DynamicCast_bSuccess) == 0x000100, "Member 'BFL_CustomFunctions_C_Find_Group_By_Placable::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+
 // Function BFL_CustomFunctions.BFL_CustomFunctions_C.GetSessionSetting
 // 0x01C8 (0x01C8 - 0x0000)
 struct BFL_CustomFunctions_C_GetSessionSetting final
@@ -770,7 +1180,7 @@ public:
 	class FString                                 Setting;                                           // 0x0130(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0140(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0148(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3426[0x7];                                     // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Value;                                             // 0x0150(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0160(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0164(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -778,10 +1188,10 @@ public:
 	class FString                                 CallFunc_GetString_Key;                            // 0x0190(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_GetString_OutValue;                       // 0x01A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetString_ReturnValue;                    // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3427[0x3];                                     // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3428[0x3];                                     // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B9[0x3];                                      // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -810,7 +1220,7 @@ struct BFL_CustomFunctions_C_Is_Someone_Driving_Car_Server_ final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3429[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_CustomCar_C*                        AsBP_Custom_Car;                                   // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TArray<class APlayerController*>              CallFunc_GetAllActorsOfClass_OutActors;            // 0x0018(0x0010)(ReferenceParm)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -820,9 +1230,9 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_342A[0x2];                                     // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_46[0x2];                                       // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_342B[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_CustomCar_C*                        K2Node_DynamicCast_AsBP_Custom_Car;                // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -854,7 +1264,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0150(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0158(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSessionSetting_ReturnValue;            // 0x0159(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_342C[0x6];                                     // 0x015A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15A[0x6];                                      // 0x015A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSessionSetting_Value;                  // 0x0160(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

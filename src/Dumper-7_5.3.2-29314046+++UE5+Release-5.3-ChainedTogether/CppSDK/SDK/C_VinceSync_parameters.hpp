@@ -23,14 +23,14 @@ struct C_VinceSync_C_ExecuteUbergraph_C_VinceSync final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 CallFunc_GetOwner_ReturnValue_1;                   // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE7[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsServer_ReturnValue;                     // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE8[0x7];                                     // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue;      // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -44,9 +44,9 @@ public:
 	class AActor*                                 CallFunc_GetOwner_ReturnValue_2;                   // 0x0298(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue;          // 0x02A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE9[0x7];                                     // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        K2Node_CustomEvent_ComponentToSync;                // 0x02B0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEA[0x8];                                     // 0x02B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x8];                                      // 0x02B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue;       // 0x02C0(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakTransform_Location;                  // 0x0320(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation;                  // 0x0338(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -58,7 +58,7 @@ public:
 	struct FRotator                               K2Node_CustomEvent_SyncedRotation;                 // 0x0498(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult_1;     // 0x04B0(0x00E8)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	bool                                          CallFunc_IsServer_ReturnValue_1;                   // 0x0598(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DEB[0x3];                                     // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_599[0x3];                                      // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_VInterpTo_DeltaTime_ImplicitCast;         // 0x059C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_RInterpTo_DeltaTime_ImplicitCast;         // 0x05A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -103,11 +103,11 @@ static_assert(offsetof(C_VinceSync_C_ExecuteUbergraph_C_VinceSync, CallFunc_RInt
 struct C_VinceSync_C_InitSync final
 {
 public:
-	class USceneComponent*                        Param_ComponentToSync;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        ComponentToSync_0;                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(C_VinceSync_C_InitSync) == 0x000008, "Wrong alignment on C_VinceSync_C_InitSync");
 static_assert(sizeof(C_VinceSync_C_InitSync) == 0x000008, "Wrong size on C_VinceSync_C_InitSync");
-static_assert(offsetof(C_VinceSync_C_InitSync, Param_ComponentToSync) == 0x000000, "Member 'C_VinceSync_C_InitSync::Param_ComponentToSync' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_InitSync, ComponentToSync_0) == 0x000000, "Member 'C_VinceSync_C_InitSync::ComponentToSync_0' has a wrong offset!");
 
 // Function C_VinceSync.C_VinceSync_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
@@ -125,37 +125,37 @@ static_assert(offsetof(C_VinceSync_C_ReceiveTick, DeltaSeconds) == 0x000000, "Me
 struct C_VinceSync_C_SetComponentToSync final
 {
 public:
-	class USceneComponent*                        Param_ComponentToSync;                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        ComponentToSync_0;                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(C_VinceSync_C_SetComponentToSync) == 0x000008, "Wrong alignment on C_VinceSync_C_SetComponentToSync");
 static_assert(sizeof(C_VinceSync_C_SetComponentToSync) == 0x000008, "Wrong size on C_VinceSync_C_SetComponentToSync");
-static_assert(offsetof(C_VinceSync_C_SetComponentToSync, Param_ComponentToSync) == 0x000000, "Member 'C_VinceSync_C_SetComponentToSync::Param_ComponentToSync' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_SetComponentToSync, ComponentToSync_0) == 0x000000, "Member 'C_VinceSync_C_SetComponentToSync::ComponentToSync_0' has a wrong offset!");
 
 // Function C_VinceSync.C_VinceSync_C.Teleport
 // 0x0030 (0x0030 - 0x0000)
 struct C_VinceSync_C_Teleport final
 {
 public:
-	struct FVector                                Param_SyncedLocation;                              // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               Param_SyncedRotation;                              // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                SyncedLocation_0;                                  // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               SyncedRotation_0;                                  // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(C_VinceSync_C_Teleport) == 0x000008, "Wrong alignment on C_VinceSync_C_Teleport");
 static_assert(sizeof(C_VinceSync_C_Teleport) == 0x000030, "Wrong size on C_VinceSync_C_Teleport");
-static_assert(offsetof(C_VinceSync_C_Teleport, Param_SyncedLocation) == 0x000000, "Member 'C_VinceSync_C_Teleport::Param_SyncedLocation' has a wrong offset!");
-static_assert(offsetof(C_VinceSync_C_Teleport, Param_SyncedRotation) == 0x000018, "Member 'C_VinceSync_C_Teleport::Param_SyncedRotation' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_Teleport, SyncedLocation_0) == 0x000000, "Member 'C_VinceSync_C_Teleport::SyncedLocation_0' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_Teleport, SyncedRotation_0) == 0x000018, "Member 'C_VinceSync_C_Teleport::SyncedRotation_0' has a wrong offset!");
 
 // Function C_VinceSync.C_VinceSync_C.TeleportAll
 // 0x0030 (0x0030 - 0x0000)
 struct C_VinceSync_C_TeleportAll final
 {
 public:
-	struct FVector                                Param_SyncedLocation;                              // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               Param_SyncedRotation;                              // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                SyncedLocation_0;                                  // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               SyncedRotation_0;                                  // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(C_VinceSync_C_TeleportAll) == 0x000008, "Wrong alignment on C_VinceSync_C_TeleportAll");
 static_assert(sizeof(C_VinceSync_C_TeleportAll) == 0x000030, "Wrong size on C_VinceSync_C_TeleportAll");
-static_assert(offsetof(C_VinceSync_C_TeleportAll, Param_SyncedLocation) == 0x000000, "Member 'C_VinceSync_C_TeleportAll::Param_SyncedLocation' has a wrong offset!");
-static_assert(offsetof(C_VinceSync_C_TeleportAll, Param_SyncedRotation) == 0x000018, "Member 'C_VinceSync_C_TeleportAll::Param_SyncedRotation' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_TeleportAll, SyncedLocation_0) == 0x000000, "Member 'C_VinceSync_C_TeleportAll::SyncedLocation_0' has a wrong offset!");
+static_assert(offsetof(C_VinceSync_C_TeleportAll, SyncedRotation_0) == 0x000018, "Member 'C_VinceSync_C_TeleportAll::SyncedRotation_0' has a wrong offset!");
 
 }
 

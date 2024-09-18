@@ -17,6 +17,158 @@
 namespace SDK
 {
 
+// Function W_CharacterSelector.W_CharacterSelector_C.BndEvt__W_CharacterSelector_Left_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_CharacterSelector_C::BndEvt__W_CharacterSelector_Left_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "BndEvt__W_CharacterSelector_Left_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.BndEvt__W_CharacterSelector_Right_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_CharacterSelector_C::BndEvt__W_CharacterSelector_Right_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "BndEvt__W_CharacterSelector_Right_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.ChangeSlot
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Right_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSelector_C::ChangeSlot(bool Right_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "ChangeSlot");
+
+	Params::W_CharacterSelector_C_ChangeSlot Parms{};
+
+	Parms.Right_0 = Right_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.Check Negative Translate
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UW_CharacterSlot_C*>       Slots                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// bool                                    ContainsNegative                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSelector_C::Check_Negative_Translate(TArray<class UW_CharacterSlot_C*>& Slots, bool* ContainsNegative)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "Check Negative Translate");
+
+	Params::W_CharacterSelector_C_Check_Negative_Translate Parms{};
+
+	Parms.Slots = std::move(Slots);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Slots = std::move(Parms.Slots);
+
+	if (ContainsNegative != nullptr)
+		*ContainsNegative = Parms.ContainsNegative;
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.Check Positive Translate
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UW_CharacterSlot_C*>       Slots                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// bool                                    ContainsPositive                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSelector_C::Check_Positive_Translate(TArray<class UW_CharacterSlot_C*>& Slots, bool* ContainsPositive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "Check Positive Translate");
+
+	Params::W_CharacterSelector_C_Check_Positive_Translate Parms{};
+
+	Parms.Slots = std::move(Slots);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Slots = std::move(Parms.Slots);
+
+	if (ContainsPositive != nullptr)
+		*ContainsPositive = Parms.ContainsPositive;
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.CheckHigherSlot
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UW_CharacterSlot_C*>       Slots                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// class UW_CharacterSlot_C*               HigherSlot1                                            (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSelector_C::CheckHigherSlot(TArray<class UW_CharacterSlot_C*>& Slots, class UW_CharacterSlot_C** HigherSlot1)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "CheckHigherSlot");
+
+	Params::W_CharacterSelector_C_CheckHigherSlot Parms{};
+
+	Parms.Slots = std::move(Slots);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Slots = std::move(Parms.Slots);
+
+	if (HigherSlot1 != nullptr)
+		*HigherSlot1 = Parms.HigherSlot1;
+}
+
+
+// Function W_CharacterSelector.W_CharacterSelector_C.CheckLowerSlot
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UW_CharacterSlot_C*>       Slots                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// class UW_CharacterSlot_C*               LowerSlot                                              (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSelector_C::CheckLowerSlot(TArray<class UW_CharacterSlot_C*>& Slots, class UW_CharacterSlot_C** LowerSlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSelector_C", "CheckLowerSlot");
+
+	Params::W_CharacterSelector_C_CheckLowerSlot Parms{};
+
+	Parms.Slots = std::move(Slots);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Slots = std::move(Parms.Slots);
+
+	if (LowerSlot != nullptr)
+		*LowerSlot = Parms.LowerSlot;
+}
+
+
 // Function W_CharacterSelector.W_CharacterSelector_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

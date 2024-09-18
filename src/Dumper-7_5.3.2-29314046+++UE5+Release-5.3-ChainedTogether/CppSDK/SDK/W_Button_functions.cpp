@@ -60,7 +60,7 @@ void UW_Button_C::BndEvt__W_Buttons_Button_0_K2Node_ComponentBoundEvent_2_OnButt
 
 
 // Function W_Button.W_Button_C.ExecuteUbergraph_W_Button
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -108,6 +108,26 @@ void UW_Button_C::PreConstruct(bool IsDesignTime)
 	Params::W_Button_C_PreConstruct Parms{};
 
 	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_Button.W_Button_C.SetText
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText                             InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UW_Button_C::SetText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Button_C", "SetText");
+
+	Params::W_Button_C_SetText Parms{};
+
+	Parms.InText = std::move(InText);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

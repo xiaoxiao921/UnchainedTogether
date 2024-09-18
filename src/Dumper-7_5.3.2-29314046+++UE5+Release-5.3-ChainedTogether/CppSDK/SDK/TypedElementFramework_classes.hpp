@@ -121,12 +121,12 @@ public:
 	static int32 CountElementsOfType(const struct FScriptTypedElementListProxy& ElementList, const class FName ElementTypeName);
 	static struct FScriptTypedElementListProxy CreateScriptElementList(class UTypedElementRegistry* Registry);
 	static void Empty(const struct FScriptTypedElementListProxy& ElementList, const int32 Slack);
-	static struct FScriptTypedElementHandle GetElementHandleAt(const struct FScriptTypedElementListProxy& ElementList, const int32 Param_Index);
+	static struct FScriptTypedElementHandle GetElementHandleAt(const struct FScriptTypedElementListProxy& ElementList, const int32 Index_0);
 	static TArray<struct FScriptTypedElementHandle> GetElementHandles(const struct FScriptTypedElementListProxy& ElementList, const TSubclassOf<class IInterface> BaseInterfaceType);
 	static class UObject* GetElementInterface(const struct FScriptTypedElementListProxy& ElementList, const struct FScriptTypedElementHandle& ElementHandle, const TSubclassOf<class IInterface> BaseInterfaceType);
 	static bool HasElements(const struct FScriptTypedElementListProxy& ElementList, const TSubclassOf<class IInterface> BaseInterfaceType);
 	static bool HasElementsOfType(const struct FScriptTypedElementListProxy& ElementList, const class FName ElementTypeName);
-	static bool IsValidIndex(const struct FScriptTypedElementListProxy& ElementList, const int32 Param_Index);
+	static bool IsValidIndex(const struct FScriptTypedElementListProxy& ElementList, const int32 Index_0);
 	static int32 Num(const struct FScriptTypedElementListProxy& ElementList);
 	static bool Remove(const struct FScriptTypedElementListProxy& ElementList, const struct FScriptTypedElementHandle& ElementHandle);
 	static void Reserve(const struct FScriptTypedElementListProxy& ElementList, const int32 Size);
@@ -168,7 +168,7 @@ static_assert(sizeof(ITypedElementCounterInterface) == 0x000028, "Wrong size on 
 class UTypedElementRegistry final : public UObject
 {
 public:
-	uint8                                         Pad_17E[0x950];                                    // 0x0028(0x0950)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x950];                                     // 0x0028(0x0950)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UTypedElementRegistry* GetInstance();
@@ -254,7 +254,7 @@ static_assert(sizeof(ITestTypedElementInterfaceC) == 0x000028, "Wrong size on IT
 class UTestTypedElementInterfaceA_ImplTyped final : public UObject
 {
 public:
-	uint8                                         Pad_182[0x8];                                      // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -274,7 +274,7 @@ static_assert(sizeof(UTestTypedElementInterfaceA_ImplTyped) == 0x000030, "Wrong 
 class UTestTypedElementInterfaceA_ImplUntyped final : public UObject
 {
 public:
-	uint8                                         Pad_183[0x8];                                      // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -294,7 +294,7 @@ static_assert(sizeof(UTestTypedElementInterfaceA_ImplUntyped) == 0x000030, "Wron
 class UTestTypedElementInterfaceBAndC_Typed final : public UObject
 {
 public:
-	uint8                                         Pad_184[0x10];                                     // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

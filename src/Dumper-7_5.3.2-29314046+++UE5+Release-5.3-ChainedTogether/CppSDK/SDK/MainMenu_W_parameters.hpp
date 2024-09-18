@@ -18,28 +18,29 @@ namespace SDK::Params
 {
 
 // Function MainMenu_W.MainMenu_W_C.ExecuteUbergraph_MainMenu_W
-// 0x0070 (0x0070 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct MainMenu_W_C_ExecuteUbergraph_MainMenu_W final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_286E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTroubleshooting_W_C*                   CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_LeaderboardSwitcher_C*               CallFunc_Create_ReturnValue_1;                     // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorkShop_W_C*                          CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UTroubleshooting_W_C*                   CallFunc_Create_ReturnValue_1;                     // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UW_SettingsMain_C*                      CallFunc_Create_ReturnValue_2;                     // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_LeaderboardSwitcher_C*               CallFunc_Create_ReturnValue_2;                     // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue_1;        // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_2;              // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_3;              // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue;                 // 0x0050(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue_1;               // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue_2;               // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue_3;                     // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_SettingsMain_C*                      CallFunc_Create_ReturnValue_3;                     // 0x0060(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue_2;               // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPlayMenu_W_C*                          CallFunc_Create_ReturnValue_4;                     // 0x0070(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W) == 0x000008, "Wrong alignment on MainMenu_W_C_ExecuteUbergraph_MainMenu_W");
-static_assert(sizeof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W) == 0x000070, "Wrong size on MainMenu_W_C_ExecuteUbergraph_MainMenu_W");
+static_assert(sizeof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W) == 0x000078, "Wrong size on MainMenu_W_C_ExecuteUbergraph_MainMenu_W");
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, EntryPoint) == 0x000000, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::EntryPoint' has a wrong offset!");
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_Create_ReturnValue) == 0x000008, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_Create_ReturnValue' has a wrong offset!");
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_Create_ReturnValue_1) == 0x000010, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_Create_ReturnValue_1' has a wrong offset!");
@@ -52,8 +53,9 @@ static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_PlayAn
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_PlayAnimation_ReturnValue_3) == 0x000048, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_PlayAnimation_ReturnValue_3' has a wrong offset!");
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_SpawnSound2D_ReturnValue) == 0x000050, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_SpawnSound2D_ReturnValue' has a wrong offset!");
 static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_SpawnSound2D_ReturnValue_1) == 0x000058, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_SpawnSound2D_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_SpawnSound2D_ReturnValue_2) == 0x000060, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_SpawnSound2D_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_Create_ReturnValue_3) == 0x000068, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_Create_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_Create_ReturnValue_3) == 0x000060, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_Create_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_SpawnSound2D_ReturnValue_2) == 0x000068, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_SpawnSound2D_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(MainMenu_W_C_ExecuteUbergraph_MainMenu_W, CallFunc_Create_ReturnValue_4) == 0x000070, "Member 'MainMenu_W_C_ExecuteUbergraph_MainMenu_W::CallFunc_Create_ReturnValue_4' has a wrong offset!");
 
 // Function MainMenu_W.MainMenu_W_C.OnMouseButtonDown
 // 0x0318 (0x0318 - 0x0000)
@@ -68,12 +70,12 @@ public:
 	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x02D8(0x0010)(ReferenceParm, ContainsInstancedReference)
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x02E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x02F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_286F[0x4];                                     // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class APC_MainMenu_C*                         K2Node_DynamicCast_AsPC_Main_Menu;                 // 0x02F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0300(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0301(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0302(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2870[0x5];                                     // 0x0303(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_303[0x5];                                      // 0x0303(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0308(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(MainMenu_W_C_OnMouseButtonDown) == 0x000008, "Wrong alignment on MainMenu_W_C_OnMouseButtonDown");
@@ -100,7 +102,7 @@ public:
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2871[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0018(0x0018)()
 };
 static_assert(alignof(MainMenu_W_C_UpdateVersion) == 0x000008, "Wrong alignment on MainMenu_W_C_UpdateVersion");

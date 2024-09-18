@@ -21,7 +21,7 @@ namespace SDK
 class IBPI_PlayerStart_C final : public IInterface
 {
 public:
-	bool GetPlayerStartFromIndex(int32 Param_Index, struct FTransform* Transform);
+	bool GetPlayerStartFromIndex(int32 Index_0, struct FTransform* Transform);
 
 public:
 	static class UClass* StaticClass()

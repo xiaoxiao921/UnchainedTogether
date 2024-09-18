@@ -26,7 +26,7 @@ public:
 	class USphereComponent*                       Sphere;                                            // 0x23C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	float                                         Timeline_0_NewTrack_0_1B82EF0F435AA33BEDD4AF941C842FC3; // 0x23D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            Timeline_0__Direction_1B82EF0F435AA33BEDD4AF941C842FC3; // 0x23D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DD6[0x3];                                     // 0x23D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23D5[0x3];                                     // 0x23D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     Timeline_0;                                        // 0x23D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class APostProcessVolume*                     WaterPP;                                           // 0x23E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class APostProcessVolume*                     LavaPP;                                            // 0x23E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)

@@ -701,10 +701,10 @@ int32 USteamProFriends::GetCoplayFriendCount()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   Ifriend                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<ESteamFriendFlags>               Param_Flags                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFriendFlags>               Flags_0                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FSteamID                         ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSteamID USteamProFriends::GetFriendByIndex(int32 Ifriend, const TArray<ESteamFriendFlags>& Param_Flags)
+struct FSteamID USteamProFriends::GetFriendByIndex(int32 Ifriend, const TArray<ESteamFriendFlags>& Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -714,7 +714,7 @@ struct FSteamID USteamProFriends::GetFriendByIndex(int32 Ifriend, const TArray<E
 	Params::SteamProFriends_GetFriendByIndex Parms{};
 
 	Parms.Ifriend = Ifriend;
-	Parms.Param_Flags = std::move(Param_Flags);
+	Parms.Flags_0 = std::move(Flags_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -786,10 +786,10 @@ int32 USteamProFriends::GetFriendCoplayTime(const struct FSteamID& SteamIDFriend
 // Function SteamCorePro.SteamProFriends.GetFriendCount
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TArray<ESteamFriendFlags>               Param_Flags                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFriendFlags>               Flags_0                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProFriends::GetFriendCount(const TArray<ESteamFriendFlags>& Param_Flags)
+int32 USteamProFriends::GetFriendCount(const TArray<ESteamFriendFlags>& Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -798,7 +798,7 @@ int32 USteamProFriends::GetFriendCount(const TArray<ESteamFriendFlags>& Param_Fl
 
 	Params::SteamProFriends_GetFriendCount Parms{};
 
-	Parms.Param_Flags = std::move(Param_Flags);
+	Parms.Flags_0 = std::move(Flags_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1683,10 +1683,10 @@ TArray<ESteamUserRestriction> USteamProFriends::GetUserRestrictions()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDFriend                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// TArray<ESteamFriendFlags>               Param_Flags                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFriendFlags>               Flags_0                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProFriends::HasFriend(const struct FSteamID& SteamIDFriend, const TArray<ESteamFriendFlags>& Param_Flags)
+bool USteamProFriends::HasFriend(const struct FSteamID& SteamIDFriend, const TArray<ESteamFriendFlags>& Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1696,7 +1696,7 @@ bool USteamProFriends::HasFriend(const struct FSteamID& SteamIDFriend, const TAr
 	Params::SteamProFriends_HasFriend Parms{};
 
 	Parms.SteamIDFriend = std::move(SteamIDFriend);
-	Parms.Param_Flags = std::move(Param_Flags);
+	Parms.Flags_0 = std::move(Flags_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2385,9 +2385,9 @@ void USteamProFriends::RequestEquippedProfileItems(const TDelegate<void(struct F
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TDelegate<void(struct FSetPersonaNameResponse& Data, bool bWasSuccessful)>Callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USteamProFriends::SetPersonaName(const TDelegate<void(struct FSetPersonaNameResponse& Data, bool bWasSuccessful)>& Callback, const class FString& Param_Name)
+void USteamProFriends::SetPersonaName(const TDelegate<void(struct FSetPersonaNameResponse& Data, bool bWasSuccessful)>& Callback, const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2397,7 +2397,7 @@ void USteamProFriends::SetPersonaName(const TDelegate<void(struct FSetPersonaNam
 	Params::SteamProFriends_SetPersonaName Parms{};
 
 	Parms.Callback = Callback;
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2412,11 +2412,11 @@ void USteamProFriends::SetPersonaName(const TDelegate<void(struct FSetPersonaNam
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Timeout                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USteamCoreProFriendsAsyncActionSetPersonaName*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USteamCoreProFriendsAsyncActionSetPersonaName* USteamCoreProFriendsAsyncActionSetPersonaName::SetPersonaNameAsync(class UObject* WorldContextObject, const class FString& Param_Name, float Timeout)
+class USteamCoreProFriendsAsyncActionSetPersonaName* USteamCoreProFriendsAsyncActionSetPersonaName::SetPersonaNameAsync(class UObject* WorldContextObject, const class FString& Name_0, float Timeout)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2426,7 +2426,7 @@ class USteamCoreProFriendsAsyncActionSetPersonaName* USteamCoreProFriendsAsyncAc
 	Params::SteamCoreProFriendsAsyncActionSetPersonaName_SetPersonaNameAsync Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Timeout = Timeout;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2903,10 +2903,10 @@ class USteamProGameServerStats* USteamProGameServerStats::GetSteamGameServerStat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::ClearUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name)
+bool USteamProGameServerStats::ClearUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2916,7 +2916,7 @@ bool USteamProGameServerStats::ClearUserAchievement(const struct FSteamID& Steam
 	Params::SteamProGameServerStats_ClearUserAchievement Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2933,11 +2933,11 @@ bool USteamProGameServerStats::ClearUserAchievement(const struct FSteamID& Steam
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved)
+bool USteamProGameServerStats::GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2947,7 +2947,7 @@ bool USteamProGameServerStats::GetUserAchievement(const struct FSteamID& SteamID
 	Params::SteamProGameServerStats_GetUserAchievement Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2967,11 +2967,11 @@ bool USteamProGameServerStats::GetUserAchievement(const struct FSteamID& SteamID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float* Data)
+bool USteamProGameServerStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2981,7 +2981,7 @@ bool USteamProGameServerStats::GetUserStatFloat(const struct FSteamID& SteamIDUs
 	Params::SteamProGameServerStats_GetUserStatFloat Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3001,11 +3001,11 @@ bool USteamProGameServerStats::GetUserStatFloat(const struct FSteamID& SteamIDUs
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::GetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32* Data)
+bool USteamProGameServerStats::GetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3015,7 +3015,7 @@ bool USteamProGameServerStats::GetUserStatInt(const struct FSteamID& SteamIDUser
 	Params::SteamProGameServerStats_GetUserStatInt Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3089,10 +3089,10 @@ void USteamProGameServerStats::ServerStoreUserStats(const TDelegate<void(struct 
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::SetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name)
+bool USteamProGameServerStats::SetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3102,7 +3102,7 @@ bool USteamProGameServerStats::SetUserAchievement(const struct FSteamID& SteamID
 	Params::SteamProGameServerStats_SetUserAchievement Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3119,11 +3119,11 @@ bool USteamProGameServerStats::SetUserAchievement(const struct FSteamID& SteamID
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::SetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float Data)
+bool USteamProGameServerStats::SetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3133,7 +3133,7 @@ bool USteamProGameServerStats::SetUserStatFloat(const struct FSteamID& SteamIDUs
 	Params::SteamProGameServerStats_SetUserStatFloat Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3151,11 +3151,11 @@ bool USteamProGameServerStats::SetUserStatFloat(const struct FSteamID& SteamIDUs
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::SetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32 Data)
+bool USteamProGameServerStats::SetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32 Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3165,7 +3165,7 @@ bool USteamProGameServerStats::SetUserStatInt(const struct FSteamID& SteamIDUser
 	Params::SteamProGameServerStats_SetUserStatInt Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3183,12 +3183,12 @@ bool USteamProGameServerStats::SetUserStatInt(const struct FSteamID& SteamIDUser
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CountThisSession                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   SessionLength                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProGameServerStats::UpdateUserAvgRateStat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float CountThisSession, float SessionLength)
+bool USteamProGameServerStats::UpdateUserAvgRateStat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float CountThisSession, float SessionLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3198,7 +3198,7 @@ bool USteamProGameServerStats::UpdateUserAvgRateStat(const struct FSteamID& Stea
 	Params::SteamProGameServerStats_UpdateUserAvgRateStat Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.CountThisSession = CountThisSession;
 	Parms.SessionLength = SessionLength;
 
@@ -3725,10 +3725,10 @@ int32 USteamProInput::GetConnectedControllers(TArray<struct FInputHandle>* OutHa
 // Function SteamCorePro.SteamProInput.GetControllerForGamepadIndex
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputHandle                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FInputHandle USteamProInput::GetControllerForGamepadIndex(int32 Param_Index)
+struct FInputHandle USteamProInput::GetControllerForGamepadIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3737,7 +3737,7 @@ struct FInputHandle USteamProInput::GetControllerForGamepadIndex(int32 Param_Ind
 
 	Params::SteamProInput_GetControllerForGamepadIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4194,9 +4194,9 @@ void USteamProInput::Legacy_TriggerHapticPulse(const struct FInputHandle& Handle
 // uint8                                   DurationMicroSec                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint8                                   OffMicroSec                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint8                                   Repeat                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   Param_Flags                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Flags_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USteamProInput::Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle& Handle, ESteamCoreProControllerPad TargetPad, uint8 DurationMicroSec, uint8 OffMicroSec, uint8 Repeat, uint8 Param_Flags)
+void USteamProInput::Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle& Handle, ESteamCoreProControllerPad TargetPad, uint8 DurationMicroSec, uint8 OffMicroSec, uint8 Repeat, uint8 Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4210,7 +4210,7 @@ void USteamProInput::Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle
 	Parms.DurationMicroSec = DurationMicroSec;
 	Parms.OffMicroSec = OffMicroSec;
 	Parms.Repeat = Repeat;
-	Parms.Param_Flags = Param_Flags;
+	Parms.Flags_0 = Flags_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4228,9 +4228,9 @@ void USteamProInput::Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle
 // uint8                                   ColorR                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint8                                   ColorG                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint8                                   ColorB                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ESteamCoreProInputLEDFlag               Param_Flags                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ESteamCoreProInputLEDFlag               Flags_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USteamProInput::SetLEDColor(const struct FInputHandle& Handle, uint8 ColorR, uint8 ColorG, uint8 ColorB, ESteamCoreProInputLEDFlag Param_Flags)
+void USteamProInput::SetLEDColor(const struct FInputHandle& Handle, uint8 ColorR, uint8 ColorG, uint8 ColorB, ESteamCoreProInputLEDFlag Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4243,7 +4243,7 @@ void USteamProInput::SetLEDColor(const struct FInputHandle& Handle, uint8 ColorR
 	Parms.ColorR = ColorR;
 	Parms.ColorG = ColorG;
 	Parms.ColorB = ColorB;
-	Parms.Param_Flags = Param_Flags;
+	Parms.Flags_0 = Flags_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5699,11 +5699,11 @@ void USteamCoreProInventoryAsyncActionStartPurchaseResult::HandleCallback(const 
 // class FString                           IP                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ConnectionPort                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   QueryPort                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<ESteamFavoriteFlags>             Param_Flags                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFavoriteFlags>             Flags_0                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   TimeLastPlayedOnServer                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProMatchmaking::AddFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Param_Flags, int32 TimeLastPlayedOnServer)
+int32 USteamProMatchmaking::AddFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Flags_0, int32 TimeLastPlayedOnServer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5716,7 +5716,7 @@ int32 USteamProMatchmaking::AddFavoriteGame(int32 AppID, const class FString& IP
 	Parms.IP = std::move(IP);
 	Parms.ConnectionPort = ConnectionPort;
 	Parms.QueryPort = QueryPort;
-	Parms.Param_Flags = std::move(Param_Flags);
+	Parms.Flags_0 = std::move(Flags_0);
 	Parms.TimeLastPlayedOnServer = TimeLastPlayedOnServer;
 
 	auto Flgs = Func->FunctionFlags;
@@ -5953,11 +5953,11 @@ bool USteamProMatchmaking::DeleteLobbyData(const struct FSteamID& SteamIDLobby, 
 // class FString                           IP                                                     (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ConnectionPort                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   QueryPort                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<ESteamFavoriteFlags>             Param_Flags                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFavoriteFlags>             Flags_0                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   TimeLastPlayedOnServer                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProMatchmaking::GetFavoriteGame(int32 Game, int32* AppID, class FString* IP, int32* ConnectionPort, int32* QueryPort, TArray<ESteamFavoriteFlags>* Param_Flags, int32* TimeLastPlayedOnServer)
+bool USteamProMatchmaking::GetFavoriteGame(int32 Game, int32* AppID, class FString* IP, int32* ConnectionPort, int32* QueryPort, TArray<ESteamFavoriteFlags>* Flags_0, int32* TimeLastPlayedOnServer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5987,8 +5987,8 @@ bool USteamProMatchmaking::GetFavoriteGame(int32 Game, int32* AppID, class FStri
 	if (QueryPort != nullptr)
 		*QueryPort = Parms.QueryPort;
 
-	if (Param_Flags != nullptr)
-		*Param_Flags = std::move(Parms.Param_Flags);
+	if (Flags_0 != nullptr)
+		*Flags_0 = std::move(Parms.Flags_0);
 
 	if (TimeLastPlayedOnServer != nullptr)
 		*TimeLastPlayedOnServer = Parms.TimeLastPlayedOnServer;
@@ -6461,10 +6461,10 @@ void USteamProMatchmaking::LeaveLobby(const struct FSteamID& SteamIDLobby)
 // class FString                           IP                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ConnectionPort                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   QueryPort                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<ESteamFavoriteFlags>             Param_Flags                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<ESteamFavoriteFlags>             Flags_0                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProMatchmaking::RemoveFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Param_Flags)
+bool USteamProMatchmaking::RemoveFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Flags_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6477,7 +6477,7 @@ bool USteamProMatchmaking::RemoveFavoriteGame(int32 AppID, const class FString& 
 	Parms.IP = std::move(IP);
 	Parms.ConnectionPort = ConnectionPort;
 	Parms.QueryPort = QueryPort;
-	Parms.Param_Flags = std::move(Param_Flags);
+	Parms.Flags_0 = std::move(Flags_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9779,10 +9779,10 @@ int32 USteamProAppList::GetAppInstallDir(int32 AppID, class FString* Directory)
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // int32                                   AppID                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProAppList::GetAppName(int32 AppID, class FString* Param_Name)
+int32 USteamProAppList::GetAppName(int32 AppID, class FString* Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9800,8 +9800,8 @@ int32 USteamProAppList::GetAppName(int32 AppID, class FString* Param_Name)
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	return Parms.ReturnValue;
 }
@@ -9870,10 +9870,10 @@ int32 USteamProAppList::GetNumInstalledApps()
 // int32                                   DLC                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AppID                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAvailable                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProApps::BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable, class FString* Param_Name)
+bool USteamProApps::BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable, class FString* Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9897,8 +9897,8 @@ bool USteamProApps::BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable
 	if (bAvailable != nullptr)
 		*bAvailable = Parms.bAvailable;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	return Parms.ReturnValue;
 }
@@ -10281,10 +10281,10 @@ class FString USteamProApps::GetAvailableGameLanguages()
 // Function SteamCorePro.SteamProApps.GetCurrentBetaName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProApps::GetCurrentBetaName(class FString* Param_Name)
+bool USteamProApps::GetCurrentBetaName(class FString* Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -10300,8 +10300,8 @@ bool USteamProApps::GetCurrentBetaName(class FString* Param_Name)
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	return Parms.ReturnValue;
 }
@@ -12178,10 +12178,10 @@ bool USteamProParties::GetAvailableBeaconLocations(TArray<struct FSteamPartyBeac
 // Function SteamCorePro.SteamProParties.GetBeaconByIndex
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPartyBeaconID                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FPartyBeaconID USteamProParties::GetBeaconByIndex(int32 Param_Index)
+struct FPartyBeaconID USteamProParties::GetBeaconByIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -12190,7 +12190,7 @@ struct FPartyBeaconID USteamProParties::GetBeaconByIndex(int32 Param_Index)
 
 	Params::SteamProParties_GetBeaconByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13382,12 +13382,12 @@ ESteamRemoteStoragePlatform USteamProRemoteStorage::GetSyncPlatforms(const class
 // Parameters:
 // struct FSteamUGCHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   AppID                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   FileSizeInBytes                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSteamID                         SteamIDOwner                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProRemoteStorage::GetUGCDetails(const struct FSteamUGCHandle& Handle, int32* AppID, class FString* Param_Name, int32* FileSizeInBytes, struct FSteamID* SteamIDOwner)
+bool USteamProRemoteStorage::GetUGCDetails(const struct FSteamUGCHandle& Handle, int32* AppID, class FString* Name_0, int32* FileSizeInBytes, struct FSteamID* SteamIDOwner)
 {
 	static class UFunction* Func = nullptr;
 
@@ -13408,8 +13408,8 @@ bool USteamProRemoteStorage::GetUGCDetails(const struct FSteamUGCHandle& Handle,
 	if (AppID != nullptr)
 		*AppID = Parms.AppID;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	if (FileSizeInBytes != nullptr)
 		*FileSizeInBytes = Parms.FileSizeInBytes;
@@ -14612,14 +14612,14 @@ int32 USteamProUGC::GetNumSubscribedItems()
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   PreviewIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           URLOrVideoID                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           OriginalFileName                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESteamItemPreviewType                   PreviewType                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 PreviewIndex, class FString* URLOrVideoID, class FString* OriginalFileName, ESteamItemPreviewType* PreviewType)
+bool USteamProUGC::GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 PreviewIndex, class FString* URLOrVideoID, class FString* OriginalFileName, ESteamItemPreviewType* PreviewType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14629,7 +14629,7 @@ bool USteamProUGC::GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Ha
 	Params::SteamProUGC_GetQueryUGCAdditionalPreview Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.PreviewIndex = PreviewIndex;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14656,12 +14656,12 @@ bool USteamProUGC::GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Ha
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPublishedFileID>         PublishedFileIDs                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   MaxEntries                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int32 Param_Index, TArray<struct FPublishedFileID>* PublishedFileIDs, int32 MaxEntries)
+bool USteamProUGC::GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int32 Index_0, TArray<struct FPublishedFileID>* PublishedFileIDs, int32 MaxEntries)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14671,7 +14671,7 @@ bool USteamProUGC::GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int
 	Params::SteamProUGC_GetQueryUGCChildren Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.MaxEntries = MaxEntries;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14692,13 +14692,13 @@ bool USteamProUGC::GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   KeyValueTagIndex                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 KeyValueTagIndex, class FString* Key, class FString* Value)
+bool USteamProUGC::GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 KeyValueTagIndex, class FString* Key, class FString* Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14708,7 +14708,7 @@ bool USteamProUGC::GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, 
 	Params::SteamProUGC_GetQueryUGCKeyValueTag Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.KeyValueTagIndex = KeyValueTagIndex;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14732,12 +14732,12 @@ bool USteamProUGC::GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, 
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           MetaData                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MetadataSize                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int32 Param_Index, class FString* MetaData, int32 MetadataSize)
+bool USteamProUGC::GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int32 Index_0, class FString* MetaData, int32 MetadataSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14747,7 +14747,7 @@ bool USteamProUGC::GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int
 	Params::SteamProUGC_GetQueryUGCMetadata Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.MetadataSize = MetadataSize;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14768,10 +14768,10 @@ bool USteamProUGC::GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProUGC::GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandle& Handle, int32 Param_Index)
+int32 USteamProUGC::GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandle& Handle, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14781,7 +14781,7 @@ int32 USteamProUGC::GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandl
 	Params::SteamProUGC_GetQueryUGCNumAdditionalPreviews Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14798,10 +14798,10 @@ int32 USteamProUGC::GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProUGC::GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Handle, int32 Param_Index)
+int32 USteamProUGC::GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Handle, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14811,7 +14811,7 @@ int32 USteamProUGC::GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Han
 	Params::SteamProUGC_GetQueryUGCNumKeyValueTags Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14828,10 +14828,10 @@ int32 USteamProUGC::GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Han
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProUGC::GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int32 Param_Index)
+int32 USteamProUGC::GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14841,7 +14841,7 @@ int32 USteamProUGC::GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int
 	Params::SteamProUGC_GetQueryUGCNumTags Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14858,11 +14858,11 @@ int32 USteamProUGC::GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           URL                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, int32 Param_Index, class FString* URL)
+bool USteamProUGC::GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, int32 Index_0, class FString* URL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14872,7 +14872,7 @@ bool USteamProUGC::GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, i
 	Params::SteamProUGC_GetQueryUGCPreviewURL Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14892,11 +14892,11 @@ bool USteamProUGC::GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, i
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSteamUGCDetails                 Details                                                (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32 Param_Index, struct FSteamUGCDetails* Details)
+bool USteamProUGC::GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32 Index_0, struct FSteamUGCDetails* Details)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14906,7 +14906,7 @@ bool USteamProUGC::GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32
 	Params::SteamProUGC_GetQueryUGCResult Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14926,12 +14926,12 @@ bool USteamProUGC::GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESteamItemStatistic                     StatType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           StatValue                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, int32 Param_Index, ESteamItemStatistic StatType, class FString* StatValue)
+bool USteamProUGC::GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, int32 Index_0, ESteamItemStatistic StatType, class FString* StatValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14941,7 +14941,7 @@ bool USteamProUGC::GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, in
 	Params::SteamProUGC_GetQueryUGCStatistic Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.StatType = StatType;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14962,12 +14962,12 @@ bool USteamProUGC::GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, in
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   IndexTag                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 IndexTag, class FString* Value)
+bool USteamProUGC::GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 IndexTag, class FString* Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14977,7 +14977,7 @@ bool USteamProUGC::GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Pa
 	Params::SteamProUGC_GetQueryUGCTag Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.IndexTag = IndexTag;
 
 	auto Flgs = Func->FunctionFlags;
@@ -14998,12 +14998,12 @@ bool USteamProUGC::GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Pa
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FUGCQueryHandle                  Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   IndexTag                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::GetQueryUGCTagDisplayName(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 IndexTag, class FString* Value)
+bool USteamProUGC::GetQueryUGCTagDisplayName(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 IndexTag, class FString* Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15013,7 +15013,7 @@ bool USteamProUGC::GetQueryUGCTagDisplayName(const struct FUGCQueryHandle& Handl
 	Params::SteamProUGC_GetQueryUGCTagDisplayName Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.IndexTag = IndexTag;
 
 	auto Flgs = Func->FunctionFlags;
@@ -15209,10 +15209,10 @@ bool USteamProUGC::RemoveItemKeyValueTags(const struct FUGCUpdateHandle& Handle,
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCUpdateHandle                 Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::RemoveItemPreview(const struct FUGCUpdateHandle& Handle, int32 Param_Index)
+bool USteamProUGC::RemoveItemPreview(const struct FUGCUpdateHandle& Handle, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15222,7 +15222,7 @@ bool USteamProUGC::RemoveItemPreview(const struct FUGCUpdateHandle& Handle, int3
 	Params::SteamProUGC_RemoveItemPreview Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15979,11 +15979,11 @@ void USteamProUGC::SuspendDownloads(bool bSuspend)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCUpdateHandle                 Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           PreviewFile                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, int32 Param_Index, const class FString& PreviewFile)
+bool USteamProUGC::UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, int32 Index_0, const class FString& PreviewFile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15993,7 +15993,7 @@ bool USteamProUGC::UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, 
 	Params::SteamProUGC_UpdateItemPreviewFile Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.PreviewFile = std::move(PreviewFile);
 
 	auto Flgs = Func->FunctionFlags;
@@ -16011,11 +16011,11 @@ bool USteamProUGC::UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, 
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FUGCUpdateHandle                 Handle                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           PreviewVideo                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUGC::UpdateItemPreviewVideo(const struct FUGCUpdateHandle& Handle, int32 Param_Index, const class FString& PreviewVideo)
+bool USteamProUGC::UpdateItemPreviewVideo(const struct FUGCUpdateHandle& Handle, int32 Index_0, const class FString& PreviewVideo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16025,7 +16025,7 @@ bool USteamProUGC::UpdateItemPreviewVideo(const struct FUGCUpdateHandle& Handle,
 	Params::SteamProUGC_UpdateItemPreviewVideo Parms{};
 
 	Parms.Handle = std::move(Handle);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.PreviewVideo = std::move(PreviewVideo);
 
 	auto Flgs = Func->FunctionFlags;
@@ -18584,10 +18584,10 @@ void USteamCoreProUserAsyncActionRequestStoreAuthURL::HandleCallback(const struc
 // Function SteamCorePro.SteamProUserStats.ClearAchievement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::ClearAchievement(const class FString& Param_Name)
+bool USteamProUserStats::ClearAchievement(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18596,7 +18596,7 @@ bool USteamProUserStats::ClearAchievement(const class FString& Param_Name)
 
 	Params::SteamProUserStats_ClearAchievement Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18612,11 +18612,11 @@ bool USteamProUserStats::ClearAchievement(const class FString& Param_Name)
 // Function SteamCorePro.SteamProUserStats.GetAchievement
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetAchievement(const class FString& Param_Name, bool* bAchieved)
+bool USteamProUserStats::GetAchievement(const class FString& Name_0, bool* bAchieved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18625,7 +18625,7 @@ bool USteamProUserStats::GetAchievement(const class FString& Param_Name, bool* b
 
 	Params::SteamProUserStats_GetAchievement Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18644,11 +18644,11 @@ bool USteamProUserStats::GetAchievement(const class FString& Param_Name, bool* b
 // Function SteamCorePro.SteamProUserStats.GetAchievementAchievedPercent
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Percent                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetAchievementAchievedPercent(const class FString& Param_Name, float* Percent)
+bool USteamProUserStats::GetAchievementAchievedPercent(const class FString& Name_0, float* Percent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18657,7 +18657,7 @@ bool USteamProUserStats::GetAchievementAchievedPercent(const class FString& Para
 
 	Params::SteamProUserStats_GetAchievementAchievedPercent Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18676,12 +18676,12 @@ bool USteamProUserStats::GetAchievementAchievedPercent(const class FString& Para
 // Function SteamCorePro.SteamProUserStats.GetAchievementAndUnlockTime
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   UnlockTime                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetAchievementAndUnlockTime(const class FString& Param_Name, bool* bAchieved, int32* UnlockTime)
+bool USteamProUserStats::GetAchievementAndUnlockTime(const class FString& Name_0, bool* bAchieved, int32* UnlockTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18690,7 +18690,7 @@ bool USteamProUserStats::GetAchievementAndUnlockTime(const class FString& Param_
 
 	Params::SteamProUserStats_GetAchievementAndUnlockTime Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18712,11 +18712,11 @@ bool USteamProUserStats::GetAchievementAndUnlockTime(const class FString& Param_
 // Function SteamCorePro.SteamProUserStats.GetAchievementDisplayAttribute
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString USteamProUserStats::GetAchievementDisplayAttribute(const class FString& Param_Name, const class FString& Key)
+class FString USteamProUserStats::GetAchievementDisplayAttribute(const class FString& Name_0, const class FString& Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18725,7 +18725,7 @@ class FString USteamProUserStats::GetAchievementDisplayAttribute(const class FSt
 
 	Params::SteamProUserStats_GetAchievementDisplayAttribute Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Key = std::move(Key);
 
 	auto Flgs = Func->FunctionFlags;
@@ -18742,10 +18742,10 @@ class FString USteamProUserStats::GetAchievementDisplayAttribute(const class FSt
 // Function SteamCorePro.SteamProUserStats.GetAchievementIcon
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UTexture2D* USteamProUserStats::GetAchievementIcon(const class FString& Param_Name)
+class UTexture2D* USteamProUserStats::GetAchievementIcon(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18754,7 +18754,7 @@ class UTexture2D* USteamProUserStats::GetAchievementIcon(const class FString& Pa
 
 	Params::SteamProUserStats_GetAchievementIcon Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18798,12 +18798,12 @@ class FString USteamProUserStats::GetAchievementName(int32 Achievement)
 // Function SteamCorePro.SteamProUserStats.GetAchievementProgressLimits
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MinProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MaxProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetAchievementProgressLimits(const class FString& Param_Name, int32* MinProgress, int32* MaxProgress)
+bool USteamProUserStats::GetAchievementProgressLimits(const class FString& Name_0, int32* MinProgress, int32* MaxProgress)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18812,7 +18812,7 @@ bool USteamProUserStats::GetAchievementProgressLimits(const class FString& Param
 
 	Params::SteamProUserStats_GetAchievementProgressLimits Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18834,12 +18834,12 @@ bool USteamProUserStats::GetAchievementProgressLimits(const class FString& Param
 // Function SteamCorePro.SteamProUserStats.GetAchievementProgressLimitsFloat
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetAchievementProgressLimitsFloat(const class FString& Param_Name, float* MinProgress, float* MaxProgress)
+bool USteamProUserStats::GetAchievementProgressLimitsFloat(const class FString& Name_0, float* MinProgress, float* MaxProgress)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18848,7 +18848,7 @@ bool USteamProUserStats::GetAchievementProgressLimitsFloat(const class FString& 
 
 	Params::SteamProUserStats_GetAchievementProgressLimitsFloat Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18871,13 +18871,13 @@ bool USteamProUserStats::GetAchievementProgressLimitsFloat(const class FString& 
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamLeaderboardEntries         LeaderboardEntries                                     (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSteamLeaderboardEntry           LeaderboardEntry                                       (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<int32>                           Details                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<int32>                           OutDetails                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetDownloadedLeaderboardEntry(const struct FSteamLeaderboardEntries& LeaderboardEntries, int32 Param_Index, struct FSteamLeaderboardEntry* LeaderboardEntry, const TArray<int32>& Details, TArray<int32>* OutDetails)
+bool USteamProUserStats::GetDownloadedLeaderboardEntry(const struct FSteamLeaderboardEntries& LeaderboardEntries, int32 Index_0, struct FSteamLeaderboardEntry* LeaderboardEntry, const TArray<int32>& Details, TArray<int32>* OutDetails)
 {
 	static class UFunction* Func = nullptr;
 
@@ -18887,7 +18887,7 @@ bool USteamProUserStats::GetDownloadedLeaderboardEntry(const struct FSteamLeader
 	Params::SteamProUserStats_GetDownloadedLeaderboardEntry Parms{};
 
 	Parms.LeaderboardEntries = std::move(LeaderboardEntries);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Details = std::move(Details);
 
 	auto Flgs = Func->FunctionFlags;
@@ -19154,12 +19154,12 @@ ESteamLeaderboardSortMethod USteamProUserStats::GetLeaderboardSortMethod(const s
 // Function SteamCorePro.SteamProUserStats.GetMostAchievedAchievementInfo
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Percent                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProUserStats::GetMostAchievedAchievementInfo(class FString* Param_Name, float* Percent, bool* bAchieved)
+int32 USteamProUserStats::GetMostAchievedAchievementInfo(class FString* Name_0, float* Percent, bool* bAchieved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19175,8 +19175,8 @@ int32 USteamProUserStats::GetMostAchievedAchievementInfo(class FString* Param_Na
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	if (Percent != nullptr)
 		*Percent = Parms.Percent;
@@ -19192,12 +19192,12 @@ int32 USteamProUserStats::GetMostAchievedAchievementInfo(class FString* Param_Na
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // int32                                   IteratorPrevious                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Percent                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USteamProUserStats::GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, class FString* Param_Name, float* Percent, bool* bAchieved)
+int32 USteamProUserStats::GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, class FString* Name_0, float* Percent, bool* bAchieved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19215,8 +19215,8 @@ int32 USteamProUserStats::GetNextMostAchievedAchievementInfo(int32 IteratorPrevi
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = std::move(Parms.Param_Name);
+	if (Name_0 != nullptr)
+		*Name_0 = std::move(Parms.Name_0);
 
 	if (Percent != nullptr)
 		*Percent = Parms.Percent;
@@ -19256,11 +19256,11 @@ int32 USteamProUserStats::GetNumAchievements()
 // Function SteamCorePro.SteamProUserStats.GetStatFloat
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetStatFloat(const class FString& Param_Name, float* Data)
+bool USteamProUserStats::GetStatFloat(const class FString& Name_0, float* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19269,7 +19269,7 @@ bool USteamProUserStats::GetStatFloat(const class FString& Param_Name, float* Da
 
 	Params::SteamProUserStats_GetStatFloat Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19288,11 +19288,11 @@ bool USteamProUserStats::GetStatFloat(const class FString& Param_Name, float* Da
 // Function SteamCorePro.SteamProUserStats.GetStatInt
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetStatInt(const class FString& Param_Name, int32* Data)
+bool USteamProUserStats::GetStatInt(const class FString& Name_0, int32* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19301,7 +19301,7 @@ bool USteamProUserStats::GetStatInt(const class FString& Param_Name, int32* Data
 
 	Params::SteamProUserStats_GetStatInt Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19346,11 +19346,11 @@ class USteamProUserStats* USteamProUserStats::GetSteamUserStats()
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved)
+bool USteamProUserStats::GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19360,7 +19360,7 @@ bool USteamProUserStats::GetUserAchievement(const struct FSteamID& SteamIDUser, 
 	Params::SteamProUserStats_GetUserAchievement Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19380,12 +19380,12 @@ bool USteamProUserStats::GetUserAchievement(const struct FSteamID& SteamIDUser, 
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAchieved                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   UnlockTime                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetUserAchievementAndUnlockTime(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved, int32* UnlockTime)
+bool USteamProUserStats::GetUserAchievementAndUnlockTime(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved, int32* UnlockTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19395,7 +19395,7 @@ bool USteamProUserStats::GetUserAchievementAndUnlockTime(const struct FSteamID& 
 	Params::SteamProUserStats_GetUserAchievementAndUnlockTime Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19418,11 +19418,11 @@ bool USteamProUserStats::GetUserAchievementAndUnlockTime(const struct FSteamID& 
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float* Data)
+bool USteamProUserStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19432,7 +19432,7 @@ bool USteamProUserStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, co
 	Params::SteamProUserStats_GetUserStatFloat Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19452,11 +19452,11 @@ bool USteamProUserStats::GetUserStatFloat(const struct FSteamID& SteamIDUser, co
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FSteamID                         SteamIDUser                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::GetUserStatInteger(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32* Data)
+bool USteamProUserStats::GetUserStatInteger(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19466,7 +19466,7 @@ bool USteamProUserStats::GetUserStatInteger(const struct FSteamID& SteamIDUser, 
 	Params::SteamProUserStats_GetUserStatInteger Parms{};
 
 	Parms.SteamIDUser = std::move(SteamIDUser);
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19485,12 +19485,12 @@ bool USteamProUserStats::GetUserStatInteger(const struct FSteamID& SteamIDUser, 
 // Function SteamCorePro.SteamProUserStats.IndicateAchievementProgress
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   CurrentProgress                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MaxProgress                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::IndicateAchievementProgress(const class FString& Param_Name, int32 CurrentProgress, int32 MaxProgress)
+bool USteamProUserStats::IndicateAchievementProgress(const class FString& Name_0, int32 CurrentProgress, int32 MaxProgress)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19499,7 +19499,7 @@ bool USteamProUserStats::IndicateAchievementProgress(const class FString& Param_
 
 	Params::SteamProUserStats_IndicateAchievementProgress Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.CurrentProgress = CurrentProgress;
 	Parms.MaxProgress = MaxProgress;
 
@@ -19570,10 +19570,10 @@ bool USteamProUserStats::ResetAllStats(bool bAchievementsToo)
 // Function SteamCorePro.SteamProUserStats.SetAchievement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::SetAchievement(const class FString& Param_Name)
+bool USteamProUserStats::SetAchievement(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19582,7 +19582,7 @@ bool USteamProUserStats::SetAchievement(const class FString& Param_Name)
 
 	Params::SteamProUserStats_SetAchievement Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19598,11 +19598,11 @@ bool USteamProUserStats::SetAchievement(const class FString& Param_Name)
 // Function SteamCorePro.SteamProUserStats.SetStatFloat
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::SetStatFloat(const class FString& Param_Name, float Data)
+bool USteamProUserStats::SetStatFloat(const class FString& Name_0, float Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19611,7 +19611,7 @@ bool USteamProUserStats::SetStatFloat(const class FString& Param_Name, float Dat
 
 	Params::SteamProUserStats_SetStatFloat Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
@@ -19628,11 +19628,11 @@ bool USteamProUserStats::SetStatFloat(const class FString& Param_Name, float Dat
 // Function SteamCorePro.SteamProUserStats.SetStatInt
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::SetStatInt(const class FString& Param_Name, int32 Data)
+bool USteamProUserStats::SetStatInt(const class FString& Name_0, int32 Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19641,7 +19641,7 @@ bool USteamProUserStats::SetStatInt(const class FString& Param_Name, int32 Data)
 
 	Params::SteamProUserStats_SetStatInt Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
@@ -19683,12 +19683,12 @@ bool USteamProUserStats::StoreStats()
 // Function SteamCorePro.SteamProUserStats.UpdateAvgRateStat
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CountThisSession                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   SessionLength                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USteamProUserStats::UpdateAvgRateStat(const class FString& Param_Name, float CountThisSession, float SessionLength)
+bool USteamProUserStats::UpdateAvgRateStat(const class FString& Name_0, float CountThisSession, float SessionLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19697,7 +19697,7 @@ bool USteamProUserStats::UpdateAvgRateStat(const class FString& Param_Name, floa
 
 	Params::SteamProUserStats_UpdateAvgRateStat Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.CountThisSession = CountThisSession;
 	Parms.SessionLength = SessionLength;
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MetasoundFrontend_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MetasoundFrontend_structs.hpp"
 #include "MetasoundEngine_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 
@@ -26,13 +26,13 @@ namespace SDK
 class UMetasoundGeneratorHandle final : public UObject
 {
 public:
-	uint8                                         Pad_2B3E[0xB8];                                    // 0x0028(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0xB8];                                      // 0x0028(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UMetasoundGeneratorHandle* CreateMetaSoundGeneratorHandle(class UAudioComponent* OnComponent);
 
 	bool ApplyParameterPack(class UMetasoundParameterPack* Pack);
-	void OnOutputValueChangedMulticast__DelegateSignature(class FName Param_Name, const struct FMetaSoundOutput& Output);
+	void OnOutputValueChangedMulticast__DelegateSignature(class FName Name_0, const struct FMetaSoundOutput& Output);
 	bool WatchOutput(class FName OutputName, const TDelegate<void(class FName OutputName, struct FMetaSoundOutput& Output)>& OnOutputValueChanged, class FName AnalyzerName, class FName AnalyzerOutputName);
 
 public:
@@ -107,14 +107,14 @@ class UMetaSoundSettings final : public UDeveloperSettings
 {
 public:
 	bool                                          bAutoUpdateEnabled;                                // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B4C[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FMetasoundFrontendClassName>    AutoUpdateDenylist;                                // 0x0040(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	TArray<struct FDefaultMetaSoundAssetAutoUpdateSettings> AutoUpdateAssetDenylist;                           // 0x0050(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	bool                                          bAutoUpdateLogWarningOnDroppedConnection;          // 0x0060(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B4D[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FDirectoryPath>                 DirectoriesToRegister;                             // 0x0068(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	int32                                         DenyListCacheChangeID;                             // 0x0078(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B4E[0x4];                                     // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -157,7 +157,7 @@ static_assert(sizeof(UMetasoundEditorGraphBase) == 0x000060, "Wrong size on UMet
 class UMetaSoundPatch final : public UObject
 {
 public:
-	uint8                                         Pad_2B4F[0x70];                                    // 0x0028(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x70];                                      // 0x0028(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMetasoundFrontendDocument             RootMetaSoundDocument;                             // 0x0098(0x01C8)(Edit, Protected, NativeAccessSpecifierProtected)
 	TSet<class FString>                           ReferencedAssetClassKeys;                          // 0x0260(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TSet<class UObject*>                          ReferencedAssetClassObjects;                       // 0x02B0(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
@@ -187,9 +187,9 @@ static_assert(offsetof(UMetaSoundPatch, AssetClassID) == 0x000350, "Member 'UMet
 class UMetaSoundAssetSubsystem final : public UEngineSubsystem
 {
 public:
-	uint8                                         Pad_2B50[0x8];                                     // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FMetaSoundAsyncAssetDependencies> LoadingDependencies;                               // 0x0038(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2B51[0x198];                                   // 0x0048(0x0198)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x198];                                     // 0x0048(0x0198)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void RegisterAssetClassesInDirectories(const TArray<struct FMetaSoundAssetDirectory>& Directories);
@@ -216,11 +216,11 @@ class UMetaSoundBuilderBase : public UObject
 public:
 	struct FMetaSoundFrontendDocumentBuilder      Builder;                                           // 0x0028(0x0030)(Protected, NativeAccessSpecifierProtected)
 	bool                                          bIsAttached;                                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2B52[0x7];                                     // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	struct FMetaSoundBuilderNodeOutputHandle AddGraphInputNode(class FName Param_Name, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorInput);
-	struct FMetaSoundBuilderNodeInputHandle AddGraphOutputNode(class FName Param_Name, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorOutput);
+	struct FMetaSoundBuilderNodeOutputHandle AddGraphInputNode(class FName Name_0, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorInput);
+	struct FMetaSoundBuilderNodeInputHandle AddGraphOutputNode(class FName Name_0, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorOutput);
 	void AddInterface(class FName InterfaceName, EMetaSoundBuilderResult* OutResult);
 	struct FMetaSoundNodeHandle AddNode(const TScriptInterface<class IMetaSoundDocumentInterface>& NodeClass, EMetaSoundBuilderResult* OutResult);
 	struct FMetaSoundNodeHandle AddNodeByClassName(const struct FMetasoundFrontendClassName& ClassName, int32 MajorVersion, EMetaSoundBuilderResult* OutResult);
@@ -250,11 +250,11 @@ public:
 	TArray<struct FMetaSoundBuilderNodeOutputHandle> FindNodeOutputs(const struct FMetaSoundNodeHandle& NodeHandle, EMetaSoundBuilderResult* OutResult);
 	TArray<struct FMetaSoundBuilderNodeOutputHandle> FindNodeOutputsByDataType(const struct FMetaSoundNodeHandle& NodeHandle, EMetaSoundBuilderResult* OutResult, class FName DataType);
 	struct FMetasoundFrontendLiteral GetNodeInputClassDefault(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, EMetaSoundBuilderResult* OutResult);
-	void GetNodeInputData(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, class FName* Param_Name, class FName* DataType, EMetaSoundBuilderResult* OutResult);
+	void GetNodeInputData(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, class FName* Name_0, class FName* DataType, EMetaSoundBuilderResult* OutResult);
 	struct FMetasoundFrontendLiteral GetNodeInputDefault(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, EMetaSoundBuilderResult* OutResult);
-	void GetNodeOutputData(const struct FMetaSoundBuilderNodeOutputHandle& OutputHandle, class FName* Param_Name, class FName* DataType, EMetaSoundBuilderResult* OutResult);
-	void RemoveGraphInput(class FName Param_Name, EMetaSoundBuilderResult* OutResult);
-	void RemoveGraphOutput(class FName Param_Name, EMetaSoundBuilderResult* OutResult);
+	void GetNodeOutputData(const struct FMetaSoundBuilderNodeOutputHandle& OutputHandle, class FName* Name_0, class FName* DataType, EMetaSoundBuilderResult* OutResult);
+	void RemoveGraphInput(class FName Name_0, EMetaSoundBuilderResult* OutResult);
+	void RemoveGraphOutput(class FName Name_0, EMetaSoundBuilderResult* OutResult);
 	void RemoveInterface(class FName InterfaceName, EMetaSoundBuilderResult* OutResult);
 	void RemoveNode(const struct FMetaSoundNodeHandle& NodeHandle, EMetaSoundBuilderResult* OutResult);
 	void RemoveNodeInputDefault(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, EMetaSoundBuilderResult* OutResult);
@@ -311,7 +311,7 @@ static_assert(sizeof(UMetaSoundPatchBuilder) == 0x000060, "Wrong size on UMetaSo
 class UMetaSoundSourceBuilder final : public UMetaSoundBuilderBase
 {
 public:
-	uint8                                         Pad_2B87[0x8];                                     // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Audition(class UObject* Parent, class UAudioComponent* AudioComponent, TDelegate<void(class UMetasoundGeneratorHandle* GeneratorHandle)> OnCreateGenerator, bool bLiveUpdatesEnabled);
@@ -338,7 +338,7 @@ static_assert(sizeof(UMetaSoundSourceBuilder) == 0x000068, "Wrong size on UMetaS
 class UMetaSoundBuilderSubsystem final : public UEngineSubsystem
 {
 public:
-	uint8                                         Pad_2B89[0x8];                                     // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, class UMetaSoundBuilderBase*> NamedBuilders;                                     // 0x0038(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
 	TMap<class FName, TWeakObjectPtr<class UMetaSoundBuilderBase>> AssetBuilders;                                     // 0x0088(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
 
@@ -390,15 +390,15 @@ static_assert(offsetof(UMetaSoundBuilderSubsystem, AssetBuilders) == 0x000088, "
 class alignas(0x10) UMetaSoundSource final : public USoundWaveProcedural
 {
 public:
-	uint8                                         Pad_2B96[0x70];                                    // 0x0480(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_480[0x70];                                     // 0x0480(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMetasoundFrontendDocument             RootMetaSoundDocument;                             // 0x04F0(0x01C8)(Edit, Protected, NativeAccessSpecifierProtected)
 	TSet<class FString>                           ReferencedAssetClassKeys;                          // 0x06B8(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TSet<class UObject*>                          ReferencedAssetClassObjects;                       // 0x0708(0x0050)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TSet<struct FSoftObjectPath>                  ReferenceAssetClassCache;                          // 0x0758(0x0050)(Protected, NativeAccessSpecifierProtected)
 	EMetaSoundOutputAudioFormat                   OutputFormat;                                      // 0x07A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B97[0x3];                                     // 0x07A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7A9[0x3];                                      // 0x07A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  AssetClassID;                                      // 0x07AC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B98[0xD4];                                    // 0x07BC(0x00D4)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7BC[0xD4];                                     // 0x07BC(0x00D4)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

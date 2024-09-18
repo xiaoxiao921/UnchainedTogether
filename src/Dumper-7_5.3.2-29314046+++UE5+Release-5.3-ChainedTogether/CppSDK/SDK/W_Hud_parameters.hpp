@@ -19,13 +19,38 @@
 namespace SDK::Params
 {
 
+// Function W_Hud.W_Hud_C.ConvertHeightToMeters
+// 0x0078 (0x0078 - 0x0000)
+struct W_Hud_C_ConvertHeightToMeters final
+{
+public:
+	double                                        A;                                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm)
+	int32                                         CallFunc_Round_ReturnValue;                        // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_IntToText_ReturnValue;               // 0x0028(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0060(0x0018)()
+};
+static_assert(alignof(W_Hud_C_ConvertHeightToMeters) == 0x000008, "Wrong alignment on W_Hud_C_ConvertHeightToMeters");
+static_assert(sizeof(W_Hud_C_ConvertHeightToMeters) == 0x000078, "Wrong size on W_Hud_C_ConvertHeightToMeters");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, A) == 0x000000, "Member 'W_Hud_C_ConvertHeightToMeters::A' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, ReturnValue) == 0x000008, "Member 'W_Hud_C_ConvertHeightToMeters::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Round_ReturnValue) == 0x000020, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Round_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Clamp_ReturnValue) == 0x000024, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Clamp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Conv_IntToText_ReturnValue) == 0x000028, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Conv_IntToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Conv_TextToString_ReturnValue) == 0x000040, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Concat_StrStr_ReturnValue) == 0x000050, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ConvertHeightToMeters, CallFunc_Conv_StringToText_ReturnValue) == 0x000060, "Member 'W_Hud_C_ConvertHeightToMeters::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+
 // Function W_Hud.W_Hud_C.EvaluateLavaHeight
 // 0x0078 (0x0078 - 0x0000)
 struct W_Hud_C_EvaluateLavaHeight final
 {
 public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_X;                            // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_Y;                            // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -52,152 +77,140 @@ static_assert(offsetof(W_Hud_C_EvaluateLavaHeight, CallFunc_Subtract_DoubleDoubl
 static_assert(offsetof(W_Hud_C_EvaluateLavaHeight, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000070, "Member 'W_Hud_C_EvaluateLavaHeight::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
 
 // Function W_Hud.W_Hud_C.EvaluatePlayerHeight
-// 0x00D8 (0x00D8 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct W_Hud_C_EvaluatePlayerHeight final
 {
 public:
-	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A4[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X;                            // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y;                            // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z;                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X_1;                          // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y_1;                          // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z_1;                          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Round_ReturnValue;                        // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_IntToText_ReturnValue;               // 0x0088(0x0018)()
-	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x00C0(0x0018)()
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_ConvertHeightToMeters_ReturnValue;        // 0x0008(0x0018)()
+	class FText                                   CallFunc_ConvertHeightToMeters_ReturnValue_1;      // 0x0020(0x0018)()
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetDirectionUnitVector_ReturnValue;       // 0x0078(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x00A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_AA[0x6];                                       // 0x00AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x00B0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_3;        // 0x00C8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Vector_Distance_ReturnValue;              // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X;                            // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y;                            // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z;                            // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetDirectionUnitVector_ReturnValue_1;     // 0x0100(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Dot_VectorVector_ReturnValue;             // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_4;        // 0x0120(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X_1;                          // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y_1;                          // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z_1;                          // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x0168(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_Hud_C_EvaluatePlayerHeight) == 0x000008, "Wrong alignment on W_Hud_C_EvaluatePlayerHeight");
-static_assert(sizeof(W_Hud_C_EvaluatePlayerHeight) == 0x0000D8, "Wrong size on W_Hud_C_EvaluatePlayerHeight");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_GetPlayerPawn_ReturnValue) == 0x000000, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_GetPlayerPawn_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_IsValid_ReturnValue) == 0x000008, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000010, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_X) == 0x000028, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_X' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Y) == 0x000030, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Y' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Z) == 0x000038, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Z' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000040, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_X_1) == 0x000058, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_X_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Y_1) == 0x000060, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Y_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Z_1) == 0x000068, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Z_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x000070, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000078, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Round_ReturnValue) == 0x000080, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Round_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Clamp_ReturnValue) == 0x000084, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Clamp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Conv_IntToText_ReturnValue) == 0x000088, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Conv_IntToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Conv_TextToString_ReturnValue) == 0x0000A0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Concat_StrStr_ReturnValue) == 0x0000B0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Conv_StringToText_ReturnValue) == 0x0000C0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(sizeof(W_Hud_C_EvaluatePlayerHeight) == 0x000170, "Wrong size on W_Hud_C_EvaluatePlayerHeight");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_IsValid_ReturnValue) == 0x000000, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_ConvertHeightToMeters_ReturnValue) == 0x000008, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_ConvertHeightToMeters_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_ConvertHeightToMeters_ReturnValue_1) == 0x000020, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_ConvertHeightToMeters_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_IsValid_ReturnValue_1) == 0x000038, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000040, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000058, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_GetGameState_ReturnValue) == 0x000070, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_GetDirectionUnitVector_ReturnValue) == 0x000078, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_GetDirectionUnitVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, K2Node_DynamicCast_AsGS_Game) == 0x000090, "Member 'W_Hud_C_EvaluatePlayerHeight::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, K2Node_DynamicCast_bSuccess) == 0x000098, "Member 'W_Hud_C_EvaluatePlayerHeight::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_GetPlayerPawn_ReturnValue) == 0x0000A0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_GetPlayerPawn_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_IsValid_ReturnValue_2) == 0x0000A8, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, K2Node_SwitchEnum_CmpSuccess) == 0x0000A9, "Member 'W_Hud_C_EvaluatePlayerHeight::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x0000B0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue_3) == 0x0000C8, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Vector_Distance_ReturnValue) == 0x0000E0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_X) == 0x0000E8, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_X' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Y) == 0x0000F0, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Y' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Z) == 0x0000F8, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Z' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_GetDirectionUnitVector_ReturnValue_1) == 0x000100, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_GetDirectionUnitVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Dot_VectorVector_ReturnValue) == 0x000118, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Dot_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_K2_GetActorLocation_ReturnValue_4) == 0x000120, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_K2_GetActorLocation_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Multiply_DoubleDouble_ReturnValue) == 0x000138, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Multiply_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_X_1) == 0x000140, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_X_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Y_1) == 0x000148, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Y_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_BreakVector_Z_1) == 0x000150, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_BreakVector_Z_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000158, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x000160, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_EvaluatePlayerHeight, CallFunc_Divide_DoubleDouble_ReturnValue_1) == 0x000168, "Member 'W_Hud_C_EvaluatePlayerHeight::CallFunc_Divide_DoubleDouble_ReturnValue_1' has a wrong offset!");
 
 // Function W_Hud.W_Hud_C.ExecuteUbergraph_W_Hud
-// 0x01E0 (0x01E0 - 0x0000)
+// 0x0120 (0x0120 - 0x0000)
 struct W_Hud_C_ExecuteUbergraph_W_Hud final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A5[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_Height0_C*>                  CallFunc_GetAllActorsOfClass_OutActors;            // 0x0008(0x0010)(ReferenceParm)
-	TArray<class ABP_Height1_C*>                  CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x0018(0x0010)(ReferenceParm)
-	class ABP_Height0_C*                          CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABP_Height1_C*                          CallFunc_Array_Get_Item_1;                         // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0038(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0008(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_GetTimer_ReturnValue;                     // 0x0048(0x0018)()
-	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0060(0x0008)(NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0068(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X;                            // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y;                            // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z;                            // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0098(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_X_1;                          // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Y_1;                          // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVector_Z_1;                          // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A6[0x7];                                     // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Round_ReturnValue;                        // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A7[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetPlayerPawn_ReturnValue;                // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              K2Node_CustomEvent_InVisibility;                   // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0090(0x0018)()
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x00B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_Lava_C*>                     CallFunc_GetAllActorsOfClass_OutActors;            // 0x00C0(0x0010)(ReferenceParm)
+	class ABP_Lava_C*                             CallFunc_Array_Get_Item;                           // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x00D8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x00E8(0x0008)(NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0108(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0120(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              K2Node_CustomEvent_InVisibility;                   // 0x0129(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A8[0x6];                                     // 0x012A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0130(0x0018)()
-	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0148(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0159(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A9[0x6];                                     // 0x015A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_Lava_C*>                     CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x0160(0x0010)(ReferenceParm)
-	class ABP_Lava_C*                             CallFunc_Array_Get_Item_2;                         // 0x0170(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_IntToDouble_ReturnValue_1;           // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_2;        // 0x0180(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_MapRangeClamped_ReturnValue_1;            // 0x0188(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0190(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x01A0(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_2;                    // 0x01DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_2;                    // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_Hud_C_ExecuteUbergraph_W_Hud) == 0x000008, "Wrong alignment on W_Hud_C_ExecuteUbergraph_W_Hud");
-static_assert(sizeof(W_Hud_C_ExecuteUbergraph_W_Hud) == 0x0001E0, "Wrong size on W_Hud_C_ExecuteUbergraph_W_Hud");
+static_assert(sizeof(W_Hud_C_ExecuteUbergraph_W_Hud) == 0x000120, "Wrong size on W_Hud_C_ExecuteUbergraph_W_Hud");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, EntryPoint) == 0x000000, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::EntryPoint' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_SwitchEnum_CmpSuccess) == 0x000004, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetAllActorsOfClass_OutActors) == 0x000008, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x000018, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Array_Get_Item) == 0x000028, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_CreateDelegate_OutputDelegate) == 0x000038, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_Event_MyGeometry) == 0x000008, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_Event_MyGeometry' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_Event_InDeltaTime) == 0x000040, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_Event_InDeltaTime' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetTimer_ReturnValue) == 0x000048, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetTimer_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_K2_SetTimerDelegate_ReturnValue) == 0x000060, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_K2_SetTimerDelegate_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000068, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_X) == 0x000080, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_X' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_Y) == 0x000088, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_Y' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_Z) == 0x000090, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_Z' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000098, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetPlayerPawn_ReturnValue) == 0x0000B0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetPlayerPawn_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_X_1) == 0x0000B8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_X_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_Y_1) == 0x0000C0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_Y_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_BreakVector_Z_1) == 0x0000C8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_BreakVector_Z_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_IsValid_ReturnValue) == 0x0000D0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x0000D8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x0000E0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Round_ReturnValue) == 0x0000E8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Round_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetPlayerPawn_ReturnValue) == 0x000060, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetPlayerPawn_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_IsValid_ReturnValue) == 0x000068, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetGameInstance_ReturnValue) == 0x000070, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_CustomEvent_InVisibility) == 0x000078, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_CustomEvent_InVisibility' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_AsCustom_GI) == 0x000080, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_bSuccess) == 0x000088, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Conv_StringToText_ReturnValue) == 0x000090, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetGameState_ReturnValue) == 0x0000A8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_AsGS_Game) == 0x0000B0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_bSuccess_1) == 0x0000B8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_SwitchEnum_CmpSuccess_1) == 0x0000B9, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetAllActorsOfClass_OutActors) == 0x0000C0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Array_Get_Item) == 0x0000D0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_CreateDelegate_OutputDelegate) == 0x0000D8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_K2_SetTimerDelegate_ReturnValue) == 0x0000E8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_K2_SetTimerDelegate_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Conv_IntToDouble_ReturnValue) == 0x0000F0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Conv_IntToDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Divide_DoubleDouble_ReturnValue_1) == 0x0000F8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Divide_DoubleDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x0000F8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_MapRangeClamped_ReturnValue) == 0x000100, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_MakeVector2D_ReturnValue) == 0x000108, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetGameInstance_ReturnValue) == 0x000118, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_AsCustom_GI) == 0x000120, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_bSuccess) == 0x000128, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_CustomEvent_InVisibility) == 0x000129, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_CustomEvent_InVisibility' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Conv_StringToText_ReturnValue) == 0x000130, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetGameState_ReturnValue) == 0x000148, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_AsGS_Game) == 0x000150, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_DynamicCast_bSuccess_1) == 0x000158, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_SwitchEnum_CmpSuccess_1) == 0x000159, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000160, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Array_Get_Item_2) == 0x000170, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Conv_IntToDouble_ReturnValue_1) == 0x000178, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Conv_IntToDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_Divide_DoubleDouble_ReturnValue_2) == 0x000180, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_Divide_DoubleDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_MapRangeClamped_ReturnValue_1) == 0x000188, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_MapRangeClamped_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, CallFunc_MakeVector2D_ReturnValue_1) == 0x000190, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::CallFunc_MakeVector2D_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_Event_MyGeometry) == 0x0001A0, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_Event_MyGeometry' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_Event_InDeltaTime) == 0x0001D8, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_Event_InDeltaTime' has a wrong offset!");
-static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_SwitchEnum_CmpSuccess_2) == 0x0001DC, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_SwitchEnum_CmpSuccess_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_ExecuteUbergraph_W_Hud, K2Node_SwitchEnum_CmpSuccess_2) == 0x000118, "Member 'W_Hud_C_ExecuteUbergraph_W_Hud::K2Node_SwitchEnum_CmpSuccess_2' has a wrong offset!");
 
 // Function W_Hud.W_Hud_C.GetTimer
 // 0x0050 (0x0050 - 0x0000)
@@ -208,7 +221,7 @@ public:
 	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_Gamestate_C>      K2Node_DynamicCast_AsBPI_Gamestate;                // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35AA[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_GetTimer_Timer;                           // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_ConvertTimeToTextFormat_ReturnValue;      // 0x0038(0x0018)()
 };
@@ -253,7 +266,7 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35AB[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_X;                            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -271,10 +284,10 @@ public:
 	double                                        CallFunc_BreakVector_Y_2;                          // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_BreakVector_Z_2;                          // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35AC[0x4];                                     // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35AD[0x7];                                     // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Lerp_ReturnValue;                         // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x00F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -304,6 +317,137 @@ static_assert(offsetof(W_Hud_C_UpdateCheckpointsHeight, CallFunc_MapRangeClamped
 static_assert(offsetof(W_Hud_C_UpdateCheckpointsHeight, CallFunc_Less_IntInt_ReturnValue) == 0x0000E0, "Member 'W_Hud_C_UpdateCheckpointsHeight::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_UpdateCheckpointsHeight, CallFunc_Lerp_ReturnValue) == 0x0000E8, "Member 'W_Hud_C_UpdateCheckpointsHeight::CallFunc_Lerp_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Hud_C_UpdateCheckpointsHeight, CallFunc_MakeVector2D_ReturnValue) == 0x0000F0, "Member 'W_Hud_C_UpdateCheckpointsHeight::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
+
+// Function W_Hud.W_Hud_C.UpdateCursorHeight
+// 0x0070 (0x0070 - 0x0000)
+struct W_Hud_C_UpdateCursorHeight final
+{
+public:
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_IntToDouble_ReturnValue_1;           // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_ReturnValue_1;            // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0060(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_Hud_C_UpdateCursorHeight) == 0x000008, "Wrong alignment on W_Hud_C_UpdateCursorHeight");
+static_assert(sizeof(W_Hud_C_UpdateCursorHeight) == 0x000070, "Wrong size on W_Hud_C_UpdateCursorHeight");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_Conv_IntToDouble_ReturnValue) == 0x000000, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_Conv_IntToDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_GetGameState_ReturnValue) == 0x000008, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x000010, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, K2Node_DynamicCast_AsGS_Game) == 0x000018, "Member 'W_Hud_C_UpdateCursorHeight::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, K2Node_DynamicCast_bSuccess) == 0x000020, "Member 'W_Hud_C_UpdateCursorHeight::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_MapRangeClamped_ReturnValue) == 0x000028, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_MakeVector2D_ReturnValue) == 0x000030, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, K2Node_SwitchEnum_CmpSuccess) == 0x000040, "Member 'W_Hud_C_UpdateCursorHeight::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_Conv_IntToDouble_ReturnValue_1) == 0x000048, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_Conv_IntToDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_Divide_DoubleDouble_ReturnValue_1) == 0x000050, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_Divide_DoubleDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_MapRangeClamped_ReturnValue_1) == 0x000058, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_MapRangeClamped_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateCursorHeight, CallFunc_MakeVector2D_ReturnValue_1) == 0x000060, "Member 'W_Hud_C_UpdateCursorHeight::CallFunc_MakeVector2D_ReturnValue_1' has a wrong offset!");
+
+// Function W_Hud.W_Hud_C.UpdateHeights
+// 0x0080 (0x0080 - 0x0000)
+struct W_Hud_C_UpdateHeights final
+{
+public:
+	TArray<class AMod_HeavenSun_C*>               CallFunc_GetAllActorsOfClass_OutActors;            // 0x0000(0x0010)(ReferenceParm)
+	TArray<class AMod_CustomStart_C*>             CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x0010(0x0010)(ReferenceParm)
+	class AMod_HeavenSun_C*                       CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AMod_CustomStart_C*                     CallFunc_Array_Get_Item_1;                         // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<class ABP_Height1_C*>                  CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x0038(0x0010)(ReferenceParm)
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_Height1_C*                          CallFunc_Array_Get_Item_2;                         // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_Height0_C*>                  CallFunc_GetAllActorsOfClass_OutActors_3;          // 0x0068(0x0010)(ReferenceParm)
+	class ABP_Height0_C*                          CallFunc_Array_Get_Item_3;                         // 0x0078(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_Hud_C_UpdateHeights) == 0x000008, "Wrong alignment on W_Hud_C_UpdateHeights");
+static_assert(sizeof(W_Hud_C_UpdateHeights) == 0x000080, "Wrong size on W_Hud_C_UpdateHeights");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_GetAllActorsOfClass_OutActors) == 0x000000, "Member 'W_Hud_C_UpdateHeights::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x000010, "Member 'W_Hud_C_UpdateHeights::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_Array_Get_Item) == 0x000020, "Member 'W_Hud_C_UpdateHeights::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_Array_Get_Item_1) == 0x000028, "Member 'W_Hud_C_UpdateHeights::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_GetGameState_ReturnValue) == 0x000030, "Member 'W_Hud_C_UpdateHeights::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000038, "Member 'W_Hud_C_UpdateHeights::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, K2Node_DynamicCast_AsGS_Game) == 0x000048, "Member 'W_Hud_C_UpdateHeights::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'W_Hud_C_UpdateHeights::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_Array_Get_Item_2) == 0x000058, "Member 'W_Hud_C_UpdateHeights::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, K2Node_SwitchEnum_CmpSuccess) == 0x000060, "Member 'W_Hud_C_UpdateHeights::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_GetAllActorsOfClass_OutActors_3) == 0x000068, "Member 'W_Hud_C_UpdateHeights::CallFunc_GetAllActorsOfClass_OutActors_3' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateHeights, CallFunc_Array_Get_Item_3) == 0x000078, "Member 'W_Hud_C_UpdateHeights::CallFunc_Array_Get_Item_3' has a wrong offset!");
+
+// Function W_Hud.W_Hud_C.UpdateMaxHeight
+// 0x00E8 (0x00E8 - 0x0000)
+struct W_Hud_C_UpdateMaxHeight final
+{
+public:
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X;                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y;                            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z;                            // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_3;        // 0x0070(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Vector_Distance_ReturnValue;              // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_X_1;                          // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Y_1;                          // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_BreakVector_Z_1;                          // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Round_ReturnValue;                        // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue_1;        // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Round_ReturnValue_1;                      // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AGS_Game_C*                             K2Node_DynamicCast_AsGS_Game;                      // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_Hud_C_UpdateMaxHeight) == 0x000008, "Wrong alignment on W_Hud_C_UpdateMaxHeight");
+static_assert(sizeof(W_Hud_C_UpdateMaxHeight) == 0x0000E8, "Wrong size on W_Hud_C_UpdateMaxHeight");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_IsValid_ReturnValue) == 0x000000, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_IsValid_ReturnValue_1) == 0x000001, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000008, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000020, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_X) == 0x000038, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_X' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_Y) == 0x000040, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_Y' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_Z) == 0x000048, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_Z' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_IsValid_ReturnValue_2) == 0x000050, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_IsValid_ReturnValue_3) == 0x000051, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x000058, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_K2_GetActorLocation_ReturnValue_3) == 0x000070, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_K2_GetActorLocation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Vector_Distance_ReturnValue) == 0x000088, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_X_1) == 0x000090, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_X_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_Y_1) == 0x000098, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_Y_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_BreakVector_Z_1) == 0x0000A0, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_BreakVector_Z_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Divide_DoubleDouble_ReturnValue) == 0x0000A8, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Divide_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Subtract_DoubleDouble_ReturnValue) == 0x0000B0, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Subtract_DoubleDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Round_ReturnValue) == 0x0000B8, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Round_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Divide_DoubleDouble_ReturnValue_1) == 0x0000C0, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Divide_DoubleDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_Round_ReturnValue_1) == 0x0000C8, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_Round_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, CallFunc_GetGameState_ReturnValue) == 0x0000D0, "Member 'W_Hud_C_UpdateMaxHeight::CallFunc_GetGameState_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, K2Node_DynamicCast_AsGS_Game) == 0x0000D8, "Member 'W_Hud_C_UpdateMaxHeight::K2Node_DynamicCast_AsGS_Game' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, K2Node_DynamicCast_bSuccess) == 0x0000E0, "Member 'W_Hud_C_UpdateMaxHeight::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_Hud_C_UpdateMaxHeight, K2Node_SwitchEnum_CmpSuccess) == 0x0000E1, "Member 'W_Hud_C_UpdateMaxHeight::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
 
 }
 

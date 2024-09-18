@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function BPI_PlayerController.BPI_PlayerController_C.BPI_RequestCharacter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// E_ChoosenChar                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_PlayerController_C::BPI_RequestCharacter(E_ChoosenChar Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_PlayerController_C", "BPI_RequestCharacter");
+
+	Params::BPI_PlayerController_C_BPI_RequestCharacter Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BPI_PlayerController.BPI_PlayerController_C.GetAudioDevices
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

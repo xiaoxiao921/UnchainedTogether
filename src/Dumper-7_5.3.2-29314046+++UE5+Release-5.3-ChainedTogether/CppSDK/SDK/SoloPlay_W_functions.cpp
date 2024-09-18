@@ -109,8 +109,22 @@ void USoloPlay_W_C::Construct()
 }
 
 
+// Function SoloPlay_W.SoloPlay_W_C.DeselectAllUGC
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void USoloPlay_W_C::DeselectAllUGC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "DeselectAllUGC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function SoloPlay_W.SoloPlay_W_C.ExecuteUbergraph_SoloPlay_W
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -126,6 +140,86 @@ void USoloPlay_W_C::ExecuteUbergraph_SoloPlay_W(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.GetSelectedUGC
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGCSelected                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSteamUGCDetails                 Details                                                (Parm, OutParm)
+
+void USoloPlay_W_C::GetSelectedUGC(bool* UGCSelected, struct FSteamUGCDetails* Details)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "GetSelectedUGC");
+
+	Params::SoloPlay_W_C_GetSelectedUGC Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGCSelected != nullptr)
+		*UGCSelected = Parms.UGCSelected;
+
+	if (Details != nullptr)
+		*Details = std::move(Parms.Details);
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.IsAModSelected
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Selected                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USoloPlay_W_C::IsAModSelected(bool* Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "IsAModSelected");
+
+	Params::SoloPlay_W_C_IsAModSelected Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Selected != nullptr)
+		*Selected = Parms.Selected;
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.OnDownloaded_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USoloPlay_W_C::OnDownloaded_Event(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "OnDownloaded_Event");
+
+	Params::SoloPlay_W_C_OnDownloaded_Event Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.RefreshGamemodeVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void USoloPlay_W_C::RefreshGamemodeVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "RefreshGamemodeVisibility");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -146,6 +240,47 @@ void USoloPlay_W_C::RefreshSave(const struct FS_BiomeSave& Save)
 	Parms.Save = std::move(Save);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.Update Game Mode
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Selection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void USoloPlay_W_C::Update_Game_Mode(const class FString& Selection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "Update Game Mode");
+
+	Params::SoloPlay_W_C_Update_Game_Mode Parms{};
+
+	Parms.Selection = std::move(Selection);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SoloPlay_W.SoloPlay_W_C.Update_UGC_References
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGC_Selected                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USoloPlay_W_C::Update_UGC_References(bool* UGC_Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoloPlay_W_C", "Update_UGC_References");
+
+	Params::SoloPlay_W_C_Update_UGC_References Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGC_Selected != nullptr)
+		*UGC_Selected = Parms.UGC_Selected;
 }
 
 }

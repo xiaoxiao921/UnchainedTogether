@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "InputCore_structs.hpp"
 
@@ -78,13 +78,28 @@ enum class ETransitionCurve : uint8
 	ETransitionCurve_MAX                     = 7,
 };
 
-// ScriptStruct CommonUI.UITag
-// 0x0000 (0x0008 - 0x0008)
-struct FUITag : public FGameplayTag
+// ScriptStruct CommonUI.CommonInputTypeInfo
+// 0x0100 (0x0100 - 0x0000)
+struct FCommonInputTypeInfo final
 {
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EInputActionState                             OverrrideState;                                    // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActionRequiresHold;                               // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HoldTime;                                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoldRollbackTime;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            OverrideBrush;                                     // 0x0030(0x00D0)(Edit, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FUITag) == 0x000004, "Wrong alignment on FUITag");
-static_assert(sizeof(FUITag) == 0x000008, "Wrong size on FUITag");
+static_assert(alignof(FCommonInputTypeInfo) == 0x000010, "Wrong alignment on FCommonInputTypeInfo");
+static_assert(sizeof(FCommonInputTypeInfo) == 0x000100, "Wrong size on FCommonInputTypeInfo");
+static_assert(offsetof(FCommonInputTypeInfo, Key) == 0x000000, "Member 'FCommonInputTypeInfo::Key' has a wrong offset!");
+static_assert(offsetof(FCommonInputTypeInfo, OverrrideState) == 0x000018, "Member 'FCommonInputTypeInfo::OverrrideState' has a wrong offset!");
+static_assert(offsetof(FCommonInputTypeInfo, bActionRequiresHold) == 0x000019, "Member 'FCommonInputTypeInfo::bActionRequiresHold' has a wrong offset!");
+static_assert(offsetof(FCommonInputTypeInfo, HoldTime) == 0x00001C, "Member 'FCommonInputTypeInfo::HoldTime' has a wrong offset!");
+static_assert(offsetof(FCommonInputTypeInfo, HoldRollbackTime) == 0x000020, "Member 'FCommonInputTypeInfo::HoldRollbackTime' has a wrong offset!");
+static_assert(offsetof(FCommonInputTypeInfo, OverrideBrush) == 0x000030, "Member 'FCommonInputTypeInfo::OverrideBrush' has a wrong offset!");
 
 // ScriptStruct CommonUI.CommonNumberFormattingOptions
 // 0x0014 (0x0014 - 0x0000)
@@ -93,7 +108,7 @@ struct FCommonNumberFormattingOptions final
 public:
 	ERoundingMode                                 RoundingMode;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseGrouping;                                       // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DD5[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinimumIntegralDigits;                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaximumIntegralDigits;                             // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MinimumFractionalDigits;                           // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -114,7 +129,7 @@ struct FCommonRegisteredTabInfo final
 {
 public:
 	int32                                         TabIndex;                                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DD6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonButtonBase*                      TabButton;                                         // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWidget*                                ContentInstance;                                   // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -123,6 +138,20 @@ static_assert(sizeof(FCommonRegisteredTabInfo) == 0x000018, "Wrong size on FComm
 static_assert(offsetof(FCommonRegisteredTabInfo, TabIndex) == 0x000000, "Member 'FCommonRegisteredTabInfo::TabIndex' has a wrong offset!");
 static_assert(offsetof(FCommonRegisteredTabInfo, TabButton) == 0x000008, "Member 'FCommonRegisteredTabInfo::TabButton' has a wrong offset!");
 static_assert(offsetof(FCommonRegisteredTabInfo, ContentInstance) == 0x000010, "Member 'FCommonRegisteredTabInfo::ContentInstance' has a wrong offset!");
+
+// ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
+// 0x0020 (0x0020 - 0x0000)
+struct FCommonButtonStyleOptionalSlateSound final
+{
+public:
+	bool                                          bHasSound;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateSound                            Sound;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCommonButtonStyleOptionalSlateSound) == 0x000008, "Wrong alignment on FCommonButtonStyleOptionalSlateSound");
+static_assert(sizeof(FCommonButtonStyleOptionalSlateSound) == 0x000020, "Wrong size on FCommonButtonStyleOptionalSlateSound");
+static_assert(offsetof(FCommonButtonStyleOptionalSlateSound, bHasSound) == 0x000000, "Member 'FCommonButtonStyleOptionalSlateSound::bHasSound' has a wrong offset!");
+static_assert(offsetof(FCommonButtonStyleOptionalSlateSound, Sound) == 0x000008, "Member 'FCommonButtonStyleOptionalSlateSound::Sound' has a wrong offset!");
 
 // ScriptStruct CommonUI.UIInputConfig
 // 0x0005 (0x0005 - 0x0000)
@@ -143,6 +172,14 @@ static_assert(offsetof(FUIInputConfig, InputMode) == 0x000002, "Member 'FUIInput
 static_assert(offsetof(FUIInputConfig, MouseCaptureMode) == 0x000003, "Member 'FUIInputConfig::MouseCaptureMode' has a wrong offset!");
 static_assert(offsetof(FUIInputConfig, bHideCursorDuringViewportCapture) == 0x000004, "Member 'FUIInputConfig::bHideCursorDuringViewportCapture' has a wrong offset!");
 
+// ScriptStruct CommonUI.UITag
+// 0x0000 (0x0008 - 0x0008)
+struct FUITag : public FGameplayTag
+{
+};
+static_assert(alignof(FUITag) == 0x000004, "Wrong alignment on FUITag");
+static_assert(sizeof(FUITag) == 0x000008, "Wrong size on FUITag");
+
 // ScriptStruct CommonUI.UIActionTag
 // 0x0000 (0x0008 - 0x0008)
 struct FUIActionTag final : public FUITag
@@ -158,26 +195,12 @@ struct FCommonInputActionHandlerData final
 public:
 	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	EInputActionState                             State;                                             // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1DD7[0xF];                                     // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCommonInputActionHandlerData) == 0x000008, "Wrong alignment on FCommonInputActionHandlerData");
 static_assert(sizeof(FCommonInputActionHandlerData) == 0x000020, "Wrong size on FCommonInputActionHandlerData");
 static_assert(offsetof(FCommonInputActionHandlerData, InputActionRow) == 0x000000, "Member 'FCommonInputActionHandlerData::InputActionRow' has a wrong offset!");
 static_assert(offsetof(FCommonInputActionHandlerData, State) == 0x000010, "Member 'FCommonInputActionHandlerData::State' has a wrong offset!");
-
-// ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
-// 0x0020 (0x0020 - 0x0000)
-struct FCommonButtonStyleOptionalSlateSound final
-{
-public:
-	bool                                          bHasSound;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DD8[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateSound                            Sound;                                             // 0x0008(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCommonButtonStyleOptionalSlateSound) == 0x000008, "Wrong alignment on FCommonButtonStyleOptionalSlateSound");
-static_assert(sizeof(FCommonButtonStyleOptionalSlateSound) == 0x000020, "Wrong size on FCommonButtonStyleOptionalSlateSound");
-static_assert(offsetof(FCommonButtonStyleOptionalSlateSound, bHasSound) == 0x000000, "Member 'FCommonButtonStyleOptionalSlateSound::bHasSound' has a wrong offset!");
-static_assert(offsetof(FCommonButtonStyleOptionalSlateSound, Sound) == 0x000008, "Member 'FCommonButtonStyleOptionalSlateSound::Sound' has a wrong offset!");
 
 // ScriptStruct CommonUI.RichTextIconData
 // 0x0050 (0x0058 - 0x0008)
@@ -194,29 +217,6 @@ static_assert(offsetof(FRichTextIconData, DisplayName) == 0x000008, "Member 'FRi
 static_assert(offsetof(FRichTextIconData, ResourceObject) == 0x000020, "Member 'FRichTextIconData::ResourceObject' has a wrong offset!");
 static_assert(offsetof(FRichTextIconData, ImageSize) == 0x000048, "Member 'FRichTextIconData::ImageSize' has a wrong offset!");
 
-// ScriptStruct CommonUI.CommonInputTypeInfo
-// 0x0100 (0x0100 - 0x0000)
-struct FCommonInputTypeInfo final
-{
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EInputActionState                             OverrrideState;                                    // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bActionRequiresHold;                               // 0x0019(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DD9[0x2];                                     // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HoldTime;                                          // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HoldRollbackTime;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DDA[0xC];                                     // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            OverrideBrush;                                     // 0x0030(0x00D0)(Edit, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCommonInputTypeInfo) == 0x000010, "Wrong alignment on FCommonInputTypeInfo");
-static_assert(sizeof(FCommonInputTypeInfo) == 0x000100, "Wrong size on FCommonInputTypeInfo");
-static_assert(offsetof(FCommonInputTypeInfo, Key) == 0x000000, "Member 'FCommonInputTypeInfo::Key' has a wrong offset!");
-static_assert(offsetof(FCommonInputTypeInfo, OverrrideState) == 0x000018, "Member 'FCommonInputTypeInfo::OverrrideState' has a wrong offset!");
-static_assert(offsetof(FCommonInputTypeInfo, bActionRequiresHold) == 0x000019, "Member 'FCommonInputTypeInfo::bActionRequiresHold' has a wrong offset!");
-static_assert(offsetof(FCommonInputTypeInfo, HoldTime) == 0x00001C, "Member 'FCommonInputTypeInfo::HoldTime' has a wrong offset!");
-static_assert(offsetof(FCommonInputTypeInfo, HoldRollbackTime) == 0x000020, "Member 'FCommonInputTypeInfo::HoldRollbackTime' has a wrong offset!");
-static_assert(offsetof(FCommonInputTypeInfo, OverrideBrush) == 0x000030, "Member 'FCommonInputTypeInfo::OverrideBrush' has a wrong offset!");
-
 // ScriptStruct CommonUI.CommonInputActionDataBase
 // 0x0388 (0x0390 - 0x0008)
 struct FCommonInputActionDataBase final : public FTableRowBase
@@ -225,7 +225,7 @@ public:
 	class FText                                   DisplayName;                                       // 0x0008(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                   HoldDisplayName;                                   // 0x0020(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                         NavBarPriority;                                    // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DDB[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCommonInputTypeInfo                   KeyboardInputTypeInfo;                             // 0x0040(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
 	struct FCommonInputTypeInfo                   DefaultGamepadInputTypeInfo;                       // 0x0140(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
 	TMap<class FName, struct FCommonInputTypeInfo> GamepadInputOverrides;                             // 0x0240(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
@@ -278,7 +278,7 @@ struct FCommonAnalogCursorSettings final
 public:
 	int32                                         PreprocessorPriority;                              // 0x0000(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableCursorAcceleration;                         // 0x0004(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DDC[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CursorAcceleration;                                // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CursorMaxSpeed;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CursorDeadZone;                                    // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

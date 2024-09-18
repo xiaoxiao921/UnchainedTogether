@@ -31,29 +31,15 @@ void ABP_Character_C::Three0fps()
 }
 
 
-// Function BP_Character.BP_Character_C.40fps
+// Function BP_Character.BP_Character_C.60fps
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_Character_C::Four0fps()
+void ABP_Character_C::Six0fps()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Character_C", "40fps");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Character.BP_Character_C.50fps
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Character_C::Five0fps()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Character_C", "50fps");
+		Func = Class->GetFunction("BP_Character_C", "60fps");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -82,9 +68,9 @@ void ABP_Character_C::ActivateCollisions(bool Active)
 // Function BP_Character.BP_Character_C.AdaptSwimCollision
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Swim                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Swim_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::AdaptSwimCollision(bool Param_Swim)
+void ABP_Character_C::AdaptSwimCollision(bool Swim_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -93,7 +79,7 @@ void ABP_Character_C::AdaptSwimCollision(bool Param_Swim)
 
 	Params::BP_Character_C_AdaptSwimCollision Parms{};
 
-	Parms.Param_Swim = Param_Swim;
+	Parms.Swim_0 = Swim_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -315,11 +301,11 @@ void ABP_Character_C::AddImpulseToCar(const struct FVector& Impulse)
 // struct FVector                          Impulse                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    OverrideVelocityZ                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    StopClimb                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_ShuffleAirControl                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ShuffleAirControl_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IgnoreDoOnce                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_PushedByObstacle                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    PushedByObstacle_0                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::AddImpulseToCharacter(const struct FVector& Impulse, bool OverrideVelocityZ, bool StopClimb, bool Param_ShuffleAirControl, bool IgnoreDoOnce, bool Param_PushedByObstacle)
+void ABP_Character_C::AddImpulseToCharacter(const struct FVector& Impulse, bool OverrideVelocityZ, bool StopClimb, bool ShuffleAirControl_0, bool IgnoreDoOnce, bool PushedByObstacle_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -331,9 +317,9 @@ void ABP_Character_C::AddImpulseToCharacter(const struct FVector& Impulse, bool 
 	Parms.Impulse = std::move(Impulse);
 	Parms.OverrideVelocityZ = OverrideVelocityZ;
 	Parms.StopClimb = StopClimb;
-	Parms.Param_ShuffleAirControl = Param_ShuffleAirControl;
+	Parms.ShuffleAirControl_0 = ShuffleAirControl_0;
 	Parms.IgnoreDoOnce = IgnoreDoOnce;
-	Parms.Param_PushedByObstacle = Param_PushedByObstacle;
+	Parms.PushedByObstacle_0 = PushedByObstacle_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -487,11 +473,11 @@ void ABP_Character_C::ApplyStepMovement(double New_Location_Z)
 // Function BP_Character.BP_Character_C.AttachBalancierAll
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           Param_Balancier                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Balancier_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   MaillonIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::AttachBalancierAll(class AActor* Param_Balancier, int32 MaillonIndex, const struct FVector& Location)
+void ABP_Character_C::AttachBalancierAll(class AActor* Balancier_0, int32 MaillonIndex, const struct FVector& Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -500,7 +486,7 @@ void ABP_Character_C::AttachBalancierAll(class AActor* Param_Balancier, int32 Ma
 
 	Params::BP_Character_C_AttachBalancierAll Parms{};
 
-	Parms.Param_Balancier = Param_Balancier;
+	Parms.Balancier_0 = Balancier_0;
 	Parms.MaillonIndex = MaillonIndex;
 	Parms.Location = std::move(Location);
 
@@ -511,11 +497,11 @@ void ABP_Character_C::AttachBalancierAll(class AActor* Param_Balancier, int32 Ma
 // Function BP_Character.BP_Character_C.AttachBalancierServer
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           Param_Balancier                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Balancier_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   MaillonIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::AttachBalancierServer(class AActor* Param_Balancier, int32 MaillonIndex, const struct FVector& Location)
+void ABP_Character_C::AttachBalancierServer(class AActor* Balancier_0, int32 MaillonIndex, const struct FVector& Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -524,7 +510,7 @@ void ABP_Character_C::AttachBalancierServer(class AActor* Param_Balancier, int32
 
 	Params::BP_Character_C_AttachBalancierServer Parms{};
 
-	Parms.Param_Balancier = Param_Balancier;
+	Parms.Balancier_0 = Balancier_0;
 	Parms.MaillonIndex = MaillonIndex;
 	Parms.Location = std::move(Location);
 
@@ -555,11 +541,11 @@ bool ABP_Character_C::AttachedCharactersAreSwiming()
 // Function BP_Character.BP_Character_C.AttachToBalancier
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           Param_Balancier                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_BalancierMaillon                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Balancier_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                                   BalancierMaillon_0                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::AttachToBalancier(class AActor* Param_Balancier, int32 Param_BalancierMaillon, const struct FVector& Location)
+void ABP_Character_C::AttachToBalancier(class AActor* Balancier_0, int32 BalancierMaillon_0, const struct FVector& Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -568,8 +554,8 @@ void ABP_Character_C::AttachToBalancier(class AActor* Param_Balancier, int32 Par
 
 	Params::BP_Character_C_AttachToBalancier Parms{};
 
-	Parms.Param_Balancier = Param_Balancier;
-	Parms.Param_BalancierMaillon = Param_BalancierMaillon;
+	Parms.Balancier_0 = Balancier_0;
+	Parms.BalancierMaillon_0 = BalancierMaillon_0;
 	Parms.Location = std::move(Location);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -766,11 +752,11 @@ void ABP_Character_C::BounceAnim()
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Bounce                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Instigator_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UseControlRot                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    JustZ                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BounceOnTrampoline(double Bounce, bool Param_Instigator, bool UseControlRot, bool JustZ)
+void ABP_Character_C::BounceOnTrampoline(double Bounce, bool Instigator_0, bool UseControlRot, bool JustZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -780,7 +766,7 @@ void ABP_Character_C::BounceOnTrampoline(double Bounce, bool Param_Instigator, b
 	Params::BP_Character_C_BounceOnTrampoline Parms{};
 
 	Parms.Bounce = Bounce;
-	Parms.Param_Instigator = Param_Instigator;
+	Parms.Instigator_0 = Instigator_0;
 	Parms.UseControlRot = UseControlRot;
 	Parms.JustZ = JustZ;
 
@@ -792,11 +778,11 @@ void ABP_Character_C::BounceOnTrampoline(double Bounce, bool Param_Instigator, b
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Bounce                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Instigator_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UseControlRot                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    JustZ                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BounceOnTrampolineClient(double Bounce, bool Param_Instigator, bool UseControlRot, bool JustZ)
+void ABP_Character_C::BounceOnTrampolineClient(double Bounce, bool Instigator_0, bool UseControlRot, bool JustZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -806,7 +792,7 @@ void ABP_Character_C::BounceOnTrampolineClient(double Bounce, bool Param_Instiga
 	Params::BP_Character_C_BounceOnTrampolineClient Parms{};
 
 	Parms.Bounce = Bounce;
-	Parms.Param_Instigator = Param_Instigator;
+	Parms.Instigator_0 = Instigator_0;
 	Parms.UseControlRot = UseControlRot;
 	Parms.JustZ = JustZ;
 
@@ -818,11 +804,11 @@ void ABP_Character_C::BounceOnTrampolineClient(double Bounce, bool Param_Instiga
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Bounce                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Instigator_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UseControlRot                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    JustZ                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BounceTrampolineAll(double Bounce, bool Param_Instigator, bool UseControlRot, bool JustZ)
+void ABP_Character_C::BounceTrampolineAll(double Bounce, bool Instigator_0, bool UseControlRot, bool JustZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -832,7 +818,7 @@ void ABP_Character_C::BounceTrampolineAll(double Bounce, bool Param_Instigator, 
 	Params::BP_Character_C_BounceTrampolineAll Parms{};
 
 	Parms.Bounce = Bounce;
-	Parms.Param_Instigator = Param_Instigator;
+	Parms.Instigator_0 = Instigator_0;
 	Parms.UseControlRot = UseControlRot;
 	Parms.JustZ = JustZ;
 
@@ -844,11 +830,11 @@ void ABP_Character_C::BounceTrampolineAll(double Bounce, bool Param_Instigator, 
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Bounce                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Instigator_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UseControlRot                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    JustZ                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BounceTrampolineSRV(double Bounce, bool Param_Instigator, bool UseControlRot, bool JustZ)
+void ABP_Character_C::BounceTrampolineSRV(double Bounce, bool Instigator_0, bool UseControlRot, bool JustZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -858,7 +844,7 @@ void ABP_Character_C::BounceTrampolineSRV(double Bounce, bool Param_Instigator, 
 	Params::BP_Character_C_BounceTrampolineSRV Parms{};
 
 	Parms.Bounce = Bounce;
-	Parms.Param_Instigator = Param_Instigator;
+	Parms.Instigator_0 = Instigator_0;
 	Parms.UseControlRot = UseControlRot;
 	Parms.JustZ = JustZ;
 
@@ -870,16 +856,16 @@ void ABP_Character_C::BounceTrampolineSRV(double Bounce, bool Param_Instigator, 
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EMovementMode                           PawnMovementMode                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_MovementState                      Param_MovementState                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_MovementState                      Param_PrevMovementState                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_MovementAction                     Param_MovementAction                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_RotationMode                       Param_RotationMode                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_MovementState                      MovementState_0                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_MovementState                      PrevMovementState_0                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_MovementAction                     MovementAction_0                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_RotationMode                       RotationMode_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EALS_Gait                               ActualGait                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_Stance                             Param_ActualStance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_ViewMode                           Param_ViewMode                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EALS_OverlayState                       Param_OverlayState                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_Stance                             ActualStance_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_ViewMode                           ViewMode_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EALS_OverlayState                       OverlayState_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BPI_Get_CurrentStates(EMovementMode* PawnMovementMode, EALS_MovementState* Param_MovementState, EALS_MovementState* Param_PrevMovementState, EALS_MovementAction* Param_MovementAction, EALS_RotationMode* Param_RotationMode, EALS_Gait* ActualGait, EALS_Stance* Param_ActualStance, EALS_ViewMode* Param_ViewMode, EALS_OverlayState* Param_OverlayState)
+void ABP_Character_C::BPI_Get_CurrentStates(EMovementMode* PawnMovementMode, EALS_MovementState* MovementState_0, EALS_MovementState* PrevMovementState_0, EALS_MovementAction* MovementAction_0, EALS_RotationMode* RotationMode_0, EALS_Gait* ActualGait, EALS_Stance* ActualStance_0, EALS_ViewMode* ViewMode_0, EALS_OverlayState* OverlayState_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -893,29 +879,29 @@ void ABP_Character_C::BPI_Get_CurrentStates(EMovementMode* PawnMovementMode, EAL
 	if (PawnMovementMode != nullptr)
 		*PawnMovementMode = Parms.PawnMovementMode;
 
-	if (Param_MovementState != nullptr)
-		*Param_MovementState = Parms.Param_MovementState;
+	if (MovementState_0 != nullptr)
+		*MovementState_0 = Parms.MovementState_0;
 
-	if (Param_PrevMovementState != nullptr)
-		*Param_PrevMovementState = Parms.Param_PrevMovementState;
+	if (PrevMovementState_0 != nullptr)
+		*PrevMovementState_0 = Parms.PrevMovementState_0;
 
-	if (Param_MovementAction != nullptr)
-		*Param_MovementAction = Parms.Param_MovementAction;
+	if (MovementAction_0 != nullptr)
+		*MovementAction_0 = Parms.MovementAction_0;
 
-	if (Param_RotationMode != nullptr)
-		*Param_RotationMode = Parms.Param_RotationMode;
+	if (RotationMode_0 != nullptr)
+		*RotationMode_0 = Parms.RotationMode_0;
 
 	if (ActualGait != nullptr)
 		*ActualGait = Parms.ActualGait;
 
-	if (Param_ActualStance != nullptr)
-		*Param_ActualStance = Parms.Param_ActualStance;
+	if (ActualStance_0 != nullptr)
+		*ActualStance_0 = Parms.ActualStance_0;
 
-	if (Param_ViewMode != nullptr)
-		*Param_ViewMode = Parms.Param_ViewMode;
+	if (ViewMode_0 != nullptr)
+		*ViewMode_0 = Parms.ViewMode_0;
 
-	if (Param_OverlayState != nullptr)
-		*Param_OverlayState = Parms.Param_OverlayState;
+	if (OverlayState_0 != nullptr)
+		*OverlayState_0 = Parms.OverlayState_0;
 }
 
 
@@ -923,29 +909,29 @@ void ABP_Character_C::BPI_Get_CurrentStates(EMovementMode* PawnMovementMode, EAL
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FVector                          Velocity                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Param_Acceleration                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          Acceleration_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          MovementInput                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_IsMoving                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_HasMovementInput                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_Speed                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_MovementInputAmount                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsMoving_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    HasMovementInput_0                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Speed_0                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  MovementInputAmount_0                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FRotator                         AimingRotation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// double                                  Param_AimYawRate                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  AimYawRate_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           PullCharacter                                          (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    Pull                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Climb                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector2D                        MoveInput                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    SwimOnSurface                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Param_LeftHandLocation                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Param_RightHandLocation                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          LeftHandLocation_0                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          RightHandLocation_0                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  RadialVelocityRight                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  RadialVelocityUp                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Swim                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Swim_0                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Bounce                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    LookAround                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Balancier                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Balancier_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct FVector* Param_Acceleration, struct FVector* MovementInput, bool* Param_IsMoving, bool* Param_HasMovementInput, double* Param_Speed, double* Param_MovementInputAmount, struct FRotator* AimingRotation, double* Param_AimYawRate, class AActor** PullCharacter, bool* Pull, bool* Climb, struct FVector2D* MoveInput, bool* SwimOnSurface, struct FVector* Param_LeftHandLocation, struct FVector* Param_RightHandLocation, double* RadialVelocityRight, double* RadialVelocityUp, bool* Param_Swim, bool* Bounce, bool* LookAround, bool* Param_Balancier)
+void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct FVector* Acceleration_0, struct FVector* MovementInput, bool* IsMoving_0, bool* HasMovementInput_0, double* Speed_0, double* MovementInputAmount_0, struct FRotator* AimingRotation, double* AimYawRate_0, class AActor** PullCharacter, bool* Pull, bool* Climb, struct FVector2D* MoveInput, bool* SwimOnSurface, struct FVector* LeftHandLocation_0, struct FVector* RightHandLocation_0, double* RadialVelocityRight, double* RadialVelocityUp, bool* Swim_0, bool* Bounce, bool* LookAround, bool* Balancier_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -959,29 +945,29 @@ void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct F
 	if (Velocity != nullptr)
 		*Velocity = std::move(Parms.Velocity);
 
-	if (Param_Acceleration != nullptr)
-		*Param_Acceleration = std::move(Parms.Param_Acceleration);
+	if (Acceleration_0 != nullptr)
+		*Acceleration_0 = std::move(Parms.Acceleration_0);
 
 	if (MovementInput != nullptr)
 		*MovementInput = std::move(Parms.MovementInput);
 
-	if (Param_IsMoving != nullptr)
-		*Param_IsMoving = Parms.Param_IsMoving;
+	if (IsMoving_0 != nullptr)
+		*IsMoving_0 = Parms.IsMoving_0;
 
-	if (Param_HasMovementInput != nullptr)
-		*Param_HasMovementInput = Parms.Param_HasMovementInput;
+	if (HasMovementInput_0 != nullptr)
+		*HasMovementInput_0 = Parms.HasMovementInput_0;
 
-	if (Param_Speed != nullptr)
-		*Param_Speed = Parms.Param_Speed;
+	if (Speed_0 != nullptr)
+		*Speed_0 = Parms.Speed_0;
 
-	if (Param_MovementInputAmount != nullptr)
-		*Param_MovementInputAmount = Parms.Param_MovementInputAmount;
+	if (MovementInputAmount_0 != nullptr)
+		*MovementInputAmount_0 = Parms.MovementInputAmount_0;
 
 	if (AimingRotation != nullptr)
 		*AimingRotation = std::move(Parms.AimingRotation);
 
-	if (Param_AimYawRate != nullptr)
-		*Param_AimYawRate = Parms.Param_AimYawRate;
+	if (AimYawRate_0 != nullptr)
+		*AimYawRate_0 = Parms.AimYawRate_0;
 
 	if (PullCharacter != nullptr)
 		*PullCharacter = Parms.PullCharacter;
@@ -998,11 +984,11 @@ void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct F
 	if (SwimOnSurface != nullptr)
 		*SwimOnSurface = Parms.SwimOnSurface;
 
-	if (Param_LeftHandLocation != nullptr)
-		*Param_LeftHandLocation = std::move(Parms.Param_LeftHandLocation);
+	if (LeftHandLocation_0 != nullptr)
+		*LeftHandLocation_0 = std::move(Parms.LeftHandLocation_0);
 
-	if (Param_RightHandLocation != nullptr)
-		*Param_RightHandLocation = std::move(Parms.Param_RightHandLocation);
+	if (RightHandLocation_0 != nullptr)
+		*RightHandLocation_0 = std::move(Parms.RightHandLocation_0);
 
 	if (RadialVelocityRight != nullptr)
 		*RadialVelocityRight = Parms.RadialVelocityRight;
@@ -1010,8 +996,8 @@ void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct F
 	if (RadialVelocityUp != nullptr)
 		*RadialVelocityUp = Parms.RadialVelocityUp;
 
-	if (Param_Swim != nullptr)
-		*Param_Swim = Parms.Param_Swim;
+	if (Swim_0 != nullptr)
+		*Swim_0 = Parms.Swim_0;
 
 	if (Bounce != nullptr)
 		*Bounce = Parms.Bounce;
@@ -1019,8 +1005,8 @@ void ABP_Character_C::BPI_Get_EssentialValues(struct FVector* Velocity, struct F
 	if (LookAround != nullptr)
 		*LookAround = Parms.LookAround;
 
-	if (Param_Balancier != nullptr)
-		*Param_Balancier = Parms.Param_Balancier;
+	if (Balancier_0 != nullptr)
+		*Balancier_0 = Parms.Balancier_0;
 }
 
 
@@ -1250,6 +1236,20 @@ void ABP_Character_C::CalculateVelocity()
 }
 
 
+// Function BP_Character.BP_Character_C.CallTrampolineBounceAnim
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Character_C::CallTrampolineBounceAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Character_C", "CallTrampolineBounceAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Character.BP_Character_C.CanUpdateMovingRotation
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -1273,7 +1273,7 @@ bool ABP_Character_C::CanUpdateMovingRotation()
 // Function BP_Character.BP_Character_C.CapsuleHasRoomCheck
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UCapsuleComponent*                Param_Capsule                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UCapsuleComponent*                Capsule_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          TargetLocation                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  HeightOffset                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  RadiusOffset                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1281,7 +1281,7 @@ bool ABP_Character_C::CanUpdateMovingRotation()
 // TArray<class AActor*>                   ActorsToIgnore                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    HasRoom                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::CapsuleHasRoomCheck(class UCapsuleComponent* Param_Capsule, const struct FVector& TargetLocation, double HeightOffset, double RadiusOffset, EDrawDebugTrace DebugType, const TArray<class AActor*>& ActorsToIgnore, bool* HasRoom)
+void ABP_Character_C::CapsuleHasRoomCheck(class UCapsuleComponent* Capsule_0, const struct FVector& TargetLocation, double HeightOffset, double RadiusOffset, EDrawDebugTrace DebugType, const TArray<class AActor*>& ActorsToIgnore, bool* HasRoom)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1290,7 +1290,7 @@ void ABP_Character_C::CapsuleHasRoomCheck(class UCapsuleComponent* Param_Capsule
 
 	Params::BP_Character_C_CapsuleHasRoomCheck Parms{};
 
-	Parms.Param_Capsule = Param_Capsule;
+	Parms.Capsule_0 = Capsule_0;
 	Parms.TargetLocation = std::move(TargetLocation);
 	Parms.HeightOffset = HeightOffset;
 	Parms.RadiusOffset = RadiusOffset;
@@ -1421,9 +1421,9 @@ void ABP_Character_C::CheckMaxDistanceWithOthers(float* Distance)
 // Function BP_Character.BP_Character_C.ClientLocationSRV
 // (Net, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_ClientRepLocation                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          ClientRepLocation_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::ClientLocationSRV(const struct FVector& Param_ClientRepLocation)
+void ABP_Character_C::ClientLocationSRV(const struct FVector& ClientRepLocation_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1432,7 +1432,7 @@ void ABP_Character_C::ClientLocationSRV(const struct FVector& Param_ClientRepLoc
 
 	Params::BP_Character_C_ClientLocationSRV Parms{};
 
-	Parms.Param_ClientRepLocation = std::move(Param_ClientRepLocation);
+	Parms.ClientRepLocation_0 = std::move(ClientRepLocation_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1956,9 +1956,9 @@ void ABP_Character_C::FixPlayerToGround(bool* Fixation)
 // Function BP_Character.BP_Character_C.Flotter
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Flotte                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Flotte_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::Flotter(bool Param_Flotte)
+void ABP_Character_C::Flotter(bool Flotte_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1967,7 +1967,7 @@ void ABP_Character_C::Flotter(bool Param_Flotte)
 
 	Params::BP_Character_C_Flotter Parms{};
 
-	Parms.Param_Flotte = Param_Flotte;
+	Parms.Flotte_0 = Flotte_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -2120,13 +2120,13 @@ double ABP_Character_C::GetAnimCurveValue(class FName CurveName)
 // struct FVector2D                        MoveInput                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Climb                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Pull                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Param_PulledCharacter                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           PulledCharacter_0                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsDriving                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          DriveLeftHand                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          DriveRightHand                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    LookAround                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::GetAnimVariables(bool* Jump, bool* Fall, struct FVector* RadialVelocity, struct FVector2D* MoveInput, bool* Climb, bool* Pull, class AActor** Param_PulledCharacter, bool* IsDriving, struct FVector* DriveLeftHand, struct FVector* DriveRightHand, bool* LookAround)
+void ABP_Character_C::GetAnimVariables(bool* Jump, bool* Fall, struct FVector* RadialVelocity, struct FVector2D* MoveInput, bool* Climb, bool* Pull, class AActor** PulledCharacter_0, bool* IsDriving, struct FVector* DriveLeftHand, struct FVector* DriveRightHand, bool* LookAround)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2155,8 +2155,8 @@ void ABP_Character_C::GetAnimVariables(bool* Jump, bool* Fall, struct FVector* R
 	if (Pull != nullptr)
 		*Pull = Parms.Pull;
 
-	if (Param_PulledCharacter != nullptr)
-		*Param_PulledCharacter = Parms.Param_PulledCharacter;
+	if (PulledCharacter_0 != nullptr)
+		*PulledCharacter_0 = Parms.PulledCharacter_0;
 
 	if (IsDriving != nullptr)
 		*IsDriving = Parms.IsDriving;
@@ -2323,9 +2323,9 @@ void ABP_Character_C::GetCapsuleBase(class USphereComponent** base)
 // Function BP_Character.BP_Character_C.GetCapsuleComponent
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UCapsuleComponent*                Param_Capsule                                          (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UCapsuleComponent*                Capsule_0                                              (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::GetCapsuleComponent(class UCapsuleComponent** Param_Capsule)
+void ABP_Character_C::GetCapsuleComponent(class UCapsuleComponent** Capsule_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2336,8 +2336,8 @@ void ABP_Character_C::GetCapsuleComponent(class UCapsuleComponent** Param_Capsul
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Capsule != nullptr)
-		*Param_Capsule = Parms.Param_Capsule;
+	if (Capsule_0 != nullptr)
+		*Capsule_0 = Parms.Capsule_0;
 }
 
 
@@ -2920,9 +2920,9 @@ bool ABP_Character_C::IsCloseToGround()
 // Function BP_Character.BP_Character_C.IsGrounded
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Grounded                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Grounded_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::IsGrounded(bool* Param_Grounded)
+void ABP_Character_C::IsGrounded(bool* Grounded_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2933,8 +2933,8 @@ void ABP_Character_C::IsGrounded(bool* Param_Grounded)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Grounded != nullptr)
-		*Param_Grounded = Parms.Param_Grounded;
+	if (Grounded_0 != nullptr)
+		*Grounded_0 = Parms.Grounded_0;
 }
 
 
@@ -3022,9 +3022,9 @@ bool ABP_Character_C::IsSomeoneStuckFalling()
 // Function BP_Character.BP_Character_C.IsSwimming
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Swim                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Swim_0                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::IsSwimming(bool* Param_Swim)
+void ABP_Character_C::IsSwimming(bool* Swim_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3035,8 +3035,8 @@ void ABP_Character_C::IsSwimming(bool* Param_Swim)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Swim != nullptr)
-		*Param_Swim = Parms.Param_Swim;
+	if (Swim_0 != nullptr)
+		*Swim_0 = Parms.Swim_0;
 }
 
 
@@ -3578,9 +3578,9 @@ void ABP_Character_C::MoveForwardSRV(double MoveForward)
 // Function BP_Character.BP_Character_C.MoveForwardVectorAll
 // (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_MoveForwardVector                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          MoveForwardVector_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::MoveForwardVectorAll(const struct FVector& Param_MoveForwardVector)
+void ABP_Character_C::MoveForwardVectorAll(const struct FVector& MoveForwardVector_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3589,7 +3589,7 @@ void ABP_Character_C::MoveForwardVectorAll(const struct FVector& Param_MoveForwa
 
 	Params::BP_Character_C_MoveForwardVectorAll Parms{};
 
-	Parms.Param_MoveForwardVector = std::move(Param_MoveForwardVector);
+	Parms.MoveForwardVector_0 = std::move(MoveForwardVector_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3598,9 +3598,9 @@ void ABP_Character_C::MoveForwardVectorAll(const struct FVector& Param_MoveForwa
 // Function BP_Character.BP_Character_C.MoveForwardVectorSRV
 // (Net, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_MoveForwardVector                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          MoveForwardVector_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::MoveForwardVectorSRV(const struct FVector& Param_MoveForwardVector)
+void ABP_Character_C::MoveForwardVectorSRV(const struct FVector& MoveForwardVector_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3609,7 +3609,7 @@ void ABP_Character_C::MoveForwardVectorSRV(const struct FVector& Param_MoveForwa
 
 	Params::BP_Character_C_MoveForwardVectorSRV Parms{};
 
-	Parms.Param_MoveForwardVector = std::move(Param_MoveForwardVector);
+	Parms.MoveForwardVector_0 = std::move(MoveForwardVector_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3658,9 +3658,9 @@ void ABP_Character_C::MoveRightSRV(double MoveRight)
 // Function BP_Character.BP_Character_C.MoveRightVectorAll
 // (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_MoveRightVector                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          MoveRightVector_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::MoveRightVectorAll(const struct FVector& Param_MoveRightVector)
+void ABP_Character_C::MoveRightVectorAll(const struct FVector& MoveRightVector_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3669,7 +3669,7 @@ void ABP_Character_C::MoveRightVectorAll(const struct FVector& Param_MoveRightVe
 
 	Params::BP_Character_C_MoveRightVectorAll Parms{};
 
-	Parms.Param_MoveRightVector = std::move(Param_MoveRightVector);
+	Parms.MoveRightVector_0 = std::move(MoveRightVector_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3678,9 +3678,9 @@ void ABP_Character_C::MoveRightVectorAll(const struct FVector& Param_MoveRightVe
 // Function BP_Character.BP_Character_C.MoveRightVectorSRV
 // (Net, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_MoveRightVector                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          MoveRightVector_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::MoveRightVectorSRV(const struct FVector& Param_MoveRightVector)
+void ABP_Character_C::MoveRightVectorSRV(const struct FVector& MoveRightVector_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3689,7 +3689,7 @@ void ABP_Character_C::MoveRightVectorSRV(const struct FVector& Param_MoveRightVe
 
 	Params::BP_Character_C_MoveRightVectorSRV Parms{};
 
-	Parms.Param_MoveRightVector = std::move(Param_MoveRightVector);
+	Parms.MoveRightVector_0 = std::move(MoveRightVector_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3698,9 +3698,9 @@ void ABP_Character_C::MoveRightVectorSRV(const struct FVector& Param_MoveRightVe
 // Function BP_Character.BP_Character_C.MoveToTyrolienne
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_Tyrolienne_C*                 Tyro                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Tyro                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::MoveToTyrolienne(class ABP_Tyrolienne_C* Tyro)
+void ABP_Character_C::MoveToTyrolienne(class AActor* Tyro)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4051,9 +4051,9 @@ void ABP_Character_C::PlayEffortSound(float Weight)
 // Function BP_Character.BP_Character_C.PlayMantleMontage
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMantle_Params                   Param_Mantle_Params                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// struct FMantle_Params                   Mantle_Params_0                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::PlayMantleMontage(const struct FMantle_Params& Param_Mantle_Params)
+void ABP_Character_C::PlayMantleMontage(const struct FMantle_Params& Mantle_Params_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4062,7 +4062,7 @@ void ABP_Character_C::PlayMantleMontage(const struct FMantle_Params& Param_Mantl
 
 	Params::BP_Character_C_PlayMantleMontage Parms{};
 
-	Parms.Param_Mantle_Params = std::move(Param_Mantle_Params);
+	Parms.Mantle_Params_0 = std::move(Mantle_Params_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4227,9 +4227,9 @@ void ABP_Character_C::ReplicateCameraSmoothing(bool Enable)
 // Function BP_Character.BP_Character_C.ReplicateCapsuleRotation
 // (Net, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  Param_RepCapsuleYaw                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  RepCapsuleYaw_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::ReplicateCapsuleRotation(double Param_RepCapsuleYaw)
+void ABP_Character_C::ReplicateCapsuleRotation(double RepCapsuleYaw_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4238,7 +4238,7 @@ void ABP_Character_C::ReplicateCapsuleRotation(double Param_RepCapsuleYaw)
 
 	Params::BP_Character_C_ReplicateCapsuleRotation Parms{};
 
-	Parms.Param_RepCapsuleYaw = Param_RepCapsuleYaw;
+	Parms.RepCapsuleYaw_0 = RepCapsuleYaw_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4261,9 +4261,9 @@ void ABP_Character_C::ReplicateControlRotation()
 // Function BP_Character.BP_Character_C.ReplicatePseudo
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Pseudo                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Pseudo_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void ABP_Character_C::ReplicatePseudo(const class FString& Param_Pseudo)
+void ABP_Character_C::ReplicatePseudo(const class FString& Pseudo_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4272,7 +4272,7 @@ void ABP_Character_C::ReplicatePseudo(const class FString& Param_Pseudo)
 
 	Params::BP_Character_C_ReplicatePseudo Parms{};
 
-	Parms.Param_Pseudo = std::move(Param_Pseudo);
+	Parms.Pseudo_0 = std::move(Pseudo_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4624,10 +4624,10 @@ void ABP_Character_C::SetCharacterRotation(const struct FRotator& Rotation)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FVector                          NewVel                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Capsule                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Sphere                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Capsule_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Sphere_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetCharacterVelocity(const struct FVector& NewVel, bool Param_Capsule, bool Param_Sphere)
+void ABP_Character_C::SetCharacterVelocity(const struct FVector& NewVel, bool Capsule_0, bool Sphere_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4637,8 +4637,8 @@ void ABP_Character_C::SetCharacterVelocity(const struct FVector& NewVel, bool Pa
 	Params::BP_Character_C_SetCharacterVelocity Parms{};
 
 	Parms.NewVel = std::move(NewVel);
-	Parms.Param_Capsule = Param_Capsule;
-	Parms.Param_Sphere = Param_Sphere;
+	Parms.Capsule_0 = Capsule_0;
+	Parms.Sphere_0 = Sphere_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4690,9 +4690,9 @@ void ABP_Character_C::SetController(const struct FVector& Location)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UPrimitiveComponent*              Socket                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class FName                             Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Param_Name)
+void ABP_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4702,7 +4702,7 @@ void ABP_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Socke
 	Params::BP_Character_C_SetCosmeticChainFixSocket Parms{};
 
 	Parms.Socket = Socket;
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4725,9 +4725,9 @@ void ABP_Character_C::SetEssentialValues()
 // Function BP_Character.BP_Character_C.SetFlyMode
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_FlyMode                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    FlyMode_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetFlyMode(bool Param_FlyMode)
+void ABP_Character_C::SetFlyMode(bool FlyMode_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4736,7 +4736,7 @@ void ABP_Character_C::SetFlyMode(bool Param_FlyMode)
 
 	Params::BP_Character_C_SetFlyMode Parms{};
 
-	Parms.Param_FlyMode = Param_FlyMode;
+	Parms.FlyMode_0 = FlyMode_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4805,9 +4805,9 @@ void ABP_Character_C::SetIsDriving(bool Driving)
 // Function BP_Character.BP_Character_C.SetIsInMovingObject
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_InMovingObject                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InMovingObject_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetIsInMovingObject(bool Param_InMovingObject)
+void ABP_Character_C::SetIsInMovingObject(bool InMovingObject_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4816,7 +4816,7 @@ void ABP_Character_C::SetIsInMovingObject(bool Param_InMovingObject)
 
 	Params::BP_Character_C_SetIsInMovingObject Parms{};
 
-	Parms.Param_InMovingObject = Param_InMovingObject;
+	Parms.InMovingObject_0 = InMovingObject_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4825,9 +4825,9 @@ void ABP_Character_C::SetIsInMovingObject(bool Param_InMovingObject)
 // Function BP_Character.BP_Character_C.SetIsSwimming
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Swim                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Swim_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetIsSwimming(bool Param_Swim)
+void ABP_Character_C::SetIsSwimming(bool Swim_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4836,7 +4836,7 @@ void ABP_Character_C::SetIsSwimming(bool Param_Swim)
 
 	Params::BP_Character_C_SetIsSwimming Parms{};
 
-	Parms.Param_Swim = Param_Swim;
+	Parms.Swim_0 = Swim_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4865,9 +4865,9 @@ void ABP_Character_C::SetLookAround(bool LookAround)
 // Function BP_Character.BP_Character_C.SetPawnMovementMode
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EMovementMode                           Param_Pawn_Movement_Mode                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EMovementMode                           Pawn_Movement_Mode_0                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SetPawnMovementMode(EMovementMode Param_Pawn_Movement_Mode)
+void ABP_Character_C::SetPawnMovementMode(EMovementMode Pawn_Movement_Mode_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4876,7 +4876,7 @@ void ABP_Character_C::SetPawnMovementMode(EMovementMode Param_Pawn_Movement_Mode
 
 	Params::BP_Character_C_SetPawnMovementMode Parms{};
 
-	Parms.Param_Pawn_Movement_Mode = Param_Pawn_Movement_Mode;
+	Parms.Pawn_Movement_Mode_0 = Pawn_Movement_Mode_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -5265,9 +5265,9 @@ void ABP_Character_C::SpawnStabilisationSocket()
 // Function BP_Character.BP_Character_C.Sprint
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Sprint                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Sprint_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::Sprint(bool Param_Sprint)
+void ABP_Character_C::Sprint(bool Sprint_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5276,7 +5276,7 @@ void ABP_Character_C::Sprint(bool Param_Sprint)
 
 	Params::BP_Character_C_Sprint Parms{};
 
-	Parms.Param_Sprint = Param_Sprint;
+	Parms.Sprint_0 = Sprint_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -5285,9 +5285,9 @@ void ABP_Character_C::Sprint(bool Param_Sprint)
 // Function BP_Character.BP_Character_C.SprintAll
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Sprint                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Sprint_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SprintAll(bool Param_Sprint)
+void ABP_Character_C::SprintAll(bool Sprint_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5296,7 +5296,7 @@ void ABP_Character_C::SprintAll(bool Param_Sprint)
 
 	Params::BP_Character_C_SprintAll Parms{};
 
-	Parms.Param_Sprint = Param_Sprint;
+	Parms.Sprint_0 = Sprint_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -5305,9 +5305,9 @@ void ABP_Character_C::SprintAll(bool Param_Sprint)
 // Function BP_Character.BP_Character_C.SprintSRV
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Sprint                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Sprint_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SprintSRV(bool Param_Sprint)
+void ABP_Character_C::SprintSRV(bool Sprint_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5316,7 +5316,7 @@ void ABP_Character_C::SprintSRV(bool Param_Sprint)
 
 	Params::BP_Character_C_SprintSRV Parms{};
 
-	Parms.Param_Sprint = Param_Sprint;
+	Parms.Sprint_0 = Sprint_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -5613,9 +5613,9 @@ void ABP_Character_C::SwitchClimbMode(const struct FRotator& Rot, class USceneCo
 // Function BP_Character.BP_Character_C.SwitchToTyroAll
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_Tyrolienne_C*                 Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SwitchToTyroAll(class ABP_Tyrolienne_C* Tyrolienne)
+void ABP_Character_C::SwitchToTyroAll(class AActor* Tyrolienne)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5633,9 +5633,9 @@ void ABP_Character_C::SwitchToTyroAll(class ABP_Tyrolienne_C* Tyrolienne)
 // Function BP_Character.BP_Character_C.SwitchToTyrolienne
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_Tyrolienne_C*                 Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SwitchToTyrolienne(class ABP_Tyrolienne_C* Tyrolienne)
+void ABP_Character_C::SwitchToTyrolienne(class AActor* Tyrolienne)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5653,9 +5653,9 @@ void ABP_Character_C::SwitchToTyrolienne(class ABP_Tyrolienne_C* Tyrolienne)
 // Function BP_Character.BP_Character_C.SwitchToTyroSRV
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_Tyrolienne_C*                 Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::SwitchToTyroSRV(class ABP_Tyrolienne_C* Tyrolienne)
+void ABP_Character_C::SwitchToTyroSRV(class AActor* Tyrolienne)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6080,10 +6080,10 @@ void ABP_Character_C::Timeline__UpdateFunc()
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Force                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Instigator_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UseControlRot                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Character_C::TrampolineBounce(double Force, bool Param_Instigator, bool UseControlRot)
+void ABP_Character_C::TrampolineBounce(double Force, bool Instigator_0, bool UseControlRot)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6093,7 +6093,7 @@ void ABP_Character_C::TrampolineBounce(double Force, bool Param_Instigator, bool
 	Params::BP_Character_C_TrampolineBounce Parms{};
 
 	Parms.Force = Force;
-	Parms.Param_Instigator = Param_Instigator;
+	Parms.Instigator_0 = Instigator_0;
 	Parms.UseControlRot = UseControlRot;
 
 	UObject::ProcessEvent(Func, &Parms);

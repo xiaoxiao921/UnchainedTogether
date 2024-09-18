@@ -20,9 +20,9 @@ namespace SDK
 // Function W_NewBind.W_NewBind_C.BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// struct FInputChord                      Param_SelectedKey                                      (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// struct FInputChord                      SelectedKey_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void UW_NewBind_C::BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature(const struct FInputChord& Param_SelectedKey)
+void UW_NewBind_C::BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature(const struct FInputChord& SelectedKey_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ void UW_NewBind_C::BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent
 
 	Params::W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature Parms{};
 
-	Parms.Param_SelectedKey = std::move(Param_SelectedKey);
+	Parms.SelectedKey_0 = std::move(SelectedKey_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

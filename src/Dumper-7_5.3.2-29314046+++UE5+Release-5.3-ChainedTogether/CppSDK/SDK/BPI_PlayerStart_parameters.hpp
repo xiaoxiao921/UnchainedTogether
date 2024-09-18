@@ -21,14 +21,14 @@ namespace SDK::Params
 struct BPI_PlayerStart_C_GetPlayerStartFromIndex final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB6[0xC];                                     // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_PlayerStart_C_GetPlayerStartFromIndex) == 0x000010, "Wrong alignment on BPI_PlayerStart_C_GetPlayerStartFromIndex");
 static_assert(sizeof(BPI_PlayerStart_C_GetPlayerStartFromIndex) == 0x000080, "Wrong size on BPI_PlayerStart_C_GetPlayerStartFromIndex");
-static_assert(offsetof(BPI_PlayerStart_C_GetPlayerStartFromIndex, Param_Index) == 0x000000, "Member 'BPI_PlayerStart_C_GetPlayerStartFromIndex::Param_Index' has a wrong offset!");
+static_assert(offsetof(BPI_PlayerStart_C_GetPlayerStartFromIndex, Index_0) == 0x000000, "Member 'BPI_PlayerStart_C_GetPlayerStartFromIndex::Index_0' has a wrong offset!");
 static_assert(offsetof(BPI_PlayerStart_C_GetPlayerStartFromIndex, Transform) == 0x000010, "Member 'BPI_PlayerStart_C_GetPlayerStartFromIndex::Transform' has a wrong offset!");
 static_assert(offsetof(BPI_PlayerStart_C_GetPlayerStartFromIndex, ReturnValue) == 0x000070, "Member 'BPI_PlayerStart_C_GetPlayerStartFromIndex::ReturnValue' has a wrong offset!");
 

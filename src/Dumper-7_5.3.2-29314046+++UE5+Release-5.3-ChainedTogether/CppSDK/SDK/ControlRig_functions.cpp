@@ -4848,11 +4848,11 @@ TArray<struct FRigElementKey> URigHierarchy::SortKeys(const TArray<struct FRigEl
 // Function ControlRig.ControlRig.FindControlRigs
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class UControlRig>          OptionalClass                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UControlRig*>              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* Param_Outer, TSubclassOf<class UControlRig> OptionalClass)
+TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* Outer_0, TSubclassOf<class UControlRig> OptionalClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4861,7 +4861,7 @@ TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* Param_Out
 
 	Params::ControlRig_FindControlRigs Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.OptionalClass = OptionalClass;
 
 	auto Flgs = Func->FunctionFlags;
@@ -5048,11 +5048,11 @@ void UControlRig::SetInteractionRigClass(TSubclassOf<class UControlRig> InIntera
 // Function ControlRig.ControlRig.CreateTransformableControlHandle
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ControlName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTransformableControlHandle*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle(class UObject* Param_Outer, const class FName& ControlName) const
+class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle(class UObject* Outer_0, const class FName& ControlName) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -5061,7 +5061,7 @@ class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle
 
 	Params::ControlRig_CreateTransformableControlHandle Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.ControlName = ControlName;
 
 	auto Flgs = Func->FunctionFlags;
@@ -5354,11 +5354,11 @@ void UControlRigComponent::ClearMappedElements()
 // Function ControlRig.ControlRigComponent.DoesElementExist
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERigElementType                         ElementType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRigComponent::DoesElementExist(class FName Param_Name, ERigElementType ElementType)
+bool UControlRigComponent::DoesElementExist(class FName Name_0, ERigElementType ElementType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5367,7 +5367,7 @@ bool UControlRigComponent::DoesElementExist(class FName Param_Name, ERigElementT
 
 	Params::ControlRigComponent_DoesElementExist Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.ElementType = ElementType;
 
 	auto Flgs = Func->FunctionFlags;

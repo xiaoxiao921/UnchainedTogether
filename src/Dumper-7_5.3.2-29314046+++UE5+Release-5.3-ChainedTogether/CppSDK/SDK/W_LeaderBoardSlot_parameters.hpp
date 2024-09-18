@@ -22,7 +22,7 @@ struct W_LeaderBoardSlot_C_ExecuteUbergraph_W_LeaderBoardSlot final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3066[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSteamID                               K2Node_CustomEvent_SteamID;                        // 0x0008(0x0008)(NoDestructor)
 	int32                                         K2Node_CustomEvent_Time;                           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         K2Node_CustomEvent_Rank;                           // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -53,15 +53,15 @@ static_assert(offsetof(W_LeaderBoardSlot_C_ExecuteUbergraph_W_LeaderBoardSlot, C
 struct W_LeaderBoardSlot_C_RefreshSlot final
 {
 public:
-	struct FSteamID                               Param_SteamID;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	int32                                         Param_Time;                                        // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Param_Rank;                                        // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               SteamID_0;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	int32                                         Time_0;                                            // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Rank_0;                                            // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_LeaderBoardSlot_C_RefreshSlot) == 0x000008, "Wrong alignment on W_LeaderBoardSlot_C_RefreshSlot");
 static_assert(sizeof(W_LeaderBoardSlot_C_RefreshSlot) == 0x000010, "Wrong size on W_LeaderBoardSlot_C_RefreshSlot");
-static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, Param_SteamID) == 0x000000, "Member 'W_LeaderBoardSlot_C_RefreshSlot::Param_SteamID' has a wrong offset!");
-static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, Param_Time) == 0x000008, "Member 'W_LeaderBoardSlot_C_RefreshSlot::Param_Time' has a wrong offset!");
-static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, Param_Rank) == 0x00000C, "Member 'W_LeaderBoardSlot_C_RefreshSlot::Param_Rank' has a wrong offset!");
+static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, SteamID_0) == 0x000000, "Member 'W_LeaderBoardSlot_C_RefreshSlot::SteamID_0' has a wrong offset!");
+static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, Time_0) == 0x000008, "Member 'W_LeaderBoardSlot_C_RefreshSlot::Time_0' has a wrong offset!");
+static_assert(offsetof(W_LeaderBoardSlot_C_RefreshSlot, Rank_0) == 0x00000C, "Member 'W_LeaderBoardSlot_C_RefreshSlot::Rank_0' has a wrong offset!");
 
 // Function W_LeaderBoardSlot.W_LeaderBoardSlot_C.UpdateTime
 // 0x0018 (0x0018 - 0x0000)

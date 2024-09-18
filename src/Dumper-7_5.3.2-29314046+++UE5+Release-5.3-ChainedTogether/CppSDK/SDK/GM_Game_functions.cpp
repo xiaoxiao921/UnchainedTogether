@@ -96,5 +96,19 @@ void AGM_Game_C::K2_PostLogin(class APlayerController* NewPlayer)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function GM_Game.GM_Game_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AGM_Game_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GM_Game_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

@@ -54,13 +54,13 @@ static_assert(offsetof(MediaPlateComponent_GetMediaPlayer, ReturnValue) == 0x000
 struct MediaPlateComponent_GetMediaTexture final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ADD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMediaTexture*                          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MediaPlateComponent_GetMediaTexture) == 0x000008, "Wrong alignment on MediaPlateComponent_GetMediaTexture");
 static_assert(sizeof(MediaPlateComponent_GetMediaTexture) == 0x000010, "Wrong size on MediaPlateComponent_GetMediaTexture");
-static_assert(offsetof(MediaPlateComponent_GetMediaTexture, Param_Index) == 0x000000, "Member 'MediaPlateComponent_GetMediaTexture::Param_Index' has a wrong offset!");
+static_assert(offsetof(MediaPlateComponent_GetMediaTexture, Index_0) == 0x000000, "Member 'MediaPlateComponent_GetMediaTexture::Index_0' has a wrong offset!");
 static_assert(offsetof(MediaPlateComponent_GetMediaTexture, ReturnValue) == 0x000008, "Member 'MediaPlateComponent_GetMediaTexture::ReturnValue' has a wrong offset!");
 
 // Function MediaPlate.MediaPlateComponent.OnMediaOpened
@@ -92,7 +92,7 @@ struct MediaPlateComponent_Seek final
 public:
 	struct FTimespan                              Time;                                              // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ADE[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MediaPlateComponent_Seek) == 0x000008, "Wrong alignment on MediaPlateComponent_Seek");
 static_assert(sizeof(MediaPlateComponent_Seek) == 0x000010, "Wrong size on MediaPlateComponent_Seek");

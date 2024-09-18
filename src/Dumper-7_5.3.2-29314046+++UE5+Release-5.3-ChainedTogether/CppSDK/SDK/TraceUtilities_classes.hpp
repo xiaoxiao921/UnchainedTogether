@@ -31,9 +31,9 @@ public:
 	static bool StartTraceToFile(const class FString& Filename, const TArray<class FString>& Channels);
 	static bool StopTracing();
 	static bool ToggleChannel(const class FString& ChannelName, bool Enabled);
-	static void TraceBookmark(const class FString& Param_Name);
-	static void TraceMarkRegionEnd(const class FString& Param_Name);
-	static void TraceMarkRegionStart(const class FString& Param_Name);
+	static void TraceBookmark(const class FString& Name_0);
+	static void TraceMarkRegionEnd(const class FString& Name_0);
+	static void TraceMarkRegionStart(const class FString& Name_0);
 
 public:
 	static class UClass* StaticClass()

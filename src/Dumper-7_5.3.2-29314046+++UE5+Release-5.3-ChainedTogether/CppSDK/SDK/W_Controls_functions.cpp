@@ -55,10 +55,10 @@ void UW_Controls_C::ExecuteUbergraph_W_Controls(int32 EntryPoint)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             Key                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EPlayerMappableKeySlot                  Param_Slot                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EPlayerMappableKeySlot                  Slot_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FText                             DisplayName                                            (Parm, OutParm)
 
-void UW_Controls_C::GetKeyName(const class FName Key, EPlayerMappableKeySlot Param_Slot, class FText* DisplayName)
+void UW_Controls_C::GetKeyName(const class FName Key, EPlayerMappableKeySlot Slot_0, class FText* DisplayName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,7 +68,7 @@ void UW_Controls_C::GetKeyName(const class FName Key, EPlayerMappableKeySlot Par
 	Params::W_Controls_C_GetKeyName Parms{};
 
 	Parms.Key = Key;
-	Parms.Param_Slot = Param_Slot;
+	Parms.Slot_0 = Slot_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -120,10 +120,10 @@ void UW_Controls_C::RefreshContent()
 // Parameters:
 // class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     Action                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FText                             KeyName                                                (Parm, OutParm)
 
-void UW_Controls_C::ReturnKeyName(class APlayerController* PlayerController, const class UInputAction* Action, int32 Param_Index, class FText* KeyName)
+void UW_Controls_C::ReturnKeyName(class APlayerController* PlayerController, const class UInputAction* Action, int32 Index_0, class FText* KeyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -134,7 +134,7 @@ void UW_Controls_C::ReturnKeyName(class APlayerController* PlayerController, con
 
 	Parms.PlayerController = PlayerController;
 	Parms.Action = Action;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 

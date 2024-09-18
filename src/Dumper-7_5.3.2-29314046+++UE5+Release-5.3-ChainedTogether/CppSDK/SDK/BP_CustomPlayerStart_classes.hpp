@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_CustomPlayerStart.BP_CustomPlayerStart_C
 // 0x0038 (0x02D0 - 0x0298)
-class ABP_CustomPlayerStart_C final : public AActor
+class ABP_CustomPlayerStart_C : public AActor
 {
 public:
 	class UCapsuleComponent*                      Capsule4;                                          // 0x0298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -30,7 +30,7 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool GetPlayerStartFromIndex(int32 Param_Index, struct FTransform* Transform);
+	bool GetPlayerStartFromIndex(int32 Index_0, struct FTransform* Transform);
 
 public:
 	static class UClass* StaticClass()

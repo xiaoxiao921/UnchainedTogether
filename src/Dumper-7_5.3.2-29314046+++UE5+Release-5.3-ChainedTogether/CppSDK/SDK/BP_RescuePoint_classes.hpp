@@ -20,7 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_RescuePoint.BP_RescuePoint_C
 // 0x0078 (0x0310 - 0x0298)
-class ABP_RescuePoint_C final : public AActor
+class ABP_RescuePoint_C : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -40,10 +40,11 @@ public:
 public:
 	void BndEvt__BP_RescuePoint_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void ExecuteUbergraph_BP_RescuePoint(int32 EntryPoint);
-	void GetStartComponentByIndex(int32 Param_Index, class USphereComponent** Output);
+	void GetStartComponentByIndex(int32 Index_0, class USphereComponent** Output);
+	void PlaceSpheres();
 	void ReceiveBeginPlay();
 	void TeleportAll(TArray<class AActor*>& Array);
-	void TeleportServer(TArray<class AActor*>& Param_ActorsToTeleport);
+	void TeleportServer(TArray<class AActor*>& ActorsToTeleport_0);
 	void UserConstructionScript();
 
 public:

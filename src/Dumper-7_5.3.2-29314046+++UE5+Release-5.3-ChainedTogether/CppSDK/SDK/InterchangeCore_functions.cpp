@@ -2019,10 +2019,10 @@ int32 UInterchangeFactoryBaseNode::GetFactoryDependenciesCount() const
 // Function InterchangeCore.InterchangeFactoryBaseNode.GetFactoryDependency
 // (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           OutDependency                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UInterchangeFactoryBaseNode::GetFactoryDependency(const int32 Param_Index, class FString* OutDependency) const
+void UInterchangeFactoryBaseNode::GetFactoryDependency(const int32 Index_0, class FString* OutDependency) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -2031,7 +2031,7 @@ void UInterchangeFactoryBaseNode::GetFactoryDependency(const int32 Param_Index, 
 
 	Params::InterchangeFactoryBaseNode_GetFactoryDependency Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

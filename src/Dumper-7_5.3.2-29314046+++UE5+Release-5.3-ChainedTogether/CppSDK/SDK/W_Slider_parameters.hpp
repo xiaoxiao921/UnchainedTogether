@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "S_SliderParams_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -28,38 +29,62 @@ static_assert(sizeof(W_Slider_C_BndEvt__W_Slider_Slider_119_K2Node_ComponentBoun
 static_assert(offsetof(W_Slider_C_BndEvt__W_Slider_Slider_119_K2Node_ComponentBoundEvent_0_OnFloatValueChangedEvent__DelegateSignature, Value) == 0x000000, "Member 'W_Slider_C_BndEvt__W_Slider_Slider_119_K2Node_ComponentBoundEvent_0_OnFloatValueChangedEvent__DelegateSignature::Value' has a wrong offset!");
 
 // Function W_Slider.W_Slider_C.ExecuteUbergraph_W_Slider
-// 0x0068 (0x0068 - 0x0000)
+// 0x0680 (0x0680 - 0x0000)
 struct W_Slider_C_ExecuteUbergraph_W_Slider final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_352F[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_ComponentBoundEvent_Value;                  // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3530[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_GridSnap_Float_ReturnValue;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_Conv_DoubleToText_ReturnValue;            // 0x0018(0x0018)()
 	class FText                                   CallFunc_Conv_DoubleToText_ReturnValue_1;          // 0x0030(0x0018)()
-	float                                         CallFunc_SetStepSize_InValue_ImplicitCast;         // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetMinValue_InValue_ImplicitCast;         // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetMaxValue_InValue_ImplicitCast;         // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3531[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GridSnap_Float_Location_ImplicitCast;     // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SetValue_InValue_ImplicitCast;            // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0050(0x00D0)()
+	float                                         CallFunc_GetValue_ReturnValue;                     // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0xC];                                      // 0x0124(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSliderStyle                           K2Node_MakeStruct_SliderStyle;                     // 0x0130(0x0500)()
+	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0630(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetValue_ReturnValue_1;                   // 0x0638(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_63C[0x4];                                      // 0x063C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_MapRangeClamped_ReturnValue_1;            // 0x0640(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetStepSize_InValue_ImplicitCast;         // 0x0648(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetMinValue_InValue_ImplicitCast;         // 0x064C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetMaxValue_InValue_ImplicitCast;         // 0x0650(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_654[0x4];                                      // 0x0654(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GridSnap_Float_Location_ImplicitCast;     // 0x0658(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_Value_ImplicitCast;       // 0x0660(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetValue_InValue_ImplicitCast;            // 0x0668(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetScalarParameterValue_Value_ImplicitCast; // 0x066C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_Value_ImplicitCast_1;     // 0x0670(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetScalarParameterValue_Value_ImplicitCast_1; // 0x0678(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(W_Slider_C_ExecuteUbergraph_W_Slider) == 0x000008, "Wrong alignment on W_Slider_C_ExecuteUbergraph_W_Slider");
-static_assert(sizeof(W_Slider_C_ExecuteUbergraph_W_Slider) == 0x000068, "Wrong size on W_Slider_C_ExecuteUbergraph_W_Slider");
+static_assert(alignof(W_Slider_C_ExecuteUbergraph_W_Slider) == 0x000010, "Wrong alignment on W_Slider_C_ExecuteUbergraph_W_Slider");
+static_assert(sizeof(W_Slider_C_ExecuteUbergraph_W_Slider) == 0x000680, "Wrong size on W_Slider_C_ExecuteUbergraph_W_Slider");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, EntryPoint) == 0x000000, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::EntryPoint' has a wrong offset!");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, K2Node_Event_IsDesignTime) == 0x000004, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::K2Node_Event_IsDesignTime' has a wrong offset!");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, K2Node_ComponentBoundEvent_Value) == 0x000008, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::K2Node_ComponentBoundEvent_Value' has a wrong offset!");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_GridSnap_Float_ReturnValue) == 0x000010, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_GridSnap_Float_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_Conv_DoubleToText_ReturnValue) == 0x000018, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_Conv_DoubleToText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_Conv_DoubleToText_ReturnValue_1) == 0x000030, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_Conv_DoubleToText_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetStepSize_InValue_ImplicitCast) == 0x000048, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetStepSize_InValue_ImplicitCast' has a wrong offset!");
-static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetMinValue_InValue_ImplicitCast) == 0x00004C, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetMinValue_InValue_ImplicitCast' has a wrong offset!");
-static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetMaxValue_InValue_ImplicitCast) == 0x000050, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetMaxValue_InValue_ImplicitCast' has a wrong offset!");
-static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_GridSnap_Float_Location_ImplicitCast) == 0x000058, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_GridSnap_Float_Location_ImplicitCast' has a wrong offset!");
-static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetValue_InValue_ImplicitCast) == 0x000060, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetValue_InValue_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000048, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, K2Node_MakeStruct_SlateBrush) == 0x000050, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::K2Node_MakeStruct_SlateBrush' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_GetValue_ReturnValue) == 0x000120, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_GetValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, K2Node_MakeStruct_SliderStyle) == 0x000130, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::K2Node_MakeStruct_SliderStyle' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_MapRangeClamped_ReturnValue) == 0x000630, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_GetValue_ReturnValue_1) == 0x000638, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_GetValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_MapRangeClamped_ReturnValue_1) == 0x000640, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_MapRangeClamped_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetStepSize_InValue_ImplicitCast) == 0x000648, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetStepSize_InValue_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetMinValue_InValue_ImplicitCast) == 0x00064C, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetMinValue_InValue_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetMaxValue_InValue_ImplicitCast) == 0x000650, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetMaxValue_InValue_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_GridSnap_Float_Location_ImplicitCast) == 0x000658, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_GridSnap_Float_Location_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_MapRangeClamped_Value_ImplicitCast) == 0x000660, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_MapRangeClamped_Value_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetValue_InValue_ImplicitCast) == 0x000668, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetValue_InValue_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetScalarParameterValue_Value_ImplicitCast) == 0x00066C, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetScalarParameterValue_Value_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_MapRangeClamped_Value_ImplicitCast_1) == 0x000670, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_MapRangeClamped_Value_ImplicitCast_1' has a wrong offset!");
+static_assert(offsetof(W_Slider_C_ExecuteUbergraph_W_Slider, CallFunc_SetScalarParameterValue_Value_ImplicitCast_1) == 0x000678, "Member 'W_Slider_C_ExecuteUbergraph_W_Slider::CallFunc_SetScalarParameterValue_Value_ImplicitCast_1' has a wrong offset!");
 
 // Function W_Slider.W_Slider_C.OnValueChanged__DelegateSignature
 // 0x0018 (0x0018 - 0x0000)
@@ -96,11 +121,11 @@ public:
 	TScriptInterface<class IBPI_GameSave_C>       K2Node_DynamicCast_AsBPI_Game_Save;                // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3532[0x6];                                     // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	double                                        CallFunc_Conv_StringToDouble_ReturnValue;          // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_SetMaxValue_InValue_ImplicitCast;         // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3533[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        K2Node_VariableSet_MinValue_ImplicitCast;          // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        K2Node_VariableSet_MaxValue_ImplicitCast;          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        K2Node_VariableSet_StepSize_ImplicitCast;          // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

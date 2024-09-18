@@ -20,9 +20,9 @@ namespace SDK
 // Function BPI_Interaction.BPI_Interaction_C.CanBeUsed
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_CanBeUsed                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    CanBeUsed_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Interaction_C::CanBeUsed(bool* Param_CanBeUsed)
+void IBPI_Interaction_C::CanBeUsed(bool* CanBeUsed_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,18 +33,18 @@ void IBPI_Interaction_C::CanBeUsed(bool* Param_CanBeUsed)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_CanBeUsed != nullptr)
-		*Param_CanBeUsed = Parms.Param_CanBeUsed;
+	if (CanBeUsed_0 != nullptr)
+		*CanBeUsed_0 = Parms.CanBeUsed_0;
 }
 
 
 // Function BPI_Interaction.BPI_Interaction_C.Detected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Detected                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Detected_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class APlayerController*                PC                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Interaction_C::Detected(bool Param_Detected, class APlayerController* PC)
+void IBPI_Interaction_C::Detected(bool Detected_0, class APlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
@@ -53,7 +53,7 @@ void IBPI_Interaction_C::Detected(bool Param_Detected, class APlayerController* 
 
 	Params::BPI_Interaction_C_Detected Parms{};
 
-	Parms.Param_Detected = Param_Detected;
+	Parms.Detected_0 = Detected_0;
 	Parms.PC = PC;
 
 	UObject::ProcessEvent(Func, &Parms);

@@ -10,13 +10,24 @@
 
 #include "Basic.hpp"
 
+#include "S_ComboBoxContent_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "S_ComboBoxContent_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function W_ComboBox.W_ComboBox_C.AddOneOption
+// 0x0010 (0x0010 - 0x0000)
+struct W_ComboBox_C_AddOneOption final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_ComboBox_C_AddOneOption) == 0x000008, "Wrong alignment on W_ComboBox_C_AddOneOption");
+static_assert(sizeof(W_ComboBox_C_AddOneOption) == 0x000010, "Wrong size on W_ComboBox_C_AddOneOption");
+static_assert(offsetof(W_ComboBox_C_AddOneOption, Option) == 0x000000, "Member 'W_ComboBox_C_AddOneOption::Option' has a wrong offset!");
 
 // Function W_ComboBox.W_ComboBox_C.AddOptionsOnce
 // 0x0010 (0x0010 - 0x0000)
@@ -40,6 +51,19 @@ static_assert(alignof(W_ComboBox_C_AssignPressEvent) == 0x000008, "Wrong alignme
 static_assert(sizeof(W_ComboBox_C_AssignPressEvent) == 0x000008, "Wrong size on W_ComboBox_C_AssignPressEvent");
 static_assert(offsetof(W_ComboBox_C_AssignPressEvent, ComboChoice) == 0x000000, "Member 'W_ComboBox_C_AssignPressEvent::ComboChoice' has a wrong offset!");
 
+// Function W_ComboBox.W_ComboBox_C.BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature
+// 0x0018 (0x0018 - 0x0000)
+struct W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature final
+{
+public:
+	class FString                                 SelectedItem;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   SelectionType;                                     // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature) == 0x000008, "Wrong alignment on W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature");
+static_assert(sizeof(W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature) == 0x000018, "Wrong size on W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature");
+static_assert(offsetof(W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature, SelectedItem) == 0x000000, "Member 'W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature::SelectedItem' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature, SelectionType) == 0x000010, "Member 'W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature::SelectionType' has a wrong offset!");
+
 // Function W_ComboBox.W_ComboBox_C.CropMicrophoneName
 // 0x0020 (0x0020 - 0x0000)
 struct W_ComboBox_C_CropMicrophoneName final
@@ -54,63 +78,108 @@ static_assert(offsetof(W_ComboBox_C_CropMicrophoneName, SourceString) == 0x00000
 static_assert(offsetof(W_ComboBox_C_CropMicrophoneName, ReturnValue) == 0x000010, "Member 'W_ComboBox_C_CropMicrophoneName::ReturnValue' has a wrong offset!");
 
 // Function W_ComboBox.W_ComboBox_C.ExecuteUbergraph_W_ComboBox
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct W_ComboBox_C_ExecuteUbergraph_W_ComboBox final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A6[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A7[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const class FString& Item)>    K2Node_CreateDelegate_OutputDelegate;              // 0x0024(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A8[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_ComboChoice_C*                       K2Node_CustomEvent_ComboChoice;                    // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FString                                 K2Node_CustomEvent_Item;                           // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30A9[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         K2Node_CustomEvent_Array;                          // 0x0058(0x0010)(ReferenceParm)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Array_Get_Item;                           // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const class FString& Item)>    K2Node_CreateDelegate_OutputDelegate;              // 0x0018(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UW_ComboChoice_C*                       K2Node_CustomEvent_ComboChoice;                    // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_Item;                           // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         K2Node_CustomEvent_Array;                          // 0x0048(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Array_Get_Item_1;                         // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0084(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30AA[0x3];                                     // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Array_Get_Item_1;                         // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_SelectedOption;                 // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x009C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30AB[0x3];                                     // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_SelectedOption;                 // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_ComponentBoundEvent_SelectedItem;           // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	ESelectInfo                                   K2Node_ComponentBoundEvent_SelectionType;          // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x00B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_Option_1;                       // 0x00C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_Option;                         // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_RemoveOption_ReturnValue;                 // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x00E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox) == 0x000008, "Wrong alignment on W_ComboBox_C_ExecuteUbergraph_W_ComboBox");
-static_assert(sizeof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox) == 0x0000B0, "Wrong size on W_ComboBox_C_ExecuteUbergraph_W_ComboBox");
+static_assert(sizeof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox) == 0x0000E8, "Wrong size on W_ComboBox_C_ExecuteUbergraph_W_ComboBox");
 static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, EntryPoint) == 0x000000, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::EntryPoint' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Loop_Counter_Variable) == 0x000004, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_bool_IsClosed_Variable) == 0x000008, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_bool_Has_Been_Initd_Variable) == 0x000010, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Array_Index_Variable) == 0x000014, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Loop_Counter_Variable_1) == 0x000018, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Add_IntInt_ReturnValue_1) == 0x00001C, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Array_Index_Variable_1) == 0x000020, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CreateDelegate_OutputDelegate) == 0x000024, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_ComboChoice) == 0x000038, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_ComboChoice' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Item) == 0x000040, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Item' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_Event_IsDesignTime) == 0x000050, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_Event_IsDesignTime' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Array) == 0x000058, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Array' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_PlayAnimation_ReturnValue) == 0x000068, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Get_Item) == 0x000070, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Length_ReturnValue) == 0x000080, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_bool_IsClosed_Variable) == 0x000004, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_bool_Has_Been_Initd_Variable) == 0x000005, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Array_Index_Variable) == 0x000008, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Loop_Counter_Variable) == 0x00000C, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Add_IntInt_ReturnValue) == 0x000010, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Array_Index_Variable_1) == 0x000014, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CreateDelegate_OutputDelegate) == 0x000018, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_ComboChoice) == 0x000028, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_ComboChoice' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Item) == 0x000030, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Item' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_Event_IsDesignTime) == 0x000040, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_Event_IsDesignTime' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Array) == 0x000048, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Array' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Get_Item) == 0x000058, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Length_ReturnValue) == 0x000068, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Get_Item_1) == 0x000070, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Length_ReturnValue_1) == 0x000080, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Less_IntInt_ReturnValue) == 0x000084, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Get_Item_1) == 0x000088, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Length_ReturnValue_1) == 0x000098, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_SelectedOption) == 0x000088, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_SelectedOption' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, Temp_int_Loop_Counter_Variable_1) == 0x000098, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Less_IntInt_ReturnValue_1) == 0x00009C, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_SelectedOption) == 0x0000A0, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_SelectedOption' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Add_IntInt_ReturnValue_1) == 0x0000A0, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_ComponentBoundEvent_SelectedItem) == 0x0000A8, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_ComponentBoundEvent_SelectedItem' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_ComponentBoundEvent_SelectionType) == 0x0000B8, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_ComponentBoundEvent_SelectionType' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_SwitchEnum_CmpSuccess) == 0x0000B9, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Option_1) == 0x0000C0, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Option_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, K2Node_CustomEvent_Option) == 0x0000D0, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::K2Node_CustomEvent_Option' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_RemoveOption_ReturnValue) == 0x0000E0, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_RemoveOption_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_ExecuteUbergraph_W_ComboBox, CallFunc_Array_Add_ReturnValue) == 0x0000E4, "Member 'W_ComboBox_C_ExecuteUbergraph_W_ComboBox::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+
+// Function W_ComboBox.W_ComboBox_C.GetSelectedOption
+// 0x0020 (0x0020 - 0x0000)
+struct W_ComboBox_C_GetSelectedOption final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetSelectedOption_ReturnValue;            // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_ComboBox_C_GetSelectedOption) == 0x000008, "Wrong alignment on W_ComboBox_C_GetSelectedOption");
+static_assert(sizeof(W_ComboBox_C_GetSelectedOption) == 0x000020, "Wrong size on W_ComboBox_C_GetSelectedOption");
+static_assert(offsetof(W_ComboBox_C_GetSelectedOption, ReturnValue) == 0x000000, "Member 'W_ComboBox_C_GetSelectedOption::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_GetSelectedOption, CallFunc_GetSelectedOption_ReturnValue) == 0x000010, "Member 'W_ComboBox_C_GetSelectedOption::CallFunc_GetSelectedOption_ReturnValue' has a wrong offset!");
+
+// Function W_ComboBox.W_ComboBox_C.HasOption
+// 0x0020 (0x0020 - 0x0000)
+struct W_ComboBox_C_HasOption final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          TURR;                                              // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_FindOptionIndex_ReturnValue;              // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_ComboBox_C_HasOption) == 0x000008, "Wrong alignment on W_ComboBox_C_HasOption");
+static_assert(sizeof(W_ComboBox_C_HasOption) == 0x000020, "Wrong size on W_ComboBox_C_HasOption");
+static_assert(offsetof(W_ComboBox_C_HasOption, Option) == 0x000000, "Member 'W_ComboBox_C_HasOption::Option' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_HasOption, TURR) == 0x000010, "Member 'W_ComboBox_C_HasOption::TURR' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_HasOption, CallFunc_FindOptionIndex_ReturnValue) == 0x000014, "Member 'W_ComboBox_C_HasOption::CallFunc_FindOptionIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_HasOption, CallFunc_NotEqual_IntInt_ReturnValue) == 0x000018, "Member 'W_ComboBox_C_HasOption::CallFunc_NotEqual_IntInt_ReturnValue' has a wrong offset!");
 
 // Function W_ComboBox.W_ComboBox_C.InitColor
 // 0x0A00 (0x0A00 - 0x0000)
@@ -177,41 +246,43 @@ static_assert(offsetof(W_ComboBox_C_OnComboSettingChange__DelegateSignature, New
 static_assert(offsetof(W_ComboBox_C_OnComboSettingChange__DelegateSignature, SelectType) == 0x000010, "Member 'W_ComboBox_C_OnComboSettingChange__DelegateSignature::SelectType' has a wrong offset!");
 
 // Function W_ComboBox.W_ComboBox_C.OnGenerateWidget_0
-// 0x0060 (0x0060 - 0x0000)
+// 0x0148 (0x0148 - 0x0000)
 struct W_ComboBox_C_OnGenerateWidget_0 final
 {
 public:
 	class FString                                 Item;                                              // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UWidget*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          ToolTip;                                           // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30AC[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Option;                                            // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Variable;                                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30AD[0x3];                                     // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 Temp_class_Variable;                               // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Temp_class_Variable_1;                             // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Temp_class_Variable_2;                             // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Temp_class_Variable_3;                             // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 Temp_class_Variable_4;                             // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UW_ComboChoice_C*                       CallFunc_Create_ReturnValue;                       // 0x0050(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 K2Node_Select_Default;                             // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable;                           // 0x0028(0x0028)(HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable_1;                         // 0x0050(0x0028)(HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable_2;                         // 0x0078(0x0028)(HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable_3;                         // 0x00A0(0x0028)(HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable_4;                         // 0x00C8(0x0028)(HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   Temp_softclass_Variable_5;                         // 0x00F0(0x0028)(HasGetValueTypeHash)
+	class UW_ComboChoice_C*                       CallFunc_Create_ReturnValue;                       // 0x0118(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   K2Node_Select_Default;                             // 0x0120(0x0028)(HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboBox_C_OnGenerateWidget_0) == 0x000008, "Wrong alignment on W_ComboBox_C_OnGenerateWidget_0");
-static_assert(sizeof(W_ComboBox_C_OnGenerateWidget_0) == 0x000060, "Wrong size on W_ComboBox_C_OnGenerateWidget_0");
+static_assert(sizeof(W_ComboBox_C_OnGenerateWidget_0) == 0x000148, "Wrong size on W_ComboBox_C_OnGenerateWidget_0");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Item) == 0x000000, "Member 'W_ComboBox_C_OnGenerateWidget_0::Item' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, ReturnValue) == 0x000010, "Member 'W_ComboBox_C_OnGenerateWidget_0::ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, ToolTip) == 0x000018, "Member 'W_ComboBox_C_OnGenerateWidget_0::ToolTip' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Option) == 0x00001C, "Member 'W_ComboBox_C_OnGenerateWidget_0::Option' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_int_Variable) == 0x000020, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_int_Variable' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, K2Node_SwitchString_CmpSuccess) == 0x000024, "Member 'W_ComboBox_C_OnGenerateWidget_0::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_class_Variable) == 0x000028, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_class_Variable' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_class_Variable_1) == 0x000030, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_class_Variable_1' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_class_Variable_2) == 0x000038, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_class_Variable_2' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_class_Variable_3) == 0x000040, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_class_Variable_3' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_class_Variable_4) == 0x000048, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_class_Variable_4' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, CallFunc_Create_ReturnValue) == 0x000050, "Member 'W_ComboBox_C_OnGenerateWidget_0::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, K2Node_Select_Default) == 0x000058, "Member 'W_ComboBox_C_OnGenerateWidget_0::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable) == 0x000028, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable_1) == 0x000050, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable_1' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable_2) == 0x000078, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable_2' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable_3) == 0x0000A0, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable_3' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable_4) == 0x0000C8, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable_4' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, Temp_softclass_Variable_5) == 0x0000F0, "Member 'W_ComboBox_C_OnGenerateWidget_0::Temp_softclass_Variable_5' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, CallFunc_Create_ReturnValue) == 0x000118, "Member 'W_ComboBox_C_OnGenerateWidget_0::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_OnGenerateWidget_0, K2Node_Select_Default) == 0x000120, "Member 'W_ComboBox_C_OnGenerateWidget_0::K2Node_Select_Default' has a wrong offset!");
 
 // Function W_ComboBox.W_ComboBox_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)
@@ -246,7 +317,7 @@ public:
 	TScriptInterface<class IBPI_GameSave_C>       K2Node_DynamicCast_AsBPI_Game_Save;                // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GetSettingFromIdentifier_ReturnValue;     // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30AE[0x6];                                     // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetSettingFromIdentifier_Value;           // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboBox_C_Refresh_Audio_Devices) == 0x000008, "Wrong alignment on W_ComboBox_C_Refresh_Audio_Devices");
@@ -272,16 +343,27 @@ static_assert(sizeof(W_ComboBox_C_RefreshComboBoxContent) == 0x000030, "Wrong si
 static_assert(offsetof(W_ComboBox_C_RefreshComboBoxContent, Params_0) == 0x000000, "Member 'W_ComboBox_C_RefreshComboBoxContent::Params_0' has a wrong offset!");
 static_assert(offsetof(W_ComboBox_C_RefreshComboBoxContent, Identifier) == 0x000020, "Member 'W_ComboBox_C_RefreshComboBoxContent::Identifier' has a wrong offset!");
 
+// Function W_ComboBox.W_ComboBox_C.Remove_Option
+// 0x0010 (0x0010 - 0x0000)
+struct W_ComboBox_C_Remove_Option final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_ComboBox_C_Remove_Option) == 0x000008, "Wrong alignment on W_ComboBox_C_Remove_Option");
+static_assert(sizeof(W_ComboBox_C_Remove_Option) == 0x000010, "Wrong size on W_ComboBox_C_Remove_Option");
+static_assert(offsetof(W_ComboBox_C_Remove_Option, Option) == 0x000000, "Member 'W_ComboBox_C_Remove_Option::Option' has a wrong offset!");
+
 // Function W_ComboBox.W_ComboBox_C.SetSelectedOption
 // 0x0010 (0x0010 - 0x0000)
 struct W_ComboBox_C_SetSelectedOption final
 {
 public:
-	class FString                                 Param_SelectedOption;                              // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SelectedOption_0;                                  // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_ComboBox_C_SetSelectedOption) == 0x000008, "Wrong alignment on W_ComboBox_C_SetSelectedOption");
 static_assert(sizeof(W_ComboBox_C_SetSelectedOption) == 0x000010, "Wrong size on W_ComboBox_C_SetSelectedOption");
-static_assert(offsetof(W_ComboBox_C_SetSelectedOption, Param_SelectedOption) == 0x000000, "Member 'W_ComboBox_C_SetSelectedOption::Param_SelectedOption' has a wrong offset!");
+static_assert(offsetof(W_ComboBox_C_SetSelectedOption, SelectedOption_0) == 0x000000, "Member 'W_ComboBox_C_SetSelectedOption::SelectedOption_0' has a wrong offset!");
 
 }
 

@@ -23,7 +23,7 @@ struct BPI_GameSave_C_GetSettingFromIdentifier final
 public:
 	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D74[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Value;                                             // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_GameSave_C_GetSettingFromIdentifier) == 0x000008, "Wrong alignment on BPI_GameSave_C_GetSettingFromIdentifier");

@@ -1286,9 +1286,9 @@ void IBPI_Character_C::SetController(const struct FVector& Location)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UPrimitiveComponent*              Socket                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// class FName                             Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Param_Name)
+void IBPI_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Socket, class FName Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1298,7 +1298,7 @@ void IBPI_Character_C::SetCosmeticChainFixSocket(class UPrimitiveComponent* Sock
 	Params::BPI_Character_C_SetCosmeticChainFixSocket Parms{};
 
 	Parms.Socket = Socket;
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1603,9 +1603,9 @@ void IBPI_Character_C::Spawn_Chains()
 // Function BPI_Character.BPI_Character_C.SwitchToTyrolienne
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_Tyrolienne_C*                 Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Tyrolienne                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Character_C::SwitchToTyrolienne(class ABP_Tyrolienne_C* Tyrolienne)
+void IBPI_Character_C::SwitchToTyrolienne(class AActor* Tyrolienne)
 {
 	static class UFunction* Func = nullptr;
 

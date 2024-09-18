@@ -83,10 +83,10 @@ void ABP_NewChain_C::Bounce(const struct FVector& Velocity)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  MassInKg                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_LinearDamping                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_AngularDamping                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  LinearDamping_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  AngularDamping_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_NewChain_C::ChangeMaillonMasses(double MassInKg, double Param_LinearDamping, double Param_AngularDamping)
+void ABP_NewChain_C::ChangeMaillonMasses(double MassInKg, double LinearDamping_0, double AngularDamping_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96,8 +96,8 @@ void ABP_NewChain_C::ChangeMaillonMasses(double MassInKg, double Param_LinearDam
 	Params::BP_NewChain_C_ChangeMaillonMasses Parms{};
 
 	Parms.MassInKg = MassInKg;
-	Parms.Param_LinearDamping = Param_LinearDamping;
-	Parms.Param_AngularDamping = Param_AngularDamping;
+	Parms.LinearDamping_0 = LinearDamping_0;
+	Parms.AngularDamping_0 = AngularDamping_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -532,9 +532,9 @@ void ABP_NewChain_C::PlaceFirstAndLastMaillon()
 // Function BP_NewChain.BP_NewChain_C.PullChain
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APawn*                            Param_Puller                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            Puller_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_NewChain_C::PullChain(class APawn* Param_Puller)
+void ABP_NewChain_C::PullChain(class APawn* Puller_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -543,7 +543,7 @@ void ABP_NewChain_C::PullChain(class APawn* Param_Puller)
 
 	Params::BP_NewChain_C_PullChain Parms{};
 
-	Parms.Param_Puller = Param_Puller;
+	Parms.Puller_0 = Puller_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -658,9 +658,9 @@ void ABP_NewChain_C::ReceiveTick(float DeltaSeconds)
 // Parameters:
 // int32                                   NewDensity                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  NewChainMass                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Human                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Human_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_NewChain_C::ReinitAttachment(int32 NewDensity, double NewChainMass, bool Param_Human)
+void ABP_NewChain_C::ReinitAttachment(int32 NewDensity, double NewChainMass, bool Human_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -671,7 +671,7 @@ void ABP_NewChain_C::ReinitAttachment(int32 NewDensity, double NewChainMass, boo
 
 	Parms.NewDensity = NewDensity;
 	Parms.NewChainMass = NewChainMass;
-	Parms.Param_Human = Param_Human;
+	Parms.Human_0 = Human_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -754,10 +754,10 @@ void ABP_NewChain_C::ResyncDuringTime(double Time)
 // Function BP_NewChain.BP_NewChain_C.SetAttachedChar
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Char                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_NewChain_C::SetAttachedChar(const int32 Param_Index, class AActor* Char)
+void ABP_NewChain_C::SetAttachedChar(const int32 Index_0, class AActor* Char)
 {
 	static class UFunction* Func = nullptr;
 
@@ -766,7 +766,7 @@ void ABP_NewChain_C::SetAttachedChar(const int32 Param_Index, class AActor* Char
 
 	Params::BP_NewChain_C_SetAttachedChar Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Char = Char;
 
 	UObject::ProcessEvent(Func, &Parms);

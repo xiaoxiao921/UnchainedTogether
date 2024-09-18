@@ -17,6 +17,184 @@
 namespace SDK
 {
 
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.AddKey
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FFrameNumber                     InTime                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          NewValue                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   SubFrame                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ESequenceTimeUnit                       TimeUnit                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneScriptingObjectPathKey*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::AddKey(const struct FFrameNumber& InTime, class UObject* NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "AddKey");
+
+	Params::MovieSceneScriptingObjectPathChannel_AddKey Parms{};
+
+	Parms.InTime = std::move(InTime);
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.RemoveDefault
+// (Final, Native, Public, BlueprintCallable)
+
+void UMovieSceneScriptingObjectPathChannel::RemoveDefault()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "RemoveDefault");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.RemoveKey
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneScriptingKey*          Key                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneScriptingObjectPathChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "RemoveKey");
+
+	Params::MovieSceneScriptingObjectPathChannel_RemoveKey Parms{};
+
+	Parms.Key = Key;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.SetDefault
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InDefaultValue                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InDefaultValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "SetDefault");
+
+	Params::MovieSceneScriptingObjectPathChannel_SetDefault Parms{};
+
+	Parms.InDefaultValue = InDefaultValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.GetDefault
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UObject* UMovieSceneScriptingObjectPathChannel::GetDefault() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "GetDefault");
+
+	Params::MovieSceneScriptingObjectPathChannel_GetDefault Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.GetKeys
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UMovieSceneScriptingKey*>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingObjectPathChannel::GetKeys() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "GetKeys");
+
+	Params::MovieSceneScriptingObjectPathChannel_GetKeys Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.HasDefault
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMovieSceneScriptingObjectPathChannel::HasDefault() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "HasDefault");
+
+	Params::MovieSceneScriptingObjectPathChannel_HasDefault Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function SequencerScripting.MovieSceneScriptingActorReferenceKey.SetTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -121,6 +299,61 @@ struct FMovieSceneObjectBindingID UMovieSceneScriptingActorReferenceKey::GetValu
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneMaterialTrackExtensions.GetMaterialIndex
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneComponentMaterialTrack*Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneMaterialTrackExtensions", "GetMaterialIndex");
+
+	Params::MovieSceneMaterialTrackExtensions_GetMaterialIndex Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneMaterialTrackExtensions.SetMaterialIndex
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneComponentMaterialTrack*Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaterialIndex                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track, const int32 MaterialIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneMaterialTrackExtensions", "SetMaterialIndex");
+
+	Params::MovieSceneMaterialTrackExtensions_SetMaterialIndex Parms{};
+
+	Parms.Track = Track;
+	Parms.MaterialIndex = MaterialIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -406,6 +639,590 @@ bool UMovieSceneScriptingBoolKey::GetValue() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.AddTrack
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneTrack*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "AddTrack");
+
+	Params::MovieSceneBindingExtensions_AddTrack Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.TrackType = TrackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.FindTracksByExactType
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactType(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "FindTracksByExactType");
+
+	Params::MovieSceneBindingExtensions_FindTracksByExactType Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.TrackType = TrackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.FindTracksByType
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "FindTracksByType");
+
+	Params::MovieSceneBindingExtensions_FindTracksByType Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.TrackType = TrackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetChildPossessables
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FMovieSceneBindingProxy>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPossessables(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetChildPossessables");
+
+	Params::MovieSceneBindingExtensions_GetChildPossessables Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetDisplayName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UMovieSceneBindingExtensions::GetDisplayName(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetDisplayName");
+
+	Params::MovieSceneBindingExtensions_GetDisplayName Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetId
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FGuid UMovieSceneBindingExtensions::GetId(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetId");
+
+	Params::MovieSceneBindingExtensions_GetId Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UMovieSceneBindingExtensions::GetName(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetName");
+
+	Params::MovieSceneBindingExtensions_GetName Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetObjectTemplate
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetObjectTemplate");
+
+	Params::MovieSceneBindingExtensions_GetObjectTemplate Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetParent
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMovieSceneBindingProxy          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetParent");
+
+	Params::MovieSceneBindingExtensions_GetParent Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetPossessedObjectClass
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetPossessedObjectClass");
+
+	Params::MovieSceneBindingExtensions_GetPossessedObjectClass Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetSortingOrder
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UMovieSceneBindingExtensions::GetSortingOrder(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetSortingOrder");
+
+	Params::MovieSceneBindingExtensions_GetSortingOrder Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.GetTracks
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetTracks");
+
+	Params::MovieSceneBindingExtensions_GetTracks Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.IsValid
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMovieSceneBindingExtensions::IsValid(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "IsValid");
+
+	Params::MovieSceneBindingExtensions_IsValid Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.MoveBindingContents
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          SourceBindingId                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMovieSceneBindingProxy          DestinationBindingId                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::MoveBindingContents(const struct FMovieSceneBindingProxy& SourceBindingId, const struct FMovieSceneBindingProxy& DestinationBindingId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "MoveBindingContents");
+
+	Params::MovieSceneBindingExtensions_MoveBindingContents Parms{};
+
+	Parms.SourceBindingId = std::move(SourceBindingId);
+	Parms.DestinationBindingId = std::move(DestinationBindingId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.Remove
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::Remove(const struct FMovieSceneBindingProxy& InBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "Remove");
+
+	Params::MovieSceneBindingExtensions_Remove Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.RemoveTrack
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneTrack*                 TrackToRemove                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::RemoveTrack(const struct FMovieSceneBindingProxy& InBinding, class UMovieSceneTrack* TrackToRemove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "RemoveTrack");
+
+	Params::MovieSceneBindingExtensions_RemoveTrack Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.TrackToRemove = TrackToRemove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.SetDisplayName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             InDisplayName                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::SetDisplayName(const struct FMovieSceneBindingProxy& InBinding, const class FText& InDisplayName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetDisplayName");
+
+	Params::MovieSceneBindingExtensions_SetDisplayName Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.InDisplayName = std::move(InDisplayName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.SetName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::SetName(const struct FMovieSceneBindingProxy& InBinding, const class FString& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetName");
+
+	Params::MovieSceneBindingExtensions_SetName Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.InName = std::move(InName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.SetParent
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMovieSceneBindingProxy          InParentBinding                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::SetParent(const struct FMovieSceneBindingProxy& InBinding, const struct FMovieSceneBindingProxy& InParentBinding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetParent");
+
+	Params::MovieSceneBindingExtensions_SetParent Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.InParentBinding = std::move(InParentBinding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.SetSortingOrder
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   SortingOrder                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::SetSortingOrder(const struct FMovieSceneBindingProxy& InBinding, int32 SortingOrder)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetSortingOrder");
+
+	Params::MovieSceneBindingExtensions_SetSortingOrder Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.SortingOrder = SortingOrder;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneBindingExtensions.SetSpawnableBindingID
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMovieSceneObjectBindingID       SpawnableBindingID                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneBindingExtensions::SetSpawnableBindingID(const struct FMovieSceneBindingProxy& InBinding, const struct FMovieSceneObjectBindingID& SpawnableBindingID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetSpawnableBindingID");
+
+	Params::MovieSceneBindingExtensions_SetSpawnableBindingID Parms{};
+
+	Parms.InBinding = std::move(InBinding);
+	Parms.SpawnableBindingID = std::move(SpawnableBindingID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -951,6 +1768,229 @@ bool UMovieSceneScriptingByteChannel::HasDefault() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetByteTrackEnum
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UMovieSceneByteTrack*             Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnum*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSceneByteTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetByteTrackEnum");
+
+	Params::MovieScenePropertyTrackExtensions_GetByteTrackEnum Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetObjectPropertyClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneObjectPropertyTrack*   Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetObjectPropertyClass");
+
+	Params::MovieScenePropertyTrackExtensions_GetObjectPropertyClass Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetPropertyName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScenePropertyTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetPropertyName");
+
+	Params::MovieScenePropertyTrackExtensions_GetPropertyName Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetPropertyPath
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieScenePropertyTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetPropertyPath");
+
+	Params::MovieScenePropertyTrackExtensions_GetPropertyPath Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetUniqueTrackName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieScenePropertyTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetUniqueTrackName");
+
+	Params::MovieScenePropertyTrackExtensions_GetUniqueTrackName Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetByteTrackEnum
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneByteTrack*             Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnum*                            InEnum                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteTrack* Track, class UEnum* InEnum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetByteTrackEnum");
+
+	Params::MovieScenePropertyTrackExtensions_SetByteTrackEnum Parms{};
+
+	Parms.Track = Track;
+	Parms.InEnum = InEnum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetObjectPropertyClass
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneObjectPropertyTrack*   Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           PropertyClass                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track, class UClass* PropertyClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetObjectPropertyClass");
+
+	Params::MovieScenePropertyTrackExtensions_SetObjectPropertyClass Parms{};
+
+	Parms.Track = Track;
+	Parms.PropertyClass = PropertyClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetPropertyNameAndPath
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InPropertyName                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InPropertyPath                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScenePropertyTrack* Track, const class FName& InPropertyName, const class FString& InPropertyPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetPropertyNameAndPath");
+
+	Params::MovieScenePropertyTrackExtensions_SetPropertyNameAndPath Parms{};
+
+	Parms.Track = Track;
+	Parms.InPropertyName = InPropertyName;
+	Parms.InPropertyPath = std::move(InPropertyPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -1771,6 +2811,344 @@ bool UMovieSceneScriptingDoubleChannel::HasDefault() const
 }
 
 
+// Function SequencerScripting.SequencerScriptingRangeExtensions.GetEndFrame
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 USequencerScriptingRangeExtensions::GetEndFrame(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetEndFrame");
+
+	Params::SequencerScriptingRangeExtensions_GetEndFrame Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.GetEndSeconds
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USequencerScriptingRangeExtensions::GetEndSeconds(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetEndSeconds");
+
+	Params::SequencerScriptingRangeExtensions_GetEndSeconds Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.GetStartFrame
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 USequencerScriptingRangeExtensions::GetStartFrame(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetStartFrame");
+
+	Params::SequencerScriptingRangeExtensions_GetStartFrame Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.GetStartSeconds
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USequencerScriptingRangeExtensions::GetStartSeconds(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetStartSeconds");
+
+	Params::SequencerScriptingRangeExtensions_GetStartSeconds Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.HasEnd
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USequencerScriptingRangeExtensions::HasEnd(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "HasEnd");
+
+	Params::SequencerScriptingRangeExtensions_HasEnd Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.HasStart
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USequencerScriptingRangeExtensions::HasStart(const struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "HasStart");
+
+	Params::SequencerScriptingRangeExtensions_HasStart Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.RemoveEnd
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "RemoveEnd");
+
+	Params::SequencerScriptingRangeExtensions_RemoveEnd Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.RemoveStart
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingRange& Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "RemoveStart");
+
+	Params::SequencerScriptingRangeExtensions_RemoveStart Parms{};
+
+	Parms.Range = std::move(Range);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.SetEndFrame
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingRange& Range, int32 End)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetEndFrame");
+
+	Params::SequencerScriptingRangeExtensions_SetEndFrame Parms{};
+
+	Parms.Range = std::move(Range);
+	Parms.End = End;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.SetEndSeconds
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptingRange& Range, float End)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetEndSeconds");
+
+	Params::SequencerScriptingRangeExtensions_SetEndSeconds Parms{};
+
+	Parms.Range = std::move(Range);
+	Parms.End = End;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.SetStartFrame
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptingRange& Range, int32 Start)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetStartFrame");
+
+	Params::SequencerScriptingRangeExtensions_SetStartFrame Parms{};
+
+	Parms.Range = std::move(Range);
+	Parms.Start = Start;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
+// Function SequencerScripting.SequencerScriptingRangeExtensions.SetStartSeconds
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScriptingRange& Range, float Start)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetStartSeconds");
+
+	Params::SequencerScriptingRangeExtensions_SetStartSeconds Parms{};
+
+	Parms.Range = std::move(Range);
+	Parms.Start = Start;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Range = std::move(Parms.Range);
+}
+
+
 // Function SequencerScripting.MovieSceneScriptingEventKey.SetTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -1955,6 +3333,90 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingEventChannel::GetKeys
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneEventTrackExtensions.AddEventRepeaterSection
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneEventTrack*            InTrack                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneEventRepeaterSection*  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEventRepeaterSection(class UMovieSceneEventTrack* InTrack)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "AddEventRepeaterSection");
+
+	Params::MovieSceneEventTrackExtensions_AddEventRepeaterSection Parms{};
+
+	Parms.InTrack = InTrack;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneEventTrackExtensions.AddEventTriggerSection
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneEventTrack*            InTrack                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneEventTriggerSection*   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventTriggerSection(class UMovieSceneEventTrack* InTrack)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "AddEventTriggerSection");
+
+	Params::MovieSceneEventTrackExtensions_AddEventTriggerSection Parms{};
+
+	Parms.InTrack = InTrack;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneEventTrackExtensions.GetBoundObjectPropertyClass
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneEvent                 EventKey                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(const struct FMovieSceneEvent& EventKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "GetBoundObjectPropertyClass");
+
+	Params::MovieSceneEventTrackExtensions_GetBoundObjectPropertyClass Parms{};
+
+	Parms.EventKey = std::move(EventKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -2416,6 +3878,368 @@ float UMovieSceneScriptingFloatKey::GetValue() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.AddSection
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneSection*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "AddSection");
+
+	Params::MovieSceneTrackExtensions_AddSection Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetColorTint
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetColorTint");
+
+	Params::MovieSceneTrackExtensions_GetColorTint Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetDisplayName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetDisplayName");
+
+	Params::MovieSceneTrackExtensions_GetDisplayName Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetSections
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UMovieSceneSection*>       ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSections");
+
+	Params::MovieSceneTrackExtensions_GetSections Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetSectionToKey
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneSection*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSectionToKey");
+
+	Params::MovieSceneTrackExtensions_GetSectionToKey Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetSortingOrder
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSortingOrder");
+
+	Params::MovieSceneTrackExtensions_GetSortingOrder Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.GetTrackRowDisplayName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RowIndex                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieSceneTrack* Track, int32 RowIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetTrackRowDisplayName");
+
+	Params::MovieSceneTrackExtensions_GetTrackRowDisplayName Parms{};
+
+	Parms.Track = Track;
+	Parms.RowIndex = RowIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.RemoveSection
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneSection*               Section                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "RemoveSection");
+
+	Params::MovieSceneTrackExtensions_RemoveSection Parms{};
+
+	Parms.Track = Track;
+	Parms.Section = Section;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.SetColorTint
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor                           ColorTint                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* Track, const struct FColor& ColorTint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetColorTint");
+
+	Params::MovieSceneTrackExtensions_SetColorTint Parms{};
+
+	Parms.Track = Track;
+	Parms.ColorTint = std::move(ColorTint);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.SetDisplayName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* Track, const class FText& InName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetDisplayName");
+
+	Params::MovieSceneTrackExtensions_SetDisplayName Parms{};
+
+	Parms.Track = Track;
+	Parms.InName = std::move(InName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.SetSectionToKey
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMovieSceneSection*               Section                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetSectionToKey");
+
+	Params::MovieSceneTrackExtensions_SetSectionToKey Parms{};
+
+	Parms.Track = Track;
+	Parms.Section = Section;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.SetSortingOrder
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   SortingOrder                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* Track, int32 SortingOrder)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetSortingOrder");
+
+	Params::MovieSceneTrackExtensions_SetSortingOrder Parms{};
+
+	Parms.Track = Track;
+	Parms.SortingOrder = SortingOrder;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SequencerScripting.MovieSceneTrackExtensions.SetTrackRowDisplayName
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   RowIndex                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* Track, const class FText& InName, int32 RowIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetTrackRowDisplayName");
+
+	Params::MovieSceneTrackExtensions_SetTrackRowDisplayName Parms{};
+
+	Parms.Track = Track;
+	Parms.InName = std::move(InName);
+	Parms.RowIndex = RowIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3171,184 +4995,6 @@ class UObject* UMovieSceneScriptingObjectPathKey::GetValue() const
 }
 
 
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.AddKey
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FFrameNumber                     InTime                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          NewValue                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SubFrame                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ESequenceTimeUnit                       TimeUnit                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneScriptingObjectPathKey*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::AddKey(const struct FFrameNumber& InTime, class UObject* NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "AddKey");
-
-	Params::MovieSceneScriptingObjectPathChannel_AddKey Parms{};
-
-	Parms.InTime = std::move(InTime);
-	Parms.NewValue = NewValue;
-	Parms.SubFrame = SubFrame;
-	Parms.TimeUnit = TimeUnit;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.RemoveDefault
-// (Final, Native, Public, BlueprintCallable)
-
-void UMovieSceneScriptingObjectPathChannel::RemoveDefault()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "RemoveDefault");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.RemoveKey
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneScriptingKey*          Key                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneScriptingObjectPathChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "RemoveKey");
-
-	Params::MovieSceneScriptingObjectPathChannel_RemoveKey Parms{};
-
-	Parms.Key = Key;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.SetDefault
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          InDefaultValue                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InDefaultValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "SetDefault");
-
-	Params::MovieSceneScriptingObjectPathChannel_SetDefault Parms{};
-
-	Parms.InDefaultValue = InDefaultValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.GetDefault
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UObject* UMovieSceneScriptingObjectPathChannel::GetDefault() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "GetDefault");
-
-	Params::MovieSceneScriptingObjectPathChannel_GetDefault Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.GetKeys
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class UMovieSceneScriptingKey*>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingObjectPathChannel::GetKeys() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "GetKeys");
-
-	Params::MovieSceneScriptingObjectPathChannel_GetKeys Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneScriptingObjectPathChannel.HasDefault
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMovieSceneScriptingObjectPathChannel::HasDefault() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneScriptingObjectPathChannel", "HasDefault");
-
-	Params::MovieSceneScriptingObjectPathChannel_HasDefault Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function SequencerScripting.MovieSceneScriptingStringKey.SetTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -3627,674 +5273,6 @@ bool UMovieSceneScriptingStringChannel::HasDefault() const
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.AddTrack
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneTrack*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "AddTrack");
-
-	Params::MovieSceneBindingExtensions_AddTrack Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.TrackType = TrackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.FindTracksByExactType
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactType(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "FindTracksByExactType");
-
-	Params::MovieSceneBindingExtensions_FindTracksByExactType Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.TrackType = TrackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.FindTracksByType
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UMovieSceneTrack>     TrackType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(const struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "FindTracksByType");
-
-	Params::MovieSceneBindingExtensions_FindTracksByType Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.TrackType = TrackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetChildPossessables
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FMovieSceneBindingProxy>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPossessables(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetChildPossessables");
-
-	Params::MovieSceneBindingExtensions_GetChildPossessables Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetDisplayName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UMovieSceneBindingExtensions::GetDisplayName(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetDisplayName");
-
-	Params::MovieSceneBindingExtensions_GetDisplayName Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetId
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FGuid UMovieSceneBindingExtensions::GetId(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetId");
-
-	Params::MovieSceneBindingExtensions_GetId Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UMovieSceneBindingExtensions::GetName(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetName");
-
-	Params::MovieSceneBindingExtensions_GetName Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetObjectTemplate
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetObjectTemplate");
-
-	Params::MovieSceneBindingExtensions_GetObjectTemplate Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetParent
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieSceneBindingProxy          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetParent");
-
-	Params::MovieSceneBindingExtensions_GetParent Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetPossessedObjectClass
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetPossessedObjectClass");
-
-	Params::MovieSceneBindingExtensions_GetPossessedObjectClass Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetSortingOrder
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UMovieSceneBindingExtensions::GetSortingOrder(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetSortingOrder");
-
-	Params::MovieSceneBindingExtensions_GetSortingOrder Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.GetTracks
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "GetTracks");
-
-	Params::MovieSceneBindingExtensions_GetTracks Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.IsValid
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMovieSceneBindingExtensions::IsValid(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "IsValid");
-
-	Params::MovieSceneBindingExtensions_IsValid Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.MoveBindingContents
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          SourceBindingId                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieSceneBindingProxy          DestinationBindingId                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::MoveBindingContents(const struct FMovieSceneBindingProxy& SourceBindingId, const struct FMovieSceneBindingProxy& DestinationBindingId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "MoveBindingContents");
-
-	Params::MovieSceneBindingExtensions_MoveBindingContents Parms{};
-
-	Parms.SourceBindingId = std::move(SourceBindingId);
-	Parms.DestinationBindingId = std::move(DestinationBindingId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.Remove
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::Remove(const struct FMovieSceneBindingProxy& InBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "Remove");
-
-	Params::MovieSceneBindingExtensions_Remove Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.RemoveTrack
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneTrack*                 TrackToRemove                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::RemoveTrack(const struct FMovieSceneBindingProxy& InBinding, class UMovieSceneTrack* TrackToRemove)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "RemoveTrack");
-
-	Params::MovieSceneBindingExtensions_RemoveTrack Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.TrackToRemove = TrackToRemove;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.SetDisplayName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             InDisplayName                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::SetDisplayName(const struct FMovieSceneBindingProxy& InBinding, const class FText& InDisplayName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetDisplayName");
-
-	Params::MovieSceneBindingExtensions_SetDisplayName Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.InDisplayName = std::move(InDisplayName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.SetName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::SetName(const struct FMovieSceneBindingProxy& InBinding, const class FString& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetName");
-
-	Params::MovieSceneBindingExtensions_SetName Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.InName = std::move(InName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.SetParent
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieSceneBindingProxy          InParentBinding                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::SetParent(const struct FMovieSceneBindingProxy& InBinding, const struct FMovieSceneBindingProxy& InParentBinding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetParent");
-
-	Params::MovieSceneBindingExtensions_SetParent Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.InParentBinding = std::move(InParentBinding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.SetSortingOrder
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   SortingOrder                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::SetSortingOrder(const struct FMovieSceneBindingProxy& InBinding, int32 SortingOrder)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetSortingOrder");
-
-	Params::MovieSceneBindingExtensions_SetSortingOrder Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.SortingOrder = SortingOrder;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneBindingExtensions.SetSpawnableBindingID
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneBindingProxy          InBinding                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieSceneObjectBindingID       SpawnableBindingID                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneBindingExtensions::SetSpawnableBindingID(const struct FMovieSceneBindingProxy& InBinding, const struct FMovieSceneObjectBindingID& SpawnableBindingID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneBindingExtensions", "SetSpawnableBindingID");
-
-	Params::MovieSceneBindingExtensions_SetSpawnableBindingID Parms{};
-
-	Parms.InBinding = std::move(InBinding);
-	Parms.SpawnableBindingID = std::move(SpawnableBindingID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneEventTrackExtensions.AddEventRepeaterSection
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneEventTrack*            InTrack                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneEventRepeaterSection*  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEventRepeaterSection(class UMovieSceneEventTrack* InTrack)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "AddEventRepeaterSection");
-
-	Params::MovieSceneEventTrackExtensions_AddEventRepeaterSection Parms{};
-
-	Parms.InTrack = InTrack;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneEventTrackExtensions.AddEventTriggerSection
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneEventTrack*            InTrack                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneEventTriggerSection*   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventTriggerSection(class UMovieSceneEventTrack* InTrack)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "AddEventTriggerSection");
-
-	Params::MovieSceneEventTrackExtensions_AddEventTriggerSection Parms{};
-
-	Parms.InTrack = InTrack;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneEventTrackExtensions.GetBoundObjectPropertyClass
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneEvent                 EventKey                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(const struct FMovieSceneEvent& EventKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneEventTrackExtensions", "GetBoundObjectPropertyClass");
-
-	Params::MovieSceneEventTrackExtensions_GetBoundObjectPropertyClass Parms{};
-
-	Parms.EventKey = std::move(EventKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -4770,61 +5748,6 @@ bool UMovieSceneFolderExtensions::SetFolderName(class UMovieSceneFolder* Folder,
 }
 
 
-// Function SequencerScripting.MovieSceneMaterialTrackExtensions.GetMaterialIndex
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneComponentMaterialTrack*Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneMaterialTrackExtensions", "GetMaterialIndex");
-
-	Params::MovieSceneMaterialTrackExtensions_GetMaterialIndex Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneMaterialTrackExtensions.SetMaterialIndex
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneComponentMaterialTrack*Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MaterialIndex                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track, const int32 MaterialIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneMaterialTrackExtensions", "SetMaterialIndex");
-
-	Params::MovieSceneMaterialTrackExtensions_SetMaterialIndex Parms{};
-
-	Parms.Track = Track;
-	Parms.MaterialIndex = MaterialIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function SequencerScripting.MovieScenePrimitiveMaterialTrackExtensions.GetMaterialIndex
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -4870,229 +5793,6 @@ void UMovieScenePrimitiveMaterialTrackExtensions::SetMaterialIndex(class UMovieS
 
 	Parms.Track = Track;
 	Parms.MaterialIndex = MaterialIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetByteTrackEnum
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UMovieSceneByteTrack*             Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSceneByteTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetByteTrackEnum");
-
-	Params::MovieScenePropertyTrackExtensions_GetByteTrackEnum Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetObjectPropertyClass
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneObjectPropertyTrack*   Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetObjectPropertyClass");
-
-	Params::MovieScenePropertyTrackExtensions_GetObjectPropertyClass Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetPropertyName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScenePropertyTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetPropertyName");
-
-	Params::MovieScenePropertyTrackExtensions_GetPropertyName Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetPropertyPath
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieScenePropertyTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetPropertyPath");
-
-	Params::MovieScenePropertyTrackExtensions_GetPropertyPath Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.GetUniqueTrackName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieScenePropertyTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "GetUniqueTrackName");
-
-	Params::MovieScenePropertyTrackExtensions_GetUniqueTrackName Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetByteTrackEnum
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneByteTrack*             Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            InEnum                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteTrack* Track, class UEnum* InEnum)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetByteTrackEnum");
-
-	Params::MovieScenePropertyTrackExtensions_SetByteTrackEnum Parms{};
-
-	Parms.Track = Track;
-	Parms.InEnum = InEnum;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetObjectPropertyClass
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneObjectPropertyTrack*   Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           PropertyClass                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track, class UClass* PropertyClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetObjectPropertyClass");
-
-	Params::MovieScenePropertyTrackExtensions_SetObjectPropertyClass Parms{};
-
-	Parms.Track = Track;
-	Parms.PropertyClass = PropertyClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieScenePropertyTrackExtensions.SetPropertyNameAndPath
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UMovieScenePropertyTrack*         Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InPropertyName                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InPropertyPath                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScenePropertyTrack* Track, const class FName& InPropertyName, const class FString& InPropertyPath)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieScenePropertyTrackExtensions", "SetPropertyNameAndPath");
-
-	Params::MovieScenePropertyTrackExtensions_SetPropertyNameAndPath Parms{};
-
-	Parms.Track = Track;
-	Parms.InPropertyName = InPropertyName;
-	Parms.InPropertyPath = std::move(InPropertyPath);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6073,10 +6773,10 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingById(cl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UMovieSceneSequence*              Sequence                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(class UMovieSceneSequence* Sequence, const class FString& Param_Name)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(class UMovieSceneSequence* Sequence, const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6086,7 +6786,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(
 	Params::MovieSceneSequenceExtensions_FindBindingByName Parms{};
 
 	Parms.Sequence = Sequence;
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7716,368 +8416,6 @@ void UMovieSceneSequenceExtensions::SortMarkedFrames(class UMovieSceneSequence* 
 }
 
 
-// Function SequencerScripting.MovieSceneTrackExtensions.AddSection
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneSection*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "AddSection");
-
-	Params::MovieSceneTrackExtensions_AddSection Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetColorTint
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetColorTint");
-
-	Params::MovieSceneTrackExtensions_GetColorTint Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetDisplayName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetDisplayName");
-
-	Params::MovieSceneTrackExtensions_GetDisplayName Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetSections
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UMovieSceneSection*>       ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSections");
-
-	Params::MovieSceneTrackExtensions_GetSections Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetSectionToKey
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneSection*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSectionToKey");
-
-	Params::MovieSceneTrackExtensions_GetSectionToKey Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetSortingOrder
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetSortingOrder");
-
-	Params::MovieSceneTrackExtensions_GetSortingOrder Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.GetTrackRowDisplayName
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   RowIndex                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieSceneTrack* Track, int32 RowIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "GetTrackRowDisplayName");
-
-	Params::MovieSceneTrackExtensions_GetTrackRowDisplayName Parms{};
-
-	Parms.Track = Track;
-	Parms.RowIndex = RowIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.RemoveSection
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneSection*               Section                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "RemoveSection");
-
-	Params::MovieSceneTrackExtensions_RemoveSection Parms{};
-
-	Parms.Track = Track;
-	Parms.Section = Section;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.SetColorTint
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           ColorTint                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* Track, const struct FColor& ColorTint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetColorTint");
-
-	Params::MovieSceneTrackExtensions_SetColorTint Parms{};
-
-	Parms.Track = Track;
-	Parms.ColorTint = std::move(ColorTint);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.SetDisplayName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* Track, const class FText& InName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetDisplayName");
-
-	Params::MovieSceneTrackExtensions_SetDisplayName Parms{};
-
-	Parms.Track = Track;
-	Parms.InName = std::move(InName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.SetSectionToKey
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMovieSceneSection*               Section                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetSectionToKey");
-
-	Params::MovieSceneTrackExtensions_SetSectionToKey Parms{};
-
-	Parms.Track = Track;
-	Parms.Section = Section;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.SetSortingOrder
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   SortingOrder                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* Track, int32 SortingOrder)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetSortingOrder");
-
-	Params::MovieSceneTrackExtensions_SetSortingOrder Parms{};
-
-	Parms.Track = Track;
-	Parms.SortingOrder = SortingOrder;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneTrackExtensions.SetTrackRowDisplayName
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UMovieSceneTrack*                 Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             InName                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   RowIndex                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* Track, const class FText& InName, int32 RowIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneTrackExtensions", "SetTrackRowDisplayName");
-
-	Params::MovieSceneTrackExtensions_SetTrackRowDisplayName Parms{};
-
-	Parms.Track = Track;
-	Parms.InName = std::move(InName);
-	Parms.RowIndex = RowIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function SequencerScripting.MovieSceneFloatVectorTrackExtensions.GetNumChannelsUsed
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -8185,344 +8523,6 @@ void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieScen
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.GetEndFrame
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 USequencerScriptingRangeExtensions::GetEndFrame(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetEndFrame");
-
-	Params::SequencerScriptingRangeExtensions_GetEndFrame Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.GetEndSeconds
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USequencerScriptingRangeExtensions::GetEndSeconds(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetEndSeconds");
-
-	Params::SequencerScriptingRangeExtensions_GetEndSeconds Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.GetStartFrame
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 USequencerScriptingRangeExtensions::GetStartFrame(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetStartFrame");
-
-	Params::SequencerScriptingRangeExtensions_GetStartFrame Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.GetStartSeconds
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USequencerScriptingRangeExtensions::GetStartSeconds(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "GetStartSeconds");
-
-	Params::SequencerScriptingRangeExtensions_GetStartSeconds Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.HasEnd
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USequencerScriptingRangeExtensions::HasEnd(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "HasEnd");
-
-	Params::SequencerScriptingRangeExtensions_HasEnd Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.HasStart
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USequencerScriptingRangeExtensions::HasStart(const struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "HasStart");
-
-	Params::SequencerScriptingRangeExtensions_HasStart Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.RemoveEnd
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "RemoveEnd");
-
-	Params::SequencerScriptingRangeExtensions_RemoveEnd Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.RemoveStart
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingRange& Range)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "RemoveStart");
-
-	Params::SequencerScriptingRangeExtensions_RemoveStart Parms{};
-
-	Parms.Range = std::move(Range);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.SetEndFrame
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingRange& Range, int32 End)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetEndFrame");
-
-	Params::SequencerScriptingRangeExtensions_SetEndFrame Parms{};
-
-	Parms.Range = std::move(Range);
-	Parms.End = End;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.SetEndSeconds
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptingRange& Range, float End)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetEndSeconds");
-
-	Params::SequencerScriptingRangeExtensions_SetEndSeconds Parms{};
-
-	Parms.Range = std::move(Range);
-	Parms.End = End;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.SetStartFrame
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptingRange& Range, int32 Start)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetStartFrame");
-
-	Params::SequencerScriptingRangeExtensions_SetStartFrame Parms{};
-
-	Parms.Range = std::move(Range);
-	Parms.Start = Start;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
-}
-
-
-// Function SequencerScripting.SequencerScriptingRangeExtensions.SetStartSeconds
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSequencerScriptingRange         Range                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScriptingRange& Range, float Start)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SequencerScriptingRangeExtensions", "SetStartSeconds");
-
-	Params::SequencerScriptingRangeExtensions_SetStartSeconds Parms{};
-
-	Parms.Range = std::move(Range);
-	Parms.Start = Start;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Range = std::move(Parms.Range);
 }
 
 }

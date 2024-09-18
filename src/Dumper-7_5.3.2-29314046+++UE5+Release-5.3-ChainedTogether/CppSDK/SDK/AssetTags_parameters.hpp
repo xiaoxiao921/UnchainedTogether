@@ -21,13 +21,13 @@ namespace SDK::Params
 struct AssetTagsSubsystem_CollectionExists final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AFA[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(AssetTagsSubsystem_CollectionExists) == 0x000004, "Wrong alignment on AssetTagsSubsystem_CollectionExists");
 static_assert(sizeof(AssetTagsSubsystem_CollectionExists) == 0x00000C, "Wrong size on AssetTagsSubsystem_CollectionExists");
-static_assert(offsetof(AssetTagsSubsystem_CollectionExists, Param_Name) == 0x000000, "Member 'AssetTagsSubsystem_CollectionExists::Param_Name' has a wrong offset!");
+static_assert(offsetof(AssetTagsSubsystem_CollectionExists, Name_0) == 0x000000, "Member 'AssetTagsSubsystem_CollectionExists::Name_0' has a wrong offset!");
 static_assert(offsetof(AssetTagsSubsystem_CollectionExists, ReturnValue) == 0x000008, "Member 'AssetTagsSubsystem_CollectionExists::ReturnValue' has a wrong offset!");
 
 // Function AssetTags.AssetTagsSubsystem.GetAssetsInCollection
@@ -35,12 +35,12 @@ static_assert(offsetof(AssetTagsSubsystem_CollectionExists, ReturnValue) == 0x00
 struct AssetTagsSubsystem_GetAssetsInCollection final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FAssetData>                     ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(AssetTagsSubsystem_GetAssetsInCollection) == 0x000008, "Wrong alignment on AssetTagsSubsystem_GetAssetsInCollection");
 static_assert(sizeof(AssetTagsSubsystem_GetAssetsInCollection) == 0x000018, "Wrong size on AssetTagsSubsystem_GetAssetsInCollection");
-static_assert(offsetof(AssetTagsSubsystem_GetAssetsInCollection, Param_Name) == 0x000000, "Member 'AssetTagsSubsystem_GetAssetsInCollection::Param_Name' has a wrong offset!");
+static_assert(offsetof(AssetTagsSubsystem_GetAssetsInCollection, Name_0) == 0x000000, "Member 'AssetTagsSubsystem_GetAssetsInCollection::Name_0' has a wrong offset!");
 static_assert(offsetof(AssetTagsSubsystem_GetAssetsInCollection, ReturnValue) == 0x000008, "Member 'AssetTagsSubsystem_GetAssetsInCollection::ReturnValue' has a wrong offset!");
 
 // Function AssetTags.AssetTagsSubsystem.GetCollections

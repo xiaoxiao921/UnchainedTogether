@@ -72,19 +72,19 @@ class UCameraAnimationSequenceCameraStandIn final : public UObject
 public:
 	float                                         FieldOfView;                                       // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bConstrainAspectRatio : 1;                         // 0x002C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_257E[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AspectRatio;                                       // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_257F[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPostProcessSettings                   PostProcessSettings;                               // 0x0040(0x06E0)(NativeAccessSpecifierPublic)
 	float                                         PostProcessBlendWeight;                            // 0x0720(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FCameraFilmbackSettings                Filmback;                                          // 0x0724(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
 	struct FCameraLensSettings                    LensSettings;                                      // 0x0730(0x001C)(NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2580[0x4];                                     // 0x074C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74C[0x4];                                      // 0x074C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCameraFocusSettings                   FocusSettings;                                     // 0x0750(0x0060)(NativeAccessSpecifierPublic)
 	float                                         CurrentFocalLength;                                // 0x07B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CurrentAperture;                                   // 0x07B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CurrentFocusDistance;                              // 0x07B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2581[0x74];                                    // 0x07BC(0x0074)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7BC[0x74];                                     // 0x07BC(0x0074)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -114,11 +114,11 @@ static_assert(offsetof(UCameraAnimationSequenceCameraStandIn, CurrentFocusDistan
 class UCameraAnimationSequencePlayer final : public UObject
 {
 public:
-	uint8                                         Pad_2582[0x270];                                   // 0x0028(0x0270)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x270];                                     // 0x0028(0x0270)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                BoundObjectOverride;                               // 0x0298(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMovieSceneSequence*                    Sequence;                                          // 0x02A0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;                              // 0x02A8(0x0088)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2583[0x68];                                    // 0x0330(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_330[0x68];                                     // 0x0330(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -193,7 +193,7 @@ class UCameraAnimationSequenceSubsystem final : public UWorldSubsystem
 {
 public:
 	class UMovieSceneEntitySystemLinker*          Linker;                                            // 0x0030(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2584[0x10];                                    // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -242,10 +242,10 @@ public:
 	float                                         BlendOutTime;                                      // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RandomSegmentDuration;                             // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bRandomSegment;                                    // 0x0044(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2585[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCameraAnimationSequencePlayer*         Player;                                            // 0x0048(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UCameraAnimationSequenceCameraStandIn*  CameraStandIn;                                     // 0x0050(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2586[0x20];                                    // 0x0058(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x20];                                      // 0x0058(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -274,7 +274,7 @@ static_assert(offsetof(USequenceCameraShakePattern, CameraStandIn) == 0x000050, 
 class UTemplateSequenceSystem final : public UMovieSceneEntitySystem
 {
 public:
-	uint8                                         Pad_2587[0x70];                                    // 0x0040(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x70];                                      // 0x0040(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -294,7 +294,7 @@ static_assert(sizeof(UTemplateSequenceSystem) == 0x0000B0, "Wrong size on UTempl
 class UTemplateSequencePropertyScalingInstantiatorSystem final : public UMovieSceneEntitySystem
 {
 public:
-	uint8                                         Pad_2588[0x58];                                    // 0x0040(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x58];                                      // 0x0040(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -314,7 +314,7 @@ static_assert(sizeof(UTemplateSequencePropertyScalingInstantiatorSystem) == 0x00
 class UTemplateSequencePropertyScalingEvaluatorSystem final : public UMovieSceneEntitySystem
 {
 public:
-	uint8                                         Pad_2589[0x50];                                    // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -334,12 +334,12 @@ static_assert(sizeof(UTemplateSequencePropertyScalingEvaluatorSystem) == 0x00009
 class ATemplateSequenceActor final : public AActor
 {
 public:
-	uint8                                         Pad_258A[0x8];                                     // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x02A0(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	class UTemplateSequencePlayer*                SequencePlayer;                                    // 0x02C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, Transient, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                        TemplateSequence;                                  // 0x02C8(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTemplateSequenceBindingOverrideData   BindingOverride;                                   // 0x02E8(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_258B[0x4];                                     // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetBinding(class AActor* Actor, bool bOverridesDefault);
@@ -371,7 +371,7 @@ static_assert(offsetof(ATemplateSequenceActor, BindingOverride) == 0x0002E8, "Me
 class UTemplateSequencePlayer final : public UMovieSceneSequencePlayer
 {
 public:
-	uint8                                         Pad_258D[0x8];                                     // 0x04C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C8[0x8];                                      // 0x04C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UTemplateSequencePlayer* CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor);

@@ -25,53 +25,53 @@ class alignas(0x10) UChainComponent : public UMeshComponent
 {
 public:
 	float                                         Lerp;                                              // 0x05A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176A[0x4];                                     // 0x05AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5AC[0x4];                                      // 0x05AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnSoundReached;                                    // 0x05B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnCollide;                                         // 0x05C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UStaticMesh*                            ChainMesh;                                         // 0x05D0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x05D8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Segments;                                          // 0x05F0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176B[0x4];                                     // 0x05F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5F4[0x4];                                      // 0x05F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                AdditiveRotation;                                  // 0x05F8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ChainLength;                                       // 0x0610(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsLocal;                                          // 0x0614(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176C[0x3];                                     // 0x0615(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_615[0x3];                                      // 0x0615(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                EndPoint;                                          // 0x0618(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AttachStart;                                       // 0x0630(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176D[0x7];                                     // 0x0631(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_631[0x7];                                      // 0x0631(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FComponentReference                    AttachStartTo;                                     // 0x0638(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class FName                                   AttachStartToSocket;                               // 0x0660(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AttachEnd;                                         // 0x0668(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176E[0x7];                                     // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_669[0x7];                                      // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FComponentReference                    AttachEndTo;                                       // 0x0670(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class FName                                   AttachEndToSocket;                                 // 0x0698(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FComponentReference                    AttachComponentToStart;                            // 0x06A0(0x0028)(Edit, NativeAccessSpecifierPublic)
 	bool                                          RotateStartAttachment;                             // 0x06C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_176F[0x7];                                     // 0x06C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C9[0x7];                                      // 0x06C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FComponentReference                    AttachComponentToEnd;                              // 0x06D0(0x0028)(Edit, NativeAccessSpecifierPublic)
 	bool                                          RotateEndAttachment;                               // 0x06F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1770[0x3];                                     // 0x06F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6F9[0x3];                                      // 0x06F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Gravity;                                           // 0x06FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Stiffness;                                         // 0x0700(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Friction;                                          // 0x0704(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ChainWidth;                                        // 0x0708(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SelfCollision;                                     // 0x070C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1771[0x3];                                     // 0x070D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_70D[0x3];                                      // 0x070D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SelfCollisionWidth;                                // 0x0710(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SelfCollisionThreshold;                            // 0x0714(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Skip;                                              // 0x0718(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DrawDebugger;                                      // 0x071C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1772[0x3];                                     // 0x071D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71D[0x3];                                      // 0x071D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UInstancedStaticMeshComponent*          InstanceComponent;                                 // 0x0720(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SoundThreshold;                                    // 0x0728(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SoundSkip;                                         // 0x072C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1773[0x48];                                    // 0x0730(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_730[0x48];                                     // 0x0730(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	TArray<int32> ApplyForce(const struct FVector& InPosition, float InRadius, const struct FVector& InForce);
 	void AttachEndToActor(const struct FComponentReference& ComponentReference, class FName Socket);
 	void AttachStartToActor(const struct FComponentReference& ComponentReference, class FName Socket);
-	struct FVector GetChainPoint(int32 Param_Index);
+	struct FVector GetChainPoint(int32 Index_0);
 	TArray<struct FChainPoint> GetChainPoints();
 
 public:
@@ -127,7 +127,7 @@ class USplineChainComponent final : public UChainComponent
 public:
 	struct FRuntimeFloatCurve                     SplineFollowWeight;                                // 0x0778(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class USplineComponent*                       SplineComponent;                                   // 0x0800(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1776[0x8];                                     // 0x0808(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_808[0x8];                                      // 0x0808(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

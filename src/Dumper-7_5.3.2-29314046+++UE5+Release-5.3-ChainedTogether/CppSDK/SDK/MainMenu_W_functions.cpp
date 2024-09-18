@@ -171,6 +171,20 @@ void UMainMenu_W_C::BndEvt__MainMenu_W_Settings_Button_K2Node_ComponentBoundEven
 }
 
 
+// Function MainMenu_W.MainMenu_W_C.BndEvt__MainMenu_W_Workshop_Button_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMainMenu_W_C::BndEvt__MainMenu_W_Workshop_Button_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_W_C", "BndEvt__MainMenu_W_Workshop_Button_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function MainMenu_W.MainMenu_W_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

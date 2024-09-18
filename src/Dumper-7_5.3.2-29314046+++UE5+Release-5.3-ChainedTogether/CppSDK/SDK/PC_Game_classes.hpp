@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
+#include "E_ChoosenChar_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "E_ChoosenChar_structs.hpp"
 #include "PC_WithSettings_classes.hpp"
-#include "UMG_structs.hpp"
 
 
 namespace SDK
@@ -34,33 +34,35 @@ public:
 	TArray<class FString>                         CaptureDevices;                                    // 0x08A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<uint8>                                 Voice_Data;                                        // 0x08B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          PTT;                                               // 0x08C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3485[0x7];                                     // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C9[0x7];                                      // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                PreviousInteractionObject;                         // 0x08D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                InteractionObject;                                 // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         ActiveTestControl;                                 // 0x08E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3486[0x4];                                     // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8E4[0x4];                                      // 0x08E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          ActiveTestActor;                                   // 0x08E8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	class FString                                 CurrentLevel;                                      // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class UUserWidget*                            PullWidget_LocalMP;                                // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 LocalMpChosenChar;                                 // 0x0910(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3487[0x7];                                     // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_911[0x7];                                      // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ClassToRespawn;                                    // 0x0918(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UW_LocalMP_Use_C*                       UseLocalMP;                                        // 0x0920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsPressingJump;                                    // 0x0928(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3488[0x7];                                     // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_929[0x7];                                      // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class APawn*>                          Not_Pullable_Chars;                                // 0x0930(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	bool                                          OnEndScreen;                                       // 0x0940(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3489[0x7];                                     // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_941[0x7];                                      // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDateTime                              PingStart;                                         // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	int32                                         Ping;                                              // 0x0950(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FlyModeActivated;                                  // 0x0954(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_348A[0x3];                                     // 0x0955(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_955[0x3];                                      // 0x0955(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 MainMenuAction;                                    // 0x0958(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void Five0fps();
 	void BeginPull();
+	void BPI_RequestCharacter(E_ChoosenChar Character_0);
 	void CustomEvent();
+	void DestroyControlledCharacter();
 	void DetectInteraction();
 	void DetectPullCharacters();
 	void EndPull();
@@ -71,26 +73,27 @@ public:
 	void GetNotAttachedCharacters(TArray<class APawn*>* NotAttachedChars);
 	void GetSkin(E_ChoosenChar* ChosenChar);
 	void InitVoice();
-	void InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_321_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_11(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0(const struct FKey& Key);
-	void InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_19(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_7(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_9(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_Pull_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Pull_K2Node_EnhancedInputActionEvent_14(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_Pull_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_16(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_Use_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_Use_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void KickClient();
 	void KickServer();
 	void LeaveCarSRV(class AActor* Car);
@@ -107,12 +110,14 @@ public:
 	void PingSRV();
 	void PlayAudioComponent(class UAudioComponent* AudioComponent);
 	void PlaySound(class USoundWave* Sound);
-	void PullOtherCharacterSRV(class AActor* Param_ControlledActor, bool BeginPull, class AActor* Param_CharacterToPull);
+	void PullOtherCharacterSRV(class AActor* ControlledActor_0, bool BeginPull, class AActor* CharacterToPull_0);
+	void ReceiveBeginPlay();
 	void ReceivePossess(class APawn* PossessedPawn);
 	void ReceiveTick(float DeltaSeconds);
 	void RefreshTestControlChar();
 	void ReplicateControlRot();
 	void RepPseudo();
+	void Request321Server();
 	void RequestCharacter(E_ChoosenChar Char);
 	void RequestCharacterSpawnSRV();
 	void RequestCharServer(E_ChoosenChar Char);
@@ -129,20 +134,19 @@ public:
 	void SetLocalMpChosenChar(E_ChoosenChar Char);
 	void SetRotationSrv(class UObject* Target, const struct FRotator& Rotation);
 	void Show_Hud();
-	void ShowTchat(class UW_Tchat_C** Param_Tchat);
+	void ShowTchat(class UW_Tchat_C** Tchat_0);
 	void ShowTchatUI(bool RefreshTchat);
-	class APawn* SpawnCharacter(const struct FTransform& SpawnTransform, bool UpdateController, const class FString& FakePseudo, E_ChoosenChar Param_Character);
+	class APawn* SpawnCharacter(const struct FTransform& SpawnTransform, bool UpdateController, const class FString& FakePseudo, E_ChoosenChar Character_0);
 	void SpawnCharacter_Srv_();
 	void SpawnCharacterSRV();
 	void SwitchToGameMode();
 	void TickAxes();
 	void Trigger_Moving_Object(class ABP_MovingObject_C* MovingObject);
 	void TriggerMovingObject(class ABP_MovingObject_C* MovingObject);
-	void UpdateCanEscape(bool Param_CanEscape);
+	void UpdateCanEscape(bool CanEscape_0);
 	void UpdateTestActor();
 	void Use();
-	void UseServer(class UObject* Object, class AActor* Param_ControlledActor);
-	void ReceiveBeginPlay();
+	void UseServer(class UObject* Object, class AActor* ControlledActor_0);
 
 public:
 	static class UClass* StaticClass()

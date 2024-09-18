@@ -145,7 +145,7 @@ struct BPI_ChainPhysics_C_ReinitAttachment final
 {
 public:
 	int32                                         NewDensity;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB3[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        NewChainMass;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Human;                                             // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -160,13 +160,13 @@ static_assert(offsetof(BPI_ChainPhysics_C_ReinitAttachment, Human) == 0x000010, 
 struct BPI_ChainPhysics_C_SetAttachedChar final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB4[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 Char;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_ChainPhysics_C_SetAttachedChar) == 0x000008, "Wrong alignment on BPI_ChainPhysics_C_SetAttachedChar");
 static_assert(sizeof(BPI_ChainPhysics_C_SetAttachedChar) == 0x000010, "Wrong size on BPI_ChainPhysics_C_SetAttachedChar");
-static_assert(offsetof(BPI_ChainPhysics_C_SetAttachedChar, Param_Index) == 0x000000, "Member 'BPI_ChainPhysics_C_SetAttachedChar::Param_Index' has a wrong offset!");
+static_assert(offsetof(BPI_ChainPhysics_C_SetAttachedChar, Index_0) == 0x000000, "Member 'BPI_ChainPhysics_C_SetAttachedChar::Index_0' has a wrong offset!");
 static_assert(offsetof(BPI_ChainPhysics_C_SetAttachedChar, Char) == 0x000008, "Member 'BPI_ChainPhysics_C_SetAttachedChar::Char' has a wrong offset!");
 
 // Function BPI_ChainPhysics.BPI_ChainPhysics_C.SetMaillonWeight

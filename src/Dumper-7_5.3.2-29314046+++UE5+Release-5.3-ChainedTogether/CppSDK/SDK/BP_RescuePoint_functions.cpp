@@ -70,10 +70,10 @@ void ABP_RescuePoint_C::ExecuteUbergraph_BP_RescuePoint(int32 EntryPoint)
 // Function BP_RescuePoint.BP_RescuePoint_C.GetStartComponentByIndex
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class USphereComponent*                 Output                                                 (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_RescuePoint_C::GetStartComponentByIndex(int32 Param_Index, class USphereComponent** Output)
+void ABP_RescuePoint_C::GetStartComponentByIndex(int32 Index_0, class USphereComponent** Output)
 {
 	static class UFunction* Func = nullptr;
 
@@ -82,12 +82,26 @@ void ABP_RescuePoint_C::GetStartComponentByIndex(int32 Param_Index, class USpher
 
 	Params::BP_RescuePoint_C_GetStartComponentByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	if (Output != nullptr)
 		*Output = Parms.Output;
+}
+
+
+// Function BP_RescuePoint.BP_RescuePoint_C.PlaceSpheres
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_RescuePoint_C::PlaceSpheres()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RescuePoint_C", "PlaceSpheres");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -130,9 +144,9 @@ void ABP_RescuePoint_C::TeleportAll(TArray<class AActor*>& Array)
 // Function BP_RescuePoint.BP_RescuePoint_C.TeleportServer
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class AActor*>                   Param_ActorsToTeleport                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class AActor*>                   ActorsToTeleport_0                                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ABP_RescuePoint_C::TeleportServer(TArray<class AActor*>& Param_ActorsToTeleport)
+void ABP_RescuePoint_C::TeleportServer(TArray<class AActor*>& ActorsToTeleport_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -141,16 +155,16 @@ void ABP_RescuePoint_C::TeleportServer(TArray<class AActor*>& Param_ActorsToTele
 
 	Params::BP_RescuePoint_C_TeleportServer Parms{};
 
-	Parms.Param_ActorsToTeleport = std::move(Param_ActorsToTeleport);
+	Parms.ActorsToTeleport_0 = std::move(ActorsToTeleport_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	Param_ActorsToTeleport = std::move(Parms.Param_ActorsToTeleport);
+	ActorsToTeleport_0 = std::move(Parms.ActorsToTeleport_0);
 }
 
 
 // Function BP_RescuePoint.BP_RescuePoint_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ABP_RescuePoint_C::UserConstructionScript()
 {

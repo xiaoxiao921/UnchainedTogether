@@ -394,11 +394,11 @@ void IBPI_Gamestate_C::NearestRescuePoint(bool Lava, bool* Found, class ABP_Resc
 // Function BPI_Gamestate.BPI_Gamestate_C.SendToChatSRV
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Gamestate_C::SendToChatSRV(const class FString& Param_Name, const class FString& Message, const struct FLinearColor& Color)
+void IBPI_Gamestate_C::SendToChatSRV(const class FString& Name_0, const class FString& Message, const struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
@@ -407,7 +407,7 @@ void IBPI_Gamestate_C::SendToChatSRV(const class FString& Param_Name, const clas
 
 	Params::BPI_Gamestate_C_SendToChatSRV Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Message = std::move(Message);
 	Parms.Color = std::move(Color);
 
@@ -430,6 +430,28 @@ void IBPI_Gamestate_C::ServerTravel(const class FString& Command)
 	Params::BPI_Gamestate_C_ServerTravel Parms{};
 
 	Parms.Command = std::move(Command);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPI_Gamestate.BPI_Gamestate_C.SetLocalMP_ChosenChar
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// E_ChoosenChar                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_Gamestate_C::SetLocalMP_ChosenChar(E_ChoosenChar Character, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_Gamestate_C", "SetLocalMP_ChosenChar");
+
+	Params::BPI_Gamestate_C_SetLocalMP_ChosenChar Parms{};
+
+	Parms.Character = Character;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

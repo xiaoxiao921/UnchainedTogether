@@ -21,6 +21,7 @@ namespace SDK
 class IBPI_CreatingGameMenu_C final : public IInterface
 {
 public:
+	void RefreshGamemodeVisibility();
 	void RefreshSave(const struct FS_BiomeSave& Save);
 
 public:

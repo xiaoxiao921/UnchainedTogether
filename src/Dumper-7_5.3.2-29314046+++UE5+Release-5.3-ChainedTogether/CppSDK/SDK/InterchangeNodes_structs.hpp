@@ -95,7 +95,7 @@ struct FInterchangeAnimationPayLoadKey final
 public:
 	class FString                                 UniqueID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EInterchangeAnimationPayLoadType              Type;                                              // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28C4[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInterchangeAnimationPayLoadKey) == 0x000008, "Wrong alignment on FInterchangeAnimationPayLoadKey");
 static_assert(sizeof(FInterchangeAnimationPayLoadKey) == 0x000018, "Wrong size on FInterchangeAnimationPayLoadKey");
@@ -109,7 +109,7 @@ struct FInterchangeMeshPayLoadKey final
 public:
 	class FString                                 UniqueID;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EInterchangeMeshPayLoadType                   Type;                                              // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28C5[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInterchangeMeshPayLoadKey) == 0x000008, "Wrong alignment on FInterchangeMeshPayLoadKey");
 static_assert(sizeof(FInterchangeMeshPayLoadKey) == 0x000018, "Wrong size on FInterchangeMeshPayLoadKey");

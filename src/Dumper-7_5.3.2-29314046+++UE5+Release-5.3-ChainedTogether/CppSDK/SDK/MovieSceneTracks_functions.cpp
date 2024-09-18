@@ -615,9 +615,9 @@ void UMovieSceneDataLayerSection::SetDesiredState(EDataLayerRuntimeState InDesir
 // Function MovieSceneTracks.MovieSceneDataLayerSection.SetFlushOnUnload
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    Param_bFlushOnUnload                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFlushOnUnload_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneDataLayerSection::SetFlushOnUnload(bool Param_bFlushOnUnload)
+void UMovieSceneDataLayerSection::SetFlushOnUnload(bool bFlushOnUnload_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -626,7 +626,7 @@ void UMovieSceneDataLayerSection::SetFlushOnUnload(bool Param_bFlushOnUnload)
 
 	Params::MovieSceneDataLayerSection_SetFlushOnUnload Parms{};
 
-	Parms.Param_bFlushOnUnload = Param_bFlushOnUnload;
+	Parms.bFlushOnUnload_0 = bFlushOnUnload_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

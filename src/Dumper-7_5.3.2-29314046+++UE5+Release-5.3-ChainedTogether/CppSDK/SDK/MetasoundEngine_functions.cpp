@@ -76,10 +76,10 @@ bool UMetasoundGeneratorHandle::ApplyParameterPack(class UMetasoundParameterPack
 // DelegateFunction MetasoundEngine.MetasoundGeneratorHandle.OnOutputValueChangedMulticast__DelegateSignature
 // (MulticastDelegate, Public, Delegate, HasOutParams)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMetaSoundOutput                 Output                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMetasoundGeneratorHandle::OnOutputValueChangedMulticast__DelegateSignature(class FName Param_Name, const struct FMetaSoundOutput& Output)
+void UMetasoundGeneratorHandle::OnOutputValueChangedMulticast__DelegateSignature(class FName Name_0, const struct FMetaSoundOutput& Output)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +88,7 @@ void UMetasoundGeneratorHandle::OnOutputValueChangedMulticast__DelegateSignature
 
 	Params::MetasoundGeneratorHandle_OnOutputValueChangedMulticast__DelegateSignature Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.Output = std::move(Output);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -518,14 +518,14 @@ void UMetaSoundAssetSubsystem::UnregisterAssetClassesInDirectories(const TArray<
 // Function MetasoundEngine.MetaSoundBuilderBase.AddGraphInputNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             DataType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMetasoundFrontendLiteral        DefaultValue                                           (Parm, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsConstructorInput                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMetaSoundBuilderNodeOutputHandleReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMetaSoundBuilderNodeOutputHandle UMetaSoundBuilderBase::AddGraphInputNode(class FName Param_Name, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorInput)
+struct FMetaSoundBuilderNodeOutputHandle UMetaSoundBuilderBase::AddGraphInputNode(class FName Name_0, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -534,7 +534,7 @@ struct FMetaSoundBuilderNodeOutputHandle UMetaSoundBuilderBase::AddGraphInputNod
 
 	Params::MetaSoundBuilderBase_AddGraphInputNode Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.DataType = DataType;
 	Parms.DefaultValue = std::move(DefaultValue);
 	Parms.bIsConstructorInput = bIsConstructorInput;
@@ -556,14 +556,14 @@ struct FMetaSoundBuilderNodeOutputHandle UMetaSoundBuilderBase::AddGraphInputNod
 // Function MetasoundEngine.MetaSoundBuilderBase.AddGraphOutputNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             DataType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMetasoundFrontendLiteral        DefaultValue                                           (Parm, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsConstructorOutput                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMetaSoundBuilderNodeInputHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMetaSoundBuilderNodeInputHandle UMetaSoundBuilderBase::AddGraphOutputNode(class FName Param_Name, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorOutput)
+struct FMetaSoundBuilderNodeInputHandle UMetaSoundBuilderBase::AddGraphOutputNode(class FName Name_0, class FName DataType, const struct FMetasoundFrontendLiteral& DefaultValue, EMetaSoundBuilderResult* OutResult, bool bIsConstructorOutput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -572,7 +572,7 @@ struct FMetaSoundBuilderNodeInputHandle UMetaSoundBuilderBase::AddGraphOutputNod
 
 	Params::MetaSoundBuilderBase_AddGraphOutputNode Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.DataType = DataType;
 	Parms.DefaultValue = std::move(DefaultValue);
 	Parms.bIsConstructorOutput = bIsConstructorOutput;
@@ -1509,11 +1509,11 @@ struct FMetasoundFrontendLiteral UMetaSoundBuilderBase::GetNodeInputClassDefault
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FMetaSoundBuilderNodeInputHandle InputHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Param_Name                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             DataType                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMetaSoundBuilderBase::GetNodeInputData(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, class FName* Param_Name, class FName* DataType, EMetaSoundBuilderResult* OutResult)
+void UMetaSoundBuilderBase::GetNodeInputData(const struct FMetaSoundBuilderNodeInputHandle& InputHandle, class FName* Name_0, class FName* DataType, EMetaSoundBuilderResult* OutResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1531,8 +1531,8 @@ void UMetaSoundBuilderBase::GetNodeInputData(const struct FMetaSoundBuilderNodeI
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = Parms.Param_Name;
+	if (Name_0 != nullptr)
+		*Name_0 = Parms.Name_0;
 
 	if (DataType != nullptr)
 		*DataType = Parms.DataType;
@@ -1578,11 +1578,11 @@ struct FMetasoundFrontendLiteral UMetaSoundBuilderBase::GetNodeInputDefault(cons
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FMetaSoundBuilderNodeOutputHandleOutputHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Param_Name                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             DataType                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMetaSoundBuilderBase::GetNodeOutputData(const struct FMetaSoundBuilderNodeOutputHandle& OutputHandle, class FName* Param_Name, class FName* DataType, EMetaSoundBuilderResult* OutResult)
+void UMetaSoundBuilderBase::GetNodeOutputData(const struct FMetaSoundBuilderNodeOutputHandle& OutputHandle, class FName* Name_0, class FName* DataType, EMetaSoundBuilderResult* OutResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1600,8 +1600,8 @@ void UMetaSoundBuilderBase::GetNodeOutputData(const struct FMetaSoundBuilderNode
 
 	Func->FunctionFlags = Flgs;
 
-	if (Param_Name != nullptr)
-		*Param_Name = Parms.Param_Name;
+	if (Name_0 != nullptr)
+		*Name_0 = Parms.Name_0;
 
 	if (DataType != nullptr)
 		*DataType = Parms.DataType;
@@ -1614,10 +1614,10 @@ void UMetaSoundBuilderBase::GetNodeOutputData(const struct FMetaSoundBuilderNode
 // Function MetasoundEngine.MetaSoundBuilderBase.RemoveGraphInput
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMetaSoundBuilderBase::RemoveGraphInput(class FName Param_Name, EMetaSoundBuilderResult* OutResult)
+void UMetaSoundBuilderBase::RemoveGraphInput(class FName Name_0, EMetaSoundBuilderResult* OutResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1626,7 +1626,7 @@ void UMetaSoundBuilderBase::RemoveGraphInput(class FName Param_Name, EMetaSoundB
 
 	Params::MetaSoundBuilderBase_RemoveGraphInput Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1643,10 +1643,10 @@ void UMetaSoundBuilderBase::RemoveGraphInput(class FName Param_Name, EMetaSoundB
 // Function MetasoundEngine.MetaSoundBuilderBase.RemoveGraphOutput
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMetaSoundBuilderResult                 OutResult                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMetaSoundBuilderBase::RemoveGraphOutput(class FName Param_Name, EMetaSoundBuilderResult* OutResult)
+void UMetaSoundBuilderBase::RemoveGraphOutput(class FName Name_0, EMetaSoundBuilderResult* OutResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1655,7 +1655,7 @@ void UMetaSoundBuilderBase::RemoveGraphOutput(class FName Param_Name, EMetaSound
 
 	Params::MetaSoundBuilderBase_RemoveGraphOutput Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "E_ChoosenChar_structs.hpp"
 
 
@@ -21,8 +21,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_CustomCar.BP_CustomCar_C
 // 0x0400 (0x0720 - 0x0320)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABP_CustomCar_C : public APawn
+class ABP_CustomCar_C final : public APawn
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0320(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -64,19 +63,19 @@ public:
 	class UArrowComponent*                        ArrowBR;                                           // 0x0440(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            CarStabilize_TL__Direction_B50896E84AD91349FC81AEBBBE80F726; // 0x0450(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3398[0x7];                                     // 0x0451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_451[0x7];                                      // 0x0451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     CarStabilize_TL;                                   // 0x0458(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	double                                        TraceLengthFront;                                  // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        HoverForce;                                        // 0x0468(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Gravity;                                           // 0x0470(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_ChoosenChar                                 Driver;                                            // 0x0478(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3399[0x7];                                     // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_479[0x7];                                      // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         AttachedCharacters;                                // 0x0480(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	double                                        Speed;                                             // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        SteerForce;                                        // 0x0498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        LerpedMoveForwardAxis;                             // 0x04A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Grounded;                                          // 0x04A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339A[0x7];                                     // 0x04A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4A9[0x7];                                      // 0x04A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                WBL_InitLoc;                                       // 0x04B0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                WFL_InitLoc;                                       // 0x04C8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                WBR_InitLoc;                                       // 0x04E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -91,34 +90,35 @@ public:
 	double                                        WheelHeightFront;                                  // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ServerLocation;                                    // 0x05A8(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ServerVelocity;                                    // 0x05C0(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339B[0x8];                                     // 0x05D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5D8[0x8];                                      // 0x05D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             RepTransform;                                      // 0x05E0(0x0060)(Edit, BlueprintVisible, Net, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class APawn*                                  DriverToDetach;                                    // 0x0640(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        TraceLengthBack;                                   // 0x0648(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        WheelHeightBack;                                   // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Carosse;                                           // 0x0658(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339C[0x3];                                     // 0x0659(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_659[0x3];                                      // 0x0659(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         New_Length_Car_;                                   // 0x065C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         New_Length_Human_;                                 // 0x0660(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CanLeave;                                          // 0x0664(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339D[0x3];                                     // 0x0665(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Index_BP_CustomCar_C;                              // 0x0668(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_665[0x3];                                      // 0x0665(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0668(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	bool                                          CanGoBack;                                         // 0x066C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Is_Elevator_Truck;                                 // 0x066D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_339E[0x2];                                     // 0x066E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_66E[0x2];                                      // 0x066E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<E_ChoosenChar>                         CharactersPassengers;                              // 0x0670(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	double                                        ExitCarHeight;                                     // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Passenger_Camera_Offset;                           // 0x0688(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Passenger_Target_Arm_Length;                       // 0x06A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          StartCar;                                          // 0x06A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	bool                                          Debug;                                             // 0x06A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_339F[0x6];                                     // 0x06AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6AA[0x6];                                      // 0x06AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDrive_AnimBP_C*                        DriverAnimBP;                                      // 0x06B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class ABP_Lava_C*                             LavaRef;                                           // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                PreviousLocation;                                  // 0x06C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Velocity;                                          // 0x06D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UArrowComponent*>                CarArrows;                                         // 0x06F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	struct FVector                                CarUpVector;                                       // 0x0700(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Spawner;                                           // 0x0718(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void AddImpulseToVehicle(const struct FVector& Impulse);
@@ -126,30 +126,30 @@ public:
 	void AddPassengerCloth(class USkeletalMesh* NewMesh, const struct FLinearColor& Color, bool CustomMat, class USkeletalMeshComponent* SkeletalMesh, class UMaterialInterface* Material);
 	void AutoFlipCar();
 	void CalculateVelocity();
-	void CanBeUsed(bool* Param_CanBeUsed);
+	void CanBeUsed(bool* CanBeUsed_0);
 	void CarStabilize_TL__FinishedFunc();
 	void CarStabilize_TL__UpdateFunc();
 	void CheckClientDriverDisconnect();
 	void CheckUnderLava();
 	void Constraint();
-	void Detected(bool Param_Detected, class APlayerController* PC);
+	void Detected(bool Detected_0, class APlayerController* PC);
 	void DriveForwardGP_Completed();
 	void EventDriveForwardGP(double Axis);
 	void ExecuteUbergraph_BP_CustomCar(int32 EntryPoint);
-	void F_MoveForward(double Param_MoveForwardAxis);
-	void F_MoveRight(double Param_MoveRightAxis);
+	void F_MoveForward(double MoveForwardAxis_0);
+	void F_MoveRight(double MoveRightAxis_0);
 	void GetArrows(TArray<class UArrowComponent*>* Array);
 	void GetAttachedComponent(class UPrimitiveComponent** Comp);
 	void GetCosmeticSocket(class UPrimitiveComponent** Comp);
 	class UPrimitiveComponent* GetDriverSocket();
 	void GetForwardRotation(struct FRotator* Rot);
-	void GetForwardSpeed(double* Param_Speed);
+	void GetForwardSpeed(double* Speed_0);
 	void GetRadialVelocityZ(double* Vel);
 	void GetRootMesh(class UPrimitiveComponent** Mesh);
-	void HorseGrounded(bool* Param_Grounded);
-	void Hover(bool* Param_Grounded);
+	void HorseGrounded(bool* Grounded_0);
+	void Hover(bool* Grounded_0);
 	void Input_Leave_Tyro();
-	void IsCarosse(bool* Param_Carosse);
+	void IsCarosse(bool* Carosse_0);
 	void IsCarVisible(bool* Visible);
 	bool IsDriverEmpty();
 	void IsPossessed(bool* Possessed);
@@ -159,7 +159,7 @@ public:
 	void LookRight(double Axis);
 	void LookUp(double Axis);
 	void MoveForward(double Axis);
-	void MoveForwardEvent(double Param_MoveForwardAxis);
+	void MoveForwardEvent(double MoveForwardAxis_0);
 	void MoveFwdAll(double Axis);
 	void MoveFwdSRV(double Axis);
 	void MovementReplication();
@@ -182,14 +182,14 @@ public:
 	void RefreshSkin01All(E_ChoosenChar Character);
 	void RefreshSkin02All(E_ChoosenChar Character);
 	void RefreshSkin03All(E_ChoosenChar Character);
-	void ReplicateMov(const struct FTransform& Param_RepTransform, const struct FVector& Param_ServerVelocity);
+	void ReplicateMov(const struct FTransform& RepTransform_0, const struct FVector& ServerVelocity_0);
 	void ResetAll(const struct FTransform& NewTransform);
 	void ResetTransform();
 	void ResetVelocity();
 	void ResetWheelLocationByTag(class FName Selection);
 	void SetWheelLoc(class USceneComponent* WheelMesh, const struct FVector& InVec);
 	void SnapDriverToVehicle();
-	void Sprint(bool Param_Sprint);
+	void Sprint(bool Sprint_0);
 	void Stabilize(double InterpSpeed);
 	void StabilizeVelocity();
 	void Stance();
@@ -197,7 +197,7 @@ public:
 	void TestControlNotify();
 	void Transfer_Chains_to_Human__Srv_(const class APawn* InDriver);
 	void Transfer_Chains_to_Vehicle__Srv_(const class UObject* InDriver);
-	void TransferLoggedPlayerToCar(class AController* Param_Controller);
+	void TransferLoggedPlayerToCar(class AController* Controller_0);
 	void TransferOtherPlayersToCar(class UObject* DriverController);
 	void UnpossessVehicle();
 	void UnpossessVehicleAll();
@@ -207,7 +207,7 @@ public:
 	void UpdateSound();
 	void UpdateSpeed();
 	void UpdateSteerFromVelocity(double Steer, double* NewSteer);
-	void Use(class AController* Param_Controller, class AActor* ControlledActor);
+	void Use(class AController* Controller_0, class AActor* ControlledActor);
 	void UserConstructionScript();
 	void WheelLeftRight(double NewRotation_Yaw);
 	void WheelRotation();
@@ -222,7 +222,6 @@ public:
 		return GetDefaultObjImpl<ABP_CustomCar_C>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(ABP_CustomCar_C) == 0x000010, "Wrong alignment on ABP_CustomCar_C");
 static_assert(sizeof(ABP_CustomCar_C) == 0x000720, "Wrong size on ABP_CustomCar_C");
 static_assert(offsetof(ABP_CustomCar_C, UberGraphFrame) == 0x000320, "Member 'ABP_CustomCar_C::UberGraphFrame' has a wrong offset!");
@@ -296,7 +295,7 @@ static_assert(offsetof(ABP_CustomCar_C, Carosse) == 0x000658, "Member 'ABP_Custo
 static_assert(offsetof(ABP_CustomCar_C, New_Length_Car_) == 0x00065C, "Member 'ABP_CustomCar_C::New_Length_Car_' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, New_Length_Human_) == 0x000660, "Member 'ABP_CustomCar_C::New_Length_Human_' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, CanLeave) == 0x000664, "Member 'ABP_CustomCar_C::CanLeave' has a wrong offset!");
-static_assert(offsetof(ABP_CustomCar_C, Index_BP_CustomCar_C) == 0x000668, "Member 'ABP_CustomCar_C::Index_BP_CustomCar_C' has a wrong offset!");
+static_assert(offsetof(ABP_CustomCar_C, Index_0) == 0x000668, "Member 'ABP_CustomCar_C::Index_0' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, CanGoBack) == 0x00066C, "Member 'ABP_CustomCar_C::CanGoBack' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, Is_Elevator_Truck) == 0x00066D, "Member 'ABP_CustomCar_C::Is_Elevator_Truck' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, CharactersPassengers) == 0x000670, "Member 'ABP_CustomCar_C::CharactersPassengers' has a wrong offset!");
@@ -311,6 +310,7 @@ static_assert(offsetof(ABP_CustomCar_C, PreviousLocation) == 0x0006C0, "Member '
 static_assert(offsetof(ABP_CustomCar_C, Velocity) == 0x0006D8, "Member 'ABP_CustomCar_C::Velocity' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, CarArrows) == 0x0006F0, "Member 'ABP_CustomCar_C::CarArrows' has a wrong offset!");
 static_assert(offsetof(ABP_CustomCar_C, CarUpVector) == 0x000700, "Member 'ABP_CustomCar_C::CarUpVector' has a wrong offset!");
+static_assert(offsetof(ABP_CustomCar_C, Spawner) == 0x000718, "Member 'ABP_CustomCar_C::Spawner' has a wrong offset!");
 
 }
 

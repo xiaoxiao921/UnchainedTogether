@@ -42,10 +42,10 @@ public:
 public:
 	void Construct();
 	void ExecuteUbergraph_W_Controls(int32 EntryPoint);
-	void GetKeyName(const class FName Key, EPlayerMappableKeySlot Param_Slot, class FText* DisplayName);
+	void GetKeyName(const class FName Key, EPlayerMappableKeySlot Slot_0, class FText* DisplayName);
 	void PermuterZQSD(const class FString& String, class FString* Out);
 	void RefreshContent();
-	void ReturnKeyName(class APlayerController* PlayerController, const class UInputAction* Action, int32 Param_Index, class FText* KeyName);
+	void ReturnKeyName(class APlayerController* PlayerController, const class UInputAction* Action, int32 Index_0, class FText* KeyName);
 	void UpdateBinding(class UWidgetSwitcher* WidgetSwitcher, class UTextBlock* TextBlock, const class FText& KeyName);
 
 public:

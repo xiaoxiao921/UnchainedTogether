@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// Function W_CharacterSlot.W_CharacterSlot_C.BndEvt__W_CharacterSlot_DetectiveButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function W_CharacterSlot.W_CharacterSlot_C.changeimage
+// (BlueprintCallable, BlueprintEvent)
 
-void UW_CharacterSlot_C::BndEvt__W_CharacterSlot_DetectiveButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+void UW_CharacterSlot_C::Changeimage()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_CharacterSlot_C", "BndEvt__W_CharacterSlot_DetectiveButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+		Func = Class->GetFunction("W_CharacterSlot_C", "changeimage");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -46,6 +46,26 @@ void UW_CharacterSlot_C::ExecuteUbergraph_W_CharacterSlot(int32 EntryPoint)
 	Params::W_CharacterSlot_C_ExecuteUbergraph_W_CharacterSlot Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_CharacterSlot.W_CharacterSlot_C.FirstChoose
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Right                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CharacterSlot_C::FirstChoose(bool Right)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSlot_C", "FirstChoose");
+
+	Params::W_CharacterSlot_C_FirstChoose Parms{};
+
+	Parms.Right = Right;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -74,9 +94,9 @@ void UW_CharacterSlot_C::PreConstruct(bool IsDesignTime)
 // Function W_CharacterSlot.W_CharacterSlot_C.Select
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Select                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Select_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_CharacterSlot_C::Select(bool Param_Select)
+void UW_CharacterSlot_C::Select(bool Select_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -85,9 +105,37 @@ void UW_CharacterSlot_C::Select(bool Param_Select)
 
 	Params::W_CharacterSlot_C_Select Parms{};
 
-	Parms.Param_Select = Param_Select;
+	Parms.Select_0 = Select_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_CharacterSlot.W_CharacterSlot_C.SequenceEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_CharacterSlot_C::SequenceEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSlot_C", "SequenceEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CharacterSlot.W_CharacterSlot_C.SequenceEvent__ENTRYPOINTW_CharacterSlot
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_CharacterSlot_C::SequenceEvent__ENTRYPOINTW_CharacterSlot()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CharacterSlot_C", "SequenceEvent__ENTRYPOINTW_CharacterSlot");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -17,62 +17,6 @@
 namespace SDK
 {
 
-// Function W_ComboChoice.W_ComboChoice_C.BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_4_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_ComboChoice_C::BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_4_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_4_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ComboChoice.W_ComboChoice_C.BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_ComboChoice_C::BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ComboChoice.W_ComboChoice_C.BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_ComboChoice_C::BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "BndEvt__W_ComboChoice_Button_0_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ComboChoice.W_ComboChoice_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UW_ComboChoice_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_ComboChoice.W_ComboChoice_C.ExecuteUbergraph_W_ComboChoice
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -152,25 +96,28 @@ struct FEventReply UW_ComboChoice_C::OnMouseButtonDown(const struct FGeometry& M
 }
 
 
-// Function W_ComboChoice.W_ComboChoice_C.OnSelectionChanged_Event_0
-// (BlueprintCallable, BlueprintEvent)
+// Function W_ComboChoice.W_ComboChoice_C.OnMouseButtonDown_0
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           SelectedItem                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// ESelectInfo                             SelectionType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// struct FPointerEvent                    MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
 
-void UW_ComboChoice_C::OnSelectionChanged_Event_0(const class FString& SelectedItem, ESelectInfo SelectionType)
+struct FEventReply UW_ComboChoice_C::OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "OnSelectionChanged_Event_0");
+		Func = Class->GetFunction("W_ComboChoice_C", "OnMouseButtonDown_0");
 
-	Params::W_ComboChoice_C_OnSelectionChanged_Event_0 Parms{};
+	Params::W_ComboChoice_C_OnMouseButtonDown_0 Parms{};
 
-	Parms.SelectedItem = std::move(SelectedItem);
-	Parms.SelectionType = SelectionType;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.MouseEvent = std::move(MouseEvent);
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -197,9 +144,9 @@ void UW_ComboChoice_C::PreConstruct(bool IsDesignTime)
 // Function W_ComboChoice.W_ComboChoice_C.Press__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Item                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Item_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_ComboChoice_C::Press__DelegateSignature(const class FString& Param_Item)
+void UW_ComboChoice_C::Press__DelegateSignature(const class FString& Item_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,23 +155,9 @@ void UW_ComboChoice_C::Press__DelegateSignature(const class FString& Param_Item)
 
 	Params::W_ComboChoice_C_Press__DelegateSignature Parms{};
 
-	Parms.Param_Item = std::move(Param_Item);
+	Parms.Item_0 = std::move(Item_0);
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_ComboChoice.W_ComboChoice_C.RefreshClickable
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_ComboChoice_C::RefreshClickable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboChoice_C", "RefreshClickable");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

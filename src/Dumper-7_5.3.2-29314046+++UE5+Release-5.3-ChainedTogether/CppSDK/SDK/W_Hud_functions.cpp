@@ -45,6 +45,29 @@ void UW_Hud_C::Construct()
 }
 
 
+// Function W_Hud.W_Hud_C.ConvertHeightToMeters
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double                                  A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText UW_Hud_C::ConvertHeightToMeters(double A)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hud_C", "ConvertHeightToMeters");
+
+	Params::W_Hud_C_ConvertHeightToMeters Parms{};
+
+	Parms.A = A;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function W_Hud.W_Hud_C.CustomEvent_0
 // (BlueprintCallable, BlueprintEvent)
 
@@ -192,6 +215,48 @@ void UW_Hud_C::UpdateCheckpointsHeight()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_Hud_C", "UpdateCheckpointsHeight");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Hud.W_Hud_C.UpdateCursorHeight
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_Hud_C::UpdateCursorHeight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hud_C", "UpdateCursorHeight");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Hud.W_Hud_C.UpdateHeights
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UW_Hud_C::UpdateHeights()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hud_C", "UpdateHeights");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Hud.W_Hud_C.UpdateMaxHeight
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_Hud_C::UpdateMaxHeight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hud_C", "UpdateMaxHeight");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

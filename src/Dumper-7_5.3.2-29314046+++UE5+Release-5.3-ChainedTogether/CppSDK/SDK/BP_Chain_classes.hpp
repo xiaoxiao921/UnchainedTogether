@@ -26,20 +26,20 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            ChainStabilize_TL__Direction_BD4C963742724B2C9CAB6AAF2C07DECA; // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F7E[0x7];                                     // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     ChainStabilize_TL;                                 // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         Density;                                           // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_2F7F[0x4];                                     // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Spacing;                                           // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Scale;                                             // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          SnapTips;                                          // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F80[0x7];                                     // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D1[0x7];                                      // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 Attached01;                                        // 0x02D8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	class AActor*                                 Attached02;                                        // 0x02E0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	double                                        ChainMeshScale;                                    // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CubeScale;                                         // 0x02F0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Constraint;                                        // 0x0308(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F81[0x7];                                     // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        ChainDistance;                                     // 0x0310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        MaxDistance;                                       // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   CubeSocket01;                                      // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -48,7 +48,7 @@ public:
 	double                                        GradientPullForce;                                 // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UStaticMeshComponent*>           Capsules;                                          // 0x0340(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	bool                                          Cosmetics;                                         // 0x0350(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_2F82[0x7];                                     // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UPhysicsConstraintComponent*>    Constraints;                                       // 0x0358(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class ACubeToPlayerConstraint_C*              CubeToPlayerConstraint01;                          // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class ACubeToPlayerConstraint_C*              CubeToPlayerConstraint02;                          // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
@@ -60,10 +60,10 @@ public:
 
 public:
 	void AdaptCosmeticChain();
-	class UStaticMeshComponent* AddCaspule(int32 Param_Index, bool HideInGame);
+	class UStaticMeshComponent* AddCaspule(int32 Index_0, bool HideInGame);
 	void AddChainConstraint(class UPrimitiveComponent* Component1, class UPrimitiveComponent* Component2, const struct FVector& Location);
 	class UStaticMeshComponent* AddCubeSocket(const struct FVector& Relative_Transform_Location, bool NewHidden);
-	void AddFakeChain(int32 Param_Index, bool Start);
+	void AddFakeChain(int32 Index_0, bool Start);
 	void AddImpulseOnSocket(class UPrimitiveComponent* Target);
 	void Adjust_Chains_Location();
 	void AttachChainsToCharacters();
@@ -84,7 +84,7 @@ public:
 	void GetLastSphere(class UStaticMeshComponent** Output);
 	struct FVector GetMiddleLocation();
 	void GetSecondSphere(class UStaticMeshComponent** Output);
-	void GetSnapTips(bool* Param_SnapTips);
+	void GetSnapTips(bool* SnapTips_0);
 	struct FVector GetSocketLocation(class AActor* Attached);
 	void GetTension(double* Float);
 	void ImpulseOnMaillons(const struct FVector& Impulse);
@@ -104,18 +104,18 @@ public:
 	void Refresh_Tags(class AActor* Attached, bool Player01);
 	void RefreshChain();
 	void ReinitAttachment(int32 NewDensity, double NewChainMass, bool Human);
-	void ReinitAttachmentAll(int32 Param_Density, double Param_Mass_in_Kg);
+	void ReinitAttachmentAll(int32 Density_0, double Mass_in_Kg_0);
 	void RemoveAllComponentsOfClass(TSubclassOf<class UActorComponent> ComponentClass);
 	void RemoveCharacterConstraints();
 	void ReplicateChainLocation();
 	void Resync();
-	void SetAttachedChar(const int32 Param_Index, class AActor* Char);
+	void SetAttachedChar(const int32 Index_0, class AActor* Char);
 	void SetMaillonWeight(double NewWeight);
-	void SetSnapTips(bool Param_SnapTips);
+	void SetSnapTips(bool SnapTips_0);
 	void SetTip0Location(const struct FVector& Loc);
 	void SetTip1Location(const struct FVector& Loc);
 	void StabilizeChains();
-	void TrySpawnCubeToPlayerConstraint(class ACubeToPlayerConstraint_C*& CubeToPlayerConstraint, const struct FVector& Spawn_Transform_Location, class ACubeToPlayerConstraint_C** Param_Constraint);
+	void TrySpawnCubeToPlayerConstraint(class ACubeToPlayerConstraint_C*& CubeToPlayerConstraint, const struct FVector& Spawn_Transform_Location, class ACubeToPlayerConstraint_C** Constraint_0);
 	void UpdateSocketsLocation();
 	void UserConstructionScript();
 

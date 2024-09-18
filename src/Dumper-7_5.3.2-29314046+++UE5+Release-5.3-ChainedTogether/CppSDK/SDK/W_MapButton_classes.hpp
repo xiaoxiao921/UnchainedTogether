@@ -26,8 +26,8 @@ public:
 	class UButton*                                Button_61;                                         // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_55;                                          // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          Selected;                                          // 0x02D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35B3[0x7];                                     // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Name_W_MapButton_C;                                // 0x02E0(0x0018)(Edit, BlueprintVisible, ExposeOnSpawn)
+	uint8                                         Pad_2D9[0x7];                                      // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Name_0;                                            // 0x02E0(0x0018)(Edit, BlueprintVisible, ExposeOnSpawn)
 	class UW_CreateSession_C*                     Parent;                                            // 0x02F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          CanClick;                                          // 0x0300(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -53,7 +53,7 @@ static_assert(offsetof(UW_MapButton_C, UberGraphFrame) == 0x0002C0, "Member 'UW_
 static_assert(offsetof(UW_MapButton_C, Button_61) == 0x0002C8, "Member 'UW_MapButton_C::Button_61' has a wrong offset!");
 static_assert(offsetof(UW_MapButton_C, Image_55) == 0x0002D0, "Member 'UW_MapButton_C::Image_55' has a wrong offset!");
 static_assert(offsetof(UW_MapButton_C, Selected) == 0x0002D8, "Member 'UW_MapButton_C::Selected' has a wrong offset!");
-static_assert(offsetof(UW_MapButton_C, Name_W_MapButton_C) == 0x0002E0, "Member 'UW_MapButton_C::Name_W_MapButton_C' has a wrong offset!");
+static_assert(offsetof(UW_MapButton_C, Name_0) == 0x0002E0, "Member 'UW_MapButton_C::Name_0' has a wrong offset!");
 static_assert(offsetof(UW_MapButton_C, Parent) == 0x0002F8, "Member 'UW_MapButton_C::Parent' has a wrong offset!");
 static_assert(offsetof(UW_MapButton_C, CanClick) == 0x000300, "Member 'UW_MapButton_C::CanClick' has a wrong offset!");
 

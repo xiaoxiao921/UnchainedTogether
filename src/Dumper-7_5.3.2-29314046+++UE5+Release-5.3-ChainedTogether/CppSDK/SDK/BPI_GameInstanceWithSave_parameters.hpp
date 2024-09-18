@@ -24,7 +24,7 @@ struct BPI_GameInstanceWithSave_C_GetCameraSettings final
 public:
 	bool                                          InvertX;                                           // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          InvertY;                                           // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D71[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        X_Sensitivity;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        Y_Sensitivity;                                     // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -62,11 +62,11 @@ static_assert(offsetof(BPI_GameInstanceWithSave_C_GetPushToTalk, PTT) == 0x00000
 struct BPI_GameInstanceWithSave_C_GetSaveGameObject final
 {
 public:
-	class UV_SaveGame_C*                          Param_SaveGame;                                    // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UV_SaveGame_C*                          SaveGame_0;                                        // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_GameInstanceWithSave_C_GetSaveGameObject) == 0x000008, "Wrong alignment on BPI_GameInstanceWithSave_C_GetSaveGameObject");
 static_assert(sizeof(BPI_GameInstanceWithSave_C_GetSaveGameObject) == 0x000008, "Wrong size on BPI_GameInstanceWithSave_C_GetSaveGameObject");
-static_assert(offsetof(BPI_GameInstanceWithSave_C_GetSaveGameObject, Param_SaveGame) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_GetSaveGameObject::Param_SaveGame' has a wrong offset!");
+static_assert(offsetof(BPI_GameInstanceWithSave_C_GetSaveGameObject, SaveGame_0) == 0x000000, "Member 'BPI_GameInstanceWithSave_C_GetSaveGameObject::SaveGame_0' has a wrong offset!");
 
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.GetShowDebug
 // 0x0001 (0x0001 - 0x0000)

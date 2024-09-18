@@ -23,9 +23,9 @@ namespace SDK
 // struct FVector                          PlayerLocation                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Timer                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           NumPlayers                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Param_Mode                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Mode_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void ULoadSave_W_C::AddPreviousSaveToList(const struct FVector& PlayerLocation, int32 Timer, const class FString& NumPlayers, const class FString& Param_Mode)
+void ULoadSave_W_C::AddPreviousSaveToList(const struct FVector& PlayerLocation, int32 Timer, const class FString& NumPlayers, const class FString& Mode_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37,7 +37,7 @@ void ULoadSave_W_C::AddPreviousSaveToList(const struct FVector& PlayerLocation, 
 	Parms.PlayerLocation = std::move(PlayerLocation);
 	Parms.Timer = Timer;
 	Parms.NumPlayers = std::move(NumPlayers);
-	Parms.Param_Mode = std::move(Param_Mode);
+	Parms.Mode_0 = std::move(Mode_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

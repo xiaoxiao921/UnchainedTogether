@@ -11,86 +11,226 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
+#include "SteamCorePro_structs.hpp"
 
 
 namespace SDK::Params
 {
 
+// Function W_SessionButton.W_SessionButton_C.AdaptText
+// 0x0080 (0x0080 - 0x0000)
+struct W_SessionButton_C_AdaptText final
+{
+public:
+	class FString                                 In;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm)
+	class FString                                 CallFunc_GetSubstring_ReturnValue;                 // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Len_ReturnValue;                          // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0068(0x0018)()
+};
+static_assert(alignof(W_SessionButton_C_AdaptText) == 0x000008, "Wrong alignment on W_SessionButton_C_AdaptText");
+static_assert(sizeof(W_SessionButton_C_AdaptText) == 0x000080, "Wrong size on W_SessionButton_C_AdaptText");
+static_assert(offsetof(W_SessionButton_C_AdaptText, In) == 0x000000, "Member 'W_SessionButton_C_AdaptText::In' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, ReturnValue) == 0x000010, "Member 'W_SessionButton_C_AdaptText::ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_GetSubstring_ReturnValue) == 0x000028, "Member 'W_SessionButton_C_AdaptText::CallFunc_GetSubstring_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_Len_ReturnValue) == 0x000038, "Member 'W_SessionButton_C_AdaptText::CallFunc_Len_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_Concat_StrStr_ReturnValue) == 0x000040, "Member 'W_SessionButton_C_AdaptText::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x000050, "Member 'W_SessionButton_C_AdaptText::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_SelectString_ReturnValue) == 0x000058, "Member 'W_SessionButton_C_AdaptText::CallFunc_SelectString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_AdaptText, CallFunc_Conv_StringToText_ReturnValue) == 0x000068, "Member 'W_SessionButton_C_AdaptText::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.CheckUGC
+// 0x0020 (0x0020 - 0x0000)
+struct W_SessionButton_C_CheckUGC final
+{
+public:
+	bool                                          UGC_Used;                                          // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UGC_ID_0;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_CheckUGC) == 0x000008, "Wrong alignment on W_SessionButton_C_CheckUGC");
+static_assert(sizeof(W_SessionButton_C_CheckUGC) == 0x000020, "Wrong size on W_SessionButton_C_CheckUGC");
+static_assert(offsetof(W_SessionButton_C_CheckUGC, UGC_Used) == 0x000000, "Member 'W_SessionButton_C_CheckUGC::UGC_Used' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CheckUGC, UGC_ID_0) == 0x000008, "Member 'W_SessionButton_C_CheckUGC::UGC_ID_0' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CheckUGC, CallFunc_IsEmpty_ReturnValue) == 0x000018, "Member 'W_SessionButton_C_CheckUGC::CallFunc_IsEmpty_ReturnValue' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.CompareVersion
+// 0x0040 (0x0040 - 0x0000)
+struct W_SessionButton_C_CompareVersion final
+{
+public:
+	bool                                          SameVersion;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ClientVersion;                                     // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 HostVersion;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x003A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_CompareVersion) == 0x000008, "Wrong alignment on W_SessionButton_C_CompareVersion");
+static_assert(sizeof(W_SessionButton_C_CompareVersion) == 0x000040, "Wrong size on W_SessionButton_C_CompareVersion");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, SameVersion) == 0x000000, "Member 'W_SessionButton_C_CompareVersion::SameVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, ClientVersion) == 0x000008, "Member 'W_SessionButton_C_CompareVersion::ClientVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, HostVersion) == 0x000018, "Member 'W_SessionButton_C_CompareVersion::HostVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, CallFunc_GetGameInstance_ReturnValue) == 0x000028, "Member 'W_SessionButton_C_CompareVersion::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, K2Node_DynamicCast_AsCustom_GI) == 0x000030, "Member 'W_SessionButton_C_CompareVersion::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, K2Node_DynamicCast_bSuccess) == 0x000038, "Member 'W_SessionButton_C_CompareVersion::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, CallFunc_IsEmpty_ReturnValue) == 0x000039, "Member 'W_SessionButton_C_CompareVersion::CallFunc_IsEmpty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_CompareVersion, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x00003A, "Member 'W_SessionButton_C_CompareVersion::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.Downloaded
+// 0x0001 (0x0001 - 0x0000)
+struct W_SessionButton_C_Downloaded final
+{
+public:
+	bool                                          Success;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_Downloaded) == 0x000001, "Wrong alignment on W_SessionButton_C_Downloaded");
+static_assert(sizeof(W_SessionButton_C_Downloaded) == 0x000001, "Wrong size on W_SessionButton_C_Downloaded");
+static_assert(offsetof(W_SessionButton_C_Downloaded, Success) == 0x000000, "Member 'W_SessionButton_C_Downloaded::Success' has a wrong offset!");
+
 // Function W_SessionButton.W_SessionButton_C.ExecuteUbergraph_W_SessionButton
-// 0x0060 (0x0060 - 0x0000)
+// 0x0110 (0x0110 - 0x0000)
 struct W_SessionButton_C_ExecuteUbergraph_W_SessionButton final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E06[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_PasswordSession_C*                   CallFunc_Create_ReturnValue;                       // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_JoiningSession_C*                    CallFunc_Create_ReturnValue_1;                     // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E07[0x2];                                     // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x002C(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E08[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue_1;        // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UJoinSessionCallbackProxy*              CallFunc_JoinSession_ReturnValue;                  // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UDownloadSubscribedWorkshop_W_C*        CallFunc_Create_ReturnValue;                       // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(bool Success)>                 K2Node_CreateDelegate_OutputDelegate;              // 0x0020(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0030(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_PasswordSession_C*                   CallFunc_Create_ReturnValue_1;                     // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CompareVersion_SameVersion;               // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_CompareVersion_ClientVersion;             // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_CompareVersion_HostVersion;               // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x00B0(0x0018)()
+	bool                                          CallFunc_CheckUGC_UGC_Used;                        // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_CheckUGC_UGC_ID;                          // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Success;                        // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPublishedFileID                       CallFunc_MakePublishedFileID_ReturnValue;          // 0x00E8(0x0008)(NoDestructor)
+	bool                                          CallFunc_CheckUGC_State_FromPublishedID_ReturnValue; // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CheckUGC_State_FromPublishedID_ReturnValue_1; // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F3[0x5];                                       // 0x00F3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCustomGI_C*                            K2Node_DynamicCast_AsCustom_GI;                    // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton) == 0x000008, "Wrong alignment on W_SessionButton_C_ExecuteUbergraph_W_SessionButton");
-static_assert(sizeof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton) == 0x000060, "Wrong size on W_SessionButton_C_ExecuteUbergraph_W_SessionButton");
+static_assert(sizeof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton) == 0x000110, "Wrong size on W_SessionButton_C_ExecuteUbergraph_W_SessionButton");
 static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, EntryPoint) == 0x000000, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::EntryPoint' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Concat_StrStr_ReturnValue) == 0x000008, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Create_ReturnValue) == 0x000018, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Create_ReturnValue_1) == 0x000020, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Create_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, Temp_bool_Has_Been_Initd_Variable) == 0x000028, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, Temp_bool_IsClosed_Variable) == 0x000029, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_CreateDelegate_OutputDelegate_1) == 0x00002C, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_GetPlayerController_ReturnValue) == 0x000040, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_GetPlayerController_ReturnValue_1) == 0x000048, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_GetPlayerController_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_JoinSession_ReturnValue) == 0x000050, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_JoinSession_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_IsValid_ReturnValue) == 0x000058, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_CreateDelegate_OutputDelegate) == 0x000020, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_CreateDelegate_OutputDelegate_1) == 0x000030, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, Temp_bool_Has_Been_Initd_Variable) == 0x000040, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Create_ReturnValue_1) == 0x000048, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_GetPlayerController_ReturnValue) == 0x000050, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CompareVersion_SameVersion) == 0x000058, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CompareVersion_SameVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CompareVersion_ClientVersion) == 0x000060, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CompareVersion_ClientVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CompareVersion_HostVersion) == 0x000070, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CompareVersion_HostVersion' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000080, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000090, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Concat_StrStr_ReturnValue_3) == 0x0000A0, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_Conv_StringToText_ReturnValue) == 0x0000B0, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CheckUGC_UGC_Used) == 0x0000C8, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CheckUGC_UGC_Used' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CheckUGC_UGC_ID) == 0x0000D0, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CheckUGC_UGC_ID' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_CustomEvent_Success) == 0x0000E0, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_CustomEvent_Success' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_MakePublishedFileID_ReturnValue) == 0x0000E8, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_MakePublishedFileID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CheckUGC_State_FromPublishedID_ReturnValue) == 0x0000F0, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CheckUGC_State_FromPublishedID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_CheckUGC_State_FromPublishedID_ReturnValue_1) == 0x0000F1, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_CheckUGC_State_FromPublishedID_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, Temp_bool_IsClosed_Variable) == 0x0000F2, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, CallFunc_GetGameInstance_ReturnValue) == 0x0000F8, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_DynamicCast_AsCustom_GI) == 0x000100, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_DynamicCast_AsCustom_GI' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_ExecuteUbergraph_W_SessionButton, K2Node_DynamicCast_bSuccess) == 0x000108, "Member 'W_SessionButton_C_ExecuteUbergraph_W_SessionButton::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.GetUGCIDFromName
+// 0x0078 (0x0078 - 0x0000)
+struct W_SessionButton_C_GetUGCIDFromName final
+{
+public:
+	class FString                                 SourceString;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 FullNameWithoutID;                                 // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 ID;                                                // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue;               // 0x0030(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Replace_ReturnValue;                      // 0x0068(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_GetUGCIDFromName) == 0x000008, "Wrong alignment on W_SessionButton_C_GetUGCIDFromName");
+static_assert(sizeof(W_SessionButton_C_GetUGCIDFromName) == 0x000078, "Wrong size on W_SessionButton_C_GetUGCIDFromName");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, SourceString) == 0x000000, "Member 'W_SessionButton_C_GetUGCIDFromName::SourceString' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, FullNameWithoutID) == 0x000010, "Member 'W_SessionButton_C_GetUGCIDFromName::FullNameWithoutID' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, ID) == 0x000020, "Member 'W_SessionButton_C_GetUGCIDFromName::ID' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, CallFunc_ParseIntoArray_ReturnValue) == 0x000030, "Member 'W_SessionButton_C_GetUGCIDFromName::CallFunc_ParseIntoArray_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, CallFunc_Array_LastIndex_ReturnValue) == 0x000040, "Member 'W_SessionButton_C_GetUGCIDFromName::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, CallFunc_Array_Get_Item) == 0x000048, "Member 'W_SessionButton_C_GetUGCIDFromName::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, CallFunc_Concat_StrStr_ReturnValue) == 0x000058, "Member 'W_SessionButton_C_GetUGCIDFromName::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_GetUGCIDFromName, CallFunc_Replace_ReturnValue) == 0x000068, "Member 'W_SessionButton_C_GetUGCIDFromName::CallFunc_Replace_ReturnValue' has a wrong offset!");
 
 // Function W_SessionButton.W_SessionButton_C.UpdateMode
-// 0x0002 (0x0002 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct W_SessionButton_C_UpdateMode final
 {
 public:
-	bool                                          CallFunc_VerifySessionSetting_ReturnValue;         // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_VerifySessionSetting_ReturnValue_1;       // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetSessionSetting_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionSetting_Value;                  // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetSubstring_ReturnValue;                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0028(0x0018)()
+	bool                                          CallFunc_GetSessionSetting_ReturnValue_1;          // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionSetting_Value_1;                // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_VerifySessionSetting_ReturnValue;         // 0x0059(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_VerifySessionSetting_ReturnValue_1;       // 0x005A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(W_SessionButton_C_UpdateMode) == 0x000001, "Wrong alignment on W_SessionButton_C_UpdateMode");
-static_assert(sizeof(W_SessionButton_C_UpdateMode) == 0x000002, "Wrong size on W_SessionButton_C_UpdateMode");
-static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_VerifySessionSetting_ReturnValue) == 0x000000, "Member 'W_SessionButton_C_UpdateMode::CallFunc_VerifySessionSetting_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_VerifySessionSetting_ReturnValue_1) == 0x000001, "Member 'W_SessionButton_C_UpdateMode::CallFunc_VerifySessionSetting_ReturnValue_1' has a wrong offset!");
+static_assert(alignof(W_SessionButton_C_UpdateMode) == 0x000008, "Wrong alignment on W_SessionButton_C_UpdateMode");
+static_assert(sizeof(W_SessionButton_C_UpdateMode) == 0x000060, "Wrong size on W_SessionButton_C_UpdateMode");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_GetSessionSetting_ReturnValue) == 0x000000, "Member 'W_SessionButton_C_UpdateMode::CallFunc_GetSessionSetting_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_GetSessionSetting_Value) == 0x000008, "Member 'W_SessionButton_C_UpdateMode::CallFunc_GetSessionSetting_Value' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_GetSubstring_ReturnValue) == 0x000018, "Member 'W_SessionButton_C_UpdateMode::CallFunc_GetSubstring_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_Conv_StringToText_ReturnValue) == 0x000028, "Member 'W_SessionButton_C_UpdateMode::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_GetSessionSetting_ReturnValue_1) == 0x000040, "Member 'W_SessionButton_C_UpdateMode::CallFunc_GetSessionSetting_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_GetSessionSetting_Value_1) == 0x000048, "Member 'W_SessionButton_C_UpdateMode::CallFunc_GetSessionSetting_Value_1' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000058, "Member 'W_SessionButton_C_UpdateMode::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_VerifySessionSetting_ReturnValue) == 0x000059, "Member 'W_SessionButton_C_UpdateMode::CallFunc_VerifySessionSetting_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateMode, CallFunc_VerifySessionSetting_ReturnValue_1) == 0x00005A, "Member 'W_SessionButton_C_UpdateMode::CallFunc_VerifySessionSetting_ReturnValue_1' has a wrong offset!");
 
 // Function W_SessionButton.W_SessionButton_C.UpdateName
-// 0x0088 (0x0088 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct W_SessionButton_C_UpdateName final
 {
 public:
-	class FString                                 CallFunc_GetServerName_ReturnValue;                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<class FString>                         CallFunc_ParseIntoArray_ReturnValue;               // 0x0010(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_Array_Get_Item;                           // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetSubstring_ReturnValue;                 // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Len_ReturnValue;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E09[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E0A[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0070(0x0018)()
+	TArray<class FString>                         NewLocalVar;                                       // 0x0000(0x0010)(Edit, BlueprintVisible)
+	class FString                                 CallFunc_GetServerName_ReturnValue;                // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_AdaptText_ReturnValue;                    // 0x0020(0x0018)()
 };
 static_assert(alignof(W_SessionButton_C_UpdateName) == 0x000008, "Wrong alignment on W_SessionButton_C_UpdateName");
-static_assert(sizeof(W_SessionButton_C_UpdateName) == 0x000088, "Wrong size on W_SessionButton_C_UpdateName");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_GetServerName_ReturnValue) == 0x000000, "Member 'W_SessionButton_C_UpdateName::CallFunc_GetServerName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_ParseIntoArray_ReturnValue) == 0x000010, "Member 'W_SessionButton_C_UpdateName::CallFunc_ParseIntoArray_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_Array_Get_Item) == 0x000020, "Member 'W_SessionButton_C_UpdateName::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_GetSubstring_ReturnValue) == 0x000030, "Member 'W_SessionButton_C_UpdateName::CallFunc_GetSubstring_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_Len_ReturnValue) == 0x000040, "Member 'W_SessionButton_C_UpdateName::CallFunc_Len_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_Concat_StrStr_ReturnValue) == 0x000048, "Member 'W_SessionButton_C_UpdateName::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x000058, "Member 'W_SessionButton_C_UpdateName::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_SelectString_ReturnValue) == 0x000060, "Member 'W_SessionButton_C_UpdateName::CallFunc_SelectString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_Conv_StringToText_ReturnValue) == 0x000070, "Member 'W_SessionButton_C_UpdateName::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(sizeof(W_SessionButton_C_UpdateName) == 0x000038, "Wrong size on W_SessionButton_C_UpdateName");
+static_assert(offsetof(W_SessionButton_C_UpdateName, NewLocalVar) == 0x000000, "Member 'W_SessionButton_C_UpdateName::NewLocalVar' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_GetServerName_ReturnValue) == 0x000010, "Member 'W_SessionButton_C_UpdateName::CallFunc_GetServerName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateName, CallFunc_AdaptText_ReturnValue) == 0x000020, "Member 'W_SessionButton_C_UpdateName::CallFunc_AdaptText_ReturnValue' has a wrong offset!");
 
 // Function W_SessionButton.W_SessionButton_C.UpdatePassword
 // 0x0018 (0x0018 - 0x0000)
@@ -150,6 +290,34 @@ static_assert(offsetof(W_SessionButton_C_UpdatePlayers, CallFunc_Conv_IntToStrin
 static_assert(offsetof(W_SessionButton_C_UpdatePlayers, CallFunc_Concat_StrStr_ReturnValue) == 0x000028, "Member 'W_SessionButton_C_UpdatePlayers::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_SessionButton_C_UpdatePlayers, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000038, "Member 'W_SessionButton_C_UpdatePlayers::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(W_SessionButton_C_UpdatePlayers, CallFunc_Conv_StringToText_ReturnValue) == 0x000048, "Member 'W_SessionButton_C_UpdatePlayers::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.UpdateUGC
+// 0x0018 (0x0018 - 0x0000)
+struct W_SessionButton_C_UpdateUGC final
+{
+public:
+	bool                                          CallFunc_GetSessionSetting_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionSetting_Value;                  // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_UpdateUGC) == 0x000008, "Wrong alignment on W_SessionButton_C_UpdateUGC");
+static_assert(sizeof(W_SessionButton_C_UpdateUGC) == 0x000018, "Wrong size on W_SessionButton_C_UpdateUGC");
+static_assert(offsetof(W_SessionButton_C_UpdateUGC, CallFunc_GetSessionSetting_ReturnValue) == 0x000000, "Member 'W_SessionButton_C_UpdateUGC::CallFunc_GetSessionSetting_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateUGC, CallFunc_GetSessionSetting_Value) == 0x000008, "Member 'W_SessionButton_C_UpdateUGC::CallFunc_GetSessionSetting_Value' has a wrong offset!");
+
+// Function W_SessionButton.W_SessionButton_C.UpdateVersion
+// 0x0018 (0x0018 - 0x0000)
+struct W_SessionButton_C_UpdateVersion final
+{
+public:
+	bool                                          CallFunc_GetSessionSetting_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetSessionSetting_Value;                  // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(W_SessionButton_C_UpdateVersion) == 0x000008, "Wrong alignment on W_SessionButton_C_UpdateVersion");
+static_assert(sizeof(W_SessionButton_C_UpdateVersion) == 0x000018, "Wrong size on W_SessionButton_C_UpdateVersion");
+static_assert(offsetof(W_SessionButton_C_UpdateVersion, CallFunc_GetSessionSetting_ReturnValue) == 0x000000, "Member 'W_SessionButton_C_UpdateVersion::CallFunc_GetSessionSetting_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_SessionButton_C_UpdateVersion, CallFunc_GetSessionSetting_Value) == 0x000008, "Member 'W_SessionButton_C_UpdateVersion::CallFunc_GetSessionSetting_Value' has a wrong offset!");
 
 }
 

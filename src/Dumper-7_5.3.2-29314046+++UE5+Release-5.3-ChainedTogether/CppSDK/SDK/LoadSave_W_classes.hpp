@@ -28,11 +28,11 @@ public:
 	class UVerticalBox*                           VerticalBox_30;                                    // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UVerticalBox*                           VerticalBox_40;                                    // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	int32                                         PlayerNumberSection;                               // 0x02E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_303D[0x4];                                     // 0x02EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2EC[0x4];                                      // 0x02EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Mode;                                              // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void AddPreviousSaveToList(const struct FVector& PlayerLocation, int32 Timer, const class FString& NumPlayers, const class FString& Param_Mode);
+	void AddPreviousSaveToList(const struct FVector& PlayerLocation, int32 Timer, const class FString& NumPlayers, const class FString& Mode_0);
 	void ExecuteUbergraph_LoadSave_W(int32 EntryPoint);
 	void RefreshSaves();
 

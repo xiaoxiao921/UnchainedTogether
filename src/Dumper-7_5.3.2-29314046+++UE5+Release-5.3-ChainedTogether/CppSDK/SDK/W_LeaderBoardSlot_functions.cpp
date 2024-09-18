@@ -54,11 +54,11 @@ void UW_LeaderBoardSlot_C::ExecuteUbergraph_W_LeaderBoardSlot(int32 EntryPoint)
 // Function W_LeaderBoardSlot.W_LeaderBoardSlot_C.RefreshSlot
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSteamID                         Param_SteamID                                          (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// int32                                   Param_Time                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Rank                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSteamID                         SteamID_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// int32                                   Time_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Rank_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_LeaderBoardSlot_C::RefreshSlot(const struct FSteamID& Param_SteamID, int32 Param_Time, int32 Param_Rank)
+void UW_LeaderBoardSlot_C::RefreshSlot(const struct FSteamID& SteamID_0, int32 Time_0, int32 Rank_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -67,9 +67,9 @@ void UW_LeaderBoardSlot_C::RefreshSlot(const struct FSteamID& Param_SteamID, int
 
 	Params::W_LeaderBoardSlot_C_RefreshSlot Parms{};
 
-	Parms.Param_SteamID = std::move(Param_SteamID);
-	Parms.Param_Time = Param_Time;
-	Parms.Param_Rank = Param_Rank;
+	Parms.SteamID_0 = std::move(SteamID_0);
+	Parms.Time_0 = Time_0;
+	Parms.Rank_0 = Rank_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

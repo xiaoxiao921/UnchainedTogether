@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 
@@ -18,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Slider.W_Slider_C
-// 0x0050 (0x0310 - 0x02C0)
+// 0x0078 (0x0338 - 0x02C0)
 class UW_Slider_C final : public UUserWidget
 {
 public:
@@ -30,9 +31,13 @@ public:
 	double                                        MaxValue;                                          // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             OnValueChanged;                                    // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class FString                                 Identifier;                                        // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               SliderMat;                                         // 0x0310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Color01;                                           // 0x0318(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FLinearColor                           Color02;                                           // 0x0328(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_Slider_Slider_119_K2Node_ComponentBoundEvent_0_OnFloatValueChangedEvent__DelegateSignature(float Value);
+	void Construct();
 	void ExecuteUbergraph_W_Slider(int32 EntryPoint);
 	void OnValueChanged__DelegateSignature(double Value, const class FString& Setting);
 	void PreConstruct(bool IsDesignTime);
@@ -50,7 +55,7 @@ public:
 	}
 };
 static_assert(alignof(UW_Slider_C) == 0x000008, "Wrong alignment on UW_Slider_C");
-static_assert(sizeof(UW_Slider_C) == 0x000310, "Wrong size on UW_Slider_C");
+static_assert(sizeof(UW_Slider_C) == 0x000338, "Wrong size on UW_Slider_C");
 static_assert(offsetof(UW_Slider_C, UberGraphFrame) == 0x0002C0, "Member 'UW_Slider_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UW_Slider_C, Slider_119) == 0x0002C8, "Member 'UW_Slider_C::Slider_119' has a wrong offset!");
 static_assert(offsetof(UW_Slider_C, TextBlock_149) == 0x0002D0, "Member 'UW_Slider_C::TextBlock_149' has a wrong offset!");
@@ -59,6 +64,9 @@ static_assert(offsetof(UW_Slider_C, MinValue) == 0x0002E0, "Member 'UW_Slider_C:
 static_assert(offsetof(UW_Slider_C, MaxValue) == 0x0002E8, "Member 'UW_Slider_C::MaxValue' has a wrong offset!");
 static_assert(offsetof(UW_Slider_C, OnValueChanged) == 0x0002F0, "Member 'UW_Slider_C::OnValueChanged' has a wrong offset!");
 static_assert(offsetof(UW_Slider_C, Identifier) == 0x000300, "Member 'UW_Slider_C::Identifier' has a wrong offset!");
+static_assert(offsetof(UW_Slider_C, SliderMat) == 0x000310, "Member 'UW_Slider_C::SliderMat' has a wrong offset!");
+static_assert(offsetof(UW_Slider_C, Color01) == 0x000318, "Member 'UW_Slider_C::Color01' has a wrong offset!");
+static_assert(offsetof(UW_Slider_C, Color02) == 0x000328, "Member 'UW_Slider_C::Color02' has a wrong offset!");
 
 }
 

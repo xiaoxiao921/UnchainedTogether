@@ -43,6 +43,24 @@ enum class ENetFilterType : uint8
 	ENetFilterType_MAX                       = 2,
 };
 
+// ScriptStruct IrisCore.NetSerializerConfig
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FNetSerializerConfig
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FNetSerializerConfig) == 0x000008, "Wrong alignment on FNetSerializerConfig");
+static_assert(sizeof(FNetSerializerConfig) == 0x000010, "Wrong size on FNetSerializerConfig");
+
+// ScriptStruct IrisCore.StringNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FStringNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FStringNetSerializerConfig) == 0x000008, "Wrong alignment on FStringNetSerializerConfig");
+static_assert(sizeof(FStringNetSerializerConfig) == 0x000010, "Wrong size on FStringNetSerializerConfig");
+
 // ScriptStruct IrisCore.DataStreamDefinition
 // 0x0020 (0x0020 - 0x0000)
 struct FDataStreamDefinition final
@@ -53,7 +71,7 @@ public:
 	TSubclassOf<class UObject>                    Class;                                             // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDataStreamSendStatus                         DefaultSendStatus;                                 // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAutoCreate;                                       // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C0[0x6];                                      // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDataStreamDefinition) == 0x000008, "Wrong alignment on FDataStreamDefinition");
 static_assert(sizeof(FDataStreamDefinition) == 0x000020, "Wrong size on FDataStreamDefinition");
@@ -63,15 +81,13 @@ static_assert(offsetof(FDataStreamDefinition, Class) == 0x000010, "Member 'FData
 static_assert(offsetof(FDataStreamDefinition, DefaultSendStatus) == 0x000018, "Member 'FDataStreamDefinition::DefaultSendStatus' has a wrong offset!");
 static_assert(offsetof(FDataStreamDefinition, bAutoCreate) == 0x000019, "Member 'FDataStreamDefinition::bAutoCreate' has a wrong offset!");
 
-// ScriptStruct IrisCore.NetSerializerConfig
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FNetSerializerConfig
+// ScriptStruct IrisCore.UnitQuatNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FUnitQuatNetSerializerConfig final : public FNetSerializerConfig
 {
-public:
-	uint8                                         Pad_1C1[0x10];                                     // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FNetSerializerConfig) == 0x000008, "Wrong alignment on FNetSerializerConfig");
-static_assert(sizeof(FNetSerializerConfig) == 0x000010, "Wrong size on FNetSerializerConfig");
+static_assert(alignof(FUnitQuatNetSerializerConfig) == 0x000008, "Wrong alignment on FUnitQuatNetSerializerConfig");
+static_assert(sizeof(FUnitQuatNetSerializerConfig) == 0x000010, "Wrong size on FUnitQuatNetSerializerConfig");
 
 // ScriptStruct IrisCore.DateTimeNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
@@ -89,7 +105,7 @@ public:
 	int8                                          LowerBound;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                          UpperBound;                                        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C2[0xD];                                      // 0x0013(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0xD];                                       // 0x0013(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumInt8NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumInt8NetSerializerConfig");
 static_assert(sizeof(FEnumInt8NetSerializerConfig) == 0x000020, "Wrong size on FEnumInt8NetSerializerConfig");
@@ -105,7 +121,7 @@ public:
 	int16                                         LowerBound;                                        // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int16                                         UpperBound;                                        // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C3[0xB];                                      // 0x0015(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0xB];                                       // 0x0015(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumInt16NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumInt16NetSerializerConfig");
 static_assert(sizeof(FEnumInt16NetSerializerConfig) == 0x000020, "Wrong size on FEnumInt16NetSerializerConfig");
@@ -121,13 +137,21 @@ public:
 	int32                                         LowerBound;                                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         UpperBound;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C4[0xF];                                      // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0xF];                                       // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumInt32NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumInt32NetSerializerConfig");
 static_assert(sizeof(FEnumInt32NetSerializerConfig) == 0x000028, "Wrong size on FEnumInt32NetSerializerConfig");
 static_assert(offsetof(FEnumInt32NetSerializerConfig, LowerBound) == 0x000010, "Member 'FEnumInt32NetSerializerConfig::LowerBound' has a wrong offset!");
 static_assert(offsetof(FEnumInt32NetSerializerConfig, UpperBound) == 0x000014, "Member 'FEnumInt32NetSerializerConfig::UpperBound' has a wrong offset!");
 static_assert(offsetof(FEnumInt32NetSerializerConfig, BitCount) == 0x000018, "Member 'FEnumInt32NetSerializerConfig::BitCount' has a wrong offset!");
+
+// ScriptStruct IrisCore.RotatorAsByteNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FRotatorAsByteNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FRotatorAsByteNetSerializerConfig) == 0x000008, "Wrong alignment on FRotatorAsByteNetSerializerConfig");
+static_assert(sizeof(FRotatorAsByteNetSerializerConfig) == 0x000010, "Wrong size on FRotatorAsByteNetSerializerConfig");
 
 // ScriptStruct IrisCore.EnumInt64NetSerializerConfig
 // 0x0020 (0x0030 - 0x0010)
@@ -137,13 +161,25 @@ public:
 	int64                                         LowerBound;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         UpperBound;                                        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C5[0xF];                                      // 0x0021(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0xF];                                       // 0x0021(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumInt64NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumInt64NetSerializerConfig");
 static_assert(sizeof(FEnumInt64NetSerializerConfig) == 0x000030, "Wrong size on FEnumInt64NetSerializerConfig");
 static_assert(offsetof(FEnumInt64NetSerializerConfig, LowerBound) == 0x000010, "Member 'FEnumInt64NetSerializerConfig::LowerBound' has a wrong offset!");
 static_assert(offsetof(FEnumInt64NetSerializerConfig, UpperBound) == 0x000018, "Member 'FEnumInt64NetSerializerConfig::UpperBound' has a wrong offset!");
 static_assert(offsetof(FEnumInt64NetSerializerConfig, BitCount) == 0x000020, "Member 'FEnumInt64NetSerializerConfig::BitCount' has a wrong offset!");
+
+// ScriptStruct IrisCore.UintNetSerializerConfig
+// 0x0008 (0x0018 - 0x0010)
+struct FUintNetSerializerConfig final : public FNetSerializerConfig
+{
+public:
+	uint8                                         BitCount;                                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUintNetSerializerConfig) == 0x000008, "Wrong alignment on FUintNetSerializerConfig");
+static_assert(sizeof(FUintNetSerializerConfig) == 0x000018, "Wrong size on FUintNetSerializerConfig");
+static_assert(offsetof(FUintNetSerializerConfig, BitCount) == 0x000010, "Member 'FUintNetSerializerConfig::BitCount' has a wrong offset!");
 
 // ScriptStruct IrisCore.EnumUint8NetSerializerConfig
 // 0x0010 (0x0020 - 0x0010)
@@ -153,7 +189,7 @@ public:
 	uint8                                         LowerBound;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         UpperBound;                                        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C6[0xD];                                      // 0x0013(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0xD];                                       // 0x0013(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumUint8NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumUint8NetSerializerConfig");
 static_assert(sizeof(FEnumUint8NetSerializerConfig) == 0x000020, "Wrong size on FEnumUint8NetSerializerConfig");
@@ -169,7 +205,7 @@ public:
 	uint16                                        LowerBound;                                        // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                        UpperBound;                                        // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C7[0xB];                                      // 0x0015(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0xB];                                       // 0x0015(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumUint16NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumUint16NetSerializerConfig");
 static_assert(sizeof(FEnumUint16NetSerializerConfig) == 0x000020, "Wrong size on FEnumUint16NetSerializerConfig");
@@ -185,13 +221,21 @@ public:
 	uint32                                        LowerBound;                                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        UpperBound;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C8[0xF];                                      // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0xF];                                       // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumUint32NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumUint32NetSerializerConfig");
 static_assert(sizeof(FEnumUint32NetSerializerConfig) == 0x000028, "Wrong size on FEnumUint32NetSerializerConfig");
 static_assert(offsetof(FEnumUint32NetSerializerConfig, LowerBound) == 0x000010, "Member 'FEnumUint32NetSerializerConfig::LowerBound' has a wrong offset!");
 static_assert(offsetof(FEnumUint32NetSerializerConfig, UpperBound) == 0x000014, "Member 'FEnumUint32NetSerializerConfig::UpperBound' has a wrong offset!");
 static_assert(offsetof(FEnumUint32NetSerializerConfig, BitCount) == 0x000018, "Member 'FEnumUint32NetSerializerConfig::BitCount' has a wrong offset!");
+
+// ScriptStruct IrisCore.SoftClassPathNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FSoftClassPathNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FSoftClassPathNetSerializerConfig) == 0x000008, "Wrong alignment on FSoftClassPathNetSerializerConfig");
+static_assert(sizeof(FSoftClassPathNetSerializerConfig) == 0x000010, "Wrong size on FSoftClassPathNetSerializerConfig");
 
 // ScriptStruct IrisCore.EnumUint64NetSerializerConfig
 // 0x0020 (0x0030 - 0x0010)
@@ -201,7 +245,7 @@ public:
 	uint64                                        LowerBound;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint64                                        UpperBound;                                        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C9[0xF];                                      // 0x0021(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0xF];                                       // 0x0021(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FEnumUint64NetSerializerConfig) == 0x000008, "Wrong alignment on FEnumUint64NetSerializerConfig");
 static_assert(sizeof(FEnumUint64NetSerializerConfig) == 0x000030, "Wrong size on FEnumUint64NetSerializerConfig");
@@ -233,13 +277,29 @@ struct FGuidNetSerializerConfig final : public FNetSerializerConfig
 static_assert(alignof(FGuidNetSerializerConfig) == 0x000008, "Wrong alignment on FGuidNetSerializerConfig");
 static_assert(sizeof(FGuidNetSerializerConfig) == 0x000010, "Wrong size on FGuidNetSerializerConfig");
 
+// ScriptStruct IrisCore.Uint8RangeNetSerializerConfig
+// 0x0008 (0x0018 - 0x0010)
+struct FUint8RangeNetSerializerConfig final : public FNetSerializerConfig
+{
+public:
+	uint8                                         LowerBound;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         UpperBound;                                        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         BitCount;                                          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUint8RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint8RangeNetSerializerConfig");
+static_assert(sizeof(FUint8RangeNetSerializerConfig) == 0x000018, "Wrong size on FUint8RangeNetSerializerConfig");
+static_assert(offsetof(FUint8RangeNetSerializerConfig, LowerBound) == 0x000010, "Member 'FUint8RangeNetSerializerConfig::LowerBound' has a wrong offset!");
+static_assert(offsetof(FUint8RangeNetSerializerConfig, UpperBound) == 0x000011, "Member 'FUint8RangeNetSerializerConfig::UpperBound' has a wrong offset!");
+static_assert(offsetof(FUint8RangeNetSerializerConfig, BitCount) == 0x000012, "Member 'FUint8RangeNetSerializerConfig::BitCount' has a wrong offset!");
+
 // ScriptStruct IrisCore.BitfieldNetSerializerConfig
 // 0x0008 (0x0018 - 0x0010)
 struct FBitfieldNetSerializerConfig final : public FNetSerializerConfig
 {
 public:
 	uint8                                         BitMask;                                           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CA[0x7];                                      // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBitfieldNetSerializerConfig) == 0x000008, "Wrong alignment on FBitfieldNetSerializerConfig");
 static_assert(sizeof(FBitfieldNetSerializerConfig) == 0x000018, "Wrong size on FBitfieldNetSerializerConfig");
@@ -252,9 +312,9 @@ struct FArrayPropertyNetSerializerConfig final : public FNetSerializerConfig
 public:
 	uint16                                        MaxElementCount;                                   // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                        ElementCountBitCount;                              // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CB[0x4];                                      // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TFieldPath<struct FArrayProperty>             Property;                                          // 0x0018(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CC[0x8];                                      // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FArrayPropertyNetSerializerConfig) == 0x000008, "Wrong alignment on FArrayPropertyNetSerializerConfig");
 static_assert(sizeof(FArrayPropertyNetSerializerConfig) == 0x000040, "Wrong size on FArrayPropertyNetSerializerConfig");
@@ -269,7 +329,7 @@ struct FLastResortPropertyNetSerializerConfig final : public FNetSerializerConfi
 public:
 	TFieldPath<struct FProperty>                  Property;                                          // 0x0010(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        MaxAllowedObjectReferences;                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CD[0x4];                                      // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLastResortPropertyNetSerializerConfig) == 0x000008, "Wrong alignment on FLastResortPropertyNetSerializerConfig");
 static_assert(sizeof(FLastResortPropertyNetSerializerConfig) == 0x000038, "Wrong size on FLastResortPropertyNetSerializerConfig");
@@ -288,7 +348,7 @@ public:
 	uint8                                         BitCount;                                          // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         AutonomousProxyValue;                              // 0x001B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         SimulatedProxyValue;                               // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CE[0xB];                                      // 0x001D(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0xB];                                       // 0x001D(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FNetRoleNetSerializerConfig) == 0x000008, "Wrong alignment on FNetRoleNetSerializerConfig");
 static_assert(sizeof(FNetRoleNetSerializerConfig) == 0x000028, "Wrong size on FNetRoleNetSerializerConfig");
@@ -330,7 +390,7 @@ struct FIntNetSerializerConfig final : public FNetSerializerConfig
 {
 public:
 	uint8                                         BitCount;                                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CF[0x7];                                      // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FIntNetSerializerConfig) == 0x000008, "Wrong alignment on FIntNetSerializerConfig");
 static_assert(sizeof(FIntNetSerializerConfig) == 0x000018, "Wrong size on FIntNetSerializerConfig");
@@ -344,7 +404,7 @@ public:
 	int8                                          LowerBound;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                          UpperBound;                                        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D0[0x5];                                      // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInt8RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FInt8RangeNetSerializerConfig");
 static_assert(sizeof(FInt8RangeNetSerializerConfig) == 0x000018, "Wrong size on FInt8RangeNetSerializerConfig");
@@ -360,7 +420,7 @@ public:
 	int16                                         LowerBound;                                        // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int16                                         UpperBound;                                        // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D1[0x3];                                      // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInt16RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FInt16RangeNetSerializerConfig");
 static_assert(sizeof(FInt16RangeNetSerializerConfig) == 0x000018, "Wrong size on FInt16RangeNetSerializerConfig");
@@ -376,7 +436,7 @@ public:
 	int32                                         LowerBound;                                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         UpperBound;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D2[0x7];                                      // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInt32RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FInt32RangeNetSerializerConfig");
 static_assert(sizeof(FInt32RangeNetSerializerConfig) == 0x000020, "Wrong size on FInt32RangeNetSerializerConfig");
@@ -392,7 +452,7 @@ public:
 	int64                                         LowerBound;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         UpperBound;                                        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D3[0x7];                                      // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInt64RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FInt64RangeNetSerializerConfig");
 static_assert(sizeof(FInt64RangeNetSerializerConfig) == 0x000028, "Wrong size on FInt64RangeNetSerializerConfig");
@@ -405,9 +465,9 @@ static_assert(offsetof(FInt64RangeNetSerializerConfig, BitCount) == 0x000020, "M
 struct FIrisFastArraySerializer final : public FFastArraySerializer
 {
 public:
-	uint8                                         Pad_1D4[0x4];                                      // 0x0108(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_108[0x4];                                      // 0x0108(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        ChangeMaskStorage[0x4];                            // 0x010C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D5[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FIrisFastArraySerializer) == 0x000008, "Wrong alignment on FIrisFastArraySerializer");
 static_assert(sizeof(FIrisFastArraySerializer) == 0x000120, "Wrong size on FIrisFastArraySerializer");
@@ -471,7 +531,7 @@ static_assert(sizeof(FBoolNetSerializerConfig) == 0x000010, "Wrong size on FBool
 struct FStructNetSerializerConfig final : public FNetSerializerConfig
 {
 public:
-	uint8                                         Pad_1D6[0x8];                                      // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FStructNetSerializerConfig) == 0x000008, "Wrong alignment on FStructNetSerializerConfig");
 static_assert(sizeof(FStructNetSerializerConfig) == 0x000018, "Wrong size on FStructNetSerializerConfig");
@@ -491,6 +551,14 @@ struct FObjectNetSerializerConfig final : public FNetSerializerConfig
 };
 static_assert(alignof(FObjectNetSerializerConfig) == 0x000008, "Wrong alignment on FObjectNetSerializerConfig");
 static_assert(sizeof(FObjectNetSerializerConfig) == 0x000010, "Wrong size on FObjectNetSerializerConfig");
+
+// ScriptStruct IrisCore.UnitQuat4fNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FUnitQuat4fNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FUnitQuat4fNetSerializerConfig) == 0x000008, "Wrong alignment on FUnitQuat4fNetSerializerConfig");
+static_assert(sizeof(FUnitQuat4fNetSerializerConfig) == 0x000010, "Wrong size on FUnitQuat4fNetSerializerConfig");
 
 // ScriptStruct IrisCore.WeakObjectNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
@@ -519,7 +587,7 @@ public:
 	class FName                                   ClassName;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PollFrequency;                                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIncludeSubclasses;                                // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D7[0x3];                                      // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FObjectReplicationBridgePollConfig) == 0x000004, "Wrong alignment on FObjectReplicationBridgePollConfig");
 static_assert(sizeof(FObjectReplicationBridgePollConfig) == 0x000010, "Wrong size on FObjectReplicationBridgePollConfig");
@@ -540,6 +608,14 @@ static_assert(sizeof(FObjectReplicationBridgeFilterConfig) == 0x000010, "Wrong s
 static_assert(offsetof(FObjectReplicationBridgeFilterConfig, ClassName) == 0x000000, "Member 'FObjectReplicationBridgeFilterConfig::ClassName' has a wrong offset!");
 static_assert(offsetof(FObjectReplicationBridgeFilterConfig, DynamicFilterName) == 0x000008, "Member 'FObjectReplicationBridgeFilterConfig::DynamicFilterName' has a wrong offset!");
 
+// ScriptStruct IrisCore.RotatorAsShortNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FRotatorAsShortNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FRotatorAsShortNetSerializerConfig) == 0x000008, "Wrong alignment on FRotatorAsShortNetSerializerConfig");
+static_assert(sizeof(FRotatorAsShortNetSerializerConfig) == 0x000010, "Wrong size on FRotatorAsShortNetSerializerConfig");
+
 // ScriptStruct IrisCore.ObjectReplicationBridgePrioritizerConfig
 // 0x0014 (0x0014 - 0x0000)
 struct FObjectReplicationBridgePrioritizerConfig final
@@ -548,7 +624,7 @@ public:
 	class FName                                   ClassName;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   PrioritizerName;                                   // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceEnableOnAllInstances;                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D8[0x3];                                      // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FObjectReplicationBridgePrioritizerConfig) == 0x000004, "Wrong alignment on FObjectReplicationBridgePrioritizerConfig");
 static_assert(sizeof(FObjectReplicationBridgePrioritizerConfig) == 0x000014, "Wrong size on FObjectReplicationBridgePrioritizerConfig");
@@ -563,7 +639,7 @@ struct FObjectReplicationBridgeDeltaCompressionConfig final
 public:
 	class FName                                   ClassName;                                         // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableDeltaCompression;                           // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D9[0x3];                                      // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FObjectReplicationBridgeDeltaCompressionConfig) == 0x000004, "Wrong alignment on FObjectReplicationBridgeDeltaCompressionConfig");
 static_assert(sizeof(FObjectReplicationBridgeDeltaCompressionConfig) == 0x00000C, "Wrong size on FObjectReplicationBridgeDeltaCompressionConfig");
@@ -585,6 +661,14 @@ struct FPackedUint64NetSerializerConfig final : public FNetSerializerConfig
 };
 static_assert(alignof(FPackedUint64NetSerializerConfig) == 0x000008, "Wrong alignment on FPackedUint64NetSerializerConfig");
 static_assert(sizeof(FPackedUint64NetSerializerConfig) == 0x000010, "Wrong size on FPackedUint64NetSerializerConfig");
+
+// ScriptStruct IrisCore.NameNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FNameNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FNameNetSerializerConfig) == 0x000008, "Wrong alignment on FNameNetSerializerConfig");
+static_assert(sizeof(FNameNetSerializerConfig) == 0x000010, "Wrong size on FNameNetSerializerConfig");
 
 // ScriptStruct IrisCore.PackedInt32NetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
@@ -610,6 +694,14 @@ struct FVectorNetQuantizeNetSerializerConfig final : public FNetSerializerConfig
 static_assert(alignof(FVectorNetQuantizeNetSerializerConfig) == 0x000008, "Wrong alignment on FVectorNetQuantizeNetSerializerConfig");
 static_assert(sizeof(FVectorNetQuantizeNetSerializerConfig) == 0x000010, "Wrong size on FVectorNetQuantizeNetSerializerConfig");
 
+// ScriptStruct IrisCore.SoftObjectNetSerializerConfig
+// 0x0000 (0x0010 - 0x0010)
+struct FSoftObjectNetSerializerConfig final : public FNetSerializerConfig
+{
+};
+static_assert(alignof(FSoftObjectNetSerializerConfig) == 0x000008, "Wrong alignment on FSoftObjectNetSerializerConfig");
+static_assert(sizeof(FSoftObjectNetSerializerConfig) == 0x000010, "Wrong size on FSoftObjectNetSerializerConfig");
+
 // ScriptStruct IrisCore.VectorNetQuantize10NetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
 struct FVectorNetQuantize10NetSerializerConfig final : public FNetSerializerConfig
@@ -617,6 +709,22 @@ struct FVectorNetQuantize10NetSerializerConfig final : public FNetSerializerConf
 };
 static_assert(alignof(FVectorNetQuantize10NetSerializerConfig) == 0x000008, "Wrong alignment on FVectorNetQuantize10NetSerializerConfig");
 static_assert(sizeof(FVectorNetQuantize10NetSerializerConfig) == 0x000010, "Wrong size on FVectorNetQuantize10NetSerializerConfig");
+
+// ScriptStruct IrisCore.Uint16RangeNetSerializerConfig
+// 0x0008 (0x0018 - 0x0010)
+struct FUint16RangeNetSerializerConfig final : public FNetSerializerConfig
+{
+public:
+	uint16                                        LowerBound;                                        // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        UpperBound;                                        // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         BitCount;                                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUint16RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint16RangeNetSerializerConfig");
+static_assert(sizeof(FUint16RangeNetSerializerConfig) == 0x000018, "Wrong size on FUint16RangeNetSerializerConfig");
+static_assert(offsetof(FUint16RangeNetSerializerConfig, LowerBound) == 0x000010, "Member 'FUint16RangeNetSerializerConfig::LowerBound' has a wrong offset!");
+static_assert(offsetof(FUint16RangeNetSerializerConfig, UpperBound) == 0x000012, "Member 'FUint16RangeNetSerializerConfig::UpperBound' has a wrong offset!");
+static_assert(offsetof(FUint16RangeNetSerializerConfig, BitCount) == 0x000014, "Member 'FUint16RangeNetSerializerConfig::BitCount' has a wrong offset!");
 
 // ScriptStruct IrisCore.VectorNetQuantize100NetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
@@ -639,7 +747,7 @@ static_assert(sizeof(FVectorNetQuantizeNormalNetSerializerConfig) == 0x000010, "
 struct FPolymorphicStructNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                         Pad_1DA[0x18];                                     // 0x0010(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0x18];                                      // 0x0010(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPolymorphicStructNetSerializerConfig) == 0x000008, "Wrong alignment on FPolymorphicStructNetSerializerConfig");
 static_assert(sizeof(FPolymorphicStructNetSerializerConfig) == 0x000028, "Wrong size on FPolymorphicStructNetSerializerConfig");
@@ -651,22 +759,6 @@ struct FPolymorphicArrayStructNetSerializerConfig : public FPolymorphicStructNet
 };
 static_assert(alignof(FPolymorphicArrayStructNetSerializerConfig) == 0x000008, "Wrong alignment on FPolymorphicArrayStructNetSerializerConfig");
 static_assert(sizeof(FPolymorphicArrayStructNetSerializerConfig) == 0x000028, "Wrong size on FPolymorphicArrayStructNetSerializerConfig");
-
-// ScriptStruct IrisCore.UnitQuatNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FUnitQuatNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FUnitQuatNetSerializerConfig) == 0x000008, "Wrong alignment on FUnitQuatNetSerializerConfig");
-static_assert(sizeof(FUnitQuatNetSerializerConfig) == 0x000010, "Wrong size on FUnitQuatNetSerializerConfig");
-
-// ScriptStruct IrisCore.UnitQuat4fNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FUnitQuat4fNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FUnitQuat4fNetSerializerConfig) == 0x000008, "Wrong alignment on FUnitQuat4fNetSerializerConfig");
-static_assert(sizeof(FUnitQuat4fNetSerializerConfig) == 0x000010, "Wrong size on FUnitQuat4fNetSerializerConfig");
 
 // ScriptStruct IrisCore.UnitQuat4dNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
@@ -684,30 +776,6 @@ struct FRotatorNetSerializerConfig final : public FNetSerializerConfig
 static_assert(alignof(FRotatorNetSerializerConfig) == 0x000008, "Wrong alignment on FRotatorNetSerializerConfig");
 static_assert(sizeof(FRotatorNetSerializerConfig) == 0x000010, "Wrong size on FRotatorNetSerializerConfig");
 
-// ScriptStruct IrisCore.RotatorAsByteNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FRotatorAsByteNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FRotatorAsByteNetSerializerConfig) == 0x000008, "Wrong alignment on FRotatorAsByteNetSerializerConfig");
-static_assert(sizeof(FRotatorAsByteNetSerializerConfig) == 0x000010, "Wrong size on FRotatorAsByteNetSerializerConfig");
-
-// ScriptStruct IrisCore.RotatorAsShortNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FRotatorAsShortNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FRotatorAsShortNetSerializerConfig) == 0x000008, "Wrong alignment on FRotatorAsShortNetSerializerConfig");
-static_assert(sizeof(FRotatorAsShortNetSerializerConfig) == 0x000010, "Wrong size on FRotatorAsShortNetSerializerConfig");
-
-// ScriptStruct IrisCore.SoftObjectNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FSoftObjectNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FSoftObjectNetSerializerConfig) == 0x000008, "Wrong alignment on FSoftObjectNetSerializerConfig");
-static_assert(sizeof(FSoftObjectNetSerializerConfig) == 0x000010, "Wrong size on FSoftObjectNetSerializerConfig");
-
 // ScriptStruct IrisCore.SoftObjectPathNetSerializerConfig
 // 0x0000 (0x0010 - 0x0010)
 struct FSoftObjectPathNetSerializerConfig final : public FNetSerializerConfig
@@ -715,74 +783,6 @@ struct FSoftObjectPathNetSerializerConfig final : public FNetSerializerConfig
 };
 static_assert(alignof(FSoftObjectPathNetSerializerConfig) == 0x000008, "Wrong alignment on FSoftObjectPathNetSerializerConfig");
 static_assert(sizeof(FSoftObjectPathNetSerializerConfig) == 0x000010, "Wrong size on FSoftObjectPathNetSerializerConfig");
-
-// ScriptStruct IrisCore.SoftClassPathNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FSoftClassPathNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FSoftClassPathNetSerializerConfig) == 0x000008, "Wrong alignment on FSoftClassPathNetSerializerConfig");
-static_assert(sizeof(FSoftClassPathNetSerializerConfig) == 0x000010, "Wrong size on FSoftClassPathNetSerializerConfig");
-
-// ScriptStruct IrisCore.NameNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FNameNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FNameNetSerializerConfig) == 0x000008, "Wrong alignment on FNameNetSerializerConfig");
-static_assert(sizeof(FNameNetSerializerConfig) == 0x000010, "Wrong size on FNameNetSerializerConfig");
-
-// ScriptStruct IrisCore.StringNetSerializerConfig
-// 0x0000 (0x0010 - 0x0010)
-struct FStringNetSerializerConfig final : public FNetSerializerConfig
-{
-};
-static_assert(alignof(FStringNetSerializerConfig) == 0x000008, "Wrong alignment on FStringNetSerializerConfig");
-static_assert(sizeof(FStringNetSerializerConfig) == 0x000010, "Wrong size on FStringNetSerializerConfig");
-
-// ScriptStruct IrisCore.UintNetSerializerConfig
-// 0x0008 (0x0018 - 0x0010)
-struct FUintNetSerializerConfig final : public FNetSerializerConfig
-{
-public:
-	uint8                                         BitCount;                                          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB[0x7];                                      // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUintNetSerializerConfig) == 0x000008, "Wrong alignment on FUintNetSerializerConfig");
-static_assert(sizeof(FUintNetSerializerConfig) == 0x000018, "Wrong size on FUintNetSerializerConfig");
-static_assert(offsetof(FUintNetSerializerConfig, BitCount) == 0x000010, "Member 'FUintNetSerializerConfig::BitCount' has a wrong offset!");
-
-// ScriptStruct IrisCore.Uint8RangeNetSerializerConfig
-// 0x0008 (0x0018 - 0x0010)
-struct FUint8RangeNetSerializerConfig final : public FNetSerializerConfig
-{
-public:
-	uint8                                         LowerBound;                                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         UpperBound;                                        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         BitCount;                                          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DC[0x5];                                      // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUint8RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint8RangeNetSerializerConfig");
-static_assert(sizeof(FUint8RangeNetSerializerConfig) == 0x000018, "Wrong size on FUint8RangeNetSerializerConfig");
-static_assert(offsetof(FUint8RangeNetSerializerConfig, LowerBound) == 0x000010, "Member 'FUint8RangeNetSerializerConfig::LowerBound' has a wrong offset!");
-static_assert(offsetof(FUint8RangeNetSerializerConfig, UpperBound) == 0x000011, "Member 'FUint8RangeNetSerializerConfig::UpperBound' has a wrong offset!");
-static_assert(offsetof(FUint8RangeNetSerializerConfig, BitCount) == 0x000012, "Member 'FUint8RangeNetSerializerConfig::BitCount' has a wrong offset!");
-
-// ScriptStruct IrisCore.Uint16RangeNetSerializerConfig
-// 0x0008 (0x0018 - 0x0010)
-struct FUint16RangeNetSerializerConfig final : public FNetSerializerConfig
-{
-public:
-	uint16                                        LowerBound;                                        // 0x0010(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        UpperBound;                                        // 0x0012(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         BitCount;                                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DD[0x3];                                      // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUint16RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint16RangeNetSerializerConfig");
-static_assert(sizeof(FUint16RangeNetSerializerConfig) == 0x000018, "Wrong size on FUint16RangeNetSerializerConfig");
-static_assert(offsetof(FUint16RangeNetSerializerConfig, LowerBound) == 0x000010, "Member 'FUint16RangeNetSerializerConfig::LowerBound' has a wrong offset!");
-static_assert(offsetof(FUint16RangeNetSerializerConfig, UpperBound) == 0x000012, "Member 'FUint16RangeNetSerializerConfig::UpperBound' has a wrong offset!");
-static_assert(offsetof(FUint16RangeNetSerializerConfig, BitCount) == 0x000014, "Member 'FUint16RangeNetSerializerConfig::BitCount' has a wrong offset!");
 
 // ScriptStruct IrisCore.Uint32RangeNetSerializerConfig
 // 0x0010 (0x0020 - 0x0010)
@@ -792,7 +792,7 @@ public:
 	uint32                                        LowerBound;                                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        UpperBound;                                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DE[0x7];                                      // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUint32RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint32RangeNetSerializerConfig");
 static_assert(sizeof(FUint32RangeNetSerializerConfig) == 0x000020, "Wrong size on FUint32RangeNetSerializerConfig");
@@ -808,7 +808,7 @@ public:
 	uint64                                        LowerBound;                                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint64                                        UpperBound;                                        // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         BitCount;                                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF[0x7];                                      // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUint64RangeNetSerializerConfig) == 0x000008, "Wrong alignment on FUint64RangeNetSerializerConfig");
 static_assert(sizeof(FUint64RangeNetSerializerConfig) == 0x000028, "Wrong size on FUint64RangeNetSerializerConfig");
@@ -847,7 +847,7 @@ struct FSupportsStructNetSerializerConfig final
 public:
 	class FName                                   StructName;                                        // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCanUseStructNetSerializer;                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E0[0x3];                                      // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSupportsStructNetSerializerConfig) == 0x000004, "Wrong alignment on FSupportsStructNetSerializerConfig");
 static_assert(sizeof(FSupportsStructNetSerializerConfig) == 0x00000C, "Wrong size on FSupportsStructNetSerializerConfig");

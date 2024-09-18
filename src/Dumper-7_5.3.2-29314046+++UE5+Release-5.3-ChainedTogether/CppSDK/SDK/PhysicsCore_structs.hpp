@@ -183,25 +183,6 @@ enum class EFrictionCombineMode : uint8
 	Max                                      = 3,
 };
 
-// ScriptStruct PhysicsCore.BodyInstanceCore
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FBodyInstanceCore
-{
-public:
-	uint8                                         Pad_102[0x10];                                     // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bSimulatePhysics : 1;                              // 0x0010(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideMass : 1;                                 // 0x0010(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEnableGravity : 1;                                // 0x0010(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bUpdateKinematicFromSimulation : 1;                // 0x0010(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bAutoWeld : 1;                                     // 0x0010(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bStartAwake : 1;                                   // 0x0010(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bGenerateWakeEvents : 1;                           // 0x0010(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bUpdateMassWhenScaleChanges : 1;                   // 0x0010(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_103[0x7];                                      // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FBodyInstanceCore) == 0x000008, "Wrong alignment on FBodyInstanceCore");
-static_assert(sizeof(FBodyInstanceCore) == 0x000018, "Wrong size on FBodyInstanceCore");
-
 // ScriptStruct PhysicsCore.PhysicalMaterialStrength
 // 0x000C (0x000C - 0x0000)
 struct FPhysicalMaterialStrength final
@@ -216,6 +197,25 @@ static_assert(sizeof(FPhysicalMaterialStrength) == 0x00000C, "Wrong size on FPhy
 static_assert(offsetof(FPhysicalMaterialStrength, TensileStrength) == 0x000000, "Member 'FPhysicalMaterialStrength::TensileStrength' has a wrong offset!");
 static_assert(offsetof(FPhysicalMaterialStrength, CompressionStrength) == 0x000004, "Member 'FPhysicalMaterialStrength::CompressionStrength' has a wrong offset!");
 static_assert(offsetof(FPhysicalMaterialStrength, ShearStrength) == 0x000008, "Member 'FPhysicalMaterialStrength::ShearStrength' has a wrong offset!");
+
+// ScriptStruct PhysicsCore.BodyInstanceCore
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FBodyInstanceCore
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bSimulatePhysics : 1;                              // 0x0010(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideMass : 1;                                 // 0x0010(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEnableGravity : 1;                                // 0x0010(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bUpdateKinematicFromSimulation : 1;                // 0x0010(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAutoWeld : 1;                                     // 0x0010(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bStartAwake : 1;                                   // 0x0010(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bGenerateWakeEvents : 1;                           // 0x0010(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bUpdateMassWhenScaleChanges : 1;                   // 0x0010(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FBodyInstanceCore) == 0x000008, "Wrong alignment on FBodyInstanceCore");
+static_assert(sizeof(FBodyInstanceCore) == 0x000018, "Wrong size on FBodyInstanceCore");
 
 }
 

@@ -28,7 +28,7 @@ public:
 	void GetCameraSettings(bool* InvertX, bool* InvertY, double* X_Sensitivity, double* Y_Sensitivity);
 	void GetCheckpoints(TArray<struct FS_Checkpoint>* Checkpoints);
 	void GetPushToTalk(bool* PTT);
-	void GetSaveGameObject(class UV_SaveGame_C** Param_SaveGame);
+	void GetSaveGameObject(class UV_SaveGame_C** SaveGame_0);
 	void GetShowDebug(bool* Debug);
 	void GetTestControl(bool* TestControl);
 	void GetTestPlayers(int32* Count);

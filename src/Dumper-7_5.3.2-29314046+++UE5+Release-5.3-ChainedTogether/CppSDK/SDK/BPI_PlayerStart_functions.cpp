@@ -20,11 +20,11 @@ namespace SDK
 // Function BPI_PlayerStart.BPI_PlayerStart_C.GetPlayerStartFromIndex
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FTransform                       Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool IBPI_PlayerStart_C::GetPlayerStartFromIndex(int32 Param_Index, struct FTransform* Transform)
+bool IBPI_PlayerStart_C::GetPlayerStartFromIndex(int32 Index_0, struct FTransform* Transform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,7 +33,7 @@ bool IBPI_PlayerStart_C::GetPlayerStartFromIndex(int32 Param_Index, struct FTran
 
 	Params::BPI_PlayerStart_C_GetPlayerStartFromIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -128,9 +128,9 @@ void IBPI_Controls_C::MoveRight(double Axis)
 // Function BPI_Controls.BPI_Controls_C.Sprint
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Sprint                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Sprint_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Controls_C::Sprint(bool Param_Sprint)
+void IBPI_Controls_C::Sprint(bool Sprint_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -139,7 +139,7 @@ void IBPI_Controls_C::Sprint(bool Param_Sprint)
 
 	Params::BPI_Controls_C_Sprint Parms{};
 
-	Parms.Param_Sprint = Param_Sprint;
+	Parms.Sprint_0 = Sprint_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

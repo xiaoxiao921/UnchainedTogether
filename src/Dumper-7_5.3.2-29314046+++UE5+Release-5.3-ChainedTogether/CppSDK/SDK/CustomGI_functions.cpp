@@ -42,10 +42,10 @@ void UCustomGI_C::Assign_Controllers_to_Players(int32 ControllersNumber, int32 P
 // Function CustomGI.CustomGI_C.Completed_A8F4B56E4EA2901B0727DEACDC3ECE67
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USaveGame*                        Param_SaveGame                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class USaveGame*                        SaveGame_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCustomGI_C::Completed_A8F4B56E4EA2901B0727DEACDC3ECE67(class USaveGame* Param_SaveGame, bool bSuccess)
+void UCustomGI_C::Completed_A8F4B56E4EA2901B0727DEACDC3ECE67(class USaveGame* SaveGame_0, bool bSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -54,7 +54,7 @@ void UCustomGI_C::Completed_A8F4B56E4EA2901B0727DEACDC3ECE67(class USaveGame* Pa
 
 	Params::CustomGI_C_Completed_A8F4B56E4EA2901B0727DEACDC3ECE67 Parms{};
 
-	Parms.Param_SaveGame = Param_SaveGame;
+	Parms.SaveGame_0 = SaveGame_0;
 	Parms.bSuccess = bSuccess;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -64,10 +64,10 @@ void UCustomGI_C::Completed_A8F4B56E4EA2901B0727DEACDC3ECE67(class USaveGame* Pa
 // Function CustomGI.CustomGI_C.Completed_F68F81F54A55E596F9A7118687AB01E9
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class USaveGame*                        Param_SaveGame                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class USaveGame*                        SaveGame_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    bSuccess                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCustomGI_C::Completed_F68F81F54A55E596F9A7118687AB01E9(class USaveGame* Param_SaveGame, bool bSuccess)
+void UCustomGI_C::Completed_F68F81F54A55E596F9A7118687AB01E9(class USaveGame* SaveGame_0, bool bSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -76,34 +76,28 @@ void UCustomGI_C::Completed_F68F81F54A55E596F9A7118687AB01E9(class USaveGame* Pa
 
 	Params::CustomGI_C_Completed_F68F81F54A55E596F9A7118687AB01E9 Parms{};
 
-	Parms.Param_SaveGame = Param_SaveGame;
+	Parms.SaveGame_0 = SaveGame_0;
 	Parms.bSuccess = bSuccess;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function CustomGI.CustomGI_C.CustomEvent
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function CustomGI.CustomGI_C.Downloaded
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   LocalPlayerNum                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           InvitedBy                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FBlueprintSessionResult          Session                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCustomGI_C::CustomEvent(bool bWasSuccessful, int32 LocalPlayerNum, const class FString& InvitedBy, const struct FBlueprintSessionResult& Session)
+void UCustomGI_C::Downloaded(bool Success)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CustomGI_C", "CustomEvent");
+		Func = Class->GetFunction("CustomGI_C", "Downloaded");
 
-	Params::CustomGI_C_CustomEvent Parms{};
+	Params::CustomGI_C_Downloaded Parms{};
 
-	Parms.bWasSuccessful = bWasSuccessful;
-	Parms.LocalPlayerNum = LocalPlayerNum;
-	Parms.InvitedBy = std::move(InvitedBy);
-	Parms.Session = std::move(Session);
+	Parms.Success = Success;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -153,9 +147,9 @@ void UCustomGI_C::GetCollectedWings(TArray<int32>* Wings)
 // Function CustomGI.CustomGI_C.GetDevMode
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_DevMode                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    DevMode_0                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCustomGI_C::GetDevMode(bool* Param_DevMode)
+void UCustomGI_C::GetDevMode(bool* DevMode_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,8 +160,8 @@ void UCustomGI_C::GetDevMode(bool* Param_DevMode)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_DevMode != nullptr)
-		*Param_DevMode = Parms.Param_DevMode;
+	if (DevMode_0 != nullptr)
+		*DevMode_0 = Parms.DevMode_0;
 }
 
 
@@ -276,9 +270,9 @@ bool UCustomGI_C::GetLocalMultiplayerMode()
 // Function CustomGI.CustomGI_C.GetPlayersInSession
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_PlayersInSession                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PlayersInSession_0                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCustomGI_C::GetPlayersInSession(int32* Param_PlayersInSession)
+void UCustomGI_C::GetPlayersInSession(int32* PlayersInSession_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -289,50 +283,8 @@ void UCustomGI_C::GetPlayersInSession(int32* Param_PlayersInSession)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_PlayersInSession != nullptr)
-		*Param_PlayersInSession = Parms.Param_PlayersInSession;
-}
-
-
-// Function CustomGI.CustomGI_C.GetTestControl
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    TestControl                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCustomGI_C::GetTestControl(bool* TestControl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomGI_C", "GetTestControl");
-
-	Params::CustomGI_C_GetTestControl Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (TestControl != nullptr)
-		*TestControl = Parms.TestControl;
-}
-
-
-// Function CustomGI.CustomGI_C.GetTestPlayers
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Count                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCustomGI_C::GetTestPlayers(int32* Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomGI_C", "GetTestPlayers");
-
-	Params::CustomGI_C_GetTestPlayers Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Count != nullptr)
-		*Count = Parms.Count;
+	if (PlayersInSession_0 != nullptr)
+		*PlayersInSession_0 = Parms.PlayersInSession_0;
 }
 
 
@@ -368,6 +320,63 @@ void UCustomGI_C::InitProgressSave()
 		Func = Class->GetFunction("CustomGI_C", "InitProgressSave");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CustomGI.CustomGI_C.IsInMod
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Mod                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::IsInMod(bool* Mod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "IsInMod");
+
+	Params::CustomGI_C_IsInMod Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Mod != nullptr)
+		*Mod = Parms.Mod;
+}
+
+
+// Function CustomGI.CustomGI_C.JoinSession
+// (BlueprintCallable, BlueprintEvent)
+
+void UCustomGI_C::JoinSession()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "JoinSession");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CustomGI.CustomGI_C.JoinSessionAfterCheckingMods
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FBlueprintSessionResult          Session                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UCustomGI_C::JoinSessionAfterCheckingMods(int32 PlayerIndex, const struct FBlueprintSessionResult& Session)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "JoinSessionAfterCheckingMods");
+
+	Params::CustomGI_C_JoinSessionAfterCheckingMods Parms{};
+
+	Parms.PlayerIndex = PlayerIndex;
+	Parms.Session = std::move(Session);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -447,6 +456,20 @@ void UCustomGI_C::OnFailure_B405B95A431214C35278028DA23BF73A()
 }
 
 
+// Function CustomGI.CustomGI_C.OnJoinSessionFailed__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+
+void UCustomGI_C::OnJoinSessionFailed__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "OnJoinSessionFailed__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function CustomGI.CustomGI_C.OnManualSave
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -487,6 +510,32 @@ void UCustomGI_C::OnSaveBiome(const struct FS_BiomeSave& NewItem)
 }
 
 
+// Function CustomGI.CustomGI_C.OnSessionInviteAccepted
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   LocalPlayerNum                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           InvitedBy                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FBlueprintSessionResult          Session                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UCustomGI_C::OnSessionInviteAccepted(bool bWasSuccessful, int32 LocalPlayerNum, const class FString& InvitedBy, const struct FBlueprintSessionResult& Session)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "OnSessionInviteAccepted");
+
+	Params::CustomGI_C_OnSessionInviteAccepted Parms{};
+
+	Parms.bWasSuccessful = bWasSuccessful;
+	Parms.LocalPlayerNum = LocalPlayerNum;
+	Parms.InvitedBy = std::move(InvitedBy);
+	Parms.Session = std::move(Session);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function CustomGI.CustomGI_C.OnSuccess_B405B95A431214C35278028DA23BF73A
 // (BlueprintCallable, BlueprintEvent)
 
@@ -496,20 +545,6 @@ void UCustomGI_C::OnSuccess_B405B95A431214C35278028DA23BF73A()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("CustomGI_C", "OnSuccess_B405B95A431214C35278028DA23BF73A");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function CustomGI.CustomGI_C.ReceiveInit
-// (Event, Public, BlueprintEvent)
-
-void UCustomGI_C::ReceiveInit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomGI_C", "ReceiveInit");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -624,6 +659,62 @@ void UCustomGI_C::ShowTyroTip()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("CustomGI_C", "ShowTyroTip");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CustomGI.CustomGI_C.GetTestControl
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    TestControl                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::GetTestControl(bool* TestControl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "GetTestControl");
+
+	Params::CustomGI_C_GetTestControl Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TestControl != nullptr)
+		*TestControl = Parms.TestControl;
+}
+
+
+// Function CustomGI.CustomGI_C.GetTestPlayers
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Count                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCustomGI_C::GetTestPlayers(int32* Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "GetTestPlayers");
+
+	Params::CustomGI_C_GetTestPlayers Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Count != nullptr)
+		*Count = Parms.Count;
+}
+
+
+// Function CustomGI.CustomGI_C.ReceiveInit
+// (Event, Public, BlueprintEvent)
+
+void UCustomGI_C::ReceiveInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomGI_C", "ReceiveInit");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

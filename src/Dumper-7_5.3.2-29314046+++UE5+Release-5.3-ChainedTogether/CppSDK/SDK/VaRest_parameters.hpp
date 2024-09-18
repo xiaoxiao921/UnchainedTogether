@@ -25,7 +25,7 @@ public:
 	class FString                                 JsonString;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseIncrementalParser;                             // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA7[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_DecodeJson) == 0x000008, "Wrong alignment on VaRestJsonObject_DecodeJson");
 static_assert(sizeof(VaRestJsonObject_DecodeJson) == 0x000018, "Wrong size on VaRestJsonObject_DecodeJson");
@@ -40,7 +40,7 @@ struct VaRestJsonObject_MergeJsonObject final
 public:
 	class UVaRestJsonObject*                      InJsonObject;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Overwrite;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA8[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_MergeJsonObject) == 0x000008, "Wrong alignment on VaRestJsonObject_MergeJsonObject");
 static_assert(sizeof(VaRestJsonObject_MergeJsonObject) == 0x000010, "Wrong size on VaRestJsonObject_MergeJsonObject");
@@ -91,7 +91,7 @@ struct VaRestJsonObject_SetBoolField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InValue;                                           // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DA9[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_SetBoolField) == 0x000008, "Wrong alignment on VaRestJsonObject_SetBoolField");
 static_assert(sizeof(VaRestJsonObject_SetBoolField) == 0x000018, "Wrong size on VaRestJsonObject_SetBoolField");
@@ -131,7 +131,7 @@ struct VaRestJsonObject_SetIntegerField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Number;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAA[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_SetIntegerField) == 0x000008, "Wrong alignment on VaRestJsonObject_SetIntegerField");
 static_assert(sizeof(VaRestJsonObject_SetIntegerField) == 0x000018, "Wrong size on VaRestJsonObject_SetIntegerField");
@@ -226,7 +226,7 @@ struct VaRestJsonObject_SetNumberField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Number;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAB[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_SetNumberField) == 0x000008, "Wrong alignment on VaRestJsonObject_SetNumberField");
 static_assert(sizeof(VaRestJsonObject_SetNumberField) == 0x000018, "Wrong size on VaRestJsonObject_SetNumberField");
@@ -306,7 +306,7 @@ public:
 	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsRelativeToProjectDir;                           // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAC[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_WriteToFilePath) == 0x000008, "Wrong alignment on VaRestJsonObject_WriteToFilePath");
 static_assert(sizeof(VaRestJsonObject_WriteToFilePath) == 0x000018, "Wrong size on VaRestJsonObject_WriteToFilePath");
@@ -369,7 +369,7 @@ struct VaRestJsonObject_GetBoolField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAD[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_GetBoolField) == 0x000008, "Wrong alignment on VaRestJsonObject_GetBoolField");
 static_assert(sizeof(VaRestJsonObject_GetBoolField) == 0x000018, "Wrong size on VaRestJsonObject_GetBoolField");
@@ -446,7 +446,7 @@ struct VaRestJsonObject_GetIntegerField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAE[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_GetIntegerField) == 0x000008, "Wrong alignment on VaRestJsonObject_GetIntegerField");
 static_assert(sizeof(VaRestJsonObject_GetIntegerField) == 0x000018, "Wrong size on VaRestJsonObject_GetIntegerField");
@@ -473,7 +473,7 @@ struct VaRestJsonObject_GetNumberField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DAF[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_GetNumberField) == 0x000008, "Wrong alignment on VaRestJsonObject_GetNumberField");
 static_assert(sizeof(VaRestJsonObject_GetNumberField) == 0x000018, "Wrong size on VaRestJsonObject_GetNumberField");
@@ -539,7 +539,7 @@ struct VaRestJsonObject_HasField final
 public:
 	class FString                                 FieldName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB0[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestJsonObject_HasField) == 0x000008, "Wrong alignment on VaRestJsonObject_HasField");
 static_assert(sizeof(VaRestJsonObject_HasField) == 0x000018, "Wrong size on VaRestJsonObject_HasField");
@@ -664,7 +664,7 @@ public:
 	class FString                                 Source;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Dest;                                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB2[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestLibrary_Base64Decode) == 0x000008, "Wrong alignment on VaRestLibrary_Base64Decode");
 static_assert(sizeof(VaRestLibrary_Base64Decode) == 0x000028, "Wrong size on VaRestLibrary_Base64Decode");
@@ -680,7 +680,7 @@ public:
 	class FString                                 Source;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<uint8>                                 Dest;                                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB3[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestLibrary_Base64DecodeData) == 0x000008, "Wrong alignment on VaRestLibrary_Base64DecodeData");
 static_assert(sizeof(VaRestLibrary_Base64DecodeData) == 0x000028, "Wrong size on VaRestLibrary_Base64DecodeData");
@@ -709,7 +709,7 @@ public:
 	TArray<uint8>                                 Data;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	class FString                                 Dest;                                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB4[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestLibrary_Base64EncodeData) == 0x000008, "Wrong alignment on VaRestLibrary_Base64EncodeData");
 static_assert(sizeof(VaRestLibrary_Base64EncodeData) == 0x000028, "Wrong size on VaRestLibrary_Base64EncodeData");
@@ -759,7 +759,7 @@ struct VaRestLibrary_HTTPStatusIntToEnum final
 public:
 	int32                                         StatusCode;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVaRestHttpStatusCode                         ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB5[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestLibrary_HTTPStatusIntToEnum) == 0x000004, "Wrong alignment on VaRestLibrary_HTTPStatusIntToEnum");
 static_assert(sizeof(VaRestLibrary_HTTPStatusIntToEnum) == 0x000008, "Wrong size on VaRestLibrary_HTTPStatusIntToEnum");
@@ -839,7 +839,7 @@ struct VaRestRequestJSON_GetResponseContentAsString final
 {
 public:
 	bool                                          bCacheResponseContent;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBB[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(VaRestRequestJSON_GetResponseContentAsString) == 0x000008, "Wrong alignment on VaRestRequestJSON_GetResponseContentAsString");
@@ -1113,7 +1113,7 @@ struct VaRestRequestJSON_HasTag final
 public:
 	class FName                                   Tag;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBC[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(VaRestRequestJSON_HasTag) == 0x000004, "Wrong alignment on VaRestRequestJSON_HasTag");
 static_assert(sizeof(VaRestRequestJSON_HasTag) == 0x00000C, "Wrong size on VaRestRequestJSON_HasTag");
@@ -1139,7 +1139,7 @@ public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVaRestRequestVerb                            Verb;                                              // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVaRestRequestContentType                     ContentType;                                       // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBE[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonObject*                      VaRestJson;                                        // 0x0018(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(class UVaRestRequestJSON* Request)> Callback;                                          // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1170,7 +1170,7 @@ struct VaRestSubsystem_ConstructJsonValueBool final
 {
 public:
 	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBF[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonValue*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(VaRestSubsystem_ConstructJsonValueBool) == 0x000008, "Wrong alignment on VaRestSubsystem_ConstructJsonValueBool");
@@ -1184,7 +1184,7 @@ struct VaRestSubsystem_ConstructJsonValueNumber final
 {
 public:
 	float                                         Number;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DC0[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonValue*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(VaRestSubsystem_ConstructJsonValueNumber) == 0x000008, "Wrong alignment on VaRestSubsystem_ConstructJsonValueNumber");
@@ -1247,7 +1247,7 @@ struct VaRestSubsystem_ConstructVaRestRequestExt final
 public:
 	EVaRestRequestVerb                            Verb;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVaRestRequestContentType                     ContentType;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DC1[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestRequestJSON*                     ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(VaRestSubsystem_ConstructVaRestRequestExt) == 0x000008, "Wrong alignment on VaRestSubsystem_ConstructVaRestRequestExt");
@@ -1289,7 +1289,7 @@ struct VaRestSubsystem_LoadJsonFromFile final
 public:
 	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsRelativeToContentDir;                           // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DC2[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonObject*                      ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(VaRestSubsystem_LoadJsonFromFile) == 0x000008, "Wrong alignment on VaRestSubsystem_LoadJsonFromFile");

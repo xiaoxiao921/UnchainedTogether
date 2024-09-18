@@ -540,12 +540,12 @@ void UV_GameInstanceWithSave_C::ExecuteUbergraph_V_GameInstanceWithSave(int32 En
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.GetCameraSettings
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_InvertX                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_InvertY                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_X_Sensitivity                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  Param_Y_Sensitivity                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InvertX_0                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InvertY_0                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  X_Sensitivity_0                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Y_Sensitivity_0                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UV_GameInstanceWithSave_C::GetCameraSettings(bool* Param_InvertX, bool* Param_InvertY, double* Param_X_Sensitivity, double* Param_Y_Sensitivity)
+void UV_GameInstanceWithSave_C::GetCameraSettings(bool* InvertX_0, bool* InvertY_0, double* X_Sensitivity_0, double* Y_Sensitivity_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -556,17 +556,17 @@ void UV_GameInstanceWithSave_C::GetCameraSettings(bool* Param_InvertX, bool* Par
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_InvertX != nullptr)
-		*Param_InvertX = Parms.Param_InvertX;
+	if (InvertX_0 != nullptr)
+		*InvertX_0 = Parms.InvertX_0;
 
-	if (Param_InvertY != nullptr)
-		*Param_InvertY = Parms.Param_InvertY;
+	if (InvertY_0 != nullptr)
+		*InvertY_0 = Parms.InvertY_0;
 
-	if (Param_X_Sensitivity != nullptr)
-		*Param_X_Sensitivity = Parms.Param_X_Sensitivity;
+	if (X_Sensitivity_0 != nullptr)
+		*X_Sensitivity_0 = Parms.X_Sensitivity_0;
 
-	if (Param_Y_Sensitivity != nullptr)
-		*Param_Y_Sensitivity = Parms.Param_Y_Sensitivity;
+	if (Y_Sensitivity_0 != nullptr)
+		*Y_Sensitivity_0 = Parms.Y_Sensitivity_0;
 }
 
 
@@ -943,9 +943,9 @@ void UV_GameInstanceWithSave_C::SaveGame()
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.SetCameraInvertX
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_InvertX                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InvertX_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UV_GameInstanceWithSave_C::SetCameraInvertX(bool Param_InvertX)
+void UV_GameInstanceWithSave_C::SetCameraInvertX(bool InvertX_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -954,7 +954,7 @@ void UV_GameInstanceWithSave_C::SetCameraInvertX(bool Param_InvertX)
 
 	Params::V_GameInstanceWithSave_C_SetCameraInvertX Parms{};
 
-	Parms.Param_InvertX = Param_InvertX;
+	Parms.InvertX_0 = InvertX_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -963,9 +963,9 @@ void UV_GameInstanceWithSave_C::SetCameraInvertX(bool Param_InvertX)
 // Function V_GameInstanceWithSave.V_GameInstanceWithSave_C.SetCameraInvertY
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_InvertY                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InvertY_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UV_GameInstanceWithSave_C::SetCameraInvertY(bool Param_InvertY)
+void UV_GameInstanceWithSave_C::SetCameraInvertY(bool InvertY_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -974,7 +974,7 @@ void UV_GameInstanceWithSave_C::SetCameraInvertY(bool Param_InvertY)
 
 	Params::V_GameInstanceWithSave_C_SetCameraInvertY Parms{};
 
-	Parms.Param_InvertY = Param_InvertY;
+	Parms.InvertY_0 = InvertY_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

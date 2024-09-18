@@ -27,6 +27,7 @@ public:
 	class FString                                 MainMenuAction;                                    // 0x0878(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
+	void BPI_RequestCharacter(E_ChoosenChar Character_0);
 	void ExecuteUbergraph_PC_MainMenu(int32 EntryPoint);
 	void GetAudioDevices(TArray<class FString>* Devices);
 	void GetControlledActor(class AActor** Actor);
@@ -42,7 +43,7 @@ public:
 	void ShowTchatUI(bool RefreshTchat);
 	void SpawnCharacter_Srv_();
 	void Trigger_Moving_Object(class ABP_MovingObject_C* MovingObject);
-	void UpdateCanEscape(bool Param_CanEscape);
+	void UpdateCanEscape(bool CanEscape_0);
 
 public:
 	static class UClass* StaticClass()

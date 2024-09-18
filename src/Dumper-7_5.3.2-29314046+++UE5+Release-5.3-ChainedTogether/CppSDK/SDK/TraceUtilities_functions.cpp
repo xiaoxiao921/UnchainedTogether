@@ -288,9 +288,9 @@ bool UTraceUtilLibrary::ToggleChannel(const class FString& ChannelName, bool Ena
 // Function TraceUtilities.TraceUtilLibrary.TraceBookmark
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceBookmark(const class FString& Param_Name)
+void UTraceUtilLibrary::TraceBookmark(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -299,7 +299,7 @@ void UTraceUtilLibrary::TraceBookmark(const class FString& Param_Name)
 
 	Params::TraceUtilLibrary_TraceBookmark Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -313,9 +313,9 @@ void UTraceUtilLibrary::TraceBookmark(const class FString& Param_Name)
 // Function TraceUtilities.TraceUtilLibrary.TraceMarkRegionEnd
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Param_Name)
+void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -324,7 +324,7 @@ void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Param_Name)
 
 	Params::TraceUtilLibrary_TraceMarkRegionEnd Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -338,9 +338,9 @@ void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Param_Name)
 // Function TraceUtilities.TraceUtilLibrary.TraceMarkRegionStart
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Param_Name)
+void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -349,7 +349,7 @@ void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Param_Name)
 
 	Params::TraceUtilLibrary_TraceMarkRegionStart Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

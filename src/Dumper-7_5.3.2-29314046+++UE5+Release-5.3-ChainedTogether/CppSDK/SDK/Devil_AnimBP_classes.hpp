@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Devil_Poses_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Devil_AnimBP_structs.hpp"
+#include "Devil_Poses_structs.hpp"
 
 
 namespace SDK
@@ -25,10 +25,10 @@ namespace SDK
 class UDevil_AnimBP_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_37BA[0x8];                                     // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_348[0x8];                                      // 0x0348(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct Devil_AnimBP::FAnimBlueprintGeneratedMutableData __AnimBlueprintMutables;                           // 0x0358(0x0002)(HasGetValueTypeHash)
-	uint8                                         Pad_37BB[0x6];                                     // 0x035A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35A[0x6];                                      // 0x035A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_PropertyAccess;             // 0x0360(0x0008)()
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0368(0x0008)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0370(0x0020)()
@@ -57,16 +57,16 @@ public:
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0B20(0x0048)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0B68(0x0048)()
 	bool                                          IsInAir_;                                          // 0x0BB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_37BC[0x7];                                     // 0x0BB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BB1[0x7];                                      // 0x0BB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Speed;                                             // 0x0BB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EDevil_Poses                                  Pose;                                              // 0x0BC0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_37BD[0x7];                                     // 0x0BC1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BC1[0x7];                                      // 0x0BC1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Scale_Z;                                           // 0x0BC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EDevil_Poses                                  PreviousPose;                                      // 0x0BD0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Transitioning;                                     // 0x0BD1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_Devil_AnimBP_AnimGraphNode_TransitionResult_6BB1057B4E10670DF2FF94AF82340FD1();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_Devil_AnimBP_AnimGraphNode_TransitionResult_771E2BEC41B3F7D4237581918C2CC989();

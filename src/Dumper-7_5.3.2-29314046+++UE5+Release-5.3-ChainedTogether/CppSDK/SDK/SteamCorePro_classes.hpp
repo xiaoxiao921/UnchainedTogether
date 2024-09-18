@@ -119,7 +119,7 @@ static_assert(sizeof(USteamCoreInterface) == 0x000028, "Wrong size on USteamCore
 class USteamCoreProSubsystem final : public UObject
 {
 public:
-	uint8                                         Pad_1862[0x20];                                    // 0x0028(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x20];                                      // 0x0028(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -144,19 +144,19 @@ public:
 	bool                                          bVACEnabled;                                       // 0x003A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAllowP2PPacketRelay;                              // 0x003B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCopySteamDlls;                                    // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1863[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         P2PConnectionTimeout;                              // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SteamAppId;                                        // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SteamDevAppId;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Port;                                              // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GameServerQueryPort;                               // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1864[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 GameVersion;                                       // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOverrideMinHandshakeVersion;                      // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1865[0x3];                                     // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinHandshakeVersion;                               // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOverrideCurrentHandshakeVersion;                  // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1866[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CurrentHandshakeVersion;                           // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -208,7 +208,7 @@ public:
 	FMulticastInlineDelegateProperty_             ClanOfficerListResponse;                           // 0x00F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             DownloadClanActivityCountsResult;                  // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EquippedProfileItemsChanged;                       // 0x0118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1867[0x200];                                   // 0x0128(0x0200)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_128[0x200];                                    // 0x0128(0x0200)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void ActivateGameOverlay(const class FString& Dialog);
@@ -233,10 +233,10 @@ public:
 	static class FString GetClanTag(const struct FSteamID& SteamIDClan);
 	static struct FSteamID GetCoplayFriend(int32 CoplayFriend);
 	static int32 GetCoplayFriendCount();
-	static struct FSteamID GetFriendByIndex(int32 Ifriend, const TArray<ESteamFriendFlags>& Param_Flags);
+	static struct FSteamID GetFriendByIndex(int32 Ifriend, const TArray<ESteamFriendFlags>& Flags_0);
 	static int32 GetFriendCoplayGame(const struct FSteamID& SteamIDFriend);
 	static int32 GetFriendCoplayTime(const struct FSteamID& SteamIDFriend);
-	static int32 GetFriendCount(const TArray<ESteamFriendFlags>& Param_Flags);
+	static int32 GetFriendCount(const TArray<ESteamFriendFlags>& Flags_0);
 	static int32 GetFriendCountFromSource(const struct FSteamID& SteamIDSource);
 	static struct FSteamID GetFriendFromSourceByIndex(const struct FSteamID& SteamIDSource, int32 Ifriend);
 	static bool GetFriendGamePlayed(const struct FSteamID& SteamIDFriend, struct FSteamGameID* GameID, class FString* GameIP, int32* ConnectionPort, int32* QueryPort, struct FSteamID* SteamIDLobby);
@@ -267,7 +267,7 @@ public:
 	static class UTexture2D* GetSmallFriendAvatar(const struct FSteamID& SteamIDFriend);
 	static class USteamProFriends* GetSteamFriends();
 	static TArray<ESteamUserRestriction> GetUserRestrictions();
-	static bool HasFriend(const struct FSteamID& SteamIDFriend, const TArray<ESteamFriendFlags>& Param_Flags);
+	static bool HasFriend(const struct FSteamID& SteamIDFriend, const TArray<ESteamFriendFlags>& Flags_0);
 	static bool InviteUserToGame(const struct FSteamID& SteamIDFriend, const class FString& ConnectString);
 	static bool IsClanChatAdmin(const struct FSteamID& SteamIDClanChat, const struct FSteamID& SteamIDUser);
 	static bool IsClanChatWindowOpenInSteam(const struct FSteamID& SteamIDClanChat);
@@ -293,7 +293,7 @@ public:
 	void JoinClanChatRoom(const TDelegate<void(struct FJoinClanChatRoomCompletionResult& Data, bool bWasSuccessful)>& Callback, const struct FSteamID& SteamIDClan);
 	void RequestClanOfficerList(const TDelegate<void(struct FClanOfficerListResponse& Data, bool bWasSuccessful)>& Callback, const struct FSteamID& SteamIDClan);
 	void RequestEquippedProfileItems(const TDelegate<void(struct FEquippedProfileItems& Data, bool bWasSuccessful)>& Callback, const struct FSteamID& SteamID);
-	void SetPersonaName(const TDelegate<void(struct FSetPersonaNameResponse& Data, bool bWasSuccessful)>& Callback, const class FString& Param_Name);
+	void SetPersonaName(const TDelegate<void(struct FSetPersonaNameResponse& Data, bool bWasSuccessful)>& Callback, const class FString& Name_0);
 
 public:
 	static class UClass* StaticClass()
@@ -332,7 +332,7 @@ public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
-	static class USteamCoreProFriendsAsyncActionSetPersonaName* SetPersonaNameAsync(class UObject* WorldContextObject, const class FString& Param_Name, float Timeout);
+	static class USteamCoreProFriendsAsyncActionSetPersonaName* SetPersonaNameAsync(class UObject* WorldContextObject, const class FString& Name_0, float Timeout);
 
 	void HandleCallback(const struct FSetPersonaNameResponse& Data, bool bWasSuccessful);
 
@@ -512,7 +512,7 @@ class USteamCoreProFriendsAsyncActionRequestUserInformation final : public UStea
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18A6[0x30];                                    // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProFriendsAsyncActionRequestUserInformation* RequestUserInformationAsync(class UObject* WorldContextObject, const struct FSteamID& SteamIDUser, bool bRequireNameOnly, float Timeout);
@@ -539,21 +539,21 @@ class USteamProGameServerStats final : public USteamCoreInterface
 {
 public:
 	FMulticastInlineDelegateProperty_             GSStatsUnloaded;                                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18A8[0x20];                                    // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x20];                                      // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameServerStats* GetSteamGameServerStats();
 
-	bool ClearUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name);
-	bool GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved);
-	bool GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float* Data);
-	bool GetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32* Data);
+	bool ClearUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0);
+	bool GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved);
+	bool GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float* Data);
+	bool GetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32* Data);
 	void ServerRequestUserStats(const TDelegate<void(struct FGSStatsReceived& Data, bool bWasSuccessful)>& Callback, const struct FSteamID& SteamIDUser);
 	void ServerStoreUserStats(const TDelegate<void(struct FGSStatsStored& Data, bool bWasSuccessful)>& Callback, const struct FSteamID& SteamIDUser);
-	bool SetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name);
-	bool SetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float Data);
-	bool SetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32 Data);
-	bool UpdateUserAvgRateStat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float CountThisSession, float SessionLength);
+	bool SetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0);
+	bool SetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float Data);
+	bool SetUserStatInt(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32 Data);
+	bool UpdateUserAvgRateStat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float CountThisSession, float SessionLength);
 
 public:
 	static class UClass* StaticClass()
@@ -593,7 +593,7 @@ public:
 	struct FInputAnalogActionHandle GetAnalogActionHandle(const class FString& PszActionName);
 	int32 GetAnalogActionOrigins(const struct FInputHandle& Handle, const struct FInputActionSetHandle& ActionSetHandle, const struct FInputAnalogActionHandle& AnalogActionHandle, TArray<ESteamCoreProInputActionOrigin>* OriginsOut);
 	int32 GetConnectedControllers(TArray<struct FInputHandle>* OutHandles);
-	struct FInputHandle GetControllerForGamepadIndex(int32 Param_Index);
+	struct FInputHandle GetControllerForGamepadIndex(int32 Index_0);
 	struct FInputActionSetHandle GetCurrentActionSet(const struct FInputHandle& Handle);
 	bool GetDeviceBindingRevision(const struct FInputHandle& Handle, int32* Major, int32* Minor);
 	struct FInputDigitalActionData GetDigitalActionData(const struct FInputHandle& Handle, const struct FInputDigitalActionHandle& DigitalActionHandle);
@@ -609,8 +609,8 @@ public:
 	class FString GetStringForXboxOrigin(ESteamCoreProXboxOrigin Origin);
 	bool Init();
 	void Legacy_TriggerHapticPulse(const struct FInputHandle& Handle, ESteamCoreProControllerPad TargetPad, uint8 DurationMicroSec);
-	void Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle& Handle, ESteamCoreProControllerPad TargetPad, uint8 DurationMicroSec, uint8 OffMicroSec, uint8 Repeat, uint8 Param_Flags);
-	void SetLEDColor(const struct FInputHandle& Handle, uint8 ColorR, uint8 ColorG, uint8 ColorB, ESteamCoreProInputLEDFlag Param_Flags);
+	void Legacy_TriggerRepeatedHapticPulse(const struct FInputHandle& Handle, ESteamCoreProControllerPad TargetPad, uint8 DurationMicroSec, uint8 OffMicroSec, uint8 Repeat, uint8 Flags_0);
+	void SetLEDColor(const struct FInputHandle& Handle, uint8 ColorR, uint8 ColorG, uint8 ColorB, ESteamCoreProInputLEDFlag Flags_0);
 	bool ShowBindingPanel(const struct FInputHandle& Handle);
 	bool Shutdown();
 	void StopAnalogActionMomentum(const struct FInputHandle& Handle, const struct FInputAnalogActionHandle& EAction);
@@ -641,7 +641,7 @@ public:
 	FMulticastInlineDelegateProperty_             SteamInventoryStartPurchaseResult;                 // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamInventoryRequestPricesResultDelegate;         // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamInventoryEligiblePromoItemDefIDs;             // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18C7[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0xC0];                                      // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool AddPromoItem(struct FSteamInventoryResult* Result, const struct FSteamItemDef& ItemDef);
@@ -793,10 +793,10 @@ public:
 	FMulticastInlineDelegateProperty_             LobbyGameCreated;                                  // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             LobbyInvite;                                       // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             LobbyKicked;                                       // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F5[0x120];                                   // 0x00B8(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x120];                                     // 0x00B8(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static int32 AddFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Param_Flags, int32 TimeLastPlayedOnServer);
+	static int32 AddFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Flags_0, int32 TimeLastPlayedOnServer);
 	static void AddRequestLobbyListCompatibleMembersFilter(const struct FSteamID& SteamIDLobby);
 	static void AddRequestLobbyListDistanceFilter(ESteamLobbyDistanceFilter LobbyDistanceFilter);
 	static void AddRequestLobbyListFilterSlotsAvailable(int32 SlotsAvailable);
@@ -805,7 +805,7 @@ public:
 	static void AddRequestLobbyListResultCountFilter(int32 MaxResults);
 	static void AddRequestLobbyListStringFilter(const class FString& KeyToMatch, const class FString& ValueToMatch, ESteamLobbyComparison ComparisonType);
 	static bool DeleteLobbyData(const struct FSteamID& SteamIDLobby, const class FString& Key);
-	static bool GetFavoriteGame(int32 Game, int32* AppID, class FString* IP, int32* ConnectionPort, int32* QueryPort, TArray<ESteamFavoriteFlags>* Param_Flags, int32* TimeLastPlayedOnServer);
+	static bool GetFavoriteGame(int32 Game, int32* AppID, class FString* IP, int32* ConnectionPort, int32* QueryPort, TArray<ESteamFavoriteFlags>* Flags_0, int32* TimeLastPlayedOnServer);
 	static int32 GetFavoriteGameCount();
 	static struct FSteamID GetLobbyByIndex(int32 Lobby);
 	static int32 GetLobbyChatEntry(const struct FSteamID& SteamIDLobby, int32 MessageID, struct FSteamID* SteamIDUser, class FString* Message, ESteamChatEntryType* ChatEntryType);
@@ -821,7 +821,7 @@ public:
 	static class USteamProMatchmaking* GetSteamMatchmaking();
 	static bool InviteUserToLobby(const struct FSteamID& SteamIDLobby, const struct FSteamID& SteamIDInvitee);
 	static void LeaveLobby(const struct FSteamID& SteamIDLobby);
-	static bool RemoveFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Param_Flags);
+	static bool RemoveFavoriteGame(int32 AppID, const class FString& IP, int32 ConnectionPort, int32 QueryPort, const TArray<ESteamFavoriteFlags>& Flags_0);
 	static bool RequestLobbyData(const struct FSteamID& SteamIDLobby);
 	static bool SendLobbyChatMsg(const struct FSteamID& SteamIDLobby, const class FString& Message);
 	static bool SetLinkedLobby(const struct FSteamID& SteamIDLobby, const struct FSteamID& SteamIDLobbyDependent);
@@ -944,7 +944,7 @@ class USteamCoreProCreateSession final : public USteamCoreProAsyncAction
 public:
 	FMulticastInlineDelegateProperty_             OnSuccess;                                         // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnFailure;                                         // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191B[0x100];                                   // 0x0050(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x100];                                     // 0x0050(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProCreateSession* CreateSteamCoreProSession(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSetting>& SessionSettings, const class FString& SessionName, int32 MaxPlayers, bool bUseLAN, bool bAllowInvites, bool bUsesPresence, bool bAllowJoinViaPresence, bool bAllowJoinViaPresenceFriendsOnly, bool bAntiCheatProtected, bool bUsesStats, bool bShouldAdvertise, bool bUseLobbiesVoiceChatIfAvailable, float Timeout);
@@ -970,7 +970,7 @@ class USteamCoreProFindSession final : public USteamCoreProAsyncAction
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191E[0x98];                                    // 0x0040(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x98];                                      // 0x0040(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProFindSession* FindSteamCoreProSessions(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSearchSetting>& SearchSettings, int32 MaxResults, bool bUseLAN, ESteamSessionFindType ServerType, ESteamLobbyDistanceFilter DistanceFilter, bool bEmptyServersOnly, bool bSecureServersOnly, float Timeout);
@@ -998,7 +998,7 @@ class USteamCoreProDestroySession final : public USteamCoreProAsyncAction
 public:
 	FMulticastInlineDelegateProperty_             OnSuccess;                                         // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnFailure;                                         // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1920[0x20];                                    // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProDestroySession* DestroySteamCoreProSession(class UObject* WorldContextObject, float Timeout);
@@ -1026,7 +1026,7 @@ class USteamCoreProUpdateSession final : public USteamCoreProAsyncAction
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1923[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x20];                                      // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProUpdateSession* UpdateSteamCoreProSession(class UObject* WorldContextObject, const TMap<class FString, struct FSteamSessionSearchSetting>& Settings, const class FString& SessionName, int32 MaxPlayers);
@@ -1170,7 +1170,7 @@ static_assert(offsetof(USteamCoreProMatchmakingServersAsyncActionServerRules, On
 class UServerFilter final : public UObject
 {
 public:
-	uint8                                         Pad_1936[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddFilterAnd(const class FString& Value);
@@ -1218,7 +1218,7 @@ class USteamProMusic final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             PlaybackStatusHasChanged;                          // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             VolumeHasChanged;                                  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1937[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProMusic* GetSteamMusic();
@@ -1255,7 +1255,7 @@ class USteamProNetworking final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             OnP2PSessionRequestDelegate;                       // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnP2PSessionConnectFailDelegate;                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1938[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProNetworking* GetSteamNetworking();
@@ -1424,14 +1424,14 @@ class USteamProAppList final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             SteamAppInstalled;                                 // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamAppUninstalled;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_194D[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProAppList* GetSteamAppList();
 
 	int32 GetAppBuildId(int32 AppID);
 	int32 GetAppInstallDir(int32 AppID, class FString* Directory);
-	int32 GetAppName(int32 AppID, class FString* Param_Name);
+	int32 GetAppName(int32 AppID, class FString* Name_0);
 	int32 GetInstalledApps(TArray<int32>* AppIDs, int32 MaxAppIDs);
 	int32 GetNumInstalledApps();
 
@@ -1457,10 +1457,10 @@ class USteamProApps final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             DLCInstalled;                                      // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             FileDetailsResultDelegate;                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1952[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static bool BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable, class FString* Param_Name);
+	static bool BGetDLCDataByIndex(int32 DLC, int32* AppID, bool* bAvailable, class FString* Name_0);
 	static bool BIsAppInstalled(int32 AppID);
 	static bool BIsCybercafe();
 	static bool BIsDlcInstalled(int32 AppID);
@@ -1475,7 +1475,7 @@ public:
 	static int32 GetAppInstallDir(int32 AppID, class FString* Folder);
 	static struct FSteamID GetAppOwner();
 	static class FString GetAvailableGameLanguages();
-	static bool GetCurrentBetaName(class FString* Param_Name);
+	static bool GetCurrentBetaName(class FString* Name_0);
 	static class FString GetCurrentGameLanguage();
 	static int32 GetDLCCount();
 	static bool GetDlcDownloadProgress(int32 AppID, int32* BytesDownloaded, int32* BytesTotal);
@@ -1517,7 +1517,7 @@ public:
 	FMulticastInlineDelegateProperty_             RequestPlayersForGameFinalResultDelegate;          // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SubmitPlayerResultResultDelegate;                  // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EndGameResultDelegate;                             // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_195F[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_98[0xE0];                                      // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameSearch* GetSteamGameSearch();
@@ -1567,7 +1567,7 @@ public:
 	FMulticastInlineDelegateProperty_             GSValidateAuthTicketResponse;                      // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GSClientApprove;                                   // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GSClientDeny;                                      // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_196A[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_78[0xA0];                                      // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProGameServer* GetSteamGameServer();
@@ -1641,13 +1641,13 @@ public:
 	FMulticastInlineDelegateProperty_             ChangeNumOpenSlotsDelegate;                        // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AvailableBeaconLocationsDelegate;                  // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ActiveBeaconsDelegate;                             // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1970[0xC0];                                    // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0xC0];                                      // 0x0088(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void CancelReservation(const struct FPartyBeaconID& BeaconID, const struct FSteamID& SteamIDUser);
 	static bool DestroyBeacon(const struct FPartyBeaconID& BeaconID);
 	static bool GetAvailableBeaconLocations(TArray<struct FSteamPartyBeaconLocation>* LocationList, int32 MaxNumLocations);
-	static struct FPartyBeaconID GetBeaconByIndex(int32 Param_Index);
+	static struct FPartyBeaconID GetBeaconByIndex(int32 Index_0);
 	static bool GetBeaconDetails(const struct FPartyBeaconID& BeaconID, struct FSteamID* SteamIDBeaconOwner, struct FSteamPartyBeaconLocation* Location, class FString* OutMetadata);
 	static bool GetBeaconLocationData(const struct FSteamPartyBeaconLocation& BeaconLocation, ESteamPartiesBeaconLocationData EData, class FString* PCHDataStringOut);
 	static int32 GetNumActiveBeacons();
@@ -1685,7 +1685,7 @@ class USteamProRemotePlay final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             SteamRemotePlaySessionConnected;                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             SteamRemotePlaySessionDisconnected;                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_197A[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamProRemotePlay* GetSteamRemotePlay();
@@ -1723,7 +1723,7 @@ public:
 	FMulticastInlineDelegateProperty_             RemoteStorageSubscribePublishedFileResult;         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             RemoteStoragePublishedFileUnsubscribed;            // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             RemoteStoragePublishedFileSubscribed;              // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1980[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x80];                                      // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool BeginFileWriteBatch();
@@ -1749,7 +1749,7 @@ public:
 	static bool GetQuota(int32* TotalBytes, int32* AvailableBytes);
 	static class USteamProRemoteStorage* GetSteamRemoteStorage();
 	static ESteamRemoteStoragePlatform GetSyncPlatforms(const class FString& File);
-	static bool GetUGCDetails(const struct FSteamUGCHandle& Handle, int32* AppID, class FString* Param_Name, int32* FileSizeInBytes, struct FSteamID* SteamIDOwner);
+	static bool GetUGCDetails(const struct FSteamUGCHandle& Handle, int32* AppID, class FString* Name_0, int32* FileSizeInBytes, struct FSteamID* SteamIDOwner);
 	static bool GetUGCDownloadProgress(const struct FSteamUGCHandle& Handle, int32* BytesDownloaded, int32* BytesExpected);
 	static bool IsCloudEnabledForAccount();
 	static bool IsCloudEnabledForApp();
@@ -1787,7 +1787,7 @@ class USteamProScreenshots final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             ScreenshotReady;                                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ScreenshotRequested;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1997[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static struct FScreenshotHandle AddScreenshotToLibrary(const class FString& Filename, const class FString& ThumbnailFilename, int32 Width, int32 Height);
@@ -1825,7 +1825,7 @@ public:
 	FMulticastInlineDelegateProperty_             DownloadItemResult;                                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserSubscribedItemsListChanged;                    // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             WorkshopEULAStatus;                                // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A2[0x80];                                    // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x80];                                      // 0x0068(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool AddContentDescriptor(const struct FUGCUpdateHandle& Handle, ESteamUGCContentDescriptorID DescId);
@@ -1846,25 +1846,25 @@ public:
 	static int32 GetItemState(const struct FPublishedFileID& PublishedFileID, TArray<ESteamItemState>* States);
 	static ESteamItemUpdateStatus GetItemUpdateProgress(const struct FUGCUpdateHandle& Handle, int32* BytesProcessed, int32* BytesTotal);
 	static int32 GetNumSubscribedItems();
-	static bool GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 PreviewIndex, class FString* URLOrVideoID, class FString* OriginalFileName, ESteamItemPreviewType* PreviewType);
-	static bool GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int32 Param_Index, TArray<struct FPublishedFileID>* PublishedFileIDs, int32 MaxEntries);
-	static bool GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 KeyValueTagIndex, class FString* Key, class FString* Value);
-	static bool GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int32 Param_Index, class FString* MetaData, int32 MetadataSize);
-	static int32 GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandle& Handle, int32 Param_Index);
-	static int32 GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Handle, int32 Param_Index);
-	static int32 GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int32 Param_Index);
-	static bool GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, int32 Param_Index, class FString* URL);
-	static bool GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32 Param_Index, struct FSteamUGCDetails* Details);
-	static bool GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, int32 Param_Index, ESteamItemStatistic StatType, class FString* StatValue);
-	static bool GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 IndexTag, class FString* Value);
-	static bool GetQueryUGCTagDisplayName(const struct FUGCQueryHandle& Handle, int32 Param_Index, int32 IndexTag, class FString* Value);
+	static bool GetQueryUGCAdditionalPreview(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 PreviewIndex, class FString* URLOrVideoID, class FString* OriginalFileName, ESteamItemPreviewType* PreviewType);
+	static bool GetQueryUGCChildren(const struct FUGCQueryHandle& Handle, int32 Index_0, TArray<struct FPublishedFileID>* PublishedFileIDs, int32 MaxEntries);
+	static bool GetQueryUGCKeyValueTag(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 KeyValueTagIndex, class FString* Key, class FString* Value);
+	static bool GetQueryUGCMetadata(const struct FUGCQueryHandle& Handle, int32 Index_0, class FString* MetaData, int32 MetadataSize);
+	static int32 GetQueryUGCNumAdditionalPreviews(const struct FUGCQueryHandle& Handle, int32 Index_0);
+	static int32 GetQueryUGCNumKeyValueTags(const struct FUGCQueryHandle& Handle, int32 Index_0);
+	static int32 GetQueryUGCNumTags(const struct FUGCQueryHandle& Handle, int32 Index_0);
+	static bool GetQueryUGCPreviewURL(const struct FUGCQueryHandle& Handle, int32 Index_0, class FString* URL);
+	static bool GetQueryUGCResult(const struct FUGCQueryHandle& Handle, int32 Index_0, struct FSteamUGCDetails* Details);
+	static bool GetQueryUGCStatistic(const struct FUGCQueryHandle& Handle, int32 Index_0, ESteamItemStatistic StatType, class FString* StatValue);
+	static bool GetQueryUGCTag(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 IndexTag, class FString* Value);
+	static bool GetQueryUGCTagDisplayName(const struct FUGCQueryHandle& Handle, int32 Index_0, int32 IndexTag, class FString* Value);
 	static class USteamProUGC* GetSteamUGC();
 	static int32 GetSubscribedItems(TArray<struct FPublishedFileID>* PublishedFileIDs, int32 MaxEntries);
 	static int32 GetUserContentDescriptorPreferences(const TArray<ESteamUGCContentDescriptorID>& Descriptors, int32 MaxEntries);
 	static bool ReleaseQueryUGCRequest(const struct FUGCQueryHandle& Handle);
 	static bool RemoveContentDescriptor(const struct FUGCUpdateHandle& Handle, ESteamUGCContentDescriptorID DescId);
 	static bool RemoveItemKeyValueTags(const struct FUGCUpdateHandle& Handle, const class FString& Key);
-	static bool RemoveItemPreview(const struct FUGCUpdateHandle& Handle, int32 Param_Index);
+	static bool RemoveItemPreview(const struct FUGCUpdateHandle& Handle, int32 Index_0);
 	static bool SetAllowCachedResponse(const struct FUGCQueryHandle& Handle, int32 MaxAgeSeconds);
 	static bool SetCloudFileNameFilter(const struct FUGCQueryHandle& Handle, const class FString& MatchCloudFileName);
 	static bool SetItemContent(const struct FUGCUpdateHandle& Handle, const class FString& ContentFolder);
@@ -1890,8 +1890,8 @@ public:
 	static bool ShowWorkshopEULA();
 	static struct FUGCUpdateHandle StartItemUpdate(int32 ConsumerAppID, const struct FPublishedFileID& PublishedFileID);
 	static void SuspendDownloads(bool bSuspend);
-	static bool UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, int32 Param_Index, const class FString& PreviewFile);
-	static bool UpdateItemPreviewVideo(const struct FUGCUpdateHandle& Handle, int32 Param_Index, const class FString& PreviewVideo);
+	static bool UpdateItemPreviewFile(const struct FUGCUpdateHandle& Handle, int32 Index_0, const class FString& PreviewFile);
+	static bool UpdateItemPreviewVideo(const struct FUGCUpdateHandle& Handle, int32 Index_0, const class FString& PreviewVideo);
 
 	void AddAppDependency(const TDelegate<void(struct FAddAppDependencyResult& Data, bool bWasSuccessful)>& Callback, const struct FPublishedFileID& PublishedFileID, int32 AppID);
 	void AddDependency(const TDelegate<void(struct FAddUGCDependencyResult& Data, bool bWasSuccessful)>& Callback, const struct FPublishedFileID& PublishedFileID, const struct FPublishedFileID& ChildPublishedFileId);
@@ -2442,7 +2442,7 @@ public:
 	FMulticastInlineDelegateProperty_             ValidateAuthTicketResponse;                        // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             EncryptedAppTicketResponse;                        // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GetTicketForWebApiResponse;                        // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0D[0x180];                                   // 0x00E8(0x0180)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x180];                                     // 0x00E8(0x0180)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void AdvertiseGame(const struct FSteamID& SteamIDGameServer, const class FString& ServerIP, int32 ServerPort);
@@ -2561,19 +2561,19 @@ public:
 	FMulticastInlineDelegateProperty_             UserStatsReceived;                                 // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserStatsStored;                                   // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             UserStatsUnloaded;                                 // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1C[0xA0];                                    // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_78[0xA0];                                      // 0x0078(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static bool ClearAchievement(const class FString& Param_Name);
-	static bool GetAchievement(const class FString& Param_Name, bool* bAchieved);
-	static bool GetAchievementAchievedPercent(const class FString& Param_Name, float* Percent);
-	static bool GetAchievementAndUnlockTime(const class FString& Param_Name, bool* bAchieved, int32* UnlockTime);
-	static class FString GetAchievementDisplayAttribute(const class FString& Param_Name, const class FString& Key);
-	static class UTexture2D* GetAchievementIcon(const class FString& Param_Name);
+	static bool ClearAchievement(const class FString& Name_0);
+	static bool GetAchievement(const class FString& Name_0, bool* bAchieved);
+	static bool GetAchievementAchievedPercent(const class FString& Name_0, float* Percent);
+	static bool GetAchievementAndUnlockTime(const class FString& Name_0, bool* bAchieved, int32* UnlockTime);
+	static class FString GetAchievementDisplayAttribute(const class FString& Name_0, const class FString& Key);
+	static class UTexture2D* GetAchievementIcon(const class FString& Name_0);
 	static class FString GetAchievementName(int32 Achievement);
-	static bool GetAchievementProgressLimits(const class FString& Param_Name, int32* MinProgress, int32* MaxProgress);
-	static bool GetAchievementProgressLimitsFloat(const class FString& Param_Name, float* MinProgress, float* MaxProgress);
-	static bool GetDownloadedLeaderboardEntry(const struct FSteamLeaderboardEntries& LeaderboardEntries, int32 Param_Index, struct FSteamLeaderboardEntry* LeaderboardEntry, const TArray<int32>& Details, TArray<int32>* OutDetails);
+	static bool GetAchievementProgressLimits(const class FString& Name_0, int32* MinProgress, int32* MaxProgress);
+	static bool GetAchievementProgressLimitsFloat(const class FString& Name_0, float* MinProgress, float* MaxProgress);
+	static bool GetDownloadedLeaderboardEntry(const struct FSteamLeaderboardEntries& LeaderboardEntries, int32 Index_0, struct FSteamLeaderboardEntry* LeaderboardEntry, const TArray<int32>& Details, TArray<int32>* OutDetails);
 	static bool GetGlobalStatFloat(const class FString& StatName, float* Data);
 	static int32 GetGlobalStatHistoryFloat(const class FString& StatName, int32 HistoryDays, TArray<float>* Data);
 	static int32 GetGlobalStatHistoryInt(const class FString& StatName, int32 HistoryDays, TArray<int32>* Data);
@@ -2582,24 +2582,24 @@ public:
 	static int32 GetLeaderboardEntryCount(const struct FSteamLeaderboard& SteamLeaderboard);
 	static class FString GetLeaderboardName(const struct FSteamLeaderboard& SteamLeaderboard);
 	static ESteamLeaderboardSortMethod GetLeaderboardSortMethod(const struct FSteamLeaderboard& SteamLeaderboard);
-	static int32 GetMostAchievedAchievementInfo(class FString* Param_Name, float* Percent, bool* bAchieved);
-	static int32 GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, class FString* Param_Name, float* Percent, bool* bAchieved);
+	static int32 GetMostAchievedAchievementInfo(class FString* Name_0, float* Percent, bool* bAchieved);
+	static int32 GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, class FString* Name_0, float* Percent, bool* bAchieved);
 	static int32 GetNumAchievements();
-	static bool GetStatFloat(const class FString& Param_Name, float* Data);
-	static bool GetStatInt(const class FString& Param_Name, int32* Data);
+	static bool GetStatFloat(const class FString& Name_0, float* Data);
+	static bool GetStatInt(const class FString& Name_0, int32* Data);
 	static class USteamProUserStats* GetSteamUserStats();
-	static bool GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved);
-	static bool GetUserAchievementAndUnlockTime(const struct FSteamID& SteamIDUser, const class FString& Param_Name, bool* bAchieved, int32* UnlockTime);
-	static bool GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Param_Name, float* Data);
-	static bool GetUserStatInteger(const struct FSteamID& SteamIDUser, const class FString& Param_Name, int32* Data);
-	static bool IndicateAchievementProgress(const class FString& Param_Name, int32 CurrentProgress, int32 MaxProgress);
+	static bool GetUserAchievement(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved);
+	static bool GetUserAchievementAndUnlockTime(const struct FSteamID& SteamIDUser, const class FString& Name_0, bool* bAchieved, int32* UnlockTime);
+	static bool GetUserStatFloat(const struct FSteamID& SteamIDUser, const class FString& Name_0, float* Data);
+	static bool GetUserStatInteger(const struct FSteamID& SteamIDUser, const class FString& Name_0, int32* Data);
+	static bool IndicateAchievementProgress(const class FString& Name_0, int32 CurrentProgress, int32 MaxProgress);
 	static bool RequestCurrentStats();
 	static bool ResetAllStats(bool bAchievementsToo);
-	static bool SetAchievement(const class FString& Param_Name);
-	static bool SetStatFloat(const class FString& Param_Name, float Data);
-	static bool SetStatInt(const class FString& Param_Name, int32 Data);
+	static bool SetAchievement(const class FString& Name_0);
+	static bool SetStatFloat(const class FString& Name_0, float Data);
+	static bool SetStatInt(const class FString& Name_0, int32 Data);
 	static bool StoreStats();
-	static bool UpdateAvgRateStat(const class FString& Param_Name, float CountThisSession, float SessionLength);
+	static bool UpdateAvgRateStat(const class FString& Name_0, float CountThisSession, float SessionLength);
 
 	void AttachLeaderboardUGC(const TDelegate<void(struct FAttachLeaderboardUGCData& Data, bool bWasSuccessful)>& Callback, const struct FSteamLeaderboard& SteamLeaderboard, const struct FSteamUGCHandle& Handle);
 	void DownloadLeaderboardEntries(const TDelegate<void(struct FLeaderboardScoresDownloaded& Data, bool bWasSuccessful)>& Callback, const struct FSteamLeaderboard& SteamLeaderboard, ESteamLeaderboardDataRequest DataRequest, int32 RangeStart, int32 RangeEnd);
@@ -2844,7 +2844,7 @@ class USteamCoreProUserStatsAsyncActionRequestCurrentStats final : public USteam
 {
 public:
 	FMulticastInlineDelegateProperty_             OnCallback;                                        // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A55[0x20];                                    // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x20];                                      // 0x0040(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class USteamCoreProUserStatsAsyncActionRequestCurrentStats* RequestCurrentStatsAsync(class UObject* WorldContextObject, float Timeout);
@@ -3075,7 +3075,7 @@ public:
 	FMulticastInlineDelegateProperty_             SteamShutdown;                                     // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AppResumingFromSuspend;                            // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             FloatingGamepadTextInputDismissed;                 // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A8A[0xE0];                                    // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_98[0xE0];                                      // 0x0098(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool BOverlayNeedsPresent();
@@ -3139,7 +3139,7 @@ class USteamProVideo final : public USteamCoreInterface
 public:
 	FMulticastInlineDelegateProperty_             GetOPFSettingsResult;                              // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GetVideoURLResult;                                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A94[0x40];                                    // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void GetOPFSettings(int32 VideoAppID);

@@ -6,21 +6,21 @@
 * https://github.com/Encryqed/Dumper-7
 */
 
-// Package: BP_Chains
+// Package: BP_chains
 
 #include "Basic.hpp"
 
-#include "BP_Chains_classes.hpp"
-#include "BP_Chains_parameters.hpp"
+#include "BP_chains_classes.hpp"
+#include "BP_chains_parameters.hpp"
 
 
 namespace SDK
 {
 
-// Function BP_Chains.BP_Chains_C.UserConstructionScript
+// Function BP_chains.BP_Chains_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void BP_Chains::ABP_Chains_C::UserConstructionScript()
+void ABP_Chains_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 

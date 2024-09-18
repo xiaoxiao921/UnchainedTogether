@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "MetasoundFrontend_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -39,7 +39,7 @@ static_assert(sizeof(IMetaSoundDocumentInterface) == 0x000028, "Wrong size on IM
 class UMetasoundParameterPack final : public UObject
 {
 public:
-	uint8                                         Pad_2B1F[0x18];                                    // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UMetasoundParameterPack* MakeMetasoundParameterPack();
@@ -79,7 +79,7 @@ static_assert(sizeof(UMetasoundParameterPack) == 0x000040, "Wrong size on UMetas
 class UMetaSoundBuilderDocument final : public UObject
 {
 public:
-	uint8                                         Pad_2B2F[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMetasoundFrontendDocument             Document;                                          // 0x0030(0x01C8)(Transient, NativeAccessSpecifierPrivate)
 	TSubclassOf<class UObject>                    MetaSoundUClass;                                   // 0x01F8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
 
@@ -32,7 +32,7 @@ public:
 	struct FLinearColor                           UnhoveredBorderColor;                              // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FSlateColor                            UnhoveredTextColor;                                // 0x0308(0x0014)(Edit, BlueprintVisible, ExposeOnSpawn)
 	bool                                          RoundBorders;                                      // 0x031C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_33FC[0x3];                                     // 0x031D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31D[0x3];                                      // 0x031D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           HoveredBorderColor;                                // 0x0320(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	int32                                         FontSize;                                          // 0x0330(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FSlateColor                            HoveredTextColor;                                  // 0x0334(0x0014)(Edit, BlueprintVisible, ExposeOnSpawn)
@@ -45,6 +45,7 @@ public:
 	void ExecuteUbergraph_W_Button(int32 EntryPoint);
 	void OnClicked__DelegateSignature();
 	void PreConstruct(bool IsDesignTime);
+	void SetText(const class FText& InText);
 
 public:
 	static class UClass* StaticClass()

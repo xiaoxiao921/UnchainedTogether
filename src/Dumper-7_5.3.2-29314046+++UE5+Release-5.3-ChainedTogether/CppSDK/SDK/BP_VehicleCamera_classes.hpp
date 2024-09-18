@@ -42,7 +42,7 @@ public:
 	void PossessOwner();
 	void ReceivePossessed(class AController* NewController);
 	void ReceiveTick(float DeltaSeconds);
-	void Sprint(bool Param_Sprint);
+	void Sprint(bool Sprint_0);
 	void Stance();
 	void TestControlNotify();
 

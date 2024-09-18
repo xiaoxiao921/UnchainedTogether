@@ -30,19 +30,19 @@ public:
 	struct FRotator                               SyncedRotation;                                    // 0x00D0(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          SyncLocation;                                      // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          SyncRotation;                                      // 0x00E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DE5[0x2];                                     // 0x00EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EA[0x2];                                       // 0x00EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Interp_Speed;                                      // 0x00EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CanTick;                                           // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsTeleporting;                                     // 0x00F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_C_VinceSync(int32 EntryPoint);
-	void InitSync(class USceneComponent* Param_ComponentToSync);
+	void InitSync(class USceneComponent* ComponentToSync_0);
 	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
-	void SetComponentToSync(class USceneComponent* Param_ComponentToSync);
-	void Teleport(const struct FVector& Param_SyncedLocation, const struct FRotator& Param_SyncedRotation);
-	void TeleportAll(const struct FVector& Param_SyncedLocation, const struct FRotator& Param_SyncedRotation);
+	void SetComponentToSync(class USceneComponent* ComponentToSync_0);
+	void Teleport(const struct FVector& SyncedLocation_0, const struct FRotator& SyncedRotation_0);
+	void TeleportAll(const struct FVector& SyncedLocation_0, const struct FRotator& SyncedRotation_0);
 
 public:
 	static class UClass* StaticClass()

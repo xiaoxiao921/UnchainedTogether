@@ -16,6 +16,17 @@
 namespace SDK::Params
 {
 
+// Function BPI_PlayerController.BPI_PlayerController_C.BPI_RequestCharacter
+// 0x0001 (0x0001 - 0x0000)
+struct BPI_PlayerController_C_BPI_RequestCharacter final
+{
+public:
+	E_ChoosenChar                                 Character;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BPI_PlayerController_C_BPI_RequestCharacter) == 0x000001, "Wrong alignment on BPI_PlayerController_C_BPI_RequestCharacter");
+static_assert(sizeof(BPI_PlayerController_C_BPI_RequestCharacter) == 0x000001, "Wrong size on BPI_PlayerController_C_BPI_RequestCharacter");
+static_assert(offsetof(BPI_PlayerController_C_BPI_RequestCharacter, Character) == 0x000000, "Member 'BPI_PlayerController_C_BPI_RequestCharacter::Character' has a wrong offset!");
+
 // Function BPI_PlayerController.BPI_PlayerController_C.GetAudioDevices
 // 0x0010 (0x0010 - 0x0000)
 struct BPI_PlayerController_C_GetAudioDevices final

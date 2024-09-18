@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
-#include "EnhancedInput_structs.hpp"
 #include "Slate_structs.hpp"
+#include "EnhancedInput_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
@@ -23,11 +23,11 @@ namespace SDK::Params
 struct W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature final
 {
 public:
-	struct FInputChord                            Param_SelectedKey;                                 // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	struct FInputChord                            SelectedKey_0;                                     // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 };
 static_assert(alignof(W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature) == 0x000008, "Wrong alignment on W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature");
 static_assert(sizeof(W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature) == 0x000020, "Wrong size on W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature");
-static_assert(offsetof(W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature, Param_SelectedKey) == 0x000000, "Member 'W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature::Param_SelectedKey' has a wrong offset!");
+static_assert(offsetof(W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature, SelectedKey_0) == 0x000000, "Member 'W_NewBind_C_BndEvt__W_NewBind_InputKeySelector_K2Node_ComponentBoundEvent_2_OnKeySelected__DelegateSignature::SelectedKey_0' has a wrong offset!");
 
 // Function W_NewBind.W_NewBind_C.ExecuteUbergraph_W_NewBind
 // 0x00C8 (0x00C8 - 0x0000)
@@ -35,7 +35,7 @@ struct W_NewBind_C_ExecuteUbergraph_W_NewBind final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35B6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UEnhancedInputLocalPlayerSubsystem*     CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IEnhancedInputSubsystemInterface> CallFunc_GetUserSettings_self_CastInput;           // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UEnhancedInputUserSettings*             CallFunc_GetUserSettings_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)

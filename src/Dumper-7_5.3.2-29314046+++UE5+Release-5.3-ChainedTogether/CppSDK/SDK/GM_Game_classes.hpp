@@ -31,6 +31,7 @@ public:
 	bool IsA_CarOccupied();
 	void K2_OnLogout(class AController* ExitingController);
 	void K2_PostLogin(class APlayerController* NewPlayer);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

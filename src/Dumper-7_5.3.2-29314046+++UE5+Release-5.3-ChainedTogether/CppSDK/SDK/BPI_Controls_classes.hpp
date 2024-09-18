@@ -27,7 +27,7 @@ public:
 	void LookUp(double Axis);
 	void MoveForward(double Axis);
 	void MoveRight(double Axis);
-	void Sprint(bool Param_Sprint);
+	void Sprint(bool Sprint_0);
 	void Stance();
 	void TestControlNotify();
 

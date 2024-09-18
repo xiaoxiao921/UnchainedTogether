@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "S_TchatElement_structs.hpp"
+#include "E_ChoosenChar_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -201,7 +202,7 @@ struct BPI_Gamestate_C_NearestRescuePoint final
 public:
 	bool                                          Lava;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Found;                                             // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DC9[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_RescuePoint_C*                      RescuePoint;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Gamestate_C_NearestRescuePoint) == 0x000008, "Wrong alignment on BPI_Gamestate_C_NearestRescuePoint");
@@ -215,13 +216,13 @@ static_assert(offsetof(BPI_Gamestate_C_NearestRescuePoint, RescuePoint) == 0x000
 struct BPI_Gamestate_C_SendToChatSRV final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Message;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FLinearColor                           Color;                                             // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Gamestate_C_SendToChatSRV) == 0x000008, "Wrong alignment on BPI_Gamestate_C_SendToChatSRV");
 static_assert(sizeof(BPI_Gamestate_C_SendToChatSRV) == 0x000030, "Wrong size on BPI_Gamestate_C_SendToChatSRV");
-static_assert(offsetof(BPI_Gamestate_C_SendToChatSRV, Param_Name) == 0x000000, "Member 'BPI_Gamestate_C_SendToChatSRV::Param_Name' has a wrong offset!");
+static_assert(offsetof(BPI_Gamestate_C_SendToChatSRV, Name_0) == 0x000000, "Member 'BPI_Gamestate_C_SendToChatSRV::Name_0' has a wrong offset!");
 static_assert(offsetof(BPI_Gamestate_C_SendToChatSRV, Message) == 0x000010, "Member 'BPI_Gamestate_C_SendToChatSRV::Message' has a wrong offset!");
 static_assert(offsetof(BPI_Gamestate_C_SendToChatSRV, Color) == 0x000020, "Member 'BPI_Gamestate_C_SendToChatSRV::Color' has a wrong offset!");
 
@@ -235,6 +236,20 @@ public:
 static_assert(alignof(BPI_Gamestate_C_ServerTravel) == 0x000008, "Wrong alignment on BPI_Gamestate_C_ServerTravel");
 static_assert(sizeof(BPI_Gamestate_C_ServerTravel) == 0x000010, "Wrong size on BPI_Gamestate_C_ServerTravel");
 static_assert(offsetof(BPI_Gamestate_C_ServerTravel, Command) == 0x000000, "Member 'BPI_Gamestate_C_ServerTravel::Command' has a wrong offset!");
+
+// Function BPI_Gamestate.BPI_Gamestate_C.SetLocalMP_ChosenChar
+// 0x0008 (0x0008 - 0x0000)
+struct BPI_Gamestate_C_SetLocalMP_ChosenChar final
+{
+public:
+	E_ChoosenChar                                 Character;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BPI_Gamestate_C_SetLocalMP_ChosenChar) == 0x000004, "Wrong alignment on BPI_Gamestate_C_SetLocalMP_ChosenChar");
+static_assert(sizeof(BPI_Gamestate_C_SetLocalMP_ChosenChar) == 0x000008, "Wrong size on BPI_Gamestate_C_SetLocalMP_ChosenChar");
+static_assert(offsetof(BPI_Gamestate_C_SetLocalMP_ChosenChar, Character) == 0x000000, "Member 'BPI_Gamestate_C_SetLocalMP_ChosenChar::Character' has a wrong offset!");
+static_assert(offsetof(BPI_Gamestate_C_SetLocalMP_ChosenChar, Index_0) == 0x000004, "Member 'BPI_Gamestate_C_SetLocalMP_ChosenChar::Index_0' has a wrong offset!");
 
 // Function BPI_Gamestate.BPI_Gamestate_C.SetTimer
 // 0x0004 (0x0004 - 0x0000)

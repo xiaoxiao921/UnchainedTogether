@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function BPI_Trampoline.BPI_Trampoline_C.BounceVector
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          Vector                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_Trampoline_C::BounceVector(struct FVector* Vector)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_Trampoline_C", "BounceVector");
+
+	Params::BPI_Trampoline_C_BounceVector Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Vector != nullptr)
+		*Vector = std::move(Parms.Vector);
+}
+
+
 // Function BPI_Trampoline.BPI_Trampoline_C.GetBounceForce
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -56,6 +77,20 @@ void IBPI_Trampoline_C::JustZImpulse(bool* JustZ)
 
 	if (JustZ != nullptr)
 		*JustZ = Parms.JustZ;
+}
+
+
+// Function BPI_Trampoline.BPI_Trampoline_C.PlayBounceAnim
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void IBPI_Trampoline_C::PlayBounceAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_Trampoline_C", "PlayBounceAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

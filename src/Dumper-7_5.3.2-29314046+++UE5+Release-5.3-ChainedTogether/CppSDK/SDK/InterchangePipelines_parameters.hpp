@@ -178,7 +178,7 @@ struct InterchangePipelineMeshesUtilities_IsValidMeshGeometryUid final
 public:
 	class FString                                 MeshGeometryUid;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ABC[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(InterchangePipelineMeshesUtilities_IsValidMeshGeometryUid) == 0x000008, "Wrong alignment on InterchangePipelineMeshesUtilities_IsValidMeshGeometryUid");
 static_assert(sizeof(InterchangePipelineMeshesUtilities_IsValidMeshGeometryUid) == 0x000018, "Wrong size on InterchangePipelineMeshesUtilities_IsValidMeshGeometryUid");
@@ -192,7 +192,7 @@ struct InterchangePipelineMeshesUtilities_IsValidMeshInstanceUid final
 public:
 	class FString                                 MeshInstanceUid;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2ABD[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(InterchangePipelineMeshesUtilities_IsValidMeshInstanceUid) == 0x000008, "Wrong alignment on InterchangePipelineMeshesUtilities_IsValidMeshInstanceUid");
 static_assert(sizeof(InterchangePipelineMeshesUtilities_IsValidMeshInstanceUid) == 0x000018, "Wrong size on InterchangePipelineMeshesUtilities_IsValidMeshInstanceUid");

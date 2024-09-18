@@ -106,10 +106,10 @@ void UChainComponent::AttachStartToActor(const struct FComponentReference& Compo
 // Function ChainPlugin.ChainComponent.getChainPoint
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UChainComponent::GetChainPoint(int32 Param_Index)
+struct FVector UChainComponent::GetChainPoint(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,7 +118,7 @@ struct FVector UChainComponent::GetChainPoint(int32 Param_Index)
 
 	Params::ChainComponent_GetChainPoint Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

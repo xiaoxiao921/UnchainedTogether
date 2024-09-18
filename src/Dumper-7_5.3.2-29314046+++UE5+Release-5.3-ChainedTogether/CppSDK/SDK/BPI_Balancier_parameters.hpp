@@ -32,13 +32,13 @@ static_assert(offsetof(BPI_Balancier_C_AttachMaillonToHands, Maillon) == 0x00000
 struct BPI_Balancier_C_GetMaillonByIndex final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DB5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimitiveComponent*                    Maillon;                                           // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Balancier_C_GetMaillonByIndex) == 0x000008, "Wrong alignment on BPI_Balancier_C_GetMaillonByIndex");
 static_assert(sizeof(BPI_Balancier_C_GetMaillonByIndex) == 0x000010, "Wrong size on BPI_Balancier_C_GetMaillonByIndex");
-static_assert(offsetof(BPI_Balancier_C_GetMaillonByIndex, Param_Index) == 0x000000, "Member 'BPI_Balancier_C_GetMaillonByIndex::Param_Index' has a wrong offset!");
+static_assert(offsetof(BPI_Balancier_C_GetMaillonByIndex, Index_0) == 0x000000, "Member 'BPI_Balancier_C_GetMaillonByIndex::Index_0' has a wrong offset!");
 static_assert(offsetof(BPI_Balancier_C_GetMaillonByIndex, Maillon) == 0x000008, "Member 'BPI_Balancier_C_GetMaillonByIndex::Maillon' has a wrong offset!");
 
 // Function BPI_Balancier.BPI_Balancier_C.GetMaillonIndex
@@ -47,12 +47,12 @@ struct BPI_Balancier_C_GetMaillonIndex final
 {
 public:
 	class UPrimitiveComponent*                    Maillon;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         Param_Index;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPI_Balancier_C_GetMaillonIndex) == 0x000008, "Wrong alignment on BPI_Balancier_C_GetMaillonIndex");
 static_assert(sizeof(BPI_Balancier_C_GetMaillonIndex) == 0x000010, "Wrong size on BPI_Balancier_C_GetMaillonIndex");
 static_assert(offsetof(BPI_Balancier_C_GetMaillonIndex, Maillon) == 0x000000, "Member 'BPI_Balancier_C_GetMaillonIndex::Maillon' has a wrong offset!");
-static_assert(offsetof(BPI_Balancier_C_GetMaillonIndex, Param_Index) == 0x000008, "Member 'BPI_Balancier_C_GetMaillonIndex::Param_Index' has a wrong offset!");
+static_assert(offsetof(BPI_Balancier_C_GetMaillonIndex, Index_0) == 0x000008, "Member 'BPI_Balancier_C_GetMaillonIndex::Index_0' has a wrong offset!");
 
 // Function BPI_Balancier.BPI_Balancier_C.GetRoot
 // 0x0008 (0x0008 - 0x0000)

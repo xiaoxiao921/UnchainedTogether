@@ -26,9 +26,9 @@ namespace SDK
 // struct FPoseLink                        LB                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        RF                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        RB                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param__CLF__CycleBlending                              (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        _CLF__CycleBlending_0                                  (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::_CLF__CycleBlending(const struct FPoseLink& F, const struct FPoseLink& B, const struct FPoseLink& LF, const struct FPoseLink& LB, const struct FPoseLink& RF, const struct FPoseLink& RB, struct FPoseLink* Param__CLF__CycleBlending)
+void UChristian_ALS_AnimBP_C::_CLF__CycleBlending(const struct FPoseLink& F, const struct FPoseLink& B, const struct FPoseLink& LF, const struct FPoseLink& LB, const struct FPoseLink& RF, const struct FPoseLink& RB, struct FPoseLink* _CLF__CycleBlending_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -46,8 +46,8 @@ void UChristian_ALS_AnimBP_C::_CLF__CycleBlending(const struct FPoseLink& F, con
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param__CLF__CycleBlending != nullptr)
-		*Param__CLF__CycleBlending = std::move(Parms.Param__CLF__CycleBlending);
+	if (_CLF__CycleBlending_0 != nullptr)
+		*_CLF__CycleBlending_0 = std::move(Parms._CLF__CycleBlending_0);
 }
 
 
@@ -61,9 +61,9 @@ void UChristian_ALS_AnimBP_C::_CLF__CycleBlending(const struct FPoseLink& F, con
 // struct FPoseLink                        RF                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        RB                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        Sprint                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param__N__CycleBlending                                (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        _N__CycleBlending_0                                    (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::_N__CycleBlending(const struct FPoseLink& F, const struct FPoseLink& B, const struct FPoseLink& LF, const struct FPoseLink& LB, const struct FPoseLink& RF, const struct FPoseLink& RB, const struct FPoseLink& Sprint, struct FPoseLink* Param__N__CycleBlending)
+void UChristian_ALS_AnimBP_C::_N__CycleBlending(const struct FPoseLink& F, const struct FPoseLink& B, const struct FPoseLink& LF, const struct FPoseLink& LB, const struct FPoseLink& RF, const struct FPoseLink& RB, const struct FPoseLink& Sprint, struct FPoseLink* _N__CycleBlending_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -82,17 +82,45 @@ void UChristian_ALS_AnimBP_C::_N__CycleBlending(const struct FPoseLink& F, const
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param__N__CycleBlending != nullptr)
-		*Param__N__CycleBlending = std::move(Parms.Param__N__CycleBlending);
+	if (_N__CycleBlending_0 != nullptr)
+		*_N__CycleBlending_0 = std::move(Parms._N__CycleBlending_0);
+}
+
+
+// Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.50fps
+// (BlueprintCallable, BlueprintEvent)
+
+void UChristian_ALS_AnimBP_C::Five0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Christian_ALS_AnimBP_C", "50fps");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.60fps
+// (BlueprintCallable, BlueprintEvent)
+
+void UChristian_ALS_AnimBP_C::Six0fps()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Christian_ALS_AnimBP_C", "60fps");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.AimOffsetBehaviors
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_AimOffsetBehaviors                               (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        AimOffsetBehaviors_0                                   (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::AimOffsetBehaviors(struct FPoseLink* Param_AimOffsetBehaviors)
+void UChristian_ALS_AnimBP_C::AimOffsetBehaviors(struct FPoseLink* AimOffsetBehaviors_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -103,8 +131,8 @@ void UChristian_ALS_AnimBP_C::AimOffsetBehaviors(struct FPoseLink* Param_AimOffs
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_AimOffsetBehaviors != nullptr)
-		*Param_AimOffsetBehaviors = std::move(Parms.Param_AimOffsetBehaviors);
+	if (AimOffsetBehaviors_0 != nullptr)
+		*AimOffsetBehaviors_0 = std::move(Parms.AimOffsetBehaviors_0);
 }
 
 
@@ -142,9 +170,9 @@ bool UChristian_ALS_AnimBP_C::AngleInRange(double Angle, double MinAngle, double
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
+void UChristian_ALS_AnimBP_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -155,8 +183,8 @@ void UChristian_ALS_AnimBP_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 
@@ -583,9 +611,9 @@ void UChristian_ALS_AnimBP_C::AnimNotify_SwimSound()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.BaseLayer
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_BaseLayer                                        (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        BaseLayer_0                                            (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::BaseLayer(struct FPoseLink* Param_BaseLayer)
+void UChristian_ALS_AnimBP_C::BaseLayer(struct FPoseLink* BaseLayer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -596,17 +624,17 @@ void UChristian_ALS_AnimBP_C::BaseLayer(struct FPoseLink* Param_BaseLayer)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_BaseLayer != nullptr)
-		*Param_BaseLayer = std::move(Parms.Param_BaseLayer);
+	if (BaseLayer_0 != nullptr)
+		*BaseLayer_0 = std::move(Parms.BaseLayer_0);
 }
 
 
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.BasePoses
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_BasePoses                                        (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        BasePoses_0                                            (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::BasePoses(struct FPoseLink* Param_BasePoses)
+void UChristian_ALS_AnimBP_C::BasePoses(struct FPoseLink* BasePoses_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -617,8 +645,8 @@ void UChristian_ALS_AnimBP_C::BasePoses(struct FPoseLink* Param_BasePoses)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_BasePoses != nullptr)
-		*Param_BasePoses = std::move(Parms.Param_BasePoses);
+	if (BasePoses_0 != nullptr)
+		*BasePoses_0 = std::move(Parms.BasePoses_0);
 }
 
 
@@ -639,9 +667,9 @@ void UChristian_ALS_AnimBP_C::BlueprintInitializeAnimation()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.BlueprintUpdateAnimation
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   Param_DeltaTimeX                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTimeX_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::BlueprintUpdateAnimation(float Param_DeltaTimeX)
+void UChristian_ALS_AnimBP_C::BlueprintUpdateAnimation(float DeltaTimeX_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -650,7 +678,7 @@ void UChristian_ALS_AnimBP_C::BlueprintUpdateAnimation(float Param_DeltaTimeX)
 
 	Params::Christian_ALS_AnimBP_C_BlueprintUpdateAnimation Parms{};
 
-	Parms.Param_DeltaTimeX = Param_DeltaTimeX;
+	Parms.DeltaTimeX_0 = DeltaTimeX_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -673,9 +701,9 @@ void UChristian_ALS_AnimBP_C::BPI_Jumped()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.BPI_SetGroundedEntryState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EGroundedEntryState                     Param_GroundedEntryState                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EGroundedEntryState                     GroundedEntryState_0                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::BPI_SetGroundedEntryState(EGroundedEntryState Param_GroundedEntryState)
+void UChristian_ALS_AnimBP_C::BPI_SetGroundedEntryState(EGroundedEntryState GroundedEntryState_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -684,7 +712,7 @@ void UChristian_ALS_AnimBP_C::BPI_SetGroundedEntryState(EGroundedEntryState Para
 
 	Params::Christian_ALS_AnimBP_C_BPI_SetGroundedEntryState Parms{};
 
-	Parms.Param_GroundedEntryState = Param_GroundedEntryState;
+	Parms.GroundedEntryState_0 = GroundedEntryState_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -693,9 +721,9 @@ void UChristian_ALS_AnimBP_C::BPI_SetGroundedEntryState(EGroundedEntryState Para
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.BPI_SetOverlayOverrideState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_OverlayOverrideState                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   OverlayOverrideState_0                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::BPI_SetOverlayOverrideState(int32 Param_OverlayOverrideState)
+void UChristian_ALS_AnimBP_C::BPI_SetOverlayOverrideState(int32 OverlayOverrideState_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -704,7 +732,7 @@ void UChristian_ALS_AnimBP_C::BPI_SetOverlayOverrideState(int32 Param_OverlayOve
 
 	Params::Christian_ALS_AnimBP_C_BPI_SetOverlayOverrideState Parms{};
 
-	Parms.Param_OverlayOverrideState = Param_OverlayOverrideState;
+	Parms.OverlayOverrideState_0 = OverlayOverrideState_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -754,9 +782,9 @@ double UChristian_ALS_AnimBP_C::CalculateDiagonalScaleAmount()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.CalculateInAirLeanAmount
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FLeanAmount                      Param_LeanAmount                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLeanAmount                      LeanAmount_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::CalculateInAirLeanAmount(struct FLeanAmount* Param_LeanAmount)
+void UChristian_ALS_AnimBP_C::CalculateInAirLeanAmount(struct FLeanAmount* LeanAmount_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -767,17 +795,17 @@ void UChristian_ALS_AnimBP_C::CalculateInAirLeanAmount(struct FLeanAmount* Param
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_LeanAmount != nullptr)
-		*Param_LeanAmount = std::move(Parms.Param_LeanAmount);
+	if (LeanAmount_0 != nullptr)
+		*LeanAmount_0 = std::move(Parms.LeanAmount_0);
 }
 
 
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.CalculateLandPrediction
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// double                                  Param_LandPrediction                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  LandPrediction_0                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::CalculateLandPrediction(double* Param_LandPrediction)
+void UChristian_ALS_AnimBP_C::CalculateLandPrediction(double* LandPrediction_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -788,8 +816,8 @@ void UChristian_ALS_AnimBP_C::CalculateLandPrediction(double* Param_LandPredicti
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_LandPrediction != nullptr)
-		*Param_LandPrediction = Parms.Param_LandPrediction;
+	if (LandPrediction_0 != nullptr)
+		*LandPrediction_0 = Parms.LandPrediction_0;
 }
 
 
@@ -933,9 +961,9 @@ struct FVelocityBlend UChristian_ALS_AnimBP_C::CalculateVelocityBlend()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.CalculateWalkRunBlend
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// double                                  Param_WalkRunBlend                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  WalkRunBlend_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::CalculateWalkRunBlend(double* Param_WalkRunBlend)
+void UChristian_ALS_AnimBP_C::CalculateWalkRunBlend(double* WalkRunBlend_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -946,8 +974,8 @@ void UChristian_ALS_AnimBP_C::CalculateWalkRunBlend(double* Param_WalkRunBlend)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_WalkRunBlend != nullptr)
-		*Param_WalkRunBlend = Parms.Param_WalkRunBlend;
+	if (WalkRunBlend_0 != nullptr)
+		*WalkRunBlend_0 = Parms.WalkRunBlend_0;
 }
 
 
@@ -3006,7 +3034,7 @@ void UChristian_ALS_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_Christ
 
 
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.ExecuteUbergraph_Christian_ALS_AnimBP
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -3029,9 +3057,9 @@ void UChristian_ALS_AnimBP_C::ExecuteUbergraph_Christian_ALS_AnimBP(int32 EntryP
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FPoseLink                        InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param_FixArmsLayer                                     (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        FixArmsLayer_0                                         (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::FixArmsLayer(const struct FPoseLink& InPose_0, struct FPoseLink* Param_FixArmsLayer)
+void UChristian_ALS_AnimBP_C::FixArmsLayer(const struct FPoseLink& InPose_0, struct FPoseLink* FixArmsLayer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3044,8 +3072,8 @@ void UChristian_ALS_AnimBP_C::FixArmsLayer(const struct FPoseLink& InPose_0, str
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_FixArmsLayer != nullptr)
-		*Param_FixArmsLayer = std::move(Parms.Param_FixArmsLayer);
+	if (FixArmsLayer_0 != nullptr)
+		*FixArmsLayer_0 = std::move(Parms.FixArmsLayer_0);
 }
 
 
@@ -3053,9 +3081,9 @@ void UChristian_ALS_AnimBP_C::FixArmsLayer(const struct FPoseLink& InPose_0, str
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param_Foot_IK                                          (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        Foot_IK_0                                              (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::Foot_IK(const struct FPoseLink& InPose, struct FPoseLink* Param_Foot_IK)
+void UChristian_ALS_AnimBP_C::Foot_IK(const struct FPoseLink& InPose, struct FPoseLink* Foot_IK_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3068,8 +3096,8 @@ void UChristian_ALS_AnimBP_C::Foot_IK(const struct FPoseLink& InPose, struct FPo
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Foot_IK != nullptr)
-		*Param_Foot_IK = std::move(Parms.Param_Foot_IK);
+	if (Foot_IK_0 != nullptr)
+		*Foot_IK_0 = std::move(Parms.Foot_IK_0);
 }
 
 
@@ -3161,9 +3189,9 @@ struct FVelocityBlend UChristian_ALS_AnimBP_C::InterpVelocityBlend(const struct 
 // struct FPoseLink                        Base_Layer_Input                                       (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        Overlay_Layer_Input                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink                        Base_Poses_Input                                       (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param_LayerBlending                                    (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        LayerBlending_0                                        (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::LayerBlending(const struct FPoseLink& Base_Layer_Input, const struct FPoseLink& Overlay_Layer_Input, const struct FPoseLink& Base_Poses_Input, struct FPoseLink* Param_LayerBlending)
+void UChristian_ALS_AnimBP_C::LayerBlending(const struct FPoseLink& Base_Layer_Input, const struct FPoseLink& Overlay_Layer_Input, const struct FPoseLink& Base_Poses_Input, struct FPoseLink* LayerBlending_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3178,8 +3206,8 @@ void UChristian_ALS_AnimBP_C::LayerBlending(const struct FPoseLink& Base_Layer_I
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_LayerBlending != nullptr)
-		*Param_LayerBlending = std::move(Parms.Param_LayerBlending);
+	if (LayerBlending_0 != nullptr)
+		*LayerBlending_0 = std::move(Parms.LayerBlending_0);
 }
 
 
@@ -3200,9 +3228,9 @@ void UChristian_ALS_AnimBP_C::MantleBeginSound()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.OverlayLayer
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_OverlayLayer                                     (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        OverlayLayer_0                                         (Parm, OutParm, NoDestructor)
 
-void UChristian_ALS_AnimBP_C::OverlayLayer(struct FPoseLink* Param_OverlayLayer)
+void UChristian_ALS_AnimBP_C::OverlayLayer(struct FPoseLink* OverlayLayer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3213,8 +3241,8 @@ void UChristian_ALS_AnimBP_C::OverlayLayer(struct FPoseLink* Param_OverlayLayer)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_OverlayLayer != nullptr)
-		*Param_OverlayLayer = std::move(Parms.Param_OverlayLayer);
+	if (OverlayLayer_0 != nullptr)
+		*OverlayLayer_0 = std::move(Parms.OverlayLayer_0);
 }
 
 
@@ -3529,9 +3557,9 @@ void UChristian_ALS_AnimBP_C::UpdateCharacterInfo()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.UpdateClimb
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_bClimb                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bClimb_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::UpdateClimb(bool Param_bClimb)
+void UChristian_ALS_AnimBP_C::UpdateClimb(bool bClimb_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3540,7 +3568,7 @@ void UChristian_ALS_AnimBP_C::UpdateClimb(bool Param_bClimb)
 
 	Params::Christian_ALS_AnimBP_C_UpdateClimb Parms{};
 
-	Parms.Param_bClimb = Param_bClimb;
+	Parms.bClimb_0 = bClimb_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -3707,9 +3735,9 @@ void UChristian_ALS_AnimBP_C::UpdateRotationValues()
 // Function Christian_ALS_AnimBP.Christian_ALS_AnimBP_C.UpdateSunAttraction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                          Param_Character                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          Character_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UChristian_ALS_AnimBP_C::UpdateSunAttraction(class UObject* Param_Character)
+void UChristian_ALS_AnimBP_C::UpdateSunAttraction(class UObject* Character_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3718,7 +3746,7 @@ void UChristian_ALS_AnimBP_C::UpdateSunAttraction(class UObject* Param_Character
 
 	Params::Christian_ALS_AnimBP_C_UpdateSunAttraction Parms{};
 
-	Parms.Param_Character = Param_Character;
+	Parms.Character_0 = Character_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

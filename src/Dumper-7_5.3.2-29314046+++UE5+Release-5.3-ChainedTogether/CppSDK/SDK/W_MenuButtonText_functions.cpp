@@ -85,6 +85,26 @@ void UW_MenuButtonText_C::PreConstruct(bool IsDesignTime)
 }
 
 
+// Function W_MenuButtonText.W_MenuButtonText_C.SetText
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText                             InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UW_MenuButtonText_C::SetText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MenuButtonText_C", "SetText");
+
+	Params::W_MenuButtonText_C_SetText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_MenuButtonText.W_MenuButtonText_C.Unhovered
 // (BlueprintCallable, BlueprintEvent)
 

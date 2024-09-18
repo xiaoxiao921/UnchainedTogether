@@ -149,6 +149,26 @@ void UW_CreateSession_C::BndEvt__W_CreateSession_Button_K2Node_ComponentBoundEve
 }
 
 
+// Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_PasswordTextBox_K2Node_ComponentBoundEvent_11_OnEditableTextBoxChangedEvent__DelegateSignature
+// (HasOutParams, BlueprintEvent)
+// Parameters:
+// class FText                             Text                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UW_CreateSession_C::BndEvt__W_CreateSession_PasswordTextBox_K2Node_ComponentBoundEvent_11_OnEditableTextBoxChangedEvent__DelegateSignature(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "BndEvt__W_CreateSession_PasswordTextBox_K2Node_ComponentBoundEvent_11_OnEditableTextBoxChangedEvent__DelegateSignature");
+
+	Params::W_CreateSession_C_BndEvt__W_CreateSession_PasswordTextBox_K2Node_ComponentBoundEvent_11_OnEditableTextBoxChangedEvent__DelegateSignature Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_CreateSession.W_CreateSession_C.BndEvt__W_CreateSession_W_ComboBox_1_K2Node_ComponentBoundEvent_1_OnComboSettingChange__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -229,6 +249,40 @@ void UW_CreateSession_C::Construct()
 }
 
 
+// Function W_CreateSession.W_CreateSession_C.DeselectAllUGC
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UW_CreateSession_C::DeselectAllUGC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "DeselectAllUGC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.Downloaded
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::Downloaded(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "Downloaded");
+
+	Params::W_CreateSession_C_Downloaded Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_CreateSession.W_CreateSession_C.ExecuteUbergraph_W_CreateSession
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -289,6 +343,52 @@ struct FSteamSessionSetting UW_CreateSession_C::GetPassword()
 }
 
 
+// Function W_CreateSession.W_CreateSession_C.GetSelectedUGC
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGC_Selected                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSteamUGCDetails                 UGC_Details                                            (Parm, OutParm)
+
+void UW_CreateSession_C::GetSelectedUGC(bool* UGC_Selected, struct FSteamUGCDetails* UGC_Details)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "GetSelectedUGC");
+
+	Params::W_CreateSession_C_GetSelectedUGC Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGC_Selected != nullptr)
+		*UGC_Selected = Parms.UGC_Selected;
+
+	if (UGC_Details != nullptr)
+		*UGC_Details = std::move(Parms.UGC_Details);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.IsAModSelected
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Selected                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::IsAModSelected(bool* Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "IsAModSelected");
+
+	Params::W_CreateSession_C_IsAModSelected Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Selected != nullptr)
+		*Selected = Parms.Selected;
+}
+
+
 // Function W_CreateSession.W_CreateSession_C.OnFailure_23C877CD4E6BA51E7050278F8ADF8DA3
 // (BlueprintCallable, BlueprintEvent)
 
@@ -312,6 +412,40 @@ void UW_CreateSession_C::OnSuccess_23C877CD4E6BA51E7050278F8ADF8DA3()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_CreateSession_C", "OnSuccess_23C877CD4E6BA51E7050278F8ADF8DA3");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.RefreshGameMode
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           GameMode                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::RefreshGameMode(const class FString& GameMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "RefreshGameMode");
+
+	Params::W_CreateSession_C_RefreshGameMode Parms{};
+
+	Parms.GameMode = std::move(GameMode);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.RefreshGamemodeVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_CreateSession_C::RefreshGamemodeVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "RefreshGamemodeVisibility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -362,6 +496,27 @@ void UW_CreateSession_C::SetServerName()
 		Func = Class->GetFunction("W_CreateSession_C", "SetServerName");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_CreateSession.W_CreateSession_C.Update_UGC_References
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGC_Selected                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CreateSession_C::Update_UGC_References(bool* UGC_Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CreateSession_C", "Update_UGC_References");
+
+	Params::W_CreateSession_C_Update_UGC_References Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGC_Selected != nullptr)
+		*UGC_Selected = Parms.UGC_Selected;
 }
 
 }

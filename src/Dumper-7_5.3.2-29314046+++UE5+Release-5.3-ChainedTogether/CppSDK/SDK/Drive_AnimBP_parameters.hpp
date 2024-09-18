@@ -22,11 +22,11 @@ namespace SDK::Params
 struct Drive_AnimBP_C_AnimGraph final
 {
 public:
-	struct FPoseLink                              Param_AnimGraph;                                   // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
 static_assert(alignof(Drive_AnimBP_C_AnimGraph) == 0x000008, "Wrong alignment on Drive_AnimBP_C_AnimGraph");
 static_assert(sizeof(Drive_AnimBP_C_AnimGraph) == 0x000010, "Wrong size on Drive_AnimBP_C_AnimGraph");
-static_assert(offsetof(Drive_AnimBP_C_AnimGraph, Param_AnimGraph) == 0x000000, "Member 'Drive_AnimBP_C_AnimGraph::Param_AnimGraph' has a wrong offset!");
+static_assert(offsetof(Drive_AnimBP_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'Drive_AnimBP_C_AnimGraph::AnimGraph_0' has a wrong offset!");
 
 // Function Drive_AnimBP.Drive_AnimBP_C.ExecuteUbergraph_Drive_AnimBP
 // 0x0030 (0x0030 - 0x0000)
@@ -34,7 +34,7 @@ struct Drive_AnimBP_C_ExecuteUbergraph_Drive_AnimBP final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E5F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         CallFunc_MakeRotator_Roll_ImplicitCast;            // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

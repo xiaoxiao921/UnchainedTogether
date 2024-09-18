@@ -17,145 +17,41 @@
 namespace SDK
 {
 
-// Function W_SpeedrunCom.W_SpeedrunCom_C.AddPlayerSlot
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class FString>                   PlayersID                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int32                                   Param_Classement                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   PlayerTime                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           DateSpeedrun                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_Button_69_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
 
-void UW_SpeedrunCom_C::AddPlayerSlot(TArray<class FString>& PlayersID, int32 Param_Classement, int32 PlayerTime, const class FString& DateSpeedrun)
+void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_Button_69_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "AddPlayerSlot");
+		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_Button_69_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
-	Params::W_SpeedrunCom_C_AddPlayerSlot Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.PlayersID = std::move(PlayersID);
-	Parms.Param_Classement = Param_Classement;
-	Parms.PlayerTime = PlayerTime;
-	Parms.DateSpeedrun = std::move(DateSpeedrun);
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_W_ComboBox_Leaderboard_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_W_ComboBox_Leaderboard_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature(const class FString& NewSelection, ESelectInfo SelectType, const class FString& ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_W_ComboBox_Leaderboard_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature");
+
+	Params::W_SpeedrunCom_C_BndEvt__W_SpeedrunCom_W_ComboBox_Leaderboard_K2Node_ComponentBoundEvent_2_OnComboSettingChange__DelegateSignature Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.SelectType = SelectType;
+	Parms.ID = std::move(ID);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	PlayersID = std::move(Parms.PlayersID);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_1Player_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_1Player_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_1Player_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_2Player_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_2Player_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_2Player_Button_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_3Player_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_3Player_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_3Player_Button_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.BndEvt__W_SpeedrunCom_4Player_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_SpeedrunCom_C::BndEvt__W_SpeedrunCom_4Player_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "BndEvt__W_SpeedrunCom_4Player_Button_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.ChangeCategoryByPlayer
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Param_PlayerNumber                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_SpeedrunCom_C::ChangeCategoryByPlayer(int32 Param_PlayerNumber)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "ChangeCategoryByPlayer");
-
-	Params::W_SpeedrunCom_C_ChangeCategoryByPlayer Parms{};
-
-	Parms.Param_PlayerNumber = Param_PlayerNumber;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.CheckDoublon
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FCategories_S                    Categories_S                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
-// bool                                    NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_SpeedrunCom_C::CheckDoublon(const struct FCategories_S& Categories_S, bool* NewParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "CheckDoublon");
-
-	Params::W_SpeedrunCom_C_CheckDoublon Parms{};
-
-	Parms.Categories_S = std::move(Categories_S);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
-}
-
-
-// Function W_SpeedrunCom.W_SpeedrunCom_C.ClearPlayers
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_SpeedrunCom_C::ClearPlayers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "ClearPlayers");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -173,17 +69,128 @@ void UW_SpeedrunCom_C::Construct()
 }
 
 
-// Function W_SpeedrunCom.W_SpeedrunCom_C.DeselectPlayersNumber
-// (BlueprintCallable, BlueprintEvent)
+// Function W_SpeedrunCom.W_SpeedrunCom_C.ConstructSearchURL
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-void UW_SpeedrunCom_C::DeselectPlayersNumber()
+class FString UW_SpeedrunCom_C::ConstructSearchURL()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "DeselectPlayersNumber");
+		Func = Class->GetFunction("W_SpeedrunCom_C", "ConstructSearchURL");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::W_SpeedrunCom_C_ConstructSearchURL Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::CustomEvent(const class FString& NewSelection, const class FString& ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "CustomEvent");
+
+	Params::W_SpeedrunCom_C_CustomEvent Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.ID = std::move(ID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           DefaultID                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::CustomEvent_0(const class FString& DefaultID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "CustomEvent_0");
+
+	Params::W_SpeedrunCom_C_CustomEvent_0 Parms{};
+
+	Parms.DefaultID = std::move(DefaultID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.CustomEvent_1
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::CustomEvent_1(const class FString& NewSelection, const class FString& ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "CustomEvent_1");
+
+	Params::W_SpeedrunCom_C_CustomEvent_1 Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.ID = std::move(ID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.CustomEvent_2
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           DefaultID                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::CustomEvent_2(const class FString& DefaultID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "CustomEvent_2");
+
+	Params::W_SpeedrunCom_C_CustomEvent_2 Parms{};
+
+	Parms.DefaultID = std::move(DefaultID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Delimiter
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           DelimiterS                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::Delimiter(class FString* DelimiterS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Delimiter");
+
+	Params::W_SpeedrunCom_C_Delimiter Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (DelimiterS != nullptr)
+		*DelimiterS = std::move(Parms.DelimiterS);
 }
 
 
@@ -207,35 +214,334 @@ void UW_SpeedrunCom_C::ExecuteUbergraph_W_SpeedrunCom(int32 EntryPoint)
 }
 
 
-// Function W_SpeedrunCom.W_SpeedrunCom_C.GetCategories
-// (BlueprintCallable, BlueprintEvent)
+// Function W_SpeedrunCom.W_SpeedrunCom_C.FindCategoryID_ByName
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           CategoryName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Type                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           CategoryID                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_SpeedrunCom_C::GetCategories()
+void UW_SpeedrunCom_C::FindCategoryID_ByName(const class FString& CategoryName, const class FString& Type, class FString* CategoryID)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "GetCategories");
+		Func = Class->GetFunction("W_SpeedrunCom_C", "FindCategoryID_ByName");
+
+	Params::W_SpeedrunCom_C_FindCategoryID_ByName Parms{};
+
+	Parms.CategoryName = std::move(CategoryName);
+	Parms.Type = std::move(Type);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CategoryID != nullptr)
+		*CategoryID = std::move(Parms.CategoryID);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.FormatURL
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           URL                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           CompatibleURL                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::FormatURL(const class FString& URL, class FString* CompatibleURL)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "FormatURL");
+
+	Params::W_SpeedrunCom_C_FormatURL Parms{};
+
+	Parms.URL = std::move(URL);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CompatibleURL != nullptr)
+		*CompatibleURL = std::move(Parms.CompatibleURL);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Generate_Levels
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_SpeedrunCom_C::Generate_Levels()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Generate_Levels");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function W_SpeedrunCom.W_SpeedrunCom_C.OnCategoriesCallback
-// (BlueprintCallable, BlueprintEvent)
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Get_Categories_Success__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UVaRestRequestJSON*               Request                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_SpeedrunCom_C::OnCategoriesCallback(class UVaRestRequestJSON* Request)
+void UW_SpeedrunCom_C::Get_Categories_Success__DelegateSignature(bool Success)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_SpeedrunCom_C", "OnCategoriesCallback");
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Get_Categories_Success__DelegateSignature");
 
-	Params::W_SpeedrunCom_C_OnCategoriesCallback Parms{};
+	Params::W_SpeedrunCom_C_Get_Categories_Success__DelegateSignature Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Get_Choices_And_Values
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UVaRestJsonObject*                Self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// TArray<class FString>                   IDs                                                    (Parm, OutParm)
+// TArray<class FString>                   Names                                                  (Parm, OutParm)
+// class FString                           DefaultID                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::Get_Choices_And_Values(class UVaRestJsonObject* Self2, TArray<class FString>* IDs, TArray<class FString>* Names, class FString* DefaultID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Get_Choices_And_Values");
+
+	Params::W_SpeedrunCom_C_Get_Choices_And_Values Parms{};
+
+	Parms.Self2 = Self2;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IDs != nullptr)
+		*IDs = std::move(Parms.IDs);
+
+	if (Names != nullptr)
+		*Names = std::move(Parms.Names);
+
+	if (DefaultID != nullptr)
+		*DefaultID = std::move(Parms.DefaultID);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Get_Levels_Success__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::Get_Levels_Success__DelegateSignature(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Get_Levels_Success__DelegateSignature");
+
+	Params::W_SpeedrunCom_C_Get_Levels_Success__DelegateSignature Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Get_Variables_Success__DelegateSignature
+// (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::Get_Variables_Success__DelegateSignature(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Get_Variables_Success__DelegateSignature");
+
+	Params::W_SpeedrunCom_C_Get_Variables_Success__DelegateSignature Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.Level_Callback
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UVaRestRequestJSON*               Request                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::Level_Callback(class UVaRestRequestJSON* Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "Level_Callback");
+
+	Params::W_SpeedrunCom_C_Level_Callback Parms{};
 
 	Parms.Request = Request;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.MakeVariablesSearchString
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::MakeVariablesSearchString(class FString* String)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "MakeVariablesSearchString");
+
+	Params::W_SpeedrunCom_C_MakeVariablesSearchString Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (String != nullptr)
+		*String = std::move(Parms.String);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.OnCategoryChange
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           NewSelection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::OnCategoryChange(const class FString& NewSelection, const class FString& ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "OnCategoryChange");
+
+	Params::W_SpeedrunCom_C_OnCategoryChange Parms{};
+
+	Parms.NewSelection = std::move(NewSelection);
+	Parms.ID = std::move(ID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.OnLevelsCallback
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UVaRestRequestJSON*               Request                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::OnLevelsCallback(class UVaRestRequestJSON* Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "OnLevelsCallback");
+
+	Params::W_SpeedrunCom_C_OnLevelsCallback Parms{};
+
+	Parms.Request = Request;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.OnRunsCallback
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UVaRestRequestJSON*               Request                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::OnRunsCallback(class UVaRestRequestJSON* Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "OnRunsCallback");
+
+	Params::W_SpeedrunCom_C_OnRunsCallback Parms{};
+
+	Parms.Request = Request;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.OnVariablesCallback
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UVaRestRequestJSON*               Request                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::OnVariablesCallback(class UVaRestRequestJSON* Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "OnVariablesCallback");
+
+	Params::W_SpeedrunCom_C_OnVariablesCallback Parms{};
+
+	Parms.Request = Request;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.RefreshFromLevel
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Level_ID                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::RefreshFromLevel(const class FString& Level_ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "RefreshFromLevel");
+
+	Params::W_SpeedrunCom_C_RefreshFromLevel Parms{};
+
+	Parms.Level_ID = std::move(Level_ID);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.RefreshResults
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_SpeedrunCom_C::RefreshResults()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "RefreshResults");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_SpeedrunCom.W_SpeedrunCom_C.UpdateVariablesFromCategory
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           CategoryID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_SpeedrunCom_C::UpdateVariablesFromCategory(const class FString& CategoryID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpeedrunCom_C", "UpdateVariablesFromCategory");
+
+	Params::W_SpeedrunCom_C_UpdateVariablesFromCategory Parms{};
+
+	Parms.CategoryID = std::move(CategoryID);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,11 +10,32 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class ChainedTogether.DistanceVisibilityBFL
+// 0x0000 (0x0028 - 0x0028)
+class UDistanceVisibilityBFL final : public UBlueprintFunctionLibrary
+{
+public:
+	static void SetVisibilityBasedOnDistance(class UStaticMeshComponent* TargetMesh, float MaxDistance);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DistanceVisibilityBFL">();
+	}
+	static class UDistanceVisibilityBFL* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDistanceVisibilityBFL>();
+	}
+};
+static_assert(alignof(UDistanceVisibilityBFL) == 0x000008, "Wrong alignment on UDistanceVisibilityBFL");
+static_assert(sizeof(UDistanceVisibilityBFL) == 0x000028, "Wrong size on UDistanceVisibilityBFL");
 
 // Class ChainedTogether.MyCustomWidget
 // 0x0008 (0x02C8 - 0x02C0)

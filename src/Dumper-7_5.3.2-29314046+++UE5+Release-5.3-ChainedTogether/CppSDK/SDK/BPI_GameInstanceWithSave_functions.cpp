@@ -137,9 +137,9 @@ void IBPI_GameInstanceWithSave_C::GetPushToTalk(bool* PTT)
 // Function BPI_GameInstanceWithSave.BPI_GameInstanceWithSave_C.GetSaveGameObject
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UV_SaveGame_C*                    Param_SaveGame                                         (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UV_SaveGame_C*                    SaveGame_0                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_GameInstanceWithSave_C::GetSaveGameObject(class UV_SaveGame_C** Param_SaveGame)
+void IBPI_GameInstanceWithSave_C::GetSaveGameObject(class UV_SaveGame_C** SaveGame_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -150,8 +150,8 @@ void IBPI_GameInstanceWithSave_C::GetSaveGameObject(class UV_SaveGame_C** Param_
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_SaveGame != nullptr)
-		*Param_SaveGame = Parms.Param_SaveGame;
+	if (SaveGame_0 != nullptr)
+		*SaveGame_0 = Parms.SaveGame_0;
 }
 
 

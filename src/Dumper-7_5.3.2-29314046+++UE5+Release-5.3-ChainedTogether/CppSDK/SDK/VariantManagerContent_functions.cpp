@@ -393,9 +393,9 @@ int32 UVariant::AddDependency(struct FVariantDependency* Dependency)
 // Function VariantManagerContent.Variant.DeleteDependency
 // (Final, Native, Public)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariant::DeleteDependency(int32 Param_Index)
+void UVariant::DeleteDependency(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -404,7 +404,7 @@ void UVariant::DeleteDependency(int32 Param_Index)
 
 	Params::Variant_DeleteDependency Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -446,10 +446,10 @@ class AActor* UVariant::GetActor(int32 ActorIndex)
 // Function VariantManagerContent.Variant.GetDependency
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVariantDependency               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FVariantDependency UVariant::GetDependency(int32 Param_Index)
+struct FVariantDependency UVariant::GetDependency(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -458,7 +458,7 @@ struct FVariantDependency UVariant::GetDependency(int32 Param_Index)
 
 	Params::Variant_GetDependency Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -629,10 +629,10 @@ bool UVariant::IsActive()
 // Function VariantManagerContent.Variant.SetDependency
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVariantDependency               Dependency                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UVariant::SetDependency(int32 Param_Index, struct FVariantDependency* Dependency)
+void UVariant::SetDependency(int32 Index_0, struct FVariantDependency* Dependency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -641,7 +641,7 @@ void UVariant::SetDependency(int32 Param_Index, struct FVariantDependency* Depen
 
 	Params::Variant_SetDependency Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

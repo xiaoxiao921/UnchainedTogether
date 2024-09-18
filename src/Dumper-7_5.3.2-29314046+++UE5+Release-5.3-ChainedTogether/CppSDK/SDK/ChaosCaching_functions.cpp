@@ -20,10 +20,10 @@ namespace SDK
 // Function ChaosCaching.ChaosCacheManager.EnablePlayback
 // (Final, RequiredAPI, Native, Protected, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::EnablePlayback(int32 Param_Index, bool bEnable)
+void AChaosCacheManager::EnablePlayback(int32 Index_0, bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ void AChaosCacheManager::EnablePlayback(int32 Param_Index, bool bEnable)
 
 	Params::ChaosCacheManager_EnablePlayback Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.bEnable = bEnable;
 
 	auto Flgs = Func->FunctionFlags;

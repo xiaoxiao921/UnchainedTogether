@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Buttons_E_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Buttons_E_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -39,6 +39,7 @@ public:
 	void ExecuteUbergraph_W_MenuButtonText(int32 EntryPoint);
 	void Hovered();
 	void PreConstruct(bool IsDesignTime);
+	void SetText(const class FText& InText);
 	void Unhovered();
 	void UpdateSize(int32 In_Font_Info_Size);
 	void UpdateText(const class FText& InText);

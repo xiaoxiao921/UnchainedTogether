@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function W_ComboBox.W_ComboBox_C.AddOneOption
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_ComboBox_C::AddOneOption(const class FString& Option)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ComboBox_C", "AddOneOption");
+
+	Params::W_ComboBox_C_AddOneOption Parms{};
+
+	Parms.Option = std::move(Option);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_ComboBox.W_ComboBox_C.AddOptionsOnce
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -59,15 +79,37 @@ void UW_ComboBox_C::AssignPressEvent(class UW_ComboChoice_C* ComboChoice)
 }
 
 
-// Function W_ComboBox.W_ComboBox_C.BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnOpeningEvent__DelegateSignature
+// Function W_ComboBox.W_ComboBox_C.BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature
 // (BlueprintEvent)
+// Parameters:
+// class FString                           SelectedItem                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// ESelectInfo                             SelectionType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_ComboBox_C::BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnOpeningEvent__DelegateSignature()
+void UW_ComboBox_C::BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(const class FString& SelectedItem, ESelectInfo SelectionType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ComboBox_C", "BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnOpeningEvent__DelegateSignature");
+		Func = Class->GetFunction("W_ComboBox_C", "BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature");
+
+	Params::W_ComboBox_C_BndEvt__W_ComboBox_ComboBoxString_75_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature Parms{};
+
+	Parms.SelectedItem = std::move(SelectedItem);
+	Parms.SelectionType = SelectionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ComboBox.W_ComboBox_C.ClearOptions
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ComboBox_C::ClearOptions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ComboBox_C", "ClearOptions");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,6 +169,50 @@ void UW_ComboBox_C::ExecuteUbergraph_W_ComboBox(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ComboBox.W_ComboBox_C.GetSelectedOption
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UW_ComboBox_C::GetSelectedOption()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ComboBox_C", "GetSelectedOption");
+
+	Params::W_ComboBox_C_GetSelectedOption Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_ComboBox.W_ComboBox_C.HasOption
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    TURR                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ComboBox_C::HasOption(const class FString& Option, bool* TURR)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ComboBox_C", "HasOption");
+
+	Params::W_ComboBox_C_HasOption Parms{};
+
+	Parms.Option = std::move(Option);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TURR != nullptr)
+		*TURR = Parms.TURR;
 }
 
 
@@ -207,7 +293,7 @@ void UW_ComboBox_C::OnComboSettingChange__DelegateSignature(const class FString&
 
 
 // Function W_ComboBox.W_ComboBox_C.OnGenerateWidget_0
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString                           Item                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -315,12 +401,32 @@ void UW_ComboBox_C::RefreshComboBoxContent(const struct FS_ComboBoxContent& Para
 }
 
 
+// Function W_ComboBox.W_ComboBox_C.Remove_Option
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_ComboBox_C::Remove_Option(const class FString& Option)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ComboBox_C", "Remove_Option");
+
+	Params::W_ComboBox_C_Remove_Option Parms{};
+
+	Parms.Option = std::move(Option);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_ComboBox.W_ComboBox_C.SetSelectedOption
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_SelectedOption                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           SelectedOption_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_ComboBox_C::SetSelectedOption(const class FString& Param_SelectedOption)
+void UW_ComboBox_C::SetSelectedOption(const class FString& SelectedOption_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -329,7 +435,7 @@ void UW_ComboBox_C::SetSelectedOption(const class FString& Param_SelectedOption)
 
 	Params::W_ComboBox_C_SetSelectedOption Parms{};
 
-	Parms.Param_SelectedOption = std::move(Param_SelectedOption);
+	Parms.SelectedOption_0 = std::move(SelectedOption_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -26,14 +26,14 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            Timeline__Direction_B0B2DA85417351B55307099263780268; // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2FE0[0x7];                                     // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     Timeline;                                          // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	float                                         JumpTimeline_NewTrack_0_E1248B9F4274B0F1F94CE7B21D09F5B6; // 0x02B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ETimelineDirection                            JumpTimeline__Direction_E1248B9F4274B0F1F94CE7B21D09F5B6; // 0x02BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2FE1[0x3];                                     // 0x02BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2BD[0x3];                                      // 0x02BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTimelineComponent*                     JumpTimeline;                                      // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                         HumanChainLength;                                  // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2FE2[0x4];                                     // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class APawn*                                  Player_01;                                         // 0x02D0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	class APawn*                                  Player_02;                                         // 0x02D8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	TArray<class UStaticMeshComponent*>           Maillons_Array;                                    // 0x02E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
@@ -46,10 +46,10 @@ public:
 	class UCurveFloat*                            MassCurveCar;                                      // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UCurveFloat*                            CurrentMassCurve;                                  // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          Human;                                             // 0x0330(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_2FE3[0x3];                                     // 0x0331(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_331[0x3];                                      // 0x0331(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CarChainLength;                                    // 0x0334(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ChainLength;                                       // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2FE4[0x4];                                     // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        HumanChainMass;                                    // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CarChainMass;                                      // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        ChainSpacing;                                      // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -60,7 +60,7 @@ public:
 	class APawn*                                  Puller;                                            // 0x0390(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, RepNotify, NoDestructor, HasGetValueTypeHash)
 	double                                        PullForce;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Bouncing;                                          // 0x03A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2FE5[0x7];                                     // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A1[0x7];                                      // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                FirstTierRepLocation;                              // 0x03A8(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                LastTierRepLocation;                               // 0x03C0(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        TensionScale;                                      // 0x03D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -72,7 +72,7 @@ public:
 	void Six0fps();
 	void AutoDestroyChain();
 	void Bounce(const struct FVector& Velocity);
-	void ChangeMaillonMasses(double MassInKg, double Param_LinearDamping, double Param_AngularDamping);
+	void ChangeMaillonMasses(double MassInKg, double LinearDamping_0, double AngularDamping_0);
 	void Check_Chain_Force(double* Distance);
 	void CheckForce();
 	void CustomEvent();
@@ -96,19 +96,19 @@ public:
 	void Link_Players(TArray<class UStaticMeshComponent*>& Maillons);
 	void OnRep_Puller();
 	void PlaceFirstAndLastMaillon();
-	void PullChain(class APawn* Param_Puller);
+	void PullChain(class APawn* Puller_0);
 	void PullOnChain();
 	void ReactivateChainCollisionOnFreeComps(TArray<class UPrimitiveComponent*>& Array);
 	void Reattach_Cube_Socket_to_Chain(class UPrimitiveComponent* CubeSocket);
 	void ReceiveBeginPlay();
 	void ReceiveDestroyed();
 	void ReceiveTick(float DeltaSeconds);
-	void ReinitAttachment(int32 NewDensity, double NewChainMass, bool Param_Human);
+	void ReinitAttachment(int32 NewDensity, double NewChainMass, bool Human_0);
 	void RemoveAllComponentsOfClass(TSubclassOf<class UActorComponent> ComponentClass);
 	void Resync();
 	void ResyncChainTimeline(double Alpha);
 	void ResyncDuringTime(double Time);
-	void SetAttachedChar(const int32 Param_Index, class AActor* Char);
+	void SetAttachedChar(const int32 Index_0, class AActor* Char);
 	void SetMaillonWeight(double NewWeight);
 	void SetSnapTips(bool SnapTips);
 	void SetTip0Location(const struct FVector& Loc);

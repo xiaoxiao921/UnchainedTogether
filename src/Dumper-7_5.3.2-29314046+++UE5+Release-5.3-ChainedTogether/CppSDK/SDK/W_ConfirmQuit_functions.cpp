@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function W_ConfirmQuit.W_ConfirmQuit_C.BackToMainMenuMap
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ConfirmQuit_C::BackToMainMenuMap()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConfirmQuit_C", "BackToMainMenuMap");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ConfirmQuit.W_ConfirmQuit_C.BndEvt__W_ConfirmQuit_Button_103_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 

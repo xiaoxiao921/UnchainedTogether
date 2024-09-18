@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function BPI_CreatingGameMenu.BPI_CreatingGameMenu_C.RefreshGamemodeVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void IBPI_CreatingGameMenu_C::RefreshGamemodeVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_CreatingGameMenu_C", "RefreshGamemodeVisibility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BPI_CreatingGameMenu.BPI_CreatingGameMenu_C.RefreshSave
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

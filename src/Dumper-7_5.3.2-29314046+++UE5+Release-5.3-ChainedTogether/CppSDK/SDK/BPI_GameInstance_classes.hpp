@@ -30,6 +30,7 @@ public:
 	bool GetLocalMultiplayerMode();
 	void GetPlayersInSession(int32* PlayersInSession);
 	void GetTrueChainVisible(bool* Visible);
+	void IsInMod(bool* Mod);
 	void SetCollectedWing(int32 WingIndex);
 	void SetGameAlreadyLaunched();
 	void SetPlayersInSession(int32 Count);

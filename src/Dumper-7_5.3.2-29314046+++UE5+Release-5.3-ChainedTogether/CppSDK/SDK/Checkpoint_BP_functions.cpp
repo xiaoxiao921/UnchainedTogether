@@ -51,9 +51,9 @@ void ACheckpoint_BP_C::BndEvt__Checkpoint_BP_Box_K2Node_ComponentBoundEvent_0_Co
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TArray<struct FS_Checkpoint>            Array                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// bool                                    Param_Saved                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Saved_0                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ACheckpoint_BP_C::CheckSaveCheckpoint(TArray<struct FS_Checkpoint>& Array, bool* Param_Saved)
+void ACheckpoint_BP_C::CheckSaveCheckpoint(TArray<struct FS_Checkpoint>& Array, bool* Saved_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,8 +68,8 @@ void ACheckpoint_BP_C::CheckSaveCheckpoint(TArray<struct FS_Checkpoint>& Array, 
 
 	Array = std::move(Parms.Array);
 
-	if (Param_Saved != nullptr)
-		*Param_Saved = Parms.Param_Saved;
+	if (Saved_0 != nullptr)
+		*Saved_0 = Parms.Saved_0;
 }
 
 

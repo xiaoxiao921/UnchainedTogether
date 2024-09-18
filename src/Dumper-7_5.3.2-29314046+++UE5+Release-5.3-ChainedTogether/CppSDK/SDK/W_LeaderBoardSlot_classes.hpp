@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SteamCorePro_structs.hpp"
 #include "UMG_classes.hpp"
+#include "SteamCorePro_structs.hpp"
 
 
 namespace SDK
@@ -35,7 +35,7 @@ public:
 public:
 	void Construct();
 	void ExecuteUbergraph_W_LeaderBoardSlot(int32 EntryPoint);
-	void RefreshSlot(const struct FSteamID& Param_SteamID, int32 Param_Time, int32 Param_Rank);
+	void RefreshSlot(const struct FSteamID& SteamID_0, int32 Time_0, int32 Rank_0);
 	void UpdateTime();
 
 public:

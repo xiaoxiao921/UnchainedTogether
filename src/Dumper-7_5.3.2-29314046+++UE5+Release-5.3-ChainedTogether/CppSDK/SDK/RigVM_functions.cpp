@@ -900,11 +900,11 @@ bool URigVMUserWorkflowOptions::RequiresDialog() const
 // Function RigVM.RigVMHost.FindRigVMHosts
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class URigVMHost>           OptionalClass                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class URigVMHost*>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class URigVMHost*> URigVMHost::FindRigVMHosts(class UObject* Param_Outer, TSubclassOf<class URigVMHost> OptionalClass)
+TArray<class URigVMHost*> URigVMHost::FindRigVMHosts(class UObject* Outer_0, TSubclassOf<class URigVMHost> OptionalClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -913,7 +913,7 @@ TArray<class URigVMHost*> URigVMHost::FindRigVMHosts(class UObject* Param_Outer,
 
 	Params::RigVMHost_FindRigVMHosts Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.OptionalClass = OptionalClass;
 
 	auto Flgs = Func->FunctionFlags;

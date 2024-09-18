@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function BP_StabilisationSocket.BP_StabilisationSocket_C.ExecuteUbergraph_BP_StabilisationSocket
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00A0 (0x00A0 - 0x0000)
 struct BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket final
 {
 public:
@@ -29,11 +29,10 @@ public:
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Divide_VectorVector_ReturnValue;          // 0x0068(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_2;    // 0x0080(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_VectorToString_ReturnValue;          // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast; // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast; // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket) == 0x000008, "Wrong alignment on BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket");
-static_assert(sizeof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket) == 0x0000B0, "Wrong size on BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket");
+static_assert(sizeof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket) == 0x0000A0, "Wrong size on BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket");
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, EntryPoint) == 0x000000, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, K2Node_Event_DeltaSeconds) == 0x000004, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::K2Node_Event_DeltaSeconds' has a wrong offset!");
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_Conv_DoubleToVector_ReturnValue) == 0x000008, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_Conv_DoubleToVector_ReturnValue' has a wrong offset!");
@@ -42,8 +41,7 @@ static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_Stabilisatio
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_K2_GetComponentLocation_ReturnValue_1) == 0x000050, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_Divide_VectorVector_ReturnValue) == 0x000068, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_Divide_VectorVector_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_K2_GetComponentLocation_ReturnValue_2) == 0x000080, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_K2_GetComponentLocation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_Conv_VectorToString_ReturnValue) == 0x000098, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_Conv_VectorToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast) == 0x0000A8, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast' has a wrong offset!");
+static_assert(offsetof(BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket, CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast) == 0x000098, "Member 'BP_StabilisationSocket_C_ExecuteUbergraph_BP_StabilisationSocket::CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast' has a wrong offset!");
 
 // Function BP_StabilisationSocket.BP_StabilisationSocket_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

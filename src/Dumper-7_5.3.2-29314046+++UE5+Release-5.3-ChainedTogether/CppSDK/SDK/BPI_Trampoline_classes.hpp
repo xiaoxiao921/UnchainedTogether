@@ -21,8 +21,10 @@ namespace SDK
 class IBPI_Trampoline_C final : public IInterface
 {
 public:
+	void BounceVector(struct FVector* Vector);
 	void GetBounceForce(double* Force);
 	void JustZImpulse(bool* JustZ);
+	void PlayBounceAnim();
 	void SpawnTrampolineSound();
 
 public:

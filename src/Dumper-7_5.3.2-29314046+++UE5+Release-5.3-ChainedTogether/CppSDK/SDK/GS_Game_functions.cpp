@@ -17,6 +17,34 @@
 namespace SDK
 {
 
+// Function GS_Game.GS_Game_C.321All
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::Three21All()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "321All");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_Game.GS_Game_C.321Server
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::Three21Server()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "321Server");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.ActorToHideInLobby
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -199,9 +227,9 @@ void AGS_Game_C::AttachToLastCharacter(class APawn* Character)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class APawn*                            Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::AttachToNextCharacter(class APawn* Character, int32 Param_Index)
+void AGS_Game_C::AttachToNextCharacter(class APawn* Character, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -211,7 +239,7 @@ void AGS_Game_C::AttachToNextCharacter(class APawn* Character, int32 Param_Index
 	Params::GS_Game_C_AttachToNextCharacter Parms{};
 
 	Parms.Character = Character;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -221,9 +249,9 @@ void AGS_Game_C::AttachToNextCharacter(class APawn* Character, int32 Param_Index
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class APawn*                            Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::AttachToPreviousCharacter(class APawn* Character, int32 Param_Index)
+void AGS_Game_C::AttachToPreviousCharacter(class APawn* Character, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -233,7 +261,7 @@ void AGS_Game_C::AttachToPreviousCharacter(class APawn* Character, int32 Param_I
 	Params::GS_Game_C_AttachToPreviousCharacter Parms{};
 
 	Parms.Character = Character;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -301,6 +329,20 @@ void AGS_Game_C::CheckSpawnPlayersAfterLoading()
 }
 
 
+// Function GS_Game.GS_Game_C.ClientLoadModLevel
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::ClientLoadModLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "ClientLoadModLevel");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.CountCustomPS
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -351,6 +393,20 @@ void AGS_Game_C::CustomEvent_0()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GS_Game_C", "CustomEvent_0");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_Game.GS_Game_C.DestroyModLobby
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::DestroyModLobby()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "DestroyModLobby");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -760,9 +816,9 @@ void AGS_Game_C::GetSkinByID(const struct FSteamID& SteamID, bool* Return, E_Cho
 // Function GS_Game.GS_Game_C.GetTchat
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FS_TchatElement>          Param_Tchat                                            (Parm, OutParm)
+// TArray<struct FS_TchatElement>          Tchat_0                                                (Parm, OutParm)
 
-void AGS_Game_C::GetTchat(TArray<struct FS_TchatElement>* Param_Tchat)
+void AGS_Game_C::GetTchat(TArray<struct FS_TchatElement>* Tchat_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -773,17 +829,17 @@ void AGS_Game_C::GetTchat(TArray<struct FS_TchatElement>* Param_Tchat)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Tchat != nullptr)
-		*Param_Tchat = std::move(Parms.Param_Tchat);
+	if (Tchat_0 != nullptr)
+		*Tchat_0 = std::move(Parms.Tchat_0);
 }
 
 
 // Function GS_Game.GS_Game_C.GetTimer
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Timer                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Timer_0                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::GetTimer(int32* Param_Timer)
+void AGS_Game_C::GetTimer(int32* Timer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -794,8 +850,8 @@ void AGS_Game_C::GetTimer(int32* Param_Timer)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Timer != nullptr)
-		*Param_Timer = Parms.Param_Timer;
+	if (Timer_0 != nullptr)
+		*Timer_0 = Parms.Timer_0;
 }
 
 
@@ -1005,6 +1061,20 @@ void AGS_Game_C::MakeSessionJoinable(const class FString& Value)
 }
 
 
+// Function GS_Game.GS_Game_C.Mod_Loading_All
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::Mod_Loading_All()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "Mod_Loading_All");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.NearestRescuePoint
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1089,6 +1159,20 @@ void AGS_Game_C::OnRep_GameBegun()
 }
 
 
+// Function GS_Game.GS_Game_C.OnRep_InMod
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::OnRep_InMod()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "OnRep_InMod");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GS_Game.GS_Game_C.OnRep_LavaMode
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1112,6 +1196,34 @@ void AGS_Game_C::OnRep_Selected_Game_Mode()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GS_Game_C", "OnRep_Selected Game Mode");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_Game.GS_Game_C.OnRep_SteamUGC_ID
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::OnRep_SteamUGC_ID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "OnRep_SteamUGC_ID");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GS_Game.GS_Game_C.OnRep_UGC_ID
+// (BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::OnRep_UGC_ID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "OnRep_UGC_ID");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1206,8 +1318,9 @@ void AGS_Game_C::Rescue(class ABP_RescuePoint_C* RescueActor, bool ExitingCar)
 // Parameters:
 // class ABP_RescuePoint_C*                RescuePoint                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    ExitingCar                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ResetAllCars_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::RescueEvent(class ABP_RescuePoint_C* RescuePoint, bool ExitingCar)
+void AGS_Game_C::RescueEvent(class ABP_RescuePoint_C* RescuePoint, bool ExitingCar, bool ResetAllCars_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1218,8 +1331,23 @@ void AGS_Game_C::RescueEvent(class ABP_RescuePoint_C* RescuePoint, bool ExitingC
 
 	Parms.RescuePoint = RescuePoint;
 	Parms.ExitingCar = ExitingCar;
+	Parms.ResetAllCars_0 = ResetAllCars_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GS_Game.GS_Game_C.ResetAllCars
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AGS_Game_C::ResetAllCars()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "ResetAllCars");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -1268,11 +1396,11 @@ void AGS_Game_C::SaveLocation()
 // Function GS_Game.GS_Game_C.SendToChatSRV
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::SendToChatSRV(const class FString& Param_Name, const class FString& Message, const struct FLinearColor& Color)
+void AGS_Game_C::SendToChatSRV(const class FString& Name_0, const class FString& Message, const struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1281,7 +1409,7 @@ void AGS_Game_C::SendToChatSRV(const class FString& Param_Name, const class FStr
 
 	Params::GS_Game_C_SendToChatSRV Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Message = std::move(Message);
 	Parms.Color = std::move(Color);
 
@@ -1329,12 +1457,34 @@ void AGS_Game_C::ServerTravelAll(const class FString& Command)
 }
 
 
+// Function GS_Game.GS_Game_C.SetLocalMP_ChosenChar
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// E_ChoosenChar                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AGS_Game_C::SetLocalMP_ChosenChar(E_ChoosenChar Character, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GS_Game_C", "SetLocalMP_ChosenChar");
+
+	Params::GS_Game_C_SetLocalMP_ChosenChar Parms{};
+
+	Parms.Character = Character;
+	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GS_Game.GS_Game_C.SetTimer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Timer                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Timer_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AGS_Game_C::SetTimer(int32 Param_Timer)
+void AGS_Game_C::SetTimer(int32 Timer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1343,7 +1493,7 @@ void AGS_Game_C::SetTimer(int32 Param_Timer)
 
 	Params::GS_Game_C_SetTimer Parms{};
 
-	Parms.Param_Timer = Param_Timer;
+	Parms.Timer_0 = Timer_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -23,7 +23,7 @@ namespace SDK
 class UVaRestJsonObject final : public UObject
 {
 public:
-	uint8                                         Pad_1DA6[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool DecodeJson(const class FString& JsonString, bool bUseIncrementalParser);
@@ -88,7 +88,7 @@ static_assert(sizeof(UVaRestJsonObject) == 0x000038, "Wrong size on UVaRestJsonO
 class UVaRestJsonValue final : public UObject
 {
 public:
-	uint8                                         Pad_1DB1[0x10];                                    // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UVaRestJsonObject* AsObject();
@@ -154,17 +154,17 @@ class UVaRestRequestJSON final : public UObject
 public:
 	FMulticastInlineDelegateProperty_             OnRequestComplete;                                 // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnRequestFail;                                     // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB6[0x40];                                    // 0x0048(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x40];                                      // 0x0048(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ResponseSize;                                      // 0x0088(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB7[0x4];                                     // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ResponseContent;                                   // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsValidJsonResponse;                              // 0x00A0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DB8[0xF];                                     // 0x00A1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A1[0xF];                                       // 0x00A1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonObject*                      RequestJsonObj;                                    // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DB9[0x48];                                    // 0x00B8(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x48];                                      // 0x00B8(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestJsonObject*                      ResponseJsonObj;                                   // 0x0100(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UVaRestJsonValue*                       ResponseJsonValue;                                 // 0x0108(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DBA[0xD0];                                    // 0x0110(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_110[0xD0];                                     // 0x0110(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddTag(class FName Tag);
@@ -229,7 +229,7 @@ class UVaRestSettings final : public UObject
 public:
 	bool                                          bExtendedLog;                                      // 0x0028(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseChunkedParser;                                 // 0x0029(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DBD[0x6];                                     // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

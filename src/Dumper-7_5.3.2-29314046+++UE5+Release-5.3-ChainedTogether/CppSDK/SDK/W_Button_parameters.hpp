@@ -15,22 +15,24 @@ namespace SDK::Params
 {
 
 // Function W_Button.W_Button_C.ExecuteUbergraph_W_Button
-// 0x0018 (0x0018 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct W_Button_C_ExecuteUbergraph_W_Button final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_33FD[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        CallFunc_SpawnSound2D_ReturnValue;                 // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   K2Node_CustomEvent_InText;                         // 0x0018(0x0018)()
 };
 static_assert(alignof(W_Button_C_ExecuteUbergraph_W_Button) == 0x000008, "Wrong alignment on W_Button_C_ExecuteUbergraph_W_Button");
-static_assert(sizeof(W_Button_C_ExecuteUbergraph_W_Button) == 0x000018, "Wrong size on W_Button_C_ExecuteUbergraph_W_Button");
+static_assert(sizeof(W_Button_C_ExecuteUbergraph_W_Button) == 0x000030, "Wrong size on W_Button_C_ExecuteUbergraph_W_Button");
 static_assert(offsetof(W_Button_C_ExecuteUbergraph_W_Button, EntryPoint) == 0x000000, "Member 'W_Button_C_ExecuteUbergraph_W_Button::EntryPoint' has a wrong offset!");
 static_assert(offsetof(W_Button_C_ExecuteUbergraph_W_Button, K2Node_Event_IsDesignTime) == 0x000004, "Member 'W_Button_C_ExecuteUbergraph_W_Button::K2Node_Event_IsDesignTime' has a wrong offset!");
 static_assert(offsetof(W_Button_C_ExecuteUbergraph_W_Button, CallFunc_PlayAnimation_ReturnValue) == 0x000008, "Member 'W_Button_C_ExecuteUbergraph_W_Button::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
 static_assert(offsetof(W_Button_C_ExecuteUbergraph_W_Button, CallFunc_SpawnSound2D_ReturnValue) == 0x000010, "Member 'W_Button_C_ExecuteUbergraph_W_Button::CallFunc_SpawnSound2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(W_Button_C_ExecuteUbergraph_W_Button, K2Node_CustomEvent_InText) == 0x000018, "Member 'W_Button_C_ExecuteUbergraph_W_Button::K2Node_CustomEvent_InText' has a wrong offset!");
 
 // Function W_Button.W_Button_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)
@@ -42,6 +44,17 @@ public:
 static_assert(alignof(W_Button_C_PreConstruct) == 0x000001, "Wrong alignment on W_Button_C_PreConstruct");
 static_assert(sizeof(W_Button_C_PreConstruct) == 0x000001, "Wrong size on W_Button_C_PreConstruct");
 static_assert(offsetof(W_Button_C_PreConstruct, IsDesignTime) == 0x000000, "Member 'W_Button_C_PreConstruct::IsDesignTime' has a wrong offset!");
+
+// Function W_Button.W_Button_C.SetText
+// 0x0018 (0x0018 - 0x0000)
+struct W_Button_C_SetText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(W_Button_C_SetText) == 0x000008, "Wrong alignment on W_Button_C_SetText");
+static_assert(sizeof(W_Button_C_SetText) == 0x000018, "Wrong size on W_Button_C_SetText");
+static_assert(offsetof(W_Button_C_SetText, InText) == 0x000000, "Member 'W_Button_C_SetText::InText' has a wrong offset!");
 
 }
 

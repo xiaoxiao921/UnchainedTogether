@@ -29,7 +29,7 @@ public:
 
 public:
 	void ExecuteUbergraph_PS_Game(int32 EntryPoint);
-	void GetColor(struct FLinearColor* Param_Color);
+	void GetColor(struct FLinearColor* Color_0);
 	void NotifyLevelLoaded_Server_();
 	void NotifyLevelsLoaded();
 	void OnRep_BeginLevelsLoaded();

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "E_Gamemodes_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "E_Gamemodes_structs.hpp"
 
 
 namespace SDK
@@ -38,17 +38,18 @@ public:
 	class UTextBlock*                             TextBlock_52;                                      // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UVerticalBox*                           VerticalBox_0;                                     // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class AActor*                                 Height0;                                           // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class ABP_Height1_C*                          Height1;                                           // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Height1;                                           // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        PlayerHeight;                                      // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         MaxHeight;                                         // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_Gamemodes                                   Selected_Game_Mode;                                // 0x0344(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35A2[0x3];                                     // 0x0345(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_345[0x3];                                      // 0x0345(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_Lava_C*                             Lava;                                              // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	double                                        LavaHeight;                                        // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void CollapseCheckpoints();
 	void Construct();
+	class FText ConvertHeightToMeters(double A);
 	void CustomEvent_0();
 	void EvaluateLavaHeight();
 	void EvaluatePlayerHeight();
@@ -58,6 +59,9 @@ public:
 	void ShowHideHud(ESlateVisibility InVisibility);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void UpdateCheckpointsHeight();
+	void UpdateCursorHeight();
+	void UpdateHeights();
+	void UpdateMaxHeight();
 
 public:
 	static class UClass* StaticClass()

@@ -59,6 +59,20 @@ void UW_Tab_C::BndEvt__W_Tabs_Button_0_K2Node_ComponentBoundEvent_2_OnButtonClic
 }
 
 
+// Function W_Tab.W_Tab_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_Tab_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Tab_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Tab.W_Tab_C.ExecuteUbergraph_W_Tab
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -136,9 +150,9 @@ void UW_Tab_C::SetParentWidget(class UUserWidget* Parent)
 // Function W_Tab.W_Tab_C.SetSelected
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Selected                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Selected_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Tab_C::SetSelected(bool Param_Selected)
+void UW_Tab_C::SetSelected(bool Selected_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -147,7 +161,7 @@ void UW_Tab_C::SetSelected(bool Param_Selected)
 
 	Params::W_Tab_C_SetSelected Parms{};
 
-	Parms.Param_Selected = Param_Selected;
+	Parms.Selected_0 = Selected_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

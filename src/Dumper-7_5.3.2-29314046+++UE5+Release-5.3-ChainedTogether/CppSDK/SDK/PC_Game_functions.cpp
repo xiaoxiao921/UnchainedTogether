@@ -45,6 +45,26 @@ void APC_Game_C::BeginPull()
 }
 
 
+// Function PC_Game.PC_Game_C.BPI_RequestCharacter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// E_ChoosenChar                           Character_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APC_Game_C::BPI_RequestCharacter(E_ChoosenChar Character_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "BPI_RequestCharacter");
+
+	Params::PC_Game_C_BPI_RequestCharacter Parms{};
+
+	Parms.Character_0 = Character_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function PC_Game.PC_Game_C.CustomEvent
 // (BlueprintCallable, BlueprintEvent)
 
@@ -54,6 +74,20 @@ void APC_Game_C::CustomEvent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PC_Game_C", "CustomEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PC_Game.PC_Game_C.DestroyControlledCharacter
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void APC_Game_C::DestroyControlledCharacter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "DestroyControlledCharacter");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -242,7 +276,7 @@ void APC_Game_C::InitVoice()
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0
+// Function PC_Game.PC_Game_C.InpActEvt_321_K2Node_EnhancedInputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -250,14 +284,14 @@ void APC_Game_C::InitVoice()
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_321_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_321_K2Node_EnhancedInputActionEvent_0");
 
-	Params::PC_Game_C_InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0 Parms{};
+	Params::PC_Game_C_InpActEvt_321_K2Node_EnhancedInputActionEvent_0 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -268,7 +302,7 @@ void APC_Game_C::InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0(const stru
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_1
+// Function PC_Game.PC_Game_C.InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -276,14 +310,14 @@ void APC_Game_C::InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_0(const stru
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_1");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_1");
 
-	Params::PC_Game_C_InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_1 Parms{};
+	Params::PC_Game_C_InpActEvt_betaShow_K2Node_EnhancedInputActionEvent_1 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -320,7 +354,7 @@ void APC_Game_C::InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_2(cons
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5
+// Function PC_Game.PC_Game_C.InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_3
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -328,14 +362,14 @@ void APC_Game_C::InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_2(cons
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_3");
 
-	Params::PC_Game_C_InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5 Parms{};
+	Params::PC_Game_C_InpActEvt_DriveForwardGP_K2Node_EnhancedInputActionEvent_3 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -346,7 +380,7 @@ void APC_Game_C::InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5(const struc
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10
+// Function PC_Game.PC_Game_C.InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_6
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -354,14 +388,14 @@ void APC_Game_C::InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_5(const struc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_6");
 
-	Params::PC_Game_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_10 Parms{};
+	Params::PC_Game_C_InpActEvt_FlyMode_K2Node_EnhancedInputActionEvent_6 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -398,6 +432,32 @@ void APC_Game_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_11(const struct 
 }
 
 
+// Function PC_Game.PC_Game_C.InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12
+// (BlueprintEvent)
+// Parameters:
+// struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void APC_Game_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12");
+
+	Params::PC_Game_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function PC_Game.PC_Game_C.InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0
 // (BlueprintEvent)
 // Parameters:
@@ -418,7 +478,7 @@ void APC_Game_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0(const struct F
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17
+// Function PC_Game.PC_Game_C.InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_18
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -426,14 +486,14 @@ void APC_Game_C::InpActEvt_LeftMouseButton_K2Node_InputKeyEvent_0(const struct F
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_18");
 
-	Params::PC_Game_C_InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17 Parms{};
+	Params::PC_Game_C_InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_18 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -444,7 +504,7 @@ void APC_Game_C::InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17(const st
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18
+// Function PC_Game.PC_Game_C.InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_19
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -452,40 +512,14 @@ void APC_Game_C::InpActEvt_LookRight_K2Node_EnhancedInputActionEvent_17(const st
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_19(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_19");
 
-	Params::PC_Game_C_InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_18 Parms{};
-
-	Parms.ActionValue = std::move(ActionValue);
-	Parms.ElapsedTime = ElapsedTime;
-	Parms.TriggeredTime = TriggeredTime;
-	Parms.SourceAction = SourceAction;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function PC_Game.PC_Game_C.InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6
-// (BlueprintEvent)
-// Parameters:
-// struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void APC_Game_C::InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6");
-
-	Params::PC_Game_C_InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_6 Parms{};
+	Params::PC_Game_C_InpActEvt_LookUp_K2Node_EnhancedInputActionEvent_19 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -522,7 +556,7 @@ void APC_Game_C::InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_7(const s
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_8
+// Function PC_Game.PC_Game_C.InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_8
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -530,14 +564,40 @@ void APC_Game_C::InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_7(const s
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_8");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_8");
 
-	Params::PC_Game_C_InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_8 Parms{};
+	Params::PC_Game_C_InpActEvt_MoveForward_K2Node_EnhancedInputActionEvent_8 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_Game.PC_Game_C.InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_10
+// (BlueprintEvent)
+// Parameters:
+// struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void APC_Game_C::InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_10");
+
+	Params::PC_Game_C_InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_10 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -574,32 +634,6 @@ void APC_Game_C::InpActEvt_MoveRight_K2Node_EnhancedInputActionEvent_9(const str
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_Pull_K2Node_EnhancedInputActionEvent_13
-// (BlueprintEvent)
-// Parameters:
-// struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void APC_Game_C::InpActEvt_Pull_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Pull_K2Node_EnhancedInputActionEvent_13");
-
-	Params::PC_Game_C_InpActEvt_Pull_K2Node_EnhancedInputActionEvent_13 Parms{};
-
-	Parms.ActionValue = std::move(ActionValue);
-	Parms.ElapsedTime = ElapsedTime;
-	Parms.TriggeredTime = TriggeredTime;
-	Parms.SourceAction = SourceAction;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function PC_Game.PC_Game_C.InpActEvt_Pull_K2Node_EnhancedInputActionEvent_14
 // (BlueprintEvent)
 // Parameters:
@@ -626,7 +660,7 @@ void APC_Game_C::InpActEvt_Pull_K2Node_EnhancedInputActionEvent_14(const struct 
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_15
+// Function PC_Game.PC_Game_C.InpActEvt_Pull_K2Node_EnhancedInputActionEvent_15
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -634,14 +668,14 @@ void APC_Game_C::InpActEvt_Pull_K2Node_EnhancedInputActionEvent_14(const struct 
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_Pull_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_15");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Pull_K2Node_EnhancedInputActionEvent_15");
 
-	Params::PC_Game_C_InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_15 Parms{};
+	Params::PC_Game_C_InpActEvt_Pull_K2Node_EnhancedInputActionEvent_15 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -678,7 +712,7 @@ void APC_Game_C::InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_16(const struc
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3
+// Function PC_Game.PC_Game_C.InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_17
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -686,14 +720,14 @@ void APC_Game_C::InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_16(const struc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_17");
 
-	Params::PC_Game_C_InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3 Parms{};
+	Params::PC_Game_C_InpActEvt_Sprint_K2Node_EnhancedInputActionEvent_17 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -704,7 +738,7 @@ void APC_Game_C::InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3(const struct 
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_Use_K2Node_EnhancedInputActionEvent_12
+// Function PC_Game.PC_Game_C.InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_4
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -712,14 +746,14 @@ void APC_Game_C::InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_3(const struct 
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_Use_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Use_K2Node_EnhancedInputActionEvent_12");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_4");
 
-	Params::PC_Game_C_InpActEvt_Use_K2Node_EnhancedInputActionEvent_12 Parms{};
+	Params::PC_Game_C_InpActEvt_Tchat_K2Node_EnhancedInputActionEvent_4 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -730,7 +764,7 @@ void APC_Game_C::InpActEvt_Use_K2Node_EnhancedInputActionEvent_12(const struct F
 }
 
 
-// Function PC_Game.PC_Game_C.InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4
+// Function PC_Game.PC_Game_C.InpActEvt_Use_K2Node_EnhancedInputActionEvent_13
 // (BlueprintEvent)
 // Parameters:
 // struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -738,14 +772,40 @@ void APC_Game_C::InpActEvt_Use_K2Node_EnhancedInputActionEvent_12(const struct F
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void APC_Game_C::InpActEvt_Use_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4");
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_Use_K2Node_EnhancedInputActionEvent_13");
 
-	Params::PC_Game_C_InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_4 Parms{};
+	Params::PC_Game_C_InpActEvt_Use_K2Node_EnhancedInputActionEvent_13 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_Game.PC_Game_C.InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_5
+// (BlueprintEvent)
+// Parameters:
+// struct FInputActionValue                ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UInputAction*                     SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void APC_Game_C::InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_5");
+
+	Params::PC_Game_C_InpActEvt_UseMonteCharge_K2Node_EnhancedInputActionEvent_5 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1036,11 +1096,11 @@ void APC_Game_C::PlaySound(class USoundWave* Sound)
 // Function PC_Game.PC_Game_C.PullOtherCharacterSRV
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           Param_ControlledActor                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           ControlledActor_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    BeginPull                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Param_CharacterToPull                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           CharacterToPull_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::PullOtherCharacterSRV(class AActor* Param_ControlledActor, bool BeginPull, class AActor* Param_CharacterToPull)
+void APC_Game_C::PullOtherCharacterSRV(class AActor* ControlledActor_0, bool BeginPull, class AActor* CharacterToPull_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1049,11 +1109,25 @@ void APC_Game_C::PullOtherCharacterSRV(class AActor* Param_ControlledActor, bool
 
 	Params::PC_Game_C_PullOtherCharacterSRV Parms{};
 
-	Parms.Param_ControlledActor = Param_ControlledActor;
+	Parms.ControlledActor_0 = ControlledActor_0;
 	Parms.BeginPull = BeginPull;
-	Parms.Param_CharacterToPull = Param_CharacterToPull;
+	Parms.CharacterToPull_0 = CharacterToPull_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PC_Game.PC_Game_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void APC_Game_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -1134,6 +1208,20 @@ void APC_Game_C::RepPseudo()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PC_Game_C", "RepPseudo");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PC_Game.PC_Game_C.Request321Server
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+
+void APC_Game_C::Request321Server()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PC_Game_C", "Request321Server");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1455,9 +1543,9 @@ void APC_Game_C::Show_Hud()
 // Function PC_Game.PC_Game_C.ShowTchat
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UW_Tchat_C*                       Param_Tchat                                            (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UW_Tchat_C*                       Tchat_0                                                (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::ShowTchat(class UW_Tchat_C** Param_Tchat)
+void APC_Game_C::ShowTchat(class UW_Tchat_C** Tchat_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1468,8 +1556,8 @@ void APC_Game_C::ShowTchat(class UW_Tchat_C** Param_Tchat)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Tchat != nullptr)
-		*Param_Tchat = Parms.Param_Tchat;
+	if (Tchat_0 != nullptr)
+		*Tchat_0 = Parms.Tchat_0;
 }
 
 
@@ -1499,10 +1587,10 @@ void APC_Game_C::ShowTchatUI(bool RefreshTchat)
 // struct FTransform                       SpawnTransform                                         (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UpdateController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           FakePseudo                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// E_ChoosenChar                           Param_Character                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// E_ChoosenChar                           Character_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class APawn*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
-class APawn* APC_Game_C::SpawnCharacter(const struct FTransform& SpawnTransform, bool UpdateController, const class FString& FakePseudo, E_ChoosenChar Param_Character)
+class APawn* APC_Game_C::SpawnCharacter(const struct FTransform& SpawnTransform, bool UpdateController, const class FString& FakePseudo, E_ChoosenChar Character_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1514,7 +1602,7 @@ class APawn* APC_Game_C::SpawnCharacter(const struct FTransform& SpawnTransform,
 	Parms.SpawnTransform = std::move(SpawnTransform);
 	Parms.UpdateController = UpdateController;
 	Parms.FakePseudo = std::move(FakePseudo);
-	Parms.Param_Character = Param_Character;
+	Parms.Character_0 = Character_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1621,9 +1709,9 @@ void APC_Game_C::TriggerMovingObject(class ABP_MovingObject_C* MovingObject)
 // Function PC_Game.PC_Game_C.UpdateCanEscape
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_CanEscape                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    CanEscape_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::UpdateCanEscape(bool Param_CanEscape)
+void APC_Game_C::UpdateCanEscape(bool CanEscape_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1632,7 +1720,7 @@ void APC_Game_C::UpdateCanEscape(bool Param_CanEscape)
 
 	Params::PC_Game_C_UpdateCanEscape Parms{};
 
-	Parms.Param_CanEscape = Param_CanEscape;
+	Parms.CanEscape_0 = CanEscape_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1670,9 +1758,9 @@ void APC_Game_C::Use()
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Object                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Param_ControlledActor                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           ControlledActor_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void APC_Game_C::UseServer(class UObject* Object, class AActor* Param_ControlledActor)
+void APC_Game_C::UseServer(class UObject* Object, class AActor* ControlledActor_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1682,23 +1770,9 @@ void APC_Game_C::UseServer(class UObject* Object, class AActor* Param_Controlled
 	Params::PC_Game_C_UseServer Parms{};
 
 	Parms.Object = Object;
-	Parms.Param_ControlledActor = Param_ControlledActor;
+	Parms.ControlledActor_0 = ControlledActor_0;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function PC_Game.PC_Game_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void APC_Game_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PC_Game_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

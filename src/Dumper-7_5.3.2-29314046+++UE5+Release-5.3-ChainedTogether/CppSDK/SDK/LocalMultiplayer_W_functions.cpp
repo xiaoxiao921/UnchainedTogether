@@ -231,8 +231,22 @@ void ULocalMultiplayer_W_C::Construct()
 }
 
 
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.DeselectAllUGC
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ULocalMultiplayer_W_C::DeselectAllUGC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "DeselectAllUGC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function LocalMultiplayer_W.LocalMultiplayer_W_C.ExecuteUbergraph_LocalMultiplayer_W
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -251,6 +265,65 @@ void ULocalMultiplayer_W_C::ExecuteUbergraph_LocalMultiplayer_W(int32 EntryPoint
 }
 
 
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.GetSelectedUGC
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGC_Selected                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSteamUGCDetails                 UGC_Details                                            (Parm, OutParm)
+
+void ULocalMultiplayer_W_C::GetSelectedUGC(bool* UGC_Selected, struct FSteamUGCDetails* UGC_Details)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "GetSelectedUGC");
+
+	Params::LocalMultiplayer_W_C_GetSelectedUGC Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGC_Selected != nullptr)
+		*UGC_Selected = Parms.UGC_Selected;
+
+	if (UGC_Details != nullptr)
+		*UGC_Details = std::move(Parms.UGC_Details);
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.OnDownloaded_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Success                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ULocalMultiplayer_W_C::OnDownloaded_Event(bool Success)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "OnDownloaded_Event");
+
+	Params::LocalMultiplayer_W_C_OnDownloaded_Event Parms{};
+
+	Parms.Success = Success;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.RefreshGamemodeVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ULocalMultiplayer_W_C::RefreshGamemodeVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "RefreshGamemodeVisibility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function LocalMultiplayer_W.LocalMultiplayer_W_C.RefreshSave
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -266,6 +339,47 @@ void ULocalMultiplayer_W_C::RefreshSave(const struct FS_BiomeSave& Save)
 	Params::LocalMultiplayer_W_C_RefreshSave Parms{};
 
 	Parms.Save = std::move(Save);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.Update_UGC_References
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UGC_Selected                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ULocalMultiplayer_W_C::Update_UGC_References(bool* UGC_Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "Update_UGC_References");
+
+	Params::LocalMultiplayer_W_C_Update_UGC_References Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (UGC_Selected != nullptr)
+		*UGC_Selected = Parms.UGC_Selected;
+}
+
+
+// Function LocalMultiplayer_W.LocalMultiplayer_W_C.UpdateGameMode
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Selection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ULocalMultiplayer_W_C::UpdateGameMode(const class FString& Selection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LocalMultiplayer_W_C", "UpdateGameMode");
+
+	Params::LocalMultiplayer_W_C_UpdateGameMode Parms{};
+
+	Parms.Selection = std::move(Selection);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

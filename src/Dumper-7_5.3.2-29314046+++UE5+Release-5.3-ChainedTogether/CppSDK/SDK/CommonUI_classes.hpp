@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SlateCore_structs.hpp"
@@ -19,6 +18,7 @@
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 #include "CommonUI_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
@@ -48,7 +48,7 @@ class UAnalogSlider final : public USlider
 {
 public:
 	FMulticastInlineDelegateProperty_             OnAnalogCapture;                                   // 0x0730(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DDD[0x10];                                    // 0x0740(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_740[0x10];                                     // 0x0740(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -89,13 +89,13 @@ public:
 	FMulticastInlineDelegateProperty_             OnInputMethodChanged;                              // 0x0180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            ProgressMaterialBrush;                             // 0x0190(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class FName                                   ProgressMaterialParam;                             // 0x0260(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DDE[0x8];                                     // 0x0268(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_268[0x8];                                      // 0x0268(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            IconRimBrush;                                      // 0x0270(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TArray<struct FDataTableRowHandle>            InputActions;                                      // 0x0340(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	class UInputAction*                           EnhancedInputAction;                               // 0x0350(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DDF[0x8];                                     // 0x0358(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_358[0x8];                                      // 0x0358(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               ProgressDynamicMaterial;                           // 0x0360(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE0[0x128];                                   // 0x0368(0x0128)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368[0x128];                                    // 0x0368(0x0128)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnInputMethodChanged__DelegateSignature(bool bUsingGamepad);
@@ -135,7 +135,7 @@ class UCommonUserWidget : public UUserWidget
 public:
 	bool                                          bDisplayInActionBar;                               // 0x02C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bConsumePointerInput;                              // 0x02C1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1DE1[0x26];                                    // 0x02C2(0x0026)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C2[0x26];                                     // 0x02C2(0x0026)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetConsumePointerInput(bool bInConsumePointerInput);
@@ -167,22 +167,22 @@ public:
 	bool                                          bIsModal;                                          // 0x02EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bAutoRestoreFocus;                                 // 0x02ED(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bOverrideActionDomain;                             // 0x02EE(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE2[0x1];                                     // 0x02EF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2EF[0x1];                                      // 0x02EF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class UInputMappingContext*                   InputMapping;                                      // 0x02F0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         InputMappingPriority;                              // 0x02F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE3[0x4];                                     // 0x02FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UCommonInputActionDomain> ActionDomainOverride;                              // 0x0300(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_             BP_OnWidgetActivated;                              // 0x0328(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_             BP_OnWidgetDeactivated;                            // 0x0338(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	bool                                          bIsActive;                                         // 0x0348(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1DE4[0x7];                                     // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TWeakObjectPtr<class UCommonActivatableWidget>> VisibilityBoundWidgets;                            // 0x0350(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1DE5[0xA8];                                    // 0x0360(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_360[0xA8];                                     // 0x0360(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bSetVisibilityOnActivated;                         // 0x0408(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	ESlateVisibility                              ActivatedVisibility;                               // 0x0409(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bSetVisibilityOnDeactivated;                       // 0x040A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	ESlateVisibility                              DeactivatedVisibility;                             // 0x040B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE6[0x4];                                     // 0x040C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateWidget();
@@ -234,12 +234,12 @@ static_assert(offsetof(UCommonActivatableWidget, DeactivatedVisibility) == 0x000
 class UCommonAnimatedSwitcher : public UWidgetSwitcher
 {
 public:
-	uint8                                         Pad_1DE7[0x30];                                    // 0x01B0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B0[0x30];                                     // 0x01B0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	ECommonSwitcherTransition                     TransitionType;                                    // 0x01E0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	ETransitionCurve                              TransitionCurveType;                               // 0x01E1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE8[0x2];                                     // 0x01E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E2[0x2];                                      // 0x01E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TransitionDuration;                                // 0x01E4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DE9[0x38];                                    // 0x01E8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E8[0x38];                                     // 0x01E8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateNextWidget(bool bCanWrap);
@@ -271,7 +271,7 @@ static_assert(offsetof(UCommonAnimatedSwitcher, TransitionDuration) == 0x0001E4,
 class UCommonActivatableWidgetSwitcher final : public UCommonAnimatedSwitcher
 {
 public:
-	uint8                                         Pad_1DEA[0x10];                                    // 0x0220(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_220[0x10];                                     // 0x0220(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -291,7 +291,7 @@ static_assert(sizeof(UCommonActivatableWidgetSwitcher) == 0x000230, "Wrong size 
 class UCommonBorderStyle final : public UObject
 {
 public:
-	uint8                                         Pad_1DEB[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            Background;                                        // 0x0030(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
@@ -319,9 +319,9 @@ class alignas(0x10) UCommonBorder : public UBorder
 public:
 	TSubclassOf<class UCommonBorderStyle>         Style;                                             // 0x0338(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bReducePaddingBySafezone;                          // 0x0340(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DEC[0x3];                                     // 0x0341(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_341[0x3];                                      // 0x0341(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                MinimumPadding;                                    // 0x0344(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DED[0x4];                                     // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetStyle(TSubclassOf<class UCommonBorderStyle> InStyle);
@@ -349,7 +349,7 @@ class UCommonButtonStyle final : public UObject
 {
 public:
 	bool                                          bSingleMaterial;                                   // 0x0028(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DEE[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            SingleMaterialBrush;                               // 0x0030(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            NormalBase;                                        // 0x0100(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            NormalHovered;                                     // 0x01D0(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
@@ -433,14 +433,14 @@ static_assert(offsetof(UCommonButtonStyle, LockedHoveredSlateSound) == 0x000790,
 class UCommonButtonInternalBase final : public UButton
 {
 public:
-	uint8                                         Pad_1DEF[0x8];                                     // 0x0620(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_620[0x8];                                      // 0x0620(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnDoubleClicked;                                   // 0x0628(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF0[0x20];                                    // 0x0638(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_638[0x20];                                     // 0x0638(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinWidth;                                          // 0x0658(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         MinHeight;                                         // 0x065C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bButtonEnabled;                                    // 0x0660(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bInteractionEnabled;                               // 0x0661(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DF1[0x2E];                                    // 0x0662(0x002E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_662[0x2E];                                     // 0x0662(0x002E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -466,13 +466,13 @@ class UCommonButtonBase : public UCommonUserWidget
 {
 public:
 	struct FWidgetEventField                      ClickEvent;                                        // 0x02E8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF2[0x3];                                     // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E9[0x3];                                      // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MinWidth;                                          // 0x02EC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         MinHeight;                                         // 0x02F0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DF3[0x4];                                     // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonButtonStyle>         Style;                                             // 0x02F8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bHideInputAction;                                  // 0x0300(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DF4[0x7];                                     // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_301[0x7];                                      // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateSound                            PressedSlateSoundOverride;                         // 0x0308(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	struct FSlateSound                            HoveredSlateSoundOverride;                         // 0x0320(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	struct FSlateSound                            SelectedPressedSlateSoundOverride;                 // 0x0338(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
@@ -490,35 +490,35 @@ public:
 	uint8                                         bHideInputActionWithKeyboard : 1;                  // 0x0399(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         bShouldUseFallbackDefaultInputAction : 1;          // 0x0399(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         bRequiresHold : 1;                                 // 0x0399(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_1DF5[0x6];                                     // 0x039A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39A[0x6];                                      // 0x039A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonUIHoldData>          HoldData;                                          // 0x03A0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bSimulateHoverOnTouchInput;                        // 0x03A8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DF6[0x1];                                     // 0x03A9(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A9[0x1];                                      // 0x03A9(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	EButtonClickMethod                            ClickMethod;                                       // 0x03AA(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EButtonTouchMethod                            TouchMethod;                                       // 0x03AB(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EButtonPressMethod                            PressMethod;                                       // 0x03AC(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF7[0x3];                                     // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         InputPriority;                                     // 0x03B0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF8[0x4];                                     // 0x03B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3B4[0x4];                                      // 0x03B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataTableRowHandle                    TriggeringInputAction;                             // 0x03B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, ExposeOnSpawn, NativeAccessSpecifierPublic)
 	class UInputAction*                           TriggeringEnhancedInputAction;                     // 0x03C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DF9[0x10];                                    // 0x03D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D0[0x10];                                     // 0x03D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnSelectedChangedBase;                             // 0x03E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_             OnButtonBaseClicked;                               // 0x03F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_             OnButtonBaseDoubleClicked;                         // 0x0400(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_             OnButtonBaseHovered;                               // 0x0410(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_             OnButtonBaseUnhovered;                             // 0x0420(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1DFA[0x30];                                    // 0x0430(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_430[0x30];                                     // 0x0430(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bIsPersistentBinding;                              // 0x0460(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ECommonInputMode                              InputModeOverride;                                 // 0x0461(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1DFB[0x36];                                    // 0x0462(0x0036)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_462[0x36];                                     // 0x0462(0x0036)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               SingleMaterialStyleMID;                            // 0x0498(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FButtonStyle                           NormalStyle;                                       // 0x04A0(0x03F0)(NativeAccessSpecifierPrivate)
 	struct FButtonStyle                           SelectedStyle;                                     // 0x0890(0x03F0)(NativeAccessSpecifierPrivate)
 	struct FButtonStyle                           DisabledStyle;                                     // 0x0C80(0x03F0)(NativeAccessSpecifierPrivate)
 	struct FButtonStyle                           LockedStyle;                                       // 0x1070(0x03F0)(NativeAccessSpecifierPrivate)
 	uint8                                         bStopDoubleClickPropagation : 1;                   // 0x1460(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
-	uint8                                         Pad_1DFC[0x117];                                   // 0x1461(0x0117)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1461[0x117];                                   // 0x1461(0x0117)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonActionWidget*                    InputActionWidget;                                 // 0x1578(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -671,7 +671,7 @@ class UCommonCustomNavigation final : public UBorder
 {
 public:
 	TDelegate<void(EUINavigation NavigationType)> OnNavigationEvent;                                 // 0x0338(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E01[0x8];                                     // 0x0348(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_348[0x8];                                      // 0x0348(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -694,13 +694,13 @@ class alignas(0x10) UCommonTextBlock : public UTextBlock
 {
 public:
 	float                                         MobileFontSizeMultiplier;                          // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E02[0x4];                                     // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_36C[0x4];                                      // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonTextStyle>           Style;                                             // 0x0370(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSubclassOf<class UCommonTextScrollStyle>     ScrollStyle;                                       // 0x0378(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bIsScrollingEnabled;                               // 0x0380(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bDisplayAllCaps;                                   // 0x0381(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bAutoCollapseWithEmptyText;                        // 0x0382(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E03[0x15];                                    // 0x0383(0x0015)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_383[0x15];                                     // 0x0383(0x0015)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	const struct FMargin GetMargin();
@@ -740,7 +740,7 @@ static_assert(offsetof(UCommonTextBlock, bAutoCollapseWithEmptyText) == 0x000382
 class UCommonDateTimeTextBlock final : public UCommonTextBlock
 {
 public:
-	uint8                                         Pad_1E04[0x58];                                    // 0x0398(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_398[0x58];                                     // 0x0398(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetCountDownCompletionText(const class FText& InCompletionText);
@@ -767,7 +767,7 @@ static_assert(sizeof(UCommonDateTimeTextBlock) == 0x0003F0, "Wrong size on UComm
 class UCommonGameViewportClient : public UGameViewportClient
 {
 public:
-	uint8                                         Pad_1E06[0x40];                                    // 0x03B0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3B0[0x40];                                     // 0x03B0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -790,7 +790,7 @@ public:
 	struct FGameplayTagQuery                      VisibilityQuery;                                   // 0x0358(0x0048)(Edit, Protected, NativeAccessSpecifierProtected)
 	ESlateVisibility                              VisibleType;                                       // 0x03A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	ESlateVisibility                              HiddenType;                                        // 0x03A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E07[0xE];                                     // 0x03A2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A2[0xE];                                      // 0x03A2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -833,7 +833,7 @@ public:
 	struct FSlateBrush                            LoadingBackgroundBrush;                            // 0x02E0(0x00D0)(Edit, NativeAccessSpecifierPrivate)
 	class FName                                   MaterialTextureParamName;                          // 0x03B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_             BP_OnLoadingStateChanged;                          // 0x03B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E08[0x28];                                    // 0x03C8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C8[0x28];                                     // 0x03C8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetBrushFromLazyDisplayAsset(const TSoftObjectPtr<class UObject>& LazyObject, bool bMatchTextureSize);
@@ -866,9 +866,9 @@ class UCommonLazyWidget final : public UWidget
 public:
 	struct FSlateBrush                            LoadingBackgroundBrush;                            // 0x0180(0x00D0)(Edit, NativeAccessSpecifierPrivate)
 	class UUserWidget*                            Content;                                           // 0x0250(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E0B[0x30];                                    // 0x0258(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_258[0x30];                                     // 0x0258(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             BP_OnLoadingStateChanged;                          // 0x0288(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E0C[0x48];                                    // 0x0298(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_298[0x48];                                     // 0x0298(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetLazyContent(const TSoftClassPtr<class UClass> SoftWidget);
@@ -920,7 +920,7 @@ public:
 	struct FMargin                                Padding;                                           // 0x0038(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	EVerticalAlignment                            VerticalAlignment;                                 // 0x0049(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E0D[0x16];                                    // 0x004A(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4A[0x16];                                      // 0x004A(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
@@ -948,17 +948,17 @@ static_assert(offsetof(ULoadGuardSlot, VerticalAlignment) == 0x000049, "Member '
 class UCommonLoadGuard final : public UContentWidget
 {
 public:
-	uint8                                         Pad_1E0E[0x8];                                     // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            LoadingBackgroundBrush;                            // 0x01A0(0x00D0)(Edit, NativeAccessSpecifierPrivate)
 	EHorizontalAlignment                          ThrobberAlignment;                                 // 0x0270(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E0F[0x3];                                     // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_271[0x3];                                      // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMargin                                ThrobberPadding;                                   // 0x0274(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E10[0x4];                                     // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   LoadingText;                                       // 0x0288(0x0018)(Edit, NativeAccessSpecifierPrivate)
 	TSubclassOf<class UCommonTextStyle>           TextStyle;                                         // 0x02A0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_             BP_OnLoadingStateChanged;                          // 0x02A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	struct FSoftObjectPath                        SpinnerMaterialPath;                               // 0x02B8(0x0020)(ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E11[0x28];                                    // 0x02D8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D8[0x28];                                     // 0x02D8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BP_GuardAndLoadAsset(const TSoftObjectPtr<class UObject>& InLazyAsset, const TDelegate<void(class UObject* Object)>& OnAssetLoaded);
@@ -999,14 +999,14 @@ public:
 	FMulticastInlineDelegateProperty_             OnInterpolationEndedEvent;                         // 0x03C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	float                                         CurrentNumericValue;                               // 0x03D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECommonNumericType                            NumericType;                                       // 0x03DC(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E12[0x3];                                     // 0x03DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3DD[0x3];                                      // 0x03DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCommonNumberFormattingOptions         FormattingSpecification;                           // 0x03E0(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         EaseOutInterpolationExponent;                      // 0x03F4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InterpolationUpdateInterval;                       // 0x03F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PostInterpolationShrinkDuration;                   // 0x03FC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          PerformSizeInterpolation;                          // 0x0400(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsPercentage;                                      // 0x0401(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E13[0x3E];                                    // 0x0402(0x003E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_402[0x3E];                                     // 0x0402(0x003E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InterpolateToValue(const float TargetValue, float MaximumInterpolationDuration, float MinimumChangeRate, float OutroOffset);
@@ -1073,15 +1073,15 @@ class UCommonRichTextBlock final : public URichTextBlock
 public:
 	ERichTextInlineIconDisplayMode                InlineIconDisplayMode;                             // 0x08A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bTintInlineIcon;                                   // 0x08A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E15[0x6];                                     // 0x08A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8A2[0x6];                                      // 0x08A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonTextStyle>           DefaultTextStyleOverrideClass;                     // 0x08A8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         MobileTextBlockScale;                              // 0x08B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E16[0x4];                                     // 0x08B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8B4[0x4];                                      // 0x08B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonTextScrollStyle>     ScrollStyle;                                       // 0x08B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bIsScrollingEnabled;                               // 0x08C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bDisplayAllCaps;                                   // 0x08C1(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bAutoCollapseWithEmptyText;                        // 0x08C2(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E17[0x1D];                                    // 0x08C3(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C3[0x1D];                                     // 0x08C3(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetScrollingEnabled(bool bInIsScrollingEnabled);
@@ -1112,14 +1112,14 @@ static_assert(offsetof(UCommonRichTextBlock, bAutoCollapseWithEmptyText) == 0x00
 class UCommonRotator final : public UCommonButtonBase
 {
 public:
-	uint8                                         Pad_1E18[0x10];                                    // 0x1580(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1580[0x10];                                    // 0x1580(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnRotated;                                         // 0x1590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E19[0x18];                                    // 0x15A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15A0[0x18];                                    // 0x15A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonTextBlock*                       MyText;                                            // 0x15B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E1A[0x20];                                    // 0x15C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15C0[0x20];                                    // 0x15C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void BP_OnOptionSelected(int32 Param_Index);
+	void BP_OnOptionSelected(int32 Index_0);
 	void BP_OnOptionsPopulated(int32 Count);
 	void PopulateTextLabels(const TArray<class FText>& Labels);
 	void SetSelectedItem(int32 InValue);
@@ -1159,13 +1159,13 @@ public:
 	class UInputAction*                           PreviousTabEnhancedInputAction;                    // 0x0350(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bAutoListenForInput;                               // 0x0358(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bDeferRebuildingTabList;                           // 0x0359(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E1B[0x2];                                     // 0x035A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35A[0x2];                                      // 0x035A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class UCommonAnimatedSwitcher> LinkedSwitcher;                                    // 0x035C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E1C[0x4];                                     // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_364[0x4];                                      // 0x0364(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonButtonGroupBase*                 TabButtonGroup;                                    // 0x0368(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E1D[0x8];                                     // 0x0370(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_370[0x8];                                      // 0x0370(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, struct FCommonRegisteredTabInfo> RegisteredTabsByID;                                // 0x0378(0x0050)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E1E[0x18];                                    // 0x03C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C8[0x18];                                     // 0x03C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DisableTabWithReason(class FName TabNameID, const class FText& Reason);
@@ -1195,7 +1195,7 @@ public:
 	class FName GetSelectedTabId() const;
 	class UCommonButtonBase* GetTabButtonBaseByID(class FName TabNameID) const;
 	int32 GetTabCount() const;
-	class FName GetTabIdAtIndex(int32 Param_Index) const;
+	class FName GetTabIdAtIndex(int32 Index_0) const;
 
 public:
 	static class UClass* StaticClass()
@@ -1231,14 +1231,14 @@ public:
 	struct FSlateFontInfo                         Font;                                              // 0x0028(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Color;                                             // 0x0080(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUsesDropShadow;                                   // 0x0090(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E26[0x7];                                     // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ShadowOffset;                                      // 0x0098(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ShadowColor;                                       // 0x00A8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                                Margin;                                            // 0x00B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E27[0x8];                                     // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            StrikeBrush;                                       // 0x00D0(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	float                                         LineHeightPercentage;                              // 0x01A0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E28[0xC];                                     // 0x01A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A4[0xC];                                      // 0x01A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GetColor(struct FLinearColor* OutColor) const;
@@ -1280,7 +1280,7 @@ public:
 	float                                         EndDelay;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FadeInDelay;                                       // 0x0034(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FadeOutDelay;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E29[0x4];                                     // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1342,7 +1342,7 @@ public:
 	TSoftClassPtr<class UClass>                   TemplateTextStyle;                                 // 0x0028(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftClassPtr<class UClass>                   TemplateButtonStyle;                               // 0x0050(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftClassPtr<class UClass>                   TemplateBorderStyle;                               // 0x0078(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E2A[0x8];                                     // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1407,17 +1407,17 @@ class UCommonUISettings final : public UObject
 {
 public:
 	bool                                          bAutoLoadData;                                     // 0x0028(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E2B[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UObject>                 DefaultImageResourceObject;                        // 0x0030(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftObjectPtr<class UMaterialInterface>      DefaultThrobberMaterial;                           // 0x0058(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftClassPtr<class UClass>                   DefaultRichTextDataClass;                          // 0x0080(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<struct FGameplayTag>                   PlatformTraits;                                    // 0x00A8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E2C[0x28];                                    // 0x00B8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x28];                                      // 0x00B8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                DefaultImageResourceObjectInstance;                // 0x00E0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMaterialInterface*                     DefaultThrobberMaterialInstance;                   // 0x00E8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FSlateBrush                            DefaultThrobberBrush;                              // 0x00F0(0x00D0)(Transient, NativeAccessSpecifierPrivate)
 	class UCommonUIRichTextData*                  RichTextDataInstance;                              // 0x01C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E2D[0x8];                                     // 0x01C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8[0x8];                                      // 0x01C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1446,7 +1446,7 @@ static_assert(offsetof(UCommonUISettings, RichTextDataInstance) == 0x0001C0, "Me
 class UCommonUISubsystemBase final : public UGameInstanceSubsystem
 {
 public:
-	uint8                                         Pad_1E2E[0x10];                                    // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FSlateBrush GetEnhancedInputActionButtonIcon(const class UInputAction* InputAction, const class ULocalPlayer* LocalPlayer) const;
@@ -1472,7 +1472,7 @@ class UCommonInputMetadata final : public UObject
 public:
 	int32                                         NavBarPriority;                                    // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsGenericInputAction;                             // 0x002C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E31[0x3];                                     // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1511,7 +1511,7 @@ static_assert(sizeof(ICommonMappingContextMetadataInterface) == 0x000028, "Wrong
 class UCommonMappingContextMetadata final : public UDataAsset
 {
 public:
-	uint8                                         Pad_1E32[0x8];                                     // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonInputMetadata*                   EnhancedInputMetadata;                             // 0x0038(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class UInputAction*, class UCommonInputMetadata*> PerActionEnhancedInputMetadata;                    // 0x0040(0x0050)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 
@@ -1535,7 +1535,7 @@ static_assert(offsetof(UCommonMappingContextMetadata, PerActionEnhancedInputMeta
 class UCommonUIVisibilitySubsystem final : public ULocalPlayerSubsystem
 {
 public:
-	uint8                                         Pad_1E33[0x58];                                    // 0x0030(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x58];                                      // 0x0030(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1560,9 +1560,9 @@ public:
 	class UMediaTexture*                          MediaTexture;                                      // 0x0190(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMaterial*                              VideoMaterial;                                     // 0x0198(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMediaSoundComponent*                   SoundComponent;                                    // 0x01A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E34[0x8];                                     // 0x01A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A8[0x8];                                      // 0x01A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateBrush                            VideoBrush;                                        // 0x01B0(0x00D0)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E35[0x60];                                    // 0x0280(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_280[0x60];                                     // 0x0280(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1589,11 +1589,11 @@ class UCommonVisibilitySwitcher final : public UOverlay
 {
 public:
 	ESlateVisibility                              ShownVisibility;                                   // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E36[0x3];                                     // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ActiveWidgetIndex;                                 // 0x01AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bAutoActivateSlot;                                 // 0x01B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bActivateFirstSlotOnAdding;                        // 0x01B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E37[0x1E];                                    // 0x01B2(0x001E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B2[0x1E];                                     // 0x01B2(0x001E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateVisibleSlot();
@@ -1601,7 +1601,7 @@ public:
 	void DecrementActiveWidgetIndex(bool bAllowWrapping);
 	void IncrementActiveWidgetIndex(bool bAllowWrapping);
 	void SetActiveWidget(const class UWidget* Widget);
-	void SetActiveWidgetIndex(int32 Param_Index);
+	void SetActiveWidgetIndex(int32 Index_0);
 
 	class UWidget* GetActiveWidget() const;
 	int32 GetActiveWidgetIndex() const;
@@ -1628,7 +1628,7 @@ static_assert(offsetof(UCommonVisibilitySwitcher, bActivateFirstSlotOnAdding) ==
 class UCommonVisibilitySwitcherSlot final : public UOverlaySlot
 {
 public:
-	uint8                                         Pad_1E38[0x10];                                    // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1654,7 +1654,7 @@ public:
 	bool                                          bShowForTouch;                                     // 0x03AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESlateVisibility                              VisibleType;                                       // 0x03AB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESlateVisibility                              HiddenType;                                        // 0x03AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E39[0x3];                                     // 0x03AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static const TArray<class FName> GetRegisteredPlatforms();
@@ -1684,7 +1684,7 @@ class UCommonVisualAttachment final : public USizeBox
 {
 public:
 	struct FVector2D                              ContentAnchor;                                     // 0x01D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E3A[0x10];                                    // 0x01E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E0[0x10];                                     // 0x01E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1706,9 +1706,9 @@ class UCommonWidgetCarousel final : public UPanelWidget
 {
 public:
 	int32                                         ActiveWidgetIndex;                                 // 0x0198(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E3B[0x4];                                     // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19C[0x4];                                      // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnCurrentPageIndexChanged;                         // 0x01A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E3C[0x30];                                    // 0x01B0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B0[0x30];                                     // 0x01B0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BeginAutoScrolling(float ScrollInterval);
@@ -1716,10 +1716,10 @@ public:
 	void NextPage();
 	void PreviousPage();
 	void SetActiveWidget(class UWidget* Widget);
-	void SetActiveWidgetIndex(int32 Param_Index);
+	void SetActiveWidgetIndex(int32 Index_0);
 
 	int32 GetActiveWidgetIndex() const;
-	class UWidget* GetWidgetAtIndex(int32 Param_Index) const;
+	class UWidget* GetWidgetAtIndex(int32 Index_0) const;
 
 public:
 	static class UClass* StaticClass()
@@ -1743,7 +1743,7 @@ class UCommonWidgetCarouselNavBar final : public UWidget
 public:
 	TSubclassOf<class UCommonButtonBase>          ButtonWidgetType;                                  // 0x0180(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                                ButtonPadding;                                     // 0x0188(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E3E[0x10];                                    // 0x0198(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0x10];                                     // 0x0198(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonWidgetCarousel*                  LinkedCarousel;                                    // 0x01A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCommonButtonGroupBase*                 ButtonGroup;                                       // 0x01B0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UCommonButtonBase*>              Buttons;                                           // 0x01B8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
@@ -1799,17 +1799,17 @@ class UCommonButtonGroupBase final : public UCommonWidgetGroupBase
 {
 public:
 	FMulticastInlineDelegateProperty_             OnSelectedButtonBaseChanged;                       // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E41[0x18];                                    // 0x0038(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnHoveredButtonBaseChanged;                        // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E42[0x18];                                    // 0x0060(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x18];                                      // 0x0060(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnButtonBaseClicked;                               // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E43[0x18];                                    // 0x0088(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0x18];                                      // 0x0088(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnButtonBaseDoubleClicked;                         // 0x00A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E44[0x18];                                    // 0x00B0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B0[0x18];                                      // 0x00B0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnSelectionCleared;                                // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E45[0x18];                                    // 0x00D8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D8[0x18];                                      // 0x00D8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bSelectionRequired;                                // 0x00F0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E46[0x1F];                                    // 0x00F1(0x001F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F1[0x1F];                                      // 0x00F1(0x001F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DeselectAll();
@@ -1824,7 +1824,7 @@ public:
 	void SetSelectionRequired(bool bRequireSelection);
 
 	int32 FindButtonIndex(const class UCommonButtonBase* ButtonToFind) const;
-	class UCommonButtonBase* GetButtonBaseAtIndex(int32 Param_Index) const;
+	class UCommonButtonBase* GetButtonBaseAtIndex(int32 Index_0) const;
 	int32 GetButtonCount() const;
 	int32 GetHoveredButtonIndex() const;
 	class UCommonButtonBase* GetSelectedButtonBase() const;
@@ -1855,11 +1855,11 @@ static_assert(offsetof(UCommonButtonGroupBase, bSelectionRequired) == 0x0000F0, 
 class UCommonBoundActionBar final : public UDynamicEntryBoxBase
 {
 public:
-	uint8                                         Pad_1E4B[0x8];                                     // 0x0260(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_260[0x8];                                      // 0x0260(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonButtonBase>          ActionButtonClass;                                 // 0x0268(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bDisplayOwningPlayerActionsOnly;                   // 0x0270(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bIgnoreDuplicateActions;                           // 0x0271(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E4C[0x6];                                     // 0x0272(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_272[0x6];                                      // 0x0272(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetDisplayOwningPlayerActionsOnly(bool bShouldOnlyDisplayOwningPlayerActions);
@@ -1885,9 +1885,9 @@ static_assert(offsetof(UCommonBoundActionBar, bIgnoreDuplicateActions) == 0x0002
 class UCommonBoundActionButton final : public UCommonButtonBase
 {
 public:
-	uint8                                         Pad_1E4D[0x8];                                     // 0x1580(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1580[0x8];                                     // 0x1580(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonTextBlock*                       Text_ActionName;                                   // 0x1588(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E4E[0x10];                                    // 0x1590(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1590[0x10];                                    // 0x1590(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnUpdateInputAction();
@@ -1945,7 +1945,7 @@ static_assert(sizeof(UCommonInputActionDataProcessor) == 0x000028, "Wrong size o
 class UCommonUIActionRouterBase final : public ULocalPlayerSubsystem
 {
 public:
-	uint8                                         Pad_1E4F[0x140];                                   // 0x0030(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x140];                                     // 0x0030(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1966,12 +1966,12 @@ class UCommonUIInputSettings final : public UObject
 {
 public:
 	bool                                          bLinkCursorToGamepadFocus;                         // 0x0028(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E50[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         UIActionProcessingPriority;                        // 0x002C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<struct FUIInputAction>                 InputActions;                                      // 0x0030(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPrivate)
 	TArray<struct FUIInputAction>                 ActionOverrides;                                   // 0x0040(0x0010)(ZeroConstructor, Config, NativeAccessSpecifierPrivate)
 	struct FCommonAnalogCursorSettings            AnalogCursorSettings;                              // 0x0050(0x0024)(Edit, Config, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E51[0x4];                                     // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1996,15 +1996,15 @@ static_assert(offsetof(UCommonUIInputSettings, AnalogCursorSettings) == 0x000050
 class UCommonActivatableWidgetContainerBase : public UWidget
 {
 public:
-	uint8                                         Pad_1E52[0x18];                                    // 0x0180(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180[0x18];                                     // 0x0180(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	ECommonSwitcherTransition                     TransitionType;                                    // 0x0198(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	ETransitionCurve                              TransitionCurveType;                               // 0x0199(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E53[0x2];                                     // 0x019A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19A[0x2];                                      // 0x019A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TransitionDuration;                                // 0x019C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UCommonActivatableWidget*>       WidgetList;                                        // 0x01A0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	class UCommonActivatableWidget*               DisplayedWidget;                                   // 0x01B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FUserWidgetPool                        GeneratedWidgetsPool;                              // 0x01B8(0x0088)(Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E54[0x60];                                    // 0x0240(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_240[0x60];                                     // 0x0240(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UCommonActivatableWidget* BP_AddWidget(TSubclassOf<class UCommonActivatableWidget> ActivatableWidgetClass);

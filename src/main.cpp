@@ -156,7 +156,6 @@ static LONG custom_exception_handler(EXCEPTION_POINTERS* exception_info)
 
 LONG __fastcall hook_global_cpp_try_catch(EXCEPTION_POINTERS* ExceptionInfo)
 {
-	big::vectored_exception_handler(ExceptionInfo);
 	const auto res = custom_exception_handler(ExceptionInfo);
 
 	static bool once = true;
@@ -189,7 +188,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 		rom::init("UnchainedTogether", "ChainedTogether-Win64-Shipping.exe", "rom");
 
 		// Purposely leak it, we are not unloading this module in any case.
-		auto exception_handling = new exception_handler();
+		auto exception_handling = new exception_handler(false, nullptr);
 
 		{
 			static auto global_unreal_engine_try_catch_ptr = gmAddress::scan("E8 ? ? ? ? 90 33 C0 48 83 C4 28", "global_unreal_engine_try_catch_ptr");
@@ -264,6 +263,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 			    auto L = luaL_newstate();
 			    auto lua_manager_instance =
 			        std::make_unique<lua_manager>(L,
+			                                      "1.0.0",
 			                                      g_file_manager.get_project_folder("config"),
 			                                      g_file_manager.get_project_folder("plugins_data"),
 			                                      g_file_manager.get_project_folder("plugins"),
@@ -273,7 +273,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 			                                      });
 			    sol::state_view sol_state_view(L);
 			    lua_manager_extension::init_lua_state(sol_state_view);
-			    lua_manager_instance->init<lua_module_ext>();
+			    lua_manager_instance->init<lua_module_ext>(false);
 			    LOG(INFO) << "Lua manager initialized.";
 
 			    if (g_abort)

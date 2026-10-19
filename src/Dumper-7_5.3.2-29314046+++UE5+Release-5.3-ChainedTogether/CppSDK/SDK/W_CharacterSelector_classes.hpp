@@ -55,7 +55,7 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"W_CharacterSelector_C">();
+		STATIC_CLASS_IMPL("W_CharacterSelector_C")
 	}
 	static class UW_CharacterSelector_C* GetDefaultObj()
 	{

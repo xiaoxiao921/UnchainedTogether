@@ -1,4 +1,4 @@
-﻿#include "gui.hpp"
+#include "gui.hpp"
 
 //Include just the files needed for faster compilation
 #include "Dumper-7_5.3.2-29314046+++UE5+Release-5.3-ChainedTogether/CppSDK/SDK/CoreUObject_structs.hpp"
@@ -23,7 +23,6 @@
 #include <input/is_key_pressed.hpp>
 #include <lua/lua_manager.hpp>
 #include <memory/gm_address.hpp>
-#include <Minhook.h>
 #include <misc/cpp/imgui_stdlib.h>
 //#include <polyhook2/PE/IatHook.hpp>
 
@@ -48,6 +47,96 @@ namespace big
 	static SDK::UCustomGI_C* g_customgi                = nullptr;
 	static SDK::AHUD* g_ahud                           = nullptr;
 
+	// ===== 游戏状态快照（游戏主线程写，渲染线程只读）=====
+	// 渲染线程一律不再直接解引用 UE 对象指针（g_pawn 等由主线程独占写），
+	// 只消费下面的 POD 快照，避免与游戏主线程并发读写导致的野指针崩溃
+	// （联机时 Pawn/PlayerController 重建频繁，旧实现在渲染线程遍历游戏对象导致崩溃）。
+	struct snap_line_t
+	{
+		SDK::FVector2D a, b;
+	};
+
+	struct snap_actor_t
+	{
+		char name[64]{};
+		SDK::FVector pos{};
+		int line_count = 0; // 0 或 12（hitbox 框线）
+		snap_line_t lines[12]{};
+	};
+
+	struct game_snapshot_t
+	{
+		volatile uint32_t seq = 0; // seqlock：奇数 = 主线程写入中
+		bool pawn_valid              = false;
+		bool player_controller_valid = false;
+		bool customgi_valid          = false;
+		bool ahud_valid              = false;
+		bool gs_game_valid           = false;
+		int gs_game_timer            = 0;
+		SDK::FVector pawn_translation{};
+		SDK::FVector pawn_location{};
+		// 脚底投影
+		bool foot_on_screen = false;
+		SDK::FVector2D foot_screen{};
+		// debug 球：球心投影 + 像素半径
+		bool sphere_center_on_screen = false;
+		SDK::FVector2D sphere_center_screen{};
+		float sphere_pixel_radius = 0;
+		bool inside_sphere        = false;
+		// 500m 内 actor 列表（GUI 列表 / hitbox 框）
+		int actor_count = 0;
+		snap_actor_t actors[64];
+	};
+
+	static game_snapshot_t g_snap;
+
+	// 渲染线程读取一份一致的快照；返回 false 表示没读到一致数据，调用方沿用上帧副本
+	static bool snapshot_read(game_snapshot_t* out)
+	{
+		uint32_t s1 = g_snap.seq;
+		std::atomic_thread_fence(std::memory_order_acquire);
+		if (s1 & 1)
+		{
+			return false;
+		}
+		memcpy(out, (const void*)&g_snap, sizeof(game_snapshot_t));
+		std::atomic_thread_fence(std::memory_order_acquire);
+		return g_snap.seq == s1;
+	}
+
+	// 主线程写入口（仅在游戏主线程调用）
+	static void snapshot_write_begin()
+	{
+		g_snap.seq = g_snap.seq + 1;
+		std::atomic_thread_fence(std::memory_order_release);
+	}
+
+	static void snapshot_write_end()
+	{
+		std::atomic_thread_fence(std::memory_order_release);
+		g_snap.seq = g_snap.seq + 1;
+	}
+
+	// 传送请求（渲染/消息线程发起，游戏主线程执行）
+	static volatile uint32_t g_tp_request_seq = 0;
+	static uint32_t g_tp_executed_seq         = 0;
+	static SDK::FVector g_tp_target{};
+
+	static void request_teleport(const SDK::FVector& pos)
+	{
+		g_tp_target = pos;
+		std::atomic_thread_fence(std::memory_order_release);
+		g_tp_request_seq = g_tp_request_seq + 1;
+	}
+
+	// 自由视角请求（消息线程发起，游戏主线程执行）
+	static volatile bool g_freecam_request = false;
+
+	// 解锁翅膀请求（GUI 按钮发起，游戏主线程执行）
+	static volatile bool g_unlock_wings_request = false;
+
+	static void snapshot_on_game_thread();
+
 	static bool g_draw_g_pawn_foot_pos        = false;
 	static bool g_draw_g_pawn_hitbox          = false;
 	static bool g_draw_hitbox_proximity_based = false;
@@ -59,12 +148,17 @@ namespace big
 	static std::optional<SDK::FVector> g_draw_pawn_sphere_position = {};
 
 	static std::optional<SDK::FVector> g_latest_saved_position{};
-	static hotkey g_chained_together_save_current_position("chained_together_save_current_position", VK_F5);
-	static hotkey g_chained_together_tp_to_latest_saved_position("chained_together_tp_to_latest_saved_position", VK_F6);
+	static hotkey g_chained_together_save_current_position("chained_together_save_current_position", 0x5A); // Z
+	static hotkey g_chained_together_tp_to_latest_saved_position("chained_together_tp_to_latest_saved_position", 0x51); // Q
 	static bool g_chained_together_fly_mode_state = false;
 	static hotkey g_chained_together_fly_mode("chained_together_fly_mode", VK_F7);
-	static bool g_chained_together_perfect_bunny_state = false;
+	static bool g_chained_together_perfect_bunny_state = false; // 切换模式下的开/关状态
 	static hotkey g_chained_together_perfect_bunny_hotkey("chained_together_perfect_bunny_toggle", 0);
+	// 兔子跳模式：true=按住快捷键才连跳；false=按一下开、再按一下关
+	static bool g_chained_together_bunny_hold_mode = true;
+	// 兔子跳按键注入状态：按下->停一帧->松开->停一帧，4帧一个循环
+	static bool g_bh_space_down = false; // 我们注入的空格当前是否处于按下态
+	static int  g_bh_phase       = 0;    // 0=本帧按下, 1=停(保持按下), 2=本帧松开, 3=停(保持松开)
 
 	static hotkey g_chained_together_record_replay_hotkey("chained_together_record_replay", 0);
 	static bool g_chained_together_record_replay_state = false;
@@ -120,21 +214,6 @@ namespace big
 
 	static DWORD g_game_thread = 0;
 
-	template<typename T>
-	void CreateAndEnableHook(void* target, void* detour, T** original)
-	{
-		MH_STATUS status = MH_CreateHook(target, detour, reinterpret_cast<void**>(original));
-		if (status != MH_OK)
-		{
-			LOG(INFO) << "Failed to create hook: " << MH_StatusToString(status);
-		}
-
-		if (MH_EnableHook(target) != MH_OK)
-		{
-			LOG(INFO) << "Failed to enable hook";
-		}
-	}
-
 	static struct
 	{
 		DWORD ticks;
@@ -163,49 +242,12 @@ namespace big
 		return TRUE;
 	}
 
+	// 游戏主线程 tick hook：每帧驱动游戏状态快照（联机崩溃修复）
 	static void hook_UEngine_UpdateTimeAndHandleMaxTickRate(void* this_)
 	{
 		big::g_hooking->get_original<hook_UEngine_UpdateTimeAndHandleMaxTickRate>()(this_);
 
-		FApp_CurrentTime = 0;
-		*FApp_LastTime   = 0;
-		*FApp_DeltaTime  = g_delay;
-
-		return;
-
-		static struct
-		{
-			uint8_t state;
-			LARGE_INTEGER time;
-		} last = {0};
-
-		if (!g_game_thread)
-		{
-			g_game_thread = GetCurrentThreadId();
-		}
-
-		Lock();
-		g_qpc.ticks += 1'000'000;
-
-		*FApp_CurrentTime = 0;
-		*FApp_LastTime    = 0;
-		*FApp_DeltaTime   = g_delay;
-
-		for (;;)
-		{
-			LARGE_INTEGER t = {0};
-			g_orig_QueryPerformanceCounter(&t);
-			if ((double)(t.QuadPart - last.time.QuadPart) / (double)g_qpc.frequency.QuadPart >= g_delay)
-			{
-				break;
-			}
-
-			Sleep(0);
-		}
-
-		Unlock();
-
-		g_orig_QueryPerformanceCounter(&last.time);
+		snapshot_on_game_thread();
 	}
 
 	static void hook_srand(unsigned int seed)
@@ -219,59 +261,12 @@ namespace big
 
 	gui::gui()
 	{
-		// Initialize MinHook.
-		/*if (MH_Initialize() != MH_OK)
-		{
-		}
-
-		InitializeCriticalSection(&g_mutex);
-
-		g_replay_file_path = g_file_manager.get_project_file("./replay.bin").get_path();
-
+		// 游戏主线程 tick hook：每帧驱动游戏状态快照采集（联机崩溃修复，渲染线程不再遍历 UE 对象）
 		static auto inside_UpdateTimeAndHandleMaxTickRate = gmAddress::scan("66 0F 5A C0 C6 05");
 		static auto UpdateTimeAndHandleMaxTickRate        = inside_UpdateTimeAndHandleMaxTickRate.offset(-0xCB);
-		FApp_DeltaTime                       = inside_UpdateTimeAndHandleMaxTickRate.offset(30).rip().as<double*>();
-		FApp_CurrentTime                     = inside_UpdateTimeAndHandleMaxTickRate.offset(-25).rip().as<double*>();
-		FApp_LastTime                        = inside_UpdateTimeAndHandleMaxTickRate.offset(38).rip().as<double*>();
-		FGenericPlatformTime_SecondsPerCycle = inside_UpdateTimeAndHandleMaxTickRate.offset(168).rip().as<double*>();
+		static auto hook_game_tick_ =
+		    big::hooking::detour_hook_helper::add<hook_UEngine_UpdateTimeAndHandleMaxTickRate>("game thread tick", UpdateTimeAndHandleMaxTickRate);
 
-		std::thread(
-		    []()
-		    {
-			    while (true)
-			    {
-				    if (GetAsyncKeyState(g_chained_together_freeze_hotkey.get_vk_value()) & 0x80'00)
-				    {
-					    g_chained_together_freeze_state = !g_chained_together_freeze_state;
-					    LOG(INFO) << "Freeze: " << g_chained_together_freeze_state;
-
-					    // debounce
-					    Sleep(100);
-				    }
-
-				    if (GetAsyncKeyState(g_chained_together_advance_one_frame_hotkey.get_vk_value()) & 0x80'00)
-				    {
-					    g_chained_together_advance_one_frame = true;
-
-					    // debounce
-					    Sleep(100);
-				    }
-
-				    Sleep(5);
-			    }
-		    })
-		    .detach();
-
-		static auto hook_deltaTimeSetter = big::hooking::detour_hook_helper::add<hook_UEngine_UpdateTimeAndHandleMaxTickRate>("hook deltaTime setter", UpdateTimeAndHandleMaxTickRate);
-		static auto hook_srand_ = big::hooking::detour_hook_helper::add<hook_srand>("hook init random", GetProcAddress(GetModuleHandleA("api-ms-win-crt-utility-l1-1-0.dll"), "srand"));
-		static auto hook_rand_ = big::hooking::detour_hook_helper::add<hook_rand>("hook random", GetProcAddress(GetModuleHandleA("api-ms-win-crt-utility-l1-1-0.dll"), "rand"));
-		//CreateAndEnableHook(&QueryPerformanceCounter, &QueryPerformanceCounterHook, &g_orig_QueryPerformanceCounter);
-		//CreateAndEnableHook(&QueryPerformanceFrequency, &QueryPerformanceFrequencyHook, &g_orig_QueryPerformanceFrequency);
-
-		//QueryPerformanceFrequencyHook(&g_qpc.frequency);
-		//*FGenericPlatformTime_SecondsPerCycle = 1.0 / (double)g_qpc.frequency.QuadPart;
-		//g_orig_QueryPerformanceFrequency(&g_qpc.frequency);
-		*/
 		init_pref();
 
 		g_renderer->add_dx_callback({[this]
@@ -426,62 +421,6 @@ namespace big
 		return distanceSquared <= radiusSquared;
 	}
 
-	static void draw_sphere(SDK::APlayerController* playerController, SDK::FVector world_coords, int32_t segment_count, float radius, ImU32 color)
-	{
-		auto draw_list = ImGui::GetBackgroundDrawList();
-
-		// Calculate the step size for both theta and phi
-		float theta_step = 2.0f * M_PI / segment_count;
-		float phi_step   = M_PI / segment_count;
-
-		SDK::FVector camera_location;
-		SDK::FRotator camera_rotation;
-		playerController->GetPlayerViewPoint(&camera_location, &camera_rotation);
-		auto world = SDK::UWorld::GetWorld();
-
-		if (is_player_inside_sphere(world_coords, g_pawn->GetTransform().Translation, radius))
-		{
-			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(0, 255, 0, 255), "Is Inside Sphere");
-		}
-		else
-		{
-			draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(255, 0, 0, 255), "Is Outside Sphere");
-		}
-
-		for (int i = 0; i < segment_count; ++i)
-		{
-			for (int j = 0; j < segment_count; ++j)
-			{
-				// Calculate theta and phi values
-				float theta = i * theta_step;
-				float phi   = j * phi_step;
-
-				// Compute the world coordinates for the current point
-				SDK::FVector world_point(world_coords.X + radius * sinf(phi) * cosf(theta),
-				                         world_coords.Y + radius * sinf(phi) * sinf(theta),
-				                         world_coords.Z + radius * cosf(phi));
-
-				SDK::FHitResult raycast_result;
-				// clang-format off
-				if (SDK::UKismetSystemLibrary::LineTraceSingle(world,
-					camera_location, world_point,
-					SDK::ETraceTypeQuery::TraceTypeQuery_MAX, true, {}, SDK::EDrawDebugTrace::None, &raycast_result, false, {}, {}, 0))
-				{
-					continue;
-				}
-				// clang-format on
-
-				// Project the world coordinates to screen space
-				SDK::FVector2D screen_point;
-				if (playerController->ProjectWorldLocationToScreen(world_point, &screen_point, true))
-				{
-					// Draw a point at the projected screen coordinates
-					draw_list->AddCircleFilled(ImVec2((float)screen_point.X, (float)screen_point.Y), 3.5f, color);
-				}
-			}
-		}
-	}
-
 	static void hook_event(SDK::UObject* obj, SDK::UFunction* func, void* idk)
 	{
 		big::g_hooking->get_original<hook_event>()(obj, func, idk);
@@ -498,8 +437,12 @@ namespace big
 		}
 	}
 
-	static void DrawBoundingRect(SDK::APlayerController* playerController, SDK::AActor* actor)
+	// 计算 actor 包围盒的 12 条边线并投影到屏幕坐标，存进快照条目。
+	// 仅游戏主线程调用（不能碰 ImGui）；投影失败则 line_count 保持 0。
+	static void collect_box_lines(SDK::APlayerController* playerController, SDK::AActor* actor, snap_actor_t* out)
 	{
+		out->line_count = 0;
+
 		SDK::FVector origin, extent;
 		actor->GetActorBounds(true, &origin, &extent, true);
 		const auto rotation = actor->K2_GetActorRotation();
@@ -513,7 +456,7 @@ namespace big
 
 		SDK::FVector b1 = {origin.X - extent.X, origin.Y - extent.Y, origin.Z - extent.Z};
 		SDK::FVector b2 = {origin.X + extent.X, origin.Y - extent.Y, origin.Z - extent.Z};
-		SDK::FVector b3 = {origin.X + extent.X, origin.Y + extent.Y, origin.Z - extent.Z};
+		SDK::FVector b3 = {origin.X + extent.X, origin.Y - extent.Y, origin.Z - extent.Z};
 		SDK::FVector b4 = {origin.X - extent.X, origin.Y + extent.Y, origin.Z - extent.Z};
 
 		// Rotate corners around the origin
@@ -539,29 +482,289 @@ namespace big
 			return;
 		}
 
-		auto drawList = ImGui::GetBackgroundDrawList();
-
-		const auto color = IM_COL32(255, 255, 255, 255);
-
-		auto draw_line = [](ImDrawList* drawList, const SDK::FVector2D& a, const SDK::FVector2D& b, const ImU32 color)
+		const SDK::FVector2D edges[12][2] =
+		    {{ts1, ts2}, {ts2, ts3}, {ts3, ts4}, {ts4, ts1}, {bs1, bs2}, {bs2, bs3}, {bs3, bs4}, {bs4, bs1}, {ts1, bs1}, {ts2, bs2}, {ts3, bs3}, {ts4, bs4}};
+		for (int i = 0; i < 12; i++)
 		{
-			drawList->AddLine({(float)a.X, (float)a.Y}, {(float)b.X, (float)b.Y}, color, 2);
-		};
+			out->lines[i].a = edges[i][0];
+			out->lines[i].b = edges[i][1];
+		}
+		out->line_count = 12;
+	}
 
-		draw_line(drawList, ts1, ts2, color);
-		draw_line(drawList, ts2, ts3, color);
-		draw_line(drawList, ts3, ts4, color);
-		draw_line(drawList, ts4, ts1, color);
+	// 快照主体：由 snapshot_on_game_thread 在 SEH 保护下调用。
+	// 关卡切换/掉线/重生时游戏对象可能被销毁且内存被复用，解引用过期指针
+	// 会导致异常；有 SEH 兜底时异常只会丢弃本帧快照，不再让整个进程崩溃
+	// （此前三次联机崩溃均源于此处使用未校验的裸指针）。
+	static void snapshot_body()
+	{
+		g_pawn              = nullptr;
+		g_player_controller = nullptr;
 
-		draw_line(drawList, bs1, bs2, color);
-		draw_line(drawList, bs2, bs3, color);
-		draw_line(drawList, bs3, bs4, color);
-		draw_line(drawList, bs4, bs1, color);
+		SDK::UWorld* World                   = SDK::UWorld::GetWorld();
+		SDK::ULevel* Level                   = World ? World->PersistentLevel : nullptr;
+		SDK::APlayerController* playerController = nullptr;
 
-		draw_line(drawList, ts1, bs1, color);
-		draw_line(drawList, ts2, bs2, color);
-		draw_line(drawList, ts3, bs3, color);
-		draw_line(drawList, ts4, bs4, color);
+		if (Level)
+		{
+			SDK::TArray<SDK::AActor*>& Actors = Level->Actors;
+
+			auto gameInstance = World->OwningGameInstance; // 0x1B8
+			if (gameInstance)
+			{
+				auto localPlayers = gameInstance->LocalPlayers; // 0x38
+				if (localPlayers && localPlayers.Num() > 0)
+				{
+					auto localPlayer = localPlayers[0];
+					if (localPlayer)
+					{
+						playerController = localPlayer->PlayerController; // 0x30
+					}
+				}
+			}
+
+			if (playerController)
+			{
+				g_player_controller = playerController;
+
+				// controller->Pawn 在对象被销毁/复用后可能是任意垃圾值，
+				// 必须先校验类型再交给 g_pawn，否则飞行/传送会直接解引用野指针
+				auto* pawn = (SDK::ABP_Character_C*)playerController->Pawn;
+				if (pawn && pawn->IsA(SDK::ABP_Character_C::StaticClass()))
+				{
+					g_pawn = pawn;
+				}
+				// 游戏更新后客户端 PlayerController->Pawn 读出来为空，遍历关卡角色兜底：
+				// 优先“正被本地控制器操控”的角色，匹配不到则取第一个游戏角色。
+				if (!g_pawn)
+				{
+					for (SDK::AActor* Actor : Actors)
+					{
+						if (Actor && Actor->IsA(SDK::ABP_Character_C::StaticClass()))
+						{
+							auto* bp = static_cast<SDK::ABP_Character_C*>(Actor);
+							if (bp->Controller == playerController)
+							{
+								g_pawn = bp;
+								break;
+							}
+							if (!g_pawn)
+							{
+								g_pawn = bp;
+							}
+						}
+					}
+				}
+			}
+
+			// ---- 写请求：传送（渲染/消息线程发起，这里执行；角色不在就丢弃）----
+			if (g_tp_request_seq != g_tp_executed_seq)
+			{
+				std::atomic_thread_fence(std::memory_order_acquire);
+				SDK::FVector target = g_tp_target;
+				if (g_pawn)
+				{
+					SetPlayerPosition(g_pawn, target);
+				}
+				g_tp_executed_seq = g_tp_request_seq;
+			}
+
+			// ---- 写请求：自由视角 ----
+			if (g_freecam_request)
+			{
+				if (g_player_controller)
+				{
+					if (!g_player_controller->CheatManager)
+					{
+						g_player_controller->CheatManager = (SDK::UCheatManager*)(SDK::UGameplayStatics::SpawnObject(SDK::UCheatManager::StaticClass(), g_player_controller));
+					}
+					g_player_controller->CheatManager->ToggleDebugCamera();
+				}
+				g_freecam_request = false;
+			}
+
+			// ---- 写请求：解锁翅膀（低频手动操作，执行时重新遍历，不用缓存指针）----
+			if (g_unlock_wings_request)
+			{
+				for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
+				{
+					SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
+					if (Obj && Obj->IsA(SDK::UCustomGI_C::StaticClass()))
+					{
+						auto* customgi = static_cast<SDK::UCustomGI_C*>(Obj);
+						for (size_t j = 0; j < 10; j++)
+						{
+							customgi->SetCollectedWing(j);
+						}
+					}
+				}
+				g_unlock_wings_request = false;
+			}
+
+			// ---- 飞行模式：F7/勾选只切状态；角色就绪或状态变化时立即应用 ----
+			static SDK::ABP_Character_C* s_last_fly_pawn = nullptr;
+			static bool s_last_fly_state                 = false;
+			if (g_pawn && g_pawn->IsA(SDK::ABP_Character_C::StaticClass())
+			    && (g_pawn != s_last_fly_pawn || g_chained_together_fly_mode_state != s_last_fly_state))
+			{
+				s_last_fly_pawn  = g_pawn;
+				s_last_fly_state = g_chained_together_fly_mode_state;
+				g_pawn->SetFlyMode(g_chained_together_fly_mode_state);
+			}
+
+			// ---- 快照：pawn 状态 ----
+			g_snap.pawn_valid              = g_pawn != nullptr;
+			g_snap.player_controller_valid = g_player_controller != nullptr;
+			if (g_pawn)
+			{
+				g_snap.pawn_translation = g_pawn->GetTransform().Translation;
+				g_snap.pawn_location    = g_pawn->K2_GetActorLocation();
+			}
+
+			// ---- 快照：脚底投影 ----
+			g_snap.foot_on_screen = false;
+			if (g_pawn && playerController && g_draw_g_pawn_foot_pos)
+			{
+				SDK::FVector2D screen;
+				if (playerController->ProjectWorldLocationToScreen(g_snap.pawn_translation, &screen, true))
+				{
+					g_snap.foot_on_screen = true;
+					g_snap.foot_screen    = screen;
+				}
+			}
+
+			// ---- 快照：debug 球（球心 + 半径边缘点投影，渲染线程画 2D 圆）----
+			g_snap.sphere_center_on_screen = false;
+			g_snap.inside_sphere           = false;
+			if (g_pawn && playerController && g_draw_g_pawn_hitbox)
+			{
+				const SDK::FVector center = g_draw_pawn_sphere_position ? *g_draw_pawn_sphere_position : g_snap.pawn_translation;
+				g_snap.inside_sphere      = is_player_inside_sphere(center, g_snap.pawn_translation, g_draw_g_pawn_sphere_radius_hitbox);
+
+				SDK::FVector2D center_screen;
+				if (playerController->ProjectWorldLocationToScreen(center, &center_screen, true))
+				{
+					// 投一个半径边缘点估算像素半径
+					const SDK::FVector edge{center.X + g_draw_g_pawn_sphere_radius_hitbox, center.Y, center.Z};
+					SDK::FVector2D edge_screen;
+					if (playerController->ProjectWorldLocationToScreen(edge, &edge_screen, true))
+					{
+						const double dx = edge_screen.X - center_screen.X;
+						const double dy = edge_screen.Y - center_screen.Y;
+						g_snap.sphere_center_on_screen = true;
+						g_snap.sphere_center_screen    = center_screen;
+						g_snap.sphere_pixel_radius     = (float)std::sqrt(dx * dx + dy * dy);
+					}
+				}
+			}
+
+			// ---- 低频采集（约每秒一次）：customgi / ahud / 游戏计时器 ----
+			static int s_lookup_cooldown = 0;
+			if (--s_lookup_cooldown <= 0)
+			{
+				s_lookup_cooldown = 60;
+
+				g_customgi = nullptr;
+				for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
+				{
+					SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
+					if (Obj && Obj->IsA(SDK::UCustomGI_C::StaticClass()))
+					{
+						g_customgi = (decltype(g_customgi))Obj;
+						break;
+					}
+				}
+
+				g_ahud               = nullptr;
+				g_snap.gs_game_valid = false;
+				for (SDK::AActor* Actor : Actors)
+				{
+					if (!Actor)
+					{
+						continue;
+					}
+					if (!g_ahud && Actor->IsA(SDK::AHUD::StaticClass()))
+					{
+						g_ahud = (decltype(g_ahud))Actor;
+					}
+					if (Actor->IsA(SDK::AGS_Game_C::StaticClass()))
+					{
+						g_snap.gs_game_valid = true;
+						g_snap.gs_game_timer = static_cast<SDK::AGS_Game_C*>(Actor)->Timer;
+					}
+				}
+			}
+			g_snap.customgi_valid = g_customgi != nullptr;
+			g_snap.ahud_valid     = g_ahud != nullptr;
+
+			// ---- 快照：500m 内 actor 列表（GUI 列表 / hitbox 框线）----
+			g_snap.actor_count = 0;
+			if (g_pawn && playerController && (g_draw_hitbox_proximity_based || (g_gui && g_gui->is_open())))
+			{
+				for (SDK::AActor* Actor : Actors)
+				{
+					if (g_snap.actor_count >= 64)
+					{
+						break;
+					}
+					if (!Actor)
+					{
+						continue;
+					}
+
+					const auto pos = Actor->K2_GetActorLocation();
+					if (g_snap.pawn_location.GetDistanceTo(pos) > 500)
+					{
+						continue;
+					}
+
+					auto& entry     = g_snap.actors[g_snap.actor_count];
+					const auto name = Actor->Name.ToString();
+					strncpy_s(entry.name, name.c_str(), 63);
+					entry.pos        = pos;
+					entry.line_count = 0;
+					if (g_draw_hitbox_proximity_based)
+					{
+						collect_box_lines(playerController, Actor, &entry);
+					}
+					g_snap.actor_count++;
+				}
+			}
+		}
+		else
+		{
+			// 主菜单/换关卡：清空快照有效位
+			g_snap.pawn_valid              = false;
+			g_snap.player_controller_valid = false;
+			g_snap.foot_on_screen          = false;
+			g_snap.sphere_center_on_screen = false;
+			g_snap.actor_count             = 0;
+		}
+
+	}
+
+	// 游戏主线程每帧入口：SEH 保护快照主体。
+	// 异常时清空所有游戏对象指针、丢弃本帧快照，并保证 seqlock 正常收尾（偶数次）。
+	static void snapshot_on_game_thread()
+	{
+		snapshot_write_begin();
+		__try
+		{
+			snapshot_body();
+		}
+		__except (EXCEPTION_EXECUTE_HANDLER)
+		{
+			g_pawn              = nullptr;
+			g_player_controller = nullptr;
+			g_snap.pawn_valid              = false;
+			g_snap.player_controller_valid = false;
+			g_snap.customgi_valid          = false;
+			g_snap.ahud_valid              = false;
+			g_snap.foot_on_screen          = false;
+			g_snap.sphere_center_on_screen = false;
+			g_snap.actor_count             = 0;
+		}
+		snapshot_write_end();
 	}
 
 	static void tas_update()
@@ -729,184 +932,105 @@ namespace big
 			}
 		}
 
-		g_pawn              = nullptr;
-		g_player_controller = nullptr;
-		g_customgi          = nullptr;
-		g_ahud              = nullptr;
-
-		SDK::UWorld* World = SDK::UWorld::GetWorld();
-		if (World)
+		// ===== 渲染线程只消费游戏主线程快照，不再直接解引用 UE 对象（联机崩溃修复）=====
+		// 游戏对象遍历 / SetFlyMode / 传送 / 自由视角全部挪到主线程 snapshot_on_game_thread() 执行
+		static game_snapshot_t s_snap{};
+		static bool s_snap_valid = false;
+		if (snapshot_read(&s_snap))
 		{
-			SDK::ULevel* Level = World->PersistentLevel;
-			if (Level)
+			s_snap_valid = true;
+		}
+
+		// 兔子跳：不调用游戏内部函数，改为注入真实空格键（不碰 UE 对象，留在渲染线程）。
+		// 生效时每帧交替：一帧按下空格、一帧松开空格（= 每两帧一次新的“按下瞬间”），
+		// 游戏据此在落地时起跳；不生效时确保松开。是否生效由快捷键决定（长按模式/切换模式）。
+		// “角色是否就绪”用快照 pawn_valid 判断；角色消失时确保注入的空格已松开，不卡键。
+		{
+			const uint16_t bh_vk = g_chained_together_perfect_bunny_hotkey.get_vk_value();
+			bool bh_active       = false;
+			if (bh_vk != 0)
 			{
-				SDK::TArray<SDK::AActor*>& volatile Actors = Level->Actors;
+				if (g_chained_together_bunny_hold_mode)
+					bh_active = is_key_pressed(bh_vk); // 长按模式：按住快捷键才连跳
+				else
+					bh_active = g_chained_together_perfect_bunny_state; // 切换模式
+			}
+			bh_active = bh_active && s_snap_valid && s_snap.pawn_valid;
 
-				auto gameInstance = World->OwningGameInstance; // 0x1B8
-				if (!gameInstance)
+			if (bh_active)
+			{
+				// 4帧循环：0按下 -> 1停(保持按下) -> 2松开 -> 3停(保持松开) -> 0...
+				// 每次“按下”都是一个新的按下沿，间隔拉开后游戏能稳定识别为新的一次跳跃
+				switch (g_bh_phase)
 				{
-					return;
+				case 0:
+					keybd_event(VK_SPACE, 0, 0, 0); // 按下空格
+					g_bh_space_down = true;
+					g_bh_phase      = 1;
+					break;
+				case 1:
+					g_bh_phase = 2; // 停一帧，保持按下
+					break;
+				case 2:
+					keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, 0); // 松开空格
+					g_bh_space_down = false;
+					g_bh_phase      = 3;
+					break;
+				case 3:
+				default:
+					g_bh_phase = 0; // 停一帧，保持松开，下帧重新按下
+					break;
 				}
-				auto localPlayers = gameInstance->LocalPlayers; // 0x38
-				if (!localPlayers || localPlayers.Num() <= 0)
+
+				ImDrawList* draw_list              = ImGui::GetForegroundDrawList();
+				static int32_t perfect_bunny_color = 0;
+				perfect_bunny_color++;
+				perfect_bunny_color = perfect_bunny_color % 255;
+				draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(perfect_bunny_color, 255, 255, 255), "Perfect Bunny");
+			}
+			else if (g_bh_space_down)
+			{
+				keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, 0);
+				g_bh_space_down = false;
+				g_bh_phase      = 0;
+			}
+		}
+
+		// debug 绘制：hitbox 框线 / debug 球 / 脚底位置（全部来自快照 POD）
+		if (s_snap_valid)
+		{
+			auto draw_list = ImGui::GetBackgroundDrawList();
+
+			if (g_draw_hitbox_proximity_based)
+			{
+				for (int ai = 0; ai < s_snap.actor_count; ai++)
 				{
-					return;
-				}
-				auto localPlayer = localPlayers[0]; // deref pointer
-				if (!localPlayer)
-				{
-					return;
-				}
-				auto playerController = localPlayer->PlayerController; // 0x30
-				if (!playerController)
-				{
-					return;
-				}
-				g_player_controller = playerController;
-
-				g_pawn = (decltype(g_pawn))playerController->Pawn;
-				if (!g_pawn)
-				{
-					return;
-				}
-
-				//tas_update();
-
-				if (g_chained_together_perfect_bunny_state)
-				{
-					g_pawn->Jump_Input();
-
-					/*static auto addrInputKey =
-					    gmAddress::scan("4C 8B DC 49 89 5B 08 49 89 6B 10 49 89 73 18 49 89 7B 20 41 56 48 81 "
-					                    "EC ? ? ? ? 48 8B 05 ? ? ? ? 41 8B E8 49 89 43 A0 4C 8B F2")
-					        .as_func<bool(SDK::APlayerController*, SDK::FKey, SDK::EInputEvent, float, bool)>();
-
-					//static auto hook_input = big::hooking::detour_hook_helper::add<hook_inputkey>("hook input key", addrInputKey);
-					//static void* processEventAddr = (void*)(SDK::InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
-					//static auto hook_event_ = big::hooking::detour_hook_helper::add<hook_event>("hook event", processEventAddr);
-
-					static SDK::FString blaaa = SDK::FString(L"SpaceBar");
-					static auto fkey          = []()
+					const auto& a = s_snap.actors[ai];
+					for (int li = 0; li < a.line_count; li++)
 					{
-						auto k    = SDK::FKey();
-						k.KeyName = SDK::UKismetStringLibrary::Conv_StringToName(blaaa);
-						return k;
-					}();
-
-					static auto hook_it_once = true;
-					if (hook_it_once)
-					{
-						auto tick_func = g_pawn->Class->GetFunction("BP_Character_C", "ReceiveTick");
-						//static auto hook_tick_char =
-						//  big::hooking::detour_hook_helper::add<hook_tick_character>("hook char tick", tick_func->ExecFunction);
-						hook_it_once = false;
-					}*/
-
-					ImDrawList* draw_list              = ImGui::GetForegroundDrawList();
-					static int32_t perfect_bunny_color = 0;
-					perfect_bunny_color++;
-					perfect_bunny_color = perfect_bunny_color % 255;
-					draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f), IM_COL32(perfect_bunny_color, 255, 255, 255), "Perfect Bunny");
-				}
-
-				try
-				{
-					for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
-					{
-						SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
-
-						if (!Obj)
-						{
-							continue;
-						}
-
-						if (Obj->IsA(SDK::UCustomGI_C::StaticClass()))
-						{
-							g_customgi = (decltype(g_customgi))Obj;
-							break;
-						}
+						draw_list->AddLine({(float)a.lines[li].a.X, (float)a.lines[li].a.Y},
+						                   {(float)a.lines[li].b.X, (float)a.lines[li].b.Y},
+						                   IM_COL32(255, 255, 255, 255),
+						                   2);
 					}
 				}
-				catch (const std::exception&)
-				{
-				}
+			}
 
-				try
-				{
-					for (SDK::AActor* Actor : Actors)
-					{
-						if (!Actor)
-						{
-							continue;
-						}
+			if (g_draw_g_pawn_hitbox && s_snap.sphere_center_on_screen && s_snap.sphere_pixel_radius > 0)
+			{
+				draw_list->AddText(ImVec2(ImGui::GetIO().DisplaySize.x / 2.0f, ImGui::GetIO().DisplaySize.y * 0.075f),
+				                   s_snap.inside_sphere ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255),
+				                   s_snap.inside_sphere ? "Is Inside Sphere" : "Is Outside Sphere");
+				draw_list->AddCircle({(float)s_snap.sphere_center_screen.X, (float)s_snap.sphere_center_screen.Y},
+				                     s_snap.sphere_pixel_radius,
+				                     g_draw_pawn_sphere_hitbox_color_final);
+			}
 
-						if (Actor->IsA(SDK::AHUD::StaticClass()))
-						{
-							g_ahud = (decltype(g_ahud))Actor;
-							break;
-						}
-					}
-				}
-				catch (const std::exception&)
-				{
-				}
-
-				try
-				{
-					if (g_draw_hitbox_proximity_based)
-					{
-						auto my_pawn_location = g_pawn->K2_GetActorLocation();
-
-						size_t i = 0;
-						for (SDK::AActor* Actor : Actors)
-						{
-							i++;
-							if (!Actor)
-							{
-								continue;
-							}
-
-							auto pos = Actor->K2_GetActorLocation();
-
-							if ((my_pawn_location.GetDistanceTo(pos)) > 500)
-							{
-								//yep.shouldDraw = false;
-								continue;
-							}
-
-							//auto& yep = g_shouldDraw[i];
-							//if (yep.shouldDraw)
-							{
-								DrawBoundingRect(playerController, Actor);
-							}
-						}
-					}
-				}
-				catch (const std::exception&)
-				{
-				}
-
-				if (g_pawn && g_draw_g_pawn_hitbox)
-				{
-					//DrawBoundingRect(playerController, g_pawn);
-					draw_sphere(playerController,
-					            g_draw_pawn_sphere_position ? *g_draw_pawn_sphere_position : g_pawn->GetTransform().Translation,
-					            g_draw_g_pawn_sphere_segment_count,
-					            g_draw_g_pawn_sphere_radius_hitbox,
-					            g_draw_pawn_sphere_hitbox_color_final);
-				}
-
-				if (g_pawn && g_draw_g_pawn_foot_pos)
-				{
-					SDK::FVector2D player_pos_screen;
-					if (playerController->ProjectWorldLocationToScreen(g_pawn->GetTransform().Translation, &player_pos_screen, true))
-					{
-						ImGui::GetBackgroundDrawList()->AddCircleFilled(
-						    ImVec2((float)player_pos_screen.X, (float)player_pos_screen.Y),
-						    3.5f,
-						    IM_COL32(255, 255, 255, 255));
-					}
-				}
+			if (g_draw_g_pawn_foot_pos && s_snap.foot_on_screen)
+			{
+				draw_list->AddCircleFilled({(float)s_snap.foot_screen.X, (float)s_snap.foot_screen.Y},
+				                           3.5f,
+				                           IM_COL32(255, 255, 255, 255));
 			}
 		}
 
@@ -1029,389 +1153,251 @@ namespace big
 					ImGui::End();
 				}
 
-				ImGui::SetNextWindowSize({483, 544}, ImGuiCond_FirstUseEver);
+				ImVec2 main_win_size{ImGui::GetIO().DisplaySize.x * 0.55f, ImGui::GetIO().DisplaySize.y * 0.82f};
+				ImGui::SetNextWindowSize(main_win_size, ImGuiCond_FirstUseEver);
 				if (ImGui::Begin("Unchained Together"))
 				{
-					if (World)
-					{
-						/* You might need to loop all levels in UWorld::Levels */
-						SDK::ULevel* Level = World->PersistentLevel;
-						if (Level)
-						{
-							SDK::TArray<SDK::AActor*>& volatile Actors = Level->Actors;
+					// ===== 全局设置：主菜单 / 大厅 / 游戏内都显示，不依赖关卡角色 =====
+					ImGui::SeparatorText("Toggles");
+					ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state);
 
+					ImGui::SeparatorText("Keybinds");
+					ImGui::Hotkey("Save Current Position", g_chained_together_save_current_position);
+					ImGui::Hotkey("Teleport To Latest Saved Position", g_chained_together_tp_to_latest_saved_position, {600, 0});
+					ImGui::Hotkey("Fly Mode##2", g_chained_together_fly_mode);
+					ImGui::Hotkey("Perfect Bunny Hop", g_chained_together_perfect_bunny_hotkey);
+					ImGui::Checkbox("  Hold key to hop (off = toggle on/off)", &g_chained_together_bunny_hold_mode);
+					ImGui::Hotkey("Free Camera Toggle", g_chained_together_freecam_hotkey);
+
+					// ===== 游戏内功能：全部消费游戏主线程快照，渲染线程不再解引用 UE 对象 =====
+					if (s_snap_valid && s_snap.pawn_valid)
+					{
+						const auto& current_pos = s_snap.pawn_translation;
+
+						static auto positions_file_path =
+						    g_file_manager.get_project_file("./positions.json").get_path();
+
+						if (s_snap.customgi_valid)
+						{
+							if (ImGui::Button("Unlock Wings"))
+							{
+								// 实际执行在游戏主线程（遍历 GObjects 调 SetCollectedWing）
+								g_unlock_wings_request = true;
+							}
+
+							if (s_snap.gs_game_valid)
+							{
+								ImGui::Text("In-Game Timer: %d", s_snap.gs_game_timer);
+							}
+						}
+
+						ImGui::Separator();
+
+						// Show the player's current position
+						ImGui::Text("Player Position: X: %.2f | Y: %.2f | Z: %.2f",
+						            current_pos.X,
+						            current_pos.Y,
+						            current_pos.Z);
+
+						ImGui::SeparatorText("Custom Position");
+						static SDK::FVector3f new_set_position{current_pos.X, current_pos.Y, current_pos.Z};
+						ImGui::InputFloat("X", &new_set_position.X);
+						ImGui::InputFloat("Y", &new_set_position.Y);
+						ImGui::InputFloat("Z", &new_set_position.Z);
+
+						static nlohmann::json json;
+						static std::vector<std::string> positionNames;
+
+						if (ImGui::Button("Teleport To Custom Position"))
+						{
+							SDK::FVector pos{new_set_position.X, new_set_position.Y, new_set_position.Z};
+							request_teleport(pos);
+						}
+
+						ImGui::SeparatorText("JSON File");
+
+						// Load JSON file and display named positions
+						static std::string selectedPosition;
+
+						static bool load_once = true;
+						if (ImGui::Button("Refresh Positions From JSON File") || load_once)
+						{
+							load_once = false;
+							std::ifstream file(positions_file_path);
+							if (file.is_open())
+							{
+								try
+								{
+									file >> json;
+									positionNames.clear();
+									for (auto& el : json["positions"].items())
+									{
+										positionNames.push_back(el.key());
+									}
+									std::sort(positionNames.begin(), positionNames.end());
+								}
+								catch (const std::exception& e)
+								{
+									LOG(ERROR) << e.what();
+								}
+							}
+						}
+
+						static int currentIndex = 0;
+						static bool once        = true;
+						if (once && positionNames.size())
+						{
+							once             = false;
+							selectedPosition = positionNames[0];
+						}
+
+						if (ImGui::Combo(
+						        "Selected Position",
+						        &currentIndex,
+						        [](void* vec, int idx, const char** out_text)
+						        {
+							        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
+							        if (idx < 0 || idx >= vector->size())
+							        {
+								        return false;
+							        }
+							        *out_text = vector->at(idx).c_str();
+							        return true;
+						        },
+						        reinterpret_cast<void*>(&positionNames),
+						        positionNames.size()))
+						{
+							selectedPosition = positionNames[currentIndex];
+						}
+
+						if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
+						{
+							SDK::FVector teleport_pos = current_pos;
 							try
 							{
-								for (SDK::AActor* Actor : Actors)
-								{
-									if (!Actor || !Actor->IsA(SDK::ABP_Character_C::StaticClass()))
-									{
-										continue;
-									}
-
-									ImGui::PushID(Actor);
-
-									SDK::ABP_Character_C* Pawn = static_cast<SDK::ABP_Character_C*>(Actor);
-
-									auto current_transform = Pawn->GetTransform();
-									auto& current_pos      = current_transform.Translation;
-
-									static auto positions_file_path =
-									    g_file_manager.get_project_file("./positions.json").get_path();
-
-									if (ImGui::Checkbox("Fly Mode", &g_chained_together_fly_mode_state))
-									{
-										Pawn->SetFlyMode(g_chained_together_fly_mode_state);
-									}
-
-									if (g_customgi)
-									{
-										/*ImGui::Checkbox("TrueChainVisible", &g_customgi->MakeTrueChainVisible);
-										ImGui::Checkbox("DevMode", &g_customgi->DevMode);
-										ImGui::Checkbox("WingsSelected", &g_customgi->WingsSelected);
-										ImGui::Text("SelectedGameMode %d", g_customgi->SelectedGameMode);*/
-
-										if (ImGui::Button("Unlock Wings"))
-										{
-											try
-											{
-												for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
-												{
-													SDK::UObject* Obj = SDK::UObject::GObjects->GetByIndex(i);
-
-													if (!Obj)
-													{
-														continue;
-													}
-
-													if (Obj->IsA(SDK::UCustomGI_C::StaticClass()))
-													{
-														SDK::UCustomGI_C* customgi = (decltype(customgi))Obj;
-
-														for (size_t j = 0; j < 10; j++)
-														{
-															customgi->SetCollectedWing(j);
-														}
-													}
-												}
-											}
-											catch (const std::exception&)
-											{
-											}
-										}
-
-										try
-										{
-											size_t i = 0;
-											for (SDK::AActor* Actor : Actors)
-											{
-												i++;
-												if (!Actor)
-												{
-													continue;
-												}
-
-												if (Actor->IsA(SDK::AGS_Game_C::StaticClass()))
-												{
-													auto gs_game_c = (SDK::AGS_Game_C*)Actor;
-													ImGui::Text("In-Game Timer: %d", gs_game_c->Timer);
-
-													/*SDK::UWorld* World = SDK::UWorld::GetWorld();    // 0x06F40D08
-													auto gameInstance     = World->OwningGameInstance;  // 0x1B8
-													auto localPlayers     = gameInstance->LocalPlayers; // 0x38
-													auto localPlayer      = localPlayers[0];            // deref pointer
-													auto playerController = localPlayer->PlayerController; // 0x30
-													auto playerPawn       = playerController->Pawn;        // 0x2D8
-													auto rootComp         = playerPawn->RootComponent;     // 0x1A0
-													auto playerPosition   = rootComp->RelativeLocation;    // 0x128
-													ImGui::Text("pos: %f | %f | %f",
-													            playerPosition.X,
-													            playerPosition.Y,
-													            playerPosition.Z);*/
-												}
-											}
-										}
-										catch (const std::exception&)
-										{
-										}
-									}
-
-									// Not really useful, seems like none of the commands do anything
-									/* static bool enable_console_once = true;
-									static bool is_console_enabled  = false;
-									if (ImGui::Checkbox("Enable Unreal Engine Debug Console", &is_console_enabled))
-									{
-										if (enable_console_once)
-										{
-											enable_console_once = false;
-
-											SDK::UEngine* Engine = SDK::UEngine::GetEngine();
-											SDK::UObject* ConsoleObject =
-											    SDK::UGameplayStatics::SpawnObject(Engine->ConsoleClass, Engine->GameViewport);
-											Engine->GameViewport->ViewportConsole = static_cast<SDK::UConsole*>(ConsoleObject);
-										}
-
-										is_console_enabled = true;
-									}*/
-
-									ImGui::Separator();
-
-									// Show the player's current position
-									ImGui::Text("Player Position: X: %.2f | Y: %.2f | Z: %.2f",
-									            current_pos.X,
-									            current_pos.Y,
-									            current_pos.Z);
-
-									ImGui::SeparatorText("Custom Position");
-									static SDK::FVector3f new_set_position{current_pos.X, current_pos.Y, current_pos.Z};
-									ImGui::InputFloat("X", &new_set_position.X);
-									ImGui::InputFloat("Y", &new_set_position.Y);
-									ImGui::InputFloat("Z", &new_set_position.Z);
-
-									static nlohmann::json json;
-									static std::vector<std::string> positionNames;
-
-									if (ImGui::Button("Teleport To Custom Position"))
-									{
-										SetPlayerPosition(Pawn, new_set_position);
-									}
-
-									ImGui::SeparatorText("JSON File");
-
-									// Load JSON file and display named positions
-									static std::string selectedPosition;
-
-									static bool load_once = true;
-									if (ImGui::Button("Refresh Positions From JSON File") || load_once)
-									{
-										load_once = false;
-										std::ifstream file(positions_file_path);
-										if (file.is_open())
-										{
-											try
-											{
-												file >> json;
-												positionNames.clear();
-												for (auto& el : json["positions"].items())
-												{
-													positionNames.push_back(el.key());
-												}
-												std::sort(positionNames.begin(), positionNames.end());
-											}
-											catch (const std::exception& e)
-											{
-												LOG(ERROR) << e.what();
-											}
-										}
-									}
-
-									static int currentIndex = 0;
-									static bool once        = true;
-									if (once && positionNames.size())
-									{
-										once             = false;
-										selectedPosition = positionNames[0];
-									}
-
-									if (ImGui::Combo(
-									        "Selected Position",
-									        &currentIndex,
-									        [](void* vec, int idx, const char** out_text)
-									        {
-										        std::vector<std::string>* vector = reinterpret_cast<std::vector<std::string>*>(vec);
-										        if (idx < 0 || idx >= vector->size())
-										        {
-											        return false;
-										        }
-										        *out_text = vector->at(idx).c_str();
-										        return true;
-									        },
-									        reinterpret_cast<void*>(&positionNames),
-									        positionNames.size()))
-									{
-										selectedPosition = positionNames[currentIndex];
-									}
-
-									if (selectedPosition.size() && ImGui::Button("Teleport To Selected Position"))
-									{
-										try
-										{
-											current_pos.X = json["positions"][selectedPosition]["X"];
-											current_pos.Y = json["positions"][selectedPosition]["Y"];
-											current_pos.Z = json["positions"][selectedPosition]["Z"];
-										}
-										catch (const std::exception& e)
-										{
-											LOG(ERROR) << e.what();
-										}
-
-										SetPlayerPosition(Pawn, current_pos);
-									}
-
-									if (selectedPosition.size() && ImGui::Button("Delete Selected Position From File"))
-									{
-										try
-										{
-											json["positions"].erase(selectedPosition);
-
-											save_to_json_file(positions_file_path,
-											                  json,
-											                  [&]()
-											                  {
-												                  std::erase_if(positionNames,
-												                                [&](auto& a)
-												                                {
-													                                return a == selectedPosition;
-												                                });
-												                  std::sort(positionNames.begin(), positionNames.end());
-											                  });
-										}
-										catch (const std::exception& e)
-										{
-											LOG(ERROR) << e.what();
-										}
-
-										SetPlayerPosition(Pawn, current_pos);
-									}
-
-									ImGui::Separator();
-
-									static char positionName[128] = "";
-									ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
-									if (strlen(positionName) > 0)
-									{
-										if (ImGui::Button("Save Current Position To JSON File"))
-										{
-											try
-											{
-												json["positions"][positionName] = {{"X", current_pos.X},
-												                                   {"Y", current_pos.Y},
-												                                   {"Z", current_pos.Z}};
-
-												save_to_json_file(positions_file_path,
-												                  json,
-												                  [&]()
-												                  {
-													                  positionNames.push_back(positionName);
-													                  std::sort(positionNames.begin(), positionNames.end());
-												                  });
-											}
-											catch (const std::exception& e)
-											{
-												LOG(ERROR) << e.what();
-											}
-										}
-									}
-									else
-									{
-										ImGui::Text("Please enter a valid position name for saving to JSON File");
-									}
-
-									ImGui::SeparatorText("Keybinds");
-
-									ImGui::Hotkey("Save Current Position", g_chained_together_save_current_position);
-
-									ImGui::Hotkey("Teleport To Latest Saved Position", g_chained_together_tp_to_latest_saved_position, {600, 0});
-
-									ImGui::Hotkey("Fly Mode##2", g_chained_together_fly_mode);
-
-									ImGui::Hotkey("Perfect Bunny Hop##2", g_chained_together_perfect_bunny_hotkey);
-
-									ImGui::Hotkey("Free Camera Toggle", g_chained_together_freecam_hotkey);
-
-									ImGui::PopID();
-								}
+								teleport_pos.X = json["positions"][selectedPosition]["X"];
+								teleport_pos.Y = json["positions"][selectedPosition]["Y"];
+								teleport_pos.Z = json["positions"][selectedPosition]["Z"];
 							}
 							catch (const std::exception& e)
 							{
+								LOG(ERROR) << e.what();
 							}
 
+							request_teleport(teleport_pos);
+						}
+
+						if (selectedPosition.size() && ImGui::Button("Delete Selected Position From File"))
+						{
 							try
 							{
-								if (g_pawn)
+								json["positions"].erase(selectedPosition);
+
+								save_to_json_file(positions_file_path,
+								                  json,
+								                  [&]()
+								                  {
+									                  std::erase_if(positionNames,
+									                                [&](auto& a)
+									                                {
+										                                return a == selectedPosition;
+									                                });
+									                  std::sort(positionNames.begin(), positionNames.end());
+								                  });
+							}
+							catch (const std::exception& e)
+							{
+								LOG(ERROR) << e.what();
+							}
+						}
+
+						ImGui::Separator();
+
+						static char positionName[128] = "";
+						ImGui::InputText("Position Name", positionName, IM_ARRAYSIZE(positionName));
+						if (strlen(positionName) > 0)
+						{
+							if (ImGui::Button("Save Current Position To JSON File"))
+							{
+								try
 								{
-									if (ImGui::CollapsingHeader("Hitbox Debug"))
-									{
-										ImGui::Checkbox("Proximity Based", &g_draw_hitbox_proximity_based);
-										ImGui::Checkbox("Draw Player Foot Position", &g_draw_g_pawn_foot_pos);
-										ImGui::Checkbox("Draw Debug Sphere", &g_draw_g_pawn_hitbox);
-										ImGui::SliderFloat("Debug Sphere Sphere Radius", &g_draw_g_pawn_sphere_radius_hitbox, 1, 5000);
-										ImGui::InputFloat("Debug Sphere Sphere Radius##2", &g_draw_g_pawn_sphere_radius_hitbox);
-										ImGui::SliderInt("Debug Sphere Sphere Segment Count", &g_draw_g_pawn_sphere_segment_count, 1, 100);
-										ImGui::InputInt("Debug Sphere Sphere Segment Count##2", &g_draw_g_pawn_sphere_segment_count);
-										if (ImGui::ColorEdit4("Debug Sphere Sphere Color",
-										                      &g_draw_pawn_sphere_hitbox_color_edit.x))
-										{
-											g_draw_pawn_sphere_hitbox_color_final = ImGui::ColorConvertFloat4ToU32(g_draw_pawn_sphere_hitbox_color_edit);
-										}
-										static float debug_sphere_x = 0;
-										static float debug_sphere_y = 0;
-										static float debug_sphere_z = 0;
-										if (ImGui::InputFloat("Sphere X", &debug_sphere_x))
-										{
-											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
-										}
-										if (ImGui::InputFloat("Sphere Y", &debug_sphere_y))
-										{
-											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
-										}
-										if (ImGui::InputFloat("Sphere Z", &debug_sphere_z))
-										{
-											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
-										}
-										if (ImGui::Button("Debug Sphere - Place At Custom Position"))
-										{
-											g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
-										}
-										if (ImGui::Button("Debug Sphere - Place At Current Position"))
-										{
-											g_draw_pawn_sphere_position = g_pawn->GetTransform().Translation;
-										}
-										if (ImGui::Button("Debug Sphere - Attach To Player"))
-										{
-											g_draw_pawn_sphere_position = {};
-										}
+									json["positions"][positionName] = {{"X", current_pos.X},
+									                                   {"Y", current_pos.Y},
+									                                   {"Z", current_pos.Z}};
 
-										auto my_pawn_location = g_pawn->K2_GetActorLocation();
-										size_t i              = 0;
-										for (SDK::AActor* actor : Actors)
-										{
-											i++;
-											if (!actor)
-											{
-												continue;
-											}
-
-											auto pos = actor->K2_GetActorLocation();
-
-											auto& yep = g_shouldDraw[i];
-
-											if ((my_pawn_location.GetDistanceTo(pos)) > 500)
-											{
-												//yep.shouldDraw = false;
-												continue;
-											}
-											//yep.shouldDraw = true;
-
-											ImGui::PushID(actor);
-
-											ImGui::Text("[%d] %s (%.2f | Y: %.2f | Z: %.2f)", i, actor->Name.ToString().c_str(), pos.X, pos.Y, pos.Z);
-											//if (ImGui::Checkbox("Draw Box ", &yep.shouldDraw))
-											//{
-											//}
-											if (ImGui::Button("Teleport To"))
-											{
-												SetPlayerPosition(g_pawn, pos);
-											}
-											ImGui::PopID();
-										}
-									}
-
-									ImGui::Checkbox("[VERY UNSTABLE / CRASH ON EXIT] Perfect Bunny Hop", &g_chained_together_perfect_bunny_state);
+									save_to_json_file(positions_file_path,
+									                  json,
+									                  [&]()
+									                  {
+										                  positionNames.push_back(positionName);
+										                  std::sort(positionNames.begin(), positionNames.end());
+									                  });
+								}
+								catch (const std::exception& e)
+								{
+									LOG(ERROR) << e.what();
 								}
 							}
-							catch (const std::exception&)
+						}
+						else
+						{
+							ImGui::Text("Please enter a valid position name for saving to JSON File");
+						}
+
+						if (ImGui::CollapsingHeader("Hitbox Debug"))
+						{
+							ImGui::Checkbox("Proximity Based", &g_draw_hitbox_proximity_based);
+							ImGui::Checkbox("Draw Player Foot Position", &g_draw_g_pawn_foot_pos);
+							ImGui::Checkbox("Draw Debug Sphere", &g_draw_g_pawn_hitbox);
+							ImGui::SliderFloat("Debug Sphere Sphere Radius", &g_draw_g_pawn_sphere_radius_hitbox, 1, 5000);
+							ImGui::InputFloat("Debug Sphere Sphere Radius##2", &g_draw_g_pawn_sphere_radius_hitbox);
+							ImGui::SliderInt("Debug Sphere Sphere Segment Count", &g_draw_g_pawn_sphere_segment_count, 1, 100);
+							ImGui::InputInt("Debug Sphere Sphere Segment Count##2", &g_draw_g_pawn_sphere_segment_count);
+							if (ImGui::ColorEdit4("Debug Sphere Sphere Color",
+							                      &g_draw_pawn_sphere_hitbox_color_edit.x))
 							{
+								g_draw_pawn_sphere_hitbox_color_final = ImGui::ColorConvertFloat4ToU32(g_draw_pawn_sphere_hitbox_color_edit);
+							}
+							static float debug_sphere_x = 0;
+							static float debug_sphere_y = 0;
+							static float debug_sphere_z = 0;
+							if (ImGui::InputFloat("Sphere X", &debug_sphere_x))
+							{
+								g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+							}
+							if (ImGui::InputFloat("Sphere Y", &debug_sphere_y))
+							{
+								g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+							}
+							if (ImGui::InputFloat("Sphere Z", &debug_sphere_z))
+							{
+								g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+							}
+							if (ImGui::Button("Debug Sphere - Place At Custom Position"))
+							{
+								g_draw_pawn_sphere_position = {debug_sphere_x, debug_sphere_y, debug_sphere_z};
+							}
+							if (ImGui::Button("Debug Sphere - Place At Current Position"))
+							{
+								g_draw_pawn_sphere_position = s_snap.pawn_translation;
+							}
+							if (ImGui::Button("Debug Sphere - Attach To Player"))
+							{
+								g_draw_pawn_sphere_position = {};
+							}
+
+							// 500m 内 actor 列表（主线程采集进快照，这里只显示）
+							for (int ai = 0; ai < s_snap.actor_count; ai++)
+							{
+								const auto& a = s_snap.actors[ai];
+								ImGui::PushID(ai);
+								ImGui::Text("[%d] %s (%.2f | Y: %.2f | Z: %.2f)", ai + 1, a.name, a.pos.X, a.pos.Y, a.pos.Z);
+								if (ImGui::Button("Teleport To"))
+								{
+									SDK::FVector pos = a.pos;
+									request_teleport(pos);
+								}
+								ImGui::PopID();
 							}
 						}
 					}
@@ -1497,25 +1483,35 @@ namespace big
 			LOG(DEBUG) << "Toggled Modding GUI to: " << (m_is_open ? "visible" : "hidden");
 		}
 
-		if (msg == WM_KEYUP && wparam == g_chained_together_save_current_position.get_vk_value() && g_pawn)
+		// 存档：位置取自游戏主线程快照（消息线程不解引用 UE 对象）
+		if (msg == WM_KEYUP && wparam == g_chained_together_save_current_position.get_vk_value())
 		{
-			g_latest_saved_position = g_pawn->GetTransform().Translation;
+			game_snapshot_t snap;
+			if (snapshot_read(&snap) && snap.pawn_valid)
+			{
+				g_latest_saved_position = snap.pawn_translation;
+			}
 		}
 
-		if (msg == WM_KEYUP && wparam == g_chained_together_tp_to_latest_saved_position.get_vk_value() && g_pawn && g_latest_saved_position)
+		// 传送：只发请求，由游戏主线程执行
+		if (msg == WM_KEYUP && wparam == g_chained_together_tp_to_latest_saved_position.get_vk_value() && g_latest_saved_position)
 		{
-			SetPlayerPosition(g_pawn, *g_latest_saved_position);
+			request_teleport(*g_latest_saved_position);
 		}
 
-		if (msg == WM_KEYUP && wparam == g_chained_together_fly_mode.get_vk_value() && g_pawn)
+		if (msg == WM_KEYUP && wparam == g_chained_together_fly_mode.get_vk_value())
 		{
+			// 只切状态；真正应用由每帧逻辑在角色就绪时完成（按键瞬间不在关卡里也不丢键）
 			g_chained_together_fly_mode_state = !g_chained_together_fly_mode_state;
-			g_pawn->SetFlyMode(g_chained_together_fly_mode_state);
 		}
 
-		if (msg == WM_KEYUP && wparam == g_chained_together_perfect_bunny_hotkey.get_vk_value() && g_pawn)
+		if (msg == WM_KEYUP && wparam == g_chained_together_perfect_bunny_hotkey.get_vk_value())
 		{
-			g_chained_together_perfect_bunny_state = !g_chained_together_perfect_bunny_state;
+			// 仅“切换模式”下用快捷键开关；长按模式下这个状态不参与判定
+			if (!g_chained_together_bunny_hold_mode)
+			{
+				g_chained_together_perfect_bunny_state = !g_chained_together_perfect_bunny_state;
+			}
 		}
 		/*if (g_chained_together_perfect_bunny_state && g_pawn)
 		{
@@ -1555,17 +1551,10 @@ namespace big
 			LOG(INFO) << "Cleared Replay: " << g_replay_entries.size();
 			g_replay_entries.clear();
 		}
+		// 自由视角：只发请求，由游戏主线程执行（CheatManager 创建 + ToggleDebugCamera）
 		if (msg == WM_KEYUP && wparam == g_chained_together_freecam_hotkey.get_vk_value())
 		{
-			if (g_player_controller)
-			{
-				if (!g_player_controller->CheatManager)
-				{
-					g_player_controller->CheatManager = (SDK::UCheatManager*)(SDK::UGameplayStatics::SpawnObject(SDK::UCheatManager::StaticClass(), g_player_controller));
-				}
-
-				g_player_controller->CheatManager->ToggleDebugCamera();
-			}
+			g_freecam_request = true;
 		}
 	}
 

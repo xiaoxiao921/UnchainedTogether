@@ -900,7 +900,7 @@ namespace big
 
 			g_renderer->m_og_wndproc = WNDPROC(SetWindowLongPtrW(g_renderer->m_window_handle, GWLP_WNDPROC, LONG_PTR(&static_wndproc)));
 
-			LOG(INFO) << "made it";
+			LOG(INFO) << "render_imgui: init done";
 		}
 
 		{

@@ -1,15 +1,16 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.24)
 
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 project(UnchainedTogether CXX C ASM_MASM)
+
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 
 # Fetch modules
 message("\nFetching modules")
 include(cmake_scripts/git.cmake)
-include(cmake_scripts/minhook.cmake)
 include(cmake_scripts/rom.cmake)
 include(cmake_scripts/utfcpp.cmake)
 
@@ -26,6 +27,7 @@ file(GLOB_RECURSE SRC_MAIN
 )
 
 add_compile_options(/bigobj)
+add_compile_options(/EHsc)
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
@@ -43,12 +45,11 @@ source_group(TREE ${SRC_DIR} PREFIX "src" FILES ${SRC_MAIN})
 target_include_directories(UnchainedTogether PRIVATE
     "${SRC_DIR}"
     "${utfcpp_SOURCE_DIR}/source"
-    "${minhook_SOURCE_DIR}/src/hde"
 )
 
 target_precompile_headers(UnchainedTogether PRIVATE "${SRC_DIR}/common.hpp")
 
-target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase comctl32 minhook)
+target_link_libraries(UnchainedTogether PRIVATE ReturnOfModdingBase comctl32)
 
 # Warnings as errors
 #set_property(TARGET UnchainedTogether PROPERTY COMPILE_WARNING_AS_ERROR ON)
